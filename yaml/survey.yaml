@@ -1,0 +1,2078 @@
+---
+define:
+  statistics: 
+    type:
+      algorithm:
+        percentile: &percentile
+          - "percentile"
+      topic:
+        single: &single
+          - "单选"
+        multiple: &multiple
+          - "多选"
+        fillin: &fillin
+          - "填空"
+      dimention:
+        sole: &sole
+          - "单变量"
+        set: &set
+          - "多变量"
+      variable:
+        polymer: &polymer
+          - "聚合"
+        derivative: &derivative
+          - "衍生"
+        constant: &constant
+          - "常量"
+        classify: &classify
+          - "分类"
+        school_statistics: &school_statistics
+          - "校级统计"
+
+    table:
+      common:
+        c_school: &c_school
+          - "c_school"
+        c_student: &c_student
+          - "c_student"
+      student: &table_st
+        origin: &o_survey_st_s
+          - "上海学生问卷"
+        merge: &m_survey_st_s
+          - "上海学生问卷合并"
+        clean: &c_survey_st_s
+          - "上海学生问卷清洗"
+      parent: &table_pa
+        origin: &o_survey_pa_s
+          - "上海家长问卷"
+        merge: &m_survey_pa_s
+          - "上海家长问卷合并"
+        clean: &c_survey_pa_s
+          - "上海家长问卷清洗"
+      teacher: &table_te
+        origin: &o_survey_te_s
+          - "上海教师问卷"
+        merge: &m_survey_te_s
+          - "上海教师问卷合并"
+        clean: &c_survey_te_s
+          - "上海教师问卷清洗"
+      principal: &table_pr
+        origin: &o_survey_pr_s
+          - "上海校长问卷"
+        merge: &m_survey_pr_s
+          - "上海校长问卷合并"
+        clean: &c_survey_pr_s
+          - "上海校长问卷清洗"
+
+    column:
+      schoolid: &schoolid
+        - "schoolid"
+      schoolcode: &schoolcode
+        - "学校代码"
+      school: &school
+        - "学校"
+      county: &county
+        - "县市"
+      city: &city
+        - "地市"
+      province: &province
+        - "省市"
+      urbanization: &urbanization
+        - "城区类型"
+      academicsystem: &academicsystem
+        - "学制"
+      schoolfunds: &schoolfunds
+        - "办学"
+      xinyouzhi: &xinyouzhi
+        - "新优质学校"
+      
+      studentid: &studentid
+        - "studentid"
+      studentcode: &studentcode
+        - "准考证号"
+      student: &student
+        - "姓名"
+      huji: &huji
+        - "户籍"
+      gender: &gender
+        - "性别"
+      grade: &grade
+        - "年级"
+ 
+    variable:
+      weight: &weight
+        - "加权"
+      count: &count
+        - "计数"
+      total: &total
+        - "总体"
+      subject: &subject
+        - "科目"
+        
+      sleep_bin: &sleep_bin
+        - "睡眠7小时以上"
+      homework_bin: &homework_bin
+        - "作业3小时以下"
+      extra_hours_bin: &extra_hours_bin
+        - "校外补课6小时以上"
+      no_school_extra: &no_school_extra
+        - "校内未参加补课"
+      no_home_extra: &no_home_extra
+        - "校外未参加补课"
+      school_extra_bin: &school_extra_bin
+        - "学校未组织统一补课"
+      school_extra_percent: &school_extra_percent
+        - "学校统一补课比例"
+      extra_bin: &extra_bin
+        - "校外无补课且学校无组织统一补课"
+      
+      relationship_bin: &relationship_bin
+        - "师生关系较好"
+      pressure_bin: &pressure_bin
+        - "学习压力较轻"
+      burden_bin: &burden_bin
+        - "学业负担适中"
+      identity_bin: &identity_bin
+        - "学校认同度较高"
+      motivation_bin: &motivation_bin
+        - "学习动机较强"
+      confidence_bin: &confidence_bin
+        - "学习自信心较强"
+      moral_bin: &moral_bin
+        - "品德行为素养较高"
+      
+      family_bg_bin: &family_bg_bin
+        - "家庭背景影响系数"
+      
+      health_bin: &health_bin
+        - "体质健康系数"
+
+      satisfaction_bin: &satisfaction_bin
+        - "家长教育满意度"
+
+      teaching_method_bin: &teaching_method_bin
+        - "教学方式评价较高"
+      course_leadership_bin: &course_leadership_bin
+        - "课程领导力评价较高"
+
+      teacher_job_feeling_bin: &teacher_job_feeling_bin
+        - "教师工作感受较好"
+      career_developmnet_requirement_bin: &career_developmnet_requirement_bin
+        - "教师专业发展需求较强"
+
+      extra_chinese: &extra_chinese
+        - "语文"
+      extra_math: &extra_mathematics
+        - "数学"
+      extra_english: &extra_english
+        - "英语"
+      extra_physics: &extra_physics
+        - "物理"
+      extra_chemistry: &extra_chemistry
+        - "化学"
+      extra_biology: &extra_biology
+        - "生物"
+      extra_politics: &extra_politics
+        - "政治"
+      extra_history: &extra_history
+        - "历史"
+      extra_geography: &extra_geography
+        - "地理"
+      extra_no: &extra_no_course
+        - "未参加补习"
+
+    option:
+      T: &T
+        - TRUE
+      F: &F
+        - FALSE
+
+    survey:
+      - 
+        sur.name: &survey_st
+          - "学生问卷"
+        table: *table_st
+
+        domain:
+          -
+            dom.name: &basic_info
+              - "基本情况"
+            dimention:
+              -
+                dim.name: &family_bg
+                  - "家庭背景"
+                dim.type: *sole
+                topic:
+                  -
+                    top.name: &onechild
+                      - "独生子女"
+                    col.name: &col_onechild
+                      - "stba001"
+                  -
+                    top.name: &home_books
+                      - "家庭藏书"
+                    col.name: &col_home_books
+                      - "stba002"
+                  -
+                    top.name: &home_cars
+                      - "家庭汽车"
+                    col.name: &col_home_cars
+                      - "stba003"
+                  -
+                    top.name: &oversea_tour
+                      - "出境旅游"
+                    col.name: &col_oversea_tour
+                      - "stba004"
+                  -
+                    top.name: &father_edu
+                      - "父亲学历"
+                    col.name: &col_father_edu
+                      - "stba005"
+                  -
+                    top.name: &mother_edu
+                      - "母亲学历"
+                    col.name: &col_mother_edu
+                      - "stba006"
+
+          -
+            dom.name: &relationship
+              - "师生关系"
+            dimention:
+              -
+                dim.name: &equality
+                  - "公平"
+                dim.type: *set
+                topic:
+                  -
+                    top.name: &equality_t1
+                      - "老师公平地对待我"
+                    col.name: &col_equality_t1
+                      - "stba007"
+                  -
+                    top.name: &equality_t2
+                      - "老师对我很关注"
+                    col.name: &col_equality_t2
+                      - "stba008"
+                  -
+                    top.name: &equality_t3
+                      - "老师和我是好朋友"
+                    col.name: &col_equality_t3
+                      - "stba009"
+                  -
+                    top.name: &equality_t4
+                      - "老师关心每一位学生"
+                    col.name: &col_equality_t4
+                      - "stba010"
+                  -
+                    top.name: &equality_t5
+                      - "老师要求我必须接受他（她）的观点"
+                    col.name: &col_equality_t5
+                      - "stba015"
+              -
+                dim.name: &respect
+                  - "尊重"
+                dim.type: *set
+                topic:
+                  -
+                    top.name: &respect_t1
+                      - "老师允许我们有不同的见解"
+                    col.name: &col_respect_t1
+                      - "stba011"
+                  -
+                    top.name: &respect_t2
+                      - "老师会耐心听我说话"
+                    col.name: &col_respect_t2
+                      - "stba012"
+                  -
+                    top.name: &respect_t3
+                      - "老师不讽刺、挖苦我"
+                    col.name: &col_respect_t3
+                      - "stba013"
+                  -
+                    top.name: &respect_t4
+                      - "当我犯错误时，老师会主动询问我原因"
+                    col.name: &col_respect_t4
+                      - "stba014"   
+              -
+                dim.name: &trust
+                  - "信任"
+                dim.type: *set
+                topic:
+                  -
+                    top.name: &trust_t1
+                      - "我非常敬佩学校老师"
+                    col.name: &col_trust_t1
+                      - "stba016"
+                  -
+                    top.name: &trust_t2
+                      - "老师经常鼓励我"
+                    col.name: &col_trust_t2
+                      - "stba017"
+                  -
+                    top.name: &trust_t3
+                      - "我愿意把自己的心里话告诉老师"
+                    col.name: &col_trust_t3
+                      - "stba018"
+                  -
+                    top.name: &trust_t4
+                      - "当我遇到学习以外的困难时，会想找老师帮助"
+                    col.name: &col_trust_t4
+                      - "stba019"
+                  -
+                    top.name: &trust_t5
+                      - "我愿意在老师面前展示自己"
+                    col.name: &col_trust_t5
+                      - "stba020"
+                  -
+                    top.name: &trust_t6
+                      - "老师很信任我"
+                    col.name: &col_trust_t6
+                      - "stba021"
+          -
+            dom.name: &driving
+              - "学习动力"
+            dimention:
+              -
+                dim.name: &confidence
+                  - "自信心"
+                dim.type: *set
+                topic:
+                  -
+                    top.name: &confidence_t1
+                      - "我天生不是学习的料"
+                    col.name: &col_confidence_t1
+                      - "stba027"
+                  -
+                    top.name: &confidence_t2
+                      - "只要我努力就会学得更好"
+                    col.name: &col_confidence_t2
+                      - "stba028"
+                  -
+                    top.name: &confidence_t3
+                      - "如果某个问题看起来很难，我就不愿意去尝试解决"
+                    col.name: &col_confidence_t3
+                      - "stba029"
+                  -
+                    top.name: &confidence_t4
+                      - "我相信自己能在考试中取得好成绩"
+                    col.name: &col_confidence_t4
+                      - "stba030"
+                  -
+                    top.name: &confidence_t5
+                      - "我总是能实现自己所设定学习目标"
+                    col.name: &col_confidence_t5
+                      - "stba031"
+
+              -
+                dim.name: &motivation
+                  - "动机"
+                dim.type: *set
+                topic:
+                  -
+                    top.name: &motivation_t1
+                      - "我有时不想上学"
+                    col.name: &col_motivation_t1
+                      - "stba032"
+                  -
+                    top.name: &motivation_t2
+                      - "学习本身是一件有趣的事情"
+                    col.name: &col_motivation_t2
+                      - "stba033"
+                  -
+                    top.name: &motivation_t3
+                      - "一提起学习，我就头疼"
+                    col.name: &col_motivation_t3
+                      - "stba034"
+                  -
+                    top.name: &motivation_t4
+                      - "其他事情在有趣，我也要首先完成学习任务"
+                    col.name: &col_motivation_t4
+                      - "stba035"
+                  -
+                    top.name: &motivation_t5
+                      - "碰到做不出来的题目，我会找各种方法把它做出来"
+                    col.name: &col_motivation_t5
+                      - "stba036"
+                  -
+                    top.name: &motivation_t6
+                      - "不管是不是喜欢，我都会努力学好每门功课"
+                    col.name: &col_motivation_t6
+                      - "stba039"
+
+              -
+                dim.name: &pressure
+                  - "压力"
+                dim.type: *set
+                topic:
+                  -
+                    top.name: &pressure_t1
+                      - "如果学校公布成绩和名次，我会非常有压力"
+                    col.name: &col_pressure_t1
+                      - "stba040"
+                  -
+                    top.name: &pressure_t2
+                      - "每次考试我总担心自己考不好"
+                    col.name: &col_pressure_t2
+                      - "stba041"
+                  -
+                    top.name: &pressure_t3
+                      - "考试之前我经常会紧张得睡不着觉"
+                    col.name: &col_pressure_t3
+                      - "stba042"
+                  -
+                    top.name: &pressure_t4
+                      - "我怕因为学习成绩不好而被人看不起"
+                    col.name: &col_pressure_t4
+                      - "stba043"
+
+              -
+                dim.name: &identity
+                  - "认同度"
+                dim.type: *set
+                topic:
+                  -
+                    top.name: &identity_t1
+                      - "我和同学关系不错"
+                    col.name: &col_identity_t1
+                      - "stba022"
+                  -
+                    top.name: &identity_t2
+                      - "我很愿意参加学校组织的集体活动"
+                    col.name: &col_identity_t2
+                      - "stba023"
+                  -
+                    top.name: &identity_t3
+                      - "我喜欢我的学校"
+                    col.name: &col_identity_t3
+                      - "stba024"
+                  -
+                    top.name: &identity_t4
+                      - "我和同学经常讨论学习上的问题"
+                    col.name: &col_identity_t4
+                      - "stba025"
+                  -
+                    top.name: &identity_t5
+                      - "我在学校时常感觉很孤独"
+                    col.name: &col_identity_t5
+                      - "stba026"
+ 
+          -
+            dom.name: &burden
+              - "学习负担"
+            dimention:
+              -
+                dim.name: &sleep
+                  - "睡眠"
+                dim.type: *sole
+                topic:
+                  -
+                    top.name: &sleep_hours
+                      - "睡眠时间"
+                    col.name: &col_sleep_hours
+                      - "stba050"
+              -
+                dim.name: &homework
+                  - "作业"
+                dim.type: *sole
+                topic:
+                  -
+                    top.name: &homework_hours
+                      - "作业时间"
+                    col.name: &col_homework_hours
+                      - "stba051"
+                  -
+                    top.name: &homework_difficulty
+                      - "作业难度"
+                    col.name: &col_homework_difficulty
+                      - "stba052"
+              -
+                dim.name: &extra
+                  - "课外学习"
+                dim.type: *sole
+                topic:
+                  -
+                    top.name: &school_extra_hours
+                      - "校内补课时间"
+                    col.name: &col_school_extra_hours
+                      - "stba053"
+                  -
+                    top.name: &home_extra_hours
+                      - "校外补课时间"
+                    col.name: &col_home_extra_hours
+                      - "stba054"
+                  -
+                    top.name: &versatile_hours
+                      - "兴趣班时间"
+                    col.name: &col_versatile_hours
+                      - "stba055"
+                  -
+                    top.name: &extra_reading
+                      - "课外阅读"
+                    col.name: &col_extra_reading
+                      - "stba057"
+              -
+                dim.name: &test
+                  - "考试"
+                dim.type: *sole
+                topic:
+                  -
+                    top.name: &test_monthly
+                      - "月考次数"
+                    col.name: &col_test_monthly
+                      - "stba056"
+
+          -
+            dom.name: &method
+              - "学习方法"
+            dimention:
+              -
+                dim.name: *method
+                dim.type: *set
+                topic:
+                  -
+                    top.name: &method_t1
+                      - "我尝试用多种方法解决一个问题"
+                    col.name: &col_method_t1
+                      - "stba044"
+                  -
+                    top.name: &method_t2
+                      - "我能够借助一些方式，如画图、举例子、打比方等理解知识或解释问题"
+                    col.name: &col_method_t2
+                      - "stba045"
+                  -
+                    top.name: &method_t3
+                      - "我喜欢利用小组讨论来学习"
+                    col.name: &col_method_t3
+                      - "stba046"
+                  -
+                    top.name: &method_t4
+                      - "我尝试总结已经学过的知识"
+                    col.name: &col_method_t4
+                      - "stba047"
+                  -
+                    top.name: &method_t5
+                      - "我会努力记住一些重要的概念和公式"
+                    col.name: &col_method_t5
+                      - "stba048"
+                  -
+                    top.name: &method_t6
+                      - "我了解自己的不足，并进行有针对性的复习"
+                    col.name: &col_method_t6
+                      - "stba049"
+
+          -
+            dom.name: &teaching_method
+              - "教学方法"
+            dimention:
+              -
+                dim.name: &yincaishijiao
+                  - "因材施教"
+                dim.type: *set
+                topic:
+                  -
+                    top.name: &yincaishijiao_t1
+                      - "老师鼓励我们使用不同的学习方法"
+                    col.name: &col_yincaishijiao_t1
+                      - "stba058"
+                  -
+                    top.name: &yincaishijiao_t2
+                      - "老师给我们提出不同的学习建议"
+                    col.name: &col_yincaishijiao_t2
+                      - "stba059"
+                  -
+                    top.name: &yincaishijiao_t3
+                      - "老师给我们布置不同的学习任务"
+                    col.name: &col_yincaishijiao_t3
+                      - "stba060"
+                  -
+                    top.name: &yincaishijiao_t4
+                      - "老师指出我在学习上的优点和缺点"
+                    col.name: &col_yincaishijiao_t4
+                      - "stba071"
+              -
+                dim.name: &hudongjiaoxue
+                  - "互动教学"
+                dim.type: *set
+                topic:
+                  -
+                    top.name: &hudongjiaoxue_t1
+                      - "老师采用恰当的方法使课堂具有活跃的气氛"
+                    col.name: &col_hudongjiaoxue_t1
+                      - "stba061"
+                  -
+                    top.name: &hudongjiaoxue_t2
+                      - "老师在课上组织我们进行小组活动"
+                    col.name: &col_hudongjiaoxue_t2
+                      - "stba063"
+                  -
+                    top.name: &hudongjiaoxue_t3
+                      - "老师对我们的表现作出及时的回应"
+                    col.name: &col_hudongjiaoxue_t3
+                      - "stba065"
+                  -
+                    top.name: &hudongjiaoxue_t4
+                      - "老师和我们共同交流学习心得"
+                    col.name: &col_hudongjiaoxue_t4
+                      - "stba067"
+              -
+                dim.name: &gulitanjiu
+                  - "鼓励探究"
+                dim.type: *set
+                topic:
+                  -
+                    top.name: &gulitanjiu_t1
+                      - "老师在讲课时将所教的内容与我们生活实际相联系"
+                    col.name: &col_gulitanjiu_t1
+                      - "stba062"
+                  -
+                    top.name: &gulitanjiu_t2
+                      - "老师在课堂上设置一些让我们独立思考的问题"
+                    col.name: &col_gulitanjiu_t2
+                      - "stba064"
+                  -
+                    top.name: &gulitanjiu_t3
+                      - "老师引导我们就某个问题进行讨论"
+                    col.name: &col_gulitanjiu_t3
+                      - "stba066"
+                  -
+                    top.name: &gulitanjiu_t4
+                      - "老师鼓励我们猜想并通过各种方法验证猜想"
+                    col.name: &col_gulitanjiu_t4
+                      - "stba068"
+                  -
+                    top.name: &gulitanjiu_t5
+                      - "老师引导我们提出自己的观点"
+                    col.name: &col_gulitanjiu_t5
+                      - "stba069"
+                  -
+                    top.name: &gulitanjiu_t6
+                     - "鼓励我们用不同的路解决问题"
+                    col.name: &col_gulitanjiu_t6
+                      - "stba070"
+
+          -
+            dom.name: &moral
+              - "品德行为"
+            dimention:
+              -
+                dim.name: &respect_others
+                  - "尊重他人"
+                dim.type: *set
+                topic:
+                  -
+                    top.name: &respect_others_t1
+                      - "报名参加敬老院为老人服务"
+                    col.name: &col_respect_others_t1
+                      - "stba073"
+                  -
+                    top.name: &respect_others_t2
+                      - "在礼堂听讲座时与周围同学小声交谈"
+                    col.name: &col_respect_others_t2
+                      - "stba074"
+                  -
+                    top.name: &respect_others_t3
+                      - "经过老师允许后才进入老师办公室"
+                    col.name: &col_respect_others_t3
+                      - "stba077"
+                  -
+                    top.name: &respect_others_t4
+                      - "不嘲笑说话带有家乡口音的外地同学"
+                    col.name: &col_respect_others_t4
+                      - "stba083"
+                  -
+                    top.name: &respect_others_t5
+                      - "不在私底下骂老师"
+                    col.name: &col_respect_others_t5
+                      - "stba084"
+                  -
+                    top.name: &respect_others_t6
+                      - "在校内和老师相遇，主动向老师问好"
+                    col.name: &col_respect_others_t6
+                      - "stba086"
+              -
+                dim.name: &integrity
+                  - "诚信"
+                dim.type: *set
+                topic:
+                  -
+                    top.name: &integrity_t1
+                      - "提醒同学要诚信对待比赛"
+                    col.name: &col_integrity_t1
+                      - "stba072"
+                  -
+                    top.name: &integrity_t2
+                      - "科技馆参观时，售票处排了很长的队伍，要求插队"
+                    col.name: &col_integrity_t2
+                      - "stba076"  
+                  -
+                    top.name: &integrity_t3
+                      - "不从范文书或网上抄别人的文章"
+                    col.name: &col_integrity_t3
+                      - "stba078"
+                  -
+                    top.name: &integrity_t4
+                      - "接到其他邀约仍遵守先前的约定与同学去郊游"
+                    col.name: &col_integrity_t4
+                      - "stba079"
+                  -
+                    top.name: &integrity_t5
+                      - "不在考试中偷看同学答案"
+                    col.name: &col_integrity_t5
+                      - "stba080"
+                  -
+                    top.name: &integrity_t6
+                      - "不将同学东西据为己有"
+                    col.name: &col_integrity_t6
+                      - "stba082"
+              -
+                dim.name: &responsibility
+                  - "社会责任"
+                dim.type: *set
+                topic:
+                  -
+                    top.name: &responsibility_t1
+                      - "把操场中的空饮料瓶捡起来扔进垃圾箱"
+                    col.name: &col_responsibility_t1
+                      - "stba075"
+                  -
+                    top.name: &responsibility_t2
+                      - "学校集体大扫除中完成老师分配给自己的任务"
+                    col.name: &col_responsibility_t2
+                      - "stba081"
+                  -
+                    top.name: &responsibility_t3
+                      - "野外郊游，没有发现垃圾桶也不随手丢垃圾"
+                    col.name: &col_responsibility_t3
+                      - "stba085"
+
+        merge:
+          -
+            table.merge: *m_survey_st_s
+            merge.by: *studentcode
+            table.left: 
+              tab.name: *o_survey_st_s
+              drop:
+                - "pwd"
+                - "来源详情"
+                - "区县名称"
+                - "学校名称"
+                - "学生姓名"
+                - "学校代码"
+                - "学校性质1"
+                - "学校类型1"
+                - "性别1"
+                - "户籍1"
+                - "题组代码1" 
+              rename:
+                -
+                  old: "w"
+                  new: *weight     
+
+            table.right:
+              -
+                tab.name: *c_student
+                drop:
+                  - *studentid
+                  - *student
+            drop:
+              - *studentcode
+
+        correct:
+          -
+            column: 
+              - "stba073"
+              - "stba074"
+              - "stba072"
+              - "stba076"
+              - "stba075"
+            value:
+              -
+                error: "几乎所有人"
+                correct: "几乎所有"
+              -
+                error: "几乎没有人"
+                correct: "几乎没有"
+              -
+                error: "大部分人"
+                correct: "大部分"
+              -
+                error: "小部分人"
+                correct: "少部分"
+              -
+                error: "约一半人"
+                correct: "大约一半"
+        
+        variable:
+          -
+            var.type: *constant
+            var.name: *count
+            default: 1
+          -
+            var.type: *constant
+            var.name: *total
+            default: *total
+          -
+            var.type: *constant
+            var.name: *subject
+            default: *survey_st
+
+          -
+            var.name: *sleep_bin
+            var.type: *polymer
+            column:
+              - 
+                col.name: 
+                  - *col_sleep_hours
+                value:
+                  - "7-8小时（含7小时）"
+                  - "8-9小时（含8小时）"
+                  - "9小时及以上"
+            threshold: 1
+          -
+            var.type: *polymer
+            var.name: *homework_bin
+            column:
+              - 
+                col.name: 
+                  - *col_homework_hours
+                value:
+                  - "1小时以内"
+                  - "1-2小时（含1小时）"
+                  - "2-3小时（含2小时）"
+            threshold: 1       
+          -
+            var.type: *polymer
+            var.name: *extra_hours_bin
+            column:
+              - 
+                col.name: 
+                  - *col_home_extra_hours
+                value:
+                  - "6-8小时(包括6小时)"
+                  - "8小时及以上"
+            threshold: 1
+          
+          -
+            var.type: *polymer
+            var.name: *no_home_extra
+            column:
+              - 
+                col.name: 
+                  - *col_home_extra_hours
+                value:
+                  - "没有参加"
+            threshold: 1
+          -
+            var.type: *polymer
+            var.name: *no_school_extra
+            column:
+              - 
+                col.name: 
+                  - *col_school_extra_hours
+                value:
+                  - "没有参加"
+            threshold: 1
+          -
+            var.type: *school_statistics
+            var.name: *school_extra_bin
+            var.name.percent: *school_extra_percent
+            col.name: *col_school_extra_hours
+            value: "没有参加"
+            threshold: 40
+          -
+            var.type: *polymer
+            var.name: *extra_bin
+            column:
+              - 
+                col.name: 
+                  - *no_home_extra
+                  - *school_extra_bin
+                value:
+                  - *T
+            threshold: 2
+
+          -
+            var.type: *polymer
+            var.name: *burden_bin
+            column:
+              - 
+                col.name: 
+                  - *sleep_bin
+                  - *homework_bin
+                  - *no_school_extra
+                  - *no_home_extra
+                value:
+                  - *T   
+            threshold: 4
+
+          -
+            var.type: *polymer
+            var.name: *moral_bin
+            column:
+              - 
+                col.name: 
+                  - *col_respect_others_t1
+                  - *col_respect_others_t3
+                  - *col_respect_others_t4
+                  - *col_respect_others_t5
+                  - *col_respect_others_t6
+                  - *col_integrity_t1
+                  - *col_integrity_t3
+                  - *col_integrity_t4
+                  - *col_integrity_t5
+                  - *col_integrity_t6
+                  - *col_responsibility_t1
+                  - *col_responsibility_t2
+                  - *col_responsibility_t3
+                value:
+                  - "大约一半"
+                  - "大部分"
+                  - "几乎所有"
+              - 
+                col.name: 
+                  - *col_respect_others_t2
+                  - *col_integrity_t2
+                value:
+                  - "几乎没有"
+                  - "少部分"
+            threshold: 7
+
+          -
+            var.type: *polymer
+            var.name: *teaching_method_bin
+            column:
+              - 
+                col.name: 
+                  - *col_yincaishijiao_t1
+                  - *col_yincaishijiao_t2
+                  - *col_yincaishijiao_t3
+                  - *col_yincaishijiao_t4
+                  - *col_hudongjiaoxue_t1
+                  - *col_hudongjiaoxue_t2
+                  - *col_hudongjiaoxue_t3
+                  - *col_hudongjiaoxue_t4
+                  - *col_gulitanjiu_t1
+                  - *col_gulitanjiu_t2
+                  - *col_gulitanjiu_t3
+                  - *col_gulitanjiu_t4
+                  - *col_gulitanjiu_t5
+                  - *col_gulitanjiu_t6
+                value:
+                  - "常常"
+                  - "总是"
+            threshold: 8
+
+          -
+            var.type: *polymer
+            var.name: *relationship_bin
+            column:
+              - 
+                col.name: 
+                  - *col_equality_t1
+                  - *col_equality_t2
+                  - *col_equality_t3
+                  - *col_equality_t4
+                  - *col_respect_t1
+                  - *col_respect_t2
+                  - *col_respect_t3
+                  - *col_respect_t4
+                  - *col_trust_t1
+                  - *col_trust_t2
+                  - *col_trust_t3
+                  - *col_trust_t4
+                  - *col_trust_t5
+                  - *col_trust_t6
+                value:
+                  - "比较同意"
+                  - "非常同意"
+              - 
+                col.name: 
+                  - *col_equality_t5
+                value:
+                  - "比较不同意"
+                  - "非常不同意"
+                  #- "不确定" remove according to database 
+            threshold: 8
+          -
+            var.type: *polymer
+            var.name: *pressure_bin
+            column:
+              - 
+                col.name: 
+                  - *col_pressure_t3
+                value:
+                  - "比较不同意"
+                  - "非常不同意"
+              - 
+                col.name: 
+                  - *col_pressure_t1
+                  - *col_pressure_t4
+                value:
+                  - "比较不同意"
+                  - "非常不同意"
+                  - "不确定"
+              - 
+                col.name: 
+                  - *col_pressure_t2
+                value:
+                  - "比较不同意"
+                  - "非常不同意"
+                  - "不确定"
+                  - "比较同意"
+              - 
+                col.name: 
+                  - *col_homework_difficulty
+                value:
+                  - "很容易"
+                  - "比较容易"
+                  - "难易适中"
+              - 
+                col.name: 
+                  - *col_test_monthly
+                value:
+                  - "0次"
+                  - "1次"
+                  - "2次"
+                  - "3次"
+            threshold: 3
+          -
+            var.type: *polymer
+            var.name: *identity_bin
+            column:
+              - 
+                col.name: 
+                  - *col_identity_t1
+                  - *col_identity_t2
+                  - *col_identity_t3
+                  - *col_identity_t4
+                value:
+                  - "比较同意"
+                  - "非常同意"
+              - 
+                col.name: 
+                  - *col_identity_t5
+                value:
+                  - "比较不同意"
+                  - "非常不同意"
+            threshold: 3
+          -
+            var.type: *polymer
+            var.name: *motivation_bin
+            column:
+              - 
+                col.name: 
+                  - *col_motivation_t2
+                  - *col_motivation_t4
+                  - *col_motivation_t5
+                  - *col_motivation_t6
+                value:
+                  - "比较同意"
+                  - "非常同意"
+              - 
+                col.name: 
+                  - *col_motivation_t1
+                  - *col_motivation_t3
+                value:
+                  - "比较不同意"
+                  - "非常不同意"
+                  - "不确定"
+            threshold: 3
+          -
+            var.type: *polymer
+            var.name: *confidence_bin
+            column:
+              - 
+                col.name: 
+                  - *col_confidence_t1
+                  - *col_confidence_t3
+                value:
+                  - "比较不同意"
+                  - "非常不同意"
+                  - "不确定"
+              - 
+                col.name: 
+                  - *col_confidence_t2
+                  - *col_confidence_t4
+                value:
+                  - "比较同意"
+                  - "非常同意"
+              - 
+                col.name: 
+                  - *col_confidence_t5
+                value:
+                  - "比较同意"
+                  - "非常同意"
+                  - "不确定"
+            threshold: 3
+      -
+        sur.name: &survey_pa
+          - "家长问卷"
+        table: *table_pa
+
+        domain:
+          -
+            dom.name: *basic_info
+            dimention:
+              -
+                dim.name: *family_bg
+                dim.type: *sole
+                topic:
+                  -
+                    top.name: &family_member
+                      - "家庭成员"
+                    col.name: &col_family_member
+                      - "ph003"
+                  -
+                    top.name: &family_structure
+                      - "家庭结构"
+                    col.name: &col_family_structure
+                      - *family_structure
+              -
+                dim.name: &burden_status
+                  - "负担状态"
+                dim.type: *sole
+                topic:
+                  -
+                    top.name: *burden_status
+                    col.name: &col_burden_status
+                      - "ph009"
+              -
+                dim.name: &expection
+                  - "升学预期"
+                dim.type: *sole
+                topic:
+                  -
+                    top.name: *expection
+                    col.name: &col_expection
+                      - "ph008"   
+              -
+                dim.name: &home_relationship
+                  - "亲子关系"
+                dim.type: *sole
+                topic:
+                  -
+                    top.name: &focus
+                      - "主动询问在校情况"
+                    col.name: &col_focus
+                      - "ph023"       
+                  -
+                    top.name: &housework_hours
+                      - "家务劳动"
+                    col.name: &col_housework_hours
+                      - "ph024"    
+                  -
+                    top.name: &family_discuss
+                      - "家庭事务讨论"
+                    col.name: &col_family_discuss
+                      - "ph025"     
+          -
+            dom.name: *burden
+            dimention:
+              -
+                dim.name: *sleep
+                dim.type: *sole
+                topic:
+                  -
+                    top.name: *sleep_hours
+                    col.name: &col_sleep_hours_pa
+                      - "ph001"
+                  -
+                    top.name: &go_to_bed
+                      - "上床时间"
+                    col.name: &col_go_to_bed
+                      - "ph002"
+              -
+                dim.name: *extra
+                dim.type: *sole
+                topic:
+                  -
+                    top.name: &home_extra_course
+                      - "家教课程"
+                    col.name: &col_home_extra_course
+                      - "ph004"
+                  -
+                    top.name: *home_extra_hours
+                    col.name: &col_home_extra_hours_pa
+                      - "ph005"
+                  -
+                    top.name: &versatile_course
+                      - "兴趣班"
+                    col.name: &col_versatile_course
+                      - "ph006"
+                  -
+                    top.name: *versatile_hours
+                    col.name: &col_versatile_hours_pa
+                      - "ph007"
+                  -
+                    top.name: *school_extra_pa
+                    col.name: &col_school_extra_pa
+                      - "ph021"
+                  -
+                    top.name: *homework_hours_pa
+                    col.name: &col_homework_hours_pa
+                      - "ph022"
+                  -
+                    top.name: *sports_hours
+                    col.name: &col_sports_hours
+                      - "ph010"
+              -
+                dim.name: *extra
+                dim.type: *sole
+                topic:
+                  -
+                    top.name: &home_extra_course
+                      - "家教课程"
+                    col.name: &col_home_extra_course
+                      - "ph004"
+                  -
+                    top.name: *home_extra_hours
+                    col.name: &col_home_extra_hours_pa
+                      - "ph005"
+                  -
+                    top.name: &versatile_course
+                      - "兴趣班"
+                    col.name: &col_versatile_course
+                      - "ph006"
+                  -
+                    top.name: *versatile_hours
+                    col.name: &col_versatile_hours_pa
+                      - "ph007"
+          -
+            dom.name: &satisfaction
+              - "家长教育满意度"
+            dimention:
+              -
+                dim.name: *satisfaction
+                dim.type: *set
+                topic:
+                  -
+                    top.name: &satisfaction_t1
+                      - "学校老师对我孩子很公平"
+                    col.name: &col_satisfaction_t1
+                      - "ph011"
+                  -
+                    top.name: &satisfaction_t2
+                      - "如果我孩子需要额外的帮助，都能从老师那边得到"
+                    col.name: &col_satisfaction_t2
+                      - "ph012"
+                  -
+                    top.name: &satisfaction_t3
+                      - "学校老师关心我孩子的身心健康"
+                    col.name: &col_satisfaction_t3
+                      - "ph013"
+                  -
+                    top.name: &satisfaction_t4
+                      - "学校老师对我孩子很关心"
+                    col.name: &col_satisfaction_t4
+                      - "ph014"
+                  -
+                    top.name: &satisfaction_t5
+                      - "我孩子喜欢学校"
+                    col.name: &col_satisfaction_t5
+                      - "ph015"
+                  -
+                    top.name: &satisfaction_t6
+                      - "学校经常让家长知道孩子在学校的情况"
+                    col.name: &col_satisfaction_t6
+                      - "ph016"
+                  -
+                    top.name: &satisfaction_t7
+                      - "我有足够渠道向学校表达意见，如家长日、电话、微信群等"
+                    col.name: &col_satisfaction_t7
+                      - "ph017"
+                  -
+                    top.name: &satisfaction_t8
+                      - "学校时常要请家长参与学校活动"
+                    col.name: &col_satisfaction_t8
+                      - "ph018"
+                  -
+                    top.name: &satisfaction_t9
+                      - "学校乐意听取家长意见"
+                    col.name: &col_satisfaction_t9
+                      - "ph019"
+                  -
+                    top.name: &satisfaction_t10
+                      - "学校满意度"
+                    col.name: &col_satisfaction_t10
+                      - "ph020"
+
+
+        merge:
+          -
+            table.merge: *m_survey_pa_s
+            merge.by: *studentcode
+            table.left: 
+              tab.name: *o_survey_pa_s
+              drop:
+                - "pwd"
+                - "来源详情"
+                - "区县名称"
+                - "学校名称"
+                - "学生姓名"
+                - "学校代码"
+                - "学校性质"
+                - "学校类型"
+              rename:
+                -
+                  old: "w"
+                  new: *weight
+                - 
+                  old: "zkzh"
+                  new: *studentcode   
+
+            table.right:
+              -
+                tab.name: *c_student
+                drop:
+                  - *studentid
+                  - *student
+            drop:
+              #- *studentcode
+
+        correct:
+          
+ 
+        variable:
+          -
+            var.type: *constant
+            var.name: *count
+            default: 1
+          -
+            var.type: *constant
+            var.name: *total
+            default: *total
+          -
+            var.type: *constant
+            var.name: *subject
+            default: *survey_pa
+
+
+          -
+            var.type: *derivative
+            column:
+              -
+                col.name: *col_home_extra_course
+                value:
+                  error: "未参加"
+                  correct: "未参加补习班"
+          -
+            var.type: *derivative
+            column:
+              -
+                col.name: *col_versatile_course
+                value:
+                  error: "未参加"
+                  correct: "未参加兴趣班"
+          -
+            var.type: *classify
+            var.name: *family_structure
+            column:
+              -
+                col.name: *col_family_member
+                default: "核心家庭"
+                value:  # element order filter
+                  - 
+                    option: "孩子(外)祖父母"
+                    class: "主干家庭"
+                  -
+                    option: "其他"
+                    class: "扩大家庭"
+          -
+            var.type: *polymer
+            var.name: *satisfaction_bin
+            column:
+              - 
+                col.name: 
+                  - *col_satisfaction_t1
+                  - *col_satisfaction_t2
+                  - *col_satisfaction_t3
+                  - *col_satisfaction_t4
+                  - *col_satisfaction_t5
+                  - *col_satisfaction_t6
+                  - *col_satisfaction_t7
+                  - *col_satisfaction_t8
+                  - *col_satisfaction_t9
+                value:
+                  - "比较符合"
+                  - "非常符合"
+              - 
+                col.name: 
+                  - *col_satisfaction_t10
+                value:
+                  - "比较满意"
+                  - "非常满意"
+                  - "不确定"
+            threshold: 6
+
+
+        drop:
+
+      -
+        sur.name: &survey_te
+          - "教师问卷"
+        table: *table_te
+
+        domain:
+          -
+            dom.name: *basic_info
+            dimention:
+              -
+                dim.name: &private
+                  - "个人情况"
+                dim.type: *sole
+                topic:
+                  -
+                    top.name: *gender
+                    col.name: &col_gender_te
+                      - "ted001"
+          -
+            dom.name: &job
+              - "工作情况"
+            dimention:
+              -
+                dim.name: &job_status
+                  - "职业状态"
+                dim.type: *sole
+                topic:
+                  -
+                    top.name: &course_subject
+                      - "授课学科"
+                    col.name: &col_course_subject
+                      - "ted006"
+                  -
+                    top.name: &job_favorite
+                      - "职业喜爱"
+                    col.name: &col_job_favorite
+                      - "ted010"
+                  -
+                    top.name: &job_quit
+                      - "离职倾向"
+                    col.name: &col_job_quit
+                      - "ted011"
+              -
+                dim.name: &job_feeling
+                  - "工作感受"
+                dim.type: *set
+                topic:
+                  -
+                    top.name: &job_feeling_t1
+                      - "如果可能的话您会换到一所新的学校去工作"
+                    col.name: &col_job_feeling_t1
+                      - "ted012"
+                  -
+                    top.name: &job_feeling_t2
+                      - "学校用学生成绩给教师排队令您感到压力很大"
+                    col.name: &col_job_feeling_t2
+                      - "ted013"
+                  -
+                    top.name: &job_feeling_t3
+                      - "您喜欢在这个学校工作"
+                    col.name: &col_job_feeling_t3
+                      - "ted014"
+                  -
+                    top.name: &job_feeling_t4
+                      - "我工作上的付出和回报不成比例"
+                    col.name: &col_job_feeling_t4
+                      - "ted015"
+                  -
+                    top.name: &job_feeling_t5
+                      - "总体而言,我很满意自己现在的工作"
+                    col.name: &col_job_feeling_t5
+                      - "ted016"
+          -
+            dom.name: &course_leadership
+              - "校长课程领导力"
+            dimention:
+              -
+                dim.name: &course_development
+                  - "课程建设"
+                dim.type: *set
+                topic:
+                  -
+                    top.name: &course_development_t1
+                      - "学校成立了课程开发领导小组负责组织学校课程建设"
+                    col.name: &col_course_development_t1
+                      - "ted017"
+                  -
+                    top.name: &course_development_t2
+                      - "学校能带领全体教师为实现课程目标共同努力"
+                    col.name: &col_course_development_t2
+                      - "ted018"
+                  -
+                    top.name: &course_development_t3
+                      - "学校的课程建设思路与方案具有本校特色"
+                    col.name: &col_course_development_t3
+                      - "ted019"
+                  -
+                    top.name: &course_development_t4
+                      - "学校的课程规划与学校的办学理念和办学目标相一致"
+                    col.name: &col_course_development_t4
+                      - "ted020"
+                  -
+                    top.name: &course_development_t5
+                      - "学校很重视探究型课程与拓展型课程的建设"
+                    col.name: &col_course_development_t5
+                      - "ted021"
+              -
+                dim.name: &course_implementation
+                  - "课程实施"
+                dim.type: *set
+                topic:
+                  -
+                    top.name: &course_implementation_t1
+                      - "校长善于利用校内外各种资源服务于各学科的教育教学"
+                    col.name: &col_course_implementation_t1
+                      - "ted022"
+                  -
+                    top.name: &course_implementation_t2
+                      - "学校经常组织学生参加校外的各类社会实践活动"
+                    col.name: &col_course_implementation_t2
+                      - "ted023"
+                  -
+                    top.name: &course_implementation_t3
+                      - "学校领导班子经常参加学校的教研和备课活动，并能提供有效指导"
+                    col.name: &col_course_implementation_t3
+                      - "ted025"
+                  -
+                    top.name: &course_implementation_t4
+                      - "学校领导班子经常到教室听课，并能给授课教师有效指导"
+                    col.name: &col_course_implementation_t4
+                      - "ted026"
+                  -
+                    top.name: &course_implementation_t5
+                      - "学校很重视学生对每门课程教学质量改进的意见"
+                    col.name: &col_course_implementation_t5
+                      - "ted028"
+              -
+                dim.name: &course_evaluation
+                  - "课程评价"
+                dim.type: *set
+                topic:
+                  -
+                    top.name: &course_evaluation_t1
+                      - "学校对教师“教学过程”的关注甚于对“教学结果”的关注"
+                    col.name: &col_course_evaluation_t1
+                      - "ted024"
+                  -
+                    top.name: &course_evaluation_t2
+                      - "学校很关注学生在学校是否学得开心、愉快"
+                    col.name: &col_course_evaluation_t2
+                      - "ted027"
+                  -
+                    top.name: &course_evaluation_t3
+                      - "学校建立了本校的教学质量保障系统并能定期提供教学进展信息"
+                    col.name: &col_course_evaluation_t3
+                      - "ted034"
+                  -
+                    top.name: &course_evaluation_t4
+                      - "学校能根据课程与教学诊断的结果及时调整课程与教学"
+                    col.name: &col_course_evaluation_t4
+                      - "ted035"
+              -
+                dim.name: &course_management
+                  - "课程管理"
+                dim.type: *set
+                topic:
+                  -
+                    top.name: &course_management_t1
+                      - "学校使教师有机会畅所欲言表达自己的意见和建议"
+                    col.name: &col_course_management_t1
+                      - "ted029"
+                  -
+                    top.name: &course_management_t2
+                      - "学校能鼓励教师尝试新的教学方法与接受新的教学理念"
+                    col.name: &col_course_management_t2
+                      - "ted030"
+                  -
+                    top.name: &course_management_t3
+                      - "学校能够给予教师教学自主权"
+                    col.name: &col_course_management_t3
+                      - "ted031"
+                  -
+                    top.name: &course_management_t4
+                      - "校长能领导学校各职能部门积极支持教学"
+                    col.name: &col_course_management_t4
+                      - "ted032"
+                  -
+                    top.name: &course_management_t5
+                      - "学校能考虑教师的专长及能力来安排教师的工作"
+                    col.name: &col_course_management_t5
+                      - "ted033"
+
+          -
+            dom.name: &teaching_philosophy
+              - "教学理念"
+            dimention:
+              -
+                dim.name: *teaching_philosophy
+                dim.type: *set
+                topic:
+                  -
+                    top.name: &teaching_philosophy_t1
+                      - "教学最本质的内涵是传授知识"
+                    col.name: &col_teaching_philosophy_t1
+                      - "ted036"
+                  -
+                    top.name: &teaching_philosophy_t2
+                      - "学生学习的过程，就是逐步学会做人的过程"
+                    col.name: &col_teaching_philosophy_t2
+                      - "ted037"
+                  -
+                    top.name: &teaching_philosophy_t3
+                      - "作为教师,我的角色就是引导学生自行探究"
+                    col.name: &col_teaching_philosophy_t3
+                      - "ted038"
+                  -
+                    top.name: &teaching_philosophy_t4
+                      - "对学生最大的期望在于通过教学使他们变得更爱学习"
+                    col.name: &col_teaching_philosophy_t4
+                      - "ted039"
+                  -
+                    top.name: &teaching_philosophy_t5
+                      - "在课堂上应尽可能多创造机会让学生向教师提问"
+                    col.name: &col_teaching_philosophy_t5
+                      - "ted040"
+                  -
+                    top.name: &teaching_philosophy_t6
+                      - "组织学生探究费时费力，会选择重要的内容给学生讲深讲透"
+                    col.name: &col_teaching_philosophy_t6
+                      - "ted041"
+                  -
+                    top.name: &teaching_philosophy_t7
+                      - "思考和推理过程比具体的课程内容更重要"
+                    col.name: &col_teaching_philosophy_t7
+                      - "ted042"
+                  -
+                    top.name: &teaching_philosophy_t8
+                      - "对学生最大的期望在于他们能牢记课本的知识，取得好成绩"
+                    col.name: &col_teaching_philosophy_t8
+                      - "ted043"
+          -
+            dom.name: &career_developmnet
+              - "专业发展"
+            dimention:
+              -
+                dim.name: &career_developmnet_activity
+                dim.type: *set
+                topic:
+                  -
+                    top.name: &career_developmnet_activity_t1
+                      - "听专家讲座"
+                    col.name: &col_career_developmnet_activity_t1
+                      - "ted044"
+                  -
+                    top.name: &career_developmnet_activity_t2
+                      - "参加课题研究"
+                    col.name: &col_career_developmnet_activity_t2
+                      - "ted045"
+                  -
+                    top.name: &career_developmnet_activity_t3
+                      - "参加学校或教研部门组织的教研活动"
+                    col.name: &col_career_developmnet_activity_t3
+                      - "ted046"
+                  -
+                    top.name: &career_developmnet_activity_t4
+                      - "观摩他人的课并在课后进行研讨"
+                    col.name: &col_career_developmnet_activity_t4
+                      - "ted047"
+                  -
+                    top.name: &career_developmnet_activity_t5
+                      - "与同事分享经验、讨论问题"
+                    col.name: &col_career_developmnet_activity_t5
+                      - "ted048"
+                  -
+                    top.name: &career_developmnet_activity_t6
+                      - "对教学案例进行分析"
+                    col.name: &col_career_developmnet_activity_t6
+                      - "ted049"
+                  -
+                    top.name: &career_developmnet_activity_t7
+                      - "自己学习或反思，如写教学日记"
+                    col.name: &col_career_developmnet_activity_t7
+                      - "ted050"
+              -
+                dim.name: &career_developmnet_requirement
+                dim.type: *set
+                topic:
+                  -
+                    top.name: &career_developmnet_requirement_t1
+                      - "对我所教学科领域的知识"
+                    col.name: &col_career_developmnet_requirement_t1
+                      - "ted051"
+                  -
+                    top.name: &career_developmnet_requirement_t2
+                      - "教学技能"
+                    col.name: &col_career_developmnet_requirement_t2
+                      - "ted052"
+                  -
+                    top.name: &career_developmnet_requirement_t3
+                      - "学科育人"
+                    col.name: &col_career_developmnet_requirement_t3
+                      - "ted053"
+                  -
+                    top.name: &career_developmnet_requirement_t4
+                      - "学生评价和测试方法"
+                    col.name: &col_career_developmnet_requirement_t4
+                      - "ted054"
+                  -
+                    top.name: &career_developmnet_requirement_t5
+                      - "信息技术应用能力"
+                    col.name: &col_career_developmnet_requirement_t5
+                      - "ted055"
+                  -
+                    top.name: &career_developmnet_requirement_t6
+                      - "学生行为和课堂管理"
+                    col.name: &col_career_developmnet_requirement_t6
+                      - "ted056"
+                  -
+                    top.name: &career_developmnet_requirement_t7
+                      - "学校行政和管理"
+                    col.name: &col_career_developmnet_requirement_t7
+                      - "ted057"
+                  -
+                    top.name: &career_developmnet_requirement_t8
+                      - "个性化教学的方法"
+                    col.name: &col_career_developmnet_requirement_t8
+                      - "ted058"
+                  -
+                    top.name: &career_developmnet_requirement_t9
+                      - "对学困生的教育"
+                    col.name: &col_career_developmnet_requirement_t9
+                      - "ted059"
+                  -
+                    top.name: &career_developmnet_requirement_t10
+                      - "跨学科技能的教学（诸如问题解决能力、学习能力）"
+                    col.name: &col_career_developmnet_requirement_t10
+                      - "ted060"
+
+              -
+                dim.name: &career_developmnet_challenge
+                dim.type: *set
+                topic:
+                  -
+                    top.name: &career_developmnet_challenge_t1
+                      - "我缺乏参加专业发展活动的机会"
+                    col.name: &col_career_developmnet_challenge_t1
+                      - "ted061"
+                  -
+                    top.name: &career_developmnet_challenge_t2
+                      - "专业发展活动同我的工作时间冲突"
+                    col.name: &col_career_developmnet_challenge_t2
+                      - "ted062"
+                  -
+                    top.name: &career_developmnet_challenge_t3
+                      - "我缺乏参加专业活动的资金"
+                    col.name: &col_career_developmnet_challenge_t3
+                      - "ted063"
+                  -
+                    top.name: &career_developmnet_challenge_t4
+                      - "身边没有相关的专业发展活动开展"
+                    col.name: &col_career_developmnet_challenge_t4
+                      - "ted064"
+                  -
+                    top.name: &career_developmnet_challenge_t5
+                      - "参加这种活动没有报酬"
+                    col.name: &col_career_developmnet_challenge_t5
+                      - "ted065"
+
+        merge:
+          -
+            table.merge: *m_survey_te_s
+            merge.by: *schoolcode
+            table.left: 
+              tab.name: *o_survey_te_s
+              drop:
+                - "pwd"
+                - "来源详情"
+                - "区县名称"
+                - "学校名称"
+                - "序号"
+            table.right:
+              -
+                tab.name: *c_school
+                drop:
+                  - *schoolid
+            drop:
+
+        variable:
+          -
+            var.type: *constant
+            var.name: *count
+            default: 1
+          -
+            var.type: *constant
+            var.name: *total
+            default: *total
+          -
+            var.type: *constant
+            var.name: *subject
+            default: *survey_te
+
+          -
+            var.type: *polymer
+            var.name: *course_leadership_bin
+            column:
+              - 
+                col.name: 
+                  - *col_course_development_t1
+                  - *col_course_development_t2
+                  - *col_course_development_t3
+                  - *col_course_development_t4
+                  - *col_course_development_t5
+                  - *col_course_implementation_t1
+                  - *col_course_implementation_t2
+                  - *col_course_implementation_t3
+                  - *col_course_implementation_t4
+                  - *col_course_implementation_t5
+                  - *col_course_evaluation_t1
+                  - *col_course_evaluation_t2
+                  - *col_course_evaluation_t3
+                  - *col_course_evaluation_t4
+                  - *col_course_management_t1
+                  - *col_course_management_t2
+                  - *col_course_management_t3
+                  - *col_course_management_t4
+                  - *col_course_management_t5
+                value:
+                  - "比较符合"
+                  - "非常符合"            
+            threshold: 11
+          -
+            var.type: *polymer
+            var.name: *teacher_job_feeling_bin
+            column:
+              - 
+                col.name: 
+                  - *col_job_favorite
+                value:
+                  - "比较喜欢"
+                  - "非常喜欢" 
+              - 
+                col.name: 
+                  - *col_job_quit
+                value:
+                  - "不会"
+                  - "不知道" 
+              - 
+                col.name: 
+                  - *col_job_feeling_t2
+                  - *col_job_feeling_t3
+                  - *col_job_feeling_t5
+                value:
+                  - "比较同意"
+                  - "非常同意"            
+              - 
+                col.name: 
+                  - *col_job_feeling_t1
+                  - *col_job_feeling_t4
+                value:
+                  - "比较不同意"
+                  - "非常不同意"              
+            threshold: 3
+          -
+            var.type: *polymer
+            var.name: *career_developmnet_requirement_bin
+            column:
+              - 
+                col.name: 
+                  - *col_career_developmnet_requirement_t1
+                  - *col_career_developmnet_requirement_t2
+                  - *col_career_developmnet_requirement_t3
+                  - *col_career_developmnet_requirement_t4
+                  - *col_career_developmnet_requirement_t5
+                  - *col_career_developmnet_requirement_t6
+                  - *col_career_developmnet_requirement_t7
+                  - *col_career_developmnet_requirement_t8
+                  - *col_career_developmnet_requirement_t9
+                  - *col_career_developmnet_requirement_t10
+                value:
+                  - "需要"
+                  - "非常需要"            
+            threshold: 6
+
+      -
+        sur.name: &survey_pr
+          - "校长问卷"
+        table: *table_pr
+
+        domain:
+          -
+            dom.name: *basic_info
+            dimention:
+              -
+                dim.name: *private
+                dim.type: *sole
+                topic:
+                  -
+                    top.name: *gender
+                    col.name: &col_gender_pr
+                      - "sf001"
+          -
+            dom.name: &school_develoment
+              - "学校办学"
+            dimention:
+              -
+                dim.name: &develoment_challenge
+                  - "办学困难"
+                dim.type: *set
+                topic:
+                  -
+                    top.name: &develoment_challenge_t1
+                      - "缺乏高素质的教师"
+                    col.name: &col_develoment_challenge_t1
+                      - "sf025"
+                  -
+                    top.name: &develoment_challenge_t2
+                      - "缺乏能对特殊需求学生进行教学的教师"
+                    col.name: &col_develoment_challenge_t2
+                      - "sf026"
+                  -
+                    top.name: &develoment_challenge_t3
+                      - "缺乏或没有足够的实验室"
+                    col.name: &col_develoment_challenge_t3
+                      - "sf027"
+                  -
+                    top.name: &develoment_challenge_t4
+                      - "缺乏或没有足够的电脑用于教学"
+                    col.name: &col_develoment_challenge_t4
+                      - "sf028"
+                  -
+                    top.name: &develoment_challenge_t5
+                      - "缺乏或没有足够的图书馆资源"
+                    col.name: &col_develoment_challenge_t5
+                      - "sf029"
+                  -
+                    top.name: &develoment_challenge_t6
+                      - "缺乏足够的学校预算和资源"
+                    col.name: &col_develoment_challenge_t6
+                      - "sf030"
+                  -
+                    top.name: &develoment_challenge_t7
+                      - "政府条例和政策"
+                    col.name: &col_develoment_challenge_t7
+                      - "sf031"
+                  -
+                    top.name: &develoment_challenge_t8
+                      - "缺少家长或监护人的参与和支持"
+                    col.name: &col_develoment_challenge_t8
+                      - "sf032"
+                  -
+                    top.name: &develoment_challenge_t9
+                      - "缺少提高我自身专业发展的机会和支持"
+                    col.name: &col_develoment_challenge_t9
+                      - "sf033"
+                  -
+                    top.name: &develoment_challenge_t10
+                      - "缺少提高教师专业发展的机会和支持"
+                    col.name: &col_develoment_challenge_t10
+                      - "sf034"
+                  -
+                    top.name: &develoment_challenge_t11
+                      - "较多高强度负荷和高级别责任的工作"
+                    col.name: &col_develoment_challenge_t11
+                      - "sf035"
+                  -
+                    top.name: &develoment_challenge_t12
+                      - "缺乏和其他员工共同管理学校"
+                    col.name: &col_develoment_challenge_t12
+                      - "sf025"
+              -
+                dim.name: &develoment_achievement
+                  - "办学成效"
+                dim.type: *sole
+                topic:
+                  -
+                    top.name: &publishing
+                      - "成果出版"
+                    col.name: &col_publishing
+                      - "sf037"
+                  -
+                    top.name: &school_course
+                      - "校本课程"
+                    col.name: &col_school_course
+                      - "sf038"
+                  -
+                    top.name: &community
+                      - "学生社团"
+                    col.name: &col_community
+                      - "sf039"
+              -
+                dim.name: &school_development_feeling
+                  - "办学感受"
+                dim.type: *set
+                topic:
+                  -
+                    top.name: &school_development_feeling_t1
+                      - "教师对工作的满意度"
+                    col.name: &col_school_development_feeling_t1
+                      - "sf040"
+                  -
+                    top.name: &school_development_feeling_t2
+                      - "教师对学校课程目标的了解"
+                    col.name: &col_school_development_feeling_t2
+                      - "sf041"
+                  -
+                    top.name: &school_development_feeling_t3
+                      - "教师达成学校课程进度的程度"
+                    col.name: &col_school_development_feeling_t3
+                      - "sf042"
+                  -
+                    top.name: &school_development_feeling_t4
+                      - "教师对学生学习成绩的期望"
+                    col.name: &col_school_development_feeling_t4
+                      - "sf043"
+                  -
+                    top.name: &school_development_feeling_t5
+                      - "家长对学生学习的支持"
+                    col.name: &col_school_development_feeling_t5
+                      - "sf044"
+                  -
+                    top.name: &school_development_feeling_t6
+                      - "家长对学校活动的参与"
+                    col.name: &col_school_development_feeling_t6
+                      - "sf045"
+                  -
+                    top.name: &school_development_feeling_t7
+                      - "学生爱惜学校物品的程度"
+                    col.name: &col_school_development_feeling_t7
+                      - "sf046"
+                  -
+                    top.name: &school_development_feeling_t8
+                      - "学生力求在校表现良好的意愿"
+                    col.name: &col_school_development_feeling_t8
+                      - "sf047"
+
+        merge:
+          -
+            table.merge: *m_survey_pr_s
+            merge.by: *schoolcode
+            table.left: 
+              tab.name: *o_survey_pr_s
+              drop:
+                - "pwd"
+                - "来源详情"
+                - "区县名称"
+                - "学校名称"
+                - "id"
+                - "teacode"      
+            table.right:
+              -
+                tab.name: *c_school
+                drop:
+                  - *schoolid
+            drop:
+              
+        variable:
+          -
+            var.type: *constant
+            var.name: *count
+            default: 1
+          -
+            var.type: *constant
+            var.name: *total
+            default: *total
+          -
+            var.type: *constant
+            var.name: *subject
+            default: *survey_pr
+

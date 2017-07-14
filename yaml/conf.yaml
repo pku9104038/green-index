@@ -1,0 +1,16 @@
+---
+# database connection configuration
+db:
+  host: localhost
+  port: 5433
+  user: "wangpeifenge"
+  password: ""
+  storage: "postgre"   # "csv" 
+  dbname: "green_2015"
+  #host: "greenindex.c8npr1xjfzbx.rds.cn-north-1.amazonaws.com.cn"
+  #password: "PostgreSQL"
+
+dir:
+  R: "R/"
+  python: "python/"
+  yaml: "yaml/"
