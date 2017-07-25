@@ -42,6 +42,8 @@ define:
           - "上海学生问卷合并"
         clean: &c_survey_st_s
           - "上海学生问卷清洗"
+        weight: &w_survey_st_s
+          - "上海学生问卷加权"
       parent: &table_pa
         origin: &o_survey_pa_s
           - "上海家长问卷"
@@ -56,6 +58,9 @@ define:
           - "上海教师问卷合并"
         clean: &c_survey_te_s
           - "上海教师问卷清洗"
+        weight: &w_survey_te_s
+          - "上海教师问卷加权"
+
       principal: &table_pr
         origin: &o_survey_pr_s
           - "上海校长问卷"
@@ -98,6 +103,13 @@ define:
         - "性别"
       grade: &grade
         - "年级"
+
+      weight_school: &weight_school
+        - "学校平权"
+      weight_county: &weight_county
+        - "县市平权"
+
+
  
     variable:
       weight: &weight
@@ -189,7 +201,7 @@ define:
 
     survey:
       - 
-        sur.name: &survey_st
+        name: &survey_st
           - "学生问卷"
         table: *table_st
 
@@ -827,7 +839,7 @@ define:
                   - "7-8小时（含7小时）"
                   - "8-9小时（含8小时）"
                   - "9小时及以上"
-            threshold: 1
+            threshold: 0
           -
             var.type: *polymer
             var.name: *homework_bin
@@ -839,7 +851,7 @@ define:
                   - "1小时以内"
                   - "1-2小时（含1小时）"
                   - "2-3小时（含2小时）"
-            threshold: 1       
+            threshold: 0       
           -
             var.type: *polymer
             var.name: *extra_hours_bin
@@ -850,7 +862,7 @@ define:
                 value:
                   - "6-8小时(包括6小时)"
                   - "8小时及以上"
-            threshold: 1
+            threshold: 0
           
           -
             var.type: *polymer
@@ -861,7 +873,7 @@ define:
                   - *col_home_extra_hours
                 value:
                   - "没有参加"
-            threshold: 1
+            threshold: 0
           -
             var.type: *polymer
             var.name: *no_school_extra
@@ -871,7 +883,7 @@ define:
                   - *col_school_extra_hours
                 value:
                   - "没有参加"
-            threshold: 1
+            threshold: 0
           -
             var.type: *school_statistics
             var.name: *school_extra_bin
@@ -1104,8 +1116,17 @@ define:
                   - "非常同意"
                   - "不确定"
             threshold: 3
+ 
+        weight:
+          -
+            table.in: *c_survey_st_s
+            table.out: *w_survey_st_s
+            weight:
+                - *weight_school
+       
+
       -
-        sur.name: &survey_pa
+        name: &survey_pa
           - "家长问卷"
         table: *table_pa
 
@@ -1408,7 +1429,7 @@ define:
         drop:
 
       -
-        sur.name: &survey_te
+        name: &survey_te
           - "教师问卷"
         table: *table_te
 
@@ -1835,7 +1856,8 @@ define:
                   - *col_course_management_t5
                 value:
                   - "比较符合"
-                  - "非常符合"            
+                  - "非常符合"
+              
             threshold: 11
           -
             var.type: *polymer
@@ -1890,8 +1912,15 @@ define:
                   - "非常需要"            
             threshold: 6
 
+        weight:
+          -
+            table.in: *c_survey_te_s
+            table.out: *w_survey_te_s
+            weight:
+                - *weight_school
+
       -
-        sur.name: &survey_pr
+        name: &survey_pr
           - "校长问卷"
         table: *table_pr
 

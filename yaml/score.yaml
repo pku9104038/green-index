@@ -1,0 +1,657 @@
+---
+define:
+  statistics: 
+    type:
+      algorithm:
+        percentile: &percentile
+          - "percentile"
+        segment: &segment
+          - "segment"
+        quantile: &quantile
+          - "quantile"
+      topic:
+        single: &single
+          - "单选"
+        multiple: &multiple
+          - "多选"
+        fillin: &fillin
+          - "填空"
+      dimention:
+        sole: &sole
+          - "单变量"
+        set: &set
+          - "多变量"
+      variable:
+        polymer: &polymer
+          - "聚合"
+        derivative: &derivative
+          - "衍生"
+        constant: &constant
+          - "常量"
+        classify: &classify
+          - "分类"
+        school_statistics: &school_statistics
+          - "校级统计"
+        sum: &sum
+          - "求和"
+        mean: &mean
+          - "平均"
+        above_mean: &above_mean
+          - "高于平均"
+
+    table:
+      common:
+        c_school: &c_school
+          - "c_school"
+        c_student: &c_student
+          - "c_student"
+      chinese: &table_cn
+        origin: &o_score_cn_s
+          - "p_score_c8"
+        origin_answer: &o_score_answer_cn_s
+          - "p_answer1"
+        merge: &m_score_cn_s
+          - "m_score_cn_s"
+        clean: &c_score_cn_s
+          - "c_score_cn_s"
+      mathematics: &table_ma
+        origin: &o_score_ma_s
+          - "p_score_m8"
+        origin_answer: &o_score_answer_ma_s
+          - "p_answer3"
+        merge: &m_score_ma_s
+          - "m_score_ma_s"
+        clean: &c_score_ma_s
+          - "c_score_ma_s"
+      english: &table_en
+        origin: &o_score_en_s
+          - "p_score_e8"
+        origin_answer: &o_score_answer_en_s
+          - "p_answer2"
+        merge: &m_score_en_s
+          - "m_score_en_s"
+        clean: &c_score_en_s
+          - "c_score_en_s"
+      science: &table_sc
+        origin: &o_score_sc_s
+          - "p_score_s8"
+        origin_answer: &o_score_answer_sc_s
+          - "p_answer4"
+        merge: &m_score_sc_s
+          - "m_score_sc_s"
+        clean: &c_score_sc_s
+          - "c_score_sc_s"
+
+    column:
+      schoolid: &schoolid
+        - "schoolid"
+      schoolcode: &schoolcode
+        - "学校代码"
+      school: &school
+        - "学校"
+      county: &county
+        - "县市"
+      city: &city
+        - "地市"
+      province: &province
+        - "省市"
+      urbanization: &urbanization
+        - "城区类型"
+      academicsystem: &academicsystem
+        - "学制"
+      schoolfunds: &schoolfunds
+        - "办学"
+      xinyouzhi: &xinyouzhi
+        - "新优质学校"
+      
+      studentid: &studentid
+        - "studentid"
+      studentcode: &studentcode
+        - "准考证号"
+      student: &student
+        - "姓名"
+      huji: &huji
+        - "户籍"
+      gender: &gender
+        - "性别"
+      grade: &grade
+        - "年级"
+ 
+    variable:
+      weight: &weight
+        - "加权"
+      count: &count
+        - "计数"
+      total: &total
+        - "总体"
+      subject: &subject
+        - "科目"
+
+      thinking_score: &thinking_score
+        - "高层次思维能力得分"
+      thinking_bin: &thinking_bin
+        - "高层次思维能力"
+
+    option:
+      T: &T
+        - TRUE
+      F: &F
+        - FALSE
+
+    test:
+      - 
+        name: &subject_cn
+          - "语文"
+        table: *table_cn
+
+        domain:
+          -
+            dom.name: &jilei_yunyong
+              - "积累与应用"
+            dimention:
+              -
+                dim.name: &duyin
+                  - "读准字音"
+                dim.type: *sole
+                topic:
+                  -
+                    top.name: &du_xingjinzi
+                      - "读准形近字"
+                    col.name: &col_du_xingjinzi
+                      - "C8AO01111"
+                    val.name: &val_du_xingjinzi
+                      - "C8AO01111_X"
+                  -
+                    top.name: &du_yinjinzi
+                      - "读准读音相近的字"
+                    col.name: &col_du_yinjinzi
+                      - "C8AO02111"
+                    val.name: &val_du_yinjinzi
+                      - "C8AO02111_X"
+                  -
+                    top.name: &du_duoyinzi
+                      - "辨析多音字"
+                    col.name: &col_du_duoyinzi
+                      - "C8AO03111"
+                    val.name: &val_du_xingjinzi
+                      - "C8AO03111_X"
+              -
+                dim.name: &zixing
+                  - "认清字形"
+                dim.type: *sole
+                topic:
+                  -
+                    top.name: &ren_xingjinzi
+                      - "辨析形近字的误用"
+                    col.name: &col_ren_xingjinzi
+                      - "C8AO04111"
+                    val.name: &val_ren_xingjinzi
+                      - "C8AO04111_X"
+                  -
+                    top.name: &ren_tongyinzi
+                      - "辨析同音字的误用"
+                    col.name: &col_ren_tongyinzi
+                      - "C8AO05111"
+                    val.name: &val_ren_tongyinzi
+                      - "C8AO05111_X"
+              -
+                dim.name: &lijie
+                  - "理解词义、句义"
+                dim.type: *sole
+                topic:
+                  -
+                    top.name: &lijie_mingxianchayi
+                      - "词义明显差异"
+                    col.name: &col_lijie_mingxianchayi
+                      - "C8AO06111"
+                    val.name: &val_lijie_mingxianchayi
+                      - "C8AO06111_X"
+                  -
+                    top.name: &lijie_jiaomingxianchayi
+                      - "词义较明显差异"
+                    col.name: &col_lijie_jiaomingxianchayi
+                      - "C8AO07111"
+                    val.name: &val_lijie_jiaomingxianchayi
+                      - "C8AO07111_X"
+                  -
+                    top.name: &lijie_xiweichayi
+                      - "词义细微差异"
+                    col.name: &col_lijie_xiweichayi
+                      - "C8AO08111"
+                    val.name: &val_lijie_xiweichayi
+                      - "C8AO08111_X"
+                  -
+                    top.name: &lijie_chengyu1
+                      - "常用成语1"
+                    col.name: &col_lijie_chengyu1
+                      - "C8AO09111"
+                    val.name: &val_lijie_chengyu1
+                      - "C8AO09111_X"
+                  -
+                    top.name: &lijie_chengyu2
+                      - "常用成语2"
+                    col.name: &col_lijie_chengyu2
+                      - "C8AO10111"
+                    val.name: &val_lijie_chengyu2
+                      - "C8AO10111_X"
+                  -
+                    top.name: &lijie_guanlianci
+                      - "关联词"
+                    col.name: &col_lijie_guanlianci
+                      - "C8AO11111"
+                    val.name: &val_lijie_guanlianci
+                      - "C8AO11111_X"
+              -
+                dim.name: &wenyanwenshiwen
+                  - "积累和理解文言文诗文"
+                dim.type: *sole
+                topic:
+                  -
+                    top.name: &shiwen_beisongmoxie
+                      - "背诵默写"
+                    col.name: &col_shiwen_beisongmoxie
+                      - "C8AO12111"
+                    val.name: &val_shiwen_beisongmoxie
+                      - "C8AO12111_X"
+                  -
+                    top.name: &shiwen_lijie
+                      - "诗文理解"
+                    col.name: &col_shiwen_lijie
+                      - "C8AO13111"
+                    val.name: &val_shiwen_lijie
+                      - "C8AO13111_X"
+                  -
+                    top.name: &shiwen_yingyong
+                      - "诗文应用"
+                    col.name: &col_shiwen_yingyong
+                      - "C8AO14111"
+                    val.name: &val_shiwen_yibgyong
+                      - "C8AO14111_X"
+              -
+                dim.name: &mingzhuyuedu
+                  - "名著阅读"
+                dim.type: *sole
+                topic:
+                  -
+                    top.name: &jingdianmingpian1
+                      - "经典名篇1"
+                    col.name: &col_jingdianmingpian1
+                      - "C8AO15111"
+                    val.name: &val_jingdianmingpian1
+                      - "C8AO15111_X"
+                  -
+                    top.name: &jingdianmingpian2
+                      - "经典名篇2"
+                    col.name: &col_jingdianmingpian2
+                      - "C8AO16111"
+                    val.name: &val_jingdianmingpian2
+                      - "C8AO16111_X"
+          -
+            dom.name: &yuedu
+              - "yuedu"
+            dimention:
+              -
+                dim.name: &wenyanwen_yuedu
+                  - "文言文阅读"
+                dim.type: *sole
+                topic:
+                  -
+                    top.name: &wenyanwen_yuedu1
+                      - "理解词语1"
+                    col.name: &col_wenyanwen_yuedu1
+                      - "C8AO17111"
+                    val.name: &val_wenyanwen_yuedu1
+                      - "C8AO17111_X"
+                  -
+                    top.name: &wenyanwen_yuedu2
+                      - "理解词语2"
+                    col.name: &col_wenyanwen_yuedu2
+                      - "C8AO18111"
+                    val.name: &val_wenyanwen_yuedu2
+                      - "C8AO18111_X"
+                  -
+                    top.name: &wenyanwen_yuedu3
+                      - "理解词语3"
+                    col.name: &col_wenyanwen_yuedu3
+                      - "C8AO18211"
+                    val.name: &val_wenyanwen_yuedu3
+                      - "C8AO18211_X"
+                  -
+                    top.name: &wenyanwen_yuedu4
+                      - "理解句子"
+                    col.name: &col_wenyanwen_yuedu4
+                      - "C8AO19111"
+                    val.name: &val_wenyanwen_yuedu4
+                      - "C8AO19111_X"
+                  -
+                    top.name: &wenyanwen_yuedu5
+                      - "理解内容"
+                    col.name: &col_wenyanwen_yuedu5
+                      - "C8AO20111"
+                    val.name: &val_wenyanwen_yuedu5
+                      - "C8AO20111_X"
+              -
+                dim.name: &tiquxinxi
+                  - "提取信息"
+                dim.type: *sole
+                topic:
+                  -
+                    top.name: &wenyanwen_yuedu1
+                      - "理解词语1"
+                    col.name: &col_wenyanwen_yuedu1
+                      - "C8AO17111"
+                    val.name: &val_wenyanwen_yuedu1
+                      - "C8AO17111_X"
+
+        merge:
+          -
+            table.merge: *m_score_cn_s
+            merge.by: *studentid
+            table.left: 
+              tab.name: *o_score_cn_s
+              drop:
+                - "fw"
+                - "testid"
+              rename:
+                -
+                  old: "stuid"
+                  new: *studentid
+                - 
+                  old: "weight"
+                  new: *weight   
+
+            table.right:
+              -
+                tab.name: *c_student
+                drop:
+                  - *studentcode
+                  - *student
+              -
+                tab.name: *o_score_answer_cn_s
+                drop:
+                  - "Fw"
+                  - "row.names"
+                  - "TestID"
+                  - "Weight"
+                rename: 
+                  -
+                    old: "StuID"
+                    new: *studentid
+            drop:
+              - "row.names"
+
+        variable:
+          -
+            var.type: *constant
+            var.name: *count
+            default: 1
+          -
+            var.type: *constant
+            var.name: *total
+            default: *total
+          -
+            var.type: *constant
+            var.name: *subject
+            default: *subject_cn
+
+          -
+            var.name: *thinking_score
+            var.type: *sum
+            column:
+              - "C8AS27111_X"
+              - "C8AS31111_X"
+              - "C8AS31211_X"
+              - "C8AS31311_X"
+              - "C8AS31411_X"
+          -
+            var.name: *thinking_bin
+            var.type: *above_mean
+            column:
+              col.name: 
+                - *thinking_score
+              col.weight:
+                - *weight
+  
+      - 
+        name: &subject_ma
+          - "数学"
+        table: *table_ma
+
+
+        merge:
+          -
+            table.merge: *m_score_ma_s
+            merge.by: *studentid
+            table.left: 
+              tab.name: *o_score_ma_s
+              drop:
+                - "fw"
+                - "testid"
+              rename:
+                -
+                  old: "stuid"
+                  new: *studentid
+                - 
+                  old: "weight"
+                  new: *weight   
+
+            table.right:
+              -
+                tab.name: *c_student
+                drop:
+                  - *studentcode
+                  - *student
+              -
+                tab.name: *o_score_answer_ma_s
+                drop:
+                  - "Fw"
+                  - "row.names"
+                  - "TestID"
+                  - "Weight"
+                rename: 
+                  -
+                    old: "StuID"
+                    new: *studentid
+            drop:
+              - "row.names"
+
+        variable:
+          -
+            var.type: *constant
+            var.name: *count
+            default: 1
+          -
+            var.type: *constant
+            var.name: *total
+            default: *total
+          -
+            var.type: *constant
+            var.name: *subject
+            default: *subject_ma
+
+          -
+            var.name: *thinking_score
+            var.type: *sum
+            column:
+              - "M8AO08111_X"
+              - "M8AS17111_X"
+              - "M8AS18111_X"
+              - "M8AS21111_X"
+              - "M8AS23111_X"
+              - "M8AS23211_X"
+              - "M8AS23311_X"
+              - "M8AS24111_X"
+              - "M8AS24211_X"
+              - "M8AS25211_X"
+              - "M8AS27111_X"
+              - "M8AS27211_X"
+              - "M8AS27311_X"
+          -
+            var.name: *thinking_bin
+            var.type: *above_mean
+            column:
+              col.name: 
+                - *thinking_score
+              col.weight:
+                - *weight
+
+      - 
+        name: &subject_en
+          - "英语"
+        table: *table_en
+
+
+        merge:
+          -
+            table.merge: *m_score_en_s
+            merge.by: *studentid
+            table.left: 
+              tab.name: *o_score_en_s
+              drop:
+                - "fw"
+                - "testid"
+              rename:
+                -
+                  old: "stuid"
+                  new: *studentid
+                - 
+                  old: "weight"
+                  new: *weight   
+
+            table.right:
+              -
+                tab.name: *c_student
+                drop:
+                  - *studentcode
+                  - *student
+              -
+                tab.name: *o_score_answer_en_s
+                drop:
+                  - "Fw"
+                  - "row.names"
+                  - "TestID"
+                  - "Weight"
+                rename: 
+                  -
+                    old: "StuID"
+                    new: *studentid
+            drop:
+              - "row.names"
+
+        variable:
+          -
+            var.type: *constant
+            var.name: *count
+            default: 1
+          -
+            var.type: *constant
+            var.name: *total
+            default: *total
+          -
+            var.type: *constant
+            var.name: *subject
+            default: *subject_en
+
+          -
+            var.name: *thinking_score
+            var.type: *sum
+            column:
+              - "E8AO0911_X"
+              - "E8AO3811_X"
+              - "E8AO4211_X"
+              - "E8AO4311_X"
+              - "E8AO4611_X"
+              - "E8AO4711_X"
+              - "E8AO4811_X"
+              - "E8AS5811_X"
+              - "E8AS5821_X"
+              - "E8AS5831_X"
+              - "E8AS5841_X"
+          -
+            var.name: *thinking_bin
+            var.type: *above_mean
+            column:
+              col.name: 
+                - *thinking_score
+              col.weight:
+                - *weight
+
+      - 
+        name: &subject_sc
+          - "科学"
+        table: *table_sc
+
+
+        merge:
+          -
+            table.merge: *m_score_sc_s
+            merge.by: *studentid
+            table.left: 
+              tab.name: *o_score_sc_s
+              drop:
+                - "fw"
+                - "testid"
+              rename:
+                -
+                  old: "stuid"
+                  new: *studentid
+                - 
+                  old: "weight"
+                  new: *weight   
+
+            table.right:
+              -
+                tab.name: *c_student
+                drop:
+                  - *studentcode
+                  - *student
+              -
+                tab.name: *o_score_answer_sc_s
+                drop:
+                  - "Fw"
+                  - "row.names"
+                  - "TestID"
+                  - "Weight"
+                rename: 
+                  -
+                    old: "StuID"
+                    new: *studentid
+
+            drop:
+              - "row.names"
+
+        variable:
+          -
+            var.type: *constant
+            var.name: *count
+            default: 1
+          -
+            var.type: *constant
+            var.name: *total
+            default: *total
+          -
+            var.type: *constant
+            var.name: *subject
+            default: *subject_sc
+
+          -
+            var.name: *thinking_score
+            var.type: *sum
+            column:
+              - "S8AO01321_X"
+              - "S8AS04311_X"
+              - "S8AO04341_X"
+              - "S8AO06311_X"
+              - "S8AO07421_X"
+              - "S8AO08341_X"
+              - "S8AO09511_X"
+              - "S8AO09521_X"
+              - "S8AO10231_X"
+          -
+            var.name: *thinking_bin
+            var.type: *above_mean
+            column:
+              col.name: 
+                - *thinking_score
+              col.weight:
+                - *weight

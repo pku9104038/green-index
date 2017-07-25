@@ -6,9 +6,7 @@ library(RPostgreSQL)
 # global variables
 g.db <- yaml.load_file("yaml/conf.yaml")$db
 g.db$drv <- dbDriver("PostgreSQL")
-g.db$con <- dbConnect(g.db$drv, dbname = g.db$dbname,
-                      host = g.db$host, port = g.db$port,
-                      user = g.db$user, password = g.db$password)
+
 
 # get database  global  variables
 db.Global <- function(){
@@ -23,22 +21,32 @@ data.path <- function(
     paste0(g.dir$data,g.db$name,"/",table,".csv")
   )
 }
+#  disconnect  database
+db.Connect <- function(){
+  db <- db.Global()
+  db$con <- dbConnect(db$drv, dbname = db$dbname,
+                        host = db$host, port = db$port,
+                        user = db$user, password = db$password)
+  return(db)
+}
+
 
 #  disconnect  database
-db.Disconnect <- function(){
-  db <- db.Global()
+db.Disconnect <- function(db){
+  #db <- db.Global()
   if(db$storage=="postgre"){
-    db$con <- dbDisconnect(g.db$con)
+    db$con <- dbDisconnect(db$con)
   }
-  return(g.db$con)
+  return(db)
 }
 
 # read a table
 db.ReadTable <- function(
   table
 ){
-  db <- db.Global()
+  #db <- db.Global()
   result <- NULL
+  db <-  db.Connect()
   if(db$storage == "postgre"){
     result <- dbReadTable(conn = db$con, 
                           name = table)
@@ -46,7 +54,7 @@ db.ReadTable <- function(
   else if(db$storage == "csv"){
     result <- read_csv(file = data.path(table))
   }
-  
+  db <- db.Disconnect(db)
   return(result)
   
 }
@@ -57,8 +65,9 @@ db.WriteTable <- function(
   table,
   append = FALSE
 ){
-  db <- db.Global()
+  #db <- db.Global()
   result <- NULL
+  db <- db.Connect()
   if(db$storage == "postgre"){
     if(append == FALSE & 
        dbExistsTable(conn = db$con,
@@ -79,6 +88,7 @@ db.WriteTable <- function(
                          append = append)
   }
   
+  db <- db.Disconnect(db)
   return(result)
 }
 
@@ -86,8 +96,9 @@ db.WriteTable <- function(
 db.RemoveTable <- function(
   table
 ){
-  db <- db.Global()
+  #db <- db.Global()
   result <- NULL
+  db <- db.Connect()
   if(db$storage == "postgre"){
     
     result <- dbRemoveTable(conn = db$con, 
@@ -97,6 +108,7 @@ db.RemoveTable <- function(
     result <- unlink(x = data.path(table))
   }
   
+  db.Disconnect(db)
   return(result)
   
 }
