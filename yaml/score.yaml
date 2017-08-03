@@ -132,6 +132,10 @@ define:
       thinking_bin: &thinking_bin
         - "高层次思维能力"
 
+      fail_bin: &fail_bin
+        - "不及格"
+
+
     option:
       T: &T
         - TRUE
@@ -288,7 +292,7 @@ define:
                       - "C8AO16111_X"
           -
             dom.name: &yuedu
-              - "yuedu"
+              - "阅读"
             dimention:
               -
                 dim.name: &wenyanwen_yuedu
@@ -342,6 +346,26 @@ define:
                       - "C8AO17111"
                     val.name: &val_wenyanwen_yuedu1
                       - "C8AO17111_X"
+
+          -
+            dom.name: &total
+              - "总分"
+            dimention:
+              -
+                dim.name: &score
+                  - "总分"
+                dim.type: *sole
+                topic:
+                  -
+                    top.name: &std_score
+                      - "标准分"
+                    col.name: &col_std_score
+                      - "total_score"
+                  -
+                    top.name: &level
+                      - "等级"
+                    col.name: &col_level
+                      - "total_level"
 
         merge:
           -
@@ -411,7 +435,19 @@ define:
                 - *thinking_score
               col.weight:
                 - *weight
-  
+          -
+            var.name: *fail_bin
+            var.type: *polymer
+            column:
+              - 
+                col.name: 
+                  - *col_level
+                value:
+                  - "D"
+            threshold: 0
+
+ 
+
       - 
         name: &subject_ma
           - "数学"

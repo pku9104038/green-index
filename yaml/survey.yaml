@@ -1,10 +1,35 @@
 ---
 define:
   statistics: 
+    field:
+      assessment: "评测"
+      grade: "年级"
+      subject: "科目"
+      tier: 层级
+      scope: "范围"
+      sample: "样本"
+      domain: "领域"
+      dimention: "维度"
+      topic: "主题"
+      perspective: "视角"
+      variable: "变量"
+      weight: "权重"
+      key: "键"
+      value: "值"
+
     type:
       algorithm:
         percentile: &percentile
           - "percentile"
+        segment: &segment
+          - "segment"
+        quantile: &quantile
+          - "quantile"
+        mean: &mean
+          - "mean" 
+        aggregate: &aggregate
+          - "aggregate"
+
       topic:
         single: &single
           - "单选"
@@ -44,6 +69,9 @@ define:
           - "上海学生问卷清洗"
         weight: &w_survey_st_s
           - "上海学生问卷加权"
+        stat: &s_survey_st_s
+          - "上海学生问卷统计"
+
       parent: &table_pa
         origin: &o_survey_pa_s
           - "上海家长问卷"
@@ -51,6 +79,11 @@ define:
           - "上海家长问卷合并"
         clean: &c_survey_pa_s
           - "上海家长问卷清洗"
+        weight: &w_survey_pa_s
+          - "上海家长问卷加权"
+        stat: &s_survey_pa_s
+          - "上海家长问卷统计"
+
       teacher: &table_te
         origin: &o_survey_te_s
           - "上海教师问卷"
@@ -60,6 +93,8 @@ define:
           - "上海教师问卷清洗"
         weight: &w_survey_te_s
           - "上海教师问卷加权"
+        stat: &s_survey_te_s
+          - "上海教师问卷统计"
 
       principal: &table_pr
         origin: &o_survey_pr_s
@@ -68,6 +103,10 @@ define:
           - "上海校长问卷合并"
         clean: &c_survey_pr_s
           - "上海校长问卷清洗"
+        weight: &w_survey_pr_s
+          - "上海校长问卷加权"
+        stat: &s_survey_pr_s
+          - "上海校长问卷统计"
 
     column:
       schoolid: &schoolid
@@ -104,18 +143,13 @@ define:
       grade: &grade
         - "年级"
 
-      weight_school: &weight_school
-        - "学校平权"
-      weight_county: &weight_county
-        - "县市平权"
-
-
- 
     variable:
       weight: &weight
-        - "加权"
+        - "抽样加权"
       count: &count
         - "计数"
+      weight_school: &weight_school
+        - "学校同权"
       total: &total
         - "总体"
       subject: &subject
@@ -193,6 +227,25 @@ define:
       extra_no: &extra_no_course
         - "未参加补习"
 
+    weight:
+      - *count
+      - *weight
+      - *weight_school
+
+    perspective:
+      - *total
+      - *urbanization
+      - *academicsystem
+      - *schoolfunds
+      - *xinyouzhi
+      - *huji
+      - *gender
+    
+    tier:
+      - *province
+      - *county
+      - *school
+
     option:
       T: &T
         - TRUE
@@ -204,11 +257,22 @@ define:
         name: &survey_st
           - "学生问卷"
         table: *table_st
-
+        algorithm:
+          - *percentile
+        perspective:
+          - *total
+          - *urbanization
+          - *academicsystem
+          - *schoolfunds
+          - *xinyouzhi
+          - *huji
+          - *gender
         domain:
           -
             dom.name: &basic_info
               - "基本情况"
+            algorithm: 
+              - *percentile
             dimention:
               -
                 dim.name: &family_bg
@@ -249,17 +313,23 @@ define:
           -
             dom.name: &relationship
               - "师生关系"
+            algorithm: 
+              - *percentile
             dimention:
               -
                 dim.name: &equality
                   - "公平"
                 dim.type: *set
+                algorithm: 
+                  - *percentile
                 topic:
                   -
                     top.name: &equality_t1
                       - "老师公平地对待我"
                     col.name: &col_equality_t1
                       - "stba007"
+                    algorithm: 
+                      - *percentile
                   -
                     top.name: &equality_t2
                       - "老师对我很关注"
@@ -757,6 +827,7 @@ define:
                     col.name: &col_responsibility_t3
                       - "stba085"
 
+
         merge:
           -
             table.merge: *m_survey_st_s
@@ -1122,14 +1193,22 @@ define:
             table.in: *c_survey_st_s
             table.out: *w_survey_st_s
             weight:
-                - *weight_school
-       
+              - *weight_school     
 
       -
         name: &survey_pa
           - "家长问卷"
         table: *table_pa
-
+        algorithm:
+          - *percentile
+        perspective:
+          - *total
+          - *urbanization
+          - *academicsystem
+          - *schoolfunds
+          - *xinyouzhi
+          - *huji
+          - *gender
         domain:
           -
             dom.name: *basic_info
@@ -1426,13 +1505,26 @@ define:
             threshold: 6
 
 
-        drop:
+        weight:
+          -
+            table.in: *c_survey_pa_s
+            table.out: *w_survey_pa_s
+            weight:
+              - *weight_school
+       
 
       -
         name: &survey_te
           - "教师问卷"
         table: *table_te
-
+        algorithm:
+          - *percentile
+        perspective:
+          - *total
+          - *urbanization
+          - *academicsystem
+          - *schoolfunds
+          - *xinyouzhi
         domain:
           -
             dom.name: *basic_info
@@ -1822,6 +1914,10 @@ define:
             default: 1
           -
             var.type: *constant
+            var.name: *weight
+            default: 1
+          -
+            var.type: *constant
             var.name: *total
             default: *total
           -
@@ -1917,16 +2013,25 @@ define:
             table.in: *c_survey_te_s
             table.out: *w_survey_te_s
             weight:
-                - *weight_school
+              - *weight_school
 
       -
         name: &survey_pr
           - "校长问卷"
         table: *table_pr
-
+        algorithm:
+          - *percentile
+        perspective:
+          - *total
+          - *urbanization
+          - *academicsystem
+          - *schoolfunds
+          - *xinyouzhi
+          
         domain:
           -
             dom.name: *basic_info
+            algorithm: *percentile
             dimention:
               -
                 dim.name: *private
@@ -1939,6 +2044,7 @@ define:
           -
             dom.name: &school_develoment
               - "学校办学"
+            algorithm: *percentile
             dimention:
               -
                 dim.name: &develoment_challenge
@@ -2098,6 +2204,10 @@ define:
             default: 1
           -
             var.type: *constant
+            var.name: *weight
+            default: 1
+          -
+            var.type: *constant
             var.name: *total
             default: *total
           -
@@ -2105,3 +2215,10 @@ define:
             var.name: *subject
             default: *survey_pr
 
+
+        weight:
+          -
+            table.in: *c_survey_pr_s
+            table.out: *w_survey_pr_s
+            weight:
+              - *weight_school

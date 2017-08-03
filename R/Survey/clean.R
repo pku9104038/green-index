@@ -116,15 +116,17 @@ survey.weight <- function(surveys, dryrun){
           data.in <- db.ReadTable(table.in)
           
           weight <- weights[[i]]$weight
+          print(length(weight))
           if(length(weight)>0){
             for(j in 1:length(weight)){
-              if(weight[[j]] == stat$column$weight_school){
+              print(weight)
+              if(weight[[j]] == stat$variable$weight_school){
                 schools  <- levels(factor(data.in[,stat$column$school]))
                 total <-  nrow(data.in)
                 weight_school <- total/length(schools)
                 for(k in 1:length(schools)){
                   n =  nrow(data.in[data.in[,stat$column$school] == schools[k],])
-                  data.in[data.in[,stat$column$school] == schools[k], stat$column$weight_school] <- weight_school/n
+                  data.in[data.in[,stat$column$school] == schools[k], stat$variable$weight_school] <- weight_school/n
                   #print(schools[k])
                   #print(paste(total,weight_school,n,weight_school/n))
                   

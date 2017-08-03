@@ -36,3 +36,8 @@ survey.merge(surveys = surveys, dryrun = FALSE)
 
 # calculate variables
 survey.variables(stat, surveys, dryrun  = FALSE)
+
+# add weight for school level
+survey.weight(surveys, dryrun  = FALSE)
+
+

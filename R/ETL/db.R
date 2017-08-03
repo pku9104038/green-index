@@ -14,13 +14,23 @@ db.Global <- function(){
 }
 
 # get csv storage path
-data.path <- function(
+data.path.in <- function(
   table
 ){
   return(
-    paste0(g.dir$data,g.db$name,"/",table,".csv")
+    paste0(g.dir$data.in,g.db$dbname,"/",table,".csv")
   )
 }
+
+# get csv storage path
+data.path.out <- function(
+  table
+){
+  return(
+    paste0(g.dir$data.out, g.db$dbname,"/",table,".csv")
+  )
+}
+
 #  disconnect  database
 db.Connect <- function(){
   db <- db.Global()
@@ -42,19 +52,22 @@ db.Disconnect <- function(db){
 
 # read a table
 db.ReadTable <- function(
-  table
+  table,
+  storage = "postgre"
 ){
   #db <- db.Global()
   result <- NULL
-  db <-  db.Connect()
-  if(db$storage == "postgre"){
+  
+  if(storage == "postgre"){
+    db <-  db.Connect()
     result <- dbReadTable(conn = db$con, 
                           name = table)
+    db <- db.Disconnect(db)
   }
-  else if(db$storage == "csv"){
-    result <- read_csv(file = data.path(table))
+  else if(storage == "csv"){
+    result <- read_csv(file = data.path.in(table))
   }
-  db <- db.Disconnect(db)
+  
   return(result)
   
 }
@@ -63,12 +76,14 @@ db.ReadTable <- function(
 db.WriteTable <- function(
   data,
   table,
-  append = FALSE
+  append = FALSE,
+  storage = "postgre"
 ){
   #db <- db.Global()
   result <- NULL
-  db <- db.Connect()
-  if(db$storage == "postgre"){
+  
+  if(storage == "postgre"){
+    db <- db.Connect()
     if(append == FALSE & 
        dbExistsTable(conn = db$con,
                      name = table)){
@@ -81,14 +96,15 @@ db.WriteTable <- function(
                            name = table, 
                            value = data, 
                            append = append)
+    db <- db.Disconnect(db)
   }
-  else if(db$storage == "csv"){
+  else if(storage == "csv"){
     result <- write_csv( x = data,
-                         path = data.path(table),
+                         path = data.path.out(table),
                          append = append)
   }
   
-  db <- db.Disconnect(db)
+  
   return(result)
 }
 
@@ -105,7 +121,7 @@ db.RemoveTable <- function(
                             name = table)
   }
   else if(db$storage == "csv"){
-    result <- unlink(x = data.path(table))
+    result <- unlink(x = data.path.out(table))
   }
   
   db.Disconnect(db)
