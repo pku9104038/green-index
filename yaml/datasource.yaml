@@ -1,0 +1,115 @@
+---
+# files that should be load into postgresql database
+datasource:
+  -
+    format: "csv"
+    table: "学生基本信息"
+    file: "2016年学生基本信息表.csv"
+    column:
+      -
+        name: "qxdm"
+        newname: "区县编码"
+        type: "text"
+      -
+        name: "qxmc"
+        newname: "区县名称"
+      -
+        name: "xxdm"
+        newname: "学校代码"
+        type: "text"
+      -
+        name: "xxmc"
+        newname: "学校名称"
+      -
+        name: "学校性质1"
+        newname: "学校性质"
+      -
+        name: "学制1"
+        newname: "自定义学制"
+      -
+        name: "性别2"
+        newname: "性别"
+      -
+        name: "户籍1"
+        newname: "户籍"
+      -
+        name: "zkzh"
+        newname: "准考证号"
+        type: "text"
+  -
+    format: "xlsx"
+    table: "数学成绩"
+    file: "20170520  小学数学.xlsx"
+    column:
+      -
+        name: "zkzh"
+        newname: "准考证号"
+        type: "text"
+  -
+    format: "xlsx"
+    table: "语文成绩"
+    file: "20170520 小学语文.xlsx"
+    column:
+      -
+        name: "zkzh"
+        newname: "准考证号"
+        type: "text"
+  -
+    format: "csv"
+    table: "学生问卷调查"
+    file: "20170409  学生问卷调查结果.csv"
+    column:
+      -
+        name: "zkzh"
+        newname: "准考证号"
+        type: "text"
+  -
+    format: "csv"
+    table: "家长问卷调查"
+    file: "20170408  家长问卷.csv"
+    column:
+      -
+        name: "zkzh"
+        newname: "准考证号"
+        type: "text"
+  -
+    format: "csv"
+    table: "教师问卷调查"
+    file: "20170409  教师问卷.csv"
+    column:
+      -
+        name: "xxdm"
+        newname: "学校代码"
+        type: "text"
+  -
+    format: "csv"
+    table: "校长问卷调查"
+    file: "20170410  校长问卷调查结果.csv"
+    column:
+      -
+        name: "xxdm"
+        newname: "学校代码"
+        type: "text"
+  -
+    format: "csv"
+    table: "学生原始信息"
+    file: "2016 学生学籍库原始信息.csv"
+    column:
+      -
+        name: "学籍号"
+        type: "text"
+      -
+        name: "学校代码"
+        type: "text"
+      -
+        name: "区县代码"
+        type: "text"
+      -
+        name: "学校办别"
+        newname: "办学性质"
+  -
+    format: "xlsx"
+    table: "区县信息"
+    file: "区县信息.xlsx"
+
+         
