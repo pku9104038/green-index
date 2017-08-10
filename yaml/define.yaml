@@ -1,0 +1,171 @@
+---
+# global definition 
+# used as gloabal variable for R script 
+# copy to score.yaml, survey.yaml, stat.yaml as the global reference
+
+global:
+  stat: &stat
+    var: &stat_var
+      assesment: &assesment
+        - "评测项目"
+      grade: &grade
+        - "年级"
+      subject: &subject
+        - "学科"
+      tier: &tier
+        - "统计层级"
+      scope: &scope
+        - "统计范围"
+      perspective: &perspective
+        - "统计视角"
+      sample: &sample
+        - "统计样本"
+      domain: &domain
+        - "领域"
+      dimention: &dimention
+        - "维度"
+      topic: &topic
+        - "主题"
+      variable: &variable
+        - "变量"
+      statistics: &statistics
+        - "统计"
+      key: &key
+        - "键"
+      value: &value
+        - "值"
+      weight: &weight
+        - "权重"
+
+    def: &stat_def
+      assesment: 
+        - "2016年度上海市中小学学业质量绿色指标"
+      grade: 
+        - "四年级"
+      subject: 
+        cn: &subject_cn
+          - "语文"
+        ma: &subject_ma
+          - "数学"
+        en: &subject_en
+          - "英语"
+        sc: &subject_sc
+          - "科学"
+        st: &survey_st
+          - "学生问卷"
+        pa: &survey_pa
+          - "家长问卷"
+        te: &survey_te
+          - "教师问卷"
+        pr: &survey_pr
+          - "校长问卷"
+      tier:
+        province: &tier_province
+          - "省市"
+        city: &tier_city
+          - "地市"
+        county: &tier_county
+          - "县市"
+        school: &tier_school
+          - "学校"
+      scope: # one of the record group in the tier 
+      perspective: 
+        total: &total
+          - "总体"
+        urbannization: &urbannization
+          - "城区类型"
+        schoolfund: &schoolfund
+          - "办学"
+        academicsystem: &academicsystem
+          - "学制"
+        xinyouzhi: &xinyouzhi
+          - "新优校"
+        huji: &huji
+          - "户籍"
+        gender: &gender
+          - "性别"
+      sample: # one of the record group in perspective, or scope while perspective is total
+      
+      domain: 
+        cn: &domain_cn
+          jilei: &dom_cn_jilei
+            - "积累"
+          reading: &dom_cn_reading
+            - "阅读"
+          writing: &dom_cn_writing
+            - "学作"
+        ma: &domain_ma
+          calculation: &dom_ma_calculation
+            - "数与运算"
+          algebra: &dom_ma_algebra
+            - "方程与代数"
+          geometry: &dom_ma_geometry
+            - "图形与几何"
+          analysis: &dom_ma_analysis
+            - "函数与分析"
+          statistics: &dom_ma_statistics
+            - "统计与概率"
+        
+      dimention: 
+        cn: &dimention_cn
+          pronunce: &dim_cn_pronunce
+            - "读准字音"
+          write: &dim_cn_write
+            - "认清字形"
+          understand: &dim_cn_understand
+            - "理解词义"
+          poetry: &dim_cn_poetry
+            - "积累教材中的古诗文"
+          extract: &dim_cn_extract
+            - "提取信息"
+          explain: &dim_cd_explain
+            - "形成解释"
+          perceive: &dim_cn_perceive
+            - "整体感知"
+          solve: &dim_cn_solve
+            - "解决问题"
+          material: &dim_cn_material
+            - "选择材料"
+          architect: &dim_cn_architect
+            - "组织材料"
+          express: &dim_cn_express
+            - "语言表达"
+          punctuation: &dim_cn_punmctuation
+            - "书写与标点"
+
+        ma: &dimention_ma
+          comncept: &dim_ma_concept
+            - "数学理解"
+          skill: &dim_ma_skill
+            - "知识技能"
+          application: &application
+            - "应用规则"
+          solution: &solution
+            - "问题解决"
+
+      topic:
+      variable: 
+      statistics: 
+        percent: &stat_percent
+          - "百分比"
+        mean: &stat_mean
+          - "平均值"
+        segment: &stat_segment
+          - "分数段"
+        quantile: &stat_quantile
+          - "百分位"
+        index: &stat_index
+          - "指数"  
+      key: 
+      value: 
+      weight: 
+        sample: &weight_sample
+          - "抽样加权"
+        individual: &weight_individual
+          - "个体同权"
+        school: &weight_school
+          - "学校同权"
+
+
+    
+
