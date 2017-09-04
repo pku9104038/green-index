@@ -42,9 +42,12 @@ db.Connect <- function(){
 
 
 #  disconnect  database
-db.Disconnect <- function(db){
+db.Disconnect <- function(
+  db,
+  storage =  "postgre"
+  ){
   #db <- db.Global()
-  if(db$storage=="postgre"){
+  if(storage=="postgre"){
     db$con <- dbDisconnect(db$con)
   }
   return(db)
@@ -110,17 +113,18 @@ db.WriteTable <- function(
 
 #  remove a table
 db.RemoveTable <- function(
-  table
+  table,
+  storage = "postgre"
 ){
   #db <- db.Global()
   result <- NULL
   db <- db.Connect()
-  if(db$storage == "postgre"){
+  if(storage == "postgre"){
     
     result <- dbRemoveTable(conn = db$con, 
                             name = table)
   }
-  else if(db$storage == "csv"){
+  else if(storage == "csv"){
     result <- unlink(x = data.path.out(table))
   }
   

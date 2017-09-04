@@ -16,3 +16,19 @@ dir:
   yaml: "yaml/"
   data.out: "data.out/"
   data.in: "data.in/"
+  markdown: "MarkDown/"
+  report.in.rmd: "report.in/rmd/"
+  report.in.pic: "report.in/pic/" 
+  report.out: "report.out/"
+  report.out.plot: "report.out/plot/"
+  
+
+yaml:
+  source: "source_2016.yaml"
+  survey: "survey_2016.yaml"
+  score: "score_2016.yaml"
+
+test:
+  loop.limit: TRUE
+  dry.run: TRUE
+  temp.table: "temp"

@@ -5,10 +5,12 @@ library(readr)
 library(readxl)
 library(plyr)
 # init global configurations
-g.dir <- yaml.load_file("yaml/conf.yaml")$dir
-data.source <- yaml.load_file(paste0(g.dir$yaml,"datasource.yaml"))$datasource
+conf <- yaml.load_file("yaml/conf.yaml")
+g.dir <- conf$dir
+g.yaml <- conf$yaml
+data.source <- yaml.load_file(paste0(g.dir$yaml,g.yaml$source))$datasource
 data.dir <-  g.dir$data.in
-dbname <- "sh_green_2016"
+dbname <- conf$db$dbname
 # source scripts
 source(paste0(g.dir$R,"ETL/db.R"))
 

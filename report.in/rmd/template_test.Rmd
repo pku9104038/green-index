@@ -1,0 +1,60 @@
+---
+documentclass: article
+output:
+  pdf_document:
+    includes:
+      in_header: header.tex
+    latex_engine: xelatex
+    number_sections: no
+    keep_tex: no
+    template: pdf_template.tex 
+fontsize: 12pt
+geometry: margin=1in
+---
+\pagenumbering{gobble}
+test pdf
+
+\centering
+\LARGE
+\textbf{目}&nbsp;&nbsp;\textbf{录}
+
+\normalsize
+\raggedright
+\setcounter{tocdepth}{5}
+\tableofcontents 
+
+\clearpage
+
+\normalsize
+\pagenumbering{arabic}
+
+
+# 第一章&nbsp;你好
+this is section one...
+
+## 一、你好
+
+\clearpage
+
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\footnotesize 你好页脚}
+\fancyfoot[C]{\footnotesize \thepage}
+\raggedright
+\clearpage
+
+# 第二章&nbsp;你好
+
+## 二、你好
+
+### （二）你好
+
+#### 1、你好
+
+##### （1）你好
+
+\setlength{\parindent}{2em}
+\normalsize
+
+正文缩进你好

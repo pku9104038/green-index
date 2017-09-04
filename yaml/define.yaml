@@ -3,6 +3,7 @@
 # used as gloabal variable for R script 
 # copy to score.yaml, survey.yaml, stat.yaml as the global reference
 
+
 global:
   stat: &stat
     var: &stat_var
@@ -35,14 +36,16 @@ global:
       value: &value
         - "值"
       weight: &weight
-        - "权重"
+        - "加权"
 
     def: &stat_def
-      assesment: 
+      assesment: &def_assesment
         - "2016年度上海市中小学学业质量绿色指标"
-      grade: 
+      grade: &def_grade
         - "四年级"
       subject: 
+        all: &subject_all
+          - "学业成绩"
         cn: &subject_cn
           - "语文"
         ma: &subject_ma
@@ -65,36 +68,169 @@ global:
         city: &tier_city
           - "地市"
         county: &tier_county
-          - "县市"
+          - "区县"
         school: &tier_school
           - "学校"
+        topic: &tier_topic
+          - *tier_province
+          - *tier_county
+          # - *tier_school #ignore school tier to save test time
       scope: # one of the record group in the tier 
+        province: &scope_province
+          - "本市"
+        county: &scope_county
+          -  "本区"
+        school: &scope_school
+          - "本校"
+
       perspective: 
-        total: &total
+        total: &per_total
           - "总体"
-        urbannization: &urbannization
+        urbannization: &per_urbannization
           - "城区类型"
-        schoolfund: &schoolfund
+        schoolfund: &per_schoolfund
           - "办学"
-        academicsystem: &academicsystem
+        academicsystem: &per_academicsystem
           - "学制"
-        xinyouzhi: &xinyouzhi
-          - "新优校"
-        huji: &huji
+        xinyouzhi: &per_xinyouzhi
+          - "新优质学校"
+        huji: &per_huji
           - "户籍"
-        gender: &gender
+        gender: &per_gender
           - "性别"
+
+        student_all: &perspective_student_all
+          -
+            tier: *tier_province
+            perspective:
+              - *per_total
+              - *per_urbannization
+              - *per_schoolfund
+              - *per_academicsystem
+              - *per_xinyouzhi
+              - *per_huji
+              - *per_gender
+          -
+            tier: *tier_county
+            perspective:
+              - *per_total
+              - *per_schoolfund
+              - *per_academicsystem
+              - *per_xinyouzhi
+              - *per_huji
+              - *per_gender
+          -
+            tier: *tier_school
+            perspective:
+              - *per_total
+
+        student_score: &perspective_student_score
+          -
+            tier: *tier_province
+            perspective:
+              - *per_total
+              - *per_urbannization
+              - *per_schoolfund
+              - *per_academicsystem
+              - *per_xinyouzhi
+              - *per_huji
+              - *per_gender
+          -
+            tier: *tier_county
+            perspective:
+              - *per_total
+              - *per_schoolfund
+              - *per_academicsystem
+              - *per_xinyouzhi
+              - *per_huji
+              - *per_gender
+          -
+            tier: *tier_school
+            perspective:
+              - *per_total
+
+        student_survey: &perspective_student_survey
+          -
+            tier: *tier_province
+            perspective:
+              - *per_total
+              - *per_urbannization
+              - *per_schoolfund
+              - *per_academicsystem
+              - *per_xinyouzhi
+              - *per_huji
+              - *per_gender
+          -
+            tier: *tier_county
+            perspective:
+              - *per_total
+              - *per_schoolfund
+              - *per_academicsystem
+              - *per_xinyouzhi
+              - *per_huji
+              - *per_gender
+          -
+            tier: *tier_school
+            perspective:
+              - *per_total
+              
+        school: &perspective_school
+          - 
+            tier: *tier_province
+            perspective:
+              - *per_total
+              - *per_urbannization
+              - *per_schoolfund
+              - *per_academicsystem
+              - *per_xinyouzhi
+          - 
+            tier: *tier_county
+            perspective:
+              - *per_total
+              - *per_schoolfund
+              - *per_academicsystem
+              - *per_xinyouzhi
+          - 
+            tier: *tier_school
+            perspective:
+              - *per_total
+              
+        total_only: &perspective_total_only
+          - 
+            tier: *tier_province
+            perspective:
+              - *per_total
+          - 
+            tier: *tier_county
+            perspective:
+              - *per_total
+          - 
+            tier: *tier_school
+            perspective:
+              - *per_total
+
       sample: # one of the record group in perspective, or scope while perspective is total
+        province: &sample_province
+          - "上海市"
       
       domain: 
+        score:
+          total: &dom_score_total
+            - "成绩"
         cn: &domain_cn
+          total: &dom_cn_total
+            - *dom_score_total
           jilei: &dom_cn_jilei
             - "积累"
           reading: &dom_cn_reading
             - "阅读"
           writing: &dom_cn_writing
-            - "学作"
+            - "写作"
+          question: &dom_cn_question
+            - "题目"
         ma: &domain_ma
+          total: &dom_ma_total
+            - *dom_score_total
           calculation: &dom_ma_calculation
             - "数与运算"
           algebra: &dom_ma_algebra
@@ -105,9 +241,64 @@ global:
             - "函数与分析"
           statistics: &dom_ma_statistics
             - "统计与概率"
+          question: &dom_ma_question
+            - "题目"
+        st: &domain_st
+          info: &dom_st_info
+            - "基本情况"
+          teacher: &dom_st_teacher
+            - "师生关系"
+          learning: &dom_st_learning
+            - "学习生活"
+          teaching: &dom_st_teaching
+            - "教学方式"
+          morality: &dom_st_morality
+            - "品德行为"
+          healthy: &dom_st_healthy
+            - "身心健康"
+          physique: &dom_st_physique
+            - "体质健康"
+          psychological: &dom_st_psychological
+            - "心理健康"
+        te: &domain_te
+          info: &dom_te_info
+            - "基本情况"
+          feelings: &dom_te_feelings
+            - "职业感受"
+          teaching: &dom_te_teaching
+            - "教师教学"
+          career: &dom_te_career
+            - "专业发展"
+          course: &dom_te_course
+            - "学校课程"
+        pr: &domain_pr
+          info: &dom_pr_info
+            - "基本情况"
+          daily: &dom_pr_daily
+            - "日常工作"
+          development: &dom_pr_development
+            - "办学发展"
+
+        pa:  &domain_pa
+          info: &dom_pa_info
+            - "基本情况"
+          relationship: &dom_pa_relationship
+            - "亲子关系"
+          education: &dom_pa_education
+            - "家庭教育"
+
         
       dimention: 
+        score:
+          score: &dim_score_total
+            - "成绩"
         cn: &dimention_cn
+          score: &dim_cn_score
+            - *dim_score_total
+          level: &dim_cn_level
+            - "等级"
+          question: &dim_cn_question
+            - *dom_cn_question
           pronunce: &dim_cn_pronunce
             - "读准字音"
           write: &dim_cn_write
@@ -134,6 +325,12 @@ global:
             - "书写与标点"
 
         ma: &dimention_ma
+          score: &dim_ma_score
+            - *dim_score_total
+          level: &dim_ma_level
+            - "等级"
+          question: &dim_ma_question
+            - *dom_ma_question
           comncept: &dim_ma_concept
             - "数学理解"
           skill: &dim_ma_skill
@@ -143,11 +340,546 @@ global:
           solution: &solution
             - "问题解决"
 
+        st: &dimention_st
+          family: &dim_st_family
+            - "家庭背景"
+          live: &dim_st_live
+            - "生活学习"
+          burden: &dim_st_burden
+            - "学业负担" 
+          teacher: &dim_st_teacher
+            - *dom_st_teacher
+          fair: &dim_st_fair
+            - "教师公平"
+          respect: &dim_st_respect
+            - "教师尊重"
+          trust: &dim_st_trust
+            - "教师信任"
+          driving: &dim_st_driving
+            - "学习动力"
+          pressure: &dim_st_pressure
+            - "学习压力"
+          motivation: &dim_st_motivation
+            - "学习动机"
+          identity: &dim_st_identity
+            - "学校认同"
+          confidence: &dim_st_confidence
+            - "学习自信"
+          method: &dim_st_method
+            - "学习方法"
+          teaching: &dim_st_teaching
+            - *dom_st_teaching
+          yincaishijiao: &dim_st_yincaishijiao
+            - "因材施教"
+          hudongjiaoxue: &dim_st_hudongjiaoxue
+            - "互动教学"
+          gulitanjiu: &dim_st_gulitanjiu
+            - "鼓励探究"
+          morality: &dim_st_morality
+            - *dom_st_morality
+          respect_others: &dim_st_respect_others
+            - "尊重他人"
+          integrity: &dim_st_integrity
+            - "诚信"
+          responsibility: &dim_st_responsibility
+            - "社会责任 "
+          physique: &dim_st_physique
+            - *dom_st_physique
+          psychological: &dim_st_psychological
+            - *dom_st_psychological
+          renjimingan: &dim_st_renjimingan
+            - "人际敏感"
+          renjiguanxi: &dim_st_renjiguanxi
+            - "人际关系"
+          self_respect: &dim_st_self_respect
+            - "自尊"
+        
+        te: &dimention_te
+          info: &dim_te_info
+            - *dom_te_info
+          feelings: &dim_te_feelings
+            -  "工作感受"
+          philosophy: &dim_te_philosophy
+            - "教学观念"
+          method: &dim_te_method
+            - "教学方法"
+          activity:  &dim_te_activity
+            - "专业活动"
+          requirement: &dim_te_requirement
+            - "发展需求"
+          difficulty: &dim_te_difficulty
+            - "发展困难"
+          course: &dim_te_course
+            - "校长课程领导力"
+          development: &dim_te_development
+            - "课程建设"
+          management: &dim_te_management
+            - "课程管理"
+          implement: &dim_te_implement
+            - "课程实施"
+          evaluation: &dim_te_evaluation
+            - "课程评价"
+
+        pr: &dimmention_pr
+          info: &dim_pr_info
+            - *dom_pr_info
+          daily: &dim_pr_daily
+            - *dom_pr_daily
+          challenge: &dim_pr_challenge
+            - "发展困难"
+          performance: &dim_pr_performance
+            - "办学成效"
+          feelings: &dim_pr_feelings
+            - "学校感受"
+          philosophy: &dim_pr_philosophy
+            - "办学理念"
+        pa: &dimention_pa
+          family: &dim_pa_family
+            - "家庭背景"
+          live: &dim_pa_live
+            - "生活学习"
+          relationship: &dim_pa_relationship
+            - "亲子关系"
+          coach: &dim_pa_coach
+            - "家长辅导"
+          coach_person: &dim_pa_coach_person
+            - "辅导分工"
+          feelings: &dim_pa_feelings
+            - "学校感受"
+          satisfaction: &dim_pa_satisfaction
+            - "学校满意度"
+          philosophy: &dim_pa_philosophy
+            - "教育观念"
+          identity: &dim_pa_identity
+            - "学校认同"
+          school_reasonable: &dim_pa_school_reasonable
+            - "理想小学"
+          expection: &dim_pa_expection
+            - "教育期望"
+
       topic:
-      variable: 
+        score:
+          total_segment: &top_total_score_segment
+            - "分数分布"
+          total_quantile: &top_total_score_quantile
+            - "得分分布"
+          total_score_level: &top_total_score_level
+            - "成绩等级"
+          total_score_mean: &top_total_score_mean
+            - "平均分"
+
+        st:
+          one_child: &top_one_child_st
+            - "独生子女"
+          sleep: &top_sleep
+            - "睡眠时间"
+          sleep_weekend: &top_sleep_weekend
+            - "假期睡眠时间"
+          sleep_enough: &top_sleep_enough
+            - "睡眠是否充足"
+          sleep_not_enough: &top_sleep_not_enough
+            - "睡眠不充足"
+          sleep_8hours: &top_sleep_8hours
+            - "睡眠8小时以上"
+          writing_homework_hours: &top_writing_homework_hours
+            - "作业时间"
+          writing_homework_2hours_less: &top_writing_homework_2hours_less
+            - "作业2小时以下"
+          writing_homework_2hours_more: &top_writing_homework_2hours_more
+            - "作业2小时以上"
+          writing_homework_difficulty: &top_writing_homework_difficulty
+            - "作业难度"
+          learning_pressure: &top_learning_pressure
+            - "学习压力较轻"
+          learning_motivation: &top_learning_motivation
+            - "学习动机较强"
+          school_identity: &top_school_identity
+            - "学校认同度较高"
+          learning_confidence: &top_learning_confidence
+            - "学习自信心较强"
+          morality: &top_morality
+            - "品行素养较高" 
+          psychological_health: &top_psychological_health
+            - "心理健康较高"
+
+          teacher_relationship: &top_teacher_relationship
+            - "师生关系较好"
+          teaching_method: &top_teaching_method
+            - "教学方法较好"
+          month_test: &top_month_test
+            - "月考次数"
+          year_reading: &top_year_reading
+            - "年度阅读"
+        te:
+          gender: &top_te_gender
+            - "教师性别"
+          years: &top_te_years
+            - "教师教龄"
+          title: &top_te_title
+            - "教师职称"
+          education: &top_te_edu
+            - "教师学历"
+          normal_edu: &top_te_normal_edu
+            - "师范教育"
+          major_match: &top_te_major_match
+            - "专业对口"
+          weekly_hours: &top_te_weekly_hours
+            - "每周课时"
+          daily_hours: &top_te_daily_hours
+            - "每日工时"
+          job_favorite: &top_te_job_favorite
+            - "职业喜爱"
+          job_quit: &top_te_job_quit
+            - "离职倾向"
+          
+          course_leadership: &top_course_leadership
+            - "课程领导力较高"
+        pr:
+          gender: &top_pr_gender
+            - "校长性别"
+          age: &top_pr_age
+            -  "校长年龄"
+          years: &top_pr_years
+            - "任职年限"
+          education: &top_pr_edu
+            - "校长学历"
+          title: &top_pr_title
+            - "校长职级"
+          all_title: &top_pr_all_title
+            - "全校职称"
+          all_education: &top_pr_all_edu
+            - "全校学历"
+          history: &top_school_history
+            - "建校历史"
+          meeting: &top_pr_meeting
+            - "会议"
+          instructing: &top_pr_instructing
+            - "上课"
+          researching: &top_pr_researching
+            - "教研"
+          communication: &top_pr_communication
+            - "师生交流"
+          evaluation: &top_pr_evaluation
+            - "检查评估"
+          financing: &top_pr_financing
+            - "资金审批"
+          publishing: &top_pr_publishing
+            - "成果出版"
+          course: &top_pr_course
+            - "校本课程"
+          community: &top_pr_community
+            - "学生社团"
+
+
+        pa:
+          one_child: &top_one_child_pa
+            - "独生子女"
+          family_structure: &top_family_structure
+            - "家庭结构"
+          books: &top_books
+            - "家庭藏书"
+          cars: &top_cars
+            - "家庭汽车"
+          oversea_trip: &top_oversea_trip
+            - "出境旅游"
+          father_edu:  &top_father_edu
+            - "父亲学历"
+          mother_edu: &top_mother_edu
+            - "母亲学历"
+          extra_homework: &top_extra_homework
+            - "是否家教补课"
+          extra_homework_hour: &top_extra_homework_hour
+            - "家教补课时间"
+          extra_homework_subject: &top_extra_homework_subject
+            - "家教补课科目"
+          extra_homework_reason: &top_extra_homework_reason
+            - "家教补课原因"
+          extra_homework_4hours_less: &top_extra_homework_4hours_less
+            - "补课4小时以下"
+          extra_homework_4hours_more: &top_extra_homework_4hours_more
+            - "补课4小时以上"
+          extra_interesting: &top_extra_interesting
+            - "是否参加兴趣班"
+          extra_interesting_hour: &top_extra_interesting_hour
+            - "兴趣班时间"
+          extra_intersting_subject: &top_extra_interesting_subject
+            - "兴趣班种类"
+          extra_intersting_reason: &top_extra_interesting_reason
+            - "兴趣班原因"
+          daily_sport_hour:  &top_daily_sport_hour
+            - "运动时间"
+          query_about_school: &top_query_about_school
+            - "主动询问"
+          family_discuss: &top_family_discuss
+            - "家庭讨论"
+          family_work: &top_family_work
+            - "家务劳动"
+          parent_accompany: &top_parent_accompany
+            - "家长陪伴"   
+          quarrel_frequency: &top_quarrel_frequency
+            - "吵架频率"
+          quarrel_level: &top_quarrel_level
+            - "吵架程度"
+          school_reasonable: &top_school_reasonable
+            - "理想学校"
+
+
+
+      variable: # column name
+        type: &var_type
+          polymer: &var_type_polymer
+            - "聚合"
+          derivative: &var_type_derivative
+            - "衍生"
+          constant: &var_type_constant
+            - "常量"
+          classify: &var_type_classify
+            - "分类"
+          school_statistics: &var_type_school_statistics
+            - "校级统计"
+          segment: &var_type_segment
+            - "分数段"
+
+        name: &var_name
+          subject: &var_name_subject
+            - *subject
+          total: &var_name_total
+            - "总体"
+
+          st:
+            survey_A: &var_st_survey_A
+              - "A卷"
+            sleep_enough: &var_sleep_enough
+              - *top_sleep_enough
+            sleep_not_enough_reason: &var_staa004_n # one for one with var_value_sleep_not_enough_reason
+              - "staa004_1"
+              - "staa004_2"
+              - "staa004_3"
+              - "staa004_4"
+              - "staa004_5"
+              - "staa004_6"
+            sleep_not_enough: &var_sleep_not_enough
+              - *top_sleep_not_enough
+            writing_homework: &var_writing_homework
+              - *top_writing_homework
+            learning_pressure: &var_learning_pressure
+              - *top_learning_pressure
+            learning_motivation: &var_learning_motivation
+              - *top_learning_motivation
+            school_identity: &var_school_identity
+              - *top_school_identity
+            learning_confidence: &var_learning_confidence
+              - *top_learning_confidence
+            morality: &var_morality
+              - *top_morality
+            psychological_health: &var_psychological_health
+              - *top_psychological_health
+
+            teacher_relationship: &var_teacher_relationship
+              - *top_teacher_relationship
+            teaching_method: &var_teaching_method
+              - *top_teaching_method
+          te:
+            course_leadership: &var_course_leadership
+              - *top_course_leadership
+          pa:
+            extra_homework: &var_extra_homework
+              - "参加家教补课"
+            extra_homework_subject: &var_extra_homework_subject
+              - "家教补习_未参加"
+              - "家教补习_语文"
+              - "家教补习_数学"
+              - "家教补习_英语"
+            extra_homework_reason: &var_extra_homework_reason
+              - "家教补习_升学需要"
+              - "家教补习_其他孩子上"
+              - "家教补习_成绩跟不上"
+              - "家教补习_想再提升"
+              - "家教补习_老师推荐"
+              - "家教补习_孩子感兴趣"
+            extra_interesting_hour: &var_extra_interesting
+              - "参加兴趣班"
+
+            extra_interesting_subject: &var_extra_interesting_subject
+              - "兴趣班_未参加"
+              - "兴趣班_器乐类"
+              - "兴趣班_舞蹈类"
+              - "兴趣班_歌唱类"
+              - "兴趣班_绘画类"
+              - "兴趣班_体育类"
+              - "兴趣班_信息类"
+              - "兴趣班_棋类"
+              - "兴趣班_其他类"
+            extra_interesting_reason: &var_extra_interesting_reason
+              - "兴趣班_升学需要"
+              - "兴趣班_其他孩子上"
+              - "兴趣班_孩子有特长"
+              - "兴趣班_我们想培养"
+              - "兴趣班_老师推荐上"
+              - "兴趣班_孩子感兴趣"
+            family: &var_family
+              - "家庭结构"
+            family_member: &var_family_member
+              - "家庭_父亲"
+              - "家庭_母亲"
+              - "家庭_祖父母"
+              - "家庭_兄弟姐妹"
+              - "家庭_其他"
+
+            school_reasonable: &var_school_reasonable
+              - "学校_理念"
+              - "学校_师资"
+              - "学校_设施"
+              - "学校_课程"
+              - "学校_生源"
+              - "学校_对口初中"
+              - "学校_住宿"
+              - "学校_离家近"
+              - "学校_负担轻"
+              
+
+          cn:
+            total_score: &total_score_cn
+              - "total_score"
+            total_score_segment: &total_score_segment_cn
+              - "total_score_segment"
+
+            total_score_level: &total_score_level_cn
+              - "total_level"
+          
+          ma:
+            total_score: &total_score_ma
+              - "total_score"
+            total_score_segment: &total_score_segment_ma
+              - "total_score_segment"
+
+            total_score_level: &total_score_level_ma
+              - "total_level"
+
+        value: &var_value
+          total: &var_value_total
+            - "总体"
+          st:
+            sleep_not_enough_reason: &var_value_sleep_not_enough_reason
+              - "我上床后很难入睡"
+              - "老师布置的作业偏多"
+              - "老师布置的作业偏难"
+              - "我父母额外给我增加了学习任务"
+              - "我自己给自己增加了额外的学习任务"
+              - "我家离学校比较远，要很早起床"
+            extra_homework_subject: &var_value_extra_homework_subject
+              - "未参加"
+              - "语文"
+              - "数学"
+              - "英语"
+          pa:
+            extra_homework_reason: &var_value_extra_homework_reason
+              - "升学需要"
+              - "其他孩子上，我们也上"
+              - "孩子 成绩跟不上，需要上"
+              - "孩子成绩比较好，想再提升"
+              - "学校老师推荐上"
+              - "孩子自己感兴趣"
+            extra_interesting_subject: &var_value_extra_interesting_subject
+              - "未参加"
+              - "器乐类"
+              - "舞蹈类"
+              - "歌唱类"
+              - "绘画类"
+              - "体育类"
+              - "信息类"
+              - "棋类"
+              - "其他类"
+            extra_interesting_reason: &var_value_extra_interesting_reason
+              - "升学需要"
+              - "其他孩子上，我们也上"
+              - "孩子有这方面的特长"
+              - "孩子这方面的特长不明显，我们想培养"
+              - "学校老师推荐上"
+              - "孩子自己感兴趣"
+            family_member: &var_value_family_member
+              - "孩子父亲"
+              - "孩子母亲"
+              - "孩子（外）祖父母"
+              - "孩子兄弟姐妹"
+              - "其他"
+            family_core: &var_value_family_core
+              - "核心家庭"
+            family_main: &var_value_family_main
+              - "主干家庭"
+            family_extend: &var_value_family_extend
+              - "扩大家庭"
+            school_reasonable: &var_value_school_reasonable
+              - "学校办理理念好"
+              - "师资力量比较强"
+              - "校园设施比较好"
+              - "有较多的特色课程"
+              - "学生来源比较好"
+              - "可以对口升到理想的初中"
+              - "可以安排住宿"
+              - "学校离家比较近"
+              - "学校负担比较轻"
+
+
+          score:
+            total_score_segment_default: &total_score_segment_default
+              - "0-200"
+            total_score_segment_value: &total_score_segment_value
+              - 
+                min: 200
+                max: 250
+                segment: "200-250"
+              - 
+                min: 250
+                max: 300
+                segment: "250-300"
+              - 
+                min: 300
+                max: 350
+                segment: "300-350"
+              - 
+                min: 350
+                max: 400
+                segment: "350-400"
+              - 
+                min: 400
+                max: 450
+                segment: "400-450"
+              - 
+                min: 450
+                max: 500
+                segment: "450-500"
+              - 
+                min: 500
+                max: 550
+                segment: "500-550"
+              - 
+                min: 550
+                max: 600
+                segment: "550-600"
+              - 
+                min: 600
+                max: 650
+                segment: "600-650"
+              - 
+                min: 650
+                max: 700
+                segment: "650-700"
+              - 
+                min: 700
+                max: 750
+                segment: "700-750"
+              - 
+                min: 750
+                max: 800
+                segment: "750-800"
+
+
       statistics: 
         percent: &stat_percent
-          - "百分比"
+          - "百分数"
+        percent_weight_count: &stat_percent_weight_count
+          - "加权百分比计数"
         mean: &stat_mean
           - "平均值"
         segment: &stat_segment
@@ -156,16 +888,245 @@ global:
           - "百分位"
         index: &stat_index
           - "指数"  
+        quantile_key: &stat_quantile_key
+          top: &stat_quantile_key_top
+            - "top"
+          upper: &stat_quantile_key_upper
+            - "upper"
+          median: &stat_quantile_key_median
+            - "median"
+          lower: &stat_quantile_key_lower
+            - "lower"
+          bottom: &stat_quantile_key_bottom
+            -  "bottom"
+        quntile_box: &stat_quantile_box
+          -
+            key: *stat_quantile_key_top
+            prob: 0.95
+            quant: "95%"
+          -
+            key: *stat_quantile_key_upper
+            prob: 0.75
+            quant: "75%"
+          -
+            key: *stat_quantile_key_median
+            prob: 0.5
+            quant: "50%"
+          - 
+            key: *stat_quantile_key_lower
+            prob: 0.25
+            quant: "25%"
+          -
+            key: *stat_quantile_key_bottom
+            prob: 0.05
+            quant: "5%"
+
+      index:
+        percent: &index_percent
+          - "百分数指数"
+
+        idx_confidence: &idx_confidence
+          - "自信心指数"
+        idx_pressure: &idx_pressure
+          - "压力指数"
+        idx_motivation: &idx_motivation
+          - "动机指数"
+        idx_school_identiy: &idx_school_identiy
+          - "认同度指数"
+        idx_sleep: &idx_sleep
+          - "睡眠指数"
+        idx_writing_homework: &idx_writing_homework
+          - "作业指数"
+        idx_morality: &idx_morality
+          - "品德行为指数"
+        idx_psychological: &idx_psychological
+          - "心理健康指数"
+        idx_teacher: &idx_teacher
+          - "师生关系指数"
+        idx_teaching: &idx_teaching
+          - "教学方式指数"
+
+        idx_course_leadership: &idx_course_leadership
+          - "课程领导力指数"
+
       key: 
+        score_mean: &key_score_mean
+          - "平均分"
+        survey_mean: &key_survey_mean
+          - "平均值"
+        percent: &key_percent
+          - "百分比"
+
       value: 
       weight: 
-        sample: &weight_sample
-          - "抽样加权"
-        individual: &weight_individual
-          - "个体同权"
-        school: &weight_school
-          - "学校同权"
+        algorithm:
+          sample: &w_algo_sample
+            - "抽样"
+          individual: &w_algo_individual
+            - "个体"
+          group: &w_algo_group
+            - "分组"
+        column:
+          individual: &w_col_individual
+            - "计数"
+          school: &w_col_school
+            - "学校加权"
 
 
-    
+    table: &table
+      cn: &table_cn
+        origin: &o_score_cn
+          - "语文成绩"
+        merge: &m_score_cn
+          - "语文成绩合并"
+        weight: &w_score_cn
+          - "语文成绩加权"
+        clean: &c_score_cn
+          - "语文成绩清洗"
+        variable: &v_score_cn
+          - "语文成绩变量"
+        statistics: &s_score_cn
+          - "语文成绩统计"
+        index: &i_score_cn
+          - "语文成绩指标"
+      ma: &table_ma
+        origin: &o_score_ma
+          - "数学成绩"
+        merge: &m_score_ma
+          - "数学成绩合并"
+        weight: &w_score_ma
+          - "数学成绩加权"
+        clean: &c_score_ma
+          - "数学成绩清洗"
+        variable: &v_score_ma
+          - "数学成绩变量"
+        statistics: &s_score_ma
+          - "数学成绩统计"
+        index: &i_score_ma
+          - "数学成绩指标"
+      score:
+        statistics: &s_score
+          - "成绩统计"
+        index: &i_score
+          - "成绩指标"
+      st: &table_st
+        origin: &o_survey_st
+          - "学生问卷调查"
+        merge: &m_survey_st
+          - "学生问卷合并"
+        weight: &w_survey_st
+          - "学生问卷加权"
+        clean: &c_survey_st
+          - "学生问卷清洗"
+        variable: &v_survey_st
+          - "学生问卷变量"
+        statistics: &s_survey_st
+          - "学生问卷统计"
+        index: &i_survey_st
+          - "学生问卷指标"
+      pa: &table_pa
+        origin: &o_survey_pa
+          - "家长问卷调查"
+        merge: &m_survey_pa
+          - "家长问卷合并"
+        weight: &w_survey_pa
+          - "家长问卷加权"
+        clean: &c_survey_pa
+          - "家长问卷清洗"
+        variable: &v_survey_pa
+          - "家长问卷变量"
+        statistics: &s_survey_pa
+          - "家长问卷统计"
+        index: &i_survey_pa
+          - "家长问卷指标"
+      te: &table_te
+        origin: &o_survey_te
+          - "教师问卷调查"
+        merge: &m_survey_te
+          - "教师问卷合并"
+        weight: &w_survey_te
+          - "教师问卷加权"
+        clean: &c_survey_te
+          - "教师问卷清洗"
+        variable: &v_survey_te
+          - "教师问卷变量"
+        statistics: &s_survey_te
+          - "教师问卷统计"
+        index: &i_survey_te
+          - "教师问卷指标"
+      pr: &table_pr
+        origin: &o_survey_pr
+          - "校长问卷调查"
+        merge: &m_survey_pr
+          - "校长问卷合并"
+        weight: &w_survey_pr
+          - "校长问卷加权"
+        clean: &c_survey_pr
+          - "校长问卷清洗"
+        variable: &v_survey_pr
+          - "校长问卷变量"
+        statistics: &s_survey_pr
+          - "校长问卷统计"
+        index: &i_survey_pr
+          - "校长问卷指标"
+      survey: 
+        statistics: &s_survey
+          - "问卷统计"
+        index: &i_survey
+          - "问卷指标"
+      final: &si_final
+        - "统计指标汇总" 
+      county: &table_county
+        - "区县"
+      school: &table_school
+        - "学校"
+      student: &table_student
+        - "学生"
+      student_set: &table_student_set
+        - "学生原始信息"
+
+    plot: &plot
+      dummy.fig: &plot_dummy_fig
+        -  "reports.jpg"
+      data:
+        digits: &plot_data_digits
+          - 0
+      size:
+        width: &plot_canvas_width
+          - 8
+        height: &plot_canvas_height
+          - 4
+        bar_width: &plot_bar_width
+          - 0.4
+      geom: &plot_geom
+        bar_dodging: &plot_bar_dodging
+          - "并列条形图"
+        bar_stacking: &plot_bar_stacking
+          - "堆叠条形图"
+        bar_filling: &plot_bar_filling
+          - "填充条形图"
+        
+        point: &plot_point
+          - "散点图"
+        box: &plot_box
+          - "盒须图"
+        radar: &plot_radar
+          - "雷达图"
+
+    clean: &clean
+      drop: &clean_drop
+        - "drop"
+      correct: &clean_correct
+        - "correct"
+      rename: &clean_rename
+        - "rename"
+
+    option:
+      T: &T
+        - TRUE
+      F: &F
+        - FALSE
+
+   
+
 

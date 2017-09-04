@@ -4,7 +4,7 @@ datasource:
   -
     format: "csv"
     table: "学生"
-    file: "2016年学生基本信息表.csv"
+    file: "2016年学生基本信息表20170903.csv"
     column:
       -
         name: "qxdm"
@@ -91,6 +91,25 @@ datasource:
         newname: "学校代码"
         type: "text"
   -
+    format: "xlsx"
+    table: "区县"
+    file: "区县信息.xlsx"
+    column:
+      -
+        name: "区县代码"
+        type: "text"
+  -
+    format: "xlsx"
+    table: "学校"
+    file: "抽样学校20170903.xlsx"
+    column:
+      -
+        name: "学校代码"
+        type: "text"       
+      -
+        name: "区县编码"
+        type: "text"       
+  -
     format: "csv"
     table: "学生原始信息"
     file: "2016 学生学籍库原始信息.csv"
@@ -106,24 +125,4 @@ datasource:
         type: "text"
       -
         name: "学校办别"
-        newname: "办学"
-  -
-    format: "xlsx"
-    table: "区县"
-    file: "区县信息.xlsx"
-    column:
-      -
-        name: "区县代码"
-        type: "text"
-  -
-    format: "xlsx"
-    table: "学校"
-    file: "抽样学校.xlsx"
-    column:
-      -
-        name: "学校代码"
-        type: "text"       
-      -
-        name: "区县编码"
-        type: "text"       
-        
+        newname: "办学"    

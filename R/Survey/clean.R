@@ -157,8 +157,6 @@ survey.weight <- function(surveys, dryrun){
 }
 
 
-
-
 # calculate variables of survey
 survey.variables <- function(stat, surveys, dryrun){
   #db.Connect()
