@@ -12,7 +12,7 @@ source(paste0(g.dir$R,"ETL/db.R"))
 merge.subject <-  function(subject){
   merges <- subject$merge
   n_merge <-  length(merges)
-  if(n_merge > 0){
+  if(n_merge > 0 && subject$process){
     for(i in 1:n_merge){
       merge <- merges[[i]]
       table.left <- merge$table.left

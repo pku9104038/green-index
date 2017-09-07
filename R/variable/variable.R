@@ -253,7 +253,7 @@ variable.subject <-  function(
     
     variables <- subject$variable$var
     n <- length(variables)
-    if(n>0){
+    if(n>0 && subject$process){
       for(i in 1:n){
         variable <- variables[[i]]
         algorithm <- variable$var.type

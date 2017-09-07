@@ -467,6 +467,9 @@ global:
             - "成绩等级"
           total_score_mean: &top_total_score_mean
             - "平均分"
+          passed_rate: &top_passed_rate
+            - "及格率"
+
 
         st:
           one_child: &top_one_child_st
@@ -660,8 +663,6 @@ global:
               - "staa004_6"
             sleep_not_enough: &var_sleep_not_enough
               - *top_sleep_not_enough
-            writing_homework: &var_writing_homework
-              - *top_writing_homework
             learning_pressure: &var_learning_pressure
               - *top_learning_pressure
             learning_motivation: &var_learning_motivation
@@ -737,6 +738,13 @@ global:
               - "学校_离家近"
               - "学校_负担轻"
               
+          score: 
+            total_passed: &total_passed
+              - "及格"
+            subject_average: &subject_average
+              - "学科平均"
+            high_level_thinking: &high_level_thinking
+              - "高层次思维"
 
           cn:
             total_score: &total_score_cn
@@ -924,6 +932,8 @@ global:
       index:
         percent: &index_percent
           - "百分数指数"
+        passed_rate: &index_passed_rate
+          - "达标指数"
 
         idx_confidence: &idx_confidence
           - "自信心指数"
@@ -948,6 +958,10 @@ global:
 
         idx_course_leadership: &idx_course_leadership
           - "课程领导力指数"
+
+        idx_passed_rate: &idx_passed_rate
+          - "成绩达标指数"
+
 
       key: 
         score_mean: &key_score_mean
@@ -1098,7 +1112,12 @@ global:
           - 4
         bar_width: &plot_bar_width
           - 0.4
+      legend_top: &plot_legend_top
+        position: "top"
+        direction: "horizontal"
       geom: &plot_geom
+        bar_segment: &plot_bar_segment
+          - "分数段条形图"
         bar_dodging: &plot_bar_dodging
           - "并列条形图"
         bar_stacking: &plot_bar_stacking
@@ -1112,6 +1131,30 @@ global:
           - "盒须图"
         radar: &plot_radar
           - "雷达图"
+      axis:
+        x:
+          province_acad_xin_gender_huji: 
+            order: &order_prov_acad_xin_gen_hu
+              - "总体"
+              - "小学"
+              - "一贯制"
+              - "市新优"
+              - "区新优"
+              - "男"
+              - "女"
+              - "沪籍"
+              - "非沪籍"
+            xlab: &xlab_prov_acad_xin_gen_hu
+              - "|         本市         |                 学制                 |           新优质学校           |                 性别                 |                 户籍                 |"
+          province_acad_xin_: 
+            order: &order_prov_acad_xin
+              - "总体"
+              - "小学"
+              - "一贯制"
+              - "市新优"
+              - "区新优"
+            xlab: &xlab_prov_acad_xin
+              - "|                 本市                   |                                学制                                  |                           新优质学校                            |"
 
     clean: &clean
       drop: &clean_drop
@@ -1127,6 +1170,6 @@ global:
       F: &F
         - FALSE
 
-   
+ 
 
 

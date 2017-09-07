@@ -507,7 +507,7 @@ statistics.subject <-  function(
   update = FALSE
 ){
   
-  if(!is.null(subject$statistics)){
+  if(!is.null(subject$statistics) && subject$process){
     table.in <- subject$statistics$table.in
     table.out <- subject$statistics$table.out
     timestamp()

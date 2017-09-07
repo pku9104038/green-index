@@ -78,7 +78,7 @@ clean.subject <-  function(
 
   cleans <- subject$clean$clean
   n_clean <- length(cleans)
-  if(n_clean>0){
+  if(n_clean>0 && subject$process){
     for(i in 1:n_clean){
       clean <- cleans[[i]]
       algorithm <- clean$proc

@@ -126,3 +126,8 @@ datasource:
       -
         name: "学校办别"
         newname: "办学"    
+
+  -
+    format: "csv"
+    table: "别名"
+    file: "别名.csv"

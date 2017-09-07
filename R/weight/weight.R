@@ -81,7 +81,7 @@ weight.subject <-  function(
   ){
   weights <- subject$weight
   n_weight <- length(weights)
-  if(n_weight>0){
+  if(n_weight>0 && subject$process){
     for(i in 1:n_weight){
       weight <- weights[[i]]
       algorithm <- weight$algorithm

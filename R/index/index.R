@@ -130,7 +130,7 @@ index.subject <-  function(
   algorithms,
   update = FALSE
 ){
-  if(!is.null(subject$index)){
+  if(!is.null(subject$index) && subject$process){
     table.in <- subject$index$table.in
     table.out <- subject$index$table.out
     timestamp()

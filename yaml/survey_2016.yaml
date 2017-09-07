@@ -467,6 +467,9 @@ global:
             - "成绩等级"
           total_score_mean: &top_total_score_mean
             - "平均分"
+          passed_rate: &top_passed_rate
+            - "及格率"
+
 
         st:
           one_child: &top_one_child_st
@@ -735,6 +738,13 @@ global:
               - "学校_离家近"
               - "学校_负担轻"
               
+          score: 
+            total_passed: &total_passed
+              - "及格"
+            subject_average: &subject_average
+              - "学科平均"
+            high_level_thinking: &high_level_thinking
+              - "高层次思维"
 
           cn:
             total_score: &total_score_cn
@@ -922,6 +932,8 @@ global:
       index:
         percent: &index_percent
           - "百分数指数"
+        passed_rate: &index_passed_rate
+          - "达标指数"
 
         idx_confidence: &idx_confidence
           - "自信心指数"
@@ -946,6 +958,10 @@ global:
 
         idx_course_leadership: &idx_course_leadership
           - "课程领导力指数"
+
+        idx_passed_rate: &idx_passed_rate
+          - "成绩达标指数"
+
 
       key: 
         score_mean: &key_score_mean
@@ -1096,7 +1112,12 @@ global:
           - 4
         bar_width: &plot_bar_width
           - 0.4
+      legend_top: &plot_legend_top
+        position: "top"
+        direction: "horizontal"
       geom: &plot_geom
+        bar_segment: &plot_bar_segment
+          - "分数段条形图"
         bar_dodging: &plot_bar_dodging
           - "并列条形图"
         bar_stacking: &plot_bar_stacking
@@ -1110,6 +1131,30 @@ global:
           - "盒须图"
         radar: &plot_radar
           - "雷达图"
+      axis:
+        x:
+          province_acad_xin_gender_huji: 
+            order: &order_prov_acad_xin_gen_hu
+              - "总体"
+              - "小学"
+              - "一贯制"
+              - "市新优"
+              - "区新优"
+              - "男"
+              - "女"
+              - "沪籍"
+              - "非沪籍"
+            xlab: &xlab_prov_acad_xin_gen_hu
+              - "|         本市         |                 学制                 |           新优质学校           |                 性别                 |                 户籍                 |"
+          province_acad_xin_: 
+            order: &order_prov_acad_xin
+              - "总体"
+              - "小学"
+              - "一贯制"
+              - "市新优"
+              - "区新优"
+            xlab: &xlab_prov_acad_xin
+              - "|                 本市                   |                                学制                                  |                           新优质学校                            |"
 
     clean: &clean
       drop: &clean_drop
@@ -1126,13 +1171,11 @@ global:
         - FALSE
 
    
-
-
- 
 # data and algorithm definition for surveys
 
 survey: 
   -
+    process: FALSE
     subject: *survey_st
     table: *table_st
 
@@ -2420,6 +2463,7 @@ survey:
                         - *T
 
   -
+    process: FALSE
     subject: *survey_te
     table: *table_te
 
@@ -2977,6 +3021,7 @@ survey:
                         - *T
 
   -
+    process: FALSE
     subject: *survey_pr
     table: *table_pr
 
@@ -3322,6 +3367,7 @@ survey:
                       variable: "se057" 
                      
   -
+    process: FALSE
     subject: *survey_pa
     table: *table_pa
 
@@ -3776,6 +3822,7 @@ survey:
                       variable: *var_school_reasonable
                                  
   -
+    process: TRUE
     subject: *subject_cn
     table: *table_cn
 
@@ -3869,6 +3916,21 @@ survey:
               var.name: *total_score_segment_cn
               var.default: *total_score_segment_default
               var.value: *total_score_segment_value
+        -
+          var.name: *total_passed
+          var.type: *var_type_polymer
+          var.column:
+            -
+              col.name:
+                - *total_score_level_cn
+              col.value:
+                - "A"
+                - "B"
+                - "C"
+          var.threshold: 0
+          var.option:
+            T: *T
+            F: *F
 
     statistics:
       table.in: *v_score_cn
@@ -3922,9 +3984,45 @@ survey:
                     -
                       name: *top_total_score_level
                       variable: *total_score_level_cn
+                    -
+                      name: *top_passed_rate
+                      variable: *total_passed
+                      option:        
+                        - *T
 
+    index:
+      table.in: *s_score_cn
+      table.out: *i_score_cn
+
+      assesment: *def_assesment
+      grade: *def_grade
+      tier: *tier_topic
+      perspective: *perspective_student_score
+
+      stat:
+        -
+          statistics: 
+            - *index_passed_rate
+
+          domain:
+
+            - 
+              name: *dim_cn_score
+
+              dimention:
+                -
+                  name: *dim_cn_level
+
+                  topic:
+                    -
+                      index: *idx_passed_rate
+                      name: *top_passing_rate
+                      stat: *stat_percent
+                      key:
+                        - *T
 
   -
+    process: TRUE
     subject: *subject_ma
     table: *table_ma
 
@@ -4019,6 +4117,21 @@ survey:
               var.name: *total_score_segment_ma
               var.default: *total_score_segment_default
               var.value: *total_score_segment_value
+        -
+          var.name: *total_passing
+          var.type: *var_type_polymer
+          var.column:
+            -
+              col.name:
+                - *total_score_level_ma
+              col.value:
+                - "A"
+                - "B"
+                - "C"
+          var.threshold: 0
+          var.option:
+            T: *T
+            F: *F
 
     statistics:
       table.in: *v_score_ma
@@ -4075,6 +4188,7 @@ survey:
 
 
   -
+    process: FALSE
     subject: "学生原始信息"
 
     clean:
@@ -4108,6 +4222,7 @@ survey:
 
 score: 
 
+  process: FALSE
   bind:
     table.in:
       - *s_score_cn
@@ -4148,9 +4263,11 @@ score:
             col.value: *subject_all
           -
             col.name: *variable
-            col.value: "学科成绩"
+            col.value: "学科平均"
 
 index: 
+
+  process: FALSE
 
   bind:
     table.in:
@@ -4182,7 +4299,7 @@ report:
   report:
     
     -
-      process: FALSE
+      process: TRUE
       #table: "统计指标汇总20170826"
       markdown: "province_base.Rmd"
 
@@ -4235,8 +4352,7 @@ report:
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
-            geom: *plot_bar_dodging  
-            position: "dodge" 
+            geom: *plot_bar_segment  
             text:
               vjust: 0.5
             bar:
@@ -4280,8 +4396,9 @@ report:
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
-            geom: *plot_bar_dodging  
-            position: "dodge" 
+            geom: *plot_bar_segment  
+            text:
+              vjust: 0.5
             bar:
               width: *plot_bar_width
 
@@ -4320,6 +4437,7 @@ report:
               - 
                 arg: "Group"
                 var: *subject
+
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
@@ -4328,9 +4446,8 @@ report:
               variable: *subject
               scales: "fixed"
               position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+
+            legend: *plot_legend_top
             bar:
               width: 0.3
             label:
@@ -4376,9 +4493,7 @@ report:
               variable: *subject
               scales: "fixed"
               position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: 0.3
             label:
@@ -4424,9 +4539,7 @@ report:
               variable: *subject
               scales: "fixed"
               position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: 0.3
             label:
@@ -4482,9 +4595,7 @@ report:
               variable: *subject
               scales: "fixed"
               position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: 0.3
             label:
@@ -4530,9 +4641,7 @@ report:
               variable: *subject
               scales: "fixed"
               position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: 0.3
             label:
@@ -4574,9 +4683,7 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: 0.6
             label:
@@ -4632,9 +4739,7 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_box
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: 0.3
             label:
@@ -4676,9 +4781,7 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: 0.6
             label:
@@ -4734,9 +4837,7 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_box
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: 0.3
             label:
@@ -4827,24 +4928,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin_gen_hu
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: 0.3
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin_gen_hu
               ylab: "百分数（%）"
 
         book.bar: 
@@ -4930,24 +5027,31 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+              
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin_gen_hu
+              -
+                var: "fill"
+                list:
+                  - "20本以下"
+                  - "21-50本之间"
+                  - "51-100本之间"
+                  - "101-200本之间"
+                  - "200本以上"
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
             legend: 
-              position: "right"
-              direction: "vertical"
+              position: "top"
+              direction: "horizontal"
             bar:
               width: 0.3
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin_gen_hu
+              #"|    本市    |            学制              |       新优质学校        |             性别            |            户籍             |"
               ylab: "百分数（%）"
 
         car.bar: 
@@ -5033,24 +5137,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin_gen_hu
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: 0.3
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin_gen_hu
               ylab: "百分数（%）"
 
         trip.bar: 
@@ -5136,24 +5236,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin_gen_hu  
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: 0.3
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin_gen_hu
               ylab: "百分数（%）"
 
         father_edu.bar: 
@@ -5239,24 +5335,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin_gen_hu  
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: 0.3
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin_gen_hu
               ylab: "百分数（%）"
 
         mother_edu.bar: 
@@ -5342,24 +5434,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin_gen_hu
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: 0.3
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin_gen_hu
               ylab: "百分数（%）"
 
         sleep.bar: 
@@ -5445,24 +5533,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin_gen_hu
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: 0.3
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin_gen_hu
               ylab: "百分数（%）"
 
         sleep_weekend.bar: 
@@ -5548,24 +5632,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin_gen_hu
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: 0.3
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin_gen_hu
               ylab: "百分数（%）"
 
         sleep_enough.bar: 
@@ -5651,24 +5731,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin_gen_hu
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: 0.3
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin_gen_hu
               ylab: "百分数（%）"
 
         sleep_not_enough.bar: 
@@ -5689,62 +5765,10 @@ report:
                 - 
                   variable: *topic
                   value: *top_sleep_not_enough
-              -
-                -
-                  variable: *subject
-                  value: *survey_st
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_academicsystem
-                - 
-                  variable: *topic
-                  value: *top_sleep_not_enough
-              -
-                -
-                  variable: *subject
-                  value: *survey_st
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_xinyouzhi
-                - 
-                  variable: *topic
-                  value: *top_sleep_not_enough
-              -
-                -
-                  variable: *subject
-                  value: *survey_st
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_gender
-                - 
-                  variable: *topic
-                  value: *top_sleep_not_enough
-              -
-                -
-                  variable: *subject
-                  value: *survey_st
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_huji
-                - 
-                  variable: *topic
-                  value: *top_sleep_not_enough
             aes:
               - 
                 arg: "x"
-                var: *sample
+                var: *key
               -  
                 arg: "y"
                 var: *value
@@ -5754,22 +5778,16 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
-            geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            geom: *plot_bar_dodging
+            position: "dodge" 
+            coord: "flip"
+            text:
+              vjust: 0.5
             bar:
-              width: 0.3
+              width: 0.8
             label:
               xlab: ""
               ylab: "百分数（%）"
@@ -5857,24 +5875,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin_gen_hu
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin_gen_hu
               ylab: "百分数（%）"
 
         writing_homework_difficulty.bar: 
@@ -5960,24 +5974,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin_gen_hu
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin_gen_hu
               ylab: "百分数（%）"
 
         extra_homework_subject.bar: 
@@ -6063,25 +6073,21 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin_gen_hu
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_dodging
             position: "dodge" 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: 0.8
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin_gen_hu
               ylab: "百分数（%）"
 
         extra_homework_hour.bar: 
@@ -6167,24 +6173,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin_gen_hu
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: 0.3
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin_gen_hu
               ylab: "百分数（%）"
 
         extra_homework_reason.bar: 
@@ -6360,24 +6362,21 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin_gen_hu
+              
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: 0.4
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin_gen_hu
               ylab: "百分数（%）"
 
         extra_interesting_reason.bar: 
@@ -6493,24 +6492,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin
               ylab: "百分数（%）"
 
         year_reading.bar: 
@@ -6596,24 +6591,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin_gen_hu
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin_gen_hu
               ylab: "百分数（%）"
 
         daily_sport_hour.bar: 
@@ -6699,24 +6690,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin_gen_hu
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin_gen_hu
               ylab: "百分数（%）"
 
         teacher_fair.bar: 
@@ -6753,9 +6740,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -6796,9 +6781,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -6839,9 +6822,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -6882,9 +6863,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -6925,9 +6904,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -6968,9 +6945,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -7011,9 +6986,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -7054,9 +7027,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -7097,9 +7068,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -7140,9 +7109,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -7183,9 +7150,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -7226,9 +7191,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -7269,9 +7232,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -7312,9 +7273,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -7355,9 +7314,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -7398,9 +7355,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -7441,9 +7396,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -8213,24 +8166,21 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin
+              
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin
               ylab: "百分数（%）"
 
         teacher_years.bar: 
@@ -8291,24 +8241,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin
               ylab: "百分数（%）"
 
         teacher_title.bar: 
@@ -8369,24 +8315,21 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin
+              
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin
               ylab: "百分数（%）"
 
         teacher_all_title.bar: 
@@ -8447,24 +8390,21 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin
+              
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin
               ylab: "百分数（%）"
 
         teacher_edu.bar: 
@@ -8525,24 +8465,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin
               ylab: "百分数（%）"
 
         teacher_all_edu.bar: 
@@ -8603,24 +8539,21 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin
+              
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin
               ylab: "百分数（%）"
 
         teacher_normal_edu.bar: 
@@ -8681,24 +8614,21 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin
+              
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin
               ylab: "百分数（%）"
 
         teacher_major_match.bar: 
@@ -8759,24 +8689,21 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin
+              
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin
               ylab: "百分数（%）"
 
         teacher_weekly_hours.bar: 
@@ -8837,24 +8764,21 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin
+              
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin
               ylab: "百分数（%）"
 
         teacher_daily_hours.bar: 
@@ -8915,24 +8839,21 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin
+              
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin
               ylab: "百分数（%）"
 
         teacher_job_favorite.bar: 
@@ -8993,24 +8914,21 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin
+              
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin
               ylab: "百分数（%）"
 
         teacher_job_quit.bar: 
@@ -9071,24 +8989,21 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin
+              
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin
               ylab: "百分数（%）"
 
         teacher_feelings.bar: 
@@ -9128,9 +9043,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -9174,9 +9087,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -9220,9 +9131,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -9266,9 +9175,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -9312,9 +9219,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -9358,9 +9263,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -9404,9 +9307,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -9450,9 +9351,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -9496,9 +9395,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -9542,9 +9439,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -9610,24 +9505,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin
               ylab: "百分数（%）"
 
         principal_age.bar: 
@@ -9688,24 +9579,21 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin
+              
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin
               ylab: "百分数（%）"
 
         principal_years.bar: 
@@ -9766,24 +9654,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin
               ylab: "百分数（%）"
 
         principal_edu.bar: 
@@ -9844,24 +9728,21 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin
+              
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin
               ylab: "百分数（%）"
 
         principal_title.bar: 
@@ -9922,24 +9803,21 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin
+              
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin
               ylab: "百分数（%）"
 
         principal_school_history.bar: 
@@ -10000,24 +9878,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin
               ylab: "百分数（%）"
 
         principal_meeting.bar: 
@@ -10078,24 +9952,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            #legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin
               ylab: "百分数（%）"
 
         principal_instructing.bar: 
@@ -10156,24 +10026,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            #legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin
               ylab: "百分数（%）"
 
         principal_researching.bar: 
@@ -10234,24 +10100,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            #legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin
               ylab: "百分数（%）"
 
         principal_communication.bar: 
@@ -10312,24 +10174,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            #legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin
               ylab: "百分数（%）"
 
         principal_evaluation.bar: 
@@ -10390,24 +10248,21 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin
+              
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            #legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin
               ylab: "百分数（%）"
 
         principal_financing.bar: 
@@ -10468,24 +10323,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            #legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin
               ylab: "百分数（%）"
    
         principal_challenge.bar: 
@@ -10525,9 +10376,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -10592,24 +10441,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin
               ylab: "百分数（%）"
 
         principal_course.bar: 
@@ -10670,24 +10515,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin
               ylab: "百分数（%）"
 
         principal_community.bar: 
@@ -10748,24 +10589,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin_gen_hu
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin
               ylab: "百分数（%）"
    
         principal_feelings.bar: 
@@ -10805,9 +10642,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -10851,9 +10686,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -10944,24 +10777,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin_gen_hu 
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: 0.3
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin_gen_hu
               ylab: "百分数（%）"
 
         query_about_school.bar: 
@@ -11047,24 +10876,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin_gen_hu  
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: 0.3
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin_gen_hu
               ylab: "百分数（%）"
 
         family_discuss.bar: 
@@ -11150,24 +10975,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin_gen_hu
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: 0.3
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin_gen_hu
               ylab: "百分数（%）"
 
         family_work.bar: 
@@ -11253,24 +11074,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin_gen_hu
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: 0.3
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin_gen_hu
               ylab: "百分数（%）"
 
         parent_accompany.bar: 
@@ -11356,24 +11173,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin_gen_hu
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: 0.3
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin_gen_hu
               ylab: "百分数（%）"
 
         quarrel_frequency.bar: 
@@ -11459,24 +11272,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin_gen_hu
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: 0.3
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin_gen_hu
               ylab: "百分数（%）"
 
         quarrel_level.bar: 
@@ -11562,24 +11371,19 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin_gen_hu
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: 0.3
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin_gen_hu
               ylab: "百分数（%）"
   
         family_coach.bar: 
@@ -11622,9 +11426,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -11714,24 +11516,20 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin_gen_hu
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: 0.3
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin_gen_hu
               ylab: "百分数（%）"
  
         parent_feeling.bar: 
@@ -11774,9 +11572,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
@@ -11866,24 +11662,21 @@ report:
               -  
                 arg: "label"
                 var: *value
-              - 
-                arg: "Group"
-                var: *perspective
+            order: 
+              -
+                var: "x"
+                list: *order_prov_acad_xin_gen_hu
+              
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            group:
-              variable: *subject
-              scales: "free_x"
-              position: "bottom"
-            legend: 
-              position: "right"
-              direction: "vertical"
+            
+            legend: *plot_legend_top
             bar:
               width: 0.3
             label:
-              xlab: ""
+              xlab: *xlab_prov_acad_xin_gen_hu
               ylab: "百分数（%）"
    
         parent_philosophy.bar: 
@@ -11923,9 +11716,7 @@ report:
             coord: "flip"
             text:
               vjust: 0.5
-            legend: 
-              position: "right"
-              direction: "vertical"
+            legend: *plot_legend_top
             bar:
               width: *plot_bar_width
             label:
