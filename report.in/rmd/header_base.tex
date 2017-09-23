@@ -1,0 +1,152 @@
+
+\usepackage{xeCJK} 
+\setCJKmainfont[BoldFont={Heiti SC},ItalicFont={Kaiti SC},BoldItalicFont={Songti SC}]{STFangsong}
+\setCJKsansfont{Songti SC}
+\setCJKmonofont{Yuanti SC}
+\setmainfont{Times New Roman}
+
+\usepackage{fancyhdr}
+\usepackage{ragged2e}
+\usepackage{indentfirst}
+\usepackage{float}
+\geometry{a4paper}
+
+\usepackage{tocloft}
+\renewcommand\cftchapfont{\large\bfseries}
+\renewcommand\cftchappagefont{\large\bfseries}
+
+\usepackage{mytitlesec}
+\titleformat{\chapter}{\centering\Huge\bfseries}{第\,\thechapter\,章}{1em}{}
+
+
+\makeatletter
+
+\renewcommand\section{\@startsection {section}{2}{\z@}{-.5ex \@plus -.2ex \@minus -.2ex}{.5ex \@plus.2ex \@minus .2ex}{\normalfont\Large\bfseries}}
+
+\renewcommand\subsection{\@startsection {subsection}{3}{\z@}{-.4ex \@plus -.1ex \@minus -.1ex}{.4ex \@plus.1ex \@minus .1ex}{\normalfont\large}}
+
+\renewcommand\subsubsection{\@startsection {subsubsection}{4}{\z@}{-.3ex \@plus -.1ex \@minus -.1ex}{.3ex \@plus.1ex \@minus .1ex}{\normalfont\large}}
+
+\renewcommand\paragraph{\@startsection {paragraph}{5}{\z@}{-.2ex \@plus -.1ex \@minus -.1ex}{.2ex \@plus.1ex \@minus .1ex}{\normalfont\large}}
+
+\renewcommand\subparagraph{\@startsection {subparagraph}{6}{\z@}{-.1ex \@plus -1ex \@minus -.1ex}{.1ex \@plus.1ex \@minus .1ex}{\normalfont\large}}
+
+
+%\newcommand\prefix@chapter{第 \thechapter 章 }
+
+\makeatother
+
+\renewcommand*\contentsname{目~录}
+
+\usepackage{makecell,multirow,diagbox}
+
+\usepackage{longtable}
+\usepackage{lipsum} % just for dummy text- not needed for a longtable
+%\usepackage{booktabs}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\tablename}{表}
+
+
+\renewcommand{\figurename}{图}
+
+
+\usepackage{pdflscape}
+\makeatletter
+\global\let\orig@begin@landscape=\landscape%
+\global\let\orig@end@landscape=\endlandscape%
+\gdef\@true{1}
+\gdef\@false{0}
+\gdef\landscape{%
+    \global\let\within@landscape=\@true%
+    \orig@begin@landscape%
+}%
+\gdef\endlandscape{%
+    \orig@end@landscape%
+    \global\let\within@landscape=\@false%
+}%
+\@ifpackageloaded{pdflscape}{%
+    \gdef\pdf@landscape@rotate{\PLS@Rotate}%
+}{
+    \gdef\pdf@landscape@rotate#1{}%
+}
+\let\latex@outputpage\@outputpage
+\def\@outputpage{
+    \ifx\within@landscape\@true%
+        \if@twoside%
+            \ifodd\c@page%
+                \gdef\LS@rot{\setbox\@outputbox\vbox{%
+                    \pdf@landscape@rotate{-90}%
+                    \hbox{\rotatebox{90}{\hbox{\rotatebox{180}{\box\@outputbox}}}}}%
+                }%
+            \else%
+                \gdef\LS@rot{\setbox\@outputbox\vbox{%
+                    \pdf@landscape@rotate{+90}%
+                    \hbox{\rotatebox{90}{\hbox{\rotatebox{0}{\box\@outputbox}}}}}%
+                }%
+            \fi%
+        \else%
+            \gdef\LS@rot{\setbox\@outputbox\vbox{%
+                \pdf@landscape@rotate{+90}%
+                \hbox{\rotatebox{90}{\hbox{\rotatebox{0}{\box\@outputbox}}}}}%
+            }%
+        \fi%
+    \fi%
+    \latex@outputpage%
+}
+\makeatother
+
+
+
+\numberwithin{figure}{chapter}
+\renewcommand{\thefigure}{\arabic{chapter}-\arabic{figure}}
+
+\numberwithin{table}{chapter}
+\renewcommand{\thetable}{\arabic{chapter}-\arabic{table}}
+
+
+\newcommand{\mytitle}[1]{
+    \begin{center}\fontsize{26pt}{39pt}\selectfont#1\end{center} 
+}
+
+\newcommand{\mysubtitle}[1]{
+    \begin{center}\fontsize{18pt}{27pt}\selectfont\textbf{\textit{#1}}\end{center} 
+}
+
+\newcommand{\myproducer}[1]{
+    \begin{center}\fontsize{14pt}{21pt}\selectfont\textbf{#1}\end{center} 
+}
+
+\newcommand{\mycopyright}[1]{
+    \begin{center}\begin{bf}\fontsize{10.5pt}{18pt}\selectfont#1\end{bf}\end{center} 
+}
+
+\newcommand{\myprefacetitle}[1]{
+    \begin{center}\begin{bf}\fontsize{24pt}{36pt}\selectfont#1\end{bf}\end{center} 
+}
+
+\newcommand{\myprefacetext}{
+    \raggedright\fontsize{13.75pt}{20pt}\selectfont\setlength{\parindent}{2em}
+    \setlength{\parskip}{1ex} 
+}
+
+\newcommand{\mytext}{
+    \raggedright\small\setlength{\parindent}{2em}
+    \setlength{\parskip}{1ex} 
+}
+
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{0pt}
+
+%\usepackage{caption2} 
+%\renewcommand{\captionfont}{\textit \large } 
+%\renewcommand{\captionlabelfont}{\emph \large \centering} 
+
+\usepackage[font=large]{caption}
+\captionsetup[figure]{labelfont=bf,textfont=it,labelsep=space}
+\captionsetup[table]{labelfont=bf,textfont=bf,singlelinecheck=off,justification=raggedright,labelsep=space}
+
+\usepackage{tabularx}
+
+\usepackage[bottom]{footmisc}
+
+\raggedbottom

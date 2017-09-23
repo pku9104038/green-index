@@ -21,9 +21,24 @@ subjects <- yaml.load_file(paste0(g.dir$yaml,g.yaml$survey))$survey
 n_subject <- mini.loop(g.test$loop.limit,length(subjects))
 for(i in 1:n_subject){
   subject <-  subjects[[i]]
-  print(subject$subject)
-  index.subject(subject = subject, algorithms = algorithm )
+  if(subject$process){
+    print(subject$subject)
+    index.subject(subject = subject, algorithms = algorithm )
+  }
+
 }
+
+subjects <- yaml.load_file(paste0(g.dir$yaml,g.yaml$survey))$score
+n_subject <- mini.loop(g.test$loop.limit,length(subjects))
+for(i in 1:n_subject){
+  subject <-  subjects[[i]]
+  if(subject$process){
+    print(subject$subject)
+    index.subject(subject = subject, algorithms = algorithm )
+  }
+  
+}
+
 
 bind <- yaml.load_file(paste0(g.dir$yaml,g.yaml$survey))$index$bind
 score.bind(bind)

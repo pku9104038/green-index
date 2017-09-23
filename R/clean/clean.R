@@ -79,16 +79,22 @@ clean.subject <-  function(
   cleans <- subject$clean$clean
   n_clean <- length(cleans)
   if(n_clean>0 && subject$process){
+    
     for(i in 1:n_clean){
+      
       clean <- cleans[[i]]
       algorithm <- clean$proc
+      
       if(algorithm == algorithms$drop){
+        
         data <- clean.drop(data, clean)
       }
       else if(algorithm == algorithms$rename){
+        
         data <- clean.rename(data, clean)
       }
       else if(algorithm == algorithms$correct){
+        
         data <- clean.correct(data, clean)
       }
       

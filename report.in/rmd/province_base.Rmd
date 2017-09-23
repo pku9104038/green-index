@@ -1,13 +1,13 @@
 ---
 documentclass: book
-fontsize: 12pt
+fontsize: 10pt
 geometry: margin=1in
 output:
   pdf_document:
     fig_caption: yes
     template: pdf_template.tex
     includes:
-      in_header: header_book.tex
+      in_header: header_base.tex
     latex_engine: xelatex
     number_sections: yes
     keep_tex: no
@@ -25,48 +25,36 @@ params:
 \pagenumbering{gobble}
 &nbsp;
 
-
 \vspace{40mm}
+\mytitle{`r report$year``r report$scope``r report$project`}
+\mytitle{`r report$report`}
+\mysubtitle{`r report$subject`}
 
+\vfill
+\myproducer{`r report$producer`}
+\myproducer{`r report$producer1`}
+\myproducer{`r report$date`}
 
-\centering\Huge
-`r paste0(report$year,report$scope)`
-`r report$project`
-
-
-`r report$report`
-
-\vfill\large
-\textbf{上海市教育委员会教学研究室}
-
-\textbf{上海市教育委员会基础教育质量监测中心}
-
-\textbf{二〇一七年五月}
-
-\vspace{10mm}
-\normalsize\textbf{版权声明：本报告版权属于上海市教育委员会教学研究室，未得到上海市教育委员会教学研究室同意，不得使用或公开报告的任何内容}
+\vspace{8mm}
+\mycopyright{`r report$copyright`}
 
 \clearpage
 
 <!-- end of cover page -->
 
-<!-- interface -->
-
 \pagenumbering{arabic}
-
 \pagestyle{fancy}\fancyhf{}
 \fancyhead[LE,RO]{\footnotesize `r report$header`}
 \fancyfoot[C]{\footnotesize \thepage}
 
-\centering\LARGE\textbf{前}&nbsp;&nbsp;\textbf{言}
-\vspace{10mm}
-\raggedright\large\setlength{\parindent}{2em}
+<!-- interface -->
 
-教育质量是衡量一个国家、地区基础教育发展水平最重要的指标，学生学业质量是教育质量的重要组成部分。以学生学业质量的评价为切入口，全面关注学生的健康成长，引导建立正确的质量观，建立教育质量的保障体系，对于促进基础教育的均衡发展，实现教育公平有着重大作用。
+\myprefacetitle{前~言}
+\myprefacetext
 
-教育质量的形成涉及诸多关键环节，除外部的支持保障条件外，提升质量首先应关注教学过程。但是，长期存在的以片面追求升学率为导向的教学、考试，偏离了课程改革的方向和课程标准的基本要求，考试命题过多依赖个人经验，缺乏对教育测量学的深入研究；考试结果用于排名、甄别和选拔，加剧了竞争。在此压力下，中小学生很难有发自内心的求知欲，很难有对学校的归属感。过重的学习压力，不仅使学生的睡眠时间得不到保证，近视率不断增长，而且导致学生产生焦虑，严重地影响体质健康。正如欧盟《学生学业成绩分析报告》中所指出的“尽管较强的竞争性可能会在学习成绩上带来收益，但在学生的动机和心理健康方面却会付出代价。这些代价从长远来看会有一些不可预见的负面影响，如对学生的终身学习”。
+教育质量是衡量一个国家、地区基础教育发展水平最重要的指标，学生学业质量是教育质量的重要组成部分。以学生学业质量的评价为切入口，全面关注学生的健康成长，引导建立正确的质量观，建立教育质量的保障体系，对于促进基础教育的均衡发展，实现教育公平有着重大作用。教育质量的形成涉及诸多关键环节，除外部的支持保障条件外，提升质量首先应关注教学过程。但是，长期存在的以片面追求升学率为导向的教学、考试，偏离了课程改革的方向和课程标准的基本要求，考试命题过多依赖个人经验，缺乏对教育测量学的深入研究；考试结果用于排名、甄别和选拔，加剧了竞争。在此压力下，中小学生很难有发自内心的求知欲，很难有对学校的归属感。过重的学习压力，不仅使学生的睡眠时间得不到保证，近视率不断增长，而且导致学生产生焦虑，严重地影响体质健康。正如欧盟《学生学业成绩分析报告》中所指出的“尽管较强的竞争性可能会在学习成绩上带来收益，但在学生的动机和心理健康方面却会付出代价。这些代价从长远来看会有一些不可预见的负面影响，如对学生的终身学习”。
 
-2010年，上海市教育委员会承担了国家教育体制改革试点项目《改革义务教育教学质量综合评价办法》。2011年，上海市教育委员会在与教育部基础教育课程教材发展中心进行前期合作的基础上，共同研究、提炼出了一系列影响学生学业质量的关键因素，如学习动力、师生关系、学习负担等，构建了以关注学生健康成长为核心价值追求的上海市中小学学业质量绿色指标。“绿色指标”分为学生学业水平指数、学生学习动力指数、学生学业负担指数、师生关系指数、教师教学方式指数、校长课程领导力指数、学生社会经济背景与学业成绩相关指数、学生品德行为指数、学生体质健康指数、跨年度进步指数等。2011年、2012年，依据“绿色指标”，上海组织了两轮学业质量综合评价，产生了积极广泛的影响，成为上海基础教育转型发展的一个亮点，并被教育部向全国推广。2014年，上海的“绿色指标”综合评价工作进入了全面自主化的新阶段，建立了从测试框架研制、测试工具研发、测试组织、网络评卷、数据处理、报告生成、分析反馈等一系列评价工作的程序和制度，保证了整个评价工作的顺利进行。2015年，上海的“绿色指标”综合评价在原有的评价指标框架下又增加调查了教师的工作感受及家长对学校教育感受情况。此外，在评价指标的精准度上又做了细化研究，如将学业负担指数中的校外补课细分为“文化课补课”与“兴趣班”两种情形，增强问题的指向性。学业质量的“绿色指标”，并不是全面衡量教育质量的完整指标体系，而是针对当前时弊提出的，直接指向学生健康成长的关键因素，该指标在使用过程中将不断地得到发展和完善。“绿色指标”体系的推行将为各级教育行政部门、教研部门和学校了解学生学业质量的基本状况和重要影响因素，提供实证的依据；为教育决策提供重要参考；为提升学生学业质量提供诊断和改进建议；从而引导全社会树立正确的质量观，促进学生的健康成长。
+2010年，上海市教育委员会承担了国家教育体制改革试点项目《改革义务教育教学质量综合评价办法》。2011年，上海市教育委员会在与教育部基础教育课程教材发展中心进行前期合作的基础上，共同研究、提炼出了一系列影响学生学业质量的关键因素，如学习动力、师生关系、学习负担等，构建了以关注学生健康成长为核心价值追求的上海市中小学学业质量绿色指标（以下简称“绿色指标”）。“绿色指标”分为学生学业水平指数、学生学习动力指数、学生学业负担指数、师生关系指数、教师教学方式指数、校长课程领导力指数、学生社会经济背景与学业成绩相关指数、学生品德行为指数、学生体质健康指数、跨年度进步指数等。2011年、2012年，依据“绿色指标”，上海组织了两轮学业质量综合评价，产生了积极广泛的影响，成为上海基础教育转型发展的一个亮点，并被教育部向全国推广。2014年，上海的“绿色指标”综合评价工作进入了全面自主化的新阶段，建立了“指标确立—工具研发—数据分析—报告撰写—反馈改进”的评价操作路径；形成了“检测依靠技术、结论源自证据、分析产生转变”教学实证研究模式。“绿色指标”综合评价改革是一个不断完善的行动改进实践过程，近年来，上海各区、校通过评价指标解读、综合评价实施、评价报告发布、基于评价结果进行教育教学改进等工作，同时，也进一步探索和完善了“绿色指标”综合评价。2017年7月，在吸收和总结多年来“绿色指标”评价实践经验和理论研究成果的基础上，上海市教委教研室正在探索与修订“绿色指标”2.0版本，旨在通过更加合事实、合逻辑、合规范、合目的评价将基于评价结果的改进落实到学校、学生、教师行为改进上，推进“为了评价的教学”走向“为了教学的评价”。学业质量的“绿色指标”，并不是全面衡量教育质量的完整指标体系，而是针对当前时弊提出的，直接指向学生健康成长的关键因素，该指标在使用过程中将不断地得到发展和完善。“绿色指标”体系的推行将为各级教育行政部门、教研部门和学校了解学生学业质量的基本状况和重要影响因素，提供实证的依据；为教育决策提供重要参考；为提升学生学业质量提供诊断和改进建议；从而引导全社会树立正确的质量观，促进学生的健康成长！
 
 \clearpage
 
@@ -74,7 +62,7 @@ params:
 
 <!-- table of cntents -->
 
-\centering\normalsize\setcounter{tocdepth}{3}\tableofcontents 
+\centering\normalsize\setcounter{tocdepth}{2}\tableofcontents 
 \raggedright\large\setlength{\parindent}{2em}
 \clearpage
 
@@ -85,7 +73,7 @@ params:
 # 学业质量绿色指标测试的实施概况
 
 
-根据本市中小学教育质量综合评价改革的要求，上海市教育委员会组织成立了上海市中小学学业质量绿色指标综合评价项目组（以下简称“项目组”），按照《上海市教育委员会关于做好2016年度上海市中小学学业质量绿色指标综合评价工作的通知》(沪教委基[2016]69号)的文件要求，组织了2016年度初小学生学业质量绿色指标测试，测试对象为在上海市普通中小学校就读的四年级学生，采用学科测试和问卷调查收集数据。项目组在评价队伍的建设、测试工具的研发、考务的组织与实施、评分标准的研制和阅卷、学业水平标准设定等方面开展了相关工作，以下是项目实施的概况。
+根据本市中小学教育质量综合评价改革的要求，上海市教育委员会组织成立了上海市中小学学业质量绿色指标综合评价项目组（以下简称“项目组”），按照《上海市教育委员会关于做好2016年度上海市中小学学业质量绿色指标综合评价工作的通知》(沪教委基[2016]61号)的文件要求，组织了2016年度小学学业质量绿色指标测试，测试对象为在上海市普通中小学校就读的四年级学生，采用学科测试和问卷调查收集数据。项目组在评价队伍的建设、测试工具的研发、考务的组织与实施、评分标准的研制和阅卷、学业水平标准设定等方面开展了相关工作，以下是项目实施的概况。
 
 
 ## 测试概况
@@ -94,50 +82,53 @@ params:
 ### 测试对象
 
 
-2016年，全市16个区县均抽样参加了“绿色指标”测试。民办学校自愿参加，所有的公办初中全部参加本次调查。每一所参加调查的学校是根据其学校规模按照随机等距抽样的方式抽取一定数量的样本学生。
+2016年，全市16个区均抽样参加了“绿色指标”测试。普通民办学校自愿参加，所有公办小学全部参加本次调查。每一所参加调查的学校是根据其学校规模按照随机等距抽样的方式抽取一定数量的样本学生。
 
-本次共有904所小学68022名四年级学生参加了学科测试和问卷调查,其中每名学生参加语文和数学两门学科的测试。6240位教师、1593位校长、66347位学生家长分别参加了教师问卷、校长问卷及家长问卷的调查。
+本次共有904所小学68022名四年级学生参加了学科测试和问卷调查,其中每名学生参加语文和数学两门学科的测试。6240位教师、1593位校长（含分管教学的副校长）、66347位学生家长分别参加了教师问卷、校长问卷及家长问卷的调查。
 
 
 ### 学科测试内容
 
 `r tab_name <- "中小学生学业质量测试科目及测试框架"`
 
-本次四年级测试涉及语文、数学两门学科。各学科测试的内容不仅包括学生在基础知识、基本技能方面所达到的水平，而且还包括时代发展所要求的中小学生所必备的搜集处理信息、自主获取知识、分析与解决问题、交流与合作、创新精神与实践能力等核心素养。本次测试的测试框架见表\ref{tab: `r tab_name`}。
+本次四年级测试涉及语文、数学两门学科。各学科测试的内容不仅包括学生在基础知识、基本技能方面所达到的水平，而且还包括时代发展所要求的小学生需具备的搜集处理信息、自主获取知识、分析与解决问题、交流与合作、创新精神与实践能力等核心素养。本次测试的学科测试框架见表\ref{tab: `r tab_name`}。
 
 \begin{table}[h!]
 \centering
 \caption{`r tab_name`} \label{tab: `r tab_name`} 
+\itshape
+\footnotesize
+\begin{tabularx}{\textwidth}{|c|l|X|}
 
-\begin{tabular}{|c|l|l|l|}
-\hline
-  & \makecell[c]{内容} & \multicolumn{2}{c|}{能力} \\
-\hline
-  \multirow{12}{*}{语文} & \multirow{4}{*}{积累} & \multicolumn{2}{l|}{读准字音} \\
-  & & \multicolumn{2}{l|}{认清字形} \\
-  & & \multicolumn{2}{l|}{理解词义} \\
-  & & \multicolumn{2}{l|}{积累和应用常见古诗文} \\
-\cline{2-4}
-
-  & \multirow{4}{*}{阅读} & \multicolumn{2}{l|}{提取信息} \\
-  &  & \multicolumn{2}{l|}{形成解释} \\
-  &  & \multicolumn{2}{l|}{整体感知} \\
-  &  & \multicolumn{2}{l|}{解决问题} \\
-\cline{2-4}  
-
-  & \multirow{4}{*}{习作} & \multicolumn{2}{l|}{选择材料} \\
-  &  & \multicolumn{2}{l|}{组织材料} \\
-  &  & \multicolumn{2}{l|}{语言表达} \\
-  &  & \multicolumn{2}{l|}{书写及标点} \\
 \hline
 
-  \multirow{2}{*}{数学} & \multirow{2}{*}{\makecell[cl]{数与运算 \\ 方程与代数 \\ 图形与几何 \\ 函数与分析 \\ 数据整理与概率统计 }} & 过程分量 & \makecell[cl]{辨识 \\ 调用 \\ 反思 \\ 问题解决 } \\
-  \cline{3-4}
-  & & 方法分量 & \makecell[cl]{运算求解 \\ 推理论证 \\ 空间想象 \\ 数学表达 \\ 数据处理 \\ 提出问题 \\ 工具运用 \\ 数学建模} \\
+  & \makecell[c]{\normalsize 内容} & \makecell[c]{\normalsize 能力} \\
 \hline
 
-\end{tabular}
+ \multirow{9}{3cm}{\makecell[cc]{语文}} & \multirow{3}{3cm}{积累} & 掌握已学过的常用汉字 \\
+ & & 具有独立识字的能力 \\
+ & & 积累古诗 \\
+\cline{2-3}
+
+ & \multirow{2}{3cm}{阅读} & 初步具有现代文阅读能力 \\
+ & & 具备基本的语文积累和综合运用能力 \\
+\cline{2-3}
+
+ & \multirow{3}{3cm}{\makecell[cl]{习作}} & 能根据写作要求选材立意 \\
+ & & 能根据表达的需要合理安排文章结构 \\
+ & & 能文从字顺地表达自己的意思 \\
+ & & 能正确、规范、端正地书写汉字 \\
+
+\hline
+\multirow{4}{3cm}{\makecell[cc]{数学}} & \multirow{4}{3cm}{\makecell[cl]{数与运算\\ 图形与几何\\ 统计与概率}} & 知识技能 \\
+ & & 数学理解 \\
+ & & 运用规则 \\
+ & & 问题解决 \\
+\hline
+
+\end{tabularx}
 \end{table}
+
 
 
 ### 问卷调查内容
@@ -146,7 +137,7 @@ params:
 本项目使用学生、教师、校长、家长问卷了解学生学习、教师专业发展、学校发展状况、家长对学校教育的感受状况及影响学生学业水平的相关因素。学生问卷调查的内容包括学生基本情况、学校环境、学习压力、师生关系、学习动机、自信心和学习方式等。
 
 
-教师问卷调查的内容包括教师基本情况如学历、任职经历、职称、工作感受情况、教师对学校教学管理的评价、教学观念和教师专业发展需求与困难等。校长问卷调查的内容包括校长及学校基本情况、校长教学领导力、办学自主权、国家课程开设情况和对教师的专业支持等。家长问卷调查的内容包括亲子关系、对学校教育的感受等。
+教师问卷调查的内容包括教师基本情况如学历、任职经历、职称、工作感受情况、教师对学校教学管理的评价、教学观念和教师专业发展需求与困难等。校长问卷调查的内容包括校长及学校基本情况、校长课程领导力、办学自主权、国家课程开设情况和对教师的专业支持等。家长问卷调查的内容包括亲子关系、对学校教育的感受等。
 
 
 ## 工作流程
@@ -155,28 +146,27 @@ params:
 ### 测试工具开发
 
 
-以绿色指标测试的学科（包括背景问卷）为单位，组织了一支由市、区县教研员、一线优秀教师组成的命题队伍。项目组负责把握命题的方向与总体框架，对命题过程进行管理与监督，保证试题的质量。
+以绿色指标测试的学科（包括背景问卷）为单位，组织了一支由市、区教研员、一线优秀教师组成的命题队伍。项目组负责把握命题的方向与总体框架，对命题过程进行管理与监督，保证试题的质量。
 
-根据本次测试的目标和任务，确定了以下命题原则：第一，命题基于课程标准，体现课程标准的基本要求和理念。试题注重考查学生对学科核心知识、技能的理解和掌握，尤其是学生综合运用所学知识解决实际问题的能力、收集与分析信息的能力以及对重要学科思想方法的理解与掌握。第二，命题严格控制试卷的总体难度，组卷以体现课程标准对学生基本要求的题目为主，有难度的题目主要考查学生的高层次认知能力。第三，试题形式为客观性试题和主观性试题相结合。试题多使用真实的情境和任务，注重通过客观性试题考察学生高层次认知能力。`r tab_name <- "测试工具的研发过程" `
+根据本次测试的目标和任务，确定了以下命题原则：第一，命题基于课程标准，体现课程标准的基本要求和理念。试题注重考查学生对学科核心知识、技能的理解和掌握，尤其是学生综合运用所学知识解决实际问题的能力、收集与分析信息的能力以及对重要学科思想方法的理解与掌握。第二，命题严格控制试卷的总体难度，组卷以体现课程标准对学生基本要求的题目为主，有难度的题目主要考查学生的高层次思维能力。第三，试题形式为客观性试题和主观性试题相结合。试题多使用真实的情境和任务，注重通过客观性试题考察学生高层次思维能力。`r tab_name <- "学科测试工具的研发过程" `
 
 本项目采用规范、严谨的程序开展试题编制工作，以下是2016年度命题工作的过程及时间安排（见表\ref{tab: `r tab_name`}）。
 
 
 
 
-
 \begin{itshape}
-\begin{longtable}{p{11cm}l}
+\begin{longtable}{m{12cm}m{3cm}}
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\
 
 \hline
 
-测试工具开发 & 时间节点 \\
-  & (2016年) \\
+\multicolumn{1}{c}{\multirow{2}{*}{\large 测试工具的研发}} & \large 时间节点 \\
+  & \large (2016年) \\
   
 \hline
 
-绿色指标总项目组正式启动测试工具的研发工作 & 5月30日 \\各学科命题组学习、研讨各学科测试框架，依据往年测试情况和2016年度工作需要开展命题和组卷工作   & 6月1-30日 \\各学科命题组依据测试框架研制出用于预测试的四套试卷 & 6月30日前 \\项目组赴外省开展300人预测试工作 & 7月1-5日 \\各学科命题组组织不少于6名学生参加试题访谈，依据学生反馈意见对试题进行调整与修改 & 7月1-5日 \\数据分析组根据预测试数据对试题进行分析并撰写分析报告 & 7月1-5日 \\召开第一次专家审议会议，依据预测试数据分析结果及专家评审意见，对试卷进行审核和筛选，组成三套试卷 & 7月6-7日 \\召开第二次专家审议会议，各学科命题组对试题试卷进行调整及修订 & 8月8-10日 \\召开第三次专家审议会议，对各学科试题试卷进行评审，对试题进行修订与完善 & 8月27-29日 \\召开第四次专家审议会议，对各学科测试卷和背景问卷进行评审，各学科命题组根据评审意见对试题进行修订及优化 & 9月12-13日 \\召开第五次专家审议会议，各学科命题组依据评审结果对试题进行优化及适应性调整，最终确定正式卷和备用卷 & 9月25-26日 \\
+绿色指标总项目组正式启动测试工具的研发工作 & 5月30日 \\各学科命题组学习、研讨各学科测试框架，依据往年测试情况和2016年度工作需要开展命题和组卷工作   & 6月1-30日 \\各学科命题组依据测试框架研制出四套试卷 & 6月30日前 \\召开第一次专家审议会议，依据预测试数据分析结果及专家评审意见，对试卷进行审核和筛选，组成三套试卷 & 7月3-4日 \\召开第二次专家审议会议，各学科命题组对试题试卷进行调整及修订 & 8月8-10日 \\召开第三次专家审议会议，对各学科测试卷和背景问卷进行评审，各学科命题组根据评审意见对试题进行修订及优化 & 9月2-3日 \\召开第四次专家审议会议，各学科命题组依据评审结果对试题进行优化及适应性调整，最终确定正式卷和备用卷，制作答题卡 & 10月7-10日 \\
 
 \hline
 
@@ -184,38 +174,42 @@ params:
 \end{itshape}
 
 
+
 ### 施测
 
 
-项目组编制了《2016年上海市中小学学业质量绿色指标测试考务实施手册》。上海市教委教研室、市教育督导部门等根据考务工作细则组织开展相关工作，包括编制培训手册，逐级对考务人员及管理人员进行培训，编制考生名册，制定详细的考务手册，组织具体的考务管理工作等。整个测试过程按照标准的考试进行管理，包括培训、考场设置、监考等环节。其中，所有参加测试学生名单在测试当天公布，参测学校负责人签订测试责任书。
+项目组编制了《2016年上海市中小学学业质量绿色指标综合评价实施手册》。上海市教委教研室、市教育督导部门等根据考务工作细则组织开展相关工作，包括编制培训手册，逐级对考务人员及管理人员进行培训，编制考生名册，制定详细的考务手册，组织具体的考务管理工作等。整个测试过程按照标准的考试进行管理，包括培训、考场设置、监考等环节。其中，所有参加测试学生名单在测试当天公布，参测学校负责人签订测试责任书。
 
 
 ### 评分标准研制
 
 
-本次测试的非选择题均由人工批阅，因此评分标准的准确、全面和可操作性极其重要。在项目组的统一安排下，评分标准的研制由各学科命题组承担。在正式阅卷开始之前，各学科分别随机抽取适量份数，采取网上阅卷的方式，依据初步的评分标准对抽取到的学生作答进行评分。学科组经过反复讨论，修订、细化评分标准，最终形成评分手册。
+本次测试的非选择题均由人工批阅，因此评分标准的准确、全面和可操作性极其重要。在项目组的统一安排下，评分标准的研制由各学科命题组承担。在正式阅卷开始之前，各学科分别随机抽取适量份数，采取网上阅卷的方式，依据初步的评分标准对抽取到的学生作答进行评分。学科组经过反复讨论，修订、细化评分标准，最终形成评分标准。
 
 
 ### 阅卷
 
 
-组建了由学科命题组成员、各区县学科教研员及一线优秀教师组成的阅卷队伍。各学科命题组长担任阅卷组长，负责对阅卷人员进行培训和管理。整体阅卷工作原则上参照高考的相应要求组织实施，开放性试卷的评阅严格遵循国际上大型测试项目评卷标准进行，阅卷人员必须有较强的责任心，有丰富的教学经验或具有相应的职称水平，或有过中考等大型测试阅卷工作经验。阅卷组长对阅卷人员进行的培训分为两部分，一是对新研制的评分手册进行培训，让阅卷员准确掌握自己需要评阅题目的评分标准；二是针对如何使用网络阅卷程序进行技术培训。阅卷中采取的质量控制方式包括以下举措：- 在计算机阅卷系统中预设各题目的给分范围，由计算机自动判断评分是否超出范围，及时给予提醒，极大地降低了出错的可能性。- 控制工作时间和工作进度，避免阅卷员由于阅卷速度过快或疲劳降低评分准确性。- 阅卷组长对评分过程中出现的分歧组织讨论、统一认识和做法并对最终结果进行认定。- 部分主观题采取多人共评，个体独立阅卷的方式，多人评分的平均值作为最终得分；当评分差值超过预先设定的阈值由阅卷组长根据答卷情况对结果进行调整和确认。- 各学科阅卷组设质量监督员，全程关注由计算机生成的评分信息，包括评分一致性、阅卷工作进度、重评率等，发现异常现象及时通知相关阅卷人员。发现异常现象及时通知相关阅卷人员。
+组建了由学科命题组成员、各区学科教研员及一线优秀教师组成的阅卷队伍。各学科命题组长担任阅卷组长，负责对阅卷人员进行培训和管理。整体阅卷工作原则上参照高考的相应要求组织实施，开放性试卷的评阅严格遵循国际上大型测试项目评卷标准进行，阅卷人员由具有较强责任心，丰富教学经验，相应职称水平，有大型测试阅卷工作经验的人员组成。阅卷组长对阅卷人员进行的培训分为两部分，一是对新研制的评分标准进行培训，让阅卷员准确掌握自己需要评阅题目的评分要求；二是针对如何使用网络阅卷程序进行技术培训。阅卷中采取的质量控制方式包括以下举措：- 在计算机阅卷系统中预设各题目的给分范围，由计算机自动判断评分是否超出范围，及时给予提醒，极大地降低了出错的可能性。- 控制工作时间和工作进度，避免阅卷员由于阅卷速度过快或疲劳降低评分准确性。- 阅卷组长对评分过程中出现的分歧组织讨论、统一认识和做法并对最终结果进行认定。- 部分主观题采取多人共评，个体独立阅卷的方式，多人评分的平均值作为最终得分；当评分差值超过预先设定的阈值，由阅卷组长根据答卷情况对结果进行仲裁。- 各学科阅卷组设质量监督员，全程关注由计算机生成的评分信息，包括评分一致性、阅卷工作进度、重评率等，发现异常现象及时通知相关阅卷人员。发现异常现象及时通知相关阅卷人员。
 
 
 ### 测试数据的录入、整理
 
 
-问卷和学科测试均采取填涂答题卡的方式，其录入由机器扫描完成。扫描答题卡时，计算机会根据预设条件对数据进行自动检测和判断，在这个过程中由专人进行全程监督，发现异常现象或错误数据立即进行纠正。
+学科测试卷采取填涂答题卡的方式，其录入由机器扫描完成。扫描答题卡时，计算机会根据预设条件对数据进行自动检测和判断，在这个过程中由专人进行全程监督，发现异常现象或错误数据立即进行纠正。
 
 数据分析组根据一定的准则对数据进行清理，剔除空白卷、缺考卷、无考号卷的作答信息。若某份试卷的客观题作答信息全部为空或者主观题全部没有作答，并且经核查不是漏扫或漏评的视为无效作答。
+
+
+本次背景问卷的信息反馈采用网络作答形式，学生、教师、校长及家长可用电脑或手机，在规定时间段内登录相应网址进行填写，提高了问卷调查的便捷性和数据采集的准确性。
 
 
 ### 学业水平标准设定
 
 
-项目组邀请国际知名专家香港中文大学原副校长侯杰泰教授和美国ETS（美国教育考试服务中心）测量专家钱家和博士主持开展“学业水平标准设定”工作。各学科的专家评委由课程标准编制者、教材主编、区县教研员、不同区域不同教龄的一线教师、学生家长等16人组成，采用Angoff和Bookmark的方法共同研讨和确定了上海地区相关学科的及格、良好和优秀的标准。
+项目组邀请国际知名专家香港中文大学原副校长侯杰泰教授和美国ETS（美国教育考试服务中心）测量专家钱家和博士主持开展“学业水平标准设定”工作。各学科的专家评委由课程标准编制者、教材主编、区教研员、不同区域不同教龄的一线教师、学生家长等16人组成，采用Angoff和Bookmark的方法共同研讨和确定了上海地区相关学科的及格、良好和优秀的标准。
 
-本次阅卷结束后，数据分析组对测试结果进行了整理和分析，研讨了数据处理与等值方案，划定了2016年度上海市小学两门学科的学业水平。学业水平的划分结果采用A、B、C三个水平进行表述，其中A水平为最高等级，C水平为最低等级。
+数据分析组对本次“绿色指标”测试结果进行了整理和分析，研讨了数据处理与等值方案，划定了2016年度上海市小学两门学科的学业水平。学业水平的划分结果采用A、B、C三个水平进行表述，其中A水平为最高等级，C水平为最低等级。
 
 
 ### 数据分析与报告撰写
@@ -231,16 +225,19 @@ params:
 `r tab_name <- "测试报告的构成" `
 
 
-本次系列报告主要由三种层次共计5种报告构成。报告充分考虑到不同使用者对于报告内容要求不同的问题，依此将报告划分综合报告和学科报告，具体见表\ref{tab: `r tab_name`}。
+本次系列报告主要由三种层次共计5种报告9个类型构成。报告充分考虑到不同使用者对于报告内容要求不同的问题，依此将报告划分综合报告和学科报告，具体见表\ref{tab: `r tab_name`}。
 
 
 \begin{table}[H]
 \centering
 \caption{`r tab_name`} \label{tab: `r tab_name`} 
-\begin{tabular}{|c|c|c|c|c|}
+
+\itshape
+
+\begin{tabularx}{\textwidth}{|r|c|c|c|X|}
 
 \hline
-\multirow{2}{*}{名称}  &  \multicolumn{3}{c|}{报告层次} &  \multirow{2}{*}{对象} \\ 
+ \multicolumn{1}{|c|}{\multirow{2}{*}{\large 名称}}  &  \multicolumn{3}{c|}{\large 报告层次} &  \multicolumn{1}{c|}{\multirow{2}{*}{\large 对象}}\\ 
 \cline{2-4}
                &   市级  & 区县 & 学校 &  \\             
 \hline 
@@ -254,9 +251,8 @@ params:
 \cline{1-4}
 小学数学学科报告 & √  & √ & &  \\
 \hline 
-\end{tabular}
+\end{tabularx}
 \end{table}
-
 
 \clearpage
 
@@ -264,24 +260,21 @@ params:
 
 # 上海市四年级学生学业水平总体情况
 
+本章分析了上海市四年级学生学业水平的总体情况及不同群体学生学业质量，主要结果如下：
 
-本章分析了上海市九年级学生学业水平的总体情况及不同群体学生学业质量，主要结果如下：
+- 总体看来，上海市四年级学生总体达到语文课程标准的基本要求的比例为98%；达到数学课程标准的基本要求的人数比例为98.8%；
 
+- 中心城区\footnote{中心城区：包括黄浦区、徐汇区、长宁区、普陀区、虹口区、杨浦区、静安区。}、郊区\footnote{郊区：包括闵行区、宝山区、嘉定区、浦东新区、金山区、松江区、青浦区、奉贤区、崇明区。}四年级学生达到语文课程标准基本要求的比例分别为99%和98%；达到数学课程标准的基本要求的人数比例分别为99.5%和99%；
 
-- 总体看来，上海市九年级学生总体达到语文课程标准的基本要求的比例为96%；达到数学课程标准的基本要求的人数比例为92%；达到英语课程标准的基本要求的人数比例为90%；达到科学课程标准的基本要求的人数比例为91%。
+- 新优质学校\footnote{新优质学校为新优质建设学校项目简称。}学生达到语文课程标准的基本要求的比例为99%；达到数学课程标准的基本要求的人数比例为99%；
 
+- 在语文学科上，除区82、区83和区88外，其他各区达到课程标准的人数比例在98%（含）以上；在数学学科上，除区75、81、82、83、89外其他各区县达到课程标准的人数比例在99%（含）以上；
 
-- 中心城区\footnote{中心城区：包括黄浦区、徐汇区、长宁区、普陀区、虹口区、杨浦区、静安区。}、郊区\footnote{郊区：包括闵行区、宝山区、嘉定区、浦东新区、金山区、松江区、青浦区、奉贤区、崇明区。}九年级学生达到语文课程标准基本要求的比例分别为98%和95%；达到数学课程标准的基本要求的人数比例分别为96%和90%；达到英语课程标准的基本要求的人数比例分别为95%和88%；达到科学课程标准的基本要求的人数比例分别为95%和88%。
+- 一贯制学校与非一贯制小学的学生达到语文课程标准基本要求的人数比例分别为98%和99%；达到数学课程标准基本要求的人数比例分别为99%和99.7%；
 
-- 新优质学校\footnote{新优质学校为新优质建设学校项目简称。}学生达到语文课程标准的基本要求的比例为97%；达到数学课程标准的基本要求的人数比例为95%；达到英语课程标准的基本要求的人数比例为96%；达到科学课程标准的基本要求的人数比例为92%。
+- 四年级男生和女生达到语文课程标准基本要求的人数比例分别为99%和99%；达到数学课程标准基本要求的人数比例分别为99%和99.8%；
 
-- 在语文学科上，除区82、区83和区87外，其他各区县达到课程标准的人数比例在95%（含）以上；在数学学科上，除区81外其他各区县达到课程标准的人数比例在87%（含）以上；在英语学科上，除区81外其他各区县达到课程标准的人数比例在85%（含）以上；在科学学科上，除区81外其他各区县达到课程标准的人数比例在86%（含）以上。
-
-- 初中、完中和九年一贯制学校九年级学生达到语文课程标准基本要求的人数比例分别为95%、96%和96%；达到数学课程标准基本要求的人数比例分别为91%、92%和94%；达到英语课程标准基本要求的人数比例分别为89%、91%和93%；达到科学课程标准基本要求的人数比例分别为90%、91%和91%。
-
-- 九年级男生和女生达到语文课程标准基本要求的人数比例分别为93%和99%；达到数学课程标准基本要求的人数比例分别为90%和94%；达到英语课程标准基本要求的人数比例分别为85%和96%；达到科学课程标准基本要求的人数比例分别为89%和92%。
-
-- 本市和非本市户籍九年级学生达到语文课程标准基本要求的人数比例分别为97%和92%；达到数学课程标准基本要求的人数比例分别为95%和80%；达到英语课程标准基本要求的人数比例分别为96%和74%；达到科学课程标准基本要求的人数比例分别为94%和83%。
+- 本市和非本市户籍四年级学生达到语文课程标准基本要求的人数比例分别为99%和98%；达到数学课程标准基本要求的人数比例分别为99.5%和99%；
 
 
 ## 四年级学生学业水平总体情况
@@ -289,7 +282,7 @@ params:
 `r fig_name <- "四年级学生总体语文分数分布" `
 `r fig_name1 <- "四年级学生总体数学分数分布" `
 
-上海市年级学生总体在语文和数学学科上的得分分布见图\ref{fig: `r fig_name`}、图\ref{fig: `r fig_name1`}。
+上海市四年级学生总体在语文和数学学科上的得分分布见图\ref{fig: `r fig_name`}、图\ref{fig: `r fig_name1`}。
 
 
 ```{r score.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
@@ -314,6 +307,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 
 
 `r fig_name <- "不同区域学生在各学科各水平上的人数比例" `
+图2-3 给出了上海市及不同区域在各学科各水平上的人数比例。
+
 ```{r level.bar.urban.subject, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "level.bar.urban.subject"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -324,10 +319,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \label{fig:`r fig_name`}
 \end{figure}
 
-上图给出了上海市及不同区域在各学科各水平上的人数比例。
 
-## 不同群体学生学业水平### 各区县学生学业水平#### 各区县学生语文学业水平
-`r fig_name <- "各区县学生在语文学科各水平上的人数比例" `
+
+## 不同群体学生学业水平### 各区学生学业水平#### 各区学生语文学业水平
+`r fig_name <- "各区学生在语文学科各水平上的人数比例" `
 ```{r level.bar.county.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "level.bar.county.cn"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -337,7 +332,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-`r fig_name <- "各区县学生在语文学科上的得分分布" `
+`r fig_name <- "各区学生在语文学科上的得分分布" `
 ```{r score.box.county.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "score.box.county.cn"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -346,9 +341,11 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}
+\end{figure}从上图\footnote{盒须图，须的底部为5分位（表示有5\%的学生总分低于此对应的分数)；盒的底部为25分位（表示有25\%的学生得分低于此线对应的分数）；盒中横线为50分位（表示50\%的学生得分高于此线对应的分数）；盒的顶部为75分位（表示有25\%的学生得分高于此线对应的分数）；须的顶部为95分位（表示有5\%的学生得分高于此线对应的分数）。盒的高度表示中间50\%的学生得分在此分数区间，从一定程度上描述了学生成绩离散程度的大小。红点对应的成绩为平均分。}可以看出上海市不同区学生在“语文”上得分得分分布的离散程度。
 
-从上图可以看出上海市不同区县学生在“语文”上得分的平均水平和得分分布的离散程度。#### 各区县学生数学学业水平`r fig_name <- "各区县学生在数学学科各水平上的人数比例" `
+\begin{itshape}
+\small
+\end{itshape}#### 各区学生数学学业水平`r fig_name <- "各区学生在数学学科各水平上的人数比例" `
 ```{r level.bar.county.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "level.bar.county.ma"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -358,7 +355,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-`r fig_name <- "各区县学生在数学学科上的得分分布" `
+`r fig_name <- "各区学生在数学学科上的得分分布" `
 ```{r score.box.county.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "score.box.county.ma"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -367,7 +364,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}从上图可以看出上海市不同区县学生在“数学”上得分的平均水平和得分分布的离散程度。### 不同学制学校学生学业水平
+\end{figure}从上图可以看出上海市不同区学生在“数学”上得分的平均水平和得分分布的离散程度。### 不同类型学校学生学业水平
 
 `r fig_name <- "不同类型学校学生在各学科各水平上的人数比例" `
 ```{r level.bar.academy.subject, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
@@ -427,11 +424,13 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 
 
 学生问卷包括学生基本情况、师生关系、学习压力、学校认同度、学习动机、自信心和学习方法等。本章对学生问卷调查结果进行分析，以下是分析得到的主要结果：
-- 四年级学生是独生子女的占76%。- 四年级学生家庭图书量超过100本的占26%，不超过50本的占51%。- 四年级学生家庭汽车拥有量为零的占38%，两辆及以上的占17%。- 四年级学生没有出境旅游的比例为65%，出境旅游过两次及以上的占20%。- 四年级学生的父亲受教育程度为大学及以上的占25%，初中及以下的占32%。四年级学生的母亲受教育程度为大学及以上的占23%，初中及以下的占37%。- 四年级学生每天睡眠时间达到8小时的比例为16%，不足7小时的比例为55%，有17%的学生每天睡眠时间甚至不足6小时。- 四年级学生每天开始上床睡觉的时间在10:00之前的占29%，在11:00之后的占24%，有10%的学生开始上床睡觉的时间在11: 30之后。- 四年级学生每天做学校老师布置的书面作业时间超过2小时的占73%，其中3小时以上的占42%。1小时以下的占7%。- 四年级学生认为学校作业难易适中的占74%，认为非常难和很容易的共占6%。- 四年级学生每周参加学校统一组织补课的时间在6小时以上的占14％。- 四年级学生每周参加与考试科目相关的家教补习或课外辅导的时间在6小时以上的占19％。- 四年级学生每周参加校外兴趣班的时间在2小时及以上的占14%，没有参加校外兴趣班的学生占70%。- 四年级学生每个月参加考试和测验的频率在4次及以上的占58%，频率在1次至3次的占37%，0次的占4%。- 四年级学生一年阅读课外读物量达到9本及以上的比例为37%，有38%的学生年阅读量不足5本，有5%的学生几乎不进行课外阅读。- 四年级学生每天放学回家后运动时间在30分钟以内的占86%，在60分钟及以上的占3%。
-
+- 四年级学生是独生子女的占57%。- 四年级学生家庭图书量超过100本的占23%，不超过50本的占55%。- 四年级学生家庭汽车拥有量为零的占31%，两辆及以上的占16%。- 四年级学生没有出境旅游的比例为70%，出境旅游过两次及以上的占18%。- 四年级学生的父亲受教育程度为大学及以上的占47%，初中及以下的占24%。四年级学生的母亲受教育程度为大学及以上的占44%，初中及以下的占30%。
+- 四年级学生每天做学校老师布置的书面作业时间超过2小时的占21%，其中3小时以上的占9%，1小时以下的占47%。
+- 四年级学生认为学校作业难易适中的占50%，认为非常难和很容易的共占23%。- 四年级学生每周参加与考试科目相关的家教补习或课外辅导的时间在6小时以上的占8％。- 四年级学生每周参加校外兴趣班的时间在2小时及以上的占30%，没有参加校外兴趣班的学生占37%。- 四年级学生每个月参加考试和测验的频率在4次及以上的占14%，频率在1次至3次的占68%，0次的占18%。- 四年级学生一年阅读课外读物量达到9本及以上的比例为69%，有13%的学生年阅读量不足5本，有1%的学生几乎不进行课外阅读。- 四年级学生每天放学回家后运动时间在40分钟以内的占80%，在60分钟及以上的占5%。
 
 
 ## 学生基本情况### 家庭背景#### 学生为独生子女情况`r fig_name <- "四年级学生为独生子女情况" `
+图\ref{fig:`r fig_name`}给出了四年级学生为独生子女的总体情况及各群体之间的比较。
 ```{r onechild.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "onechild.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -441,9 +440,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-上图给出了四年级学生为独生子女的总体情况及各群体之间的比较。#### 学生家庭的藏书量
+#### 学生家庭的藏书量
 
 `r fig_name <- "四年级学生家里的图书量" `
+图\ref{fig:`r fig_name`}给出了四年级学生家里图书量的总体情况及各群体之间的比较。
 ```{r book.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "book.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -453,9 +453,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-上图给出了四年级学生家里图书量的总体情况及各群体之间的比较。#### 学生家庭汽车拥有量
+#### 学生家庭汽车拥有量
 
 `r fig_name <- "四年级学生家庭汽车拥有量" `
+图\ref{fig:`r fig_name`}给出了四年级学生家庭拥有汽车的总体情况及各群体之间的比较。
 ```{r car.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "car.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -465,9 +466,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级学生家庭拥有汽车的总体情况及各群体之间的比较。#### 学生出境旅游情况
+#### 学生出境旅游情况
 
 `r fig_name <- "四年级学生出境旅游的总体情况" `
+图\ref{fig:`r fig_name`}给出了四年级学生家庭出境旅游的总体情况及各群体之间的比较。
 ```{r trip.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "trip.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -477,9 +479,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级学生家庭出境旅游的总体情况及各群体之间的比较。#### 学生父亲受教育情况
+#### 学生父亲受教育情况
 
 `r fig_name <- "四年级学生父亲的受教育情况" `
+图\ref{fig:`r fig_name`}给出了四年级学生的父亲受教育的总体情况及各群体之间的比较。
 ```{r father_edu.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "father_edu.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -489,9 +492,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级学生的父亲受教育的总体情况及各群体之间的比较。#### 学生母亲的受教育情况
+#### 学生母亲的受教育情况
 
 `r fig_name <- "四年级学生母亲的受教育情况" `
+图\ref{fig:`r fig_name`}给出了四年级学生的母亲受教育的总体情况及各群体之间的比较。
 ```{r mother_edu.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "mother_edu.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -501,10 +505,11 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级学生的母亲受教育的总体情况及各群体之间的比较。### 学生日常生活与学习
+### 学生日常生活与学习
 #### 学生休息情况
 
 `r fig_name <- "四年级学生平时上学时每天的睡眠时间" `
+图\ref{fig:`r fig_name`}给出了四年级学生平时上学时每天睡眠时间的总体情况。
 ```{r sleep.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "sleep.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -514,7 +519,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级学生平时上学时每天睡眠时间的总体情况。`r fig_name <- "四年级学生放假时每天的睡眠时间" `
+`r fig_name <- "四年级学生放假时每天的睡眠时间" `
+图\ref{fig:`r fig_name`}给出了四年级学生放假时（包括双休日）每天睡眠时间的总体情况。
 ```{r sleep_weekend.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "sleep_weekend.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -523,7 +529,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}图\ref{fig:`r fig_name`}给出了四年级学生放假时（包括双休日）每天睡眠时间的总体情况。`r fig_name <- "四年级学生对自己睡眠时间是否充足的看法" `
+\end{figure}`r fig_name <- "四年级学生对自己睡眠时间是否充足的看法" `
+图\ref{fig:`r fig_name`}给出了四年级学生对自己睡眠时间是否充足的看法情况。
 ```{r sleep_enough.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "sleep_enough.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -534,7 +541,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \label{fig:`r fig_name`}
 \end{figure}
 
-图\ref{fig:`r fig_name`}给出了四年级学生对自己睡眠时间是否充足的看法情况。`r fig_name <- "四年级学生睡眠不充足的原因" `
+`r fig_name <- "四年级学生睡眠不充足的原因" `
+图\ref{fig:`r fig_name`}给出了四年级学生睡眠不充足的原因：
 ```{r sleep_not_enough.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "sleep_not_enough.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -543,9 +551,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}图\ref{fig:`r fig_name`}给出了四年级学生睡眠不充足的原因： #### 每天做学校老师布置的书面作业所需要的时间
+\end{figure} #### 每天做学校老师布置的书面作业所需要的时间
 
 `r fig_name <- "四年级学生每天书面作业的时间" `
+图\ref{fig:`r fig_name`}给出了四年级学生每天做学校老师布置的书面作业时间的总体情况及各群体之间的比较。
 ```{r writing_homework_hours.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "writing_homework_hours.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -554,9 +563,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}图\ref{fig:`r fig_name`}给出了四年级学生每天做学校老师布置的书面作业时间的总体情况及各群体之间的比较。#### 学校作业难易程度
+\end{figure}#### 学校作业难易程度
 
 `r fig_name <- "四年级学生作业的难易程度" `
+图\ref{fig:`r fig_name`}给出了四年级学生学校作业的难易程度的总体情况及各群体之间的比较。
 ```{r writing_homework_difficulty.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "writing_homework_difficulty.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -566,9 +576,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级学生学校作业的难易程度的总体情况及各群体之间的比较。#### 参加与考试科目相关的家教补习、课外辅导的情况
+#### 参加与考试科目相关的家教补习、课外辅导的情况
 
 `r fig_name <- "四年级学生参加与考试科目相关的家教补习或课外辅导情况" `
+图\ref{fig:`r fig_name`}给出了四年级学生每周参加与考试科目相关的家教补习、课外辅导的总体情况及各群体之间的比较。
 ```{r extra_homework_subject.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "extra_homework_subject.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -578,7 +589,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级学生每周参加与考试科目相关的家教补习、课外辅导的总体情况及各群体之间的比较。`r fig_name <- "四年级学生参加与考试科目相关的家教补习、课外辅导时间" `
+`r fig_name <- "四年级学生参加与考试科目相关的家教补习、课外辅导时间" `
+图\ref{fig:`r fig_name`}给出了四年级学生每周参加与考试科目相关的家教补习、课外辅导时间的总体情况及各群体之间的比较。
 ```{r extra_homework_hour.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "extra_homework_hour.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -588,7 +600,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级学生每周参加与考试科目相关的家教补习、课外辅导时间的总体情况及各群体之间的比较。`r fig_name <- "四年级学生参加与考试科目相关的家教补习、课外辅导的主要原因" `
+`r fig_name <- "四年级学生参加与考试科目相关的家教补习、课外辅导的主要原因" `
+图\ref{fig:`r fig_name`}给出了四年级学生每周参加与考试科目相关的家教补习、课外辅导的主要原因
 ```{r extra_homework_reason.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "extra_homework_reason.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -598,9 +611,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级学生每周参加与考试科目相关的家教补习、课外辅导的主要原因#### 参加校外兴趣班的情况
+#### 参加校外兴趣班的情况
 
 `r fig_name <- "四年级学生参加校外兴趣班的种类" `
+图\ref{fig:`r fig_name`}给出了四年级学生参加校外兴趣班种类的比例情况。
 ```{r extra_interesting_subject.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "extra_interesting_subject.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -610,7 +624,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级学生参加校外兴趣班种类的比例情况。`r fig_name <- "四年级学生参加校外兴趣班的时间" `
+`r fig_name <- "四年级学生参加校外兴趣班的时间" `
+图\ref{fig:`r fig_name`}给出了四年级学生参加校外兴趣班的时间的总体情况以及各群体之间的比较。
 ```{r extra_interesting_hour.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "extra_interesting_hour.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -620,7 +635,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级学生参加校外兴趣班的时间的总体情况以及各群体之间的比较。`r fig_name <- "四年级学生参加校外兴趣班的主要原因" `
+`r fig_name <- "四年级学生参加校外兴趣班的主要原因" `
+图\ref{fig:`r fig_name`}给出了四年级学生参加校外兴趣班的主要原因
 ```{r extra_interesting_reason.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "extra_interesting_reason.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -630,9 +646,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级学生参加校外兴趣班的主要原因#### 每个月参加考试和测验的频率
+#### 每个月参加考试和测验的频率
 
 `r fig_name <- "四年级学生每个月参加考试和测验频率" `
+图\ref{fig:`r fig_name`}给出了四年级学生每个月参加考试和测验的总体情况及各群体之间的比较。
 ```{r month_test.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "month_test.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -642,9 +659,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级学生每个月参加考试和测验的总体情况及各群体之间的比较。#### 学生课外阅读量调查结果
+#### 学生课外阅读量调查结果
 
 `r fig_name <- "四年级学生过去一年内阅读课外读物的数量" `
+图\ref{fig:`r fig_name`}给出了四年级学生过去一年内阅读课外读物数量的总体情况及各群体之间的比较。
 ```{r year_reading.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "year_reading.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -654,9 +672,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级学生过去一年内阅读课外读物数量的总体情况及各群体之间的比较。#### 学生每天放学回家后的运动时间
+#### 学生每天放学回家后的运动时间
 
 `r fig_name <- "四年级学生每天放学回家后的运动时间" `
+图\ref{fig:`r fig_name`}给出了四年级学生每天放学回家后的运动时间情况及各群体之间的比较。
 ```{r daily_sport_hour.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "daily_sport_hour.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -666,11 +685,12 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级学生每天放学回家后的运动时间情况及各群体之间的比较。## 与师生关系有关问题的调查结果
+## 与师生关系有关问题的调查结果
 
 本问卷对教师是否公平、平等的对待学生，是否尊重学生，是否信任学生这三个方面进行了调查，现将调查到的师生关系进行如下分析。
 
 `r fig_name <- "四年级学生对教师是否公平、平等的对待学生的评价" `
+图\ref{fig:`r fig_name`}给出了四年级学生对教师是否公平、平等对待学生的评价的总体情况。
 ```{r teacher_fair.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher_fair.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -681,7 +701,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \label{fig:`r fig_name`}
 \end{figure}
 
-图\ref{fig:`r fig_name`}给出了四年级学生对教师是否公平、平等对待学生的评价的总体情况。`r fig_name <- "四年级学生对教师是否尊重学生的评价" `
+`r fig_name <- "四年级学生对教师是否尊重学生的评价" `
+图\ref{fig:`r fig_name`}给出了四年级学生对教师是否尊重学生的评价的总体情况。
 ```{r teacher_respect.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher_respect.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -691,7 +712,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级学生对教师是否尊重学生的评价的总体情况。`r fig_name <- "四年级学生对教师是否信任学生的评价" `
+`r fig_name <- "四年级学生对教师是否信任学生的评价" `
+图\ref{fig:`r fig_name`}给出了四年级学生对教师是否信任学生的评价的总体情况。
 ```{r teacher_trust.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher_trust.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -700,11 +722,11 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}图\ref{fig:`r fig_name`}给出了四年级学生对教师是否信任学生的评价的总体情况。
-
+\end{figure}
 ## 与学习压力有关问题的调查结果
 
 `r fig_name <- "四年级学生对学习压力相关问题的看法" `
+图\ref{fig:`r fig_name`}给出了四年级学生对学习压力相关问题看法的情况。
 ```{r learning_pressure.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "learning_pressure.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -714,9 +736,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级学生对学习压力相关问题看法的情况。## 与学习动机有关问题的调查结果
+## 与学习动机有关问题的调查结果
 
 `r fig_name <- "四年级学生对学习动机相关问题的看法" `
+图\ref{fig:`r fig_name`}给出了四年级学生对学习动机相关问题看法的情况。
 ```{r learning_motivation.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "learning_motivation.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -726,9 +749,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级学生对学习动机相关问题看法的情况。## 与学校认同度有关问题的调查结果
+## 与学校认同度有关问题的调查结果
 
 `r fig_name <- "四年级学生对学校认同度相关问题的看法" `
+图\ref{fig:`r fig_name`}给出了四年级学生对学校认同度相关问题看法的情况。
 ```{r school_identity.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "school_identity.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -738,10 +762,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-
-图\ref{fig:`r fig_name`}给出了四年级学生对学校认同度相关问题看法的情况。## 与学习自信心有关问题的调查结果
+## 与学习自信心有关问题的调查结果
 
 `r fig_name <- "四年级学生对学习自信心相关问题的看法" `
+图\ref{fig:`r fig_name`}给出了四年级学生对学习自信心相关问题看法的情况。
 ```{r learning_confidence.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "learning_confidence.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -752,10 +776,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \label{fig:`r fig_name`}
 \end{figure}
 
-图\ref{fig:`r fig_name`}给出了四年级学生对学习自信心相关问题看法的情况。
 ## 与学习方法有关问题的调查结果
 
 `r fig_name <- "四年级学生对自己某些学习方法的评价" `
+图\ref{fig:`r fig_name`}给出了四年级学生对自己某些学习方法的评价的情况。
 ```{r learning_method.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "learning_method.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -765,12 +789,12 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-
-图\ref{fig:`r fig_name`}给出了四年级学生对自己某些学习方法的评价的情况。## 与教师教学方式有关问题的调查结果
+## 与教师教学方式有关问题的调查结果
 
 本问卷对教师教学方式中的因材施教、互动教学、鼓励学生探究与发展这三个方面进行了调查，现将调查到的教师教学方式进行如下分析。
 
 `r fig_name <- "四年级学生对教师教学方式的评价——因材施教" `
+图\ref{fig:`r fig_name`}给出了四年级学生对教师因材施教的评价。
 ```{r teaching_yincaishijiao.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teaching_yincaishijiao.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -780,7 +804,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级学生对教师因材施教的评价。`r fig_name <- "四年级学生对教师教学方式的评价——互动教学" `
+`r fig_name <- "四年级学生对教师教学方式的评价——互动教学" `
+图\ref{fig:`r fig_name`}给出了四年级学生对教师互动教学的评价。
 ```{r teaching_hudongjiaoxue.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teaching_hudongjiaoxue.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -790,7 +815,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级学生对教师互动教学的评价。`r fig_name <- "四年级学生对教师教学方式的评价——鼓励学生探究与发展" `
+`r fig_name <- "四年级学生对教师教学方式的评价——鼓励学生探究与发展" `
+图\ref{fig:`r fig_name`}给出了四年级学生对教师鼓励学生探究与发展的评价。
 ```{r teaching_gulitanjiu.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teaching_gulitanjiu.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -800,12 +826,13 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级学生对教师鼓励学生探究与发展的评价。
+
 ## 与品德行为有关问题的调查结果
 
 本问卷对学生行为规范中的尊重他人、诚信、社会责任几个方面进行了调查，现将调查到的学生行为规范相关问题进行如下分析。### 尊重他人
 
 `r fig_name <- "四年级学生尊重他人行为的总体情况" `
+图\ref{fig:`r fig_name`}给出了四年级学生尊重他人行为的总体情况。
 ```{r morality_respect_others.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "morality_respect_others.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -815,10 +842,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-
-图\ref{fig:`r fig_name`}给出了四年级学生尊重他人行为的总体情况。### 诚信
+### 诚信
 
 `r fig_name <- "四年级学生遇到各种诚信问题时的行为表现情况" `
+图\ref{fig:`r fig_name`}给出了四年级学生认为班里同学遇到各种诚信问题时的诚信行为的行为表现情况。
 ```{r morality_integrity.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "morality_integrity.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -828,11 +855,11 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-
-图\ref{fig:`r fig_name`}给出了四年级学生认为班里同学遇到各种诚信问题时的诚信行为的行为表现情况。### 社会责任
+### 社会责任
 
 
 `r fig_name <- "四年级学生关于社会责任感方面问题的表现情况" `
+图\ref{fig:`r fig_name`}给出了四年级学生在发现有人把空饮料瓶扔到操场中央时的行为表现。
 ```{r morality_responsibility.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "morality_responsibility.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -842,10 +869,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-
-图\ref{fig:`r fig_name`}给出了四年级学生在发现有人把空饮料瓶扔到操场中央时的行为表现。## 与人际敏感性有关问题的调查结果
+## 与人际敏感性有关问题的调查结果
 
 `r fig_name <- "四年级学生对人际敏感性相关问题的看法" `
+图\ref{fig:`r fig_name`}给出了四年级学生对人际敏感相关问题看法的情况。
 ```{r psychological_renjimangan.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "psychological_renjimangan.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -855,10 +882,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-
-图\ref{fig:`r fig_name`}给出了四年级学生对人际敏感相关问题看法的情况。## 与人际关系有关问题的调查结果
+## 与人际关系有关问题的调查结果
 
 `r fig_name <- "四年级学生对人际关系相关问题的看法" `
+图\ref{fig:`r fig_name`}给出了四年级学生对人际关系相关问题看法的情况。
 ```{r psychological_renjiguanxi.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "psychological_renjiguanxi.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -868,10 +895,11 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级学生对人际关系相关问题看法的情况。## 与自尊有关问题的调查结果
+## 与自尊有关问题的调查结果
 
 
 `r fig_name <- "四年级学生对自尊相关问题的看法" `
+图\ref{fig:`r fig_name`}给出了四年级学生对自尊相关问题看法的情况。
 ```{r psychological_self_respect.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "psychological_self_respect.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -881,11 +909,11 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级学生对自尊相关问题看法的情况。
 
 ## 学业成绩与背景变量的关系
 
 ### 学生睡眠时间与学业成绩的关系`r fig_name <- "四年级学生睡眠时间与学业成绩的关系" `
+图\ref{fig:`r fig_name`}给出了四年级学生的睡眠时间与学业成绩的关系。
 ```{r score_sleep.point, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "score_sleep.point"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -896,9 +924,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \label{fig:`r fig_name`}
 \end{figure}
 
-图\ref{fig:`r fig_name`}给出了四年级学生的睡眠时间与学业成绩的关系。### 学生做学校布置的作业或课外练习时间与学业成绩的关系
+### 学生做学校布置的作业或课外练习时间与学业成绩的关系
 
 `r fig_name <- "四年级学生作业或课外练习时间与学业成绩的关系" `
+图\ref{fig:`r fig_name`}给出了四年级学生做学校布置的作业或课外练习时间与学业成绩的关系。
 ```{r score_homework.point, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "score_homework.point"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -909,9 +938,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \label{fig:`r fig_name`}
 \end{figure}
 
-图\ref{fig:`r fig_name`}给出了四年级学生做学校布置的作业或课外练习时间与学业成绩的关系。### 学生课外补课或辅导班时间与学业成绩的关系
+### 学生课外补课或辅导班时间与学业成绩的关系
 
 `r fig_name <- "四年级学生每周课外补课或辅导班时间与学业成绩的关系" `
+图\ref{fig:`r fig_name`}给出了四年级学生每周课外补课或辅导班时间与学业成绩的关系。
 ```{r score_extra_homework.point, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "score_extra_homework.point"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -922,9 +952,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \label{fig:`r fig_name`}
 \end{figure}
 
-图\ref{fig:`r fig_name`}给出了四年级学生每周课外补课或辅导班时间与学业成绩的关系。### 学生对师生关系的评价与学业成绩的关系
+### 学生对师生关系的评价与学业成绩的关系
 
 `r fig_name <- "四年级师生关系与学业成绩的关系" `
+图\ref{fig:`r fig_name`}给出了四年级学生对师生关系的评价与学业成绩的关系。
 ```{r score_teacher.point, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "score_teacher.point"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -934,9 +965,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级学生对师生关系的评价与学业成绩的关系。### 学生学习压力与学业成绩的关系
+### 学生学习压力与学业成绩的关系
 
 `r fig_name <- "四年级学生学习压力与学业成绩的关系" `
+图\ref{fig:`r fig_name`}给出了四年级学生所报告的学习压力与学业成绩的关系。
 ```{r score_pressure.point, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "score_pressure.point"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -946,10 +978,11 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级学生所报告的学习压力与学业成绩的关系。### 学校认同度与学业成绩的关系
+### 学校认同度与学业成绩的关系
 
 
 `r fig_name <- "四年级学生学校认同度与学业成绩的关系" `
+图\ref{fig:`r fig_name`}给出了四年级学生所报告的学校认同度与学业成绩的关系。
 ```{r score_identity.point, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "score_identity.point"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -959,12 +992,13 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级学生所报告的学校认同度与学业成绩的关系。
+
 
 
 ### 学习动机与学业成绩的关系
 
 `r fig_name <- "四年级学生学习动机与学业成绩的关系" `
+图\ref{fig:`r fig_name`}给出了四年级学生所报告的学习动机与学业成绩的关系。
 ```{r score_motivation.point, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "score_motivation.point"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -974,9 +1008,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级学生所报告的学习动机与学业成绩的关系。### 学生自信心与学业成绩的关系
+### 学生自信心与学业成绩的关系
 
 `r fig_name <- "四年级学生自信心与学业成绩的关系" `
+图\ref{fig:`r fig_name`}给出了四年级学生所报告的学生自信心与学业成绩的关系。
 ```{r score_confidence.point, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "score_confidence.point"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -986,13 +1021,14 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级学生所报告的学生自信心与学业成绩的关系。\clearpage
+\clearpage
 # 教师背景问卷调查结果分析
 
 教师背景问卷包含教师的基本情况、教师的教学方法、教师对学校教学管理的评价、教师的教学观念和教师的专业发展五个方面。本章对四年级教师在这五个方面的回答进行了分析，得到如下主要结论：
-- 四年级教师中男老师占26%，女老师占74%。- 四年级教师教龄在5年及以下的占11%，在20年以上的占37%，在6-20年的占52%。- 四年级教师中，有73%的教师具有一级或高级职称。- 四年级98%的教师是本科及以上学历，2%的教师是大专及以下学历。- 四年级教师就职前接受过师范教育的比例为83%，所教学科与所学专业一致的比例为82%。- 四年级教师每周上课节数在11-15节的占56%，在6节以下的占3%，在20节以上的占3%。- 四年级教师每天的工作时间在8-11小时的占79％，8小时及以下的占6%，11小时以上的占15%。- 四年级教师有73％喜欢教师职业。- 多数教师认同教师的角色是引导学生自行探究；多数教师认同在课堂上应尽可能多创造机会让学生向教师提问；多数教师对学生最大的期望是通过教学使他们变得更爱学习。- 四年级教师专业发展的途径主要是与同事分享经验、讨论问题，观摩他人的课并在课后进行研讨以及参加学校或教研部门组织的教研活动；教师专业发展的需求主要集中在对个性化教学的方法，教学技能，所教学科领域知识及学生评价和测量方法；教师专业发展遇到的困难主要是缺乏专业活动的资金，时间的冲突及缺乏参加相关活动的机会。- 四年级教师有79％认为学校的课程建设思路与方案具有本校特色。## 教师基本情况### 教师性别
+- 四年级教师中男老师占17%，女老师占83%。- 四年级教师教龄在5年及以下的占17%，在20年以上的占50%，在6-20年的占33%。- 四年级教师中，有56%的教师具有小学高级或中学高级职称。- 四年级79%的教师是本科及以上学历，21%的教师是大专及以下学历。- 四年级教师就职前接受过师范教育的比例为83%，所教学科与所学专业一致的比例为77%。- 四年级教师每周上课节数在11-15节的占67%，在6节以下的占1%，在20节以上的占1%。- 四年级教师每天的工作时间在8-11小时的占85％，8小时及以下的占8%，11小时以上的占7%。- 四年级教师有85％喜欢教师职业。- 多数教师认同教师的角色是引导学生自行探究；多数教师认同在课堂上应尽可能多创造机会让学生向教师提问；多数教师对学生最大的期望是通过教学使他们变得更爱学习。- 四年级教师专业发展的途径主要是与同事分享经验、讨论问题，观摩他人的课并在课后进行研讨以及参加学校或教研部门组织的教研活动；教师专业发展的需求主要集中在对个性化教学的方法，教学技能，所教学科领域知识及学生评价和测量方法；教师专业发展遇到的困难主要是缺乏专业活动的资金，时间的冲突及缺乏参加相关活动的机会。- 四年级教师有79％认为学校的课程建设思路与方案具有本校特色。## 教师基本情况### 教师性别
 
 `r fig_name <- "四年级教师性别情况" `
+图\ref{fig:`r fig_name`}给出了四年级教师性别的总体情况及不同群体之间的比较。
 ```{r teacher_gender.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher_gender.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1002,9 +1038,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级教师性别的总体情况及不同群体之间的比较。### 教师教龄
+### 教师教龄
 
 `r fig_name <- "四年级教师教龄情况" `
+图\ref{fig:`r fig_name`}给出了四年级教师教龄的总体情况及不同群体之间的比较。
 ```{r teacher_years.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher_years.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1013,10 +1050,11 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}图\ref{fig:`r fig_name`}给出了四年级教师教龄的总体情况及不同群体之间的比较。
+\end{figure}
 ### 专业职称
 
 `r fig_name <- "四年级教师专业职称情况" `
+图\ref{fig:`r fig_name`}给出了四年级教师职务（职称）的总体情况及不同群体之间的比较。
 ```{r teacher_title.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher_title.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1025,8 +1063,9 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}图\ref{fig:`r fig_name`}给出了四年级教师职务（职称）的总体情况及不同群体之间的比较。
+\end{figure}
 `r fig_name <- "小学教师专业职称情况" `
+图\ref{fig:`r fig_name`}给出了小学教师职称的总体情况。
 ```{r teacher_all_title.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher_all_title.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1035,9 +1074,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}图\ref{fig:`r fig_name`}给出了小学教师职称的总体情况。### 教师学历
+\end{figure}### 教师学历
 
 `r fig_name <- "四年级教师学历情况（含在读）" `
+图\ref{fig:`r fig_name`}给出了四年级教师学历的总体情况及不同群体之间的比较。
 ```{r teacher_edu.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher_edu.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1046,7 +1086,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}图\ref{fig:`r fig_name`}给出了四年级教师学历的总体情况及不同群体之间的比较。`r fig_name <- "小学教师学历情况（含在读）" `
+\end{figure}`r fig_name <- "小学教师学历情况（含在读）" `
+图\ref{fig:`r fig_name`}给出了小学教师学历的总体情况。
 ```{r teacher_all_edu.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher_all_edu.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1055,7 +1096,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}图\ref{fig:`r fig_name`}给出了小学教师学历的总体情况。### 教师就职前是否接受过师范教育`r fig_name <- "四年级教师就职前是否接受过师范教育的情况" `
+\end{figure}### 教师就职前是否接受过师范教育`r fig_name <- "四年级教师就职前是否接受过师范教育的情况" `
+图\ref{fig:`r fig_name`}给出了四年级教师在就职前是否接受过师范教育的总体情况及不同群体的比较。
 ```{r teacher_normal_edu.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher_normal_edu.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1065,7 +1107,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级教师在就职前是否接受过师范教育的总体情况及不同群体的比较。 ### 所教学科是否专业对口`r fig_name <- "四年级教师所教学科是否专业对口的情况" `
+ ### 所教学科是否专业对口`r fig_name <- "四年级教师所教学科是否专业对口的情况" `
+图\ref{fig:`r fig_name`}给出了四年级教师所教学科是否专业对口的总体情况及不同群体的比较。
 ```{r teacher_major_match.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher_major_match.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1075,7 +1118,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级教师所教学科是否专业对口的总体情况及不同群体的比较。### 每周的上课节数`r fig_name <- "四年级教师每周的上课节数情况" `
+### 每周的上课节数`r fig_name <- "四年级教师每周的上课节数情况" `
+图\ref{fig:`r fig_name`}给出了四年级教师每周上课节数的总体情况及不同群体的比较。
 ```{r teacher_weekly_hours.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher_weekly_hours.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1085,7 +1129,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级教师每周上课节数的总体情况及不同群体的比较。### 每天的工作时间`r fig_name <- "四年级教师每天的工作时间情况" `
+### 每天的工作时间`r fig_name <- "四年级教师每天的工作时间情况" `
+图\ref{fig:`r fig_name`}给出了四年级教师每天工作时间的总体情况及不同群体的比较。
 ```{r teacher_daily_hours.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher_daily_hours.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1095,7 +1140,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级教师每天工作时间的总体情况及不同群体的比较。## 教师的职业感受 ### 职业喜爱程度`r fig_name <- "四年级教师对教师职业喜爱程度的情况" `
+## 教师的职业感受 ### 职业喜爱程度`r fig_name <- "四年级教师对教师职业喜爱程度的情况" `
+图\ref{fig:`r fig_name`}给出了四年级教师对教师职业喜爱程度的总体情况及不同群体的比较。
 ```{r teacher_job_favorite.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher_job_favorite.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1105,7 +1151,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级教师对教师职业喜爱程度的总体情况及不同群体的比较。`r fig_name <- "四年级教师的离职倾向情况" `
+`r fig_name <- "四年级教师的离职倾向情况" `
+图\ref{fig:`r fig_name`}给出了四年级教师离职倾向的总体情况及不同群体的比较。
 ```{r teacher_job_quit.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher_job_quit.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1115,7 +1162,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级教师离职倾向的总体情况及不同群体的比较。### 工作感受`r fig_name <- "四年级教师对现有工作的感受情况" `
+### 工作感受`r fig_name <- "四年级教师对现有工作的感受情况" `
+图\ref{fig:`r fig_name`}给出了四年级教师对现有工作感受方面的总体情况。
 ```{r teacher_feelings.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher_feelings.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1125,9 +1173,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了四年级教师对现有工作感受方面的总体情况。## 与教师教学观念有关问题的调查结果
+## 与教师教学观念有关问题的调查结果
 
 `r fig_name <- "四年级教师教学观的情况" `
+图\ref{fig:`r fig_name`}描述了四年级教师教学观念的总体情况。
 ```{r teacher_philosophy.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher_philosophy.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1137,7 +1186,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}描述了四年级教师教学观念的总体情况。## 与教师教学方式有关问题的调查结果`r fig_name <- "四年级教师教学方式的情况" `
+## 与教师教学方式有关问题的调查结果`r fig_name <- "四年级教师教学方式的情况" `
+图\ref{fig:`r fig_name`}描述了四年级教师教学方式的总体情况。
 ```{r teacher_method.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher_method.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1147,7 +1197,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}描述了四年级教师教学方式的总体情况。## 与教师专业发展有关问题的调查结果`r fig_name <- "四年级教师提高自身素养和教学水平参与专业活动的情况" `
+## 与教师专业发展有关问题的调查结果`r fig_name <- "四年级教师提高自身素养和教学水平参与专业活动的情况" `
+图\ref{fig:`r fig_name`}描述了四年级教师提高自身素养和教学水平参与专业活动的总体情况。
 ```{r teacher_activity.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher_activity.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1157,7 +1208,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}描述了四年级教师提高自身素养和教学水平参与专业活动的总体情况。`r fig_name <- "四年级教师专业发展需求方面的情况" `
+`r fig_name <- "四年级教师专业发展需求方面的情况" `
+图\ref{fig:`r fig_name`}描述了四年级教师专业发展需求方面的总体情况。
 ```{r teacher_requirement.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher_requirement.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1167,7 +1219,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}描述了四年级教师专业发展需求方面的总体情况。`r fig_name <- "四年级教师专业发展遇到的困难情况" `
+`r fig_name <- "四年级教师专业发展遇到的困难情况" `
+图\ref{fig:`r fig_name`}描述了四年级教师认为专业发展遇到的困难情况。
 ```{r teacher_difficulty.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher_difficulty.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1177,7 +1230,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}描述了四年级教师认为专业发展遇到的困难情况。## 与课程领导力有关问题的调查结果`r fig_name <- "四年级教师对学校课程建设的感知情况" `
+## 与课程领导力有关问题的调查结果`r fig_name <- "四年级教师对学校课程建设的感知情况" `
+图\ref{fig:`r fig_name`}描述了四年级教师对学校课程建设感知的总体情况。
 ```{r teacher_course_development.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher_course_development.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1187,7 +1241,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}描述了四年级教师对学校课程建设感知的总体情况。`r fig_name <- "四年级教师对学校课程实施的感知情况" `
+`r fig_name <- "四年级教师对学校课程实施的感知情况" `
+图\ref{fig:`r fig_name`}描述了四年级教师对学校课程实施感知的总体情况。
 ```{r teacher_course_implement.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher_course_implement.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1197,7 +1252,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}描述了四年级教师对学校课程实施感知的总体情况。`r fig_name <- "四年级教师对学校课程管理的感知情况" `
+`r fig_name <- "四年级教师对学校课程管理的感知情况" `
+图\ref{fig:`r fig_name`}描述了四年级教师对学校课程管理感知的总体情况。
 ```{r teacher_course_management.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher_course_management.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1207,7 +1263,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}描述了四年级教师对学校课程管理感知的总体情况。`r fig_name <- "四年级教师对学校课程评价的感知情况" `
+`r fig_name <- "四年级教师对学校课程评价的感知情况" `
+图\ref{fig:`r fig_name`}描述了四年级教师对学校课程评价感知的总体情况。
 ```{r teacher_course_evaluation.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher_course_evaluation.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1217,9 +1274,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}描述了四年级教师对学校课程评价感知的总体情况。\clearpage
+\clearpage
 
-# 校长背景问卷调查结果分析校长问卷包括校长基本情况、校长日常工作、学校发展、学校办学成效、校长对学校满意度等方面。本章对校长问卷上的回答进行分析。以下是分析得到的主要结果：-  小学的男校长比例高于女校长。-  小学校长年龄主要分布在40-49岁，占56%。-  小学校长任职年限多为5-15年，占61%。-  小学校长的学历主要是本科，比例为87%，硕士学历的小学校长比例为12%。-  小学校长的职级是二级及以上的比例为41%。-  小学校长的校龄在45年以上的占47%，在15年以下的占19%。-  小学校长的日常工作中，参加会议的时间比例为17.4%，给学生上课的时间比例为19.9%，参加听课、评课及教研活动的时间比例为22.6%，与教师交流、听取教师意见的时间比例为17.1%，应对上级行政部门的检查和评估所占的时间比例为12.7%，在科研、教学、资金使用方面的规划与审批所占的时间比例为10.4%。-  近三年学校印刷学科交流与经验分享的成果集的数量在2本及以上的小学的比例分别为45%；近三年学校根据学生学习需要，小学开设校本课程的数量多为11门以上， 占67%；100%的小学建设了学生社团、兴趣小组和俱乐部。-  小学校长对学校教育各方面感受的评价普遍较高。## 校长基本情况校长基本情况包括校长的性别、年龄、担任校长年限、学历、职称和职级。### 校长性别`r fig_name <- "小学校长性别" `
+# 校长背景问卷调查结果分析校长问卷包括校长基本情况、校长日常工作、学校发展、学校办学成效、校长对学校满意度等方面。本章对校长问卷上的回答进行分析。以下是分析得到的主要结果：-  小学的女校长比例高于男校长。-  小学校长年龄主要分布在45-50，占39%。-  小学校长任职年限多为0-10年，占52%。-  小学校长的学历主要是本科，比例为84%，硕士学历的小学校长比例为6%。-  小学校长的职级是二级及以上的比例为37%。-  小学校长的校龄在45年以上的占40%，在15年以下的占24%。-  小学校长的日常工作中，参加会议的时间比例为24%，给学生上课的时间比例为24%，参加听课、评课及教研活动的时间比例为24%，与教师交流、听取教师意见的时间比例为17%，应对上级行政部门的检查和评估所占的时间比例为13%，在科研、教学、资金使用方面的规划与审批所占的时间比例为11%。-  近三年学校印刷学科交流与经验分享的成果集的数量在2本及以上的小学的比例分别为26%；近三年学校根据学生学习需要，小学开设校本课程的数量多为11门以上占38%；99%的小学建设了学生社团、兴趣小组和俱乐部。-  小学校长对学校教育各方面感受的评价普遍较高。## 校长基本情况校长基本情况包括校长的性别、年龄、担任校长年限、学历、职称和职级。### 校长性别`r fig_name <- "小学校长性别" `
+图\ref{fig:`r fig_name`}给出了小学校长性别的总体情况及不同群体之间的比较。
 ```{r principal_gender.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "principal_gender.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1229,7 +1287,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了小学校长性别的总体情况及不同群体之间的比较。### 校长年龄`r fig_name <- "小学校长年龄" `
+### 校长年龄`r fig_name <- "小学校长年龄" `
+图\ref{fig:`r fig_name`}给出了小学校长年龄的总体情况及不同群体之间的比较。
 ```{r principal_age.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "principal_age.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1239,7 +1298,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了小学校长年龄的总体情况及不同群体之间的比较。### 校长任职年限`r fig_name <- "小学校长担任校长年限" `
+### 校长任职年限`r fig_name <- "小学校长担任校长年限" `
+图\ref{fig:`r fig_name`}给出了小学校长任职年限的总体情况及不同群体之间的比较。
 ```{r principal_years.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "principal_years.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1249,7 +1309,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了小学校长任职年限的总体情况及不同群体之间的比较。### 校长学历`r fig_name <- "小学校长学历" `
+### 校长学历`r fig_name <- "小学校长学历" `
+图\ref{fig:`r fig_name`}给出了小学校长学历的总体情况及不同群体之间的比较。
 ```{r principal_edu.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "principal_edu.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1259,7 +1320,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了小学校长学历的总体情况及不同群体之间的比较。### 校长的职级`r fig_name <- "小学校长的职级" `
+### 校长的职级`r fig_name <- "小学校长的职级" `
+图\ref{fig:`r fig_name`}给出了小学校长职级的总体情况及不同群体之间的比较。
 ```{r principal_title.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "principal_title.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1269,7 +1331,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了小学校长职级的总体情况及不同群体之间的比较。### 学校的校龄`r fig_name <- "小学学校的校龄" `
+### 学校的校龄`r fig_name <- "小学学校的校龄" `
+图\ref{fig:`r fig_name`}给出了小学学校校龄的总体情况及不同群体之间的比较。
 ```{r principal_school_history.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "principal_school_history.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1279,7 +1342,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了小学学校校龄的总体情况及不同群体之间的比较。## 校长日常工作###校长参加会议的频率`r fig_name <- "小学校长参加各种会议的频率" `
+## 校长日常工作###校长参加会议的频率`r fig_name <- "小学校长参加各种会议的频率" `
+图\ref{fig:`r fig_name`}给出了小学校长参加各种会议频率的总体情况及各群体之间的比较。
 ```{r principal_meeting.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "principal_meeting.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1289,8 +1353,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了小学校长参加各种会议频率的总体情况及各群体之间的比较。### 校长给学生上课的频率`r fig_name <- "小学校长给学生上课的频率" `
-`r fig_name <- "小学校长参加各种会议的频率" `
+### 校长给学生上课的频率`r fig_name <- "小学校长给学生上课的频率" `
+图\ref{fig:`r fig_name`}给出了小学校长给学生上课频率的总体情况及各群体之间的比较。
 ```{r principal_instructing.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "principal_instructing.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1300,8 +1364,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了小学校长给学生上课频率的总体情况及各群体之间的比较。### 校长参加听课、评课及教研活动的频率`r fig_name <- "小学校长参加听课、评课及教研活动的频率" `
-`r fig_name <- "小学校长参加各种会议的频率" `
+### 校长参加听课、评课及教研活动的频率`r fig_name <- "小学校长参加听课、评课及教研活动的频率" `
+图\ref{fig:`r fig_name`}给出了小学校长参加听课、评课及教研活动频率的总体情况及各群体之间的比较。
 ```{r principal_researching.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "principal_researching.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1311,7 +1375,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了小学校长参加听课、评课及教研活动频率的总体情况及各群体之间的比较。### 校长与教师交流，听取教师意见的频率`r fig_name <- "小学校长与教师交流，听取教师意见的频率" `
+### 校长与教师交流，听取教师意见的频率`r fig_name <- "小学校长与教师交流，听取教师意见的频率" `图\ref{fig:`r fig_name`}给出了小学校长与教师交流，听取教师意见频率的总体情况及各群体之间的比较。
 ```{r principal_communication.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "principal_communication.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1321,7 +1385,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了小学校长与教师交流，听取教师意见频率的总体情况及各群体之间的比较。### 校长应对上级行政部门的检查和评估的频率`r fig_name <- "小学校长应对上级行政部门的检查、评估的频率" `
+### 校长应对上级行政部门的检查和评估的频率`r fig_name <- "小学校长应对上级行政部门的检查、评估的频率" `
+图\ref{fig:`r fig_name`}给出了小学校长应对上级行政部门的检查、评估频率的总体情况及各群体之间的比较。
 ```{r principal_evaluation.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "principal_evaluation.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1331,7 +1396,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了小学校长应对上级行政部门的检查、评估频率的总体情况及各群体之间的比较。### 校长在科研、教学、资金使用方面的规划与审批的频率`r fig_name <- "小学校长在科研、教学、资金使用的方面的规划与审批的频率" `
+### 校长在科研、教学、资金使用方面的规划与审批的频率`r fig_name <- "小学校长在科研、教学、资金使用的方面的规划与审批的频率" `
+图\ref{fig:`r fig_name`}给出了小学校长在科研、教学、资金使用方面的规划与审批频率的总体情况及各群体之间的比较。
 ```{r principal_financing.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "principal_financing.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1341,7 +1407,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了小学校长在科研、教学、资金使用方面的规划与审批频率的总体情况及各群体之间的比较。## 与学校发展有关问题的调查结果`r fig_name <- "小学校长对学校发展遇到的困难情况" `
+## 与学校发展有关问题的调查结果`r fig_name <- "小学校长对学校发展遇到的困难情况" `
+图\ref{fig:`r fig_name`}描述了小学校长对学校发展遇到的困难情况。
 ```{r principal_challenge.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "principal_challenge.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1351,7 +1418,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}描述了小学校长对学校发展遇到的困难情况。## 与学校办学成效有关问题的调查结果`r fig_name <- "小学学校近三年正式出版专门的学科交流与经验分享的成果集的数量" `
+## 与学校办学成效有关问题的调查结果`r fig_name <- "小学学校近三年正式出版专门的学科交流与经验分享的成果集的数量" `
+图\ref{fig:`r fig_name`}描述了小学近三年正式出版专门的学科交流与经验分享的成果集的数量及与各群体之间的比较。
 ```{r principal_publishing.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "principal_publishing.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1361,7 +1429,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}描述了小学近三年正式出版专门的学科交流与经验分享的成果集的数量及与各群体之间的比较。`r fig_name <- "小学学校近三年开设校本课程的数量的情况" `
+`r fig_name <- "小学学校近三年开设校本课程的数量的情况" `
+图\ref{fig:`r fig_name`}描述了小学根据学生学习需要，开设校本课程的数量及与各群体之间的比较。
 ```{r principal_course.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "principal_course.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1371,7 +1440,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}描述了小学根据学生学习需要，开设校本课程的数量及与各群体之间的比较。`r fig_name <- "小学建设学生社团、兴趣小组和俱乐部数量的情况" `
+`r fig_name <- "小学建设学生社团、兴趣小组和俱乐部数量的情况" `
+图\ref{fig:`r fig_name`}描述了小学建设学生社团、兴趣小组和俱乐部的数量及与各群体之间的比较。
 ```{r principal_community.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "principal_community.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1381,7 +1451,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}描述了小学建设学生社团、兴趣小组和俱乐部的数量及与各群体之间的比较。## 与校长对学校感受有关情况的调查结果`r fig_name <- "小学校长对学校感受的情况" `
+## 与校长对学校感受有关情况的调查结果`r fig_name <- "小学校长对学校感受的情况" `
+图\ref{fig:`r fig_name`}给出了小学校长对学校感受的情况。
 ```{r principal_feelings.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "principal_feelings.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1391,9 +1462,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了小学校长对学校感受的情况。## 与校长的教学观相关问题的调查结果
+## 与校长的教学观相关问题的调查结果
 
 `r fig_name <- "小学校长教学观的情况" `
+图\ref{fig:`r fig_name`}给出了小学校长教学观的总体情况。
 ```{r principal_philosophy.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "principal_philosophy.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1403,8 +1475,11 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了小学校长教学观的总体情况。\clearpage
-# 家长背景问卷调查结果分析## 家庭结构\footnote{其中核心家庭指的是孩子平时和父亲、母亲或父母双方以及兄弟姐妹生活在一起的家庭。主干家庭指的是孩子平时和除了父亲、母亲、兄弟姐妹以外还有（外）祖父母一起生活的家庭。扩大家庭指的是孩子平时除父母、兄弟姐妹、（外）祖父母以外还有其他人一起生活的家庭。}`r fig_name <- "学生的家庭结构情况" `
+\clearpage
+# 家长背景问卷调查结果分析
+
+家长问卷包括从家长的角度了解孩子的相关情况，如孩子睡眠时间、上床时间等，对孩子学业的预期，亲子关系以及对学校的满意度。本章对家长问卷的结果进行分析。以下是主要的分析结果：## 家庭结构`r fig_name <- "学生的家庭结构情况" `
+图\ref{fig:`r fig_name`}给出了学生的家庭结构\footnote{其中核心家庭指的是孩子平时和父亲、母亲或父母双方以及兄弟姐妹生活在一起的家庭。主干家庭指的是孩子平时和除了父亲、母亲、兄弟姐妹以外还有（外）祖父母一起生活的家庭。扩大家庭指的是孩子平时除父母、兄弟姐妹、（外）祖父母以外还有其他人一起生活的家庭。}的总体情况及各群体之间的比较。
 ```{r family_structure.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "family_structure.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1414,7 +1489,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了学生的家庭结构的总体情况及各群体之间的比较。## 与亲子关系有关问题的调查`r fig_name <- "家长主动询问孩子在校发生情况" `
+## 与亲子关系有关问题的调查`r fig_name <- "家长主动询问孩子在校发生情况" `
+图\ref{fig:`r fig_name`}给出了家长主动询问孩子在校情况及各群体之间的比较。
 ```{r query_about_school.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "query_about_school.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1424,7 +1500,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了家长主动询问孩子在校情况及各群体之间的比较。`r fig_name <- "给出了家长认为孩子参与家庭事务讨论的情况" `
+`r fig_name <- "给出了家长认为孩子参与家庭事务讨论的情况" `
+图\ref{fig:`r fig_name`}给出了家长报告孩子参与家庭事务讨论的总体情况及各群体之间的比较。
 ```{r family_discuss.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "family_discuss.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1434,7 +1511,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了家长报告孩子参与家庭事务讨论的总体情况及各群体之间的比较。`r fig_name <- "家长认为孩子平均每天在家做家务情况" `
+`r fig_name <- "家长认为孩子平均每天在家做家务情况" `
+图\ref{fig:`r fig_name`}给出了孩子平均每天在家做家务的总体情况及各群体之间的比较。
 ```{r family_work.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "family_work.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1444,7 +1522,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了孩子平均每天在家做家务的总体情况及各群体之间的比较。`r fig_name <- "家长每周陪孩子共同活动的情况" `
+`r fig_name <- "家长每周陪孩子共同活动的情况" `
+图\ref{fig:`r fig_name`}给出了家长每周陪孩子共同活动（不含做书面作业）的情况
 ```{r parent_accompany.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "parent_accompany.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1454,7 +1533,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了家长每周陪孩子共同活动（不含做书面作业）的情况`r fig_name <- "家长与孩子吵架频率的总体情况" `
+`r fig_name <- "家长与孩子吵架频率的总体情况" `
+图\ref{fig:`r fig_name`}给出了家长与孩子吵架频率的总体情况
 ```{r quarrel_frequency.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "quarrel_frequency.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1464,7 +1544,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了家长与孩子吵架频率的总体情况`r fig_name <- "家长与孩子吵架程度的总体情况" `
+`r fig_name <- "家长与孩子吵架程度的总体情况" `
+图\ref{fig:`r fig_name`}给出了家长与孩子吵架程度的总体情况
 ```{r quarrel_level.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "quarrel_level.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1473,7 +1554,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}图\ref{fig:`r fig_name`}给出了家长与孩子吵架程度的总体情况## 与家长辅导有关问题的调查结果`r fig_name <- "家长辅导有关问题的总体情况" `
+\end{figure}## 与家长辅导有关问题的调查结果`r fig_name <- "家长辅导有关问题的总体情况" `
+图\ref{fig:`r fig_name`}给出了与家长辅导有关问题的总体情况
 ```{r family_coach.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "family_coach.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1482,7 +1564,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}图\ref{fig:`r fig_name`}给出了与家长辅导有关问题的总体情况`r fig_name <- "家里负责孩子学习的人的总体情况" `
+\end{figure}`r fig_name <- "家里负责孩子学习的人的总体情况" `
+图\ref{fig:`r fig_name`}给出了学生家里负责孩子学习的人的总体情况
 ```{r family_coach_person.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "family_coach_person.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1491,8 +1574,9 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}图\ref{fig:`r fig_name`}给出了学生家里负责孩子学习的人的总体情况
+\end{figure}
 ## 与家长对学校教育感受问题的调查结果`r fig_name <- "家长对学校教育感受的情况" `
+图\ref{fig:`r fig_name`}给出了家长对学校教育感受的情况。
 ```{r parent_feeling.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "parent_feeling.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1502,7 +1586,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了家长对学校教育感受的情况。## 与家长教育期望有关问题的调查结果`r fig_name <- "家长在教育期望方面的总体情况" `
+## 与家长教育期望有关问题的调查结果`r fig_name <- "家长在教育期望方面的总体情况" `
+图\ref{fig:`r fig_name`}给出了家长在教育期望方面的总体情况
 ```{r parent_expection.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "parent_expection.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1512,7 +1597,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了家长在教育期望方面的总体情况## 与家长教育观有关问题的调查结果`r fig_name <- "家长教育观的总体情况" `
+## 与家长教育观有关问题的调查结果`r fig_name <- "家长教育观的总体情况" `
+图\ref{fig:`r fig_name`}给出了家长教育观的总体情况
 ```{r parent_philosophy.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "parent_philosophy.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1522,7 +1608,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了家长教育观的总体情况`r fig_name <- "家长心目中理想的小学，最重要的前三项特征" `
+`r fig_name <- "家长心目中理想的小学，最重要的前三项特征" `
+图\ref{fig:`r fig_name`}给出了家长心目中理想的小学，最重要的前三项特征的总体情况
 ```{r school_reasonable.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "school_reasonable.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -1531,4 +1618,4 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}图\ref{fig:`r fig_name`}给出了家长心目中理想的小学，最重要的前三项特征的总体情况 
+\end{figure} 

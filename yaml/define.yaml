@@ -38,6 +38,11 @@ global:
       weight: &weight
         - "加权"
 
+      alias: &alias
+        - "别名"
+      label: &label
+        - "标注值"
+
     def: &stat_def
       assesment: &def_assesment
         - "2016年度上海市中小学学业质量绿色指标"
@@ -62,7 +67,7 @@ global:
           - "教师问卷"
         pr: &survey_pr
           - "校长问卷"
-      tier:
+      tier: &tier_def
         province: &tier_province
           - "省市"
         city: &tier_city
@@ -292,11 +297,13 @@ global:
         score:
           score: &dim_score_total
             - "成绩"
+          level: &dim_level_total
+            - "等级"
         cn: &dimention_cn
           score: &dim_cn_score
             - *dim_score_total
           level: &dim_cn_level
-            - "等级"
+            - *dim_level_total
           question: &dim_cn_question
             - *dom_cn_question
           pronunce: &dim_cn_pronunce
@@ -328,7 +335,7 @@ global:
           score: &dim_ma_score
             - *dim_score_total
           level: &dim_ma_level
-            - "等级"
+            - *dim_level_total
           question: &dim_ma_question
             - *dom_ma_question
           comncept: &dim_ma_concept
@@ -1111,7 +1118,7 @@ global:
         height: &plot_canvas_height
           - 4
         bar_width: &plot_bar_width
-          - 0.4
+          - 0.6
       legend_top: &plot_legend_top
         position: "top"
         direction: "horizontal"
@@ -1155,7 +1162,25 @@ global:
               - "区新优"
             xlab: &xlab_prov_acad_xin
               - "|                 本市                   |                                学制                                  |                           新优质学校                            |"
-
+          province_county:
+            order: &order_prov_coun
+              - "本市"
+              - "72区"
+              - "73区"
+              - "75区"
+              - "76区"
+              - "77区"
+              - "78区"
+              - "79区"
+              - "80区"
+              - "81区"
+              - "82区"
+              - "83区"
+              - "84区"
+              - "85区"
+              - "87区"
+              - "88区"
+              - "89区"
     clean: &clean
       drop: &clean_drop
         - "drop"

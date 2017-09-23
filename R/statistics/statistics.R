@@ -336,29 +336,29 @@ statistics.mean <- function(
   print(paste("Mean",stat$tier,stat$perspective,stat$topic,stat$variable,Sys.time()))
   obs <- stat
   data.out  <- data.stat
-  print("data")
-  print(nrow(data))
+  #print("data")
+  #print(nrow(data))
   scopes <- levels(factor(data[,stat$tier]))
   for(j  in 1:length(scopes)){
     obs$scope <- scopes[j]
     data.scope <- data[data[,stat$tier]==obs$scope,]
     
-    print(paste("data.scope",obs$scope))
-    print(nrow(data.scope))
+    #print(paste("data.scope",obs$scope))
+    #print(nrow(data.scope))
     
     samples <-  levels(factor(data.scope[,stat$perspective]))
     data.perspective <-  subset(data.scope,!is.na(data.scope[,stat$perspective]))
-    print(paste("data.perspective",stat$perspective))
-    print(nrow(data.perspective))
+    #print(paste("data.perspective",stat$perspective))
+    #print(nrow(data.perspective))
     for(k in 1:length(samples)){
       obs$sample <- samples[k]
       data.sample <- data.perspective[data.perspective[,stat$perspective]==obs$sample,]
       data.sample <- subset(data.sample,!is.na(data.sample[,stat$variable]))
-      print(paste("data.sample",obs$sample))
-      print(nrow(data.sample))
+      #print(paste("data.sample",obs$sample))
+      #print(nrow(data.sample))
       obs$value <- weighted.mean(x = data.sample[,stat$variable],
                                  w = data.sample[,stat$weight])
-      print(obs$value)
+      #print(obs$value)
       data.out <- statistics.add(data.stat = data.out, obs = obs, update = update)
       
     }
@@ -485,7 +485,12 @@ statistics.topic <- function(
                                                     data.stat = data.out, 
                                                     stat = stat,
                                                     update = update)
+                  
                   }
+                  else if(stat$statistics==algorithms$mean){
+                    data.out  <- score.statistics.mean(data.in,data.out,stat,update)
+                  }
+                  
                 }
               }
             }
@@ -677,6 +682,8 @@ score.statistics.mean <- function(
   stat,
   update =  FALSE
 ){
+  
+  print("Score.Mean")
   data.stat  <- data.in
   
   set <-  data.frame()
@@ -709,7 +716,7 @@ score.statistics.mean <- function(
           obs2[1, g.var$value] <- groups[m,"x"]    
           obs <-statistics.obs.merge(obs1,obs2)
           obs <- obs.dataframe.2list(obs)
-          #print(obs)
+          print(obs)
           data.out  <- statistics.add(data.out,obs,update)
           #index <-  nrow(data.out)+1
           #data.out[index,]  <-  obs
@@ -721,7 +728,7 @@ score.statistics.mean <- function(
       
       obs <-statistics.obs.merge(obs1,obs2)
       obs <- obs.dataframe.2list(obs)
-      #print(obs)
+      print(obs)
       data.out  <- statistics.add(data.out,obs,update)
      
       #index <-  nrow(data.out)+1

@@ -61,7 +61,60 @@ index.percent <- function(
   return(data.out)
   
 }
-
+############################
+index.passedrate <- function(
+  data,
+  data.stat,
+  stat,
+  update =FALSE
+){
+  
+  print(paste("Passed Rate",stat$tier,stat$perspective,stat$topic,stat$stat))
+  obs <- stat
+  data.out  <- data.stat
+  
+  obs$topic <- stat$index
+  data.in <-  data[data[,g.var$tier]==stat$tier &
+                     data[,g.var$perspective]==stat$perspective &
+                     data[,g.var$domain]==stat$domain &
+                     data[,g.var$dimention]==stat$dimention &
+                     data[,g.var$topic]==stat$topic &
+                     data[,g.var$statistics]==stat$stat,]
+  scopes <-  levels(factor(data.in[,g.var$scope]))
+  for(i in 1:length(scopes)){
+    obs$scope <- scopes[i]
+    data.scope <- data.in[data.in[,g.var$scope]==obs$scope,]
+    samples <- levels(factor(data.scope[,g.var$sample]))
+    for(j in 1:length(samples)){
+      obs$sample <- samples[j]
+      
+      data.sample <- data.scope[data.scope[,g.var$sample]==obs$sample,]
+      #print(data.sample)
+      obs$key <- "指标"
+      obs$variable <- ""
+      obs$weight <- ""
+      value <- 0
+      #print(data.sample)
+      for(k  in  1:length(stat$key)){
+        key  <- stat$key[[k]]
+        #print(key)
+        data.value <-  data.sample[data.sample[,g.var$key]==key,]
+        obs$variable  <- max(data.value[,g.var$variable])
+        obs$weight <-  max(data.value[,g.var$weight])
+        #print(data.value)
+        value <- value + data.value[1 ,g.var$value]
+      }
+      #obs$value <- max(1, floor(value/10))
+      obs$value <- min(9,max(1, floor((100-2.5*(100-value))/10)))
+      
+      data.out <- statistics.add(data.stat = data.out, obs = obs, update = update)
+      
+    }
+    
+  }
+  
+  return(data.out)  
+}
 ############################
 index.topic <- function(
   data,
@@ -105,6 +158,13 @@ index.topic <- function(
               if(stat$statistics == algorithms$percent){
                 stat$key <- topic$key
                 data.out  <-  index.percent(data = data,
+                                            data.stat = data.out, 
+                                            stat = stat,
+                                            update = update)
+              }
+              else if(stat$statistics == algorithms$passed_rate){
+                stat$key <- topic$key
+                data.out  <-  index.passedrate(data = data,
                                             data.stat = data.out, 
                                             stat = stat,
                                             update = update)
