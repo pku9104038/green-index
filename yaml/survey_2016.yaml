@@ -511,6 +511,8 @@ global:
             - "作业2小时以上"
           writing_homework_difficulty: &top_writing_homework_difficulty
             - "作业难度"
+          learning_burden: &top_learning_burden
+            - "学业负担适中与较轻"
           learning_pressure: &top_learning_pressure
             - "学习压力较轻"
           learning_motivation: &top_learning_motivation
@@ -689,6 +691,8 @@ global:
               - "staa004_6"
             sleep_not_enough: &var_sleep_not_enough
               - *top_sleep_not_enough
+            learning_burden: &var_learning_burden
+              - *top_learning_burden
             learning_pressure: &var_learning_pressure
               - *top_learning_pressure
             learning_motivation: &var_learning_motivation
@@ -1003,6 +1007,10 @@ global:
             - "睡眠指数"
           idx_writing_homework: &idx_writing_homework
             - "作业指数"
+          idx_extra_homework: &idx_extra_homework
+            - "校外补课指数"
+          idx_burden: &idx_burden
+            - "学业负担指数"
           idx_morality: &idx_morality
             - "品德行为指数"
           idx_physique: &idx_physique
@@ -1338,7 +1346,6 @@ global:
             - 0
             - 9
 
-
     clean: &clean
       drop: &clean_drop
         - "drop"
@@ -1538,6 +1545,16 @@ survey:
             -
               old: "区县名称"
               new: "区县"
+      -
+        table.merge: *m_survey_st
+        merge.by: "准考证号"
+        table.left: 
+          tab.name: *m_survey_st
+        table.right:
+          tab.name: *o_survey_pa
+          keep:
+            - "准考证号"
+            - "pg012"
 
     weight:
       -
@@ -1658,6 +1675,36 @@ survey:
             T: *T
             F: *F
         
+        -
+          var.name: *var_learning_burden
+          var.type: *var_type_polymer
+          var.column:
+            -
+              col.name:
+                - "staa002"
+              col.value:
+                - "8-9小时(含8小时)"
+                - "9-10小时（含9小时）"
+                - "10小时及以上" 
+            -
+              col.name:
+                - "staa053"
+              col.value:
+                - "1小时以内"
+                - "1-2小时（含1小时）"
+            -
+              col.name:
+                - "pg012"
+              col.value:
+                - "2小时以下"
+                - "2-4小时（含2小时）"
+                - "(空)"
+                - "(跳过)"
+          var.threshold: 2 # 
+          var.option:
+            T: *T
+            F: *F
+
         -
           var.name: *var_learning_pressure
           var.type: *var_type_polymer
@@ -2151,7 +2198,20 @@ survey:
                       name: *top_month_test
                       variable: "staa055"
                       perspective: *perspective_school
+                    -
+                      name: *top_learning_burden
+                      variable: *var_learning_burden
+                      option:        
+                        - *T
 
+                    -
+                      name: *top_extra_homework_4hours_less
+                      variable: "pg012"
+                      option:        
+                        - "2小时以下"
+                        - "2-4小时（含2小时）"
+                        - "(空)"
+                        - "(跳过)"
                     
             - 
               name: *dom_st_teacher
@@ -2606,6 +2666,18 @@ survey:
                       stat: *stat_percent
                       key:
                         - *T
+                    -
+                      index: *idx_extra_homework
+                      name: *top_extra_homework_4hours_less
+                      stat: *stat_percent
+                      key:
+                        - *T
+                    -
+                      index: *idx_burden
+                      name: *top_learning_burden
+                      stat: *stat_percent
+                      key:
+                        - *T
 
             - 
               name: *dom_st_morality
@@ -2667,7 +2739,7 @@ survey:
                         - *T
 
   -
-    process: TRUE
+    process: FALSE
     subject: *survey_te
     table: *table_te
 
@@ -3225,7 +3297,7 @@ survey:
                         - *T
 
   -
-    process: TRUE
+    process: FALSE
     subject: *survey_pr
     table: *table_pr
 
@@ -3571,7 +3643,7 @@ survey:
                       variable: "se057" 
                      
   -
-    process: TRUE
+    process: FALSE
     subject: *survey_pa
     table: *table_pa
 
@@ -4086,7 +4158,7 @@ survey:
                       variable: *var_school_reasonable
                     
   -
-    process: TRUE
+    process: FALSE
     subject: *subject_cn
     table: *table_cn
 
@@ -4349,7 +4421,7 @@ survey:
                         - *T
 
   -
-    process: TRUE
+    process: FALSE
     subject: *subject_ma
     table: *table_ma
 
@@ -15543,6 +15615,173 @@ report:
               discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
+        burden.bar: 
+          fig.name: "四年级学生学业负担指数"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *idx_burden
+                -
+                  x: "x"
+                  from: *scope
+                -
+                  fill: "fill"
+                  by:
+                    - *tier
+                    - *perspective
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_academicsystem
+                - 
+                  variable: *topic
+                  value: *idx_burden
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "fill"
+                  by:
+                    - *tier
+                    - *perspective
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_xinyouzhi
+                - 
+                  variable: *topic
+                  value: *idx_burden
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "fill"
+                  by:
+                    - *tier
+                    - *perspective
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_gender
+                - 
+                  variable: *topic
+                  value: *idx_burden
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "fill"
+                  by:
+                    - *tier
+                    - *perspective
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_huji
+                - 
+                  variable: *topic
+                  value: *idx_burden
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "fill"
+                  by:
+                    - *tier
+                    - *perspective
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *idx_burden
+                -
+                  x: "x"
+                  from: *scope
+                -
+                  fill: "fill"
+                  by:
+                    - *tier
+                    - *perspective
+            aes:
+              #- 
+              #  arg: "x"
+              #  var: *scope
+              -  
+                arg: "y"
+                var: *value
+              #- 
+              #  arg: "fill"
+              #  var: *tier
+              -  
+                arg: "label"
+                var: *label
+            order: 
+              -
+                var: "x"
+                list: *order_prov_pers_coun
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            position: "dodge" 
+            text:
+              vjust: 0.5
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "学业负担指数"
+            axisx:
+              text_angle: 90
+              text_size: 8
+            axisy:
+              discrete_limits: *axisy_discrete_limits_index
+              ylim: *axisy_ylim
+
         sleep.bar: 
           fig.name: "四年级学生睡眠指数"
           data:
@@ -15870,6 +16109,173 @@ report:
             label:
               xlab: ""
               ylab: "作业指数"
+            axisx:
+              text_angle: 90
+              text_size: 8
+            axisy:
+              discrete_limits: *axisy_discrete_limits_index
+              ylim: *axisy_ylim
+
+        extra.homework.bar: 
+          fig.name: "四年级学生校外补课指数"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *idx_extra_homework
+                -
+                  x: "x"
+                  from: *scope
+                -
+                  fill: "fill"
+                  by:
+                    - *tier
+                    - *perspective
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_academicsystem
+                - 
+                  variable: *topic
+                  value: *idx_extra_homework
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "fill"
+                  by:
+                    - *tier
+                    - *perspective
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_xinyouzhi
+                - 
+                  variable: *topic
+                  value: *idx_extra_homework
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "fill"
+                  by:
+                    - *tier
+                    - *perspective
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_gender
+                - 
+                  variable: *topic
+                  value: *idx_extra_homework
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "fill"
+                  by:
+                    - *tier
+                    - *perspective
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_huji
+                - 
+                  variable: *topic
+                  value: *idx_extra_homework
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "fill"
+                  by:
+                    - *tier
+                    - *perspective
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *idx_extra_homework
+                -
+                  x: "x"
+                  from: *scope
+                -
+                  fill: "fill"
+                  by:
+                    - *tier
+                    - *perspective
+            aes:
+              #- 
+              #  arg: "x"
+              #  var: *scope
+              -  
+                arg: "y"
+                var: *value
+              #- 
+              #  arg: "fill"
+              #  var: *tier
+              -  
+                arg: "label"
+                var: *label
+            order: 
+              -
+                var: "x"
+                list: *order_prov_pers_coun
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            position: "dodge" 
+            text:
+              vjust: 0.5
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "校外补课指数"
             axisx:
               text_angle: 90
               text_size: 8
@@ -16837,7 +17243,6 @@ report:
               discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
-
         economic.bar: 
           fig.name: "四年级学生家庭背景影响指数"
           data:
@@ -16917,6 +17322,168 @@ report:
             axisx:
               text_angle: 90
               text_size: 8
+            axisy:
+              discrete_limits: *axisy_discrete_limits_index
+              ylim: *axisy_ylim
+
+
+        county72.radar: 
+          fig.name: "上海市四年级各指标雷达分析图"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *idx_economic
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *idx_economic
+                - 
+                  variable: *scope
+                  value: "虹口区"
+
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *idx_sleep
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *idx_sleep
+                - 
+                  variable: *scope
+                  value: "虹口区"
+             -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *idx_extra_homework
+                           -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *idx_extra_homework
+                - 
+                  variable: *scope
+                  value: "虹口区"
+
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *idx_writing_homework
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *idx_writing_homework
+                - 
+                  variable: *scope
+                  value: "虹口区"
+
+            aes:
+              - 
+                arg: "x"
+                var: *topic
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *tier
+              -  
+                arg: "label"
+                var: *label
+            #order: 
+            #  -
+            #    var: "x"
+            #    list: *order_prov_coun
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging #*plot_radar
+            position: "dodge" 
+            #coord: "polar"
+            #text:
+            #  vjust: 0.5
+            bar:
+              width: 1. #*plot_bar_width
+            label:
+              xlab: ""
+              ylab: "雷达图"
+            #axisx:
+            #  text_angle: 90
+            #  text_size: 8
             axisy:
               discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
