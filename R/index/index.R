@@ -8,7 +8,61 @@ g.var <- yaml.load_file(paste0(g.dir$yaml,g.yaml$survey))$global$stat$var
 source(paste0(g.dir$R,"ETL/db.R"))
 source(paste0(g.dir$R,"statistics/statistics.R"))
 ##############################
-
+############################
+index.percent_value <- function(
+  data,
+  data.stat,
+  stat,
+  update =FALSE){
+  
+  print(paste("Percent",stat$tier,stat$perspective,stat$topic,stat$stat))
+  #print(data)
+  obs <- stat
+  data.out  <- data.stat
+  
+  obs$topic <- stat$index
+  data.in <-  data[data[,g.var$tier]==stat$tier &
+                     data[,g.var$perspective]==stat$perspective &
+                     data[,g.var$domain]==stat$domain &
+                     data[,g.var$dimention]==stat$dimention &
+                     data[,g.var$topic]==stat$topic &
+                     data[,g.var$statistics]==stat$stat,]
+  #print(stat)
+  scopes <-  levels(factor(data.in[,g.var$scope]))
+  for(i in 1:length(scopes)){
+    obs$scope <- scopes[i]
+    #print(obs$scope)
+    data.scope <- data.in[data.in[,g.var$scope]==obs$scope,]
+    #print(data.scope)
+    samples <- levels(factor(data.scope[,g.var$sample]))
+    for(j in 1:length(samples)){
+      obs$sample <- samples[j]
+      #print(obs$sample)
+      data.sample <- data.scope[data.scope[,g.var$sample]==obs$sample,]
+      #print(data.sample)
+      obs$key <- "指标"
+      obs$variable <- ""
+      obs$weight <- ""
+      value <- 0
+      for(k  in  1:length(stat$key)){
+        key  <- stat$key[[k]]
+        #print(key)
+        data.value <-  data.sample[data.sample[,g.var$key]==key,]
+        obs$variable  <- max(data.value[,g.var$variable])
+        obs$weight <-  max(data.value[,g.var$weight])
+        #print(data.value)
+        value <- value + data.value[1 ,g.var$value]
+      }
+      obs$value <- value
+      data.out <- statistics.add(data.stat = data.out, obs = obs, update = update)
+      
+    }
+    
+  }
+  
+  return(data.out)
+  
+}
 ############################
 index.percent <- function(
   data,
@@ -17,6 +71,7 @@ index.percent <- function(
   update =FALSE){
   
   print(paste("Percent",stat$tier,stat$perspective,stat$topic,stat$stat))
+  #print(data)
   obs <- stat
   data.out  <- data.stat
   
@@ -27,21 +82,23 @@ index.percent <- function(
                        data[,g.var$dimention]==stat$dimention &
                        data[,g.var$topic]==stat$topic &
                        data[,g.var$statistics]==stat$stat,]
+  #print(stat)
   scopes <-  levels(factor(data.in[,g.var$scope]))
   for(i in 1:length(scopes)){
     obs$scope <- scopes[i]
+    #print(obs$scope)
     data.scope <- data.in[data.in[,g.var$scope]==obs$scope,]
+    #print(data.scope)
     samples <- levels(factor(data.scope[,g.var$sample]))
     for(j in 1:length(samples)){
       obs$sample <- samples[j]
-      
+      #print(obs$sample)
       data.sample <- data.scope[data.scope[,g.var$sample]==obs$sample,]
       #print(data.sample)
       obs$key <- "指标"
       obs$variable <- ""
       obs$weight <- ""
       value <- 0
-      #print(data.sample)
       for(k  in  1:length(stat$key)){
         key  <- stat$key[[k]]
         #print(key)
@@ -51,7 +108,7 @@ index.percent <- function(
         #print(data.value)
         value <- value + data.value[1 ,g.var$value]
       }
-      obs$value <- max(1, floor(value/10))
+      obs$value <- min(9,max(1, floor(value/10)))
       data.out <- statistics.add(data.stat = data.out, obs = obs, update = update)
           
     }
@@ -115,6 +172,65 @@ index.passedrate <- function(
   
   return(data.out)  
 }
+
+############################
+index.cv <- function(
+  data,
+  data.stat,
+  stat,
+  update =FALSE
+){
+  
+  print(paste("Coefficient of Variation",stat$tier,stat$perspective,stat$topic,stat$stat))
+  obs <- stat
+  data.out  <- data.stat
+  
+  obs$topic <- stat$index
+  data.in <-  data[data[,g.var$assesment]==stat$assesment &
+                     data[,g.var$grade]==stat$grade &
+                     data[,g.var$subject]==stat$subject &
+                     data[,g.var$tier]==stat$tier &
+                     data[,g.var$perspective]==stat$perspective &
+                     data[,g.var$domain]==stat$domain &
+                     data[,g.var$dimention]==stat$dimention &
+                     data[,g.var$topic]==stat$topic &
+                     data[,g.var$statistics]==stat$stat,]
+  
+  scopes <-  levels(factor(data.in[,g.var$scope]))
+  for(i in 1:length(scopes)){
+    obs$scope <- scopes[i]
+    data.scope <- data.in[data.in[,g.var$scope]==obs$scope,]
+    samples <- levels(factor(data.scope[,g.var$sample]))
+    for(j in 1:length(samples)){
+      obs$sample <- samples[j]
+      
+      data.sample <- data.scope[data.scope[,g.var$sample]==obs$sample,]
+      obs$key <- "指标"
+      obs$variable <- ""
+      obs$weight <- ""
+      value <- 0
+      #print(data.sample)
+      for(k  in  1:length(stat$key)){
+        key  <- stat$key[[k]]
+        #print(key)
+        data.value <-  data.sample[data.sample[,g.var$key]==key,]
+        #print(data.value)
+        obs$variable  <- data.value[1,g.var$variable]
+        obs$weight <-  data.value[1,g.var$weight]
+        #print(data.value)
+        value <- data.value[1 ,g.var$value]
+      }
+      #obs$value <- max(1, floor(value/10))
+      obs$value <- min(9,max(1, floor((1-2.5*(value))*10)))
+      
+      data.out <- statistics.add(data.stat = data.out, obs = obs, update = update)
+      
+    }
+    
+  }
+  
+  return(data.out)  
+}
 ############################
 index.topic <- function(
   data,
@@ -168,6 +284,13 @@ index.topic <- function(
                                             data.stat = data.out, 
                                             stat = stat,
                                             update = update)
+              }
+              else if(stat$statistics == algorithms$coefficient_variation){
+                stat$key <- topic$key
+                data.out  <-  index.cv(data = data,
+                                               data.stat = data.out, 
+                                               stat = stat,
+                                               update = update)
               }
               
                 

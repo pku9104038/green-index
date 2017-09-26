@@ -271,6 +271,80 @@ statistics.percent <- function(
   
 }
 ############################
+############################
+score.statistics.gt_mean <- function(
+  data,
+  data.stat,
+  stat,
+  update = FALSE
+){
+  
+  print(paste("Great than mean",stat$tier,stat$perspective,stat$topic,stat$variable,Sys.time()))
+  obs <- stat
+  data.out  <- data.stat
+  weight.total <- sum(data[,stat$weight])
+  mean <- (t(data[,stat$variable])%*%data[,stat$weight])/weight.total
+  #print(summary(mean))
+  mean <- mean[1,1]
+  
+  for(v in 1:length(stat$variable)){
+    variable <- stat$variable[v]
+    obs$variable <- variable
+    
+    #groups <- aggregate(x = data[,variable], 
+    #                    by = data[,c(stat$tier,stat$perspective)], 
+    #                    FUN = mean)
+    
+    #print(groups)
+    scopes <-  levels(factor(data[,stat$tier]))
+    for(i in 1:length(scopes)){
+      obs$scope <- scopes[i]
+      data.scope <- data[data[,stat$tier]==obs$scope,]
+      #print(stat$tier)
+      #print(obs$scope)
+      #print(nrow(data.scope))
+      data.scope <- data.scope[!is.na(data.scope[,stat$perspective]),]
+      if(nrow(data.scope)>0){
+        samples <- levels(factor(data.scope[,stat$perspective]))
+        for(j in 1:length(samples)){
+          obs$sample <- samples[j]
+          data.sample <- data.scope[data.scope[,stat$perspective]==obs$sample,]
+          total<- nrow(data.sample)
+          #mean <- groups[groups[,stat$tier]==obs$scope & groups[,stat$perspective] == obs$sample,"x"]
+          
+          if(total>0){
+            #print(stat$perspective)
+            #print(obs$sample)
+            
+            
+            #print(total)
+            
+            #print(mean)
+            
+            weight.total <- sum(data.sample[,stat$weight])
+            data.gt_mean <- data.sample[data.sample[,obs$variable] >  mean,]
+            weight.gt  <- sum(data.gt_mean[,stat$weight])
+            #print(gt)
+            obs$value <- 100.0*weight.gt/weight.total
+            obs$key <- TRUE
+            data.out <- statistics.add(data.stat = data.out, obs = obs, update = update)
+            
+          }
+          
+        }      
+      }
+
+      
+    }
+    
+  }
+  
+  
+  return(data.out)
+  
+}
+
+############################
 statistics.percent.weight.count <- function(
   data,
   data.stat,
@@ -358,6 +432,56 @@ statistics.mean <- function(
       #print(nrow(data.sample))
       obs$value <- weighted.mean(x = data.sample[,stat$variable],
                                  w = data.sample[,stat$weight])
+      #print(obs$value)
+      data.out <- statistics.add(data.stat = data.out, obs = obs, update = update)
+      
+    }
+  }
+  
+  return(data.out)
+  
+}
+############################
+statistics.coefvar <- function(
+  data,
+  data.stat,
+  stat,
+  update =FALSE
+){
+  
+  print(paste("Coefficient of Variation",stat$tier,stat$perspective,stat$topic,stat$variable,Sys.time()))
+  obs <- stat
+  data.out  <- data.stat
+  #print("data")
+  #print(nrow(data))
+  scopes <- levels(factor(data[,stat$tier]))
+  for(j  in 1:length(scopes)){
+    obs$scope <- scopes[j]
+    data.scope <- data[data[,stat$tier]==obs$scope,]
+    
+    #print(paste("data.scope",obs$scope))
+    #print(nrow(data.scope))
+    
+    samples <-  levels(factor(data.scope[,stat$perspective]))
+    data.perspective <-  subset(data.scope,!is.na(data.scope[,stat$perspective]))
+    #print(paste("data.perspective",stat$perspective))
+    #print(nrow(data.perspective))
+    for(k in 1:length(samples)){
+      obs$sample <- samples[k]
+      data.sample <- data.perspective[data.perspective[,stat$perspective]==obs$sample,]
+      data.sample <- subset(data.sample,!is.na(data.sample[,stat$variable]))
+      #print(paste("data.sample",obs$sample))
+      #print(nrow(data.sample))
+      mean <- weighted.mean(x = data.sample[,stat$variable],
+                                 w = data.sample[,stat$weight])
+      
+      data.delta <- data.sample
+      data.delta[,"delta"] <- data.delta[,stat$variable] - mean
+      data.delta[,"delta"] <- data.delta[,"delta"] * data.delta[,"delta"]
+      data.delta[,"delta"] <- data.delta[,"delta"] * data.delta[,stat$weight]
+      stdev <- sqrt(sum(data.delta[,"delta"])/sum(data.delta[,stat$weight]))
+      coefvar  <-  stdev/mean
+      obs$value <- coefvar
       #print(obs$value)
       data.out <- statistics.add(data.stat = data.out, obs = obs, update = update)
       
@@ -472,10 +596,24 @@ statistics.topic <- function(
                                                      data.stat = data.out, 
                                                      stat = stat,
                                                      update = update)
+                  
+                  }
+                  else if(stat$statistics==algorithms$gt_mean){
+                    data.out  <- score.statistics.gt_mean(data = data,
+                                                          data.stat = data.out,
+                                                          stat = stat,
+                                                          update =  update)
                   }
                   else if(stat$statistics == algorithms$mean){
                     stat$key <- topic$key
                     data.out  <-  statistics.mean(data = data,
+                                                  data.stat = data.out, 
+                                                  stat = stat,
+                                                  update = update)
+                  }
+                  else if(stat$statistics == algorithms$coefvar){
+                    stat$key <- topic$key
+                    data.out  <-  statistics.coefvar(data = data,
                                                   data.stat = data.out, 
                                                   stat = stat,
                                                   update = update)
@@ -490,6 +628,7 @@ statistics.topic <- function(
                   else if(stat$statistics==algorithms$mean){
                     data.out  <- score.statistics.mean(data.in,data.out,stat,update)
                   }
+                  
                   
                 }
               }

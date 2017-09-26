@@ -578,6 +578,20 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \end{figure}
 #### 参加与考试科目相关的家教补习、课外辅导的情况
 
+`r fig_name <- "四年级学生参加与考试科目相关的家教补习或课外辅导的百分比" `
+图\ref{fig:`r fig_name`}给出了四年级学生每周参加与考试科目相关的家教补习、课外辅导的百分比及各群体之间的比较。
+```{r extra_homework_yes.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "extra_homework_yes.bar"
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}
+
+以下为对参加家教补习、课外辅导的学生情况的进一步分析。
+
 `r fig_name <- "四年级学生参加与考试科目相关的家教补习或课外辅导情况" `
 图\ref{fig:`r fig_name`}给出了四年级学生每周参加与考试科目相关的家教补习、课外辅导的总体情况及各群体之间的比较。
 ```{r extra_homework_subject.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
@@ -612,6 +626,21 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \label{fig:`r fig_name`}
 \end{figure}
 #### 参加校外兴趣班的情况
+
+
+`r fig_name <- "四年级学生参加校外兴趣班的百分比" `
+图\ref{fig:`r fig_name`}给出了四年级学生参加校外兴趣班的百分比情况。
+```{r extra_interesting_yes.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "extra_interesting_yes.bar"
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}
+
+以下为对参加校外兴趣班的学生情况的进一步分析。
 
 `r fig_name <- "四年级学生参加校外兴趣班的种类" `
 图\ref{fig:`r fig_name`}给出了四年级学生参加校外兴趣班种类的比例情况。

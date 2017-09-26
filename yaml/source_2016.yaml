@@ -55,6 +55,10 @@ datasource:
         newname: "准考证号"
         type: "text"
   -
+    format: "xlsx"
+    table: "经济体质均衡指数"
+    file: "2016年区县均衡与社会经济背景的影响数据.xlsx"
+  -
     format: "csv"
     table: "学生问卷调查"
     file: "20170409  学生问卷调查结果.csv"

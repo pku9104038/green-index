@@ -178,6 +178,41 @@ variable.classify <- function(
   
   return(data.out)  
 }
+############################
+variable.sum <- function(
+  data,
+  variable                            
+){
+  data.out <- data
+  print(summary(data))
+  
+  columns <- variable$var.column
+  var.name<- variable$var.name
+  default <- variable$var.default
+  
+  print(paste("Sum", var.name, Sys.time()))
+  
+  data.out[,var.name] <- default
+  print(summary(data.out))
+  
+  if(length(columns) >0){
+    for(i in 1:length(columns)){
+      col.names <- columns[[i]]$col.name
+      if(length(col.names) > 0){
+        for(j in 1:length(col.names)){
+          col.name <- col.names[[j]]
+          data.out[,var.name] <- data.out[,var.name] + data[,col.name] 
+        }
+      }
+    }
+    
+    
+  }
+  
+  
+  
+  return(data.out)  
+}
 
 ############################
 variable.school_statistics <- function(
@@ -274,6 +309,9 @@ variable.subject <-  function(
         }
         else if(algorithm == algorithms$segment){
           data <- variable.segment(data, variable)
+        }
+        else if(algorithm == algorithms$sum){
+          data <- variable.sum(data, variable)
         }
       }
     }
