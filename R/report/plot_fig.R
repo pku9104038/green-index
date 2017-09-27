@@ -8,7 +8,7 @@ g.yaml <- conf$yaml
 
 source(paste0(g.dir$R,"report/plot.R"))
 #######################################################
-plot.name <- "county72.radar"
+plot.name <- "county75.radar"
 
 
 reports <- yaml.load_file(paste0(g.dir$yaml,g.yaml$survey))$report
@@ -53,4 +53,5 @@ plot <- report$plot[[plot.name]]
 
 #plot$title <- report$title
 #plot$dir  <- paste0(getwd(),"/",g.dir$report.out.plot)
+#plot$data$keep <- list(list(var = "x", value=c("本市")))
 plot.figure( report = report, plot.in = plot,fig_name = plot$fig.name)

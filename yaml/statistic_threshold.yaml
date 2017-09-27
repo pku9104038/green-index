@@ -1,0 +1,338 @@
+# 2016年上海市中小学学业质量分析绿色指标阈值设置
+
+project:
+  name: 中小学学业质量分析
+  report:
+    name: 2016年度上海市中小学学业质量绿色指标指数报告
+    version: 2017-09-27_211856.pdf
+    algorithm: 大于阈值
+    index:
+      threshold:
+        -
+          var.name: *var_learning_burden
+          var.type: *var_type_polymer
+          var.column:
+            -
+              col.name:
+                - "staa002"
+              col.value:
+                - "8-9小时(含8小时)"
+                - "9-10小时（含9小时）"
+                - "10小时及以上" 
+            -
+              col.name:
+                - "staa053"
+              col.value:
+                - "1小时以内"
+                - "1-2小时（含1小时）"
+            -
+              col.name:
+                - "pg012"
+              col.value:
+                - "2小时以下"
+                - "2-4小时（含2小时）"
+                - "(空)"
+                - "(跳过)"
+          var.threshold: 2 # 
+          var.option:
+            T: *T
+            F: *F
+
+        -
+          var.name: *var_learning_pressure
+          var.type: *var_type_polymer
+          var.column:
+            -
+              col.name:
+                - "staa048"
+                - "staa051"
+                - "staa052"
+              col.value:
+                - "比较不同意"
+                - "非常不同意"
+                - "不确定" 
+            -
+              col.name:
+                - "staa049"
+              col.value:
+                - "比较不同意"
+                - "非常不同意"
+                - "不确定"
+                - "比较同意"
+            -
+              col.name:
+                - "staa050"
+              col.value:
+                - "比较不同意"
+                - "非常不同意"
+            -
+              col.name:
+                - "staa054"
+              col.value:
+                - "非常容易"
+                - "比较容易"
+                - "难易适中"
+            -
+              col.name:
+                - "staa055"
+              col.value:
+                - "0次"
+                - "1次"
+                - "2次"
+                - "3次"  
+          var.threshold: 4 # staa052 
+          var.option:
+            T: *T
+            F: *F
+
+        -
+          var.name: *var_learning_motivation
+          var.type: *var_type_polymer
+          var.column:
+            -
+              col.name:
+                - "staa040"
+                - "staa042"
+              col.value:
+                - "比较不同意"
+                - "非常不同意"
+                - "不确定" 
+            -
+              col.name:
+                - "staa041"
+                - "staa043"
+                - "staa044"
+                - "staa045"
+                - "staa046"
+                - "staa047"
+              col.value:
+                - "非常同意"
+                - "比较同意"
+          var.threshold: 4 # staa045, staa046 
+          var.option:
+            T: *T
+            F: *F
+
+        -
+          var.name: *var_school_identity
+          var.type: *var_type_polymer
+          var.column:
+            -
+              col.name:
+                - "staa027"
+              col.value:
+                - "比较不同意"
+                - "非常不同意"
+            -
+              col.name:
+                - "staa017"
+                - "staa023"
+                - "staa024"
+                - "staa025"
+                - "staa026"
+              col.value:
+                - "非常同意"
+                - "比较同意"
+          var.threshold: 3 #  pa038 不计入统计
+          var.option:
+            T: *T
+            F: *F
+
+        -
+          var.name: *var_learning_confidence
+          var.type: *var_type_polymer
+          var.column:
+            -
+              col.name:
+                - "staa028"
+                - "staa030"
+              col.value:
+                - "比较不同意"
+                - "非常不同意"
+                - "不确定"
+            -
+              col.name:
+                - "staa029"
+                - "staa031"
+              col.value:
+                - "非常同意"
+                - "比较同意"
+            -
+              col.name:
+                - "staa032"
+                - "staa033"
+              col.value:
+                - "非常同意"
+                - "比较同意"
+                - "不确定"
+          var.threshold: 3 #  staa033
+          var.option:
+            T: *T
+            F: *F
+            
+        -
+          var.name: *var_morality
+          var.type: *var_type_polymer
+          var.column:
+            -
+              col.name:
+                - "staa072"
+                - "staa073"
+                - "staa075"
+                - "staa077"
+                - "staa078"
+                - "staa079"
+                - "staa080"
+                - "staa081"
+                - "staa082"
+                - "staa083"
+                - "staa084"
+                - "staa085"
+                - "staa086"           
+              col.value:
+                - "几乎所有人"
+                - "大部分人"
+                - "约一半人"
+            -
+              col.name:
+                - "staa074"
+                - "staa076"
+              col.value:
+                - "小部分人"
+                - "几乎没有人"
+          var.threshold: 7
+          var.option:
+            T: *T
+            F: *F
+
+        -
+          var.name: *var_psychological_health
+          var.type: *var_type_polymer
+          var.column:
+            -
+              col.name:
+                - "staa087"
+                - "staa088"
+                - "staa089"
+                - "staa094"
+                - "staa095"
+                - "staa097"
+                - "staa098"
+                - "staa099"
+                - "staa102"
+                - "staa103"
+              col.value:
+                - "非常不同意"
+                - "比较不同意"
+            -
+              col.name:
+                - "staa090"
+                - "staa091"
+                - "staa092"
+                - "staa093"
+                - "staa096"
+                - "staa100"
+                - "staa101"
+              col.value:
+                - "非常同意"
+                - "比较同意"
+          var.threshold: 10
+          var.option:
+            T: *T
+            F: *F
+
+        -
+          var.name: *var_teacher_relationship
+          var.type: *var_type_polymer
+          var.column:
+            -
+              col.name:
+                - "staa006"
+                - "staa007"
+                - "staa008"
+                - "staa009"
+                - "staa010"
+                - "staa011"
+                - "staa012"
+                - "staa013"
+                - "staa014"
+                - "staa015"
+                - "staa018"
+                - "staa019"
+                - "staa020"
+              col.value:
+                - "非常同意"
+                - "比较同意"  
+            -
+              col.name:
+                - "staa016"
+              col.value:
+                - "非常不同意"
+                - "比较不同意"  
+          var.threshold: 8 # 题数 14 vs 15， 阈值暂不变
+          var.option:
+            T: *T
+            F: *F
+ 
+        -
+          var.name: *var_teaching_method
+          var.type: *var_type_polymer
+          var.column:
+            -
+              col.name:
+                - "staa057"
+                - "staa058"
+                - "staa059"
+                - "staa060"
+                - "staa061"
+                - "staa062"
+                - "staa063"
+                - "staa064"
+                - "staa065"
+                - "staa066"
+                - "staa067"
+                - "staa068"
+                - "staa069"
+                - "staa070"
+                
+              col.value:
+                - "总是"
+                - "常常"
+          var.threshold: 8
+          var.option:
+            T: *T
+            F: *F
+
+
+        -
+          var.name: *var_course_leadership
+          var.type: *var_type_polymer
+          var.column:
+            -
+              col.name:
+                - "tec017"
+                - "tec018"
+                - "tec019"
+                - "tec020"
+                - "tec021"
+                - "tec022"
+                - "tec023"
+                - "tec029"
+                - "tec030"
+                - "tec031"
+                - "tec032"
+                - "tec033"
+                - "tec034"
+                - "tec035"
+                - "tec036"
+                - "tec037"
+                - "tec038"
+                - "tec030"
+                - "tec040"
+              col.value:
+                - "非常符合"
+                - "比较符合"
+          var.threshold: 11
+          var.option:
+            T: *T
+            F: *F
