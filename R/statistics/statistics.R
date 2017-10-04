@@ -518,7 +518,7 @@ statistics.quantile <- function(
       for(l in 1:length(stat$quantile)){
         quantile <- stat$quantile[[l]]
         
-        quant <- quantile(data.sample[,stat$variable],probs = c(quantile$prob))
+        quant <- quantile(data.sample[,stat$variable],probs = c(quantile$prob), na.rm = TRUE)
         
         obs$key <- quantile$key
         obs$value <- quant[quantile$quant]
@@ -831,7 +831,7 @@ score.statistics.mean <- function(
       set[1,stat$set[[i]]$col.name] <-  stat$set[[i]]$col.value
     }
   }
-  print(set)
+  #print(set)
   
   equal  <- data.frame()
   if(!is.null(stat$equal)){
@@ -840,9 +840,9 @@ score.statistics.mean <- function(
       data.stat <- data.stat[data.stat[,stat$equal[[i]]$col.name]==stat$equal[[i]]$col.value,]
     }
   }
-  print(equal)
+  #print(equal)
   obs1 <- statistics.obs.merge(set,equal)
-  print(obs1)
+  #print(obs1)
   if(nrow(data.stat)>0){
     obs <- data.frame()
     if(!is.null(stat$groupby)){
@@ -855,7 +855,7 @@ score.statistics.mean <- function(
           obs2[1, g.var$value] <- groups[m,"x"]    
           obs <-statistics.obs.merge(obs1,obs2)
           obs <- obs.dataframe.2list(obs)
-          print(obs)
+          #print(obs)
           data.out  <- statistics.add(data.out,obs,update)
           #index <-  nrow(data.out)+1
           #data.out[index,]  <-  obs
@@ -867,7 +867,7 @@ score.statistics.mean <- function(
       
       obs <-statistics.obs.merge(obs1,obs2)
       obs <- obs.dataframe.2list(obs)
-      print(obs)
+      #print(obs)
       data.out  <- statistics.add(data.out,obs,update)
      
       #index <-  nrow(data.out)+1

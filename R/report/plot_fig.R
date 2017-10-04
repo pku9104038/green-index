@@ -8,14 +8,14 @@ g.yaml <- conf$yaml
 
 source(paste0(g.dir$R,"report/plot.R"))
 #######################################################
-plot.name <- "county75.radar"
+plot.name <- "score.box.province.county.cn"
 
 
 reports <- yaml.load_file(paste0(g.dir$yaml,g.yaml$survey))$report
 ############
-# 1 base, 2 green
+# 1 base, 2 green 3,cn
 ############
-i <- 2
+i <- 3
 report <-  reports$report[[i]]
 
 report$plot.out  <- paste0(getwd(),"/",g.dir$report.out.plot)

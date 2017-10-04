@@ -63,11 +63,11 @@ params:
 <!-- table of cntents -->
 
 \centering\normalsize\setcounter{tocdepth}{2}\tableofcontents 
-\raggedright\large\setlength{\parindent}{2em}
+
 \clearpage
 
 <!--  end of toc -->
-
+\raggedright\normalsize\setlength{\parindent}{2em}
 <!-- document body -->
 
 # 学业质量绿色指标测试的实施概况
@@ -277,7 +277,7 @@ params:
 - 本市和非本市户籍四年级学生达到语文课程标准基本要求的人数比例分别为99%和98%；达到数学课程标准基本要求的人数比例分别为99.5%和99%；
 
 
-## 四年级学生学业水平总体情况
+## 四年级学生学业水平总体情况　
 
 `r fig_name <- "四年级学生总体语文分数分布" `
 `r fig_name1 <- "四年级学生总体数学分数分布" `
@@ -307,8 +307,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 
 
 `r fig_name <- "不同区域学生在各学科各水平上的人数比例" `
-图2-3 给出了上海市及不同区域在各学科各水平上的人数比例。
-
+图\ref{fig:`r fig_name`}给出了上海市及不同区域在各学科各水平上的人数比例。
 ```{r level.bar.urban.subject, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "level.bar.urban.subject"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)

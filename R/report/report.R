@@ -41,8 +41,20 @@ report.render <- function(
     for(j in 1:length(report$output)){
       output <-  report$output[[j]]
       report$file <- paste0(report$title,"_",report$datetime,output$ext)
-      print(paste("Render",report$file,Sys.time()))
+      zipfile <- paste0(report$title,"_",report$datetime,".zip")
+      sqlfile <- paste0(report$title,"_",report$datetime,".sql")
+      csvfile <- paste0(report$title,"_",report$datetime,".csv")
       
+      # copy pictures
+      for(k in 1:length(report$command$copy$from)){
+        command <- paste(report$command$copy$command, 
+                         report$command$copy$from[[k]],
+                         report$command$copy$to)
+        system(command = command)
+      }
+      
+      ##################################################
+      print(paste("Render",report$file,Sys.time()))
       render(input = report$input_file, 
              output_format = output$format, 
              output_dir = output_dir,
@@ -51,11 +63,32 @@ report.render <- function(
                            dummy.fig  = report$dummy.fig)
              )
       timestamp()
-      #command <- paste(report$copy$command, 
-      #                 paste0('"',g.dir$report.in.rmd,report$file,'"'),
-      #                 paste0('"',g.dir$report.out,report$copy$to,report$file,'"'))
-      #print(paste(command,Sys.time()))
-      #system(command = command)
+      ####################################################
+      #  dump csv and sql
+      db.DumpTable(report$table,paste0(report$command$dump$to,csvfile))
+      
+      command <- paste(report$command$dump$command, 
+                       "-t", report$table,
+                       "-f", 
+                       paste0(report$command$dump$to,sqlfile),
+                       report$command$dump$dbase)
+      print(command)
+      system(command = command)
+      
+      # zip csv, sql, plot
+      command <- paste(report$command$zip$command, 
+                       paste0(output_dir,"/",zipfile),
+                       report$command$zip$from)
+      print(command)
+      system(command = command)
+      
+      # remove plot and dump files
+      command <- paste(report$command$remove$command, 
+                       report$command$remove$files)
+      
+      print(command)
+      system(command = command)
+      
     }
   }
   

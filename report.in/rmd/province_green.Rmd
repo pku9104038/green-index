@@ -255,7 +255,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \label{fig:`r fig_name`}
 \end{figure}
 
-## 学习动机指数历年来大规模测试的数据显示，学生学习动机与学生学业水平呈现明显的相关，学习动机能够很好的预测学业成绩。学习动机是通过采集学生问卷数据，进行数据分析得到的结果。学习动机指数分为9级，指数越高，表示该区域学生学习动机越强。- 9级：表示学习动机较强\footnote{我们将得分超过本维度总分60\%界定为学生学习动机较强。}的学生所占比例在90%以上（含90%）- 8级：表示学习动机较强的学生所占比例在80%-90%之间（含80%）- 7级：表示学习动机较强的学生所占比例在70%-80%之间（含70%）- 6级：表示学习动机较强的学生所占比例在60%-70%之间（含60%）- 5级：表示学习动机较强的学生所占比例在50%-60%之间（含50%）- 4级：表示学习动机较强的学生所占比例在40%-50%之间（含40%）- 3级：表示学习动机较强的学生所占比例在30%-40%之间（含30%）- 2级：表示学习动机较强的学生所占比例在20%-30%之间（含20%）- 1级：表示学习动机较强的学生所占比例在20%以下图2-2 四年级学生学习动机指数
+## 学习动机指数历年来大规模测试的数据显示，学生学习动机与学生学业水平呈现明显的相关，学习动机能够很好的预测学业成绩。学习动机是通过采集学生问卷数据，进行数据分析得到的结果。学习动机指数分为9级，指数越高，表示该区域学生学习动机越强。- 9级：表示学习动机较强\footnote{我们将得分超过本维度总分60\%界定为学生学习动机较强。}的学生所占比例在90%以上（含90%）- 8级：表示学习动机较强的学生所占比例在80%-90%之间（含80%）- 7级：表示学习动机较强的学生所占比例在70%-80%之间（含70%）- 6级：表示学习动机较强的学生所占比例在60%-70%之间（含60%）- 5级：表示学习动机较强的学生所占比例在50%-60%之间（含50%）- 4级：表示学习动机较强的学生所占比例在40%-50%之间（含40%）- 3级：表示学习动机较强的学生所占比例在30%-40%之间（含30%）- 2级：表示学习动机较强的学生所占比例在20%-30%之间（含20%）- 1级：表示学习动机较强的学生所占比例在20%以下图\ref{fig:`r fig_name`}四年级学生学习动机指数
 
 `r fig_name <- "四年级学生学习动机指数" `
 ```{r learning.motivation.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
@@ -298,7 +298,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \end{figure}
 # 学生学业负担指数
 
-## 学业负担综合指数我们通过调查学生的睡眠时间、做作业时间和补课时间来反映当前学生的学业负担。学业负担指数是通过采集学生问卷数据，进行数据分析得到的结果。学生学业负担指数分为9级，指数越高，表示该区域学生学业负担越轻。- 9级：表示学业负担适中与较轻\footnote{我们将小学生睡眠时间在8小时以上、做作业时间在1-2小时以下，没有参加与考试学科的补课界定为学业负担适中与较轻。}的学生所占比例在90%以上（含90%）- 8级：表示学业负担适中与较轻的学生所占比例在80%-90%之间（含80%）- 7级：表示学业负担适中与较轻的学生所占比例在70%-80%之间（含70%）- 6级：表示学业负担适中与较轻的学生所占比例在60%-70%之间（含60%）- 5级：表示学业负担适中与较轻的学生所占比例在50%-60%之间（含50%）- 4级：表示学业负担适中与较轻的学生所占比例在40%-50%之间（含40%）- 3级：表示学业负担适中与较轻的学生所占比例在30%-40%之间（含30%）- 2级：表示学业负担适中与较轻的学生所占比例在20%-30%之间（含20%）- 1级：表示学业负担适中与较轻的学生所占比例在20%以下
+## 学业负担综合指数我们通过调查学生的睡眠时间、做作业时间和补课时间来反映当前学生的学业负担。学业负担指数是通过采集学生问卷数据，进行数据分析得到的结果。学生学业负担指数分为9级，指数越高，表示该区域学生学业负担越轻。- 9级：表示学业负担适中与较轻\footnote{我们将以下三个条件满足两个的小学生界定为学业负担适中与较轻。1、睡眠时间在9小时以上；2、做作业时间在1小时以下；每周参加与考试学科的补课2小时以下}的学生所占比例在90%以上（含90%）- 8级：表示学业负担适中与较轻的学生所占比例在80%-90%之间（含80%）- 7级：表示学业负担适中与较轻的学生所占比例在70%-80%之间（含70%）- 6级：表示学业负担适中与较轻的学生所占比例在60%-70%之间（含60%）- 5级：表示学业负担适中与较轻的学生所占比例在50%-60%之间（含50%）- 4级：表示学业负担适中与较轻的学生所占比例在40%-50%之间（含40%）- 3级：表示学业负担适中与较轻的学生所占比例在30%-40%之间（含30%）- 2级：表示学业负担适中与较轻的学生所占比例在20%-30%之间（含20%）- 1级：表示学业负担适中与较轻的学生所占比例在20%以下
 
 `r fig_name <- "四年级学生学业负担指数" `
 ```{r burden.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
@@ -311,7 +311,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \label{fig:`r fig_name`}
 \end{figure}
 
-## 学业负担分项指标### 睡眠指数通过对大规模测试数据的分析，结果显示与睡眠时间较多的学生相比，睡眠时间较少的学生，其学业成绩并没有随着睡眠时间的减少而提高。参照相关政策文件，以小学生每天睡眠时间保证8-9小时为参照，将睡眠指数划分为9级，指数越高，表示睡眠时间得到保障的学生比例越高。- 9级：表示90%以上的学生睡眠时间得到基本保障（含90%）
+## 学业负担分项指标### 睡眠指数通过对大规模测试数据的分析，结果显示与睡眠时间较多的学生相比，睡眠时间较少的学生，其学业成绩并没有随着睡眠时间的减少而提高。参照相关政策文件，以小学生每天睡眠时间保证9小时以上为参照，将睡眠指数划分为9级，指数越高，表示睡眠时间得到保障的学生比例越高。- 9级：表示90%以上的学生睡眠时间得到基本保障（含90%）
 - 8级：表示80%-90%的学生睡眠时间得到基本保障（含80%）
 - 7级：表示70%-80%的学生睡眠时间得到基本保障（含70%）
 - 6级：表示60%-70%的学生睡眠时间得到基本保障（含60%）
@@ -332,7 +332,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-### 作业指数参照有关文件和相关研究成果，小学生每天做作业时间1-2小时以下为宜。以此为参照，将作业时间指数划分为9级，指数越高，表示作业量适宜的学生比例越高。- 9级：表示90%以上的学生作业量适宜（含90%）- 8级：表示80%-90%的学生作业量适宜（含80%）- 7级：表示70%-80%的学生作业量适宜（含70%）- 6级：表示60%-70%的学生作业量适宜（含60%）- 5级：表示50%-60%的学生作业量适宜（含50%）- 4级：表示40%-50%的学生作业量适宜（含40%）- 3级：表示30%-40%的学生作业量适宜（含30%）- 2级：表示20%-30%的学生作业量适宜（含20%）- 1级：表示20%以下的学生作业量适宜
+### 作业指数参照有关文件和相关研究成果，小学生每天做作业时间1小时以下为宜。以此为参照，将作业时间指数划分为9级，指数越高，表示作业量适宜的学生比例越高。- 9级：表示90%以上的学生作业量适宜（含90%）- 8级：表示80%-90%的学生作业量适宜（含80%）- 7级：表示70%-80%的学生作业量适宜（含70%）- 6级：表示60%-70%的学生作业量适宜（含60%）- 5级：表示50%-60%的学生作业量适宜（含50%）- 4级：表示40%-50%的学生作业量适宜（含40%）- 3级：表示30%-40%的学生作业量适宜（含30%）- 2级：表示20%-30%的学生作业量适宜（含20%）- 1级：表示20%以下的学生作业量适宜
 `r fig_name <- "四年级学生作业指数" `
 ```{r writing.homework.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "writing.homework.bar"
@@ -343,7 +343,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-### 校外考试学科补课指数- 9级：表示90%以上的学生没有参加与考试学科相关的校外补课（含90%）- 8级：表示80%-90%的学生没有参加与考试学科相关的校外补课（含80%）- 7级：表示70%-80%的学生没有参加与考试学科相关的校外补课（含70%）- 6级：表示60%-70%的学生没有参加与考试学科相关的校外补课（含60%）- 5级：表示50%-60%的学生没有参加与考试学科相关的校外补课（含50%）- 4级：表示40%-50%的学生没有参加与考试学科相关的校外补课（含40%）- 3级：表示30%-40%的学生没有参加与考试学科相关的校外补课（含30%）- 2级：表示20%-30%的学生没有参加与考试学科相关的校外补课（含20%）- 1级：表示20%以下的学生没有参加与考试学科相关的校外补课
+### 校外考试学科补课指数- 9级：表示90%以上的学生每周参加与考试学科相关的校外补课2小时以下（含90%）- 8级：表示80%-90%的学生每周参加与考试学科相关的校外补课2小时以下（含80%）- 7级：表示70%-80%的学生每周参加与考试学科相关的校外补课2小时以下（含70%）- 6级：表示60%-70%的学生每周参加与考试学科相关的校外补课2小时以下（含60%）- 5级：表示50%-60%的学生每周参加与考试学科相关的校外补课2小时以下（含50%）- 4级：表示40%-50%的学生每周参加与考试学科相关的校外补课2小时以下（含40%）- 3级：表示30%-40%的学生每周参加与考试学科相关的校外补课2小时以下（含30%）- 2级：表示20%-30%的学生每周参加与考试学科相关的校外补课2小时以下（含20%）- 1级：表示20%以下的学生每周参加与考试学科相关的校外补课2小时以下
 `r fig_name <- "四年级学生校外补课指数" `
 ```{r extra.homework.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "extra.homework.bar"
@@ -354,7 +354,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-# 师生关系指数历年大规模测试数据结果显示，师生关系与学生学业水平呈明显的正相关，师生关系对学生学业成绩有明显的正向预测作用。师生关系的调查主要包含了教师是否尊重学生，是否公正、平等的对待学生，是否信任学生等。师生关系指数是通过采集学生问卷数据，进行数据分析得到的结果。师生关系指数分为9级，指数越高，表示该区域师生关系越好。- 9级：表示90%以上的学生对师生关系评价较好\footnote{我们将得分超过本维度总分60\%的界定为对师生关系评价较好。}（含90%）- 8级：表示80%-90%的学生对师生关系评价较好（含80%）- 7级：表示70%-80%的学生对师生关系评价较好（含70%）- 6级：表示60%-70%的学生对师生关系评价较好（含60%）- 5级：表示50%-60%的学生对师生关系评价较好（含50%）- 4级：表示40%-50%的学生对师生关系评价较好（含40%）- 3级：表示30%-40%的学生对师生关系评价较好（含30%）- 2级：表示20%-30%的学生对师生关系评价较好（含20%）- 1级：表示20%以下的学生对师生关系评价较好图4-1 四年级师生关系指数`r fig_name <- "四年级师生关系指数" `
+# 师生关系指数历年大规模测试数据结果显示，师生关系与学生学业水平呈明显的正相关，师生关系对学生学业成绩有明显的正向预测作用。师生关系的调查主要包含了教师是否尊重学生，是否公正、平等的对待学生，是否信任学生等。师生关系指数是通过采集学生问卷数据，进行数据分析得到的结果。师生关系指数分为9级，指数越高，表示该区域师生关系越好。- 9级：表示90%以上的学生对师生关系评价较好\footnote{我们将得分超过本维度总分60\%的界定为对师生关系评价较好。}（含90%）- 8级：表示80%-90%的学生对师生关系评价较好（含80%）- 7级：表示70%-80%的学生对师生关系评价较好（含70%）- 6级：表示60%-70%的学生对师生关系评价较好（含60%）- 5级：表示50%-60%的学生对师生关系评价较好（含50%）- 4级：表示40%-50%的学生对师生关系评价较好（含40%）- 3级：表示30%-40%的学生对师生关系评价较好（含30%）- 2级：表示20%-30%的学生对师生关系评价较好（含20%）- 1级：表示20%以下的学生对师生关系评价较好图\ref{fig:`r fig_name`}四年级师生关系指数`r fig_name <- "四年级师生关系指数" `
 ```{r teacher.relationship.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher.relationship.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -441,7 +441,6 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \clearpage
 \end{landscape}# 各指标雷达分析图
 `r fig_name <- "上海市四年级各指标雷达分析图" `
-
 图\ref{fig:`r fig_name`}给出了上海市四年级的各指标雷达分析图。```{r province.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
 report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市")))
@@ -453,8 +452,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \label{fig:`r fig_name`}
 \end{figure}
 
-图\ref{fig:`r fig_name`}给出了区72四年级的各指标雷达分析图。`r fig_name <- "四年级各指标雷达分析图—区72" `
-```{r province.county72.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+`r fig_name <- "四年级各指标雷达分析图—区72" `图\ref{fig:`r fig_name`}给出了区72四年级的各指标雷达分析图。```{r province.county72.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
 report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","72区")))
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -464,7 +462,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了区73四年级的各指标雷达分析图。`r fig_name <- "四年级各指标雷达分析图—区73" `
+`r fig_name <- "四年级各指标雷达分析图—区73" `图\ref{fig:`r fig_name`}给出了区73四年级的各指标雷达分析图。
 ```{r province.county73.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
 report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","73区")))
@@ -475,7 +473,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了区75四年级的各指标雷达分析图。`r fig_name <- "四年级各指标雷达分析图—区75" `
+`r fig_name <- "四年级各指标雷达分析图—区75" `图\ref{fig:`r fig_name`}给出了区75四年级的各指标雷达分析图。
 ```{r province.county75.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
 report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","75区")))
@@ -486,7 +484,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了区76四年级的各指标雷达分析图。`r fig_name <- "四年级各指标雷达分析图—区76" `
+`r fig_name <- "四年级各指标雷达分析图—区76" `图\ref{fig:`r fig_name`}给出了区76四年级的各指标雷达分析图。
 ```{r province.county76.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
 report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","76区")))
@@ -497,7 +495,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了区77四年级的各指标雷达分析图。`r fig_name <- "四年级各指标雷达分析图—区77" `
+`r fig_name <- "四年级各指标雷达分析图—区77" `图\ref{fig:`r fig_name`}给出了区77四年级的各指标雷达分析图。
 ```{r province.county77.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
 report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","77区")))
@@ -508,7 +506,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了区78四年级的各指标雷达分析图。`r fig_name <- "四年级各指标雷达分析图—区78" `
+`r fig_name <- "四年级各指标雷达分析图—区78" `图\ref{fig:`r fig_name`}给出了区78四年级的各指标雷达分析图。
 ```{r province.county78.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
 report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","78区")))
@@ -519,7 +517,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了区79四年级的各指标雷达分析图。`r fig_name <- "四年级各指标雷达分析图—区79" `
+`r fig_name <- "四年级各指标雷达分析图—区79" `图\ref{fig:`r fig_name`}给出了区79四年级的各指标雷达分析图。
 ```{r province.county79.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
 report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","79区")))
@@ -530,7 +528,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了区80四年级的各指标雷达分析图。`r fig_name <- "四年级各指标雷达分析图—区80" `
+`r fig_name <- "四年级各指标雷达分析图—区80" `图\ref{fig:`r fig_name`}给出了区80四年级的各指标雷达分析图。
 ```{r province.county80.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
 report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","80区")))
@@ -542,7 +540,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \label{fig:`r fig_name`}
 \end{figure}
 
-图\ref{fig:`r fig_name`}给出了区81四年级的各指标雷达分析图。`r fig_name <- "四年级各指标雷达分析图—区81" `
+`r fig_name <- "四年级各指标雷达分析图—区81" `
+图\ref{fig:`r fig_name`}给出了区81四年级的各指标雷达分析图。
 ```{r province.county81.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
 report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","81区")))
@@ -554,7 +553,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \label{fig:`r fig_name`}
 \end{figure}
 
-图\ref{fig:`r fig_name`}给出了区82四年级的各指标雷达分析图。`r fig_name <- "四年级各指标雷达分析图—区82" `
+`r fig_name <- "四年级各指标雷达分析图—区82" `
+图\ref{fig:`r fig_name`}给出了区82四年级的各指标雷达分析图。
 ```{r province.county82.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
 report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","82区")))
@@ -566,7 +566,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \label{fig:`r fig_name`}
 \end{figure}
 
-图\ref{fig:`r fig_name`}给出了区83四年级的各指标雷达分析图。`r fig_name <- "四年级各指标雷达分析图—区83" `
+`r fig_name <- "四年级各指标雷达分析图—区83" `
+图\ref{fig:`r fig_name`}给出了区83四年级的各指标雷达分析图。
 ```{r province.county83.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
 report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","83区")))
@@ -577,7 +578,9 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了区84四年级的各指标雷达分析图。`r fig_name <- "四年级各指标雷达分析图—区84" `
+
+`r fig_name <- "四年级各指标雷达分析图—区84" `
+图\ref{fig:`r fig_name`}给出了区84四年级的各指标雷达分析图。
 ```{r province.county84.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
 report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","84区")))
@@ -589,7 +592,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \label{fig:`r fig_name`}
 \end{figure}
 
-图\ref{fig:`r fig_name`}给出了区86四年级的各指标雷达分析图。`r fig_name <- "四年级各指标雷达分析图—区86" `
+`r fig_name <- "四年级各指标雷达分析图—区86" `
+图\ref{fig:`r fig_name`}给出了区86四年级的各指标雷达分析图。
 ```{r province.county86.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
 report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","86区")))
@@ -601,7 +605,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \label{fig:`r fig_name`}
 \end{figure}
 
-图\ref{fig:`r fig_name`}给出了区87四年级的各指标雷达分析图。`r fig_name <- "四年级各指标雷达分析图—区87" `
+`r fig_name <- "四年级各指标雷达分析图—区87" `
+图\ref{fig:`r fig_name`}给出了区87四年级的各指标雷达分析图。
 ```{r province.county87.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
 report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","87区")))
@@ -612,7 +617,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-图\ref{fig:`r fig_name`}给出了区88四年级的各指标雷达分析图。`r fig_name <- "四年级各指标雷达分析图—区88" `
+`r fig_name <- "四年级各指标雷达分析图—区88" `图\ref{fig:`r fig_name`}给出了区88四年级的各指标雷达分析图。
 ```{r province.county88.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
 report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","88区")))
@@ -624,7 +629,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \label{fig:`r fig_name`}
 \end{figure}
 
-图\ref{fig:`r fig_name`}给出了区89四年级的各指标雷达分析图。`r fig_name <- "四年级各指标雷达分析图—区89" `
+`r fig_name <- "四年级各指标雷达分析图—区89" `
+图\ref{fig:`r fig_name`}给出了区89四年级的各指标雷达分析图。
 ```{r province.county89.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
 report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","89区")))

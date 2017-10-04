@@ -134,3 +134,11 @@ db.RemoveTable <- function(
 }
 
 ###########################################
+db.DumpTable <- function(
+  table,
+  path
+){
+  data <- db.ReadTable(table)
+  write.csv( x = data,file = path)
+}
+###########################################

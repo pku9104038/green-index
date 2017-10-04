@@ -75,7 +75,7 @@ index.percent <- function(
   obs <- stat
   data.out  <- data.stat
   
-  obs$topic <- stat$index
+  
   data.in <-  data[data[,g.var$tier]==stat$tier &
                        data[,g.var$perspective]==stat$perspective &
                        data[,g.var$domain]==stat$domain &
@@ -95,7 +95,7 @@ index.percent <- function(
       #print(obs$sample)
       data.sample <- data.scope[data.scope[,g.var$sample]==obs$sample,]
       #print(data.sample)
-      obs$key <- "指标"
+      
       obs$variable <- ""
       obs$weight <- ""
       value <- 0
@@ -108,6 +108,15 @@ index.percent <- function(
         #print(data.value)
         value <- value + data.value[1 ,g.var$value]
       }
+      if(!is.null(stat$coef)){
+        print("系数")
+        obs$topic <- stat$coef
+        obs$key <- "系数"
+        obs$value <- value
+        data.out <- statistics.add(data.stat = data.out, obs = obs, update = update)
+      }
+      obs$topic <- stat$index
+      obs$key <- "指标"
       obs$value <- min(9,max(1, floor(value/10)))
       data.out <- statistics.add(data.stat = data.out, obs = obs, update = update)
           
@@ -130,7 +139,7 @@ index.passedrate <- function(
   obs <- stat
   data.out  <- data.stat
   
-  obs$topic <- stat$index
+  
   data.in <-  data[data[,g.var$tier]==stat$tier &
                      data[,g.var$perspective]==stat$perspective &
                      data[,g.var$domain]==stat$domain &
@@ -147,7 +156,7 @@ index.passedrate <- function(
       
       data.sample <- data.scope[data.scope[,g.var$sample]==obs$sample,]
       #print(data.sample)
-      obs$key <- "指标"
+      
       obs$variable <- ""
       obs$weight <- ""
       value <- 0
@@ -161,6 +170,16 @@ index.passedrate <- function(
         #print(data.value)
         value <- value + data.value[1 ,g.var$value]
       }
+      print(stat$coef)
+      if(!is.null(stat$coef)){
+        print("系数")
+        obs$topic <- stat$coef
+        obs$key <- "系数"
+        obs$value <- 100-2.5*(100-value)
+        data.out <- statistics.add(data.stat = data.out, obs = obs, update = update)
+      }
+      obs$topic <- stat$index
+      obs$key <- "指标"
       #obs$value <- max(1, floor(value/10))
       obs$value <- min(9,max(1, floor((100-2.5*(100-value))/10)))
       
@@ -185,7 +204,7 @@ index.cv <- function(
   obs <- stat
   data.out  <- data.stat
   
-  obs$topic <- stat$index
+  
   data.in <-  data[data[,g.var$assesment]==stat$assesment &
                      data[,g.var$grade]==stat$grade &
                      data[,g.var$subject]==stat$subject &
@@ -205,7 +224,7 @@ index.cv <- function(
       obs$sample <- samples[j]
       
       data.sample <- data.scope[data.scope[,g.var$sample]==obs$sample,]
-      obs$key <- "指标"
+      
       obs$variable <- ""
       obs$weight <- ""
       value <- 0
@@ -220,6 +239,16 @@ index.cv <- function(
         #print(data.value)
         value <- data.value[1 ,g.var$value]
       }
+      
+      if(!is.null(stat$coef)){
+        print("系数")
+        obs$topic <- stat$coef
+        obs$key <- "系数"
+        obs$value <- (1-2.5*(value))*100
+        data.out <- statistics.add(data.stat = data.out, obs = obs, update = update)
+      }
+      obs$topic <- stat$index
+      obs$key <- "指标"
       #obs$value <- max(1, floor(value/10))
       obs$value <- min(9,max(1, floor((1-2.5*(value))*10)))
       
@@ -269,6 +298,8 @@ index.topic <- function(
               
               stat$topic <- topic$name
               stat$index <- topic$index
+              print(topic$coef)
+              stat$coef <- topic$coef
               stat$stat <- topic$stat
                   
               if(stat$statistics == algorithms$percent){
@@ -392,6 +423,7 @@ index.subject <-  function(
                 if(length(topics)>0){
                   for(l in 1:length(topics)){
                     topic <- topics[[l]]
+                    print(topic)
                     # must have
                     # topic$name
                     if(is.null(topic$perspective)){
