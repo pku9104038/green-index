@@ -486,7 +486,7 @@ global:
           passed_rate: &top_passed_rate
             - "及格率"
           high_level_thinking: &top_high_level_thinking
-            - "高层次思维能力系数"
+            - "高层次思维能力"
           total_coefficient_variation: &top_total_score_coefficient_variation
             - "总成绩变异系数"
 
@@ -1191,8 +1191,11 @@ global:
         index: &i_survey
           - "问卷指标"
       outsource:
-        index: &i_outsource
+        economic_balance: &i_economic_balance
           - "经济体质均衡指数"
+        history_coefficient: &i_history
+          - "历年指标"
+
       final: &si_final
         - "统计指标汇总" 
       county: &table_county
@@ -2226,7 +2229,7 @@ survey:
                       name: "我在上课时能够主动地提出问题"
                       variable: "staa039"
                 -
-                  name: *dim_st_driving
+                  name: *dim_st_confidence
 
                   topic:
                     -
@@ -2234,16 +2237,27 @@ survey:
                       variable: *var_learning_confidence
                       option:        
                         - *T
+                -
+                  name: *dim_st_pressure
+                  topic:
                     -
                       name: *top_learning_pressure
                       variable: *var_learning_pressure
                       option:        
                         - *T
+                -
+                  name: *dim_st_driving
+
+                  topic:
                     -
                       name: *top_learning_motivation
                       variable: *var_learning_motivation
                       option:        
                         - *T
+                -
+                  name: *dim_st_identity
+
+                  topic:
                     -
                       name: *top_school_identity
                       variable: *var_school_identity
@@ -5026,7 +5040,8 @@ index:
       - *i_score_cn
       - *i_score_ma
       - *i_score
-      - *i_outsource
+      - *i_economic_balance
+      - *i_history
     table.out: *si_final
 
 report:

@@ -184,7 +184,7 @@ variable.sum <- function(
   variable                            
 ){
   data.out <- data
-  print(summary(data))
+  #print(summary(data))
   
   columns <- variable$var.column
   var.name<- variable$var.name
@@ -193,7 +193,7 @@ variable.sum <- function(
   print(paste("Sum", var.name, Sys.time()))
   
   data.out[,var.name] <- default
-  print(summary(data.out))
+  #print(summary(data.out))
   
   if(length(columns) >0){
     for(i in 1:length(columns)){

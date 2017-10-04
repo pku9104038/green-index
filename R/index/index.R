@@ -109,7 +109,7 @@ index.percent <- function(
         value <- value + data.value[1 ,g.var$value]
       }
       if(!is.null(stat$coef)){
-        print("系数")
+        #print("系数")
         obs$topic <- stat$coef
         obs$key <- "系数"
         obs$value <- value
