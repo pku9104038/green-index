@@ -702,6 +702,12 @@ plot.data <- function(
         }
         
       }
+      else if(!is.null(fil$year)){
+        for(k in 1: nrow(data)){
+          data[k,fil$year] <- substr(data[k,fil$from],1,5)
+        }
+        
+      }
       else{
         data <- data[data[,fil$variable] == fil$value,]
       }
@@ -710,9 +716,12 @@ plot.data <- function(
     
     data.out <- bind_rows(data.out,data)
   }
+  print(data.out)
+  
   #data.out[,g.var$value] <- data.out[,g.var$value]/100.0
   #data.out[,g.var$value] <- round(data.out[,g.var$value], digits = plot$data$digits)
   data.out[,g.var$label] <- round(data.out[,g.var$value], digits = 0)
+  
   
   if(!is.null(plot$data$derivative)){
     print("dara derivative")

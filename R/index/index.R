@@ -3,6 +3,7 @@ library(yaml)
 library(dplyr)
 conf <- yaml.load_file("yaml/conf.yaml")
 g.dir <- conf$dir
+g.yaml <- conf$yaml
 g.var <- yaml.load_file(paste0(g.dir$yaml,g.yaml$survey))$global$stat$var
 # source scripts
 source(paste0(g.dir$R,"ETL/db.R"))
@@ -170,9 +171,9 @@ index.passedrate <- function(
         #print(data.value)
         value <- value + data.value[1 ,g.var$value]
       }
-      print(stat$coef)
+      #print(stat$coef)
       if(!is.null(stat$coef)){
-        print("系数")
+        #print("系数")
         obs$topic <- stat$coef
         obs$key <- "系数"
         obs$value <- 100-2.5*(100-value)
@@ -241,7 +242,7 @@ index.cv <- function(
       }
       
       if(!is.null(stat$coef)){
-        print("系数")
+        #print("系数")
         obs$topic <- stat$coef
         obs$key <- "系数"
         obs$value <- (1-2.5*(value))*100
@@ -298,7 +299,7 @@ index.topic <- function(
               
               stat$topic <- topic$name
               stat$index <- topic$index
-              print(topic$coef)
+              #print(topic$coef)
               stat$coef <- topic$coef
               stat$stat <- topic$stat
                   
@@ -423,7 +424,7 @@ index.subject <-  function(
                 if(length(topics)>0){
                   for(l in 1:length(topics)){
                     topic <- topics[[l]]
-                    print(topic)
+                    #print(topic)
                     # must have
                     # topic$name
                     if(is.null(topic$perspective)){

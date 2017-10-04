@@ -3,6 +3,7 @@ library(yaml)
 library(rmarkdown)
 conf <- yaml.load_file("yaml/conf.yaml")
 g.dir <- conf$dir
+g.yaml <- conf$yaml
 g.var <- yaml.load_file(paste0(g.dir$yaml,g.yaml$survey))$global$stat$var
 g.tier <- yaml.load_file(paste0(g.dir$yaml,g.yaml$survey))$global$def$tier
 # source scripts

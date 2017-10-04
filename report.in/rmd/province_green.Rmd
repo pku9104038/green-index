@@ -432,9 +432,13 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \begin{landscape}
 \chapter{各指标历年测试结果比较}
 `r fig_name <- "上海市四年级历年测试结果比较" `
-图\ref{fig:`r fig_name`}给出了上海市四年级各指标历年测试结果比较。`r fig_file <- params$dummy.fig `
+图\ref{fig:`r fig_name`}给出了上海市四年级各指标历年测试结果比较。```{r history.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "history.bar"
+report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市")))
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
+\includegraphics[width=20cm]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}

@@ -2,7 +2,7 @@
 library(yaml)
 library(RPostgreSQL)
 
-merger.table <- function(){
+merge.table <- function(){
   # init global configurations
   conf <- yaml.load_file("yaml/conf.yaml")
   g.dir <- conf$dir

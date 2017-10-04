@@ -1,3 +1,10 @@
+library(yaml)
+
+########################
+
+source("check_yaml.R")
+check.yaml()
+
 ########################
 
 conf <- yaml.load_file("yaml/conf.yaml")

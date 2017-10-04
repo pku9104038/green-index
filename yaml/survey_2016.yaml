@@ -2718,7 +2718,7 @@ survey:
 
               dimention:
                 -
-                  name: *dim_st_driving
+                  name: *dim_st_confidence
 
                   topic:
                     -
@@ -2727,6 +2727,10 @@ survey:
                       stat: *stat_percent
                       key:
                         - *T
+                -
+                  name: *dim_st_pressure
+
+                  topic:
                     -
                       index: *idx_pressure
                       coef: *coef_pressure
@@ -2734,6 +2738,9 @@ survey:
                       stat: *stat_percent
                       key:
                         - *T
+                -
+                  name: *dim_st_driving
+                  topic:
                     -
                       index: *idx_motivation
                       coef: *coef_motivation
@@ -2741,6 +2748,10 @@ survey:
                       stat: *stat_percent
                       key:
                         - *T
+                -
+                  name: *dim_st_identity
+
+                  topic:
                     -
                       index: *idx_school_identiy
                       name: *top_school_identity
@@ -17472,6 +17483,253 @@ report:
             axisy:
               discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
+
+        history.bar:
+          fig.name: "上海市四年级历年测试结果比较"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                -
+                  variable: *subject
+                  value: *subject_all
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *coef_school_balance
+                -
+                  year: "year"
+                  from: *assesment
+              -
+                -
+                  variable: *subject
+                  value: *subject_all
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *coef_passed_rate
+                -
+                  year: "year"
+                  from: *assesment
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *coef_motivation
+                -
+                  year: "year"
+                  from: *assesment
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *coef_pressure
+                -
+                  year: "year"
+                  from: *assesment
+              -
+                -
+                  variable: *subject
+                  value: *subject_all
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *coef_high_level_thinking
+                -
+                  year: "year"
+                  from: *assesment
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *coef_sleep
+                -
+                  year: "year"
+                  from: *assesment
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *coef_writing_homework
+                -
+                  year: "year"
+                  from: *assesment
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *coef_extra_homework
+                -
+                  year: "year"
+                  from: *assesment
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *coef_teacher
+                -
+                  year: "year"
+                  from: *assesment
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *coef_teaching
+                -
+                  year: "year"
+                  from: *assesment
+              -
+                -
+                  variable: *subject
+                  value: *survey_te
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *coef_course_leadership
+                -
+                  year: "year"
+                  from: *assesment
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *coef_economic
+                -
+                  year: "year"
+                  from: *assesment
+            aes:
+              - 
+                arg: "x"
+                var: *topic
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: "year"
+              -  
+                arg: "label"
+                var: *label
+            order:
+              - 
+                var: "x"
+                list:
+                  - "成绩标准达成系数" 
+                  - "高层次思维能力系数"
+                  - "学业成绩学校间均衡系数"
+                  - "学习动机系数"
+                  - "学习压力系数"
+                  - "睡眠系数"
+                  - "作业系数"
+                  - "补课系数"
+                  - "师生关系系数"
+                  - "教学方式系数"
+                  - "课程领导力系数"
+                  - "家庭背景影响系数"
+            
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            position: "dodge" 
+            #text:
+            #  vjust: 0.5
+            bar:
+              width: *plot_bar_width_fat
+            legend: *plot_legend_top
+            label:
+              xlab: ""
+              ylab: "指标系数"
+            axisx:
+              text_angle: 90
+              text_size: 8
+            #axisy:
+            #  discrete_limits: *axisy_discrete_limits_index
+            #  ylim: *axisy_ylim
 
         province.county.index.radar: 
           fig.name: "四年级各指标雷达分析图"
