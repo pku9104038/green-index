@@ -3,6 +3,7 @@ library(yaml)
 library(dplyr)
 conf <- yaml.load_file("yaml/conf.yaml")
 g.dir <- conf$dir
+g.yaml <- conf$yaml
 g.var <- yaml.load_file(paste0(g.dir$yaml,g.yaml$survey))$global$stat$var
 # source scripts
 source(paste0(g.dir$R,"ETL/db.R"))
