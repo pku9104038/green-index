@@ -1,7 +1,9 @@
 # load libray
 library(yaml)
 
-statistics.data <- function(){
+statistics.data <- function(
+  topic.name = NULL
+){
   # init global configurations
   conf <- yaml.load_file("yaml/conf.yaml")
   g.dir <- conf$dir
@@ -26,7 +28,7 @@ statistics.data <- function(){
     subject <-  subjects[[i]]
     if(subject$process){
       print(subject$subject)
-      statistics.subject(subject = subject, algorithms = algorithm)
+      statistics.subject(subject = subject, algorithms = algorithm, topic.name = topic.name)
     }
     
   }

@@ -215,6 +215,53 @@ variable.sum <- function(
 }
 
 ############################
+variable.point_segment <- function(
+  data,
+  variable                            
+){
+  data.in <- data
+  #print(summary(data))
+  
+  
+  columns <- variable$var.column
+  var.name<- variable$var.name
+  default <- variable$var.default
+  segments <- variable$segment
+  print(paste("Point Segment", var.name, Sys.time()))
+  
+  col.tmp <- "tmp"
+  data.in[,col.tmp] <- default
+  #print(summary(data.out))
+  
+  if(length(columns) >0){
+    for(i in 1:length(columns)){
+      col.names <- columns[[i]]$col.name
+      if(length(col.names) > 0){
+        for(j in 1:length(col.names)){
+          col.name <- col.names[[j]]
+          data.in[,col.tmp] <- data.in[,col.tmp] + data[,col.name] 
+        }
+      }
+    }
+  }
+  #print(summary(data.out))
+  data.out <- data.frame()
+  dta.seg <- data.frame()
+  for(i in 1:length(segments)){
+    seg <- segments[[i]]
+    #print(seg)
+    data.seg <- data.in[data.in[,col.tmp] > seg$min, ]
+    data.seg <- data.seg[data.seg[,col.tmp] <= seg$max, ]
+    data.seg[,var.name] <- seg$key
+    data.out <- rbind(data.out, data.seg)
+  }
+  
+  data.out[,col.tmp] <- NULL
+  #print(summary(data.out))
+  return(data.out)  
+}
+
+############################
 variable.school_statistics <- function(
   data,
   variable                            
@@ -312,6 +359,9 @@ variable.subject <-  function(
         }
         else if(algorithm == algorithms$sum){
           data <- variable.sum(data, variable)
+        }
+        else if(algorithm == algorithms$point_segment){
+          data <- variable.point_segment(data, variable)
         }
       }
     }

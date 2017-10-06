@@ -15,7 +15,8 @@ report.datetime  <- function(){
 }
 ##############################
 report.render <- function(
-  report.in
+  report.in,
+  conf
 ){
   report <-report.in
   timestamp()
@@ -33,7 +34,7 @@ report.render <- function(
   for(i in 1:n){
     report$scope  <- scopes[[i]]
     report$datetime  <- report.datetime()
-    report$title <- paste0(report$year,report$scope,report$project,report$report)
+    report$title <- paste0(report$year,report$scope,report$project,report$subject,report$report)
     report$header  <- paste0(report$year,report$scope,report$project,
                              report$subject,report$report)
     
@@ -61,7 +62,8 @@ report.render <- function(
              output_dir = output_dir,
              output_file = report$file,
              params = list(report = report,
-                           dummy.fig  = report$dummy.fig)
+                           dummy.fig  = report$dummy.fig,
+                           conf = conf)
              )
       timestamp()
       ####################################################

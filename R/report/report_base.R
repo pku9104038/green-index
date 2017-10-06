@@ -1,15 +1,18 @@
 # load libray
 library(yaml)
 
-report.base <- function(){
+report.base <- function(
+  conf
+){
   # init global configurations
-  conf <- yaml.load_file("yaml/conf.yaml")
+  #conf <- yaml.load_file("yaml/conf.yaml")
   g.dir <- conf$dir
   g.yaml <- conf$yaml
   g.var <- yaml.load_file(paste0(g.dir$yaml,g.yaml$survey))$global$stat$var
   
   source(paste0(g.dir$R,"report/report.R"))
   source(paste0(g.dir$R,"report/plot.R"))
+  source(paste0(g.dir$R,"report/dataframe.R"))
   #######################################################
   
   reports <- yaml.load_file(paste0(g.dir$yaml,g.yaml$survey))$report
@@ -39,7 +42,7 @@ report.base <- function(){
       if(is.null(report$geom)){
         report$geom  <- reports$geom
       }
-      report.render(report)
+      report.render(report,conf)
     }
     
   }

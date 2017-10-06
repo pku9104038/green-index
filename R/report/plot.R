@@ -716,11 +716,11 @@ plot.data <- function(
     
     data.out <- bind_rows(data.out,data)
   }
-  print(data.out)
+  #print(data.out)
   
   #data.out[,g.var$value] <- data.out[,g.var$value]/100.0
   #data.out[,g.var$value] <- round(data.out[,g.var$value], digits = plot$data$digits)
-  data.out[,g.var$label] <- round(data.out[,g.var$value], digits = 0)
+  data.out[,g.var$label] <- round(data.out[,g.var$value], digits = plot$data$digits)
   
   
   if(!is.null(plot$data$derivative)){
@@ -731,7 +731,7 @@ plot.data <- function(
     groups <- levels(factor(data.in[,plot$data$derivative$group]))
     for(i  in 1:length(groups)){
       group <- groups[i]
-      #print(group)
+      print(group)
       #print(plot$data$derivative$group)
       #data <- subset(data.in,plot$data$derivative$group==group)
       data <- data.in[data.in[,plot$data$derivative$group]==group,]
@@ -746,11 +746,14 @@ plot.data <- function(
       keys <- levels(factor(data[,plot$data$derivative$key]))
       for(j in 1:length(keys)){
         key <-  keys[j]
+        print(key)
+        print(data[data[,plot$data$derivative$key]==key,g.var$value])
         data.out[nrow(data.out),key] <- 
           data[data[,plot$data$derivative$key]==key,g.var$value]
       }
       
     }
+    print(data.out)
     
   }
   
@@ -770,11 +773,14 @@ plot.data <- function(
     
   aes <- plot$data$aes
   for(i in  1:length(aes)){
+    print(data.out)
+    print("data aes")
     arg <- aes[[i]]
     data.out[,arg$arg] <- data.out[,arg$var]
     #if(!is.null(arg$order)){
     #  data.out[,arg$arg] <- factor(data.out[,arg$arg],levels = unlist(arg$order))
     #}
+    print(data.out)
   }
   
   if(!is.null(report$aliasFlag)){
@@ -827,7 +833,28 @@ plot.data <- function(
     
   }
   
-  #print(data.out)
+  if(!is.null(plot$data$keep)){
+    print("data keep")
+    keeps <- plot$data$keep
+    data.in <- data.out
+    data.out <- data.frame()
+    for(i in 1:length(keeps)){
+      keep <- keeps[[i]]
+      var <- keep$var
+      print(var)
+      values <- keep$value
+      for(j in 1:length(values)){
+        value <- values[[j]]
+        print(value)
+        data.keep <- data.in[data.in[,var] == value,]
+        print(data.keep)
+        data.out <- rbind(data.out,data.keep)
+      }
+    }
+  }
+  
+  
+  print(data.out)
   return(data.out)
 }
 
@@ -924,7 +951,43 @@ plot.bar_stacking  <- function(
   
   return(figure)
 }
-############################
+#############################
+plot.bar_stacking.raw  <- function(
+  plot
+){
+  print(plot$data$set)
+  figure <- ggplot(data=plot$data$set, aes(x=x, y=y , fill = fill)) + scale_fill_economist()
+  #figure <- figure + theme_economist() + scale_fill_economist()
+  figure <- figure + geom_bar( stat="identity", width = plot$ggplot$bar$width,position = "stack") 
+  figure <- figure + geom_text(aes(label = label), colour="red", position = position_stack(vjust = 0.5)) 
+  figure <- figure + guides(fill=FALSE) 
+  figure <- figure + coord_flip()
+   
+  
+
+  
+  figure <- figure + theme(plot.background = element_blank()) +
+    theme(panel.background = element_blank()) +
+    theme(panel.grid.major = element_line(colour="grey", size=0.4, linetype = "dashed") ) +
+    theme(panel.grid.minor.y = element_line(colour="grey", size=0.2, linetype = "dashed") ) +
+    theme(legend.background = element_blank()) +
+    theme(text = element_text(family = "wqy-microhei"))+
+    theme(axis.line=element_blank(),
+          axis.text.x=element_blank(),
+          axis.text.y=element_blank(),
+          axis.ticks=element_blank(),
+          axis.title.x=element_blank(),
+          axis.title.y=element_blank(),
+          legend.position="none",
+          panel.background=element_blank(),
+          panel.border=element_blank(),
+          plot.background=element_blank())
+  #figure <- figure + theme(panel.background = element_blank()) 
+  #figure <- figure + theme(text = element_text(family = "wqy-microhei"))
+  
+  return(figure)
+}
+
 #############################
 plot.bar_dodging  <- function(
   plot
@@ -980,8 +1043,8 @@ plot.bar_dodging  <- function(
   figure <- figure + theme(plot.background = element_blank()) +
     theme(panel.background = element_blank()) +
     theme(panel.grid.major = element_line(colour="grey", size=0.2, linetype = "dashed") ) +
-    theme(panel.grid.major.x = element_line(colour="grey", size=0.2, linetype = "dashed") ) +
-    theme(panel.grid.major.y = element_line(colour="grey", size=0.2, linetype = "dashed") ) +
+    #theme(panel.grid.major.x = element_line(colour="grey", size=0.2, linetype = "dashed") ) +
+    #theme(panel.grid.major.y = element_line(colour="grey", size=0.2, linetype = "dashed") ) +
     theme(legend.background = element_blank()) +
     theme(text = element_text(family = "wqy-microhei"))
   #figure <- figure + theme(panel.background = element_blank()) 
@@ -994,17 +1057,43 @@ plot.box  <- function(
 ){
   #print(plot$data$set)
   figure <- ggplot(data=plot$data$set, aes(x=x,y=mean,alpha=0.1))
-  figure <- figure + geom_errorbar(aes(ymin=ymin,ymax=ymax),size = 0.5, width = 0.15)
+  if(!is.null(plot$ggplot$box$error.width)){
+    error.width <- plot$ggplot$box$error.width
+  }
+  else{
+    error.width <- 0.1
+  }
+  figure <- figure + geom_errorbar(aes(x=x, ymin=ymin,ymax=ymax),size = 0.5, width = error.width)
+  if(!is.null(plot$ggplot$box$box.width)){
+    box.width <- plot$ggplot$box$box.width
+  }
+  else{
+    box.width <- 0.4
+  }
   figure <- figure + geom_boxplot( stat="identity", 
-                                   aes(width =0.4,ymin=ymin, lower=lower,middle=middle,upper=upper,ymax=ymax,fill = fill)
+                                   aes(x =x,width =  box.width,ymin=ymin, lower=lower,middle=middle,upper=upper,ymax=ymax,fill = fill)
                                   ) 
   figure <- figure + geom_point(shape=20, size=3,colour="red")
   #figure <- figure + geom_text(aes(label = label), position = position_stack(vjust = 0.5)) 
   #figure <- figure + ggtitle(plot$fig.name) 
+  if(!is.null(plot$ggplot$axisy)){
+    figure <- figure + scale_y_continuous(limits=unlist(plot$ggplot$axisy$continuous_limits))
+    if(!is.null(plot$ggplot$axisy$ylim)){
+      figure <- figure + coord_cartesian(ylim=unlist(plot$ggplot$axisy$ylim))
+    }
+  }
+  
   figure <- figure + xlab(plot$ggplot$label$xlab) + ylab(plot$ggplot$label$ylab) 
   figure <- figure + guides(fill=FALSE, alpha=FALSE) 
   
-  #figure <- figure + theme(panel.background = element_blank()) 
+  figure <- figure + theme_economist() + scale_fill_economist()
+  figure <- figure + theme(plot.background = element_blank()) +
+    theme(panel.background = element_blank()) +
+    theme(panel.grid.major = element_line(colour="grey", size=0.2, linetype = "dashed") ) +
+    theme(panel.grid.major.y  = element_line(colour="grey", size=0.2, linetype = "dashed") ) +
+    theme(panel.grid.minor.y = element_line(colour="grey", size=0.2, linetype = "dashed") ) +
+    theme(panel.grid.major.x  = element_line(colour="grey", size=0.2, linetype = "dashed") ) +
+    theme(legend.background = element_blank()) 
   figure <- figure + theme(text = element_text(family = "wqy-microhei"))
   return(figure)
   
@@ -1115,6 +1204,9 @@ plot.figure  <- function(
     else if(plot$ggplot$geom == report$geom$bar_stacking){
       figure  <-  plot.bar_stacking(plot)
     }
+    else if(plot$ggplot$geom == "plot_bar_stacking.raw"){
+      figure  <-  plot.bar_stacking.raw(plot)
+    }
     else if(plot$ggplot$geom == report$geom$box){
       figure  <-  plot.box(plot)
     }
@@ -1139,4 +1231,14 @@ plot.figure  <- function(
   return(plot$file)
 
   
+}
+
+newline <- function(){
+  return("\\\\")
+}
+hline <- function(){
+  return("\\hline")
+}
+newcol <- function(){
+  return(" & ")
 }

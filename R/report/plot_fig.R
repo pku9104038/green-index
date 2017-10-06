@@ -8,14 +8,14 @@ g.yaml <- conf$yaml
 
 source(paste0(g.dir$R,"report/plot.R"))
 #######################################################
-plot.name <- "history.bar"
+plot.name <- "bar.cn"
 
 
 reports <- yaml.load_file(paste0(g.dir$yaml,g.yaml$survey))$report
 ############
 # 1 base, 2 green 3,cn
 ############
-i <- 2
+i <- 3
 report <-  reports$report[[i]]
 
 report$plot.out  <- paste0(getwd(),"/",g.dir$report.out.plot)
@@ -53,5 +53,5 @@ plot <- report$plot[[plot.name]]
 
 #plot$title <- report$title
 #plot$dir  <- paste0(getwd(),"/",g.dir$report.out.plot)
-#plot$data$keep <- list(list(var = "x", value=c("本市")))
+#plot$data$keep <- list(list(var = "变量", value=list(c("C3AO031"))))
 plot.figure( report = report, plot.in = plot,fig_name = plot$fig.name)

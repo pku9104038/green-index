@@ -442,6 +442,52 @@ statistics.mean <- function(
   return(data.out)
   
 }
+
+############################
+statistics.point_rate <- function(
+  data,
+  data.stat,
+  stat,
+  update =FALSE
+){
+  
+  print(paste("Point Rate",stat$tier,stat$perspective,stat$topic,stat$variable,Sys.time()))
+  obs <- stat
+  data.out  <- data.stat
+  #print("data")
+  #print(nrow(data))
+  scopes <- levels(factor(data[,stat$tier]))
+  for(j  in 1:length(scopes)){
+    obs$scope <- scopes[j]
+    data.scope <- data[data[,stat$tier]==obs$scope,]
+    
+    #print(paste("data.scope",obs$scope))
+    #print(nrow(data.scope))
+    
+    samples <-  levels(factor(data.scope[,stat$perspective]))
+    data.perspective <-  subset(data.scope,!is.na(data.scope[,stat$perspective]))
+    #print(paste("data.perspective",stat$perspective))
+    #print(nrow(data.perspective))
+    for(k in 1:length(samples)){
+      obs$sample <- samples[k]
+      data.sample <- data.perspective[data.perspective[,stat$perspective]==obs$sample,]
+      data.sample <- subset(data.sample,!is.na(data.sample[,stat$variable]))
+      #print(paste("data.sample",obs$sample))
+      #print(nrow(data.sample))
+      obs$value <- weighted.mean(x = data.sample[,stat$variable],
+                                 w = data.sample[,stat$weight])/stat$point*100.0
+      #print(obs$value)
+      if(is.null(stat$key)){
+        obs$key <- obs$sample
+      }
+      data.out <- statistics.add(data.stat = data.out, obs = obs, update = update)
+      
+    }
+  }
+  
+  return(data.out)
+  
+}
 ############################
 statistics.coefvar <- function(
   data,
@@ -612,6 +658,20 @@ statistics.topic <- function(
                                                   stat = stat,
                                                   update = update)
                   }
+                  else if(stat$statistics == algorithms$point_rate){
+                    if(!is.null(topic$condition$name)){
+                      data.in <- data[data[,topic$condition$name]==topic$condition$value,]
+                    }
+                    else{
+                      data.in <- data
+                    }
+                    stat$key <- topic$key
+                    stat$point <- topic$point
+                    data.out  <-  statistics.point_rate(data = data.in,
+                                                  data.stat = data.out, 
+                                                  stat = stat,
+                                                  update = update)
+                  }
                   else if(stat$statistics == algorithms$coefvar){
                     stat$key <- topic$key
                     data.out  <-  statistics.coefvar(data = data,
@@ -649,7 +709,8 @@ statistics.topic <- function(
 statistics.subject <-  function(
   subject,
   algorithms,
-  update = FALSE
+  update = FALSE,
+  topic.name = NULL
 ){
   
   if(!is.null(subject$statistics) && subject$process){
@@ -762,12 +823,25 @@ statistics.subject <-  function(
                     
                     
                     ########
-                    data.out <- statistics.topic(
-                      data = data, 
-                      data.stat = data.out,
-                      topic = topic,
-                      algorithms = algorithms,
-                      update = update)
+                    if(is.null(topic.name)){
+                      data.out <- statistics.topic(
+                        data = data, 
+                        data.stat = data.out,
+                        topic = topic,
+                        algorithms = algorithms,
+                        update = update)
+                    }
+                    else{
+                      if(topic.name == topic$name){
+                        data.out <- statistics.topic(
+                          data = data, 
+                          data.stat = data.out,
+                          topic = topic,
+                          algorithms = algorithms,
+                          update = update)
+                      }
+                    }
+                    
                     
                   }
                 }

@@ -432,7 +432,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \begin{landscape}
 \chapter{各指标历年测试结果比较}
 `r fig_name <- "上海市四年级历年测试结果比较" `
-图\ref{fig:`r fig_name`}给出了上海市四年级各指标历年测试结果比较。```{r history.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+图\ref{fig:`r fig_name`}给出了上海市四年级各指标历年测试结果比较\footnote{家庭背景影响系数定义调整：原定义为1级影响最小，9级影响最大；现定义为1级影响最大，9级影响最小。这样所有指标都统一9级最佳，1级最差。}。```{r history.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "history.bar"
 report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市")))
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -596,11 +596,11 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \label{fig:`r fig_name`}
 \end{figure}
 
-`r fig_name <- "四年级各指标雷达分析图—区86" `
-图\ref{fig:`r fig_name`}给出了区86四年级的各指标雷达分析图。
-```{r province.county86.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+`r fig_name <- "四年级各指标雷达分析图—区85" `
+图\ref{fig:`r fig_name`}给出了区85四年级的各指标雷达分析图。
+```{r province.county85.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
-report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","86区")))
+report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","85区")))
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
