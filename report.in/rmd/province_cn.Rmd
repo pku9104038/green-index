@@ -24,7 +24,7 @@ params:
 <!-- cover page -->
 
 \pagenumbering{gobble}
-～
+&nbsp;
 
 \vspace{40mm}
 \mytitle{`r report$year``r report$scope``r report$project`}
@@ -222,7 +222,7 @@ params:
 
 语文学科测试在内容领域上分为积累、阅读和习作三个维度。其中在积累这一内容领域里，主要从学生读准字音、认清字形、理解词义、积累和运用常见古诗文等四个方面的能力维度，测评和分析学生的学业表现。阅读主要考察学生提取信息、形成解释、整体感知和解决问题等四个方面。习作主要从选择材料、组织材料、语言表达和书写及标点等四个方面对学生的习作水平进行具体分析。语文学科测试的考查维度则依据《上海市中小学语文课程标准》、国际同类测试的惯例和国内课程实施现状，从知识和能力、过程和方法、情感态度和价值观三个维度全面考查学生的语文素养。对这三个维度的考查，可以反映出学生对语文基础知识和基本技能的掌握情，以及语言文字的综合运用能力，同时关注学生在语文学习过程中的感悟、体验和审美活动，体现语文学科工具性和人文性统一的基本特性。## 四年级语文学业水平描述四年级语文测试主要从“积累”、“阅读”和“习作”三个方面考查学生的语文学业水平。
 `r tab_name <- "四年级学生语文学科学业水平描述" `
-表\ref{tab: `r tab_name`}对八年级学生在语文学科不同考查能力上的表现分水平进行了学业水平描述。
+表\ref{tab: `r tab_name`}对四年级学生在语文学科不同考查能力上的表现分水平进行了学业水平描述。
 
 \begin{table}[H]
 \centering
@@ -282,7 +282,11 @@ params:
 \end{table}
 # 学生总体表现## 全体学生的总体表现
 
-`r fig_name <- "不同区域学生在语文学科各水平上的人数比例" `图\ref{fig:`r fig_name`}给出了上海市不同区域\footnote{中心城区：包括黄浦区、徐汇区、长宁区、普陀区、虹口区、杨浦区、静安区。郊区：包括闵行区、宝山区、嘉定区、浦东新区、金山区、松江区、青浦区、奉贤区、崇明区。}四年级学生在语文学科各水平上的人数比例。```{r level.bar.province.urbannization.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+`r fig_name <- "不同区域学生在语文学科各水平上的人数比例" `
+`r fig_name1 <- "全体学生在语文学科上的得分分布" `
+图\ref{fig:`r fig_name`}和图\ref{fig:`r fig_name1`}分别给出了上海市全体学生及不同区域\footnote{中心城区：包括黄浦区、徐汇区、长宁区、普陀区、虹口区、杨浦区、静安区。郊区：包括闵行区、宝山区、嘉定区、浦东新区、金山区、松江区、青浦区、奉贤区、崇明区。}学生在语文学科各水平上的人数比例和得分分布。
+
+```{r level.bar.province.urbannization.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "level.bar.province.urbannization.cn"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
@@ -294,17 +298,14 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \clearpage
 
 
-
-`r fig_name <- "全体学生在语文学科上的得分分布" `
-图\ref{fig:`r fig_name`}给出了上海市四年级学生在语文学科上的得分分布。
 ```{r score.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "score.segment.bar.cn"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name1)
 ```
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
+\caption{`r fig_name1`}
+\label{fig:`r fig_name1`}
 \end{figure}## 不同群体学生的总体表现`r fig_name <- "不同群体学生在语文学科各水平上的人数比例" `
 `r fig_name1 <- "不同群体学生在语文学科上的得分分布" `图\ref{fig:`r fig_name`}和图\ref{fig:`r fig_name1`}分别给出了上海市不同群体学生在语文学科各水平上的人数比例和得分分布。
  ```{r level.bar.province.perspective.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
