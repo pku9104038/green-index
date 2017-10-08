@@ -716,6 +716,26 @@ plot.data <- function(
     
     data.out <- bind_rows(data.out,data)
   }
+  
+  if(!is.null(plot$data$keep)){
+    print("data keep")
+    keeps <- plot$data$keep
+    data.in <- data.out
+    data.out <- data.frame()
+    for(i in 1:length(keeps)){
+      keep <- keeps[[i]]
+      var <- keep$var
+      print(var)
+      values <- keep$value
+      for(j in 1:length(values)){
+        value <- values[[j]]
+        print(value)
+        data.keep <- data.in[data.in[,var] == value,]
+        print(data.keep)
+        data.out <- rbind(data.out,data.keep)
+      }
+    }
+  }
   #print(data.out)
   
   #data.out[,g.var$value] <- data.out[,g.var$value]/100.0
@@ -724,7 +744,7 @@ plot.data <- function(
   
   
   if(!is.null(plot$data$derivative)){
-    print("dara derivative")
+    print("data derivative")
     data.in <- data.out
     print(data.in)
     data.out <- data.frame()
@@ -833,25 +853,7 @@ plot.data <- function(
     
   }
   
-  if(!is.null(plot$data$keep)){
-    print("data keep")
-    keeps <- plot$data$keep
-    data.in <- data.out
-    data.out <- data.frame()
-    for(i in 1:length(keeps)){
-      keep <- keeps[[i]]
-      var <- keep$var
-      print(var)
-      values <- keep$value
-      for(j in 1:length(values)){
-        value <- values[[j]]
-        print(value)
-        data.keep <- data.in[data.in[,var] == value,]
-        print(data.keep)
-        data.out <- rbind(data.out,data.keep)
-      }
-    }
-  }
+  
   
   
   print(data.out)

@@ -382,7 +382,7 @@ global:
           space: &dim_ma_space
             - "图形与几何"
           statistics: &dim_ma_statistics
-            - "数据整理与概率统计"
+            - "统计与概率"
           concept: &dim_ma_concept
             - "数学理解"
           skill: &dim_ma_skill
@@ -564,11 +564,11 @@ global:
           space_score_mean: &top_space_score_mean_ma
             - "图形与几何平均分"
           statistics_quantile: &top_statistics_score_quantile_ma
-            - "数据整理与概率统计得分分布"
+            - "统计与概率得分分布"
           statistics_score_level: &top_statistics_score_level_ma
-            - "数据整理与概率统计成绩等级"
+            - "统计与概率成绩等级"
           statistics_score_mean: &top_statistics_score_mean_ma
-            - "数据整理与概率统计平均分"
+            - "统计与概率平均分"
           skill_quantile: &top_skill_score_quantile_ma
             - "知识技能得分分布"
           skill_score_level: &top_skill_score_level_ma
@@ -1593,7 +1593,7 @@ global:
 
 survey: 
   -
-    process: FALSE
+    process: TRUE
     subject: *survey_st
     table: *table_st
 
@@ -3002,7 +3002,7 @@ survey:
                         - *T
 
   -
-    process: FALSE
+    process: TRUE
     subject: *survey_te
     table: *table_te
 
@@ -3562,7 +3562,7 @@ survey:
                         - *T
 
   -
-    process: FALSE
+    process: TRUE
     subject: *survey_pr
     table: *table_pr
 
@@ -3908,7 +3908,7 @@ survey:
                       variable: "se057" 
                      
   -
-    process: FALSE
+    process: TRUE
     subject: *survey_pa
     table: *table_pa
 
@@ -4423,7 +4423,7 @@ survey:
                       variable: *var_school_reasonable
                     
   -
-    process: FALSE
+    process: TRUE
     subject: *subject_cn
     table: *table_cn
 
@@ -6807,6 +6807,1198 @@ survey:
                         - *stat_gt_mean
                       perspective: *perspective_student_score
 
+            - 
+              name: *dom_point_rate
+
+              dimention:
+                -
+                  name: *dim_ma_skill
+
+                  topic:
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO031_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_student_score
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO031_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "A"
+                      key: "A"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO031_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "B"
+                      key: "B"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO031_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "C"
+                      key: "C"
+                    -
+                      name: *top_answer
+                      variable: "M3AO031"
+                      perspective: *perspective_total_only
+
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS141_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_student_score
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS141_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "A"
+                      key: "A"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS141_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "B"
+                      key: "B"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS141_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "C"
+                      key: "C"
+                    -
+                      name: *top_answer
+                      variable: "M3AS141"
+                      perspective: *perspective_total_only
+
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS151_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_student_score
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS151_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "A"
+                      key: "A"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS151_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "B"
+                      key: "B"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS151_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "C"
+                      key: "C"
+                    -
+                      name: *top_answer
+                      variable: "M3AS151"
+                      perspective: *perspective_total_only
+
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO041_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_student_score
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO041_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "A"
+                      key: "A"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO041_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "B"
+                      key: "B"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO041_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "C"
+                      key: "C"
+                    -
+                      name: *top_answer
+                      variable: "M3AO041"
+                      perspective: *perspective_total_only
+
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS131_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_student_score
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS131_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "A"
+                      key: "A"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS131_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "B"
+                      key: "B"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS131_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "C"
+                      key: "C"
+                    -
+                      name: *top_answer
+                      variable: "M3AS131"
+                      perspective: *perspective_total_only
+
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS201_X"
+                      point: 2
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_student_score
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS201_X"
+                      point: 2
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "A"
+                      key: "A"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS201_X"
+                      point: 2
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "B"
+                      key: "B"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS201_X"
+                      point: 2
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "C"
+                      key: "C"
+                    -
+                      name: *top_answer
+                      variable: "M3AS201"
+                      perspective: *perspective_total_only
+
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS221_X"
+                      point: 2
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_student_score
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS221_X"
+                      point: 2
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "A"
+                      key: "A"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS221_X"
+                      point: 2
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "B"
+                      key: "B"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS221_X"
+                      point: 2
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "C"
+                      key: "C"
+                    -
+                      name: *top_answer
+                      variable: "M3AS221"
+                      perspective: *perspective_total_only
+                -
+                  name: *dim_ma_concept
+
+                  topic:
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO021_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_student_score
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO021_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "A"
+                      key: "A"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO021_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "B"
+                      key: "B"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO021_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "C"
+                      key: "C"
+                    -
+                      name: *top_answer
+                      variable: "M3AO021"
+                      perspective: *perspective_total_only
+
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO051_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_student_score
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO051_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "A"
+                      key: "A"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO051_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "B"
+                      key: "B"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO051_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "C"
+                      key: "C"
+                    -
+                      name: *top_answer
+                      variable: "M3AO051"
+                      perspective: *perspective_total_only
+
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO011_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_student_score
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO011_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "A"
+                      key: "A"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO011_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "B"
+                      key: "B"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO011_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "C"
+                      key: "C"
+                    -
+                      name: *top_answer
+                      variable: "M3AO011"
+                      perspective: *perspective_total_only
+
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO071_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_student_score
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO071_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "A"
+                      key: "A"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO071_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "B"
+                      key: "B"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO071_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "C"
+                      key: "C"
+                    -
+                      name: *top_answer
+                      variable: "M3AO071"
+                      perspective: *perspective_total_only
+
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO111_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_student_score
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO111_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "A"
+                      key: "A"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO111_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "B"
+                      key: "B"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO111_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "C"
+                      key: "C"
+                    -
+                      name: *top_answer
+                      variable: "M3AO111"
+                      perspective: *perspective_total_only
+
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO091_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_student_score
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO091_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "A"
+                      key: "A"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO091_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "B"
+                      key: "B"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO091_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "C"
+                      key: "C"
+                    -
+                      name: *top_answer
+                      variable: "M3AO091"
+                      perspective: *perspective_total_only
+                 
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS171_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_student_score
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS171_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "A"
+                      key: "A"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS171_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "B"
+                      key: "B"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS171_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "C"
+                      key: "C"
+                    -
+                      name: *top_answer
+                      variable: "M3AS171"
+                      perspective: *perspective_total_only
+
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS191_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_student_score
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS191_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "A"
+                      key: "A"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS191_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "B"
+                      key: "B"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS191_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "C"
+                      key: "C"
+                    -
+                      name: *top_answer
+                      variable: "M3AS191"
+                      perspective: *perspective_total_only
+
+                -
+                  name: *dim_ma_apply
+
+                  topic:
+
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS161_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_student_score
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS161_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "A"
+                      key: "A"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS161_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "B"
+                      key: "B"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS161_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "C"
+                      key: "C"
+                    -
+                      name: *top_answer
+                      variable: "M3AS161"
+                      perspective: *perspective_total_only
+
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO061_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_student_score
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO061_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "A"
+                      key: "A"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO061_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "B"
+                      key: "B"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO061_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "C"
+                      key: "C"
+                    -
+                      name: *top_answer
+                      variable: "M3AO061"
+                      perspective: *perspective_total_only
+
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO081_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_student_score
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO081_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "A"
+                      key: "A"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO081_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "B"
+                      key: "B"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO081_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "C"
+                      key: "C"
+                    -
+                      name: *top_answer
+                      variable: "M3AO081"
+                      perspective: *perspective_total_only
+
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS181_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_student_score
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS181_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "A"
+                      key: "A"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS181_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "B"
+                      key: "B"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS181_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "C"
+                      key: "C"
+                    -
+                      name: *top_answer
+                      variable: "M3AS181"
+                      perspective: *perspective_total_only
+
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO101_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_student_score
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO101_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "A"
+                      key: "A"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO101_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "B"
+                      key: "B"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO101_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "C"
+                      key: "C"
+                    -
+                      name: *top_answer
+                      variable: "M3AO101"
+                      perspective: *perspective_total_only
+
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS222_X"
+                      point: 3
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_student_score
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS222_X"
+                      point: 3
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "A"
+                      key: "A"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS222_X"
+                      point: 3
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "B"
+                      key: "B"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS222_X"
+                      point: 3
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "C"
+                      key: "C"
+                    -
+                      name: *top_answer
+                      variable: "M3AS222"
+                      perspective: *perspective_total_only
+
+                -
+                  name: *dim_ma_problem
+
+                  topic:
+
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO121_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_student_score
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO121_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "A"
+                      key: "A"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO121_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "B"
+                      key: "B"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AO121_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "C"
+                      key: "C"
+                    -
+                      name: *top_answer
+                      variable: "M3AO121"
+                      perspective: *perspective_total_only
+
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS211_X"
+                      point: 6
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_student_score
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS211_X"
+                      point: 6
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "A"
+                      key: "A"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS211_X"
+                      point: 6
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "B"
+                      key: "B"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS211_X"
+                      point: 6
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "C"
+                      key: "C"
+                    -
+                      name: *top_answer
+                      variable: "M3AS211"
+                      perspective: *perspective_total_only
+
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS231_X"
+                      point: 2
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_student_score
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS231_X"
+                      point: 2
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "A"
+                      key: "A"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS231_X"
+                      point: 2
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "B"
+                      key: "B"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS231_X"
+                      point: 2
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "C"
+                      key: "C"
+                    -
+                      name: *top_answer
+                      variable: "M3AS231"
+                      perspective: *perspective_total_only
+
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS232_X"
+                      point: 5
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_student_score
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS232_X"
+                      point: 5
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "A"
+                      key: "A"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS232_X"
+                      point: 5
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "B"
+                      key: "B"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS232_X"
+                      point: 5
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "C"
+                      key: "C"
+                    -
+                      name: *top_answer
+                      variable: "M3AS232"
+                      perspective: *perspective_total_only
+
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS223_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_student_score
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS223_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "A"
+                      key: "A"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS223_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "B"
+                      key: "B"
+                    -
+                      name: *top_point_rate
+                      variable: "M3AS223_X"
+                      point: 4
+                      statistics:
+                        - *stat_point_rate
+                      perspective: *perspective_province_total_only
+                      condition:
+                        name: *total_score_level_cn
+                        value: "C"
+                      key: "C"
+                    -
+                      name: *top_answer
+                      variable: "M3AS223"
+                      perspective: *perspective_total_only
+
+
     index:
       table.in: *s_score_ma
       table.out: *i_score_ma
@@ -7142,10 +8334,10 @@ report:
   report:
     
     -
-      process: FALSE
-      #table: "统计指标汇总20170826"
+      process: TRUE
+      table: "统计指标汇总"
       markdown: "province_base.Rmd"
-      #markdown: "template_test.Rmd"
+      
 
       year: "2016年度"
       tier: *tier_province
@@ -10097,6 +11289,44 @@ report:
                 - 
                   variable: *dimention
                   value: *dim_st_pressure
+                - variable: *variable
+                  value: "staa048"
+              -
+                -
+                  variable: *tier
+                  value: *tier_province
+                - 
+                  variable: *dimention
+                  value: *dim_st_pressure
+                - variable: *variable
+                  value: "staa049"
+              -
+                -
+                  variable: *tier
+                  value: *tier_province
+                - 
+                  variable: *dimention
+                  value: *dim_st_pressure
+                - variable: *variable
+                  value: "staa050"
+              -
+                -
+                  variable: *tier
+                  value: *tier_province
+                - 
+                  variable: *dimention
+                  value: *dim_st_pressure
+                - variable: *variable
+                  value: "staa051"
+              -
+                -
+                  variable: *tier
+                  value: *tier_province
+                - 
+                  variable: *dimention
+                  value: *dim_st_pressure
+                - variable: *variable
+                  value: "staa052"
 
             aes:
               - 
@@ -10143,6 +11373,79 @@ report:
                 - 
                   variable: *dimention
                   value: *dim_st_motivation
+                -
+                  variable: *variable
+                  value: "staa040"
+              -
+                -
+                  variable: *tier
+                  value: *tier_province
+                - 
+                  variable: *dimention
+                  value: *dim_st_motivation
+                -
+                  variable: *variable
+                  value: "staa041"
+              -
+                -
+                  variable: *tier
+                  value: *tier_province
+                - 
+                  variable: *dimention
+                  value: *dim_st_motivation
+                -
+                  variable: *variable
+                  value: "staa042"
+              -
+                -
+                  variable: *tier
+                  value: *tier_province
+                - 
+                  variable: *dimention
+                  value: *dim_st_motivation
+                -
+                  variable: *variable
+                  value: "staa043"
+              -
+                -
+                  variable: *tier
+                  value: *tier_province
+                - 
+                  variable: *dimention
+                  value: *dim_st_motivation
+                -
+                  variable: *variable
+                  value: "staa044"
+              -
+                -
+                  variable: *tier
+                  value: *tier_province
+                - 
+                  variable: *dimention
+                  value: *dim_st_motivation
+                -
+                  variable: *variable
+                  value: "staa045"
+              -
+                -
+                  variable: *tier
+                  value: *tier_province
+                - 
+                  variable: *dimention
+                  value: *dim_st_motivation
+                -
+                  variable: *variable
+                  value: "staa046"
+              -
+                -
+                  variable: *tier
+                  value: *tier_province
+                - 
+                  variable: *dimention
+                  value: *dim_st_motivation
+                -
+                  variable: *variable
+                  value: "staa047"
 
             aes:
               - 
@@ -10189,6 +11492,59 @@ report:
                 - 
                   variable: *dimention
                   value: *dim_st_identity
+                -
+                  variable: *variable
+                  value: "staa017"
+              -
+                -
+                  variable: *tier
+                  value: *tier_province
+                - 
+                  variable: *dimention
+                  value: *dim_st_identity
+                -
+                  variable: *variable
+                  value: "staa023"
+              -
+                -
+                  variable: *tier
+                  value: *tier_province
+                - 
+                  variable: *dimention
+                  value: *dim_st_identity
+                -
+                  variable: *variable
+                  value: "staa024"
+              -
+                -
+                  variable: *tier
+                  value: *tier_province
+                - 
+                  variable: *dimention
+                  value: *dim_st_identity
+                -
+                  variable: *variable
+                  value: "staa025"
+              -
+                -
+                  variable: *tier
+                  value: *tier_province
+                - 
+                  variable: *dimention
+                  value: *dim_st_identity
+                -
+                  variable: *variable
+                  value: "staa026"
+              -
+                -
+                  variable: *tier
+                  value: *tier_province
+                - 
+                  variable: *dimention
+                  value: *dim_st_identity
+                -
+                  variable: *variable
+                  value: "staa027"
 
             aes:
               - 
@@ -10235,6 +11591,59 @@ report:
                 - 
                   variable: *dimention
                   value: *dim_st_confidence
+                -
+                  variable: *variable
+                  value: "staa028"
+              -
+                -
+                  variable: *tier
+                  value: *tier_province
+                - 
+                  variable: *dimention
+                  value: *dim_st_confidence
+                -
+                  variable: *variable
+                  value: "staa029"
+              -
+                -
+                  variable: *tier
+                  value: *tier_province
+                - 
+                  variable: *dimention
+                  value: *dim_st_confidence
+                -
+                  variable: *variable
+                  value: "staa030"
+              -
+                -
+                  variable: *tier
+                  value: *tier_province
+                - 
+                  variable: *dimention
+                  value: *dim_st_confidence
+                -
+                  variable: *variable
+                  value: "staa031"
+              -
+                -
+                  variable: *tier
+                  value: *tier_province
+                - 
+                  variable: *dimention
+                  value: *dim_st_confidence
+                -
+                  variable: *variable
+                  value: "staa032"
+              -
+                -
+                  variable: *tier
+                  value: *tier_province
+                - 
+                  variable: *dimention
+                  value: *dim_st_confidence
+                -
+                  variable: *variable
+                  value: "staa033"
 
             aes:
               - 
@@ -15372,7 +16781,7 @@ report:
               ylab: "百分数（%）"
 
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "province_green.Rmd"
 
@@ -20762,7 +22171,7 @@ report:
             geom: *plot_radar 
             
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "province_cn.Rmd"
 
@@ -21428,9 +22837,9 @@ report:
               - 
                 var: "x"
                 list: 
-                  - "积累"
-                  - "阅读"
-                  - "习作"
+                  - *dim_cn_jilei
+                  - *dim_cn_reading
+                  - *dim_cn_writing
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
@@ -21561,9 +22970,9 @@ report:
               - 
                 var: "x"
                 list: 
-                  - "积累"
-                  - "阅读"
-                  - "习作"
+                  - *dim_cn_jilei
+                  - *dim_cn_reading
+                  - *dim_cn_writing
 
           ggplot:
             width: *plot_canvas_width
@@ -22979,7 +24388,7 @@ report:
               width: *plot_bar_width
 
             label:
-              xlab: "选项"
+              xlab: ""
               ylab: "百分数（%）"
 
         bar.cn: 
@@ -23315,15 +24724,15 @@ report:
               xlab: "标准分"
               ylab: "百分数（%）"
 
-        level.bar.province.perspective.cn: 
-          fig.name: "不同群体学生在语文学科各水平上的人数比例"
+        level.bar.province.perspective.ma: 
+          fig.name: "不同群体学生在数学学科各水平上的人数比例"
           data:
             digits: *plot_data_digits
             filter:
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -23336,7 +24745,7 @@ report:
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -23349,7 +24758,7 @@ report:
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -23362,7 +24771,7 @@ report:
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -23375,7 +24784,7 @@ report:
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -23414,7 +24823,7 @@ report:
               xlab: *xlab_prov_acad_xin_gen_hu
               ylab: "百分数（%）"
 
-        score.box.province.perspective.cn: 
+        score.box.province.perspective.ma: 
           fig.name: "不同群体学生在语文学科上的得分分布"
           data:
             digits: *plot_data_digits
@@ -23422,7 +24831,7 @@ report:
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -23435,7 +24844,7 @@ report:
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -23448,7 +24857,7 @@ report:
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -23461,7 +24870,7 @@ report:
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -23474,7 +24883,7 @@ report:
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -23487,7 +24896,7 @@ report:
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -23500,7 +24909,7 @@ report:
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -23513,7 +24922,7 @@ report:
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -23526,7 +24935,7 @@ report:
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -23539,7 +24948,7 @@ report:
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -23600,15 +25009,15 @@ report:
             #    - 0
             #    - 800
 
-        level.bar.province.county.cn: 
-          fig.name: "各区学生在语文学科各水平上的人数比例"
+        level.bar.province.county.ma: 
+          fig.name: "各区学生在数学学科各水平上的人数比例"
           data:
             digits: *plot_data_digits
             filter:
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -23621,7 +25030,7 @@ report:
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_county
@@ -23659,15 +25068,15 @@ report:
               xlab: ""
               ylab: "百分数（%）"
 
-        score.box.province.county.cn: 
-          fig.name: "各区学生在语文学科上的得分分布"
+        score.box.province.county.ma: 
+          fig.name: "各区学生在数学学科上的得分分布"
           data:
             digits: *plot_data_digits
             filter:
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -23680,7 +25089,7 @@ report:
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -23693,7 +25102,7 @@ report:
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_county
@@ -23706,7 +25115,7 @@ report:
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_county
@@ -23765,15 +25174,15 @@ report:
               xlab: ""
               ylab: "标准分"
 
-        level.bar.province.dimention.cn: 
-          fig.name: "学生在语文学科各能力维度各水平上的人数比例"
+        level.bar.province.domain.ma: 
+          fig.name: "学生在数学学科各内容领域各水平上的人数比例"
           data:
             digits: *plot_data_digits
             filter:
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -23782,11 +25191,11 @@ report:
                   value: *per_total
                 - 
                   variable: *topic
-                  value: *top_jilei_score_level_cn
+                  value: *top_number_score_level_ma
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -23795,11 +25204,11 @@ report:
                   value: *per_total
                 - 
                   variable: *topic
-                  value: *top_reading_score_level_cn
+                  value: *top_space_score_level_ma
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -23808,7 +25217,7 @@ report:
                   value: *per_total
                 - 
                   variable: *topic
-                  value: *top_writing_score_level_cn
+                  value: *top_statistics_score_level_ma
             aes:
               - 
                 arg: "x"
@@ -23826,9 +25235,9 @@ report:
               - 
                 var: "x"
                 list: 
-                  - "积累"
-                  - "阅读"
-                  - "习作"
+                  - *dim_ma_number
+                  - *dim_ma_space
+                  - *dim_ma_statistics
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
@@ -23840,15 +25249,15 @@ report:
               xlab: ""
               ylab: "百分数（%）"
 
-        score.box.province.dimention.cn: 
-          fig.name: "学生在语文学科各能力维度上的得分分布"
+        score.box.province.domain.ma: 
+          fig.name: "学生在数学学科各内容领域上的得分分布"
           data:
             digits: *plot_data_digits
             filter:
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -23857,11 +25266,11 @@ report:
                   value: *per_total
                 - 
                   variable: *topic
-                  value: *top_jilei_score_quantile_cn
+                  value: *top_number_score_quantile_ma
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -23870,11 +25279,11 @@ report:
                   value: *per_total
                 - 
                   variable: *topic
-                  value: *top_jilei_score_mean_cn
+                  value: *top_number_score_mean_ma
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -23883,11 +25292,11 @@ report:
                   value: *per_total
                 - 
                   variable: *topic
-                  value: *top_reading_score_quantile_cn
+                  value: *top_space_score_quantile_ma
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -23896,11 +25305,11 @@ report:
                   value: *per_total
                 - 
                   variable: *topic
-                  value: *top_reading_score_mean_cn
+                  value: *top_space_score_mean_ma
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -23909,11 +25318,11 @@ report:
                   value: *per_total
                 - 
                   variable: *topic
-                  value: *top_writing_score_quantile_cn
+                  value: *top_statistics_score_quantile_ma
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -23922,7 +25331,7 @@ report:
                   value: *per_total
                 - 
                   variable: *topic
-                  value: *top_writing_score_mean_cn
+                  value: *top_statistics_score_mean_ma
               
             derivative: 
               group: *dimention
@@ -23959,9 +25368,9 @@ report:
               - 
                 var: "x"
                 list: 
-                  - "积累"
-                  - "阅读"
-                  - "习作"
+                  - *dim_ma_number
+                  - *dim_ma_space
+                  - *dim_ma_statistics
 
           ggplot:
             width: *plot_canvas_width
@@ -23982,15 +25391,15 @@ report:
             #    - 0
             #    - 500
 
-        jilei.bar.province.perspective.cn: 
-          fig.name: "不同群体学生在“积累”各水平上的人数比例"
+        level.bar.province.dimention.ma: 
+          fig.name: "学生在数学学科各能力维度各水平上的人数比例"
           data:
             digits: *plot_data_digits
             filter:
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -23999,11 +25408,269 @@ report:
                   value: *per_total
                 - 
                   variable: *topic
-                  value: *top_jilei_score_level_cn
+                  value: *top_skill_score_level_ma
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_concept_score_level_ma
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_apply_score_level_ma
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_problem_score_level_ma
+            aes:
+              - 
+                arg: "x"
+                var: *dimention
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+            order:
+              - 
+                var: "x"
+                list: 
+                  - *dim_ma_skill
+                  - *dim_ma_concept
+                  - *dim_ma_apply
+                  - *dim_ma_problem
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_stacking 
+            legend: *plot_legend_top
+            bar:
+              width: *plot_bar_width_thin
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        score.box.province.dimention.ma: 
+          fig.name: "学生在数学学科各能力维度上的得分分布"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_skill_score_quantile_ma
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_skill_score_mean_ma
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_concept_score_quantile_ma
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_concept_score_mean_ma
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_apply_score_quantile_ma
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_apply_score_mean_ma
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_problem_score_quantile_ma
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_problem_score_mean_ma
+              
+            derivative: 
+              group: *dimention
+              key: *key
+              keep:
+                - *dimention
+
+            aes:
+              - 
+                arg: "x"
+                var: *dimention
+              -  
+                arg: "ymin"
+                var: *stat_quantile_key_bottom
+              -  
+                arg: "lower"
+                var: *stat_quantile_key_lower
+              -  
+                arg: "middle"
+                var: *stat_quantile_key_median
+              -  
+                arg: "upper"
+                var: *stat_quantile_key_upper
+              -  
+                arg: "ymax"
+                var: *stat_quantile_key_top
+              -  
+                arg: "fill"
+                var: *dimention
+              -  
+                arg: "mean"
+                var: *key_score_mean
+            order:
+              - 
+                var: "x"
+                list: 
+                  - *dim_ma_skill
+                  - *dim_ma_concept
+                  - *dim_ma_apply
+                  - *dim_ma_problem
+
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_box
+            legend: *plot_legend_top
+            box:
+              box.width: 0.2
+              error.width: 0.05
+            label:
+              xlab: ""
+              ylab: "标准分"
+            #axisy:
+            #  continuous_limits:
+            #    - 0
+            #    - 500
+            #  ylim:
+            #    - 0
+            #    - 500
+
+        dom.dim.bar.province.perspective.ma: 
+          fig.name: "不同群体学生在“领域／维度”各水平上的人数比例"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *domain
+                  value: *dom_ma_total      
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -24011,12 +25678,12 @@ report:
                   variable: *perspective
                   value: *per_academicsystem
                 - 
-                  variable: *topic
-                  value: *top_jilei_score_level_cn
+                  variable: *domain
+                  value: *dom_ma_total  
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -24024,12 +25691,12 @@ report:
                   variable: *perspective
                   value: *per_xinyouzhi
                 - 
-                  variable: *topic
-                  value: *top_jilei_score_level_cn
+                  variable: *domain
+                  value: *dom_ma_total  
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -24037,12 +25704,12 @@ report:
                   variable: *perspective
                   value: *per_gender
                 - 
-                  variable: *topic
-                  value: *top_jilei_score_level_cn
+                  variable: *domain
+                  value: *dom_ma_total
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -24050,8 +25717,12 @@ report:
                   variable: *perspective
                   value: *per_huji
                 - 
-                  variable: *topic
-                  value: *top_jilei_score_level_cn
+                  variable: *domain
+                  value: *dom_ma_total      
+            #keep:
+            #  - 
+            #    variable: *topic
+            #    value: *top_number_score_level_ma
             aes:
               - 
                 arg: "x"
@@ -24081,15 +25752,15 @@ report:
               xlab: *xlab_prov_acad_xin_gen_hu
               ylab: "百分数（%）"
 
-        jilei.box.province.perspective.cn: 
-          fig.name: "不同群体学生在“积累”上的得分分布"
+        dom.dim.box.province.perspective.ma: 
+          fig.name: "不同群体学生在“领域／维度”上的得分分布"
           data:
             digits: *plot_data_digits
             filter:
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -24097,25 +25768,13 @@ report:
                   variable: *perspective
                   value: *per_total
                 - 
-                  variable: *topic
-                  value: *top_jilei_score_quantile_cn
+                  variable: *domain
+                  value: *dom_ma_total
+              
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_jilei_score_mean_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -24123,12 +25782,13 @@ report:
                   variable: *perspective
                   value: *per_academicsystem
                 - 
-                  variable: *topic
-                  value: *top_jilei_score_quantile_cn
+                  variable: *domain
+                  value: *dom_ma_total
+            
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -24136,38 +25796,13 @@ report:
                   variable: *perspective
                   value: *per_xinyouzhi
                 - 
-                  variable: *topic
-                  value: *top_jilei_score_mean_cn
+                  variable: *domain
+                  value: *dom_ma_total
+              
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_xinyouzhi
-                - 
-                  variable: *topic
-                  value: *top_jilei_score_quantile_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_academicsystem
-                - 
-                  variable: *topic
-                  value: *top_jilei_score_mean_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -24175,25 +25810,13 @@ report:
                   variable: *perspective
                   value: *per_gender
                 - 
-                  variable: *topic
-                  value: *top_jilei_score_quantile_cn
+                  variable: *domain
+                  value: *dom_ma_total
+              
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_gender
-                - 
-                  variable: *topic
-                  value: *top_jilei_score_mean_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -24201,21 +25824,15 @@ report:
                   variable: *perspective
                   value: *per_huji
                 - 
-                  variable: *topic
-                  value: *top_jilei_score_quantile_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_huji
-                - 
-                  variable: *topic
-                  value: *top_jilei_score_mean_cn
+                  variable: *domain
+                  value: *dom_ma_total
+            #keep:
+            #  -
+            #    var: *topic
+            #    value: 
+            #      - *top_number_score_quantile_ma
+            #      - *top_number_score_mean_ma
+                
             derivative: 
               group: *sample
               key: *key
@@ -24267,15 +25884,15 @@ report:
             #    - 0
             #    - 800
 
-        jilei.bar.province.county.cn: 
-          fig.name: "不同区学生在“积累”各水平上的人数比例"
+        dom.dim.bar.province.county.ma: 
+          fig.name: "不同区学生在“领域／维度”各水平上的人数比例"
           data:
             digits: *plot_data_digits
             filter:
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -24283,12 +25900,12 @@ report:
                   variable: *perspective
                   value: *per_total
                 - 
-                  variable: *topic
-                  value: *top_jilei_score_level_cn
+                  variable: *domain
+                  value: *dom_ma_total
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_county
@@ -24296,8 +25913,14 @@ report:
                   variable: *perspective
                   value: *per_total
                 - 
-                  variable: *topic
-                  value: *top_jilei_score_level_cn
+                  variable: *domain
+                  value: *dom_ma_total
+            #keep:
+            #  -
+            #    var: *topic
+            #    value: 
+            #      - *top_number_score_level_ma
+
             aes:
               - 
                 arg: "x"
@@ -24326,15 +25949,15 @@ report:
               xlab: ""
               ylab: "百分数（%）"
 
-        jilei.box.province.county.cn: 
-          fig.name: "不同区学生在“积累”上的得分分布"
+        dom.dim.box.province.county.ma: 
+          fig.name: "不同区学生在“领域／维度”上的得分分布"
           data:
             digits: *plot_data_digits
             filter:
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -24342,25 +25965,12 @@ report:
                   variable: *perspective
                   value: *per_total
                 - 
-                  variable: *topic
-                  value: *top_jilei_score_quantile_cn
+                  variable: *domain
+                  value: *dom_ma_total
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_jilei_score_mean_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_county
@@ -24368,471 +25978,15 @@ report:
                   variable: *perspective
                   value: *per_total
                 - 
-                  variable: *topic
-                  value: *top_jilei_score_quantile_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_county
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_jilei_score_mean_cn
-
-            derivative: 
-              group: *scope
-              key: *key
-              keep:
-                - *scope
-                - *tier
-
-            aes:
-              - 
-                arg: "x"
-                var: *scope
-              -  
-                arg: "ymin"
-                var: *stat_quantile_key_bottom
-              -  
-                arg: "lower"
-                var: *stat_quantile_key_lower
-              -  
-                arg: "middle"
-                var: *stat_quantile_key_median
-              -  
-                arg: "upper"
-                var: *stat_quantile_key_upper
-              -  
-                arg: "ymax"
-                var: *stat_quantile_key_top
-              -  
-                arg: "fill"
-                var: *tier
-              -  
-                arg: "mean"
-                var: *key_score_mean
-            order:
-              - 
-                var: "x"
-                list: *order_prov_coun
-
-          ggplot:
-            width: *plot_canvas_width
-            height: *plot_canvas_height
-            geom: *plot_box
-            legend: *plot_legend_top
-            bar:
-              width: 0.3
-            label:
-              xlab: ""
-              ylab: "标准分"
-
-        reading.bar.province.perspective.cn: 
-          fig.name: "不同群体学生在“阅读”各水平上的人数比例"
-          data:
-            digits: *plot_data_digits
-            filter:
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_reading_score_level_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_academicsystem
-                - 
-                  variable: *topic
-                  value: *top_reading_score_level_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_xinyouzhi
-                - 
-                  variable: *topic
-                  value: *top_reading_score_level_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_gender
-                - 
-                  variable: *topic
-                  value: *top_reading_score_level_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_huji
-                - 
-                  variable: *topic
-                  value: *top_reading_score_level_cn
-            aes:
-              - 
-                arg: "x"
-                var: *sample
-              -  
-                arg: "y"
-                var: *value
-              - 
-                arg: "fill"
-                var: *key
-              -  
-                arg: "label"
-                var: *label
-            order:
-              -
-                var: "x"
-                list: *order_prov_acad_xin_gen_hu
+                  variable: *domain
+                  value: *dom_ma_total
               
-          ggplot:
-            width: *plot_canvas_width
-            height: *plot_canvas_height
-            geom: *plot_bar_stacking 
-            legend: *plot_legend_top
-            bar:
-              width: *plot_bar_width
-            label:
-              xlab: *xlab_prov_acad_xin_gen_hu
-              ylab: "百分数（%）"
-
-        reading.box.province.perspective.cn: 
-          fig.name: "不同群体学生在“阅读”上的得分分布"
-          data:
-            digits: *plot_data_digits
-            filter:
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_reading_score_quantile_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_reading_score_mean_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_academicsystem
-                - 
-                  variable: *topic
-                  value: *top_reading_score_quantile_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_xinyouzhi
-                - 
-                  variable: *topic
-                  value: *top_reading_score_mean_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_xinyouzhi
-                - 
-                  variable: *topic
-                  value: *top_reading_score_quantile_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_academicsystem
-                - 
-                  variable: *topic
-                  value: *top_reading_score_mean_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_gender
-                - 
-                  variable: *topic
-                  value: *top_reading_score_quantile_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_gender
-                - 
-                  variable: *topic
-                  value: *top_reading_score_mean_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_huji
-                - 
-                  variable: *topic
-                  value: *top_reading_score_quantile_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_huji
-                - 
-                  variable: *topic
-                  value: *top_reading_score_mean_cn
-            derivative: 
-              group: *sample
-              key: *key
-              keep:
-                - *sample
-                - *perspective
-            aes:
-              - 
-                arg: "x"
-                var: *sample
-              -  
-                arg: "ymin"
-                var: *stat_quantile_key_bottom
-              -  
-                arg: "lower"
-                var: *stat_quantile_key_lower
-              -  
-                arg: "middle"
-                var: *stat_quantile_key_median
-              -  
-                arg: "upper"
-                var: *stat_quantile_key_upper
-              -  
-                arg: "ymax"
-                var: *stat_quantile_key_top
-              -  
-                arg: "fill"
-                var: *perspective
-              -  
-                arg: "mean"
-                var: *key_score_mean
-            order:
-              - 
-                var: "x"
-                list: *order_prov_acad_xin_gen_hu
-          ggplot:
-            width: *plot_canvas_width
-            height: *plot_canvas_height
-            geom: *plot_box
-            legend: *plot_legend_top
-            label:
-              xlab: *xlab_prov_acad_xin_gen_hu
-              ylab: "标准分"
-            #axisy:
-            #  continuous_limits:
-            #    - 0
-            #    - 800
-            #  ylim:
-            #    - 0
-            #    - 800
-
-        reading.bar.province.county.cn: 
-          fig.name: "不同区学生在“阅读”各水平上的人数比例"
-          data:
-            digits: *plot_data_digits
-            filter:
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_reading_score_level_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_county
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_reading_score_level_cn
-            aes:
-              - 
-                arg: "x"
-                var: *scope
-              -  
-                arg: "y"
-                var: *value
-              - 
-                arg: "fill"
-                var: *key
-              -  
-                arg: "label"
-                var: *label
-            order:
-              - 
-                var: "x"
-                list: *order_prov_coun
-          ggplot:
-            width: *plot_canvas_width
-            height: *plot_canvas_height
-            geom: *plot_bar_stacking 
-            legend: *plot_legend_top
-            bar:
-              width: 0.6
-            label:
-              xlab: ""
-              ylab: "百分数（%）"
-
-        reading.box.province.county.cn: 
-          fig.name: "不同区学生在“阅读”上的得分分布"
-          data:
-            digits: *plot_data_digits
-            filter:
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_reading_score_quantile_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_reading_score_mean_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_county
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_reading_score_quantile_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_county
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_reading_score_mean_cn
+            #keep:
+            #  -
+            #    var: *topic
+            #    value: 
+            #      - *top_number_score_quantile_ma
+            #      - *top_number_score_mean_ma
 
             derivative: 
               group: *scope
@@ -24882,465 +26036,15 @@ report:
               xlab: ""
               ylab: "标准分"
 
-        writing.bar.province.perspective.cn: 
-          fig.name: "不同群体学生在“阅读”各水平上的人数比例"
-          data:
-            digits: *plot_data_digits
-            filter:
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_writing_score_level_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_academicsystem
-                - 
-                  variable: *topic
-                  value: *top_writing_score_level_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_xinyouzhi
-                - 
-                  variable: *topic
-                  value: *top_writing_score_level_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_gender
-                - 
-                  variable: *topic
-                  value: *top_writing_score_level_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_huji
-                - 
-                  variable: *topic
-                  value: *top_writing_score_level_cn
-            aes:
-              - 
-                arg: "x"
-                var: *sample
-              -  
-                arg: "y"
-                var: *value
-              - 
-                arg: "fill"
-                var: *key
-              -  
-                arg: "label"
-                var: *label
-            order:
-              -
-                var: "x"
-                list: *order_prov_acad_xin_gen_hu
-              
-          ggplot:
-            width: *plot_canvas_width
-            height: *plot_canvas_height
-            geom: *plot_bar_stacking 
-            legend: *plot_legend_top
-            bar:
-              width: *plot_bar_width
-            label:
-              xlab: *xlab_prov_acad_xin_gen_hu
-              ylab: "百分数（%）"
-
-        writing.box.province.perspective.cn: 
-          fig.name: "不同群体学生在“阅读”上的得分分布"
-          data:
-            digits: *plot_data_digits
-            filter:
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_writing_score_quantile_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_writing_score_mean_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_academicsystem
-                - 
-                  variable: *topic
-                  value: *top_writing_score_quantile_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_xinyouzhi
-                - 
-                  variable: *topic
-                  value: *top_writing_score_mean_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_xinyouzhi
-                - 
-                  variable: *topic
-                  value: *top_writing_score_quantile_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_academicsystem
-                - 
-                  variable: *topic
-                  value: *top_writing_score_mean_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_gender
-                - 
-                  variable: *topic
-                  value: *top_writing_score_quantile_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_gender
-                - 
-                  variable: *topic
-                  value: *top_writing_score_mean_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_huji
-                - 
-                  variable: *topic
-                  value: *top_writing_score_quantile_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_huji
-                - 
-                  variable: *topic
-                  value: *top_writing_score_mean_cn
-            derivative: 
-              group: *sample
-              key: *key
-              keep:
-                - *sample
-                - *perspective
-            aes:
-              - 
-                arg: "x"
-                var: *sample
-              -  
-                arg: "ymin"
-                var: *stat_quantile_key_bottom
-              -  
-                arg: "lower"
-                var: *stat_quantile_key_lower
-              -  
-                arg: "middle"
-                var: *stat_quantile_key_median
-              -  
-                arg: "upper"
-                var: *stat_quantile_key_upper
-              -  
-                arg: "ymax"
-                var: *stat_quantile_key_top
-              -  
-                arg: "fill"
-                var: *perspective
-              -  
-                arg: "mean"
-                var: *key_score_mean
-            order:
-              - 
-                var: "x"
-                list: *order_prov_acad_xin_gen_hu
-          ggplot:
-            width: *plot_canvas_width
-            height: *plot_canvas_height
-            geom: *plot_box
-            legend: *plot_legend_top
-            label:
-              xlab: *xlab_prov_acad_xin_gen_hu
-              ylab: "标准分"
-            #axisy:
-            #  continuous_limits:
-            #    - 0
-            #    - 800
-            #  ylim:
-            #    - 0
-            #    - 800
-
-        writing.bar.province.county.cn: 
-          fig.name: "不同区学生在“阅读”各水平上的人数比例"
-          data:
-            digits: *plot_data_digits
-            filter:
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_writing_score_level_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_county
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_writing_score_level_cn
-            aes:
-              - 
-                arg: "x"
-                var: *scope
-              -  
-                arg: "y"
-                var: *value
-              - 
-                arg: "fill"
-                var: *key
-              -  
-                arg: "label"
-                var: *label
-            order:
-              - 
-                var: "x"
-                list: *order_prov_coun
-          ggplot:
-            width: *plot_canvas_width
-            height: *plot_canvas_height
-            geom: *plot_bar_stacking 
-            legend: *plot_legend_top
-            bar:
-              width: 0.6
-            label:
-              xlab: ""
-              ylab: "百分数（%）"
-
-        writing.box.province.county.cn: 
-          fig.name: "不同区学生在“阅读”上的得分分布"
-          data:
-            digits: *plot_data_digits
-            filter:
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_writing_score_quantile_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_writing_score_mean_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_county
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_writing_score_quantile_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_county
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_writing_score_mean_cn
-
-            derivative: 
-              group: *scope
-              key: *key
-              keep:
-                - *scope
-                - *tier
-
-            aes:
-              - 
-                arg: "x"
-                var: *scope
-              -  
-                arg: "ymin"
-                var: *stat_quantile_key_bottom
-              -  
-                arg: "lower"
-                var: *stat_quantile_key_lower
-              -  
-                arg: "middle"
-                var: *stat_quantile_key_median
-              -  
-                arg: "upper"
-                var: *stat_quantile_key_upper
-              -  
-                arg: "ymax"
-                var: *stat_quantile_key_top
-              -  
-                arg: "fill"
-                var: *tier
-              -  
-                arg: "mean"
-                var: *key_score_mean
-            order:
-              - 
-                var: "x"
-                list: *order_prov_coun
-
-          ggplot:
-            width: *plot_canvas_width
-            height: *plot_canvas_height
-            geom: *plot_box
-            legend: *plot_legend_top
-            bar:
-              width: 0.3
-            label:
-              xlab: ""
-              ylab: "标准分"
-
-        answer.segment.bar.cn: 
-          fig.name: "全体学生在题目C3AO011上的作答情况"
+        answer.segment.bar.ma: 
+          fig.name: "全体学生在题目M3AO011上的作答情况"
           data:
             digits: 1
             filter:
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
@@ -25377,187 +26081,43 @@ report:
               width: *plot_bar_width
 
             label:
-              xlab: "选项"
+              xlab: ""
               ylab: "百分数（%）"
-
-        bar.cn: 
-          fig.name: "全体学生在题目C3AO011上的作答情况"
-          data:
-            digits: 1
-            filter:
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_answer
-            #keep:
-                - 
-                  variable: *variable
-                  value: "C3AO011"
-                #- 
-                #  variable: *key
-                #  value: "C"
-            aes:
-              - 
-                arg: "x"
-                var: *variable
-              -  
-                arg: "y"
-                var: *value
-              - 
-                arg: "fill"
-                var: *key
-              -  
-                arg: "label"
-                var: *label
-          ggplot:
-            width: 10
-            height: 1
-            geom: "plot_bar_stacking.raw"  
-            position: "stack" 
-            coord: "flip"
-            bar:
-              width: 0.8
 
       param:
 
-        jilei.point.rate.table.cn: 
-          name: "学生在语文学科“积累”上的平均得分率"
+        dom.dim.point.rate.table.ma: 
+          name: "学生在数学学科“领域／维度”上的平均得分率"
           data:
             digits: 1
             filter:
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
-                -
-                  variable: *dimention
-                  value: *dim_cn_jilei
                 - 
                   variable: *topic
                   value: *top_point_rate
 
-        jilei.answer.table.cn: 
-          name: "学生在语文学科“积累”上的作答情况"
+        dom.dim.answer.table.ma: 
+          name: "学生在数学学科“领域／维度”上的作答情况"
           data:
             digits: 1
             filter:
               -
                 - 
                   variable: *subject
-                  value: *subject_cn
+                  value: *subject_ma
                 -
                   variable: *tier
                   value: *tier_province
-                -
-                  variable: *dimention
-                  value: *dim_cn_jilei
                 - 
                   variable: *topic
                   value: *top_answer
 
-        reading.point.rate.table.cn: 
-          name: "学生在语文学科“阅读”上的平均得分率"
-          data:
-            digits: 1
-            filter:
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *dimention
-                  value: *dim_cn_reading
-                - 
-                  variable: *topic
-                  value: *top_point_rate
-
-        reading.answer.table.cn: 
-          name: "学生在语文学科“阅读”上的作答情况"
-          data:
-            digits: 1
-            filter:
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *dimention
-                  value: *dim_cn_reading
-                - 
-                  variable: *topic
-                  value: *top_answer
-
-        writing.table.cn: 
-          name: "学生在语文学科“习作”上的作答情况"
-          data:
-            digits: 1
-            filter:
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *dimention
-                  value: *dim_cn_writing
-
-        writing.point.rate.table.cn: 
-          name: "学生在语文学科“习作”上的平均得分率"
-          data:
-            digits: 1
-            filter:
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *dimention
-                  value: *dim_cn_writing
-                - 
-                  variable: *topic
-                  value: *top_point_rate
-
-        writing.answer.table.cn: 
-          name: "学生在语文学科“习作”上的作答情况"
-          data:
-            digits: 1
-            filter:
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *dimention
-                  value: *dim_cn_writing
-                - 
-                  variable: *topic
-                  value: *top_answer
           
     -
       process: FALSE
