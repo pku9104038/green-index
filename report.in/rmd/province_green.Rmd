@@ -14,6 +14,7 @@ output:
 params:
   report: 2015
   dummy.fig: "reports.jpg"
+  conf: "conf"
 
 ---
 <!-- global setting -->
@@ -429,25 +430,30 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \end{figure}
 
 \clearpage
+&nbsp;
+\clearpage
+
 \begin{landscape}
 \chapter{各指标历年测试结果比较}
 `r fig_name <- "上海市四年级历年测试结果比较" `
-图\ref{fig:`r fig_name`}给出了上海市四年级各指标历年测试结果比较\footnote{家庭背景影响系数及学业成绩学校间均衡系数历史数据为：原定义为1级影响最小，9级影响最大；现定义为1级影响最大，9级影响最小。这样所有指标都统一9级最佳，1级最差。}。```{r history.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+图\ref{fig:`r fig_name`}给出了上海市四年级各指标历年测试结果比较\footnote{家庭背景影响系数及学业成绩学校间均衡系数历史数据为差异系数；为便于直观理解，统一采用指标系数(系数越大指标越好），并根据这两项系数的历史数据之差异系数，重新计算指标系数并体现在本图中。}。```{r history.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "history.bar"
-report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市")))
+report$plot$province.county.index.radar$data$aliaskeeper <- list(list(var = "x", value=c("本市")))
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
+
 \begin{figure}[H]
-\includegraphics[width=20cm]{`r fig_file`}
+\includegraphics[width=1.6\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-\clearpage
+
+
 \end{landscape}# 各指标雷达分析图
 `r fig_name <- "上海市四年级各指标雷达分析图" `
 图\ref{fig:`r fig_name`}给出了上海市四年级的各指标雷达分析图。```{r province.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
-report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市")))
+report$plot$province.county.index.radar$data$aliaskeeper <- list(list(var = "x", value=list("本市")))
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -458,7 +464,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 
 `r fig_name <- "四年级各指标雷达分析图—区72" `图\ref{fig:`r fig_name`}给出了区72四年级的各指标雷达分析图。```{r province.county72.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
-report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","72区")))
+report$plot$province.county.index.radar$data$aliaskeeper <- list(list(var = "x", value=list("本市","72区")))
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -469,7 +475,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 `r fig_name <- "四年级各指标雷达分析图—区73" `图\ref{fig:`r fig_name`}给出了区73四年级的各指标雷达分析图。
 ```{r province.county73.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
-report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","73区")))
+report$plot$province.county.index.radar$data$aliaskeeper <- list(list(var = "x", value=list("本市","73区")))
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -480,7 +486,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 `r fig_name <- "四年级各指标雷达分析图—区75" `图\ref{fig:`r fig_name`}给出了区75四年级的各指标雷达分析图。
 ```{r province.county75.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
-report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","75区")))
+report$plot$province.county.index.radar$data$aliaskeeper <- list(list(var = "x", value=c("本市","75区")))
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -491,7 +497,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 `r fig_name <- "四年级各指标雷达分析图—区76" `图\ref{fig:`r fig_name`}给出了区76四年级的各指标雷达分析图。
 ```{r province.county76.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
-report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","76区")))
+report$plot$province.county.index.radar$data$aliaskeeper <- list(list(var = "x", value=c("本市","76区")))
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -502,7 +508,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 `r fig_name <- "四年级各指标雷达分析图—区77" `图\ref{fig:`r fig_name`}给出了区77四年级的各指标雷达分析图。
 ```{r province.county77.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
-report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","77区")))
+report$plot$province.county.index.radar$data$aliaskeeper <- list(list(var = "x", value=c("本市","77区")))
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -513,7 +519,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 `r fig_name <- "四年级各指标雷达分析图—区78" `图\ref{fig:`r fig_name`}给出了区78四年级的各指标雷达分析图。
 ```{r province.county78.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
-report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","78区")))
+report$plot$province.county.index.radar$data$aliaskeeper <- list(list(var = "x", value=c("本市","78区")))
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -524,7 +530,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 `r fig_name <- "四年级各指标雷达分析图—区79" `图\ref{fig:`r fig_name`}给出了区79四年级的各指标雷达分析图。
 ```{r province.county79.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
-report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","79区")))
+report$plot$province.county.index.radar$data$aliaskeeper <- list(list(var = "x", value=c("本市","79区")))
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -535,7 +541,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 `r fig_name <- "四年级各指标雷达分析图—区80" `图\ref{fig:`r fig_name`}给出了区80四年级的各指标雷达分析图。
 ```{r province.county80.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
-report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","80区")))
+report$plot$province.county.index.radar$data$aliaskeeper <- list(list(var = "x", value=c("本市","80区")))
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -548,7 +554,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 图\ref{fig:`r fig_name`}给出了区81四年级的各指标雷达分析图。
 ```{r province.county81.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
-report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","81区")))
+report$plot$province.county.index.radar$data$aliaskeeper <- list(list(var = "x", value=c("本市","81区")))
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -561,7 +567,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 图\ref{fig:`r fig_name`}给出了区82四年级的各指标雷达分析图。
 ```{r province.county82.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
-report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","82区")))
+report$plot$province.county.index.radar$data$aliaskeeper <- list(list(var = "x", value=c("本市","82区")))
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -574,7 +580,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 图\ref{fig:`r fig_name`}给出了区83四年级的各指标雷达分析图。
 ```{r province.county83.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
-report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","83区")))
+report$plot$province.county.index.radar$data$aliaskeeper <- list(list(var = "x", value=c("本市","83区")))
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -587,7 +593,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 图\ref{fig:`r fig_name`}给出了区84四年级的各指标雷达分析图。
 ```{r province.county84.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
-report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","84区")))
+report$plot$province.county.index.radar$data$aliaskeeper <- list(list(var = "x", value=c("本市","84区")))
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -600,7 +606,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 图\ref{fig:`r fig_name`}给出了区85四年级的各指标雷达分析图。
 ```{r province.county85.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
-report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","85区")))
+report$plot$province.county.index.radar$data$aliaskeeper <- list(list(var = "x", value=c("本市","85区")))
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -613,7 +619,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 图\ref{fig:`r fig_name`}给出了区87四年级的各指标雷达分析图。
 ```{r province.county87.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
-report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","87区")))
+report$plot$province.county.index.radar$data$aliaskeeper <- list(list(var = "x", value=c("本市","87区")))
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -624,7 +630,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 `r fig_name <- "四年级各指标雷达分析图—区88" `图\ref{fig:`r fig_name`}给出了区88四年级的各指标雷达分析图。
 ```{r province.county88.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
-report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","88区")))
+report$plot$province.county.index.radar$data$aliaskeeper <- list(list(var = "x", value=c("本市","88区")))
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -637,7 +643,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 图\ref{fig:`r fig_name`}给出了区89四年级的各指标雷达分析图。
 ```{r province.county89.index.radar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "province.county.index.radar"
-report$plot$province.county.index.radar$data$keep <- list(list(var = "x", value=c("本市","89区")))
+report$plot$province.county.index.radar$data$aliaskeeper <- list(list(var = "x", value=c("本市","89区")))
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]

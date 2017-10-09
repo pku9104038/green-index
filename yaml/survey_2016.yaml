@@ -8334,7 +8334,7 @@ report:
   report:
     
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "province_base.Rmd"
       
@@ -16781,7 +16781,7 @@ report:
               ylab: "百分数（%）"
 
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "province_green.Rmd"
 
@@ -21201,21 +21201,21 @@ report:
                   - "家庭背景影响系数"
             
           ggplot:
-            width: *plot_canvas_width
-            height: *plot_canvas_height
+            width: 16
+            height: 5
             geom: *plot_bar_dodging
             position: "dodge" 
             #text:
             #  vjust: 0.5
             bar:
               width: *plot_bar_width_fat
-            legend: *plot_legend_top
+            legend: *plot_legend_right
             label:
               xlab: ""
               ylab: "指标系数"
             axisx:
               text_angle: 90
-              text_size: 8
+              text_size: 10
             #axisy:
             #  discrete_limits: *axisy_discrete_limits_index
             #  ylim: *axisy_ylim
@@ -21577,7 +21577,8 @@ report:
               -  
                 arg: "label"
                 var: *label
-            keep:
+
+            aliaskeeper:
               -
                 var: "x"
                 value:
@@ -22171,7 +22172,7 @@ report:
             geom: *plot_radar 
             
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "province_cn.Rmd"
 
@@ -24571,7 +24572,7 @@ report:
                   value: *top_answer
                       
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "province_ma.Rmd"
 
@@ -26117,7 +26118,6 @@ report:
                 - 
                   variable: *topic
                   value: *top_answer
-
           
     -
       process: FALSE
