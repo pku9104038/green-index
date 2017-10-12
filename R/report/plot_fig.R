@@ -3,20 +3,27 @@ library(yaml)
 
 # init global configurations
 conf <- yaml.load_file("yaml/conf.yaml")
+yaml <- yaml.load_file(paste0(conf$dir$yaml,conf$yaml$survey))
 g.dir <- conf$dir
 g.yaml <- conf$yaml
-
+g.var <- yaml$global$stat$var
+g.tier <- yaml$global$stat$def$tier
 source(paste0(g.dir$R,"report/plot.R"))
 #######################################################
-plot.name <- "province.county.index.radar"
+plot.name <- "sleep_not_enough.bar"
 
 
 reports <- yaml.load_file(paste0(g.dir$yaml,g.yaml$survey))$report
 ############
-# 1 base, 2 green, 3 cn, 4 ma
+# 1 base, 2 green, 3 cn, 4 ma, 5 county_base 6 school_report
 ############
-i <- 2
+i <- 5
 report <-  reports$report[[i]]
+
+report$scope <- "浦东新区"  #"上海市浦东新区第二中心小学（巨野校区）"
+report$school <- report$scope
+report$county <- "浦东新区"
+report$province  <- "上海市"
 
 report$plot.out  <- paste0(getwd(),"/",g.dir$report.out.plot)
 
@@ -42,10 +49,28 @@ if(is.null(report$aliasFlag)){
 timestamp()
 print(paste("Read Table:",report$table))
 report$data <- db.ReadTable(report$table)
-print(report$aliasFlag)
-if(!is.null(report$aliasFlag)){
+
+  print(paste("Read Table:",report$aliasTable))
   report$aliasdata <- db.ReadTable(report$aliasTable)
-}
+  
+  if(report$tier == g.tier$county){
+    report$county <- report$scope
+    report$aliasdata[report$aliasdata[,g.var$scope]==report$county, g.var$alias] = "本区"
+    
+  }else if(report$tier == g.tier$school){
+    report$school  <- report$scope
+    print(report$aliasdata)
+    print(g.var$scope)
+    print(g.tier$county)
+    print(g.var$scope)
+    print(g.tier$county)
+    report$county <- report$aliasdata[report$aliasdata[,g.var$scope]==report$school, g.tier$county]
+    report$aliasdata[report$aliasdata[,g.var$scope]==report$county, g.var$alias] = "本区"
+    report$aliasdata[report$aliasdata[,g.var$scope]==report$school, g.var$alias] = "本校"
+    
+  }
+
+
 
 plot <- report$plot[[plot.name]]
 
@@ -53,6 +78,7 @@ plot <- report$plot[[plot.name]]
 
 #plot$title <- report$title
 #plot$dir  <- paste0(getwd(),"/",g.dir$report.out.plot)
-#plot$data$keep <- list(list(var = "主题", value=list("数与运算得分分布","数与运算平均分")))
-plot$data$aliaskeeper <- list(list(var = "x", value=list("本市")))
+#plot$data$keep <- list(list(var = "统计范围", value=list(report$county)))
+plot$data$keep <- list(list(var = "统计范围", value=list(report$scope,"上海市")))
+#plot$data$aliaskeeper <- list(list(var = "x", value=list("本区")))
 plot.figure( report = report, plot.in = plot,fig_name = plot$fig.name)

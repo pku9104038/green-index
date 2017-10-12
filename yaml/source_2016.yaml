@@ -136,6 +136,6 @@ datasource:
         newname: "办学"    
 
   -
-    format: "csv"
+    format: "xlsx"
     table: "别名"
-    file: "别名.csv"
+    file: "别名.xlsx"

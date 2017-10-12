@@ -20,6 +20,7 @@
 
 \usepackage{mytitlesec}
 \titleformat{\chapter}{\centering\Huge\bfseries}{第\,\thechapter\,章}{1em}{}
+
 \usepackage[fntef]{ctexcap}
 \CTEXsetup[number={\chinese{chapter}}]{chapter}
 \CTEXsetup[number={\chinese{section}}]{section}
@@ -143,13 +144,22 @@
 }
 
 \newcommand{\mytext}{
-    \raggedright\small\setlength{\parindent}{2em}
-    \setlength{\parskip}{1ex} 
+    \raggedright\fontsize{12pt}{18pt}\selectfont\setlength{\parindent}{2em}
+    \setlength{\parskip}{0.5ex} 
 }
 
-\newcommand{\questiontitle}{
-    \textbf 
+\newcommand{\questiontitle}[1]{
+    \begin{bf}\raggedright\fontsize{12pt}{18pt}\selectfont#1\end{bf}
 }
+
+\newcommand{\mytablehead}[1]{
+    \begin{center}\fontsize{12pt}{18pt}\selectfont#1\end{center}
+}
+
+\newcommand{\mytable}{
+    \fontsize{10pt}{15pt}\selectfont
+}
+
 
 \setlength{\abovecaptionskip}{0pt}
 \setlength{\belowcaptionskip}{0pt}

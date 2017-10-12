@@ -25,14 +25,14 @@ score.data  <- function() {
   n_subject <- mini.loop(g.test$loop.limit,length(subjects))
   for(i in 1:n_subject){
     subject <-  subjects[[i]]
-    if(subject$process){
+    #if(subject$process){
       print(subject$subject)
       bind <- subject$bind
       score.bind(bind)
       statistics <- subject$statistics
       score.statistics(statistics,algorithm)
       
-    }
+    #}
     
   }
   

@@ -8,8 +8,11 @@ library(ggthemes)
 #library(ggradar)
 
 conf <- yaml.load_file("yaml/conf.yaml")
+yaml <- yaml.load_file(paste0(conf$dir$yaml,conf$yaml$survey))
 g.dir <- conf$dir
-g.var <- yaml.load_file(paste0(g.dir$yaml,g.yaml$survey))$global$stat$var
+g.yaml <- conf$yaml
+g.var <- yaml$global$stat$var
+g.tier <- yaml$global$stat$def$tier
 # source scripts
 source(paste0(g.dir$R,"ETL/db.R"))
 source(paste0(g.dir$R,"report/report.R"))
@@ -678,12 +681,14 @@ plot.data <- function(
   report,
   plot
 ){
+  data.in <- report$data
+  
   data.out <- data.frame()
   filters <- plot$data$filter
   for(i in  1:length(filters)){
     print("data filter")
     filter <- filters[[i]]
-    data <- report$data
+    data <- data.in
     for(j in 1:length(filter)){
       fil <- filter[[j]]
       if(!is.null(fil$x)){
@@ -717,6 +722,24 @@ plot.data <- function(
     data.out <- bind_rows(data.out,data)
   }
   
+  if(!is.null(plot$data$county.filter)){
+    if(plot$data$county.filter==TRUE){
+      print("county.filter")
+      counties <- report$aliasdata[,c("区县","统计范围")]
+      data.out <- merge(x=data.out,y=counties,by ="统计范围",all.x=TRUE)  
+      #print(summary(data.out))
+      data.province <- data.frame()
+      data.county <-  data.frame()
+      data.province <- data.out[data.out[,"区县"]==report$province,]
+      data.county <- data.out[data.out[,"区县"]==report$county,]
+      
+      data.out <- rbind(data.province,data.county)
+      data.out <- data.out[!is.na(data.out[,"统计范围"]),]
+      #print(summary(data.out))
+      
+    }
+  }
+  
   if(!is.null(plot$data$keep)){
     print("data keep")
     keeps <- plot$data$keep
@@ -725,17 +748,19 @@ plot.data <- function(
     for(i in 1:length(keeps)){
       keep <- keeps[[i]]
       var <- keep$var
-      print(var)
+      #print(var)
       values <- keep$value
       for(j in 1:length(values)){
         value <- values[[j]]
-        print(value)
+        #print(value)
         data.keep <- data.in[data.in[,var] == value,]
-        print(data.keep)
+        #print(data.keep)
         data.out <- rbind(data.out,data.keep)
       }
     }
   }
+  
+  
   
   #print(data.out)
   
@@ -747,12 +772,12 @@ plot.data <- function(
   if(!is.null(plot$data$derivative)){
     print("data derivative")
     data.in <- data.out
-    print(data.in)
+    #print(data.in)
     data.out <- data.frame()
     groups <- levels(factor(data.in[,plot$data$derivative$group]))
     for(i  in 1:length(groups)){
       group <- groups[i]
-      print(group)
+      #print(group)
       #print(plot$data$derivative$group)
       #data <- subset(data.in,plot$data$derivative$group==group)
       data <- data.in[data.in[,plot$data$derivative$group]==group,]
@@ -767,14 +792,14 @@ plot.data <- function(
       keys <- levels(factor(data[,plot$data$derivative$key]))
       for(j in 1:length(keys)){
         key <-  keys[j]
-        print(key)
-        print(data[data[,plot$data$derivative$key]==key,g.var$value])
+        #print(key)
+        #print(data[data[,plot$data$derivative$key]==key,g.var$value])
         data.out[nrow(data.out),key] <- 
           data[data[,plot$data$derivative$key]==key,g.var$value]
       }
       
     }
-    print(data.out)
+    #print(data.out)
     
   }
   
@@ -794,19 +819,22 @@ plot.data <- function(
     
   aes <- plot$data$aes
   for(i in  1:length(aes)){
-    print(data.out)
+    #print(data.out)
     print("data aes")
     arg <- aes[[i]]
     data.out[,arg$arg] <- data.out[,arg$var]
     #if(!is.null(arg$order)){
     #  data.out[,arg$arg] <- factor(data.out[,arg$arg],levels = unlist(arg$order))
     #}
-    print(data.out)
+    #print(data.out)
   }
   
   if(!is.null(report$aliasFlag)){
     print("aliasFlag")
     data.left <- data.out
+    #g.var$scope <-  "统计范围"
+    #g.var$alias <-  "别名"
+    #print(report$aliasdata)
     data.right <- report$aliasdata[,c(g.var$scope,g.var$alias)]
     scopes <- data.right[,g.var$scope]
     for(i in 1:nrow(data.left)){
@@ -827,13 +855,13 @@ plot.data <- function(
     for(i in 1:length(keeps)){
       keep <- keeps[[i]]
       var <- keep$var
-      print(var)
+      #print(var)
       values <- keep$value
       for(j in 1:length(values)){
         value <- values[[j]]
-        print(value)
+        #print(value)
         data.keep <- data.in[data.in[,var] == value,]
-        print(data.keep)
+        #print(data.keep)
         data.out <- rbind(data.out,data.keep)
       }
     }
@@ -853,18 +881,19 @@ plot.data <- function(
     print("data sort")
     for(i in 1:length(plot$data$sort)){
       sort <- plot$data$sort[[i]]
+      #print(data.out)
       data.sort <- data.out[data.out[,sort$variable]==sort$option,]
-      print(data.sort)
+      #print(data.sort)
       data.sorted <- arrange(data.sort,desc(data.sort[,sort$value]))
-      print(data.sorted)
+      #print(data.sorted)
       sort$list <-list()
       n <- nrow(data.sorted)
       for(i in 1:n){
         if(sort$asc_desc == "DESC"){
-          sort$list[[i]] <- data.sorted[n-i+1,sort$var]
+          sort$list[[i]] <- data.sorted[i,sort$var]
         }
         else{
-          sort$list[[i]] <- data.sorted[i,sort$var]
+          sort$list[[i]] <- data.sorted[n-i+1,sort$var]
         }
         
         #print(sort$list[[i]])
@@ -879,44 +908,6 @@ plot.data <- function(
   
   print(data.out)
   return(data.out)
-}
-
-#############################
-plot.dummy <-  function(
-  
-){
-  plot <-  plot.in
-  plot$output <-  report$output[[1]]
-  plot$title <- report$title
-  plot$dir  <- report$plot.out
-  
-  plot$file <- paste0(plot$dir,plot$title,"_",fig_name,"_",report.datetime(),plot$output$ext)
-  print(plot$file)
-  plot$data$set <- plot.data(report,plot)
-  
-  if(nrow(plot$data$set)>0){
-    pdf(plot$file, width = plot$ggplot$width, height = plot$ggplot$height)
-    showtext.begin()
-    
-    figure <- ggplot(data=plot$data$set, aes(x=x, y=y , fill = fill))
-    figure <- figure + geom_bar( stat="identity", width = plot$ggplot$bar$width) 
-    figure <- figure + geom_text(aes(label = label), vjust = "inward") 
-    #figure <- figure + ggtitle(plot$fig.name) 
-    figure <- figure + xlab(plot$ggplot$label$xlab) + ylab(plot$ggplot$label$ylab) 
-    figure <- figure + guides(fill=FALSE) 
-    figure <- figure + theme(panel.background = element_blank()) 
-    figure <- figure + theme(text = element_text(family = "wqy-microhei"))
-    
-    print(figure)
-    showtext.end()
-    dev.off()
-  }
-  else{
-    print("Plot Data NULL!")
-  }
-  
-  return(plot$file)
-  
 }
 ##############################
 plot.bar_segment <- function(
@@ -936,7 +927,7 @@ plot.bar_segment <- function(
 plot.bar_stacking  <- function(
   plot
 ){
-  print(plot$data$set)
+  #print(plot$data$set)
   figure <- ggplot(data=plot$data$set, aes(x=x, y=y , fill = fill))
   figure <- figure + theme_economist() + scale_fill_economist()
   figure <- figure + geom_bar( stat="identity", width = plot$ggplot$bar$width,position = "stack") 
@@ -1021,8 +1012,16 @@ plot.bar_dodging  <- function(
   figure <- figure + theme_economist() + scale_fill_economist()
   figure <- figure + geom_bar( stat="identity", width = plot$ggplot$bar$width,position = plot$ggplot$position) 
   if(!is.null(plot$ggplot$text)){
+    #if(!is.null(plot$ggplot$text$vjust)){
+    #  figure <- figure + geom_text(aes(label = label),colour="red", 
+    #                               position = position_stack(vjust = plot$ggplot$text$vjust)) 
+    #}
+    #else if(!is.null(plot$ggplot$text$hjust)){
+      figure <- figure + geom_text(aes(label = label),colour="red", 
+                                   position = position_dodge(width = plot$ggplot$text$hjust)) 
+    #}
     
-    figure <- figure + geom_text(aes(label = label),colour="red", position = position_stack(vjust = plot$ggplot$text$vjust)) 
+    
     #figure <- figure + geom_text(aes(label = label),colour="red", vjust = plot$ggplot$text$vjust) 
   }
   if(!is.null(plot$ggplot$coord)){
@@ -1208,60 +1207,172 @@ plot.figure  <- function(
   fig_name = NULL
 ){
   plot <-  plot.in
-  plot$output <-  report$output[[1]]
-  plot$title <- report$title
-  plot$dir  <- report$plot.out
-  
-  plot$file <- paste0(plot$dir,plot$title,"_",fig_name,"_",report.datetime(),plot$output$ext)
-  print(plot$file)
-  plot$data$set <- plot.data(report,plot)
-  
-  if(nrow(plot$data$set)>0){
-    pdf(plot$file, width = plot$ggplot$width, height = plot$ggplot$height)
-    showtext.begin()
+  if(is.null(plot$fig.limit)){
     
+    plot$output <-  report$output[[1]]
+    plot$title <- report$title
+    plot$dir  <- report$plot.out
     
-    if(plot$ggplot$geom == report$geom$bar_dodging){
-      figure  <-  plot.bar_dodging(plot)
+    plot$file <- paste0(plot$dir,plot$title,"_",fig_name,"_",report.datetime(),plot$output$ext)
+    print(plot$file)
+    plot$data$set <- plot.data(report,plot)
+    
+    if(nrow(plot$data$set)>0){
+      pdf(plot$file, width = plot$ggplot$width, height = plot$ggplot$height)
+      showtext.begin()
+      
+      
+      if(plot$ggplot$geom == report$geom$bar_dodging){
+        figure  <-  plot.bar_dodging(plot)
+      }
+      else if(plot$ggplot$geom == report$geom$bar_stacking){
+        figure  <-  plot.bar_stacking(plot)
+      }
+      else if(plot$ggplot$geom == "plot_bar_stacking.raw"){
+        figure  <-  plot.bar_stacking.raw(plot)
+      }
+      else if(plot$ggplot$geom == report$geom$box){
+        figure  <-  plot.box(plot)
+      }
+      else if(plot$ggplot$geom == report$geom$point){
+        figure  <-  plot.point(plot)
+      }
+      else if(plot$ggplot$geom == report$geom$bar_segment){
+        figure  <-  plot.bar_segment(plot)
+      }
+      else if(plot$ggplot$geom == report$geom$radar){
+        figure  <-  plot.radar(plot)
+      }
+      
+      print(figure)
+      showtext.end()
+      dev.off()
     }
-    else if(plot$ggplot$geom == report$geom$bar_stacking){
-      figure  <-  plot.bar_stacking(plot)
-    }
-    else if(plot$ggplot$geom == "plot_bar_stacking.raw"){
-      figure  <-  plot.bar_stacking.raw(plot)
-    }
-    else if(plot$ggplot$geom == report$geom$box){
-      figure  <-  plot.box(plot)
-    }
-    else if(plot$ggplot$geom == report$geom$point){
-      figure  <-  plot.point(plot)
-    }
-    else if(plot$ggplot$geom == report$geom$bar_segment){
-      figure  <-  plot.bar_segment(plot)
-    }
-    else if(plot$ggplot$geom == report$geom$radar){
-      figure  <-  plot.radar(plot)
+    else{
+      print("Plot Data NULL!")
     }
     
-    print(figure)
-    showtext.end()
-    dev.off()
+    return(plot$file)
+    
   }
   else{
-    print("Plot Data NULL!")
+    print("plot multi figure")
+    plot.multi.figure(
+      report,
+      plot.in,
+      fig_name
+    )
   }
   
-  return(plot$file)
-
   
 }
 
-newline <- function(){
-  return("\\\\")
+##########################################
+
+#############################
+plot.multi.figure  <- function(
+  report,
+  plot.in,
+  fig_name = NULL
+){
+  plot <-  plot.in
+  
+  plot$data$set.multi.fig <- plot.data(report,plot)
+  
+  items  <- levels(factor(plot$data$set.multi.fig[,"x"]))
+  #print(items)
+  fig.number <-  floor( length(items)/plot$fig.limit)+1
+  #print(fig.number)
+  fig.items <- floor(length(items)/fig.number)+1
+  
+  tex.name <- paste0(plot$entry,plot$ext.tex)
+  tex.file <- paste0(report$plot.out,tex.name)
+  tex.out  <- c("","")
+  for(i in 1:fig.number){
+    
+    plot$output <-  report$output[[1]]
+    plot$title <- report$title
+    plot$dir  <- report$plot.out
+    caption <- paste0(plot$fig.name,"-",LETTERS[i])
+    plot.fig.name <- paste0(plot$title,"_",caption,"_",report.datetime(),plot$output$ext)
+    plot$file <- paste0(plot$dir,plot.fig.name)
+    print(plot$file)
+    
+    tex.out[length(tex.out)+1] <- paste0("`r fig_name <- \"",caption,"\" `")
+    tex.out[length(tex.out)+1] <- paste0("`r fig_file <- \"",plot$file,"\" `")
+    tex.out[length(tex.out)+1] <-  " "
+    tex.out[length(tex.out)+1] <- "\\begin{figure}[H]"
+    tex.out[length(tex.out)+1] <- "\\includegraphics[width=25cm]{`r fig_file`}"
+    tex.out[length(tex.out)+1] <- "\\caption{`r fig_name`}"
+    tex.out[length(tex.out)+1] <- "\\label{fig:`r fig_name`}"
+    tex.out[length(tex.out)+1] <- "\\end{figure}"
+    tex.out[length(tex.out)+1] <-  " "
+    tex.out[length(tex.out)+1] <-  " "
+    
+    
+    
+    df <- data.frame()
+    plot$data$set  <-  data.frame()
+    order.list <-  list()
+    for(j in 1:length(plot$x.leader)){
+      df  <-  plot$data$set.multi.fig[plot$data$set.multi.fig[,"x"]==plot$x.leader[j],]
+      order.list[[j]] <- plot$x.leader[j]
+      plot$data$set <- rbind(plot$data$set,df)
+    }
+    for(j in ((i-1)*fig.items+1):min(length(items),i*fig.items)){
+      if(!is.element(items[j],unlist(plot$x.leader))){
+        df  <-  plot$data$set.multi.fig[plot$data$set.multi.fig[,"x"]==items[j],]
+        n <- length(order.list)
+        order.list[[n+1]] <- items[j]
+        plot$data$set <- rbind(plot$data$set,df)
+      }
+    }
+    plot$data$set[,"x"] <- factor(plot$data$set[,"x"], levels = unlist(order.list))
+    
+    
+    if(nrow(plot$data$set)>0){
+      pdf(plot$file, width = plot$ggplot$width, height = plot$ggplot$height)
+      showtext.begin()
+    
+      if(plot$ggplot$geom == report$geom$bar_dodging){
+        figure  <-  plot.bar_dodging(plot)
+      }
+      else if(plot$ggplot$geom == report$geom$bar_stacking){
+        figure  <-  plot.bar_stacking(plot)
+      }
+      else if(plot$ggplot$geom == "plot_bar_stacking.raw"){
+        figure  <-  plot.bar_stacking.raw(plot)
+      }
+      else if(plot$ggplot$geom == report$geom$box){
+        figure  <-  plot.box(plot)
+      }
+      else if(plot$ggplot$geom == report$geom$point){
+        figure  <-  plot.point(plot)
+      }
+      else if(plot$ggplot$geom == report$geom$bar_segment){
+        figure  <-  plot.bar_segment(plot)
+      }
+      else if(plot$ggplot$geom == report$geom$radar){
+        figure  <-  plot.radar(plot)
+      }
+      
+      print(figure)
+      showtext.end()
+      dev.off()
+    }
+    else{
+      print("Plot Data NULL!")
+    }
+    
+  }
+  
+  fileConn<-file(tex.file)
+  writeLines(tex.out, fileConn)
+  close(fileConn)
+  
+  return(tex.file)
+  
+  
 }
-hline <- function(){
-  return("\\hline")
-}
-newcol <- function(){
-  return(" & ")
-}
+
+

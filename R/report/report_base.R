@@ -2,25 +2,27 @@
 library(yaml)
 
 report.base <- function(
-  conf
+  conf,
+  yaml
 ){
   # init global configurations
-  #conf <- yaml.load_file("yaml/conf.yaml")
+  
   g.dir <- conf$dir
   g.yaml <- conf$yaml
-  g.var <- yaml.load_file(paste0(g.dir$yaml,g.yaml$survey))$global$stat$var
+  g.var <- yaml$global$stat$var
   
   source(paste0(g.dir$R,"report/report.R"))
   source(paste0(g.dir$R,"report/plot.R"))
-  source(paste0(g.dir$R,"report/dataframe.R"))
   #######################################################
   
-  reports <- yaml.load_file(paste0(g.dir$yaml,g.yaml$survey))$report
+  reports <- yaml$report
+  
   n <- length(reports$report)
   for(i in 1:n){
     report <-  reports$report[[i]]
     if(report$process){
       report$plot.out  <- paste0(getwd(),"/",g.dir$report.out.plot)
+      
       report$skip <- reports$skip
       if(is.null(report$table)){
         report$table <-  reports$table
@@ -42,7 +44,13 @@ report.base <- function(
       if(is.null(report$geom)){
         report$geom  <- reports$geom
       }
-      report.render(report,conf)
+      if(is.null(report$province)){
+        report$province  <- reports$province
+      }
+      if(is.null(report$test)){
+        report$test  <- reports$test
+      }
+      report.render(report,conf,yaml)
     }
     
   }

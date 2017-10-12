@@ -18,6 +18,12 @@
 \usepackage{mytitlesec}
 \titleformat{\chapter}{\centering\Huge\bfseries}{第\,\thechapter\,章}{1em}{}
 
+\usepackage[fntef]{ctexcap}
+\CTEXsetup[number={\chinese{chapter}}]{chapter}
+\CTEXsetup[number={\chinese{section}}]{section}
+%\CTEXsetup[name={第,章},number={\chinese{chapter}}]{chapter}
+%\CTEXsetup[number={\chinese{section}}]{section}
+%\CTEXsetup[name={（,）},number={\chinese{subsection}}]{subsection}
 
 \makeatletter
 
@@ -75,8 +81,8 @@
         \if@twoside%
             \ifodd\c@page%
                 \gdef\LS@rot{\setbox\@outputbox\vbox{%
-                    \pdf@landscape@rotate{-90}%
-                    \hbox{\rotatebox{90}{\hbox{\rotatebox{180}{\box\@outputbox}}}}}%
+                    \pdf@landscape@rotate{+90}%
+                    \hbox{\rotatebox{90}{\hbox{\rotatebox{0}{\box\@outputbox}}}}}%
                 }%
             \else%
                 \gdef\LS@rot{\setbox\@outputbox\vbox{%
@@ -146,7 +152,14 @@
 \captionsetup[table]{labelfont=bf,textfont=bf,singlelinecheck=off,justification=raggedright,labelsep=space}
 
 \usepackage{tabularx}
+%\usepackage{ltxtable}
+\usepackage{filecontents}
+
+\usepackage[normalem]{ulem}
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{wrapfig}
 
 \usepackage[bottom]{footmisc}
-
 \raggedbottom

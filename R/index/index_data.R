@@ -23,10 +23,10 @@ index.data <-  function(){
   n_subject <- mini.loop(g.test$loop.limit,length(subjects))
   for(i in 1:n_subject){
     subject <-  subjects[[i]]
-    if(subject$process){
+    #if(subject$process){
       print(subject$subject)
       index.subject(subject = subject, algorithms = algorithm )
-    }
+    #}
     
   }
   
@@ -34,10 +34,10 @@ index.data <-  function(){
   n_subject <- mini.loop(g.test$loop.limit,length(subjects))
   for(i in 1:n_subject){
     subject <-  subjects[[i]]
-    if(subject$process){
+    #if(subject$process){
       print(subject$subject)
       index.subject(subject = subject, algorithms = algorithm )
-    }
+    #}
     
   }
   
