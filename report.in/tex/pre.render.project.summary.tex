@@ -89,7 +89,7 @@
 
 \begin{itshape}
 \mytable
-\begin{longtable}{m{12cm}m{3cm}}
+\begin{longtable}{m{13cm}r}
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\
 
 \hline
@@ -169,16 +169,17 @@
 
 \begin{table}[H]
 \centering
-\mytable
+
 \caption{`r tab_name`} \label{tab: `r tab_name`} 
 \itshape
-\footnotesize
+\mytable
+
 \begin{tabularx}{\textwidth}{|r|c|c|c|X|}
 
 \hline
  \multicolumn{1}{|c|}{\multirow{2}{*}{\mytablehead{名称}}}  &  \multicolumn{3}{c|}{\mytablehead{报告层次}} &  \multicolumn{1}{c|}{\multirow{2}{*}{\mytablehead{对象}}}\\ 
 \cline{2-4}
-               &   市级  & 区县 & 学校 &  \\             
+               &   \mytablehead{市级}  & \mytablehead{区县} & \mytablehead{学校} &  \\             
 \hline 
 绿色指标基础数据报告 & √  & √ & & \multirow{2}{*}{教育决策者、教科研人员等} \\
 \cline{1-4}
