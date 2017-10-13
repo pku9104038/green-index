@@ -1,9 +1,12 @@
 
 \usepackage{xeCJK} 
-\setCJKmainfont[BoldFont={Heiti SC},ItalicFont={Kaiti SC},BoldItalicFont={Songti SC}]{STFangsong}
-\setCJKsansfont{Songti SC}
+\usepackage{fontspec}
+%\setCJKmainfont[AutoFakeBold = false, ItalicFont={Kaiti SC},BoldItalicFont={Songti SC}]{STFangsong}
+\setCJKmainfont[BoldFont={Songti SC},ItalicFont={STKaiti},BoldItalicFont={Songti SC}]{STFangsong}
+\setCJKsansfont{Kaiti SC}
 \setCJKmonofont{Yuanti SC}
-\setmainfont{Times New Roman}
+\setmainfont{Yuanti SC}
+%\setmainfont{Times New Roman}
 
 \usepackage{fancyhdr}
 \usepackage{ragged2e}
@@ -15,34 +18,37 @@
 \renewcommand\cftchapfont{\large\bfseries}
 \renewcommand\cftchappagefont{\large\bfseries}
 
+
+%\CTEXsetup[beforeskip={0pt},afterskip={20pt}]{chapter}
+
 \usepackage{mytitlesec}
-\titleformat{\chapter}{\centering\Huge\bfseries}{第\,\thechapter\,章}{1em}{}
+\titleformat{\chapter}{\centering\Huge\bfseries}{第\,\thechapter\,章}{1em}{} %not for green report
 
 \usepackage[fntef]{ctexcap}
 \CTEXsetup[number={\chinese{chapter}}]{chapter}
 \CTEXsetup[number={\chinese{section}}]{section}
-%\CTEXsetup[name={第,章},number={\chinese{chapter}}]{chapter}
-%\CTEXsetup[number={\chinese{section}}]{section}
-%\CTEXsetup[name={（,）},number={\chinese{subsection}}]{subsection}
+%\CTEXsetup[number={\chinese{subsection}}]{subsection}
+%\CTEXsetup[number={\chinese{subsubsection}}]{subsubsection}
+%\CTEXsetup[number={\chinese{paragraph}}]{paragraph}
+%\CTEXsetup[number={\chinese{subparagraph}}]{subparagraph}
 
 \makeatletter
 
-\renewcommand\section{\@startsection {section}{2}{\z@}{-.5ex \@plus -.2ex \@minus -.2ex}{.5ex \@plus.2ex \@minus .2ex}{\normalfont\Large\bfseries}}
+\renewcommand\section{\@startsection {section}{2}{\z@}{-.5ex \@plus -.1ex \@minus -.1ex}{.5ex \@plus.1ex \@minus .1ex}{\normalfont\fontsize{20pt}{36pt}\selectfont\bfseries}}
 
-\renewcommand\subsection{\@startsection {subsection}{3}{\z@}{-.4ex \@plus -.1ex \@minus -.1ex}{.4ex \@plus.1ex \@minus .1ex}{\normalfont\large}}
+\renewcommand\subsection{\@startsection {subsection}{3}{\z@}{-.3ex \@plus -.1ex \@minus -.1ex}{.3ex \@plus.1ex \@minus .1ex}{\normalfont\fontsize{14pt}{24pt}\selectfont}}
 
-\renewcommand\subsubsection{\@startsection {subsubsection}{4}{\z@}{-.3ex \@plus -.1ex \@minus -.1ex}{.3ex \@plus.1ex \@minus .1ex}{\normalfont\large}}
+\renewcommand\subsubsection{\@startsection {subsubsection}{4}{\z@}{-.1ex \@plus -.1ex \@minus -.1ex}{.1ex \@plus.1ex \@minus .1ex}{\normalfont\fontsize{12pt}{20pt}\selectfont}}
 
-\renewcommand\paragraph{\@startsection {paragraph}{5}{\z@}{-.2ex \@plus -.1ex \@minus -.1ex}{.2ex \@plus.1ex \@minus .1ex}{\normalfont\large}}
+\renewcommand\paragraph{\@startsection {paragraph}{5}{\z@}{-.1ex \@plus -.1ex \@minus -.1ex}{.1ex \@plus.1ex \@minus .1ex}{\normalfont\fontsize{12pt}{18pt}\selectfont}}
 
-\renewcommand\subparagraph{\@startsection {subparagraph}{6}{\z@}{-.1ex \@plus -1ex \@minus -.1ex}{.1ex \@plus.1ex \@minus .1ex}{\normalfont\large}}
-
+\renewcommand\subparagraph{\@startsection {subparagraph}{6}{\z@}{-.1ex \@plus -1ex \@minus -.1ex}{.1ex \@plus.1ex \@minus .1ex}{\normalfont\fontsize{12pt}{18pt}\selectfont}}
 
 %\newcommand\prefix@chapter{第 \thechapter 章 }
 
 \makeatother
 
-\renewcommand*\contentsname{目~录}
+\renewcommand*\contentsname{目~~~~~录}
 
 \usepackage{makecell,multirow,diagbox}
 
@@ -82,12 +88,17 @@
             \ifodd\c@page%
                 \gdef\LS@rot{\setbox\@outputbox\vbox{%
                     \pdf@landscape@rotate{+90}%
-                    \hbox{\rotatebox{90}{\hbox{\rotatebox{0}{\box\@outputbox}}}}}%
+                    \hbox{\rotatebox{90}{\hbox{\rotatebox{0}{\box\@outputbox}}}}}%               
+                    %\pdf@landscape@rotate{-90}%
+                    %\hbox{\rotatebox{90}{\hbox{\rotatebox{180}{\box\@outputbox}}}}}%
                 }%
             \else%
                 \gdef\LS@rot{\setbox\@outputbox\vbox{%
                     \pdf@landscape@rotate{+90}%
                     \hbox{\rotatebox{90}{\hbox{\rotatebox{0}{\box\@outputbox}}}}}%
+
+%                    \pdf@landscape@rotate{+90}%
+%                    \hbox{\rotatebox{90}{\hbox{\rotatebox{0}{\box\@outputbox}}}}}%
                 }%
             \fi%
         \else%
@@ -111,11 +122,11 @@
 
 
 \newcommand{\mytitle}[1]{
-    \begin{center}\fontsize{26pt}{39pt}\selectfont#1\end{center} 
+    \begin{center}\fontsize{27.5pt}{41.25pt}\selectfont#1\end{center} 
 }
 
 \newcommand{\mysubtitle}[1]{
-    \begin{center}\fontsize{18pt}{27pt}\selectfont\textbf{\textit{#1}}\end{center} 
+    \begin{center}\fontsize{24pt}{48pt}\selectfont\textbf{\textit{#1}}\end{center} 
 }
 
 \newcommand{\myproducer}[1]{
@@ -123,21 +134,41 @@
 }
 
 \newcommand{\mycopyright}[1]{
-    \begin{center}\begin{bf}\fontsize{10.5pt}{18pt}\selectfont#1\end{bf}\end{center} 
+    \begin{center}\begin{bf}\fontsize{10.5pt}{15.75pt}\selectfont#1\end{bf}\end{center} 
 }
 
 \newcommand{\myprefacetitle}[1]{
-    \begin{center}\begin{bf}\fontsize{24pt}{36pt}\selectfont#1\end{bf}\end{center} 
+    \begin{center}\begin{bf}\fontsize{24pt}{72pt}\selectfont#1\end{bf}\end{center} 
 }
 
 \newcommand{\myprefacetext}{
-    \raggedright\fontsize{13.75pt}{20pt}\selectfont\setlength{\parindent}{2em}
-    \setlength{\parskip}{1ex} 
+    \raggedright\fontsize{13.75pt}{20.625pt}\selectfont\setlength{\parindent}{2em}
+    \setlength{\parskip}{0.75ex} 
 }
 
 \newcommand{\mytext}{
-    \raggedright\small\setlength{\parindent}{2em}
-    \setlength{\parskip}{1ex} 
+    \raggedright\fontsize{12pt}{18pt}\selectfont\setlength{\parindent}{2em}
+    \setlength{\parskip}{0.5ex} 
+}
+
+\newcommand{\questiontitle}[1]{
+    \begin{bf}\raggedright\fontsize{12pt}{18pt}\selectfont#1\end{bf}
+}
+
+\newcommand{\myquot}{
+    \raggedright\fontsize{12pt}{18pt}\selectfont\setlength{\parindent}{2em}
+}
+
+\newcommand{\mytablehead}[1]{
+    \fontsize{12pt}{12pt}\selectfont#1
+}
+
+\newcommand{\mytable}{
+    \fontsize{10.5pt}{10.5pt}\selectfont
+}
+
+\newcommand{\mylist}{
+    \fontsize{10.5pt}{16pt}\selectfont
 }
 
 \setlength{\abovecaptionskip}{0pt}
@@ -147,13 +178,12 @@
 %\renewcommand{\captionfont}{\textit \large } 
 %\renewcommand{\captionlabelfont}{\emph \large \centering} 
 
-\usepackage[font=large]{caption}
-\captionsetup[figure]{labelfont=bf,textfont=it,labelsep=space}
+\usepackage[font=normalsize]{caption}
+\captionsetup[figure]{labelfont=it,textfont=it,labelsep=space}
 \captionsetup[table]{labelfont=bf,textfont=bf,singlelinecheck=off,justification=raggedright,labelsep=space}
 
 \usepackage{tabularx}
-%\usepackage{ltxtable}
-\usepackage{filecontents}
+\usepackage{ltxtable}
 
 \usepackage[normalem]{ulem}
 

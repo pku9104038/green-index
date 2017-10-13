@@ -8406,7 +8406,7 @@ report:
   report:
     
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "province_base.Rmd"
 
@@ -16854,7 +16854,7 @@ report:
               ylab: "百分数（%）"
 
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "province_green.Rmd"
 
@@ -22247,7 +22247,7 @@ report:
             geom: *plot_radar 
             
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "province_cn.Rmd"
 
@@ -24654,7 +24654,7 @@ report:
                   value: *top_answer
                       
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "province_ma.Rmd"
 
@@ -35157,7 +35157,7 @@ report:
               text_size: 8
  
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "template_test.Rmd"
 

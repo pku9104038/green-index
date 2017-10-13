@@ -1,0 +1,1790 @@
+---
+documentclass: book
+fontsize: 12pt
+geometry: margin=1in
+output:
+  pdf_document:
+    fig_caption: yes
+    template: pdf_template.tex
+    includes:
+      in_header: header_subject.tex
+    latex_engine: xelatex
+    number_sections: yes
+    keep_tex: no
+params:
+  report: 2015
+  dummy.fig: "reports.jpg"
+  conf: "conf"
+  
+---
+<!-- global setting -->
+
+\graphicspath{ {`r report$plot.out`} }
+
+<!-- cover page -->
+
+\pagenumbering{gobble}
+&nbsp;
+
+\vspace{40mm}
+\mytitle{`r report$year``r report$scope``r report$project`}
+\mytitle{`r report$report`}
+\mysubtitle{`r report$subject`}
+
+\vfill
+\myproducer{`r report$producer`}
+\myproducer{`r report$producer1`}
+\myproducer{`r report$date`}
+
+\vspace{8mm}
+\mycopyright{`r report$copyright`}
+
+\clearpage
+
+<!-- end of cover page -->
+
+\pagenumbering{arabic}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[LE,RO]{\footnotesize `r report$header`}
+\fancyfoot[C]{\footnotesize \thepage}
+
+<!-- interface -->
+
+\myprefacetitle{前~言}
+\myprefacetext
+
+教育质量是衡量一个国家、地区基础教育发展水平最重要的指标，学生学业质量是教育质量的重要组成部分。以学生学业质量的评价为切入口，全面关注学生的健康成长，引导建立正确的质量观，建立教育质量的保障体系，对于促进基础教育的均衡发展，实现教育公平有着重大作用。教育质量的形成涉及诸多关键环节，除外部的支持保障条件外，提升质量首先应关注教学过程。但是，长期存在的以片面追求升学率为导向的教学、考试，偏离了课程改革的方向和课程标准的基本要求，考试命题过多依赖个人经验，缺乏对教育测量学的深入研究；考试结果用于排名、甄别和选拔，加剧了竞争。在此压力下，中小学生很难有发自内心的求知欲，很难有对学校的归属感。过重的学习压力，不仅使学生的睡眠时间得不到保证，近视率不断增长，而且导致学生产生焦虑，严重地影响体质健康。正如欧盟《学生学业成绩分析报告》中所指出的“尽管较强的竞争性可能会在学习成绩上带来收益，但在学生的动机和心理健康方面却会付出代价。这些代价从长远来看会有一些不可预见的负面影响，如对学生的终身学习”。
+
+2010年，上海市教育委员会承担了国家教育体制改革试点项目《改革义务教育教学质量综合评价办法》。2011年，上海市教育委员会在与教育部基础教育课程教材发展中心进行前期合作的基础上，共同研究、提炼出了一系列影响学生学业质量的关键因素，如学习动力、师生关系、学习负担等，构建了以关注学生健康成长为核心价值追求的上海市中小学学业质量绿色指标（以下简称“绿色指标”）。“绿色指标”分为学生学业水平指数、学生学习动力指数、学生学业负担指数、师生关系指数、教师教学方式指数、校长课程领导力指数、学生社会经济背景与学业成绩相关指数、学生品德行为指数、学生体质健康指数、跨年度进步指数等。2011年、2012年，依据“绿色指标”，上海组织了两轮学业质量综合评价，产生了积极广泛的影响，成为上海基础教育转型发展的一个亮点，并被教育部向全国推广。2014年，上海的“绿色指标”综合评价工作进入了全面自主化的新阶段，建立了“指标确立—工具研发—数据分析—报告撰写—反馈改进”的评价操作路径；形成了“检测依靠技术、结论源自证据、分析产生转变”教学实证研究模式。“绿色指标”综合评价改革是一个不断完善的行动改进实践过程，近年来，上海各区、校通过评价指标解读、综合评价实施、评价报告发布、基于评价结果进行教育教学改进等工作，同时，也进一步探索和完善了“绿色指标”综合评价。2017年7月，在吸收和总结多年来“绿色指标”评价实践经验和理论研究成果的基础上，上海市教委教研室正在探索与修订“绿色指标”2.0版本，旨在通过更加合事实、合逻辑、合规范、合目的评价将基于评价结果的改进落实到学校、学生、教师行为改进上，推进“为了评价的教学”走向“为了教学的评价”。学业质量的“绿色指标”，并不是全面衡量教育质量的完整指标体系，而是针对当前时弊提出的，直接指向学生健康成长的关键因素，该指标在使用过程中将不断地得到发展和完善。“绿色指标”体系的推行将为各级教育行政部门、教研部门和学校了解学生学业质量的基本状况和重要影响因素，提供实证的依据；为教育决策提供重要参考；为提升学生学业质量提供诊断和改进建议；从而引导全社会树立正确的质量观，促进学生的健康成长！
+
+\clearpage
+
+<!-- end of interface -->
+
+<!-- table of cntents -->
+
+\centering\normalsize\setcounter{tocdepth}{2}\tableofcontents 
+
+\clearpage
+
+<!--  end of toc -->
+\raggedright\normalsize\setlength{\parindent}{2em}
+<!-- document body -->
+
+# 学业质量绿色指标测试的实施概况
+
+根据本市中小学教育质量综合评价改革的要求，上海市教育委员会组织成立了上海市中小学学业质量绿色指标综合评价项目组（以下简称“项目组”），按照《上海市教育委员会关于做好2016年度上海市中小学学业质量绿色指标综合评价工作的通知》(沪教委基[2016]61号)的文件要求，组织了2016年度小学学业质量绿色指标测试，测试对象为在上海市普通中小学校就读的四年级学生，采用学科测试和问卷调查收集数据。项目组在评价队伍的建设、测试工具的研发、考务的组织与实施、评分标准的研制和阅卷、学业水平标准设定等方面开展了相关工作，以下是项目实施的概况。
+
+## 测试概况
+
+### 测试对象
+
+2016年，全市16个区均抽样参加了“绿色指标”测试。普通民办学校自愿参加，所有公办小学全部参加本次调查。每一所参加调查的学校是根据其学校规模按照随机等距抽样的方式抽取一定数量的样本学生。
+
+本次共有904所小学68022名四年级学生参加了学科测试和问卷调查,其中每名学生参加语文和数学两门学科的测试。6240位教师、1593位校长（含分管教学的副校长）、66347位学生家长分别参加了教师问卷、校长问卷及家长问卷的调查。
+
+### 学科测试内容
+
+`r tab_name <- "中小学生学业质量测试科目及测试框架"`
+本次四年级测试涉及语文、数学两门学科。各学科测试的内容不仅包括学生在基础知识、基本技能方面所达到的水平，而且还包括时代发展所要求的小学生需具备的搜集处理信息、自主获取知识、分析与解决问题、交流与合作、创新精神与实践能力等核心素养。本次测试的学科测试框架见表\ref{tab: `r tab_name`}。
+
+\begin{table}[h!]
+\centering
+\caption{`r tab_name`} \label{tab: `r tab_name`} 
+\itshape
+\footnotesize
+\begin{tabularx}{\textwidth}{|c|l|X|}
+\hline
+
+  & \makecell[c]{\normalsize 内容} & \makecell[c]{\normalsize 能力} \\
+\hline
+
+ \multirow{9}{3cm}{\makecell[cc]{语文}} & \multirow{3}{3cm}{积累} & 掌握已学过的常用汉字 \\
+ & & 具有独立识字的能力 \\
+ & & 积累古诗 \\
+\cline{2-3}
+
+ & \multirow{2}{3cm}{阅读} & 初步具有现代文阅读能力 \\
+ & & 具备基本的语文积累和综合运用能力 \\
+\cline{2-3}
+
+ & \multirow{3}{3cm}{\makecell[cl]{习作}} & 能根据写作要求选材立意 \\
+ & & 能根据表达的需要合理安排文章结构 \\
+ & & 能文从字顺地表达自己的意思 \\
+ & & 能正确、规范、端正地书写汉字 \\
+
+\hline
+\multirow{4}{3cm}{\makecell[cc]{数学}} & \multirow{4}{3cm}{\makecell[cl]{数与运算\\ 图形与几何\\ 统计与概率}} & 知识技能 \\
+ & & 数学理解 \\
+ & & 运用规则 \\
+ & & 问题解决 \\
+\hline
+
+\end{tabularx}
+\end{table}
+
+### 问卷调查内容
+
+本项目使用学生、教师、校长、家长问卷了解学生学习、教师专业发展、学校发展状况、家长对学校教育的感受状况及影响学生学业水平的相关因素。学生问卷调查的内容包括学生基本情况、学校环境、学习压力、师生关系、学习动机、自信心和学习方式等。
+
+
+教师问卷调查的内容包括教师基本情况如学历、任职经历、职称、工作感受情况、教师对学校教学管理的评价、教学观念和教师专业发展需求与困难等。校长问卷调查的内容包括校长及学校基本情况、校长课程领导力、办学自主权、国家课程开设情况和对教师的专业支持等。家长问卷调查的内容包括亲子关系、对学校教育的感受等。
+
+
+## 工作流程
+
+### 测试工具开发
+
+以绿色指标测试的学科（包括背景问卷）为单位，组织了一支由市、区教研员、一线优秀教师组成的命题队伍。项目组负责把握命题的方向与总体框架，对命题过程进行管理与监督，保证试题的质量。
+根据本次测试的目标和任务，确定了以下命题原则：第一，命题基于课程标准，体现课程标准的基本要求和理念。试题注重考查学生对学科核心知识、技能的理解和掌握，尤其是学生综合运用所学知识解决实际问题的能力、收集与分析信息的能力以及对重要学科思想方法的理解与掌握。第二，命题严格控制试卷的总体难度，组卷以体现课程标准对学生基本要求的题目为主，有难度的题目主要考查学生的高层次思维能力。第三，试题形式为客观性试题和主观性试题相结合。试题多使用真实的情境和任务，注重通过客观性试题考察学生高层次思维能力。`r tab_name <- "学科测试工具的研发过程" `
+本项目采用规范、严谨的程序开展试题编制工作，以下是2016年度命题工作的过程及时间安排（见表\ref{tab: `r tab_name`}）。
+
+\begin{itshape}
+\begin{longtable}{m{12cm}m{3cm}}
+\caption{`r tab_name`} \label{tab: `r tab_name`} \\
+
+\hline
+
+\multicolumn{1}{c}{\multirow{2}{*}{\large 测试工具的研发}} & \large 时间节点 \\
+  & \large (2016年) \\
+  
+\hline
+
+绿色指标总项目组正式启动测试工具的研发工作 & 5月30日 \\各学科命题组学习、研讨各学科测试框架，依据往年测试情况和2016年度工作需要开展命题和组卷工作   & 6月1-30日 \\各学科命题组依据测试框架研制出四套试卷 & 6月30日前 \\召开第一次专家审议会议，依据预测试数据分析结果及专家评审意见，对试卷进行审核和筛选，组成三套试卷 & 7月3-4日 \\召开第二次专家审议会议，各学科命题组对试题试卷进行调整及修订 & 8月8-10日 \\召开第三次专家审议会议，对各学科测试卷和背景问卷进行评审，各学科命题组根据评审意见对试题进行修订及优化 & 9月2-3日 \\召开第四次专家审议会议，各学科命题组依据评审结果对试题进行优化及适应性调整，最终确定正式卷和备用卷，制作答题卡 & 10月7-10日 \\
+\hline
+\end{longtable}
+\end{itshape}
+
+### 施测
+
+项目组编制了《2016年上海市中小学学业质量绿色指标综合评价实施手册》。上海市教委教研室、市教育督导部门等根据考务工作细则组织开展相关工作，包括编制培训手册，逐级对考务人员及管理人员进行培训，编制考生名册，制定详细的考务手册，组织具体的考务管理工作等。整个测试过程按照标准的考试进行管理，包括培训、考场设置、监考等环节。其中，所有参加测试学生名单在测试当天公布，参测学校负责人签订测试责任书。
+
+### 评分标准研制
+
+本次测试的非选择题均由人工批阅，因此评分标准的准确、全面和可操作性极其重要。在项目组的统一安排下，评分标准的研制由各学科命题组承担。在正式阅卷开始之前，各学科分别随机抽取适量份数，采取网上阅卷的方式，依据初步的评分标准对抽取到的学生作答进行评分。学科组经过反复讨论，修订、细化评分标准，最终形成评分标准。
+
+### 阅卷
+
+组建了由学科命题组成员、各区学科教研员及一线优秀教师组成的阅卷队伍。各学科命题组长担任阅卷组长，负责对阅卷人员进行培训和管理。整体阅卷工作原则上参照高考的相应要求组织实施，开放性试卷的评阅严格遵循国际上大型测试项目评卷标准进行，阅卷人员由具有较强责任心，丰富教学经验，相应职称水平，有大型测试阅卷工作经验的人员组成。阅卷组长对阅卷人员进行的培训分为两部分，一是对新研制的评分标准进行培训，让阅卷员准确掌握自己需要评阅题目的评分要求；二是针对如何使用网络阅卷程序进行技术培训。阅卷中采取的质量控制方式包括以下举措：- 在计算机阅卷系统中预设各题目的给分范围，由计算机自动判断评分是否超出范围，及时给予提醒，极大地降低了出错的可能性。- 控制工作时间和工作进度，避免阅卷员由于阅卷速度过快或疲劳降低评分准确性。- 阅卷组长对评分过程中出现的分歧组织讨论、统一认识和做法并对最终结果进行认定。- 部分主观题采取多人共评，个体独立阅卷的方式，多人评分的平均值作为最终得分；当评分差值超过预先设定的阈值，由阅卷组长根据答卷情况对结果进行仲裁。- 各学科阅卷组设质量监督员，全程关注由计算机生成的评分信息，包括评分一致性、阅卷工作进度、重评率等，发现异常现象及时通知相关阅卷人员。发现异常现象及时通知相关阅卷人员。
+
+### 测试数据的录入、整理
+
+学科测试卷采取填涂答题卡的方式，其录入由机器扫描完成。扫描答题卡时，计算机会根据预设条件对数据进行自动检测和判断，在这个过程中由专人进行全程监督，发现异常现象或错误数据立即进行纠正。
+
+数据分析组根据一定的准则对数据进行清理，剔除空白卷、缺考卷、无考号卷的作答信息。若某份试卷的客观题作答信息全部为空或者主观题全部没有作答，并且经核查不是漏扫或漏评的视为无效作答。
+
+
+本次背景问卷的信息反馈采用网络作答形式，学生、教师、校长及家长可用电脑或手机，在规定时间段内登录相应网址进行填写，提高了问卷调查的便捷性和数据采集的准确性。
+
+### 学业水平标准设定
+
+项目组邀请国际知名专家香港中文大学原副校长侯杰泰教授和美国ETS（美国教育考试服务中心）测量专家钱家和博士主持开展“学业水平标准设定”工作。各学科的专家评委由课程标准编制者、教材主编、区教研员、不同区域不同教龄的一线教师、学生家长等16人组成，采用Angoff和Bookmark的方法共同研讨和确定了上海地区相关学科的及格、良好和优秀的标准。
+
+数据分析组对本次“绿色指标”测试结果进行了整理和分析，研讨了数据处理与等值方案，划定了2016年度上海市小学两门学科的学业水平。学业水平的划分结果采用A、B、C三个水平进行表述，其中A水平为最高等级，C水平为最低等级。
+
+### 数据分析与报告撰写
+
+本项目在测试数据分析的过程中，将经典测量理论与项目反应理论等先进测量技术相结合，对数据进行充分的分析，保证了测试结果分析的科学性。在此基础上，本次测试中所有的学科测试结果都采用量尺分数。量尺分数是根据学生的作答情况，采用项目反应理论模型将学生能力分数转换成的测验标准分数，它具有不受测验题目差异和测验难度影响的特点，同时能与本项目前几年的测试结果进行比较。小学各学科整体上的平均分在500分左右，标准差在100左右，在各学科的各个维度上的平均分在300分左右，标准差在50左右。
+
+经过绿色指标项目组的充分研讨，确定了反馈报告的整体撰写框架，各学科命题组长分别对各学科测试的结果进行了分析并对学生在典型试题上的表现进行了评价。问卷部分呈现了学生、教师、校长及家长的基本情况并分析了学生学业成绩与有关背景变量的关系。
+
+### 系列报告构成
+
+`r tab_name <- "测试报告的构成" `
+本次系列报告主要由三种层次共计5种报告9个类型构成。报告充分考虑到不同使用者对于报告内容要求不同的问题，依此将报告划分综合报告和学科报告，具体见表\ref{tab: `r tab_name`}。
+
+\begin{table}[H]
+\centering
+\caption{`r tab_name`} \label{tab: `r tab_name`} 
+\itshape
+\footnotesize
+\begin{tabularx}{\textwidth}{|r|c|c|c|X|}
+
+\hline
+ \multicolumn{1}{|c|}{\multirow{2}{*}{\large 名称}}  &  \multicolumn{3}{c|}{\large 报告层次} &  \multicolumn{1}{c|}{\multirow{2}{*}{\large 对象}}\\ 
+\cline{2-4}
+               &   市级  & 区县 & 学校 &  \\             
+\hline 
+绿色指标基础数据报告 & √  & √ & & \multirow{2}{*}{教育决策者、教科研人员等} \\
+\cline{1-4}
+绿色指标指数报告 & √  & √ & &  \\ 
+\hline 
+绿色指标学校报告 &   &  & √ & 校长、教师等 \\ 
+\hline 
+小学语文学科报告 & √  & √ & & \multirow{2}{*}{学科教研员、教师等} \\
+\cline{1-4}
+小学数学学科报告 & √  & √ & &  \\
+\hline 
+\end{tabularx}
+\end{table}
+
+# 学科测试说明## 四年级语文学科测试简介2016年度上海市中小学学业质量绿色指标语文学科测试依据学科测试框架在内容领域和考查维度两方面来考查学生语文方面的学业水平。
+
+语文学科测试在内容领域上分为积累、阅读和习作三个维度。其中在积累这一内容领域里，主要从学生读准字音、认清字形、理解词义、积累和运用常见古诗文等四个方面的能力维度，测评和分析学生的学业表现。阅读主要考察学生提取信息、形成解释、整体感知和解决问题等四个方面。习作主要从选择材料、组织材料、语言表达和书写及标点等四个方面对学生的习作水平进行具体分析。语文学科测试的考查维度则依据《上海市中小学语文课程标准》、国际同类测试的惯例和国内课程实施现状，从知识和能力、过程和方法、情感态度和价值观三个维度全面考查学生的语文素养。对这三个维度的考查，可以反映出学生对语文基础知识和基本技能的掌握情，以及语言文字的综合运用能力，同时关注学生在语文学习过程中的感悟、体验和审美活动，体现语文学科工具性和人文性统一的基本特性。## 四年级语文学业水平描述四年级语文测试主要从“积累”、“阅读”和“习作”三个方面考查学生的语文学业水平。
+`r tab_name <- "四年级学生语文学科学业水平描述" `
+表\ref{tab: `r tab_name`}对四年级学生在语文学科不同考查能力上的表现分水平进行了学业水平描述。
+
+\begin{table}[H]
+\centering
+\caption{`r tab_name`} \label{tab: `r tab_name`} 
+
+\itshape
+\footnotesize
+\begin{tabularx}{\textwidth}{|c|c|X|}
+
+\hline
+ \multicolumn{1}{|c}{\normalsize 考查能力} &  \multicolumn{1}{|c|}{\normalsize 水平} &  \multicolumn{1}{c|}{\normalsize 水平描述} \\ 
+\hline
+   \multirow{10}{*}{积累}  & \multirow{2}{*}{A}  & ★ 能够理解常用词语、成语的基本意思，并分辨词义间的细微差别  \\  
+   & &  ★ 能够借助语感在较复杂的语境中恰当运用词语、成语 \\    
+\cline{2-3}      
+
+   &   \multirow{4}{*}{B}  &  ★	能够读准常用字中同年级学生易错字字音 \\  
+   & &  ★	 能够识记常用字中同年级学生易错字字形 \\  
+   & &  ★	 能正确理解常用词语的基本意思，并在语境中恰当运用 \\    
+   & &  ★	 能正确记忆和理解学过的教材中的古诗 \\    
+\cline{2-3}
+
+   &   \multirow{4}{*}{C}  & ★ 不能正确分辨易错字字音；或只能利用汉语拼音读出所学过的部分常用字字音 \\  
+   & &  ★	不能分辨易错字字形；或只能认清所学过的部分常用字字形 \\  
+   & &  ★	不能在语境中恰当运用词语、成语；或只能理解所学过的部分常用词语、成语的基本意思 \\    
+   & &  ★	不能正确理解古诗文的内容，不能根据上下句的提示准确记忆学过的教材中的古诗 \\ 
+
+\hline
+   \multirow{6}{*}{阅读}  &   \multirow{1}{*}{A}  & ★	能够综合利用文本的信息并联系个人经验从多个角度对问题做出合理的解释 \\    
+\cline{2-3}      
+
+   &   \multirow{3}{*}{B}  &  ★	能够根据要求从文本中提取出相关信息并进行简单的比较或概括 \\  
+   & &  ★	能够通过对相关信息的简单加工对问题做出解释 \\  
+   & &  ★	能够完整感知文本的主要内容 \\    
+\cline{2-3}
+
+   &   \multirow{2}{*}{C}  & ★	不能对所提取的信息做出加工；或只能从一个文段中提取直接陈述的信息,利用直接提取的信息进行解释 \\  
+   & &  ★	不能完整感知文本的主要内容 \\
+   
+\hline
+   \multirow{9}{*}{习作}  & \multirow{3}{*}{A}  & ★	能够根据给定的情境叙述一件事情或介绍一种事物，想象有新意，内容丰满  \\  
+   & &  ★	能够合理、巧妙安排故事内容 \\    
+   & &  ★	语句通顺，描写生动，标点正确 \\    
+\cline{2-3}      
+
+   &   \multirow{3}{*}{B}  &  ★	能够根据给定的情境叙述一件事情或介绍一种事物，结构基本完整 \\  
+   & & ★	能较清楚地表达自己的意思，语言较为通顺 \\  
+   & &  ★	有个别错别字，标点符号使用基本正确 \\    
+\cline{2-3}
+
+   &   \multirow{3}{*}{C}  & ★	不能够根据给定的情境作文；或能够根据给定的情境作文，但结构不完整；或内容过于简单 \\  
+   & &  ★	不能清楚地表达自己的意思 \\  
+   & &  ★	错别字较多，标点符号使用不规范 \\ 
+   
+\hline 
+\end{tabularx}
+\end{table}
+# 学生总体表现## 全体学生的总体表现
+
+`r fig_name <- "不同区域学生在语文学科各水平上的人数比例" `
+`r fig_name1 <- "全体学生在语文学科上的得分分布" `
+图\ref{fig:`r fig_name`}和图\ref{fig:`r fig_name1`}分别给出了上海市全体学生及不同区域\footnote{中心城区：包括黄浦区、徐汇区、长宁区、普陀区、虹口区、杨浦区、静安区。郊区：包括闵行区、宝山区、嘉定区、浦东新区、金山区、松江区、青浦区、奉贤区、崇明区。}学生在语文学科各水平上的人数比例和得分分布。
+
+```{r level.bar.province.urbannization.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "level.bar.province.urbannization.cn"
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}
+\clearpage
+
+
+```{r score.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "score.segment.bar.cn"
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name1)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name1`}
+\label{fig:`r fig_name1`}
+\end{figure}## 不同群体学生的总体表现`r fig_name <- "不同群体学生在语文学科各水平上的人数比例" `
+`r fig_name1 <- "不同群体学生在语文学科上的得分分布" `图\ref{fig:`r fig_name`}和图\ref{fig:`r fig_name1`}分别给出了上海市不同群体学生在语文学科各水平上的人数比例和得分分布。
+ ```{r level.bar.province.perspective.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "level.bar.province.perspective.cn"
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}```{r score.box.province.perspective.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "score.box.province.perspective.cn"
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name1`}
+\label{fig:`r fig_name1`}
+\end{figure}## 不同区学生的总体表现`r fig_name <- "不同区学生在语文学科各水平上的人数比例" `
+`r fig_name1 <- "不同区学生在语文学科上的得分分布" `图\ref{fig:`r fig_name`}和图\ref{fig:`r fig_name1`}分别给出了上海市不同区学生在语文学科各水平上的人数比例和得分分布。 
+```{r level.bar.province.county.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "level.bar.province.county.cn"
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}```{r score.box.province.county.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "score.box.province.county.cn"
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name1)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name1`}
+\label{fig:`r fig_name1`}
+\end{figure}# 学生在各能力维度上的表现情况## 全体学生在各能力维度上的表现`r fig_name <- "学生在语文学科各能力维度各水平上的人数比例" `
+`r fig_name1 <- "学生在语文学科各能力维度上的得分分布" `图\ref{fig:`r fig_name`}和图\ref{fig:`r fig_name1`}分别给出了上海市学生在语文学科各能力维度各水平上的人数比例和得分分布。
+ ```{r level.bar.province.dimention.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "level.bar.province.dimention.cn"
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}```{r score.box.province.dimention.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "score.box.province.dimention.cn"
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name1)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name1`}
+\label{fig:`r fig_name1`}
+\end{figure}## 学生在各能力维度上的表现
+### 积累#### 不同群体学生的表现
+`r fig_name <- "不同群体学生在“积累”各水平上的人数比例" ````{r jilei.bar.province.perspective.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "jilei.bar.province.perspective.cn"
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}`r fig_name <- "不同群体学生在“积累”上的得分分布" ````{r jilei.box.province.perspective.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "jilei.box.province.perspective.cn"
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}
+#### 不同区学生的表现`r fig_name <- "不同区学生在“积累”各水平上的人数比例" `
+```{r jilei.bar.province.county.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "jilei.bar.province.county.cn"
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}`r fig_name <- "不同区学生在“积累”上的得分分布" ````{r jilei.box.province.county.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "jilei.box.province.county.cn"
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}### 阅读
+#### 不同群体学生的表现`r fig_name <- "不同群体学生在“阅读”各水平上的人数比例" `
+```{r reading.bar.province.perspective.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "reading.bar.province.perspective.cn"
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}`r fig_name <- "不同群体学生在“阅读”上的得分分布" ````{r reading.box.province.perspective.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "reading.box.province.perspective.cn"
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}#### 不同区学生的表现`r fig_name <- "不同区学生在“阅读”各水平上的人数比例" `
+```{r reading.bar.province.county.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "reading.bar.province.county.cn"
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}`r fig_name <- "不同区学生在“阅读”上的得分分布" ````{r reading.box.province.county.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "reading.box.province.county.cn"
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}### 习作
+#### 不同群体学生的表现`r fig_name <- "不同群体学生在“习作”各水平上的人数比例" `
+```{r writing.bar.province.perspective.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "writing.bar.province.perspective.cn"
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}`r fig_name <- "不同群体学生在“习作”上的得分分布" ````{r writing.box.province.perspective.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "writing.box.province.perspective.cn"
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}
+#### 不同区学生的表现
+`r fig_name <- "不同区学生在“习作”各水平上的人数比例" `
+```{r writing.bar.province.county.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "writing.bar.province.county.cn"
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}`r fig_name <- "不同区学生在“习作”上的得分分布" ````{r writing.box.province.county.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "writing.box.province.county.cn"
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}
+
+
+\begin{landscape}
+\chapter{典型题目分析}
+
+以下从“积累”、“阅读”和“习作”三个维度来分析典型题目。\section{积累}
+
+```{r jilei.point.rate.table.cn, echo=TRUE, message=TRUE, include = FALSE, result="hide"}
+param.entry <- "jilei.point.rate.table.cn"
+point.rate  <- dataframe.table( report = report, param = report$param[[param.entry]])
+var.variable <- "变量" 
+var.key <- "键"
+var.param <- "标注值"
+var.sample <- "统计样本"
+```
+`r tab_name <- "学生在语文学科“积累”上的平均得分率（％）" `
+\begin{itshape}
+\footnotesize
+\begin{longtable}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\caption{`r tab_name`} \label{tab: `r tab_name`} \\
+\hline
+\makecell[c]{内容\\领域} & 题目编码 & 具体描述 & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{随迁\\子女\\民办} & \makecell[c]{普通\\小学} & \makecell[c]{一\\贯\\制} & \makecell[c]{市\\新\\优} & \makecell[c]{区\\新\\优} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
+
+\multirow{4}{*}{\makecell[c]{读准\\字音}} & C3AO011 & \makecell[l]{能读准学过的常用字的字音} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AO011_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
+
+
+ & C3AO021 & \makecell[l]{能读准学过的常用字的字音} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AO021_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\  
+ \cline{2-15}
+ 
+ 
+  & C3AO031 & \makecell[l]{能读准学过的常用字的字音} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AO031_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\  \cline{2-15}
+  
+  & C3AO041 & \makecell[l]{能读准学过的常用字的字音} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AO041_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\  \hline
+ 
+  \multirow{4}{*}{\makecell[c]{认清\\字形}} & C3AO051 & \makecell[l]{能认清学过的常用字的字形} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AO051_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\  
+\cline{2-15}
+
+  & C3AO061 & \makecell[l]{能认清学过的常用字的字形} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AO061_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
+  & C3AO071 & \makecell[l]{能认清学过的常用字的字形} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AO071_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
+
+  \cline{2-15}
+  & C3AO081 & \makecell[l]{能认清学过的常用字的字形} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AO081_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\ 
+\hline
+ \multirow{9}{*}{\makecell[c]{理解\\词义}} & C3AO091 & \makecell[l]{能正确理解常用字词的字义、词义} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AO091_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
+
+ & C3AO101 & \makecell[l]{能正确理解常用字词的字义、词义} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AO101_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
+ 
+  & C3AO111 & \makecell[l]{能正确理解常用字词的字义、词义} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AO111_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
+  
+  & C3AO121 & \makecell[l]{能正确理解常用字词的字义、词义} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AO121_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
+
+ & C3AO131 & \makecell[l]{能正确理解常用字词的字义、词义} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AO131_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
+ 
+  & C3AO141 & \makecell[l]{能正确理解常用字词的字义、词义} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AO141_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\\cline{2-15}
+  
+  & C3AO151 & \makecell[l]{能正确理解常用字词的字义、词义} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AO151_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
+ & C3AO161 & \makecell[l]{能正确理解常用字词的字义、词义} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AO161_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
+ 
+  & C3AO171 & \makecell[l]{能正确理解常用字词的字义、词义} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AO171_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\ \hline
+  
+ \multirow{3}{*}{\makecell[c]{积累\\和运用\\常见\\古诗文}} & C3AO181 & \makecell[l]{能记忆教材中的古诗} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AO181_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
+
+ & C3AO191 & \makecell[l]{能记忆教材中的古诗} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AO191_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
+
+ & C3AO201 & \makecell[l]{能记忆教材中的古诗} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AO201_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\ 
+
+\hline
+\end{longtable}
+\end{itshape}
+
+\end{landscape}
+
+“积累”部分着重考查学生“读准字音”、“认清字形”、“理解词义”和“积累和运用常见古诗文”四方面的能力。下面将结合“积累”部分的典型题目做具体分析。
+
+\textbf{典型题目1： C3AO031}
+
+下面每道小题中，都有一个字的注音是错的。请把它找出来。
+
+\begin{table}[H]
+\begin{tabularx}{\textwidth}{XXXXXXXX}
+
+  \makecell[br]{A.幼} & 
+  \makecell[bl]{zhì\\稚} & 
+  \makecell[br]{B.光} & 
+  \makecell[bl]{zé\\泽} &  
+  \makecell[br]{C.}  & 
+  \makecell[bl]{zhī\\姿~~~~势} & 
+  \makecell[br]{D.树} & 
+  \makecell[bl]{shāo\\梢}\\ 
+
+\end{tabularx}
+\end{table}
+`r row <- point.rate[point.rate[,var.variable]=="C3AO031_X",]`
+- 内容维度：积累- 考查能力：读准字音•能分辨出常见误读- 正确答案：C- 本题满分：1分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%
+
+`r fig_name <- "全体学生在题目C3AO031上的作答情况" `
+```{r answer.C3AO031.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "answer.segment.bar.cn"
+report$plot$answer.segment.bar.cn$data$keep <- list(list(var = "变量", value=list(c("C3AO031"))))
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}
+这道题目考查的是学生读准字音的能力。要求学生能够分辨出常见汉字的正确读音。
+
+本题正确选项为C。从四个选项的设计来看，主要考查点是能分辨出常见汉字平翘舌音的误读。四个选项所选汉字都属于常用汉字的范围，是学生应该掌握的。A、B、D三个干扰项中均包含学生容易误读的汉字。部分学生受上海等方言的影响，将平翘舌音混淆，如A选项中的汉字“稚”，D选项中的汉字“梢”可能误以为是平舌音，把B选项中平舌音的汉字“泽”误读为翘舌音。由实际测查结果来看，三个选项均具有一定的干扰性。
+
+在本次测试中，语文总体能力处于A、B、C三个水平的学生在本题上的平均得分率分别为`r row[row[,var.key]=="A",var.param]`%、
+`r row[row[,var.key]=="B",var.param]`%和
+`r row[row[,var.key]=="C",var.param]`%。\textbf{典型题目2：C3AO051}下面每道小题中，都有一项含有错别字。请把它找出来。
+
+\begin{table}[H]
+\begin{tabularx}{\textwidth}{XXXX}
+
+  \makecell[c]{A．遗忘}	& 
+  \makecell[c]{B．爆发} &
+  \makecell[c]{C．智慧} &
+  \makecell[c]{D．竟赛} \\								
+\end{tabularx}
+\end{table}
+
+`r row <- point.rate[point.rate[,var.variable]=="C3AO051_X",]`- 内容维度：积累- 考查能力：认清字形•能分辨音同形近字的误用- 正确答案：D- 本题满分：1分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%
+`r fig_name <- "全体学生在题目C3AO051上的作答情况" `
+```{r answer.C3AO051.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "answer.segment.bar.cn"
+report$plot$answer.segment.bar.cn$data$keep <- list(list(var = "变量", value=list(c("C3AO051"))))
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}这道题目考查的是学生认清字形的能力。要求学生能够正确分辨音同形近字“竟”和“竞”的字形。本题正确选项为D。从四个选项的设计来看，三个干扰项中均包含学生容易出错的汉字，其中A选项的主要考查点是正确书写“忘”字，有学生可能会把“忘”错写成同音字“望”，或是误以为“忘”写错了；C选项的主要考查点是正确书写“爆”字，有学生可能混淆它的同音字或形近字，如把“爆”错写同音字“暴”，或者是形近字“瀑”；C选项的主要考查点是正确书写“慧”字，个别学生可能会把“慧”错写成同音字“惠”“彗”或其他别字。由实际测查结果来看，三个选项均具有一定的干扰性。在本次测试中，语文总体能力处于A、B、C三个水平的学生在本题上的平均得分率分别为`r row[row[,var.key]=="A",var.param]`%、
+`r row[row[,var.key]=="B",var.param]`%和
+`r row[row[,var.key]=="C",var.param]`%。\textbf{典型题目3：C3AO071}下面每道小题中，都有一项含有错别字。请把它找出来。\begin{table}[H]
+\begin{tabularx}{\textwidth}{XXXX}
+
+  \makecell[c]{A．审迅}	& 
+  \makecell[c]{B．仁爱} &
+  \makecell[c]{C．大概} &
+  \makecell[c]{D．爽朗} \\
+  							
+\end{tabularx}
+\end{table}
+
+`r row <- point.rate[point.rate[,var.variable]=="C3AO071_X",]`- 内容维度：积累- 考查能力：认清字形•能分辨音同形近字的误用- 正确答案：A- 本题满分：1分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目C3AO071上的作答情况" `
+```{r answer.C3AO071.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "answer.segment.bar.cn"
+report$plot$answer.segment.bar.cn$data$keep <- list(list(var = "变量", value=list(c("C3AO071"))))
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}这道题目考查的是学生认清字形的能力。要求学生能够正确分辨音同形近字“讯”和“迅”的字形。
+
+本题正确选项为A。从四个选项的设计来看，三个干扰项中均包含学生容易出错的汉字，其中B选项的主要考查点是正确书写“仁”字，有学生可能会把“仁”错写成它的同音字“人”；C选项的主要考查点是正确书写“概”字，有学生可能把它与形近字“慨”混淆；D选项的主要考查点是正确书写“朗”字，有学生可能会把“朗”错写成同音字“琅”或音近汉字“郎”。由实际测查结果来看，三个选项均具有一定的干扰性。在本次测试中，语文总体能力处于A、B、C三个水平的学生在本题上的平均得分率分别为`r row[row[,var.key]=="A",var.param]`%、
+`r row[row[,var.key]=="B",var.param]`%和
+`r row[row[,var.key]=="C",var.param]`%。
+
+\textbf{典型题目4: C3AO091}
+下面每道小题中，哪一个词语和划线词语的意思最接近？请把它找出来。
+
+\uline{凝 视}\begin{table}[H]
+\begin{tabularx}{\textwidth}{XXXX}
+
+  \makecell[c]{A．凝望}	& 
+  \makecell[c]{B．凝固} &
+  \makecell[c]{C．凝神} &
+  \makecell[c]{D．凝聚} \\
+  							
+\end{tabularx}
+\end{table}`r row <- point.rate[point.rate[,var.variable]=="C3AO091_X",]`                            - 内容维度：积累- 考查能力：能正确理解常用字词的字义、词义- 正确答案：A- 本题满分：1分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目C3AO091上的作答情况" `
+```{r answer.C3AO091.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "answer.segment.bar.cn"
+report$plot$answer.segment.bar.cn$data$keep <- list(list(var = "变量", value=list(c("C3AO091"))))
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}本题考查学生理解词义的能力。要求学生能够理解常用词语的基本意思，分辨词义间的差别，进而做出判断，找出与“凝视”意思最接近的词语。
+
+本题正确选项为A。题目给出的词语是“凝望”“凝固”“凝神”“凝聚”和“凝视”，从字面看，它们都有一个相同的汉字“凝”。“凝”有凝结和注意力集中两种意思。选项B“凝固”和选项D“凝聚”中的“凝”是凝结的意思。“凝固”一般是指“由液体变固体”；“凝聚”的本义是“气体由稀变浓或变成液体”，表示聚集、积聚的意思。而选项C“凝神”、选项A“凝望”与 “凝视”中的“凝”是注意力集中的意思。选项C“凝神”的意思是聚精会神，可以用来形容 “思索”“注视”等词，如凝神思索、凝神注视等。要注意的是，“凝神”的本义没有“看”的意思。“凝视”和“凝望”这两个词语中的“视”和“望”都有“看”的意思，词义分别为“聚精会神地看”和“目不转睛地看”。两个词语的意思非常接近。由实际测查结果来看，三个选项均具有一定的干扰性，尤其是C选项，它与 “凝视”的词义间的差异需要仔细分辨。在本次测试中，语文总体能力处于A、B、C三个水平的学生在本题上的平均得分率分别为`r row[row[,var.key]=="A",var.param]`%、
+`r row[row[,var.key]=="B",var.param]`%和
+`r row[row[,var.key]=="C",var.param]`%。\questiontitle{典型题目5: C3AO131}
+下面每道小题中，哪一个词语填入画线处最恰当？请把它找出来。
+
+我不小心把同桌的书弄丢了，我\uline{~~~~~}他原谅。
+
+\begin{table}[H]
+\begin{tabularx}{\textwidth}{XXXX}
+
+  \makecell[c]{A．请求}	& 
+  \makecell[c]{B．要求} &
+  \makecell[c]{C．需求} &
+  \makecell[c]{D．哀求} \\
+  							
+\end{tabularx}
+\end{table}`r row <- point.rate[point.rate[,var.variable]=="C3AO131_X",]`                           - 内容维度：积累- 考查能力：能正确理解常用字词的字义、词义- 正确答案：A- 本题满分：2分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目C3AO131上的作答情况" `
+```{r answer.C3AO131.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "answer.segment.bar.cn"
+report$plot$answer.segment.bar.cn$data$keep <- list(list(var = "变量", value=list(c("C3AO131"))))
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}
+这道题目考查学生理解词义的能力。要求学生能够理解常用词语的常用义，分辨词义间的差别，并结合所给的语境恰当运用。
+
+本题正确选项为A。从四个选项的设计来看，四个词中都有“求”字，表示希望达到某种目标。选项B“要求”指提出具体愿望或条件，希望得到满足或实现。从具体语境看，自己有过失在先，求别人原谅，用“要求”显然不够礼貌。选项C“需求”，指由需要而产生的要求，作名词，不带宾语。选项D“哀求”指苦苦请求，感情色彩较浓，结合语境看，用“哀求”显得过重了。选项A“请求”指说明要求，希望得到满足，含有客气、尊重、恭敬的态度，同具体的语境最为吻合。由实际测查结果来看，三个选项均具有一定的干扰性，尤其是D选项。在本次测试中，语文总体能力处于A、B、C三个水平的学生在本题上的平均得分率分别为`r row[row[,var.key]=="A",var.param]`%、
+`r row[row[,var.key]=="B",var.param]`%和
+`r row[row[,var.key]=="C",var.param]`%。\questiontitle{典型题目6: C3AO161}下面每道小题中，哪一个词语填入画线处最恰当？请把它找出来。
+
+
+听到中国女排获胜的好消息，同学们高兴得\uline{~~~~~~~~}。
+
+\begin{table}[H]
+\begin{tabularx}{\textwidth}{XXXX}
+
+  \makecell[c]{A．兴高采烈}	& 
+  \makecell[c]{B．手舞足蹈} &
+  \makecell[c]{C．喜出望外} &
+  \makecell[c]{D．手足无措} \\
+  							
+\end{tabularx}
+\end{table}`r row <- point.rate[point.rate[,var.variable]=="C3AO161_X",]`  - 内容维度：积累- 考查能力：能正确理解常用字词的字义、词义- 正确答案：B- 本题满分：2分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%
+
+`r fig_name <- "全体学生在题目C3AO161上的作答情况" `
+```{r answer.C3AO161.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "answer.segment.bar.cn"
+report$plot$answer.segment.bar.cn$data$keep <- list(list(var = "变量", value=list(c("C3AO161"))))
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}这道题目考查学生掌握常用成语的情况。学生要在理解成语意思的基础上，结合所给语境，选出最符合语境意思的一项。
+
+本题正确选项为B。从四个选项的设计看，每个备选成语都可以表现听到某个消息或做某件事时的状态。选项A“兴高采烈”意思是兴致高，情绪热烈。选项C“喜出望外”是指出乎意料地高兴。从具体的语境看选项A和选项C和前面的“高兴”都有语义重复的问题。选项D“手足无措”形容举动慌乱或没有办法应付，明显不符合题目的语境。选项B“手舞足蹈”意思是双手舞动，两只脚也跳了起来，形容高兴到了极点，与所提供的语境匹配。由实际测查结果来看，其他三个选项均具有一定的干扰性。
+
+在本次测试中，语文总体能力处于A、B、C三个水平的学生在本题上的平均得分率分别为`r row[row[,var.key]=="A",var.param]`%、
+`r row[row[,var.key]=="B",var.param]`%和
+`r row[row[,var.key]=="C",var.param]`\questiontitle{典型题目7：C3AO191}下面选项中，表达友情的诗句是：
+
+\begin{table}[H]
+\begin{tabularx}{\textwidth}{XX}
+
+  \makecell[l]{A．谁言寸草心，报得三春晖？\\
+  C．相看两不厌，只有敬亭山。
+  }	
+  & 
+  \makecell[l]{B．海内存知己，天涯若比邻。\\
+  D．柴门闻犬吠，风雪夜归人。} 
+  \\
+  							
+\end{tabularx}
+\end{table}`r row <- point.rate[point.rate[,var.variable]=="C3AO191_X",]`- 内容维度：积累- 考查能力：能记忆教材中的古诗- 正确答案：B- 本题满分：3分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%
+
+
+`r fig_name <- "全体学生在题目C3AO191上的作答情况" `
+```{r answer.C3AO191.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "answer.segment.bar.cn"
+report$plot$answer.segment.bar.cn$data$keep <- list(list(var = "变量", value=list(c("C3AO191"))))
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}
+这道题目考查学生积累和运用常见古诗文的能力。要求学生不仅能背诵课程标准推荐的古诗文，还能够初步理解古诗文的意思。
+
+题目要求选择表达友情的诗句。从四个选项来看，选项A出自孟郊的《游子吟》，表达的是母爱。选项C出自李白《独坐敬亭山》，表达的是人与自然（山）的情感，当然，也可以读出诗人的孤独感。选项D出自刘长卿《逢雪宿芙蓉山人》，诗歌描绘的是一位孤独的旅人雪夜投宿的情景。此三项都不是表达友情的。选项B出自王勃的《送杜少府之任蜀川》表达的是志同道合的朋友之间的感情，符合题意。由实际测查结果来看，三个选项均具有一定的干扰性。 
+
+在本次测试中，语文总体能力处于A、B、C三个水平的学生在本题上的平均得分率分别为`r row[row[,var.key]=="A",var.param]`%、
+`r row[row[,var.key]=="B",var.param]`%和
+`r row[row[,var.key]=="C",var.param]`\begin{landscape}
+\section{阅读}
+
+```{r reading.point.rate.table.cn, echo=TRUE, message=TRUE, include = FALSE, result="hide"}
+param.entry <- "reading.point.rate.table.cn"
+point.rate  <- dataframe.table( report = report, param = report$param[[param.entry]])
+```
+```{r reading.answer.table.cn, echo=TRUE, message=TRUE, include = FALSE, result="hide"}
+param.entry <- "reading.answer.table.cn"
+answer  <- dataframe.table( report = report, param = report$param[[param.entry]])
+```
+`r tab_name <- "学生在语文学科“阅读”上的平均得分率（％）" `
+\begin{itshape}
+\footnotesize
+\begin{longtable}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\caption{`r tab_name`} \label{tab: `r tab_name`} \\
+\hline
+\makecell[c]{内容\\领域} & 题目编码 & 具体描述 & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{随迁\\子女\\民办} & \makecell[c]{小\\学} & \makecell[c]{一\\贯\\制} & \makecell[c]{市\\新\\优} & \makecell[c]{区\\新\\优} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
+
+\multirow{3}{*}{\makecell[c]{提取\\信息}} & C3AO211 & \makecell[l]{能从阅读材料中提取信息} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AO211_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
+
+ & C3AO271 & \makecell[l]{能从阅读材料中提取信息} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AO271_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
+ 
+  & C3AO281 & \makecell[l]{能从阅读材料中提取信息} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AO281_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\ 
+  
+\hline
+ 
+ \multirow{3}{*}{\makecell[c]{形成\\解释}} & C3AO221 & \makecell[l]{能认清学过的常用字的字形} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AO221_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
+
+ & C3AS241 & \makecell[l]{能认清学过的常用字的字形} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AS241_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
+ 
+  & C3AS261 & \makecell[l]{能认清学过的常用字的字形} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AS261_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\
+\hline
+ \multirow{2}{*}{\makecell[c]{整体\\感知}} & C3AO231 & \makecell[l]{能形成对文本内容的整体感知，\\对阅读材料的内容进行概括} &
+`r row <- point.rate[point.rate[,var.variable]=="C3AO231_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
+
+ & C3AO291 & \makecell[l]{能形成对文本内容的整体感知，\\对阅读材料的内容进行概括} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AO291_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
+ 
+\hline
+\multirow{2}{*}{\makecell[c]{解决\\问题}} & C3AO251 & \makecell[l]{能根据一定的标准对文本的内容、\\观点及语言运用作出评价} &
+`r row <- point.rate[point.rate[,var.variable]=="C3AO251_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
+
+ & C3AO301 & \makecell[l]{能利用文本信息完成任务} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AO301_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\ 
+ 
+\hline
+\end{longtable}
+\end{itshape}
+
+
+“阅读”部分主要考察学生“提取信息”、“形成解释”、“整体感知”和“解决问题”四个方面的能力。
+下面将结合“阅读”部分的典型题目来做具体分析。
+
+\end{landscape}
+
+
+\begin{itshape}\begin{center}
+（一）船底的漏洞\end{center}
+
+\small<1>在一个临湖的小村庄里，住着一位勤劳的农夫。农闲时，他还会划着小船去湖里打鱼。	
+
+<2>冬天快要到了，天气很冷。这天，农夫又打了满满一桶鱼，心里想着晚上的美餐，不禁加快了划船的速度。快要上岸时，突然听到“哐”的一声，原来是湖边的尖石把船底撞了一个洞。农夫心想：“天都快黑了，又不急着打鱼，还是明天再修吧。”可是到了第二天，农夫的妻子病了，他既要照顾妻子，又要做家务，忙得不可开交，把修船这件事忘了。<3>寒冷漫长的冬天过去了，人们都在为新一年的开工做准备。这天，一个漆匠来到村里，他热情地问农夫：“嗨，最近好吗？您家有什么需要粉刷的东西吗？”农夫想了想说：“我那条放在湖边的小船漆都掉了，很难看。你能帮我刷漂亮些吗？”“行啊，保证给您漆得漂漂亮亮的。”漆匠把小船粉刷得很漂亮，农夫和两个儿子看到焕然一新的小船非常开心。<4>春意渐浓，湖里的冰都融化了。农夫的儿子说：“爸爸，湖里冰都化了，我们去划船吧。”<5>“好啊，但是爸爸现在得去田里播种，你们自己先去玩吧。”<6>“哇，划船去咯！”孩子们奔向湖边。<7>农夫在田里忙活了好一阵子，突然他想起了什么，连忙扔下手里的活，心急火燎地跑到湖边。他看见孩子们正悠悠地划着小船，急忙叫他们上岸，并把船也拉上了岸。他蹲下来，看了看船底，发现不知是谁用木块把船底的漏洞给堵上了。“这是怎么回事？”农夫诧异万分。突然他叫道：“啊，是上次那个漆匠。”<8>农夫带着孩子们找到漆匠，说：“太感谢您啦！”他让孩子们给漆匠鞠躬行礼。<9>“哎呀，谢我什么啊？”漆匠有些茫然。<10>“多亏了您呐! 上次帮我把船底的漏洞给堵上了。” 农夫不住地感谢。<11>漆匠恍然大悟，笑笑说：“ \uline{~~~~~~~~~~~~~~~~~~~~}。”<12>农夫摇了摇头说：“对您来说，也许只是件小事，可是您的小小举动却救了我两个孩子的命啊。要不是您，他们很可能已经淹死了。真是太谢谢您了！”
+	
+\end{itshape}
+
+
+\questiontitle{典型题目8：C3AO221}
+
+第<7>自然段中，农夫“心急火燎地跑到湖边”的原因，表述最恰当的一项是：
+
+\begin{table}[H]
+\begin{tabular}{l}
+
+  \makecell[l]{A．想起船被撞了一个洞这件事	\\
+  B．想起了要修船去打鱼的事情  \\
+  C．想起了去划船的两个儿子还没有回家  \\
+  D．担心有漏洞的船沉没，两个儿子淹死 } \\
+  							
+\end{tabular}
+\end{table}
+`r row <- point.rate[point.rate[,var.variable]=="C3AO221_X",]`- 内容维度：阅读- 考查能力：能根据文本信息、联系个人经验对文本内容作出合理的解释- 正确答案：D（选A得2分，选B得0分，选C得0分，选D得4分）- 本题满分：4分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目C3AO221上的作答情况" `
+```{r answer.C3AO221.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "answer.segment.bar.cn"
+report$plot$answer.segment.bar.cn$data$keep <- list(list(var = "变量", value=list(c("C3AO221"))))
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}
+这是“为获得文学体验”阅读情境中的一道题，考查的是学生根据文本信息对相关问题作出合理解释的能力。
+
+这道题的四个选项是根据对学生语文素养实际发展水平以及同龄学生阅读这个文段的口语报告分析设计的，分别代表了学生阅读能力发展的三个不同水平：选择D选项的学生水平最高，他们能在整体把握文本内容的基础上,根据“湖边的尖石把船底撞了一个洞”、“忙得不可开交，把修船这件事忘了”、“划船去咯”、“要不是您，他们很可能已经淹死了”这些信息作出推断，形成对农夫“心急火燎地跑到湖边”这一原因的合理解释；选择A选项的学生处于第二个水平，这些学生能够从文章中提取部分信息与“心急火燎”建立联系，但对问题的解释不完整；选择B、C选项的学生水平最低，他们不能有效地提取文本信息，理解错误。在本次测试中，语文总体能力处于A、B、C三个水平的学生在本题上的平均得分率分别为`r row[row[,var.key]=="A",var.param]`%、
+`r row[row[,var.key]=="B",var.param]`%和
+`r row[row[,var.key]=="C",var.param]`%。\questiontitle{典型题目9：C3AO231}以下是同学们对文章内容的归纳，你认为最合适的一项是：
+
+A．农夫住在一个临湖的小村庄里。农闲时他会划着小船去湖里打鱼， 一次不小心撞坏了船。因为忙，他忘记了去修
+
+
+B．农夫打完鱼回家时船撞了个洞，他忘记修船。一个漆匠帮他修好了船，农夫和他的孩子都很高兴。他带着孩子们向漆匠表示谢意。
+
+
+C．农夫的船撞了个洞，他忘记修了。漆匠在给农夫漆船时修补了漏洞，避免了危险的发生。农夫带着孩子们向漆匠表示谢意。
+
+
+D．漆匠把船漆得很漂亮，农夫和两个儿子看到了非常开心。春天，农夫的两个孩子去湖里划船，他们玩得很高兴。
+
+`r row <- point.rate[point.rate[,var.variable]=="C3AO231_X",]`- 内容维度：阅读- 考查能力：能形成对文本内容的整体感知，对阅读材料的内容进行归纳- 正确答案：C（选A得1分，选B得2分，选C得4分，选D得0分）- 本题满分：4分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目C3AO231上的作答情况" `
+```{r answer.C3AO231.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "answer.segment.bar.cn"
+report$plot$answer.segment.bar.cn$data$keep <- list(list(var = "变量", value=list(c("C3AO231"))))
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}
+
+这是“为获得文学体验”阅读情境中的一道题，考查的是学生整体感知文本内容，对阅读材料的主要内容进行归纳的能力。这道题的四个选项是根据对学生语文素养实际发展水平以及同龄学生阅读这个文段的口语报告分析设计的，分别代表了学生阅读能力发展的四个不同水平：选择C选项的学生水平最高，他们把文章看成一个整体，能在读懂各段落意思的基础上，提炼出关键信息，用简要的语言加以归纳, 具有较强的整体把握文章内容的能力；选择B选项的学生处于第二个水平，这些学生能把文章看成一个整体，但遗漏了“避免危险发生”这一关键信息，归纳不完整；选择A选项的学生处于第三个水平，这些学生还不具备整体感知的能力，只能从文章中提取出部分信息，以偏概全；而选择D选项的学生水平是最低的，他们没有理解文章内容。在本次测试中，语文总体能力处于A、B、C三个水平的学生在本题上的平均得分率分别为`r row[row[,var.key]=="A",var.param]`%、
+`r row[row[,var.key]=="B",var.param]`%和
+`r row[row[,var.key]=="C",var.param]`%。\questiontitle{典型题目10：C3AO251}从这个故事当中，可以看出漆匠是一个\uline{~~~~~~~~~~}的人。
+
+\begin{table}[H]
+\begin{tabularx}{\textwidth}{XXXX}
+
+  \makecell[c]{A．勤劳勇敢}	& 
+  \makecell[c]{B．乐于助人} &
+  \makecell[c]{C．谦虚谨慎} &
+  \makecell[c]{D．认真细致} \\
+  							
+\end{tabularx}
+\end{table}
+`r row <- point.rate[point.rate[,var.variable]=="C3AO251_X",]`     - 内容维度：阅读- 考查能力：能根据一定的标准对文本的内容、观点及语言运用作出评价- 正确答案：B （选A得0分，选B得4分，选C得1分，选D得2分）- 本题满分：4分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目C3AO251上的作答情况" `
+```{r answer.C3AO251.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "answer.segment.bar.cn"
+report$plot$answer.segment.bar.cn$data$keep <- list(list(var = "变量", value=list(c("C3AO251"))))
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}
+
+
+这是“为获得文学体验”阅读情境中的一道题，考查的是学生根据一定的标准对文本的内容、观点及语言运用作出评价的能力。这道题的四个选项是根据对学生语文素养实际发展水平以及同龄学生阅读这个文段的口语报告分析设计的，分别代表了学生阅读能力发展的四个不同水平：选择B选项的学生水平最高，他们在整体阅读文章，把握文章主要内容，了解事件发生起因、经过、结果的基础上，提炼出隐含在文中的信息，对漆匠这一人物作出恰当的评价；选择D选项的学生处于第二个水平，他们能从文中的具体信息中提炼出隐含的信息，但从漆匠发现船底漏洞后主动修补，帮助农夫避免灾难这样的举动来看，评价不够确切；选择C选项的学生处于第三个水平，他们可能从农夫感谢漆匠的话中提取了隐含的信息，但不能从文章的整体出发进行判断，对人物的评价片面；选择A选项的学生水平是最低的，他们没有理解文章内容，评价不当。在本次测试中，语文总体能力处于A、B、C三个水平的学生在本题上的平均得分率分别为`r row[row[,var.key]=="A",var.param]`%、
+`r row[row[,var.key]=="B",var.param]`%和
+`r row[row[,var.key]=="C",var.param]`%。\begin{itshape}
+
+\begin{center}（二）绿色的宝库\end{center}
+
+\small
+<1>人们把森林比作“绿色的宝库”，这一点也不夸张。你知道我国最大的林区在哪儿吗？在东北，名字就叫东北林区。<2>东北林区包括大小兴安岭和长白山。那里林海茫茫，一望无际，森林面积占全国森林总面积的38%。全国有一半的木材，是从这里生产出来的。<3>凡是来过东北林区的人，都被这里独特的风光迷住了。闻名全国的红松，被称为“长白山独生女”的赤松，还有云杉、冷杉、桦树等树木，绵延千里，就像绿波翻滚的海洋。每年一到六七月份，百花盛开，五彩缤纷，鲜艳夺目，林区又像是一座天然花园。<4>东北林区的植物资源丰富。光长白山保护区，就有1000多种野生植物。这里曾发现过我国最大的人参。人参是名贵药材，它和貂皮、鹿茸一起被誉为“东北林区三大宝”。<5>有了茂密的森林，有了众多的植物，动物就能安居乐业了。在东北林区，活跃着珍贵的哺乳动物——紫貂、梅花鹿、东北虎；还居住着黄鹂、杜鹃、啄木鸟、鸳鸯和丹顶鹤等200多种鸟。<6>东北林区不仅景色优美，而且物产丰富，真是座“绿色的宝库”！
+
+\end{itshape}\questiontitle{典型题目11：C3AS261}
+在文中摘录两个能表现东北林区面积大的词语：\uline{~~~~~~~~}、\uline{~~~~~~~~}。
+`r row <- point.rate[point.rate[,var.variable]=="C3AS261_X",]` - 内容维度：阅读- 考查能力：能根据文本信息、联系个人经验对文本内容作出合理的解释- 正确答案：林海茫茫、一望无际、绵延千里 （答对1个给2分，答对2个给4分）- 本题满分：4分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目C3AS261上的作答情况" `
+```{r answer.C3AS261.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "answer.segment.bar.cn"
+report$plot$answer.segment.bar.cn$data$keep <- list(list(var = "变量", value=list(c("C3AS261"))))
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}
+
+这是“为获取信息”阅读情境中的一道题，考查的是学生根据文本信息对相关问题做出合理解释的能力。本题的正确答案为“林海茫茫”、“一望无际”、“绵延千里”。在文中，“林海茫茫”形容森林辽阔，面积非常大；“一望无际”是指森林没有边际，一眼看不到边;“绵延千里”是指树林绵长，延续不断。所以，这三个词语都可以表现东北林区的面积大，学生只要摘录其中的两个词语，就能正确完成此题。根据本次的答题情况，可将学生的阅读能力发展水平分为三个不同水平：两个词语都能正确摘录的学生水平最高，他们能根据要求从文中提取相关的词语；正确摘录一个词语的学生处于第二个水平，他们能根据要求从文中提取相关的词语，但部分词语的理解不恰当；两个词语都未正确摘录的学生水平最低，他们不能根据要求从文中提取相关的词语，如部分学生摘录了“闻名全国”、“安居乐业”、“百花盛开”等词。在本次测试中，语文总体能力处于A、B、C三个水平的学生在本题上的平均得分率分别为`r row[row[,var.key]=="A",var.param]`%、
+`r row[row[,var.key]=="B",var.param]`%和
+`r row[row[,var.key]=="C",var.param]`%。\questiontitle{典型题目12：C3AO291}
+这篇文章主要告诉我们的是：\begin{table}[H]
+\begin{tabular}{l}
+
+ \makecell[l]{ A．东北林区是我国最大的林区 \\ 
+  B．东北林区的植物资源非常丰富 \\
+  C．在东北林区里，动物们安居乐业 \\
+  D．东北林区景色优美，物产丰富 } \\
+  							
+\end{tabular}
+\end{table}
+
+`r row <- point.rate[point.rate[,var.variable]=="C3AO291_X",]`- 内容维度：阅读- 考查能力：能形成对文本内容的整体感知，对阅读材料的内容进行归纳- 正确答案：D （选A得0分，选B得2分，选C得2分，选D得4分）- 本题满分：4分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目C3AO291上的作答情况" `
+```{r answer.C3AO291.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "answer.segment.bar.cn"
+report$plot$answer.segment.bar.cn$data$keep <- list(list(var = "变量", value=list(c("C3AO291"))))
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}
+
+
+这是“为获取信息”阅读情境中的一道题，考查的是学生整体感知文本内容，对阅读材料的主要内容进行归纳的能力。
+
+这道题的四个选项是根据对学生语文素养实际发展水平以及同龄学生阅读这个文段的口语报告分析设计的，分别代表了学生阅读能力发展的三个不同水平：选择D选项的学生水平最高，他们把文章看成一个整体，能在读懂各段落意思的基础上，提炼出关键信息，并找到文中归纳文章主要内容的句子，具有较强的信息捕捉能力和整体把握文章内容的能力；选择B、C选项的学生处于第二个水平，这些学生能够提取出文中的关键信息，但信息提取不完整，整体感知能力还有待提高；选择A选项的学生处于第三个水平，这些学生还不具备整体感知的能力，只能从文章中提取出单个的信息，理解片面。在本次测试中，语文总体能力处于A、B、C三个水平的学生在本题上的平均得分率分别为`r row[row[,var.key]=="A",var.param]`%、
+`r row[row[,var.key]=="B",var.param]`%和
+`r row[row[,var.key]=="C",var.param]`%。
+
+
+\questiontitle{典型题目13：C3AO301}
+奥运会的入场顺序在奥林匹克运动会开幕式上，各国代表团入场仪式受人瞩目。希腊作为奥运会的发源地，代表团一直都是第一个入场。主办国出于礼貌，代表团都安排在最后入场。其他国家的入场顺序一般由主办国家根据本国语言或文化习俗排定。2008年在北京举行的第29届夏季奥林匹克运动会入场式，依据各国代表团的中文名称，按其第一个字的笔画数，从少到多安排入场顺序。根据代表团入场排序的规定，下面四个国家在第29届夏季奥林匹克运动会中的入场顺序正确的一项是：\begin{table}[H]
+\begin{tabular}{l}
+
+  \makecell[l]{A．希腊~~印度~~美国~~中华人民共和国  \\ 
+  B．中华人民共和国~~印度~~希腊~~美国  \\
+  C．美国~~希腊~~中华人民共和国~~印度  \\
+  D．希腊~~美国~~印度~~中华人民共和国 } \\
+  							
+\end{tabular}
+\end{table}`r row <- point.rate[point.rate[,var.variable]=="C3AO301_X",]`- 内容维度：阅读- 考查能力：能利用文本信息完成任务- 正确答案：A- 本题满分：5分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目C3AO301上的作答情况" `
+```{r answer.C3AO301.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "answer.segment.bar.cn"
+report$plot$answer.segment.bar.cn$data$keep <- list(list(var = "变量", value=list(c("C3AO301"))))
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}
+
+
+这是“为了完成任务”阅读情境中的一道题，考查学生合理利用文本信息解决相应情境中问题的能力。
+
+这道题设计的是根据代表团入场排序的规定，来确定2008年北京奥运会中华人民共和国，印度、希腊和美国入场的顺序。这段文字一共5句话。第1句“在奥林匹克运动会开幕式上，各国代表团入场仪式受人瞩目。”与具体怎样排序关系不大。第2句“希腊作为奥运会的发源地，代表团一直都是第一个入场。”说明希腊排在最前面。第3句“主办国出于礼貌，代表团都安排在最后入场。”说明主办国排在最后面。第4句“其他国家的入场顺序一般由主办国家根据本国语言或文化习俗排定。”第5句“2008年在北京举行的第29届夏季奥林匹克运动会入场式，依据各国代表团的中文名称，按其第一个字的笔画数，从少到多安排入场顺序。”这两句联系起来看，就是北京奥运会其他国家按笔画数从少到多排序。
+
+简言之，北京奥运会入场排序有三条规定：1、希腊第一；2、主办国（中华人民共和国）最后；3、其他国家按其中文名称的第一个字笔画数由少到多出场。从具体的选项看，选项B只满足第2条规定；选项C完全是随意安排，不符合所有规定；选项D满足第1、2条规定，但不符合第3条规定。唯有选项A满足3条规定，符合题目要求。
+
+
+由实际测查结果来看，三个选项均具有一定的干扰性。尤其是选择B的学生高达`r answer[answer[,var.variable]=="C3AO301" & answer[,var.key]=="B" & answer[,var.sample]=="总体",var.param]`%，超过选择A的学生，究其原因，应该是提取信息不够完整，考虑问题不够全面。
+
+在本次测试中，语文总体能力处于A、B、C三个水平的学生在本题上的平均得分率分别为`r row[row[,var.key]=="A",var.param]`%、
+`r row[row[,var.key]=="B",var.param]`%和
+`r row[row[,var.key]=="C",var.param]`%。
+
+
+\begin{landscape}
+
+\section{习作}
+
+```{r writing.table.cn, echo=TRUE, message=TRUE, include = FALSE, result="hide"}
+param.entry <- "writing.table.cn"
+dimention.param  <- dataframe.table( report = report, param = report$param[[param.entry]])
+```
+```{r writing.point.rate.table.cn, echo=TRUE, message=TRUE, include = FALSE, result="hide"}
+param.entry <- "writing.point.rate.table.cn"
+point.rate  <- dataframe.table( report = report, param = report$param[[param.entry]])
+```
+```{r writing.answer.table.cn, echo=TRUE, message=TRUE, include = FALSE, result="hide"}
+param.entry <- "writing.answer.table.cn"
+answer  <- dataframe.table( report = report, param = report$param[[param.entry]])
+```
+`r tab_name <- "学生在语文学科“习作”上的平均得分率（％）" `
+\begin{itshape}
+\small
+\begin{longtable}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\caption{`r tab_name`} \label{tab: `r tab_name`} \\
+\hline
+\makecell[c]{内容\\领域} & 题目编码 & 具体描述 & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{随迁\\子女\\民办} & \makecell[c]{小\\学} & \makecell[c]{一\\贯\\制} & \makecell[c]{市\\新\\优} & \makecell[c]{区\\新\\优} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
+
+\makecell[c]{选择\\材料} & C3AS311 & \makecell[l]{能够切合题意、中心突出、\\感情真实、内容具体} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AS311_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\  
+\hline
+ 
+ \makecell[c]{组织\\材料} & C3AS312 & \makecell[l]{能够语言通顺、简洁得体} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AS312_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\ 
+\hline
+ \makecell[c]{语言\\表达} & C3AS313 & \makecell[l]{能够结构合理、层次清晰、\\详略得体} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AS313_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\ 
+\hline
+\makecell[c]{书写\\及\\标点} & C3AS314 & \makecell[l]{能够书写清晰，标点符号\\使用正确，错别字较少} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AS314_X",]`
+`r row[row[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="公办",var.param]` & 
+`r row[row[,var.key]=="民办",var.param]` & 
+`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r row[row[,var.key]=="小学",var.param]` & 
+`r row[row[,var.key]=="一贯制",var.param]` & 
+`r row[row[,var.key]=="市新优",var.param]` & 
+`r row[row[,var.key]=="区新优",var.param]` & 
+`r row[row[,var.key]=="男",var.param]` & 
+`r row[row[,var.key]=="女",var.param]` & 
+`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="非沪籍",var.param]` \\ 
+
+\hline
+\end{longtable}
+\end{itshape}
+
+
+“习作”部分着重考查学生“选择材料”、“组织材料”、“语言表达”和“书写及标点”四方面的能力。
+
+下面将结合“习作”部分的典型题目来做具体分析。\end{landscape}
+- 内容维度：习作- 作文题目：\textit{一只小鸟刚学会飞，就去旅行了。它会到哪里去？旅途中会发生什么事呢？请你展开想象，写一个故事。题目自拟，250字左右。}- 考查能力：选择材料、组织材料、语言表达、书写。- 本题满分：30分- 评分标准：
+
+
+\begin{itshape}
+\footnotesize
+\begin{longtable}{|c|c|l|}
+\hline
+
+\multirow{5}{*}{\makecell[c]{选择材料\\写什么\\（6分）}} & 5-6分 & 能围绕给定的情境合理想象，内容具体。 \\ \cline{2-3}
+		& 3-4分 & 能围绕给定的情境展开想象，内容较具体。 \\ \cline{2-3}
+		& 2分 & 能围绕给定的情境想象，但内容过于简单。 \\ \cline{2-3}
+		& 1分 & 想象的内容与给定的情景有一点关联，但不够合理。 \\ \cline{2-3}
+		& 0分 & 想象的内容与给定的情境无关。 \\ 
+\hline
+		
+\multirow{5}{*}{\makecell[c]{组织材料\\怎么写\\（6分）}} & 5-6分  & 叙述完整，过程清楚，小节划分正确。 \\ \cline{2-3}
+		& 3-4分 & 叙述较完整，过程较清楚，有小节的划分。 \\ \cline{2-3}
+		& 2分 & 叙述不完整，过程不清楚，不分小节。 \\ \cline{2-3}
+		& 1分 & 只写一两句话不能形成文段。 \\ \cline{2-3}
+		& 0分 & 逻辑混乱。 \\ 
+\hline
+			
+ & 14-15分 & \makecell[l]{语句通顺，语意连贯，用词准确； \\ 标点使用正确，基本上没有错别字。 \\ （个别标点出错，不影响表达。有2、3个错别字。）} \\ \cline{2-3}
+	\multirow{4}{*}{\makecell[c]{语言表达\\写得怎么样\\（6分）}}	& 11-13分 & \makecell[l]{语言通顺，语意比较连贯，用词基本恰当； \\ 标点使用有一些错误，有一些错别字。\\ （有4—6个错别字）} \\ \cline{2-3}
+		& 8-10分 & \makecell[l]{语言基本通顺，有个别病句或词语运用不恰当之处，\\ 不影响意思的理解。 \\ 漏用、用错的标点较多，错别字较多（10个以上）。} \\ \cline{2-3}
+		& 3-7分 & \makecell[l]{病句很多，语意比较混乱，词不达意。\\ 逻辑混乱，语意不明，没有标点，错别字很多。} \\ \cline{2-3}
+		& 0-2分 & 逻辑混乱，语意不明，没有标点，错别字很多。 \\ 
+\hline
+		
+	
+\multirow{4}{*}{\makecell[c]{书写\\（3分）}} & 3分 & 字迹端正，书面整洁。 \\ \cline{2-3}
+		& 2分 & 字迹比较端正，书面比较整洁。 \\ \cline{2-3}
+		& 1分 & 字迹潦草，尚能看清。 \\ \cline{2-3}
+		& 0分 & 非常乱，看不清。 \\ 
+\hline
+
+\end{longtable}
+\end{itshape}
+`r row <- point.rate[point.rate[,var.variable]=="C3AS310_X",]`
+“习作”从“选择材料”、“组织材料”、“语言表达”及“书写”四个分项考查学生在叙述事情上的能力表现。在本报告中分为四个题目，编号分别为C3AS311、C3AS312、C3AS313、C3AS314。从测试结果来看，作文平均得分率为`r row[row[,var.key]=="总体",var.param]`%，总体情况为：A水平的`r row[row[,var.sample]=="总体" & row[,var.key]=="A",var.param]`%，B水平的`r row[row[,var.sample]=="总体" & row[,var.key]=="B",var.param]`%，C水平的`r row[row[,var.sample]=="总体" & row[,var.key]=="C",var.param]`%。具体情况如下：
+
+\begin{table}[H]
+\centering
+\itshape
+\footnotesize
+\begin{tabularx}{\textwidth}{|X|c|c|c|c|c|c|c|c|c|}
+
+\hline
+\makecell[c]{水平分层} & \makecell[c]{公办} & \makecell[c]{普通民办} & \makecell[c]{随迁子女小学} & \makecell[c]{小学} & \makecell[c]{一贯制} & 男 & 女 & \makecell[c]{沪籍} & \makecell[c]{非沪籍} \\
+\hline
+\makecell[c]{A} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AS310_X" & point.rate[,var.key]=="A",]`
+`r row[row[,var.sample]=="公办",var.param]` & 
+`r row[row[,var.sample]=="民办",var.param]` & 
+`r row[row[,var.sample]=="随迁子女民办",var.param]` & 
+`r row[row[,var.sample]=="小学",var.param]` & 
+`r row[row[,var.sample]=="一贯制",var.param]` & 
+`r row[row[,var.sample]=="男",var.param]` & 
+`r row[row[,var.sample]=="女",var.param]` & 
+`r row[row[,var.sample]=="沪籍",var.param]` & 
+`r row[row[,var.sample]=="非沪籍",var.param]` \\
+\hline
+\makecell[c]{B} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AS310_X" & point.rate[,var.key]=="B",]`
+`r row[row[,var.sample]=="公办",var.param]` & 
+`r row[row[,var.sample]=="民办",var.param]` & 
+`r row[row[,var.sample]=="随迁子女民办",var.param]` & 
+`r row[row[,var.sample]=="小学",var.param]` & 
+`r row[row[,var.sample]=="一贯制",var.param]` & 
+`r row[row[,var.sample]=="男",var.param]` & 
+`r row[row[,var.sample]=="女",var.param]` & 
+`r row[row[,var.sample]=="沪籍",var.param]` & 
+`r row[row[,var.sample]=="非沪籍",var.param]` \\
+\hline
+\makecell[c]{C} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AS310_X" & point.rate[,var.key]=="C",]`
+`r row[row[,var.sample]=="公办",var.param]` & 
+`r row[row[,var.sample]=="民办",var.param]` & 
+`r row[row[,var.sample]=="随迁子女民办",var.param]` & 
+`r row[row[,var.sample]=="小学",var.param]` & 
+`r row[row[,var.sample]=="一贯制",var.param]` & 
+`r row[row[,var.sample]=="男",var.param]` & 
+`r row[row[,var.sample]=="女",var.param]` & 
+`r row[row[,var.sample]=="沪籍",var.param]` & 
+`r row[row[,var.sample]=="非沪籍",var.param]` \\
+\hline
+
+\end{tabularx}
+\end{table}
+`r row <- point.rate[point.rate[,var.variable]=="C3AS310_X" & point.rate[,var.key]=="B",]`
+从数据看，小学和一贯制学校在四个水平上的比率情况几乎没有差异。但公办学校B水平的比普通民办学校高出`r row[row[,var.sample]=="公办",var.param] - row[row[,var.sample]=="民办",var.param]`%，比随迁子女小学高出`r row[row[,var.sample]=="公办",var.param] - row[row[,var.sample]=="随迁子女民办",var.param]`%；女生B水平的比男生高出`r row[row[,var.sample]=="女",var.param] - row[row[,var.sample]=="男",var.param]`%；本市学生B水平的比非本市学生高出`r row[row[,var.sample]=="沪籍",var.param] - row[row[,var.sample]=="非沪籍",var.param]`%。反映出学校之间的差异较大，女生在作文水平上的优势明显。下面分别呈现学生在写作分项上的作答情况。
+
+C3AS311（维度1  满分6分)
+
+\begin{table}[H]
+\centering
+\itshape
+\footnotesize
+\begin{tabularx}{\textwidth}{|rX|}
+
+\hline
+\makecell[r]{\large 维度1:} & \makecell[l]{\large 选择材料（学什么）}  \\
+\makecell[r]{5-6分：} & \makecell[l]{能围绕给定的情境展开想象，内容具体。}  \\
+\makecell[r]{3-4分：} & \makecell[l]{能围绕给定的情境合理想象，内容较具体。}  \\
+\makecell[r]{2分：} & \makecell[l]{能围绕给定的情境想象，但内容过于简单。}  \\
+\makecell[r]{1分：} & \makecell[l]{想象的内容与给定的情景有一点关联，但不够合理。}  \\
+\makecell[r]{0分：} & \makecell[l]{想象的内容与给定的情境无关。}  \\
+
+\hline
+\end{tabularx}
+\end{table}`r fig_name <- "学生在题目C3AS311上的作答情况" `
+```{r answer.C3AS311.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "answer.segment.bar.cn"
+report$plot$answer.segment.bar.cn$data$keep <- list(list(var = "变量", value=list(c("C3AS311_S"))))
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}
+
+本市学生在“选择材料”上的平均得分率为`r point.rate[point.rate[,var.variable]=="C3AS311_X" & point.rate[,var.key]=="总体" & point.rate[,var.sample]=="总体",var.param]`%。从上图可以看出，仅有`r answer[answer[,var.variable]=="C3AS311_S" & answer[,var.key]=="5.5-6" & answer[,var.sample]=="总体",var.param]`%的学生得5.5-6分，表明极少部分学生能够围绕题目给出的情境展开想象，做到想象合理，内容具体；`r answer[answer[,var.variable]=="C3AS311_S" & answer[,var.key]=="3.5-5" & answer[,var.sample]=="总体",var.param]`%的学生得3.5-5分，表明大多数学生能够围绕给定的话题展开想象，内容较具体；`r answer[answer[,var.variable]=="C3AS311_S" & answer[,var.key]=="1.5-3" & answer[,var.sample]=="总体",var.param]`%的学生得1.5-3分，表明一部分学生能围绕给定的话题想象，但想象不够合理，内容过于简单；还有`r answer[answer[,var.variable]=="C3AS311_S" & answer[,var.key]=="0-1" & answer[,var.sample]=="总体",var.param]`%的学生得0-1分，表明极少部分学生不能围绕给定的话题想象，跑题。具体情况如下：
+
+\begin{table}[H]
+\centering
+\itshape
+\footnotesize
+\begin{tabularx}{\textwidth}{|X|c|c|c|c|c|c|c|c|c|}
+
+\hline
+\makecell[c]{水平分层} & \makecell[c]{公办} & \makecell[c]{普通民办} & \makecell[c]{随迁子女小学} & \makecell[c]{小学} & \makecell[c]{一贯制} & 男 & 女 & \makecell[c]{沪籍} & \makecell[c]{非沪籍} \\
+\hline
+\makecell[c]{A} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AS311_X" & point.rate[,var.key]=="A",]`
+`r row[row[,var.sample]=="公办",var.param]` & 
+`r row[row[,var.sample]=="民办",var.param]` & 
+`r row[row[,var.sample]=="随迁子女民办",var.param]` & 
+`r row[row[,var.sample]=="小学",var.param]` & 
+`r row[row[,var.sample]=="一贯制",var.param]` & 
+`r row[row[,var.sample]=="男",var.param]` & 
+`r row[row[,var.sample]=="女",var.param]` & 
+`r row[row[,var.sample]=="沪籍",var.param]` & 
+`r row[row[,var.sample]=="非沪籍",var.param]` \\
+\hline
+\makecell[c]{B} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AS311_X" & point.rate[,var.key]=="B",]`
+`r row[row[,var.sample]=="公办",var.param]` & 
+`r row[row[,var.sample]=="民办",var.param]` & 
+`r row[row[,var.sample]=="随迁子女民办",var.param]` & 
+`r row[row[,var.sample]=="小学",var.param]` & 
+`r row[row[,var.sample]=="一贯制",var.param]` & 
+`r row[row[,var.sample]=="男",var.param]` & 
+`r row[row[,var.sample]=="女",var.param]` & 
+`r row[row[,var.sample]=="沪籍",var.param]` & 
+`r row[row[,var.sample]=="非沪籍",var.param]` \\
+\hline
+\makecell[c]{C} & 
+`r row <- point.rate[point.rate[,var.variable]=="C3AS311_X" & point.rate[,var.key]=="C",]`
+`r row[row[,var.sample]=="公办",var.param]` & 
+`r row[row[,var.sample]=="民办",var.param]` & 
+`r row[row[,var.sample]=="随迁子女民办",var.param]` & 
+`r row[row[,var.sample]=="小学",var.param]` & 
+`r row[row[,var.sample]=="一贯制",var.param]` & 
+`r row[row[,var.sample]=="男",var.param]` & 
+`r row[row[,var.sample]=="女",var.param]` & 
+`r row[row[,var.sample]=="沪籍",var.param]` & 
+`r row[row[,var.sample]=="非沪籍",var.param]` \\
+\hline
+\end{tabularx}
+\end{table}`r row <- point.rate[point.rate[,var.variable]=="C3AS311_X" & point.rate[,var.key]=="B",]`从数据看，公办学校B水平的比普通民办学校高出`r row[row[,var.sample]=="公办",var.param] - row[row[,var.sample]=="民办",var.param]`%，比随迁子女小学高出`r row[row[,var.sample]=="公办",var.param] - row[row[,var.sample]=="随迁子女民办",var.param]`%；女生B水平的比男生高出`r row[row[,var.sample]=="女",var.param] - row[row[,var.sample]=="男",var.param]`%；本市学生B水平的比非本市学生高出`r row[row[,var.sample]=="沪籍",var.param] - row[row[,var.sample]=="非沪籍",var.param]`%。在“材料的选择”这一分项上，公办学校的学生能力明显优于普通民办和随迁子女小学；女生明显优于男生。C水平的学生比率总计近`r dimention.param[dimention.param[,var.variable]=="writing_level"& dimention.param[,var.key]=="C" & dimention.param[,var.sample]=="总体",var.param]`%，这个比率超出预期较多，暴露出作文教学质量不尽如人意。C3AS312（维度2  满分6分）
+
+\begin{table}[H]
+\centering
+\itshape
+\footnotesize
+\begin{tabularx}{\textwidth}{|rX|}
+
+\hline
+\makecell[r]{\large 维度2:} & \makecell[l]{\large 组织材料(怎么写)}  \\
+\makecell[r]{5-6分：} & \makecell[l]{叙述完整，过程清楚，小节划分正确。}  \\
+\makecell[r]{3-4分：} & \makecell[l]{叙述较完整，过程较清楚，有小节的划分。}  \\
+\makecell[r]{2分：} & \makecell[l]{叙述不完整，过程不清楚，不分小节。}  \\
+\makecell[r]{1分：} & \makecell[l]{只写一两句话不能形成文段。}  \\
+\makecell[r]{0分：} & \makecell[l]{逻辑混乱。}  \\
+
+\hline
+\end{tabularx}
+\end{table}`r fig_name <- "学生在题目C3AS312上的作答情况" `
+```{r answer.C3AS312.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "answer.segment.bar.cn"
+report$plot$answer.segment.bar.cn$data$keep <- list(list(var = "变量", value=list(c("C3AS312_S"))))
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}
+
+
+本市学生在“组织材料”上的平均得分率为`r point.rate[point.rate[,var.variable]=="C3AS312_X" & point.rate[,var.key]=="总体" & point.rate[,var.sample]=="总体",var.param]`%。从上图可以看出，仅有`r answer[answer[,var.variable]=="C3AS312_S" & answer[,var.key]=="5.5-6",var.param]`%的学生得5.5-6分，表明极少部分学生能够在叙述时做到过程很清楚；`r answer[answer[,var.variable]=="C3AS312_S" & answer[,var.key]=="3.5-5",var.param]`%的学生得3.5-5分，表明大多数学生能够做到叙述较完整，过程较清楚；`r answer[answer[,var.variable]=="C3AS312_S" & answer[,var.key]=="1.5-3",var.param]`%的学生得1.5-3分，表明还有一部分学生叙述不完整，过程不清楚，不能分小节；还有`r answer[answer[,var.variable]=="C3AS312_S" & answer[,var.key]=="0-1",var.param]`%的学生得0-1分，表明这部分学生只能写一两句话，不能形成文段，或逻辑混乱。
+
+
+C3AS313（维度3  满分15分）
+
+\begin{table}[H]
+\centering
+\itshape
+\footnotesize
+\begin{tabularx}{\textwidth}{|rX|}
+
+\hline
+\makecell[r]{\large 维度3:} & \makecell[l]{\large 语言表达(写得怎么样)}  \\
+\makecell[r]{14-15分：} & \makecell[l]{语句通顺，语意连贯，用词准确；标点使用正确，基本上没有错别字。\\（个别标点出错，不影响表达。有2、3个错别字。）}  \\
+\makecell[r]{11-13分：} & \makecell[l]{语言通顺，语意比较连贯，用词基本恰当；标点使用有一些错误，有一些错别字。\\（有4—6个错别字）}  \\
+\makecell[r]{8-10分：} & \makecell[l]{语言基本通顺，有个别病句或词语运用不恰当之处，不影响意思的理解。\\ 漏用、用错的标点较多，错别字较多（10个以上）。}  \\
+\makecell[r]{3-7分：} & \makecell[l]{病句很多，语意比较混乱，词不达意。}  \\
+\makecell[r]{0-2分：} & \makecell[l]{逻辑混乱，语意不明，没有标点，错别字很多。基本上不用标点，错别字多。\\（10---20个错别字之间）}  \\
+
+\hline
+\end{tabularx}
+\end{table}`r fig_name <- "学生在题目C3AS313上的作答情况" `
+```{r answer.C3AS313.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "answer.segment.bar.cn"
+report$plot$answer.segment.bar.cn$data$keep <- list(list(var = "变量", value=list(c("C3AS313_S"))))
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}
+
+
+本市学生在“语言表达”上的平均得分率为`r point.rate[point.rate[,var.variable]=="C3AS313_X" & point.rate[,var.key]=="总体" & point.rate[,var.sample]=="总体",var.param]`%。从上图可以看出，有`r answer[answer[,var.variable]=="C3AS313_S" & answer[,var.key]=="12.5-15",var.param]`%的学生得12.5-15分，表明近30%的学生能够做到语意连贯，用词准确；`r answer[answer[,var.variable]=="C3AS313_S" & answer[,var.key]=="9.5-12",var.param]`%的学生得9.5-12分，表明有超过60%的学生能够做到语意基本连贯，用词基本恰当；`r answer[answer[,var.variable]=="C3AS313_S" & answer[,var.key]=="5.5-9",var.param]`%的学生得5.5-9分，表明有近6%的学生叙述时有一些病句或词语运用有不恰当之处，但不影响理解；还有`r answer[answer[,var.variable]=="C3AS313_S" & answer[,var.key]=="0-5",var.param]`%的学生得0-5分，表明这部分学生语言表达混乱，词不达意，不能表达自己的意思。
+
+C3AS314（维度4  满分3分）\begin{table}[H]
+\centering
+\itshape
+\footnotesize
+\begin{tabularx}{\textwidth}{|rX|}
+
+\hline
+\makecell[r]{\large 维度4:} & \makecell[l]{\large 书写}  \\
+\makecell[r]{3分：} & \makecell[l]{字迹端正，书面整洁。}  \\
+\makecell[r]{2分：} & \makecell[l]{字迹比较端正，书面比较整洁。}  \\
+\makecell[r]{1分：} & \makecell[l]{字迹潦草，尚能看清。}  \\
+\makecell[r]{0分：} & \makecell[l]{非常乱，看不清。}  \\
+
+\hline
+\end{tabularx}
+\end{table}`r fig_name <- "学生在题目C3AS314上的作答情况" `
+```{r answer.C3AS314.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "answer.segment.bar.cn"
+report$plot$answer.segment.bar.cn$data$keep <- list(list(var = "变量", value=list(c("C3AS314_S"))))
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}
+
+本市学生在“书写”上的平均得分率为`r point.rate[point.rate[,var.variable]=="C3AS314_X" & point.rate[,var.key]=="总体" & point.rate[,var.sample]=="总体",var.param]`%。从上图可以看出，有`r answer[answer[,var.variable]=="C3AS314_S" & answer[,var.key]=="2.5-3",var.param]`%的学生得2.5-3分，表明近90%的学生书写做到字迹端正，书面整洁；`r answer[answer[,var.variable]=="C3AS314_S" & answer[,var.key]=="1.5-2",var.param]`%的学生得1.5-2分，表明近12%的学生能做到字迹比较端正，书面比较整洁；`r answer[answer[,var.variable]=="C3AS314_S" & answer[,var.key]=="0.5-1",var.param]`%的学生得0.5-1分，表明极少部分学生的字迹潦草，看不清；`r answer[answer[,var.variable]=="C3AS314_S" & answer[,var.key]=="0",var.param]`%的学生得0分书写非常乱，看不清。数据表明学生的书写的态度较大的进步。“习作”部分，根据本次测试的能力要求将学生的作文划分为4个水平：A水平：能够围绕题目给出的情境展开想象，想象合理，内容具体；叙述完整，过程清楚；语句通顺，语意连贯，用词准确。B水平：能够围绕题目给出的情境展开想象，内容较具体；叙述较完整，过程较清楚；语言通顺，语意比较连贯，用词基本恰当。C水平：能够围绕题目给出的情境展开想象，但想象不够合理；结构不完整，内容过于简单；语言比较通顺，有个别病句或词语运用不恰当之处，但不影响意思的理解。D水平：不能够围绕题目给出的情景展开想象或跑题；叙述不完整，过程不清楚；语言表达比较混乱，词不达意。下面将结合不同水平的四篇作文样例来做具体分析。A水平：能够围绕题目给出的情境展开想象，想象合理，内容具体；叙述完整，过程清楚；语句通顺，语意连贯，用词准确。学生样例：
+`r fig_file <- "cn_C3AS31_A_01.png" `
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\end{figure}
+`r fig_file <- "cn_C3AS31_A_02.png" `
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\end{figure}
+`r fig_file <- "cn_C3AS31_A_03.png" `
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\end{figure}
+
+点评：小作者围绕给定的情境展开了合理的想象，为读者呈现了一个情节完整的小故事。文章的内容具体，结构清楚，小节的划分合理，节与节之间意思承接非常自然，把小鸟的乐于助人的特点充分展现在读者眼前。小作者的表达能力很强，语言流畅，语意连贯，用词准确，基本功非常扎实。这篇习作很好地达到了课程标准对三年级学生习作的要求B水平：能够围绕题目给出的情境展开想象，内容较具体；叙述较完整，过程较清楚；语言通顺，语意比较连贯，用词基本恰当。学生样例：
+
+`r fig_file <- "cn_C3AS31_B_01.png" `
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\end{figure}
+`r fig_file <- "cn_C3AS31_B_02.png" `
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\end{figure}
+
+
+点评：
+
+这篇作文讲了刚学会飞的小鸟旅行途中因体力不支掉到黄鹂鸟家中，黄鹂鸟和他的孩子一起把小鸟送回去的故事。小作者所写的故事虽然情节比较简单，但能根据题目所给的情境展开想象，写了一个结构完整、情节比较合理、过程比较清晰的故事。本文的语言较通顺，意思较清晰；文章中标点使用比较正确，书写也较规范，但是作者给文章所取的题目不太合适，文章写的是那只刚学会飞的小鸟旅行的事，并不是黄鹂鸟妈妈的儿子“星月”的事。总体来看，这篇作文达到了课程标准对三年级学生的习作要求。C水平：能够围绕题目给出的情境展开想象，但想象不够合理；结构不完整，内容过于简单；语言比较通顺，有个别病句或词语运用不恰当之处，但不影响意思的理解。学生样例：
+
+`r fig_file <- "cn_C3AS31_C_01.png" `
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\end{figure}
+
+
+点评：小作者写的故事与题目给出的情境基本相符，但是叙述的内容过于简单，缺少必要的展开，内容之间有跳跃，有些想象不够合理。从语言的表达看，有一些病句，但还不影响意思理解，文中句子意思基本清楚。小作者基本掌握了常用标点符号的用法。总体来看，这篇作文基本达到课程标准对三年级学生的习作要求。D水平：不能够围绕题目给出的情景展开想象或跑题；叙述不完整，过程不清楚；语言表达比较混乱，词不达意。学生样例：
+
+`r fig_file <- "cn_C3AS31_D_01.png" `
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\end{figure}
+`r fig_file <- "cn_C3AS31_D_02.png" `
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\end{figure}
+
+
+点评：小作者不能根据题目和给出的情境展开想象写故事，虽然写了不少字，但没有写出一件完整的事。叙述的内容前后跳跃，逻辑比较混乱，不能清楚地表达意思。文中的病句、错别字较多，影响意思的理解。小作者还不能正确使用标点，基本上是“一逗到底”。总体来看，这篇作文没有达到课程标准对三年级学生的习作要求。

@@ -1,0 +1,112 @@
+---
+documentclass: book
+fontsize: 12pt
+geometry: margin=1in
+output:
+  pdf_document:
+    fig_caption: yes
+    template: pdf_template.tex
+    includes:
+      in_header: header_base.tex
+    latex_engine: xelatex
+    number_sections: yes
+    keep_tex: yes
+params:
+  report: 2015
+  dummy.fig: "reports.jpg"
+  conf: "conf"
+  
+---
+<!-- global setting -->
+
+\graphicspath{ {`r report$plot.out`} }
+
+<!-- cover page -->
+
+\pagenumbering{gobble}
+&nbsp;
+
+\vspace{40mm}
+\mytitle{`r report$year``r report$project`}
+\mytitle{`r report$report`}
+\mysubtitle{上海市`r report$county`}
+\mysubtitle{`r report$school``r report$subject`}
+
+
+
+
+
+\vfill
+\myproducer{`r report$producer`}
+\myproducer{`r report$producer1`}
+\myproducer{`r report$date`}
+
+\vspace{8mm}
+\mycopyright{`r report$copyright`}
+
+\clearpage
+
+<!-- end of cover page -->
+
+\pagenumbering{arabic}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[LE,RO]{\footnotesize `r report$header`}
+\fancyfoot[C]{\footnotesize \thepage}
+
+<!-- interface -->
+
+
+\begin{itshape}
+
+\raggedright\large\setlength{\parindent}{0em}
+`r report$scope`:
+
+\myprefacetext
+本次测试贵校共有49名学生，10名教师，50名家长参加。这份报告描述了贵校四年级学生在2016年中小学学业质量绿色指标综合评价中的表现。本次测试基于课程标准，体现了对学生应获得的知识与技能，应发展的能力和素养的要求。我们希望这些信息能帮助贵校了解学生在语文和数学学科上的优势和不足，为改进学生学习、提高教学质量提供帮助。同时通过“绿色指标”来引导全社会保护青少年的健康成长，引导教育部门科学地管理教学，引导学校和教师遵循教育规律，形成实施素质教育的良好秩序和环境。\raggedleft上海市教委基础教育质量监测中心
+
+2017年9月
+
+
+\end{itshape}
+
+\clearpage
+
+<!-- end of interface -->
+
+<!-- table of cntents -->
+
+\centering\normalsize\setcounter{tocdepth}{2}\tableofcontents 
+
+\clearpage
+
+<!--  end of toc -->
+\raggedright\normalsize\setlength{\parindent}{2em}
+<!-- document body -->
+
+
+# 本校九年级学生总体学业水平# 本校学生在语文学科上的表现
+
+`r fig_name <- "四年级学生总体数学分数分布" `
+```{r level.bar.province.county.school.cn3, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "level.bar.province.county.school.cn3"
+fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
+```
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r fig_file`}
+\caption{`r fig_name`}
+\label{fig: `r fig_name`}
+\end{figure}
+# 本校学生在数学学科上的表现# 本校学生在背景问卷上的调查结果
+
+\begin{landscape}
+
+level.bar.province.county.school.cn2
+
+\end{landscape}
+# 本校学生家长在背景问卷上的调查结果# 本校学业质量绿色指标指数
+
+\begin{landscape}
+
+level.bar.province.county.school.cn
+
+\end{landscape}
