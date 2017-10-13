@@ -49,6 +49,10 @@ pre.render.project.summary
 
 pre.render.introduce.cn
 
+<!-- chapter 3 introduce of subject cn -->
+
+pre.render.introduce.ma
+
 
 \questiontitle{典型题目3: C3AO0123}
 
