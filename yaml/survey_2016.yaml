@@ -217,14 +217,6 @@ global:
             tier: *tier_province
             perspective:
               - *per_total
-          #- 
-          #  tier: *tier_county
-          #  perspective:
-          #    - *per_total
-          #- 
-          #  tier: *tier_school
-          #  perspective:
-          #    - *per_total
 
       sample: # one of the record group in perspective, or scope while perspective is total
         province: &sample_province
@@ -378,7 +370,7 @@ global:
           question: &dim_ma_question
             - *dom_ma_question
           number: &dim_ma_number
-            - "数与计算"
+            - "数与代数"
           space: &dim_ma_space
             - "图形与几何"
           statistics: &dim_ma_statistics
@@ -8421,32 +8413,18 @@ report:
       title: ""
       header: "" 
 
-      producer: "上海市教育委员会教学研究室"
-      producer1: "上海市教育委员会基础教育质量监测中心"
-      date: "二〇一七年九月"
-      copyright: "版权声明：本报告版权属于上海市教育委员会教学研究室，未得到上海市教育委员会教学研究室同意，不得使用或公开报告的任何内容"
-
+      
       dir_output: "province/"
       datetime: ""
       file: ""
 
-      command:
-        copy:
-          command: *command_copy
-          from: 
-            - *cmd_cp_from_dummy
-          to: *cmd_dump_to_plot
-        zip:
-          command: *command_zip
-          from: 
-            - *cmd_zip_from_plot
-        dump:
-          command: *command_dump
-          to: *cmd_dump_to_plot
-          dbase: *cmd_dump_db
-        remove:
-          command: *command_remove
-          files: *cmd_remove_plot
+      pre.render:
+        - "pre.render.global.setting"
+        - "pre.render.cover.page"
+        - "pre.render.head.foot"
+        - "pre.render.report.preface"
+        - "pre.render.table.of.contents"
+        - "pre.render.project.summary"
 
       plot:
 
@@ -16866,34 +16844,17 @@ report:
       title: ""
       header: "" 
 
-      producer: "上海市教育委员会教学研究室"
-      producer1: "上海市教育委员会基础教育质量监测中心"
-      date: "二〇一七年九月"
-      copyright: "版权声明：本报告版权属于上海市教育委员会教学研究室，未得到上海市教育委员会教学研究室同意，不得使用或公开报告的任何内容"
-
       dir_output: "province/"
       datetime: ""
       file: ""
 
-      command:
-        copy:
-          command: *command_copy
-          from: 
-            - *cmd_cp_from_dummy
-          to: *cmd_dump_to_plot
-        zip:
-          command: *command_zip
-          from: 
-            - *cmd_zip_from_plot
-        dump:
-          command: *command_dump
-          to: *cmd_dump_to_plot
-          dbase: *cmd_dump_db
-        remove:
-          command: *command_remove
-          files: *cmd_remove_plot
-
-
+      pre.render:
+        - "pre.render.global.setting"
+        - "pre.render.cover.page"
+        - "pre.render.head.foot"
+        - "pre.render.report.preface"
+        - "pre.render.table.of.contents"
+        - "pre.render.project.summary"
 
       plot:
         passed.rate.all.bar: 
@@ -22260,34 +22221,9 @@ report:
       title: ""
       header: "" 
 
-      #producer: "上海市教育委员会教学研究室"
-      #producer1: "上海市教育委员会基础教育质量监测中心"
-      #date: "二〇一七年九月"
-      #copyright: "版权声明：本报告版权属于上海市教育委员会教学研究室，未得到上海市教育委员会教学研究室同意，不得使用或公开报告的任何内容"
-
       dir_output: "province/"
       datetime: ""
       file: ""
-
-      #command:
-      #  copy:
-      #    command: *command_copy
-      #    from: 
-      #      - *cmd_cp_from_dummy
-      #      - *cmd_cp_from_cn
-      #    to: *cmd_dump_to_plot
-      #  zip:
-      #    command: *command_zip
-      #    from: 
-      #      - *cmd_zip_from_plot
-      #  dump:
-      #    command: *command_dump
-      #    to: *cmd_dump_to_plot
-      #    dbase: *cmd_dump_db
-      #  remove:
-      #    command: *command_remove
-      #    files: *cmd_remove_plot
-
 
       pre.render:
         - "pre.render.global.setting"
@@ -22296,6 +22232,7 @@ report:
         - "pre.render.report.preface"
         - "pre.render.table.of.contents"
         - "pre.render.project.summary"
+        - "pre.render.introduce.cn"
 
       plot:
 
@@ -24665,35 +24602,21 @@ report:
       subject: "数学学科"
 
       title: ""
-      header: "" 
-      producer: "上海市教育委员会教学研究室"
-      producer1: "上海市教育委员会基础教育质量监测中心"
-      date: "二〇一七年九月"
-      copyright: "版权声明：本报告版权属于上海市教育委员会教学研究室，未得到上海市教育委员会教学研究室同意，不得使用或公开报告的任何内容"
+      header: ""
 
       dir_output: "province/"
       datetime: ""
       file: ""
 
-      command:
-        copy:
-          command: *command_copy
-          from: 
-            - *cmd_cp_from_dummy
-            - *cmd_cp_from_ma
-            - *cmd_cp_from_cn
-          to: *cmd_dump_to_plot
-        zip:
-          command: *command_zip
-          from: 
-            - *cmd_zip_from_plot
-        dump:
-          command: *command_dump
-          to: *cmd_dump_to_plot
-          dbase: *cmd_dump_db
-        remove:
-          command: *command_remove
-          files: *cmd_remove_plot
+      pre.render:
+        - "pre.render.global.setting"
+        - "pre.render.cover.page"
+        - "pre.render.head.foot"
+        - "pre.render.report.preface"
+        - "pre.render.table.of.contents"
+        - "pre.render.project.summary"
+        - "pre.render.introduce.ma"
+
 
       plot:
 
@@ -26216,35 +26139,17 @@ report:
       title: ""
       header: "" 
 
-      
-      producer: "上海市教育委员会教学研究室"
-      producer1: "上海市教育委员会基础教育质量监测中心"
-      date: "二〇一七年九月"
-      copyright: "版权声明：本报告版权属于上海市教育委员会教学研究室，未得到上海市教育委员会教学研究室同意，不得使用或公开报告的任何内容"
-
       dir_output: "county/"
       datetime: ""
       file: ""
 
-      command:
-        copy:
-          command: *command_copy
-          from: 
-            - *cmd_cp_from_dummy
-          to: *cmd_dump_to_plot
-        zip:
-          command: *command_zip
-          from: 
-            - *cmd_zip_from_plot
-        dump:
-          command: *command_dump
-          to: *cmd_dump_to_plot
-          dbase: *cmd_dump_db
-        remove:
-          command: *command_remove
-          files: *cmd_remove_plot
-
       pre.render:
+        - "pre.render.global.setting"
+        - "pre.render.cover.page"
+        - "pre.render.head.foot"
+        - "pre.render.report.preface"
+        - "pre.render.table.of.contents"
+        - "pre.render.project.summary"
         - "level.bar.province.county.school.cn"
         - "score.box.province.county.school.cn"
         - "level.bar.province.county.school.ma"
@@ -34941,39 +34846,19 @@ report:
       title: ""
       header: "" 
 
-
-      producer: "上海市教育委员会教学研究室"
-      producer1: "上海市教育委员会基础教育质量监测中心"
-      date: "二〇一七年九月"
-      copyright: "版权声明：本报告版权属于上海市教育委员会教学研究室，未得到上海市教育委员会教学研究室同意，不得使用或公开报告的任何内容"
-
       dir_output: "school/"
       datetime: ""
       file: ""
 
-      command:
-        copy:
-          command: *command_copy
-          from: 
-            - *cmd_cp_from_dummy
-          to: *cmd_dump_to_plot
-        zip:
-          command: *command_zip
-          from: 
-            - *cmd_zip_from_plot
-        dump:
-          command: *command_dump
-          to: *cmd_dump_to_plot
-          dbase: *cmd_dump_db
-        remove:
-          command: *command_remove
-          files: *cmd_remove_plot
-
       pre.render:
+        - "pre.render.global.setting"
+        - "pre.render.cover.page"
+        - "pre.render.head.foot"
+        - "pre.render.report.preface"
+        - "pre.render.table.of.contents"
+        - "pre.render.project.summary"
         - "level.bar.province.county.school.cn"
         - "level.bar.province.county.school.cn2"
-   
-
 
       plot:
         level.bar.province.county.school.cn:

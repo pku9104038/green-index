@@ -47,7 +47,7 @@ pre.render.project.summary
 
 <!-- chapter 2 introduce of subject cn -->
 
-pre.render.introduce.cn<!- chapter 3 student performance -->
+pre.render.introduce.cn<!-- chapter 3 student performance -->
 # 学生总体表现## 全体学生的总体表现
 
 `r fig_name <- "不同区域学生在语文学科各水平上的人数比例" `
