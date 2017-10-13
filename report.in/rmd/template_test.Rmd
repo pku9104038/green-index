@@ -7,20 +7,54 @@ output:
     fig_caption: yes
     template: pdf_template.tex
     includes:
-      in_header: header_base.tex
+      in_header: header_subject.tex
     latex_engine: xelatex
     number_sections: yes
-    keep_tex: no
+    keep_tex: yes
 params:
   report: 2015
   dummy.fig: "reports.jpg"
+  conf: "conf"
   
 ---
+<!-- global setting -->
 
-\LTXtable{\textwidth}{ltxtable_01.tex}
+pre.render.global.setting
 
-\begin{filecontents}{ltxtable_01.tex}
-No one will read this if I don't use it elsewhere
-\end{filecontents}
+<!-- cover page -->
+
+pre.render.cover.page
+
+<!-- header footer -->
+
+pre.render.head.foot
+
+<!-- preface -->
+
+pre.render.report.preface
+
+<!-- table of cntents -->
+
+pre.render.table.of.contents
+
+<!-- document body -->
+
+\mytext
+
+<!-- chapter 1 project summary -->
+
+pre.render.project.summary
+
+<!-- chapter 2 introduce of subject cn -->
+
+pre.render.introduce.cn
 
 
+\questiontitle{典型题目3: C3AO0123}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{`r params$dummy.fig`}
+\caption{测试图标题-1-A}
+\label{fig:{测试图标题-1-A}}
+\end{figure}
+\clearpage

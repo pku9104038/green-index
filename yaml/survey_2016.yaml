@@ -1571,6 +1571,8 @@ global:
             - "report.in/cn/*"
           ma: &cmd_cp_from_ma
             - "report.in/ma/*"
+          tex: &cmd_cp_from_tex
+            - "report.in/tex/*"
         to: 
           plot: &cmd_cp_to_plot
             "report.out/plot/"
@@ -8122,7 +8124,6 @@ count:
     -
       table: *table_st
 
-
 score: 
   -
     process: TRUE
@@ -8348,6 +8349,8 @@ report:
   table: "统计指标汇总"
   aliasTable: "别名"
   aliasFlag: TRUE
+  dumpFlag: FALSE
+  cleanFlag: TRUE
 
   province: "上海市"
   skip: TRUE #skip other county／school  
@@ -8376,7 +8379,29 @@ report:
     producer1: "上海市教育委员会基础教育质量监测中心"
     date: "二〇一七年九月"
     copyright: "版权声明：本报告版权属于上海市教育委员会教学研究室，未得到上海市教育委员会教学研究室同意，不得使用或公开报告的任何内容"
-   
+ 
+  command:
+    copy:
+      command: *command_copy
+      from: 
+        - *cmd_cp_from_dummy
+        - *cmd_cp_from_cn
+        - *cmd_cp_from_ma
+        - *cmd_cp_from_tex
+      to: *cmd_dump_to_plot
+    zip:
+      command: *command_zip
+      from: 
+        - *cmd_zip_from_plot
+    dump:
+      command: *command_dump
+      to: *cmd_dump_to_plot
+      dbase: *cmd_dump_db
+    remove:
+      command: *command_remove
+      files: *cmd_remove_plot
+
+  
 
   report:
     
@@ -16868,6 +16893,8 @@ report:
           command: *command_remove
           files: *cmd_remove_plot
 
+
+
       plot:
         passed.rate.all.bar: 
           fig.name: "四年级学业成绩标准达成指数"
@@ -22220,9 +22247,9 @@ report:
             geom: *plot_radar 
             
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
-      markdown: "province_cn template.Rmd"
+      markdown: "province_cn.Rmd"
 
       year: "2016年度"
       tier: *tier_province
@@ -22232,36 +22259,43 @@ report:
 
       title: ""
       header: "" 
-      producer: "上海市教育委员会教学研究室"
-      producer1: "上海市教育委员会基础教育质量监测中心"
-      date: "二〇一七年九月"
-      copyright: "版权声明：本报告版权属于上海市教育委员会教学研究室，未得到上海市教育委员会教学研究室同意，不得使用或公开报告的任何内容"
+
+      #producer: "上海市教育委员会教学研究室"
+      #producer1: "上海市教育委员会基础教育质量监测中心"
+      #date: "二〇一七年九月"
+      #copyright: "版权声明：本报告版权属于上海市教育委员会教学研究室，未得到上海市教育委员会教学研究室同意，不得使用或公开报告的任何内容"
 
       dir_output: "province/"
       datetime: ""
       file: ""
 
-      command:
-        copy:
-          command: *command_copy
-          from: 
-            - *cmd_cp_from_dummy
-            - *cmd_cp_from_cn
-          to: *cmd_dump_to_plot
-        zip:
-          command: *command_zip
-          from: 
-            - *cmd_zip_from_plot
-        dump:
-          command: *command_dump
-          to: *cmd_dump_to_plot
-          dbase: *cmd_dump_db
-        remove:
-          command: *command_remove
-          files: *cmd_remove_plot
+      #command:
+      #  copy:
+      #    command: *command_copy
+      #    from: 
+      #      - *cmd_cp_from_dummy
+      #      - *cmd_cp_from_cn
+      #    to: *cmd_dump_to_plot
+      #  zip:
+      #    command: *command_zip
+      #    from: 
+      #      - *cmd_zip_from_plot
+      #  dump:
+      #    command: *command_dump
+      #    to: *cmd_dump_to_plot
+      #    dbase: *cmd_dump_db
+      #  remove:
+      #    command: *command_remove
+      #    files: *cmd_remove_plot
 
 
-
+      pre.render:
+        - "pre.render.global.setting"
+        - "pre.render.cover.page"
+        - "pre.render.head.foot"
+        - "pre.render.report.preface"
+        - "pre.render.table.of.contents"
+        - "pre.render.project.summary"
 
       plot:
 
@@ -35122,5 +35156,32 @@ report:
               text_angle: 90
               text_size: 8
  
- 
+    -
+      process: TRUE
+      table: "统计指标汇总"
+      markdown: "template_test.Rmd"
+
+      year: "2016年度"
+      tier: *tier_province
+      project: "中小学学业质量"
+      report: "绿色指标学科测试分析报告"
+      subject: "测试模版"
+
+      title: ""
+      header: "" 
+
+      dir_output: "province/"
+      datetime: ""
+      file: ""
+
+      pre.render:
+        - "pre.render.global.setting"
+        - "pre.render.cover.page"
+        - "pre.render.head.foot"
+        - "pre.render.report.preface"
+        - "pre.render.table.of.contents"
+        - "pre.render.project.summary"
+        - "pre.render.introduce.cn"
+
+      plot:
 

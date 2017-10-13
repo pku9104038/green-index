@@ -22,7 +22,10 @@ pre.render <- function(
   for(i in 1:length(report$pre.render)){
     plot.entry  <- report$pre.render[[i]]
     plot <- (report$plot)[[plot.entry]]
-    plot.figure(report,plot.in = plot)
+    if(!is.null(plot)){
+      plot.figure(report,plot.in = plot)
+    }
+    
   }
   
   frmd <- paste0(getwd(),"/",report$input_file)
@@ -41,7 +44,7 @@ pre.render <- function(
         plot.entry  <- report$pre.render[[j]]
         if(plot.entry == rmd.data[i] ){
           
-          tex.file <- paste0(report$plot.out,paste0(plot.entry,plot$ext.tex))
+          tex.file <- paste0(report$plot.out,paste0(plot.entry,".tex"))
           tex.data <- readLines(tex.file)
           for(k in 1:length(tex.data)){
             rmd.rmd.data[l] <- tex.data[k] 
@@ -78,6 +81,7 @@ report.render <- function(
   g.var <- yaml$global$stat$var
   g.tier <- yaml$global$stat$def$tier
   source(paste0(g.dir$R,"ETL/db.R"))
+  source(paste0(g.dir$R,"report/dataframe.R"))
   
   report <-report.in
   timestamp()
@@ -159,8 +163,6 @@ report.render <- function(
         report$input_file <- pre.render(report, conf, yaml)
       }
       
-      
-      
       ##################################################
       print(paste("Render",report$input_file,Sys.time()))
       render(input = report$input_file, 
@@ -174,7 +176,7 @@ report.render <- function(
       timestamp()
       ####################################################
       #  dump csv and sql
-      if(report$tier == g.tier$province){
+      if(report$tier == g.tier$province && report$dumpFlag){
         db.DumpTable(report$table,paste0(report$command$dump$to,csvfile))
         
         command <- paste(report$command$dump$command, 
@@ -194,13 +196,15 @@ report.render <- function(
         print(command)
         system(command = command)
       }
+      if(report$tier == g.tier$province && report$dumpFlag){
+        # remove plot and dump files
+        command <- paste(report$command$remove$command, 
+                         report$command$remove$files)
+        
+        print(command)
+        system(command = command)
+      }
       
-      # remove plot and dump files
-      command <- paste(report$command$remove$command, 
-                       report$command$remove$files)
-      
-      print(command)
-      system(command = command)
       
     }
   }

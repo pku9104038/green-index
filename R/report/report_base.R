@@ -32,9 +32,14 @@ report.base <- function(
       }
       if(is.null(report$aliasFlag)){
         report$aliasFlag <-  reports$aliasFlag
-        print(report$aliasFlag)
+      }
+      if(is.null(report$dumpFlag)){
+        report$dumpFlag <-  reports$dumpFlag
       }
       
+      if(is.null(report$cleanFlag)){
+        report$cleanFlag <-  reports$cleanFlag
+      }
       if(is.null(report$output)){
         report$output  <- reports$output
       }
@@ -46,6 +51,12 @@ report.base <- function(
       }
       if(is.null(report$province)){
         report$province  <- reports$province
+      }
+      if(is.null(report$inscribed)){
+        report$inscribed  <- reports$inscribed
+      }
+      if(is.null(report$command)){
+        report$command  <- reports$command
       }
       if(is.null(report$test)){
         report$test  <- reports$test
