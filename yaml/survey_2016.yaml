@@ -22208,7 +22208,7 @@ report:
             geom: *plot_radar 
             
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "province_cn.Rmd"
 
@@ -35042,7 +35042,7 @@ report:
               text_size: 8
  
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "template_test.Rmd"
 
@@ -35068,6 +35068,28 @@ report:
         - "pre.render.project.summary"
         - "pre.render.introduce.cn"
         - "pre.render.introduce.ma"
+        - "pre.render.test"
 
       plot:
+
+      param:
+
+        jilei.point.rate.table.cn: 
+          name: "学生在语文学科“积累”上的平均得分率"
+          data:
+            digits: 1
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_cn
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *dimention
+                  value: *dim_cn_jilei
+                - 
+                  variable: *topic
+                  value: *top_point_rate
 
