@@ -1012,14 +1012,14 @@ plot.bar_dodging  <- function(
   figure <- figure + theme_economist() + scale_fill_economist()
   figure <- figure + geom_bar( stat="identity", width = plot$ggplot$bar$width,position = plot$ggplot$position) 
   if(!is.null(plot$ggplot$text)){
-    #if(!is.null(plot$ggplot$text$vjust)){
-    #  figure <- figure + geom_text(aes(label = label),colour="red", 
-    #                               position = position_stack(vjust = plot$ggplot$text$vjust)) 
-    #}
-    #else if(!is.null(plot$ggplot$text$hjust)){
+    if(!is.null(plot$ggplot$text$vjust)){
+      figure <- figure + geom_text(aes(label = label),colour="red", 
+                                   position = position_stack(vjust = plot$ggplot$text$vjust)) 
+    }
+    else if(!is.null(plot$ggplot$text$hjust)){
       figure <- figure + geom_text(aes(label = label),colour="red", 
                                    position = position_dodge(width = plot$ggplot$text$hjust)) 
-    #}
+    }
     
     
     #figure <- figure + geom_text(aes(label = label),colour="red", vjust = plot$ggplot$text$vjust) 

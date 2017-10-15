@@ -32,6 +32,13 @@ variable.data()
 
 ########################
 library(yaml)
+conf = yaml.load_file("yaml/conf.yaml")
+yaml <- yaml.load_file(paste0(conf$dir$yaml,conf$yaml$survey))
+source(paste0(conf$dir$R,"count/count.R"))
+count.subject(yaml$count)
+
+########################
+library(yaml)
 source(paste0(yaml.load_file("yaml/conf.yaml")$dir$R,"statistics/statistics_data.R"))
 statistics.data()  #topic.name = "得分率"
 
@@ -44,6 +51,13 @@ score.data()
 library(yaml)
 source(paste0(yaml.load_file("yaml/conf.yaml")$dir$R,"index/index_data.R"))
 index.data()
+
+########################
+library(yaml)
+conf = yaml.load_file("yaml/conf.yaml")
+source(paste0(g.dir$R,"combine/combine.R"))
+bind <- yaml.load_file(paste0(conf$dir$yaml,conf$yaml$survey))$combine$bind
+index.combine(bind)
 
 ########################
 library(yaml)

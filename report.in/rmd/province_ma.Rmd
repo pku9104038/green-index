@@ -10,7 +10,7 @@ output:
       in_header: header_subject.tex
     latex_engine: xelatex
     number_sections: yes
-    keep_tex: yes
+    keep_tex: no
 params:
   report: 2015
   dummy.fig: "reports.jpg"

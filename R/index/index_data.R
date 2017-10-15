@@ -42,6 +42,6 @@ index.data <-  function(){
   }
   
   
-  bind <- yaml.load_file(paste0(g.dir$yaml,g.yaml$survey))$index$bind
-  score.bind(bind)
+  #bind <- yaml.load_file(paste0(g.dir$yaml,g.yaml$survey))$index$bind
+  #score.bind(bind)
 }

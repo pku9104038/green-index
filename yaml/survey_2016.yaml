@@ -78,7 +78,7 @@ global:
         topic: &tier_topic
           - *tier_province
           - *tier_county
-          # - *tier_school #ignore school tier to save test time
+          #*tier_school #ignore school tier to save test time
       scope: # one of the record group in the tier 
         province: &scope_province
           - "本市"
@@ -223,6 +223,8 @@ global:
           - "上海市"
       
       domain: 
+        participant: &dom_participant
+          - "参加者"
         score:
           total: &dom_score_total
             - "成绩"
@@ -302,6 +304,8 @@ global:
             - "家庭教育"
 
       dimention: 
+        participant: &dim_participant
+          - *dom_participant
         score:
           score: &dim_score_total
             - "成绩"
@@ -502,6 +506,8 @@ global:
             - "教育期望"
 
       topic:
+        participant: &top_participant
+          - *dim_participant
         score:
           total_segment: &top_total_score_segment
             - "分数分布"
@@ -711,6 +717,8 @@ global:
             - "是否家教补课"
           extra_homework_yes: &top_extra_homework_yes
             - "参加家教补课"
+          extra_homework_hour_all: &top_extra_homework_hour_all
+            - "家教补课时间全体"
           extra_homework_hour: &top_extra_homework_hour
             - "家教补课时间"
           extra_homework_subject: &top_extra_homework_subject
@@ -725,6 +733,8 @@ global:
             - "是否参加兴趣班"
           extra_interesting_yes: &top_extra_interesting_yes
             - "参加兴趣班"
+          extra_interesting_hour_all: &top_extra_interesting_hour_all
+            - "兴趣班时间全体"
           extra_interesting_hour: &top_extra_interesting_hour
             - "兴趣班时间"
           extra_intersting_subject: &top_extra_interesting_subject
@@ -1080,6 +1090,9 @@ global:
           - "商"
         index: &stat_index
           - "指数"  
+        count: &stat_count
+          - "计数"
+
         quantile_key: &stat_quantile_key
           top: &stat_quantile_key_top
             - "top"
@@ -1212,6 +1225,8 @@ global:
           - "平均值"
         percent: &key_percent
           - "百分比"
+        count: &key_count
+          - "计数"
 
       value: 
       weight: 
@@ -1244,6 +1259,8 @@ global:
           - "语文成绩统计"
         index: &i_score_cn
           - "语文成绩指标"
+        count: &n_score_cn
+          - "学生参与语文"
       ma: &table_ma
         origin: &o_score_ma
           - "数学成绩"
@@ -1259,6 +1276,8 @@ global:
           - "数学成绩统计"
         index: &i_score_ma
           - "数学成绩指标"
+        count: &n_score_ma
+          - "学生参与数学"
       score:
         statistics: &s_score
           - "成绩统计"
@@ -1279,6 +1298,8 @@ global:
           - "学生问卷统计"
         index: &i_survey_st
           - "学生问卷指标"
+        count: &n_survey_st
+          - "学生参与问卷"
       pa: &table_pa
         origin: &o_survey_pa
           - "家长问卷调查"
@@ -1294,6 +1315,8 @@ global:
           - "家长问卷统计"
         index: &i_survey_pa
           - "家长问卷指标"
+        count: &n_survey_pa
+          - "家长参与问卷"
       te: &table_te
         origin: &o_survey_te
           - "教师问卷调查"
@@ -1309,6 +1332,8 @@ global:
           - "教师问卷统计"
         index: &i_survey_te
           - "教师问卷指标"
+        count: &n_survey_te
+          - "教师参与问卷"
       pr: &table_pr
         origin: &o_survey_pr
           - "校长问卷调查"
@@ -1324,6 +1349,8 @@ global:
           - "校长问卷统计"
         index: &i_survey_pr
           - "校长问卷指标"
+        count: &n_survey_pr
+          - "校长参与问卷"
       survey: 
         statistics: &s_survey
           - "问卷统计"
@@ -2679,32 +2706,32 @@ survey:
                         name: *var_st_survey_A
                         value: *T
                     -
-                      name: "如果有事要进老师办公室，你认为你们班的"
-                      variable: "staa077"
+                      name: "你的同学和家人在黄金周去科技馆参观，售"
+                      variable: "staa076"
                       condition:
                         name: *var_st_survey_A
                         value: *T
                     -
-                      name: "如果有去敬老院为老人们服务的机会。你认"
-                      variable: "staa073"
+                      name: "老师布置作文后，有同学会从范文书或网上"
+                      variable: "staa078"
                       condition:
                         name: *var_st_survey_A
                         value: *T
                     -
-                      name: "班上转来一个外地的学生，他（她）说话带"
-                      variable: "staa083"
+                      name: "自己已经和同学约好周末一起去郊游，另一"
+                      variable: "staa079"
                       condition:
                         name: *var_st_survey_A
                         value: *T
                     -
-                      name: "有同学在私底下骂老师，你认为你们班的同"
-                      variable: "staa084"
+                      name: "考试中有些同学会在老师不注意时偷看别人"
+                      variable: "staa080"
                       condition:
                         name: *var_st_survey_A
                         value: *T
                     -
-                      name: "在校园内进出或上下楼梯与老师相遇时，你"
-                      variable: "staa086"
+                      name: "看到同学的课桌上有漂亮的文具，有人偷偷"
+                      variable: "staa082"
                       condition:
                         name: *var_st_survey_A
                         value: *T
@@ -4247,7 +4274,10 @@ survey:
                       condition:
                         name: *var_extra_homework_hour_not_null
                         value: *T
-
+                    -
+                      name: *top_extra_homework_hour_all
+                      variable: "pg012"
+                      
                     -
                       name: *top_extra_homework_yes
                       variable: "pg012"
@@ -4307,6 +4337,9 @@ survey:
                       condition:
                         name: *var_extra_interesting_hour_not_null
                         value: *T
+                    - 
+                      name: *top_extra_interesting_hour_all
+                      variable: "pg015"
                     - 
                       name: *top_extra_interesting_reason
                       variable: *var_extra_interesting_reason
@@ -8110,11 +8143,371 @@ survey:
                   new: "女"
 
 count:
-  process: TRUE
+  -
+    subject: *survey_st
+    table.in: *v_survey_st
+    table.out: *n_survey_st
+          
+    statistics:
+      -
+        statistics:
+          - *stat_count
+        var.name: *scope
+        var.count: *w_col_individual
+        var.value: *value
+        equal:
+          -
+            col.name: *tier_province
+            col.value: *sample_province
+        groupby:
+          - *tier_province
+          - *tier_county
+          - *tier_school
+        set: 
+          -
+            col.name: *assesment
+            col.value: *def_assesment
+          -
+            col.name: *grade
+            col.value: *def_grade
+          -
+            col.name: *subject
+            col.value: *survey_st
+          -
+            col.name: *tier
+            col.value: *tier_school
+          -
+            col.name: *perspective
+            col.value: *per_total
+          -
+            col.name: *sample
+            col.value: *per_total
+          -
+            col.name: *domain
+            col.value: *dom_participant
+          -
+            col.name: *dimention
+            col.value: *dim_participant
+          -
+            col.name: *topic
+            col.value: *top_participant
+          -
+            col.name: *variable
+            col.value: "参加人数"
+          -
+            col.name: *statistics
+            col.value: "计数"
+          -
+            col.name: *weight
+            col.value:  *w_col_individual
+          -
+            col.name: *key
+            col.value: *key_count
 
-  count:
-    -
-      table: *table_st
+  -
+    subject: *survey_te
+    table.in: *v_survey_te
+    table.out: *n_survey_te
+          
+    statistics:
+      -
+        statistics:
+          - *stat_count
+        var.name: *scope
+        var.count: *w_col_individual
+        var.value: *value
+        equal:
+          -
+            col.name: *tier_province
+            col.value: *sample_province
+        groupby:
+          - *tier_province
+          - *tier_county
+          - *tier_school
+        set: 
+          -
+            col.name: *assesment
+            col.value: *def_assesment
+          -
+            col.name: *grade
+            col.value: *def_grade
+          -
+            col.name: *subject
+            col.value: *survey_te
+          -
+            col.name: *tier
+            col.value: *tier_school
+          -
+            col.name: *perspective
+            col.value: *per_total
+          -
+            col.name: *sample
+            col.value: *per_total
+          -
+            col.name: *domain
+            col.value: *dom_participant
+          -
+            col.name: *dimention
+            col.value: *dim_participant
+          -
+            col.name: *topic
+            col.value: *top_participant
+          -
+            col.name: *variable
+            col.value: "参加人数"
+          -
+            col.name: *statistics
+            col.value: "计数"
+          -
+            col.name: *weight
+            col.value:  *w_col_individual
+          -
+            col.name: *key
+            col.value: *key_count
+
+  -
+    subject: *survey_pr
+    table.in: *v_survey_pr
+    table.out: *n_survey_pr
+          
+    statistics:
+      -
+        statistics:
+          - *stat_count
+        var.name: *scope
+        var.count: *w_col_individual
+        var.value: *value
+        equal:
+          -
+            col.name: *tier_province
+            col.value: *sample_province
+        groupby:
+          - *tier_province
+          - *tier_county
+          - *tier_school
+        set: 
+          -
+            col.name: *assesment
+            col.value: *def_assesment
+          -
+            col.name: *grade
+            col.value: *def_grade
+          -
+            col.name: *subject
+            col.value: *survey_pr
+          -
+            col.name: *tier
+            col.value: *tier_school
+          -
+            col.name: *perspective
+            col.value: *per_total
+          -
+            col.name: *sample
+            col.value: *per_total
+          -
+            col.name: *domain
+            col.value: *dom_participant
+          -
+            col.name: *dimention
+            col.value: *dim_participant
+          -
+            col.name: *topic
+            col.value: *top_participant
+          -
+            col.name: *variable
+            col.value: "参加人数"
+          -
+            col.name: *statistics
+            col.value: "计数"
+          -
+            col.name: *weight
+            col.value:  *w_col_individual
+          -
+            col.name: *key
+            col.value: *key_count
+
+  -
+    subject: *survey_pa
+    table.in: *v_survey_pa
+    table.out: *n_survey_pa
+          
+    statistics:
+      -
+        statistics:
+          - *stat_count
+        var.name: *scope
+        var.count: *w_col_individual
+        var.value: *value
+        equal:
+          -
+            col.name: *tier_province
+            col.value: *sample_province
+        groupby:
+          - *tier_province
+          - *tier_county
+          - *tier_school
+        set: 
+          -
+            col.name: *assesment
+            col.value: *def_assesment
+          -
+            col.name: *grade
+            col.value: *def_grade
+          -
+            col.name: *subject
+            col.value: *survey_pa
+          -
+            col.name: *tier
+            col.value: *tier_school
+          -
+            col.name: *perspective
+            col.value: *per_total
+          -
+            col.name: *sample
+            col.value: *per_total
+          -
+            col.name: *domain
+            col.value: *dom_participant
+          -
+            col.name: *dimention
+            col.value: *dim_participant
+          -
+            col.name: *topic
+            col.value: *top_participant
+          -
+            col.name: *variable
+            col.value: "参加人数"
+          -
+            col.name: *statistics
+            col.value: "计数"
+          -
+            col.name: *weight
+            col.value:  *w_col_individual
+          -
+            col.name: *key
+            col.value: *key_count
+
+  -
+    subject: *subject_cn
+    table.in: *v_score_cn
+    table.out: *n_score_cn
+          
+    statistics:
+      -
+        statistics:
+          - *stat_count
+        var.name: *scope
+        var.count: *w_col_individual
+        var.value: *value
+        equal:
+          -
+            col.name: *tier_province
+            col.value: *sample_province
+        groupby:
+          - *tier_province
+          - *tier_county
+          - *tier_school
+        set: 
+          -
+            col.name: *assesment
+            col.value: *def_assesment
+          -
+            col.name: *grade
+            col.value: *def_grade
+          -
+            col.name: *subject
+            col.value: *subject_cn
+          -
+            col.name: *tier
+            col.value: *tier_school
+          -
+            col.name: *perspective
+            col.value: *per_total
+          -
+            col.name: *sample
+            col.value: *per_total
+          -
+            col.name: *domain
+            col.value: *dom_participant
+          -
+            col.name: *dimention
+            col.value: *dim_participant
+          -
+            col.name: *topic
+            col.value: *top_participant
+          -
+            col.name: *variable
+            col.value: "参加人数"
+          -
+            col.name: *statistics
+            col.value: "计数"
+          -
+            col.name: *weight
+            col.value:  *w_col_individual
+          -
+            col.name: *key
+            col.value: *key_count
+
+  -
+    subject: *subject_ma
+    table.in: *v_score_ma
+    table.out: *n_score_ma
+          
+    statistics:
+      -
+        statistics:
+          - *stat_count
+        var.name: *scope
+        var.count: *w_col_individual
+        var.value: *value
+        equal:
+          -
+            col.name: *tier_province
+            col.value: *sample_province
+        groupby:
+          - *tier_province
+          - *tier_county
+          - *tier_school
+        set: 
+          -
+            col.name: *assesment
+            col.value: *def_assesment
+          -
+            col.name: *grade
+            col.value: *def_grade
+          -
+            col.name: *subject
+            col.value: *subject_ma
+          -
+            col.name: *tier
+            col.value: *tier_school
+          -
+            col.name: *perspective
+            col.value: *per_total
+          -
+            col.name: *sample
+            col.value: *per_total
+          -
+            col.name: *domain
+            col.value: *dom_participant
+          -
+            col.name: *dimention
+            col.value: *dim_participant
+          -
+            col.name: *topic
+            col.value: *top_participant
+          -
+            col.name: *variable
+            col.value: "参加人数"
+          -
+            col.name: *statistics
+            col.value: "计数"
+          -
+            col.name: *weight
+            col.value:  *w_col_individual
+          -
+            col.name: *key
+            col.value: *key_count
 
 score: 
   -
@@ -8316,12 +8709,18 @@ score:
                       key:
                         - *T
 
-index: 
+combine: 
 
   process: TRUE
 
   bind:
     table.in:
+      - *n_score_ma
+      - *n_score_cn
+      - *n_survey_pa
+      - *n_survey_pr
+      - *n_survey_te
+      - *n_survey_st
       - *s_score
       - *s_survey_pr
       - *s_survey_pa
@@ -8341,7 +8740,7 @@ report:
   table: "统计指标汇总"
   aliasTable: "别名"
   aliasFlag: TRUE
-  dumpFlag: FALSE
+  dumpFlag: TRUE
   cleanFlag: TRUE
 
   province: "上海市"
@@ -8398,7 +8797,7 @@ report:
   report:
     
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "province_base.Rmd"
 
@@ -16831,8 +17230,118 @@ report:
               xlab: ""
               ylab: "百分数（%）"
 
+      param:
+            
+        passed.rate.table.cn: 
+          name: "学生在语文学科达到课程标准的基本要求的比例"
+          data:
+            digits: 1
+            filter:
+              -
+
+                - 
+                  variable: *subject
+                  value: *subject_cn
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *dimention
+                  value: *dim_cn_level
+                - 
+                  variable: *topic
+                  value: *top_passed_rate
+
+        passed.rate.table.ma: 
+          name: "学生在数学学科达到课程标准的基本要求的比例"
+          data:
+            digits: 1
+            filter:
+              -
+
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *dimention
+                  value: *dim_cn_level
+                - 
+                  variable: *topic
+                  value: *top_passed_rate
+
+        survey.summary.table.st: 
+          name: "学生问卷概要"
+          data:
+            digits: 1
+            filter:
+              -
+
+                - 
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+
+        survey.summary.table.te: 
+          name: "教师问卷概要"
+          data:
+            digits: 1
+            filter:
+              -
+
+                - 
+                  variable: *subject
+                  value: *survey_te
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+
+        survey.summary.table.pr: 
+          name: "校长问卷概要"
+          data:
+            digits: 1
+            filter:
+              -
+
+                - 
+                  variable: *subject
+                  value: *survey_pr
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+
+        survey.summary.table.pa: 
+          name: "家长问卷概要"
+          data:
+            digits: 1
+            filter:
+              -
+
+                - 
+                  variable: *subject
+                  value: *survey_pa
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "province_green.Rmd"
 
@@ -18956,7 +19465,7 @@ report:
               width: *plot_bar_width
             label:
               xlab: ""
-              ylab: "学习自信心指数"
+              ylab: "学习动机指数"
             axisx:
               text_angle: 90
               text_size: 8
@@ -19123,7 +19632,7 @@ report:
               width: *plot_bar_width
             label:
               xlab: ""
-              ylab: "学习动机指数"
+              ylab: "学习压力指数"
             axisx:
               text_angle: 90
               text_size: 8
@@ -20708,48 +21217,6 @@ report:
                   value: *survey_st
                 -
                   variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_gender
-                - 
-                  variable: *topic
-                  value: *idx_teaching
-                -
-                  x: "x"
-                  from: *sample
-                -
-                  fill: "fill"
-                  by:
-                    - *tier
-                    - *perspective
-              -
-                -
-                  variable: *subject
-                  value: *survey_st
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_huji
-                - 
-                  variable: *topic
-                  value: *idx_teaching
-                -
-                  x: "x"
-                  from: *sample
-                -
-                  fill: "fill"
-                  by:
-                    - *tier
-                    - *perspective
-              -
-                -
-                  variable: *subject
-                  value: *survey_st
-                -
-                  variable: *tier
                   value: *tier_county
                 -
                   variable: *perspective
@@ -20781,7 +21248,7 @@ report:
             order: 
               -
                 var: "x"
-                list: *order_prov_pers_coun
+                list: *order_prov_scho_coun
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
@@ -21237,8 +21704,8 @@ report:
                   - "家庭背景影响系数"
             
           ggplot:
-            width: 16
-            height: 5
+            width: 25
+            height: 8
             geom: *plot_bar_dodging
             position: "dodge" 
             #text:
@@ -21248,10 +21715,10 @@ report:
             legend: *plot_legend_right
             label:
               xlab: ""
-              ylab: "指标系数"
+              ylab: "百分数"
             axisx:
               text_angle: 90
-              text_size: 10
+              text_size: 12
             #axisy:
             #  discrete_limits: *axisy_discrete_limits_index
             #  ylim: *axisy_ylim
@@ -22206,7 +22673,7 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_radar 
-            
+
     -
       process: TRUE
       table: "统计指标汇总"
@@ -24408,7 +24875,7 @@ report:
               width: *plot_bar_width
 
             label:
-              xlab: ""
+              xlab: "选项"
               ylab: "百分数（%）"
 
         bar.cn: 
@@ -24591,7 +25058,7 @@ report:
                   value: *top_answer
                       
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "province_ma.Rmd"
 
@@ -35072,6 +35539,254 @@ report:
 
       plot:
 
+        history.bar:
+          fig.name: "上海市四年级历年测试结果比较"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                -
+                  variable: *subject
+                  value: *subject_all
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *coef_school_balance
+                -
+                  year: "year"
+                  from: *assesment
+              -
+                -
+                  variable: *subject
+                  value: *subject_all
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *coef_passed_rate
+                -
+                  year: "year"
+                  from: *assesment
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *coef_motivation
+                -
+                  year: "year"
+                  from: *assesment
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *coef_pressure
+                -
+                  year: "year"
+                  from: *assesment
+              -
+                -
+                  variable: *subject
+                  value: *subject_all
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *coef_high_level_thinking
+                -
+                  year: "year"
+                  from: *assesment
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *coef_sleep
+                -
+                  year: "year"
+                  from: *assesment
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *coef_writing_homework
+                -
+                  year: "year"
+                  from: *assesment
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *coef_extra_homework
+                -
+                  year: "year"
+                  from: *assesment
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *coef_teacher
+                -
+                  year: "year"
+                  from: *assesment
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *coef_teaching
+                -
+                  year: "year"
+                  from: *assesment
+              -
+                -
+                  variable: *subject
+                  value: *survey_te
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *coef_course_leadership
+                -
+                  year: "year"
+                  from: *assesment
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *coef_economic
+                -
+                  year: "year"
+                  from: *assesment
+            aes:
+              - 
+                arg: "x"
+                var: *topic
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: "year"
+              -  
+                arg: "label"
+                var: *label
+            order:
+              - 
+                var: "x"
+                list:
+                  - "成绩标准达成系数" 
+                  - "高层次思维能力系数"
+                  - "学业成绩学校间均衡系数"
+                  - "学习动机系数"
+                  - "学习压力系数"
+                  - "睡眠系数"
+                  - "作业系数"
+                  - "补课系数"
+                  - "师生关系系数"
+                  - "教学方式系数"
+                  - "课程领导力系数"
+                  - "家庭背景影响系数"
+            
+          ggplot:
+            width: 25
+            height: 8
+            geom: *plot_bar_dodging
+            position: "dodge" 
+            #text:
+            #  vjust: 0.5
+            bar:
+              width: *plot_bar_width_fat
+            legend: *plot_legend_right
+            label:
+              xlab: ""
+              ylab: "百分数"
+            axisx:
+              text_angle: 90
+              text_size: 14
+            #axisy:
+            #  discrete_limits: *axisy_discrete_limits_index
+            #  ylim: *axisy_ylim
+
+      
       param:
 
         jilei.point.rate.table.cn: 
@@ -35092,4 +35807,159 @@ report:
                 - 
                   variable: *topic
                   value: *top_point_rate
+
+        jilei.answer.table.cn: 
+          name: "学生在语文学科“积累”上的作答情况"
+          data:
+            digits: 1
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_cn
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *dimention
+                  value: *dim_cn_jilei
+                - 
+                  variable: *topic
+                  value: *top_answer
+
+        reading.point.rate.table.cn: 
+          name: "学生在语文学科“阅读”上的平均得分率"
+          data:
+            digits: 1
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_cn
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *dimention
+                  value: *dim_cn_reading
+                - 
+                  variable: *topic
+                  value: *top_point_rate
+
+        reading.answer.table.cn: 
+          name: "学生在语文学科“阅读”上的作答情况"
+          data:
+            digits: 1
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_cn
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *dimention
+                  value: *dim_cn_reading
+                - 
+                  variable: *topic
+                  value: *top_answer
+
+        writing.table.cn: 
+          name: "学生在语文学科“习作”上的作答情况"
+          data:
+            digits: 1
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_cn
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *dimention
+                  value: *dim_cn_writing
+
+        writing.point.rate.table.cn: 
+          name: "学生在语文学科“习作”上的平均得分率"
+          data:
+            digits: 1
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_cn
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *dimention
+                  value: *dim_cn_writing
+                - 
+                  variable: *topic
+                  value: *top_point_rate
+
+        writing.answer.table.cn: 
+          name: "学生在语文学科“习作”上的作答情况"
+          data:
+            digits: 1
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_cn
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *dimention
+                  value: *dim_cn_writing
+                - 
+                  variable: *topic
+                  value: *top_answer
+
+        passed.rate.table.cn: 
+          name: "学生在语文学科达到课程标准的基本要求的比例"
+          data:
+            digits: 1
+            filter:
+              -
+
+                - 
+                  variable: *subject
+                  value: *subject_cn
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *dimention
+                  value: *dim_cn_level
+                - 
+                  variable: *topic
+                  value: *top_passed_rate
+
+        passed.rate.table.ma: 
+          name: "学生在数学学科达到课程标准的基本要求的比例"
+          data:
+            digits: 1
+            filter:
+              -
+
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *dimention
+                  value: *dim_cn_level
+                - 
+                  variable: *topic
+                  value: *top_passed_rate
+
+
+
+
 

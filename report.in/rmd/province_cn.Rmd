@@ -10,7 +10,7 @@ output:
       in_header: header_subject.tex
     latex_engine: xelatex
     number_sections: yes
-    keep_tex: yes
+    keep_tex: no
 params:
   report: 2015
   dummy.fig: "reports.jpg"
@@ -254,13 +254,16 @@ var.sample <- "统计样本"
 ```
 `r tab_name <- "学生在语文学科“积累”上的平均得分率（％）" `
 \begin{itshape}
-\footnotesize
-\begin{longtable}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\mytable
+\begin{longtable}{|c|c|p{8cm}|c|c|c|c|c|c|c|c|c|c|c|c|}
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\
-\hline
-\makecell[c]{内容\\领域} & 题目编码 & 具体描述 & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{随迁\\子女\\民办} & \makecell[c]{普通\\小学} & \makecell[c]{一\\贯\\制} & \makecell[c]{市\\新\\优} & \makecell[c]{区\\新\\优} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
 
-\multirow{4}{*}{\makecell[c]{读准\\字音}} & C3AO011 & \makecell[l]{能读准学过的常用字的字音} & 
+\hline
+
+\makecell[c]{内容领域} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{随迁\\子女\\民办} & \makecell[c]{普通\\小学} & \makecell[c]{一\\贯\\制} & \makecell[c]{市\\新\\优} & \makecell[c]{区\\新\\优} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ 
+\hline
+
+\multirow{4}{*}{\makecell[c]{读准字音}} & C3AO011 & \makecell[l]{能读准学过的常用字的字音} & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO011_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -323,7 +326,7 @@ var.sample <- "统计样本"
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\  \hline
  
-  \multirow{4}{*}{\makecell[c]{认清\\字形}} & C3AO051 & \makecell[l]{能认清学过的常用字的字形} & 
+  \multirow{4}{*}{\makecell[c]{认清字形}} & C3AO051 & \makecell[l]{能认清学过的常用字的字形} & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO051_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -384,7 +387,7 @@ var.sample <- "统计样本"
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ 
 \hline
- \multirow{9}{*}{\makecell[c]{理解\\词义}} & C3AO091 & \makecell[l]{能正确理解常用字词的字义、词义} & 
+ \multirow{9}{*}{\makecell[c]{理解词义}} & C3AO091 & \makecell[l]{能正确理解常用字词的字义、词义} & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO091_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -518,7 +521,7 @@ var.sample <- "统计样本"
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \hline
   
- \multirow{3}{*}{\makecell[c]{积累\\和运用\\常见\\古诗文}} & C3AO181 & \makecell[l]{能记忆教材中的古诗} & 
+ \multirow{3}{*}{\makecell[c]{积累和运用\\常见古诗文}} & C3AO181 & \makecell[l]{能记忆教材中的古诗} & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO181_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -571,7 +574,7 @@ var.sample <- "统计样本"
 
 “积累”部分着重考查学生“读准字音”、“认清字形”、“理解词义”和“积累和运用常见古诗文”四方面的能力。下面将结合“积累”部分的典型题目做具体分析。
 
-\textbf{典型题目1： C3AO031}
+\questiontitle{典型题目1： C3AO031}
 
 下面每道小题中，都有一个字的注音是错的。请把它找出来。
 
@@ -609,7 +612,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 
 在本次测试中，语文总体能力处于A、B、C三个水平的学生在本题上的平均得分率分别为`r row[row[,var.key]=="A",var.param]`%、
 `r row[row[,var.key]=="B",var.param]`%和
-`r row[row[,var.key]=="C",var.param]`%。\textbf{典型题目2：C3AO051}下面每道小题中，都有一项含有错别字。请把它找出来。
+`r row[row[,var.key]=="C",var.param]`%。\questiontitle{典型题目2：C3AO051}下面每道小题中，都有一项含有错别字。请把它找出来。
 
 \begin{table}[H]
 \begin{tabularx}{\textwidth}{XXXX}
@@ -634,7 +637,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \label{fig:`r fig_name`}
 \end{figure}这道题目考查的是学生认清字形的能力。要求学生能够正确分辨音同形近字“竟”和“竞”的字形。本题正确选项为D。从四个选项的设计来看，三个干扰项中均包含学生容易出错的汉字，其中A选项的主要考查点是正确书写“忘”字，有学生可能会把“忘”错写成同音字“望”，或是误以为“忘”写错了；C选项的主要考查点是正确书写“爆”字，有学生可能混淆它的同音字或形近字，如把“爆”错写同音字“暴”，或者是形近字“瀑”；C选项的主要考查点是正确书写“慧”字，个别学生可能会把“慧”错写成同音字“惠”“彗”或其他别字。由实际测查结果来看，三个选项均具有一定的干扰性。在本次测试中，语文总体能力处于A、B、C三个水平的学生在本题上的平均得分率分别为`r row[row[,var.key]=="A",var.param]`%、
 `r row[row[,var.key]=="B",var.param]`%和
-`r row[row[,var.key]=="C",var.param]`%。\textbf{典型题目3：C3AO071}下面每道小题中，都有一项含有错别字。请把它找出来。\begin{table}[H]
+`r row[row[,var.key]=="C",var.param]`%。\questiontitle{典型题目3：C3AO071}下面每道小题中，都有一项含有错别字。请把它找出来。\begin{table}[H]
 \begin{tabularx}{\textwidth}{XXXX}
 
   \makecell[c]{A．审迅}	& 
@@ -661,7 +664,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 `r row[row[,var.key]=="B",var.param]`%和
 `r row[row[,var.key]=="C",var.param]`%。
 
-\textbf{典型题目4: C3AO091}
+\questiontitle{典型题目4: C3AO091}
 下面每道小题中，哪一个词语和划线词语的意思最接近？请把它找出来。
 
 \uline{凝 视}\begin{table}[H]
@@ -794,14 +797,19 @@ param.entry <- "reading.answer.table.cn"
 answer  <- dataframe.table( report = report, param = report$param[[param.entry]])
 ```
 `r tab_name <- "学生在语文学科“阅读”上的平均得分率（％）" `
-\begin{itshape}
-\footnotesize
-\begin{longtable}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
-\caption{`r tab_name`} \label{tab: `r tab_name`} \\
-\hline
-\makecell[c]{内容\\领域} & 题目编码 & 具体描述 & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{随迁\\子女\\民办} & \makecell[c]{小\\学} & \makecell[c]{一\\贯\\制} & \makecell[c]{市\\新\\优} & \makecell[c]{区\\新\\优} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
 
-\multirow{3}{*}{\makecell[c]{提取\\信息}} & C3AO211 & \makecell[l]{能从阅读材料中提取信息} & 
+\begin{table}[H]
+\caption{`r tab_name`} \label{tab: `r tab_name`} 
+\itshape
+\mytable
+\begin{tabularx}{22cm}{|c|c|p{8cm}|c|c|c|c|c|c|c|c|c|c|c|c|}
+
+\cline{1-15}
+
+\makecell[c]{内容领域} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{随迁\\子女\\民办} & \makecell[c]{普通\\小学} & \makecell[c]{一\\贯\\制} & \makecell[c]{市\\新\\优} & \makecell[c]{区\\新\\优} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ 
+\cline{1-15}
+
+\multirow{3}{*}{\makecell[c]{提取信息}} & C3AO211 & 能从阅读材料中提取信息 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO211_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -816,7 +824,7 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
 
- & C3AO271 & \makecell[l]{能从阅读材料中提取信息} & 
+ & C3AO271 & 能从阅读材料中提取信息 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO271_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -831,7 +839,7 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
  
-  & C3AO281 & \makecell[l]{能从阅读材料中提取信息} & 
+  & C3AO281 & 能从阅读材料中提取信息 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO281_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -846,9 +854,9 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ 
   
-\hline
+\cline{1-15}
  
- \multirow{3}{*}{\makecell[c]{形成\\解释}} & C3AO221 & \makecell[l]{能认清学过的常用字的字形} & 
+ \multirow{3}{*}{\makecell[c]{形成解释}} & C3AO221 & 能认清学过的常用字的字形 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO221_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -863,7 +871,7 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
 
- & C3AS241 & \makecell[l]{能认清学过的常用字的字形} & 
+ & C3AS241 & 能认清学过的常用字的字形 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AS241_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -878,7 +886,7 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
  
-  & C3AS261 & \makecell[l]{能认清学过的常用字的字形} & 
+  & C3AS261 & 能认清学过的常用字的字形 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AS261_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -892,8 +900,8 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 `r row[row[,var.key]=="女",var.param]` & 
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\
-\hline
- \multirow{2}{*}{\makecell[c]{整体\\感知}} & C3AO231 & \makecell[l]{能形成对文本内容的整体感知，\\对阅读材料的内容进行概括} &
+\cline{1-15}
+ \multirow{2}{*}{\makecell[c]{整体感知}} & C3AO231 & 能形成对文本内容的整体感知，对阅读材料的内容进行概括 &
 `r row <- point.rate[point.rate[,var.variable]=="C3AO231_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -908,7 +916,7 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
 
- & C3AO291 & \makecell[l]{能形成对文本内容的整体感知，\\对阅读材料的内容进行概括} & 
+ & C3AO291 & 能形成对文本内容的整体感知，对阅读材料的内容进行概括 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO291_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -923,8 +931,8 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
  
-\hline
-\multirow{2}{*}{\makecell[c]{解决\\问题}} & C3AO251 & \makecell[l]{能根据一定的标准对文本的内容、\\观点及语言运用作出评价} &
+\cline{1-15}
+\multirow{2}{*}{\makecell[c]{解决问题}} & C3AO251 & 能根据一定的标准对文本的内容、观点及语言运用作出评价 &
 `r row <- point.rate[point.rate[,var.variable]=="C3AO251_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -939,7 +947,7 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
 
- & C3AO301 & \makecell[l]{能利用文本信息完成任务} & 
+ & C3AO301 & 能利用文本信息完成任务 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO301_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -953,14 +961,15 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 `r row[row[,var.key]=="女",var.param]` & 
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ 
- 
-\hline
-\end{longtable}
-\end{itshape}
+\cline{1-15}
+\end{tabularx}
+
+\end{table}
+
 
 
 “阅读”部分主要考察学生“提取信息”、“形成解释”、“整体感知”和“解决问题”四个方面的能力。
-下面将结合“阅读”部分的典型题目来做具体分析。
+下面将结合“阅读”部分的典型题目来做具体分析。
 
 \end{landscape}
 
@@ -1071,6 +1080,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 ```{r answer.C3AS261.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "answer.segment.bar.cn"
 report$plot$answer.segment.bar.cn$data$keep <- list(list(var = "变量", value=list(c("C3AS261"))))
+report$plot$answer.segment.bar.cn$ggplot$label$xlab <- "分值"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -1097,6 +1107,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 ```{r answer.C3AO291.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "answer.segment.bar.cn"
 report$plot$answer.segment.bar.cn$data$keep <- list(list(var = "变量", value=list(c("C3AO291"))))
+report$plot$answer.segment.bar.cn$ggplot$label$xlab <- "选项"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -1127,6 +1138,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 ```{r answer.C3AO301.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "answer.segment.bar.cn"
 report$plot$answer.segment.bar.cn$data$keep <- list(list(var = "变量", value=list(c("C3AO301"))))
+report$plot$answer.segment.bar.cn$ggplot$label$xlab <- "选项"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -1167,14 +1179,20 @@ param.entry <- "writing.answer.table.cn"
 answer  <- dataframe.table( report = report, param = report$param[[param.entry]])
 ```
 `r tab_name <- "学生在语文学科“习作”上的平均得分率（％）" `
-\begin{itshape}
-\small
-\begin{longtable}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
-\caption{`r tab_name`} \label{tab: `r tab_name`} \\
-\hline
-\makecell[c]{内容\\领域} & 题目编码 & 具体描述 & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{随迁\\子女\\民办} & \makecell[c]{小\\学} & \makecell[c]{一\\贯\\制} & \makecell[c]{市\\新\\优} & \makecell[c]{区\\新\\优} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
 
-\makecell[c]{选择\\材料} & C3AS311 & \makecell[l]{能够切合题意、中心突出、\\感情真实、内容具体} & 
+\begin{table}[H]
+\caption{`r tab_name`} \label{tab: `r tab_name`} 
+\itshape
+\mytable
+
+\begin{tabularx}{1.5\textwidth}{|c|c|X|c|c|c|c|c|c|c|c|c|c|c|c|}
+
+\hline
+
+\makecell[c]{内容领域} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{随迁\\子女\\民办} & \makecell[c]{普通\\小学} & \makecell[c]{一\\贯\\制} & \makecell[c]{市\\新\\优} & \makecell[c]{区\\新\\优} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ 
+\hline
+
+\makecell[c]{选择材料} & C3AS311 & \makecell[l]{能够切合题意、中心突出、感情真实、内容具体 } & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AS311_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -1190,7 +1208,7 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 `r row[row[,var.key]=="非沪籍",var.param]` \\  
 \hline
  
- \makecell[c]{组织\\材料} & C3AS312 & \makecell[l]{能够语言通顺、简洁得体} & 
+ \makecell[c]{组织材料} & C3AS312 & \makecell[l]{能够语言通顺、简洁得体} & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AS312_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -1205,7 +1223,7 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ 
 \hline
- \makecell[c]{语言\\表达} & C3AS313 & \makecell[l]{能够结构合理、层次清晰、\\详略得体} & 
+ \makecell[c]{语言表达} & C3AS313 & \makecell[l]{能够结构合理、层次清晰、详略得体 } & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AS313_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -1220,7 +1238,7 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ 
 \hline
-\makecell[c]{书写\\及\\标点} & C3AS314 & \makecell[l]{能够书写清晰，标点符号\\使用正确，错别字较少} & 
+\makecell[c]{书写及标点} & C3AS314 & \makecell[l]{能够书写清晰，标点符号使用正确，错别字较少 } & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AS314_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -1236,8 +1254,8 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 `r row[row[,var.key]=="非沪籍",var.param]` \\ 
 
 \hline
-\end{longtable}
-\end{itshape}
+\end{tabularx}
+\end{table}
 
 
 “习作”部分着重考查学生“选择材料”、“组织材料”、“语言表达”和“书写及标点”四方面的能力。
@@ -1247,8 +1265,8 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 
 
 \begin{itshape}
-\footnotesize
-\begin{longtable}{|c|c|l|}
+\mytable
+\begin{longtable}{|c|c|p{10cm}|}
 \hline
 
 \multirow{5}{*}{\makecell[c]{选择材料\\写什么\\（6分）}} & 5-6分 & 能围绕给定的情境合理想象，内容具体。 \\ \cline{2-3}
@@ -1287,12 +1305,13 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 \begin{table}[H]
 \centering
 \itshape
-\footnotesize
-\begin{tabularx}{\textwidth}{|X|c|c|c|c|c|c|c|c|c|}
+\mytable
+\begin{tabularx}{\textwidth}{|c|c|c|c|c|c|c|c|c|c|}
 
 \hline
-\makecell[c]{水平分层} & \makecell[c]{公办} & \makecell[c]{普通民办} & \makecell[c]{随迁子女小学} & \makecell[c]{小学} & \makecell[c]{一贯制} & 男 & 女 & \makecell[c]{沪籍} & \makecell[c]{非沪籍} \\
+\makecell[c]{\mytablehead{水平分层}} & \makecell[c]{\mytablehead{公办}} & \makecell[c]{\mytablehead{普通民办}} & \makecell[c]{\mytablehead{随迁子女小学}} & \makecell[c]{\mytablehead{小学}} & \makecell[c]{\mytablehead{一贯制}} & \mytablehead{男} & \mytablehead{女} & \makecell[c]{\mytablehead{沪籍}} & \makecell[c]{\mytablehead{非沪籍}} \\
 \hline
+
 \makecell[c]{A} & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AS310_X" & point.rate[,var.key]=="A",]`
 `r row[row[,var.sample]=="公办",var.param]` & 
@@ -1335,16 +1354,16 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 `r row <- point.rate[point.rate[,var.variable]=="C3AS310_X" & point.rate[,var.key]=="B",]`
 从数据看，小学和一贯制学校在四个水平上的比率情况几乎没有差异。但公办学校B水平的比普通民办学校高出`r row[row[,var.sample]=="公办",var.param] - row[row[,var.sample]=="民办",var.param]`%，比随迁子女小学高出`r row[row[,var.sample]=="公办",var.param] - row[row[,var.sample]=="随迁子女民办",var.param]`%；女生B水平的比男生高出`r row[row[,var.sample]=="女",var.param] - row[row[,var.sample]=="男",var.param]`%；本市学生B水平的比非本市学生高出`r row[row[,var.sample]=="沪籍",var.param] - row[row[,var.sample]=="非沪籍",var.param]`%。反映出学校之间的差异较大，女生在作文水平上的优势明显。下面分别呈现学生在写作分项上的作答情况。
 
-C3AS311（维度1  满分6分)
+\questiontitle{C3AS311 (维度1  满分6分)}
 
 \begin{table}[H]
 \centering
 \itshape
-\footnotesize
+\mytable
 \begin{tabularx}{\textwidth}{|rX|}
 
 \hline
-\makecell[r]{\large 维度1:} & \makecell[l]{\large 选择材料（学什么）}  \\
+\makecell[r]{\mytablehead{维度1:}} & \makecell[l]{\mytablehead{选择材料（学什么）}}  \\
 \makecell[r]{5-6分：} & \makecell[l]{能围绕给定的情境展开想象，内容具体。}  \\
 \makecell[r]{3-4分：} & \makecell[l]{能围绕给定的情境合理想象，内容较具体。}  \\
 \makecell[r]{2分：} & \makecell[l]{能围绕给定的情境想象，但内容过于简单。}  \\
@@ -1357,6 +1376,7 @@ C3AS311（维度1  满分6分)
 ```{r answer.C3AS311.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "answer.segment.bar.cn"
 report$plot$answer.segment.bar.cn$data$keep <- list(list(var = "变量", value=list(c("C3AS311_S"))))
+report$plot$answer.segment.bar.cn$ggplot$label$xlab <- "分数段"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -1370,11 +1390,11 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \begin{table}[H]
 \centering
 \itshape
-\footnotesize
-\begin{tabularx}{\textwidth}{|X|c|c|c|c|c|c|c|c|c|}
+\mytable
+\begin{tabularx}{\textwidth}{|c|c|c|c|c|c|c|c|c|c|}
 
 \hline
-\makecell[c]{水平分层} & \makecell[c]{公办} & \makecell[c]{普通民办} & \makecell[c]{随迁子女小学} & \makecell[c]{小学} & \makecell[c]{一贯制} & 男 & 女 & \makecell[c]{沪籍} & \makecell[c]{非沪籍} \\
+\makecell[c]{\mytablehead{水平分层}} & \makecell[c]{\mytablehead{公办}} & \makecell[c]{\mytablehead{普通民办}} & \makecell[c]{\mytablehead{随迁子女小学}} & \makecell[c]{\mytablehead{小学}} & \makecell[c]{\mytablehead{一贯制}} & \mytablehead{男} & \mytablehead{女} & \makecell[c]{\mytablehead{沪籍}} & \makecell[c]{\mytablehead{非沪籍}} \\
 \hline
 \makecell[c]{A} & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AS311_X" & point.rate[,var.key]=="A",]`
@@ -1413,16 +1433,16 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 `r row[row[,var.sample]=="非沪籍",var.param]` \\
 \hline
 \end{tabularx}
-\end{table}`r row <- point.rate[point.rate[,var.variable]=="C3AS311_X" & point.rate[,var.key]=="B",]`从数据看，公办学校B水平的比普通民办学校高出`r row[row[,var.sample]=="公办",var.param] - row[row[,var.sample]=="民办",var.param]`%，比随迁子女小学高出`r row[row[,var.sample]=="公办",var.param] - row[row[,var.sample]=="随迁子女民办",var.param]`%；女生B水平的比男生高出`r row[row[,var.sample]=="女",var.param] - row[row[,var.sample]=="男",var.param]`%；本市学生B水平的比非本市学生高出`r row[row[,var.sample]=="沪籍",var.param] - row[row[,var.sample]=="非沪籍",var.param]`%。在“材料的选择”这一分项上，公办学校的学生能力明显优于普通民办和随迁子女小学；女生明显优于男生。C水平的学生比率总计近`r dimention.param[dimention.param[,var.variable]=="writing_level"& dimention.param[,var.key]=="C" & dimention.param[,var.sample]=="总体",var.param]`%，这个比率超出预期较多，暴露出作文教学质量不尽如人意。C3AS312（维度2  满分6分）
+\end{table}`r row <- point.rate[point.rate[,var.variable]=="C3AS311_X" & point.rate[,var.key]=="B",]`从数据看，公办学校B水平的比普通民办学校高出`r row[row[,var.sample]=="公办",var.param] - row[row[,var.sample]=="民办",var.param]`%，比随迁子女小学高出`r row[row[,var.sample]=="公办",var.param] - row[row[,var.sample]=="随迁子女民办",var.param]`%；女生B水平的比男生高出`r row[row[,var.sample]=="女",var.param] - row[row[,var.sample]=="男",var.param]`%；本市学生B水平的比非本市学生高出`r row[row[,var.sample]=="沪籍",var.param] - row[row[,var.sample]=="非沪籍",var.param]`%。在“材料的选择”这一分项上，公办学校的学生能力明显优于普通民办和随迁子女小学；女生明显优于男生。C水平的学生比率总计近`r dimention.param[dimention.param[,var.variable]=="writing_level"& dimention.param[,var.key]=="C" & dimention.param[,var.sample]=="总体",var.param]`%，这个比率超出预期较多，暴露出作文教学质量不尽如人意。\questiontitle{C3AS312 (维度2  满分6分)}
 
 \begin{table}[H]
 \centering
 \itshape
-\footnotesize
+\mytable
 \begin{tabularx}{\textwidth}{|rX|}
 
 \hline
-\makecell[r]{\large 维度2:} & \makecell[l]{\large 组织材料(怎么写)}  \\
+\makecell[r]{\mytablehead{维度2:}} & \makecell[l]{\mytablehead{组织材料(怎么写)}}  \\
 \makecell[r]{5-6分：} & \makecell[l]{叙述完整，过程清楚，小节划分正确。}  \\
 \makecell[r]{3-4分：} & \makecell[l]{叙述较完整，过程较清楚，有小节的划分。}  \\
 \makecell[r]{2分：} & \makecell[l]{叙述不完整，过程不清楚，不分小节。}  \\
@@ -1435,6 +1455,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 ```{r answer.C3AS312.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "answer.segment.bar.cn"
 report$plot$answer.segment.bar.cn$data$keep <- list(list(var = "变量", value=list(c("C3AS312_S"))))
+report$plot$answer.segment.bar.cn$ggplot$label$xlab <- "分数段"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -1447,16 +1468,16 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 本市学生在“组织材料”上的平均得分率为`r point.rate[point.rate[,var.variable]=="C3AS312_X" & point.rate[,var.key]=="总体" & point.rate[,var.sample]=="总体",var.param]`%。从上图可以看出，仅有`r answer[answer[,var.variable]=="C3AS312_S" & answer[,var.key]=="5.5-6",var.param]`%的学生得5.5-6分，表明极少部分学生能够在叙述时做到过程很清楚；`r answer[answer[,var.variable]=="C3AS312_S" & answer[,var.key]=="3.5-5",var.param]`%的学生得3.5-5分，表明大多数学生能够做到叙述较完整，过程较清楚；`r answer[answer[,var.variable]=="C3AS312_S" & answer[,var.key]=="1.5-3",var.param]`%的学生得1.5-3分，表明还有一部分学生叙述不完整，过程不清楚，不能分小节；还有`r answer[answer[,var.variable]=="C3AS312_S" & answer[,var.key]=="0-1",var.param]`%的学生得0-1分，表明这部分学生只能写一两句话，不能形成文段，或逻辑混乱。
 
 
-C3AS313（维度3  满分15分）
+\questiontitle{C3AS313 (维度3  满分15分)}
 
 \begin{table}[H]
 \centering
 \itshape
-\footnotesize
+\mytable
 \begin{tabularx}{\textwidth}{|rX|}
 
 \hline
-\makecell[r]{\large 维度3:} & \makecell[l]{\large 语言表达(写得怎么样)}  \\
+\makecell[r]{\mytablehead{维度3:}} & \makecell[l]{\mytablehead{语言表达(写得怎么样)}}  \\
 \makecell[r]{14-15分：} & \makecell[l]{语句通顺，语意连贯，用词准确；标点使用正确，基本上没有错别字。\\（个别标点出错，不影响表达。有2、3个错别字。）}  \\
 \makecell[r]{11-13分：} & \makecell[l]{语言通顺，语意比较连贯，用词基本恰当；标点使用有一些错误，有一些错别字。\\（有4—6个错别字）}  \\
 \makecell[r]{8-10分：} & \makecell[l]{语言基本通顺，有个别病句或词语运用不恰当之处，不影响意思的理解。\\ 漏用、用错的标点较多，错别字较多（10个以上）。}  \\
@@ -1469,6 +1490,7 @@ C3AS313（维度3  满分15分）
 ```{r answer.C3AS313.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "answer.segment.bar.cn"
 report$plot$answer.segment.bar.cn$data$keep <- list(list(var = "变量", value=list(c("C3AS313_S"))))
+report$plot$answer.segment.bar.cn$ggplot$label$xlab <- "分数段"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -1480,14 +1502,14 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 
 本市学生在“语言表达”上的平均得分率为`r point.rate[point.rate[,var.variable]=="C3AS313_X" & point.rate[,var.key]=="总体" & point.rate[,var.sample]=="总体",var.param]`%。从上图可以看出，有`r answer[answer[,var.variable]=="C3AS313_S" & answer[,var.key]=="12.5-15",var.param]`%的学生得12.5-15分，表明近30%的学生能够做到语意连贯，用词准确；`r answer[answer[,var.variable]=="C3AS313_S" & answer[,var.key]=="9.5-12",var.param]`%的学生得9.5-12分，表明有超过60%的学生能够做到语意基本连贯，用词基本恰当；`r answer[answer[,var.variable]=="C3AS313_S" & answer[,var.key]=="5.5-9",var.param]`%的学生得5.5-9分，表明有近6%的学生叙述时有一些病句或词语运用有不恰当之处，但不影响理解；还有`r answer[answer[,var.variable]=="C3AS313_S" & answer[,var.key]=="0-5",var.param]`%的学生得0-5分，表明这部分学生语言表达混乱，词不达意，不能表达自己的意思。
 
-C3AS314（维度4  满分3分）\begin{table}[H]
+\questiontitle{C3AS314 (维度4  满分3分)}\begin{table}[H]
 \centering
 \itshape
-\footnotesize
+\mytable
 \begin{tabularx}{\textwidth}{|rX|}
 
 \hline
-\makecell[r]{\large 维度4:} & \makecell[l]{\large 书写}  \\
+\makecell[r]{\mytablehead{维度4:}} & \makecell[l]{\mytablehead{书写}}  \\
 \makecell[r]{3分：} & \makecell[l]{字迹端正，书面整洁。}  \\
 \makecell[r]{2分：} & \makecell[l]{字迹比较端正，书面比较整洁。}  \\
 \makecell[r]{1分：} & \makecell[l]{字迹潦草，尚能看清。}  \\
@@ -1499,6 +1521,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 ```{r answer.C3AS314.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "answer.segment.bar.cn"
 report$plot$answer.segment.bar.cn$data$keep <- list(list(var = "变量", value=list(c("C3AS314_S"))))
+report$plot$answer.segment.bar.cn$ggplot$label$xlab <- "分数段"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -1507,7 +1530,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \label{fig:`r fig_name`}
 \end{figure}
 
-本市学生在“书写”上的平均得分率为`r point.rate[point.rate[,var.variable]=="C3AS314_X" & point.rate[,var.key]=="总体" & point.rate[,var.sample]=="总体",var.param]`%。从上图可以看出，有`r answer[answer[,var.variable]=="C3AS314_S" & answer[,var.key]=="2.5-3",var.param]`%的学生得2.5-3分，表明近90%的学生书写做到字迹端正，书面整洁；`r answer[answer[,var.variable]=="C3AS314_S" & answer[,var.key]=="1.5-2",var.param]`%的学生得1.5-2分，表明近12%的学生能做到字迹比较端正，书面比较整洁；`r answer[answer[,var.variable]=="C3AS314_S" & answer[,var.key]=="0.5-1",var.param]`%的学生得0.5-1分，表明极少部分学生的字迹潦草，看不清；`r answer[answer[,var.variable]=="C3AS314_S" & answer[,var.key]=="0",var.param]`%的学生得0分书写非常乱，看不清。数据表明学生的书写的态度较大的进步。“习作”部分，根据本次测试的能力要求将学生的作文划分为4个水平：A水平：能够围绕题目给出的情境展开想象，想象合理，内容具体；叙述完整，过程清楚；语句通顺，语意连贯，用词准确。B水平：能够围绕题目给出的情境展开想象，内容较具体；叙述较完整，过程较清楚；语言通顺，语意比较连贯，用词基本恰当。C水平：能够围绕题目给出的情境展开想象，但想象不够合理；结构不完整，内容过于简单；语言比较通顺，有个别病句或词语运用不恰当之处，但不影响意思的理解。D水平：不能够围绕题目给出的情景展开想象或跑题；叙述不完整，过程不清楚；语言表达比较混乱，词不达意。下面将结合不同水平的四篇作文样例来做具体分析。A水平：能够围绕题目给出的情境展开想象，想象合理，内容具体；叙述完整，过程清楚；语句通顺，语意连贯，用词准确。学生样例：
+本市学生在“书写”上的平均得分率为`r point.rate[point.rate[,var.variable]=="C3AS314_X" & point.rate[,var.key]=="总体" & point.rate[,var.sample]=="总体",var.param]`%。从上图可以看出，有`r answer[answer[,var.variable]=="C3AS314_S" & answer[,var.key]=="2.5-3",var.param]`%的学生得2.5-3分，表明近90%的学生书写做到字迹端正，书面整洁；`r answer[answer[,var.variable]=="C3AS314_S" & answer[,var.key]=="1.5-2",var.param]`%的学生得1.5-2分，表明近12%的学生能做到字迹比较端正，书面比较整洁；`r answer[answer[,var.variable]=="C3AS314_S" & answer[,var.key]=="0.5-1",var.param]`%的学生得0.5-1分，表明极少部分学生的字迹潦草，看不清；`r answer[answer[,var.variable]=="C3AS314_S" & answer[,var.key]=="0",var.param]`%的学生得0分书写非常乱，看不清。数据表明学生的书写的态度较大的进步。“习作”部分，根据本次测试的能力要求将学生的作文划分为4个水平：A水平：能够围绕题目给出的情境展开想象，想象合理，内容具体；叙述完整，过程清楚；语句通顺，语意连贯，用词准确。B（中上）水平：能够围绕题目给出的情境展开想象，内容较具体；叙述较完整，过程较清楚；语言通顺，语意比较连贯，用词基本恰当。B（中下）水平：能够围绕题目给出的情境展开想象，但想象不够合理；结构不完整，内容过于简单；语言比较通顺，有个别病句或词语运用不恰当之处，但不影响意思的理解。C水平：不能够围绕题目给出的情景展开想象或跑题；叙述不完整，过程不清楚；语言表达比较混乱，词不达意。下面将结合不同水平的四篇作文样例来做具体分析。A水平：能够围绕题目给出的情境展开想象，想象合理，内容具体；叙述完整，过程清楚；语句通顺，语意连贯，用词准确。学生样例：
 `r fig_file <- "cn_C3AS31_A_01.png" `
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{`r fig_file`}
@@ -1521,7 +1544,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \includegraphics[width=\textwidth]{`r fig_file`}
 \end{figure}
 
-点评：小作者围绕给定的情境展开了合理的想象，为读者呈现了一个情节完整的小故事。文章的内容具体，结构清楚，小节的划分合理，节与节之间意思承接非常自然，把小鸟的乐于助人的特点充分展现在读者眼前。小作者的表达能力很强，语言流畅，语意连贯，用词准确，基本功非常扎实。这篇习作很好地达到了课程标准对三年级学生习作的要求B水平：能够围绕题目给出的情境展开想象，内容较具体；叙述较完整，过程较清楚；语言通顺，语意比较连贯，用词基本恰当。学生样例：
+点评：小作者围绕给定的情境展开了合理的想象，为读者呈现了一个情节完整的小故事。文章的内容具体，结构清楚，小节的划分合理，节与节之间意思承接非常自然，把小鸟的乐于助人的特点充分展现在读者眼前。小作者的表达能力很强，语言流畅，语意连贯，用词准确，基本功非常扎实。这篇习作很好地达到了课程标准对三年级学生习作的要求B（中上）水平：能够围绕题目给出的情境展开想象，内容较具体；叙述较完整，过程较清楚；语言通顺，语意比较连贯，用词基本恰当。学生样例：
 
 `r fig_file <- "cn_C3AS31_B_01.png" `
 \begin{figure}[H]
@@ -1535,7 +1558,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 
 点评：
 
-这篇作文讲了刚学会飞的小鸟旅行途中因体力不支掉到黄鹂鸟家中，黄鹂鸟和他的孩子一起把小鸟送回去的故事。小作者所写的故事虽然情节比较简单，但能根据题目所给的情境展开想象，写了一个结构完整、情节比较合理、过程比较清晰的故事。本文的语言较通顺，意思较清晰；文章中标点使用比较正确，书写也较规范，但是作者给文章所取的题目不太合适，文章写的是那只刚学会飞的小鸟旅行的事，并不是黄鹂鸟妈妈的儿子“星月”的事。总体来看，这篇作文达到了课程标准对三年级学生的习作要求。C水平：能够围绕题目给出的情境展开想象，但想象不够合理；结构不完整，内容过于简单；语言比较通顺，有个别病句或词语运用不恰当之处，但不影响意思的理解。学生样例：
+这篇作文讲了刚学会飞的小鸟旅行途中因体力不支掉到黄鹂鸟家中，黄鹂鸟和他的孩子一起把小鸟送回去的故事。小作者所写的故事虽然情节比较简单，但能根据题目所给的情境展开想象，写了一个结构完整、情节比较合理、过程比较清晰的故事。本文的语言较通顺，意思较清晰；文章中标点使用比较正确，书写也较规范，但是作者给文章所取的题目不太合适，文章写的是那只刚学会飞的小鸟旅行的事，并不是黄鹂鸟妈妈的儿子“星月”的事。总体来看，这篇作文达到了课程标准对三年级学生的习作要求。B（中下）水平：能够围绕题目给出的情境展开想象，但想象不够合理；结构不完整，内容过于简单；语言比较通顺，有个别病句或词语运用不恰当之处，但不影响意思的理解。学生样例：
 
 `r fig_file <- "cn_C3AS31_C_01.png" `
 \begin{figure}[H]
@@ -1543,7 +1566,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \end{figure}
 
 
-点评：小作者写的故事与题目给出的情境基本相符，但是叙述的内容过于简单，缺少必要的展开，内容之间有跳跃，有些想象不够合理。从语言的表达看，有一些病句，但还不影响意思理解，文中句子意思基本清楚。小作者基本掌握了常用标点符号的用法。总体来看，这篇作文基本达到课程标准对三年级学生的习作要求。D水平：不能够围绕题目给出的情景展开想象或跑题；叙述不完整，过程不清楚；语言表达比较混乱，词不达意。学生样例：
+点评：小作者写的故事与题目给出的情境基本相符，但是叙述的内容过于简单，缺少必要的展开，内容之间有跳跃，有些想象不够合理。从语言的表达看，有一些病句，但还不影响意思理解，文中句子意思基本清楚。小作者基本掌握了常用标点符号的用法。总体来看，这篇作文基本达到课程标准对三年级学生的习作要求。C水平：不能够围绕题目给出的情景展开想象或跑题；叙述不完整，过程不清楚；语言表达比较混乱，词不达意。学生样例：
 
 `r fig_file <- "cn_C3AS31_D_01.png" `
 \begin{figure}[H]
