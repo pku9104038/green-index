@@ -815,8 +815,24 @@ plot.data <- function(
     data.out <- merge(x=data.left,y=data.right,by=plot$data$join$linkon,all.x=TRUE)
   }
   
+  # while alias is label
+  if(!is.null(plot$data$alias)){
+    print("label alias")
+    data.left <- data.out
+    #g.var$scope <-  "统计范围"
+    #g.var$alias <-  "别名"
+    #print(report$aliasdata)
+    data.right <- report$aliasdata[,c(g.var$scope,g.var$alias)]
+    scopes <- data.right[,g.var$scope]
+    for(i in 1:nrow(data.left)){
+      if(is.element(data.left[i,plot$data$alias$var],unlist(scopes))){
+        data.out[i,plot$data$alias$arg] <- 
+          data.right[data.right[,g.var$scope]==data.left[i,plot$data$alias$var],g.var$alias]
+      }
+    }
+  }
   
-    
+  
   aes <- plot$data$aes
   for(i in  1:length(aes)){
     #print(data.out)
@@ -829,6 +845,7 @@ plot.data <- function(
     #print(data.out)
   }
   
+  #  while alias is x 
   if(!is.null(report$aliasFlag)){
     print("aliasFlag")
     data.left <- data.out
@@ -841,10 +858,7 @@ plot.data <- function(
       if(is.element(data.left[i,"x"],unlist(scopes))){
         data.out[i,"x"] <- data.right[data.right[,g.var$scope]==data.left[i,"x"],g.var$alias]
       }
-      
     }
-      
-    
   }
   
   if(!is.null(plot$data$aliaskeeper)){
@@ -881,11 +895,11 @@ plot.data <- function(
     print("data sort")
     for(i in 1:length(plot$data$sort)){
       sort <- plot$data$sort[[i]]
-      #print(data.out)
+      print(data.out)
       data.sort <- data.out[data.out[,sort$variable]==sort$option,]
-      #print(data.sort)
+      print(data.sort)
       data.sorted <- arrange(data.sort,desc(data.sort[,sort$value]))
-      #print(data.sorted)
+      print(data.sorted)
       sort$list <-list()
       n <- nrow(data.sorted)
       for(i in 1:n){
@@ -931,7 +945,7 @@ plot.bar_stacking  <- function(
   figure <- ggplot(data=plot$data$set, aes(x=x, y=y , fill = fill))
   figure <- figure + theme_economist() + scale_fill_economist()
   figure <- figure + geom_bar( stat="identity", width = plot$ggplot$bar$width,position = "stack") 
-  figure <- figure + geom_text(aes(label = label), colour="red", position = position_stack(vjust = 0.5)) 
+  figure <- figure + geom_text(aes(label = label), colour= plot$ggplot$text$colour , position = position_stack(vjust = 0.5)) 
   if(!is.null(plot$ggplot$legend)){
     figure <- figure + guides(fill=guide_legend(keywidth = 0.6, keyheight = 0.6))
     figure <- figure +  theme(legend.position = plot$ggplot$legend$position, 
@@ -973,7 +987,7 @@ plot.bar_stacking.raw  <- function(
   figure <- ggplot(data=plot$data$set, aes(x=x, y=y , fill = fill)) + scale_fill_economist()
   #figure <- figure + theme_economist() + scale_fill_economist()
   figure <- figure + geom_bar( stat="identity", width = plot$ggplot$bar$width,position = "stack") 
-  figure <- figure + geom_text(aes(label = label), colour="red", position = position_stack(vjust = 0.5)) 
+  figure <- figure + geom_text(aes(label = label), colour=plot$ggplot$text$colour, position = position_stack(vjust = 0.5)) 
   figure <- figure + guides(fill=FALSE) 
   figure <- figure + coord_flip()
    
@@ -1013,12 +1027,13 @@ plot.bar_dodging  <- function(
   figure <- figure + geom_bar( stat="identity", width = plot$ggplot$bar$width,position = plot$ggplot$position) 
   if(!is.null(plot$ggplot$text)){
     if(!is.null(plot$ggplot$text$vjust)){
-      figure <- figure + geom_text(aes(label = label),colour="red", 
+      figure <- figure + geom_text(aes(label = label),colour=plot$ggplot$text$colour, 
                                    position = position_stack(vjust = plot$ggplot$text$vjust)) 
     }
     else if(!is.null(plot$ggplot$text$hjust)){
-      figure <- figure + geom_text(aes(label = label),colour="red", 
-                                   position = position_dodge(width = plot$ggplot$text$hjust)) 
+      figure <- figure + geom_text(aes(label = label, y =  y+2 ), 
+                                   position = position_dodge(plot$ggplot$bar$width),
+                                   vjust  = 0.5, hjust = 0.5, colour=plot$ggplot$text$colour) 
     }
     
     
@@ -1131,7 +1146,18 @@ plot.point <- function(
                                 aes(alpha = 0.8, fill = factor(fill))) + 
     scale_fill_manual(values=c("cyan4", "red"))
   #figure <- figure + coord_cartesian(xlim=c(0, 100))
-  figure <- figure + geom_text(aes(label=label,alpha = 0.8),hjust=-0.1, vjust=0.5)
+  if(!is.null(plot$ggplot$check_overlap)){
+    if(plot$ggplot$check_overlap){
+      figure <- figure + geom_text(aes(label=label,alpha = 0.8),hjust=-0.1, vjust=0.5, check_overlap = TRUE)
+    }
+    else{
+      figure <- figure + geom_text(aes(label=label,alpha = 0.8),hjust=-0.1, vjust=0.5)
+    }
+  }
+  else{
+    figure <- figure + geom_text(aes(label=label,alpha = 0.8),hjust=-0.1, vjust=0.5)
+  }
+  
   #figure <- figure + geom_text(aes(label = label), position = position_stack(vjust = 0.5)) 
   #figure <- figure + ggtitle(plot$fig.name) 
   figure <- figure + xlab(plot$ggplot$label$xlab) + ylab(plot$ggplot$label$ylab) 
@@ -1207,6 +1233,7 @@ plot.figure  <- function(
   fig_name = NULL
 ){
   plot <-  plot.in
+  plot$ggplot$text$colour  <-  "gold2"
   if(is.null(plot$fig.limit)){
     
     plot$output <-  report$output[[1]]
@@ -1275,8 +1302,10 @@ plot.multi.figure  <- function(
   plot.in,
   fig_name = NULL
 ){
-  plot <-  plot.in
   
+   
+  plot <-  plot.in
+  plot$ggplot$text$colour  <-  "gold2"
   plot$data$set.multi.fig <- plot.data(report,plot)
   
   items  <- levels(factor(plot$data$set.multi.fig[,"x"]))

@@ -146,6 +146,9 @@ report.render <- function(
     for(j in 1:length(report$output)){
       output <-  report$output[[j]]
       report$file <- paste0(report$title,"_",report$datetime,output$ext)
+      if(report$tier == g.tier$school){
+        report$file <- paste0(report$county,"_",report$file)
+      }
       zipfile <- paste0(report$title,"_",report$datetime,".zip")
       sqlfile <- paste0(report$title,"_",report$datetime,".sql")
       csvfile <- paste0(report$title,"_",report$datetime,".csv")
@@ -196,7 +199,7 @@ report.render <- function(
         print(command)
         system(command = command)
       }
-      if(report$tier == g.tier$province && report$dumpFlag){
+      if(report$cleanFlag){
         # remove plot and dump files
         command <- paste(report$command$remove$command, 
                          report$command$remove$files)
@@ -207,6 +210,28 @@ report.render <- function(
       
       
     }
+  }
+
+  if(!report$skip & report$tier != g.tier$province){
+    if(report$tier != g.tier$county){
+      reporttitle <- paste0(report$year,report$project,report$subject,report$report,"_区级")
+      zipfile <- paste0(reporttitle,"_",report.datetime(),".zip")
+      command <- paste(report$command$zipcounty$command, 
+                       paste0(output_dir,"/",zipfile),
+                       report$command$zipcounty$from)
+      print(command)
+      system(command = command)
+    }
+    else if(report$tier != g.tier$school){
+      reporttitle <- paste0(report$year,report$project,report$subject,report$report,"_校级")
+      zipfile <- paste0(reporttitle,"_",report.datetime(),".zip")
+      command <- paste(report$command$zipschool$command, 
+                       paste0(output_dir,"/",zipfile),
+                       report$command$zipschool$from)
+      print(command)
+      system(command = command)
+    }
+    
   }
   
 

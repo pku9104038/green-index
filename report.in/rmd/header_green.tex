@@ -21,8 +21,9 @@
 
 %\CTEXsetup[beforeskip={0pt},afterskip={20pt}]{chapter}
 
-%\usepackage{mytitlesec}
-%\titleformat{\chapter}{\centering\Huge\bfseries}{第\,\thechapter\,章}{1em}{} %not for green report
+\usepackage{mytitlesec}
+\titleformat{\chapter}{\centering\Huge\bfseries}{~\,\thechapter\,~.}{1em}{} 
+
 
 \usepackage[fntef]{ctexcap}
 \CTEXsetup[number={\chinese{chapter}}]{chapter}
@@ -152,7 +153,7 @@
 }
 
 \newcommand{\questiontitle}[1]{
-    \begin{bf}\raggedright\fontsize{12pt}{18pt}\selectfont#1\end{bf}
+    \begin{bf}\raggedright\fontsize{14pt}{18pt}\selectfont#1\end{bf}
 }
 
 \newcommand{\myquot}{

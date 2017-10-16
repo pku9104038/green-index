@@ -110,7 +110,9 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name1`}
 \label{fig:`r fig_name1`}
-\end{figure}# 学生在各内容领域和能力维度上的表现情况## 全体学生在各内容领域和能力维度上的表现
+\end{figure}# 学生在各内容领域和能力维度上的表现情况## 全体学生在各内容领域和能力维度上的表现
+
+
 ### 全体学生在各内容领域上的表现`r fig_name <- "学生在数学学科各内容领域各水平上的人数比例" `
 `r fig_name1 <- "学生在数学学科各内容领域上的得分分布" `图\ref{fig:`r fig_name`}和图\ref{fig:`r fig_name1`}分别给出了上海市学生在数学学科各内容领域各水平上的人数比例和得分分布。
  ```{r level.bar.province.domain.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
@@ -462,8 +464,9 @@ answer <- answer.all[answer.all[,var.dimention]=="知识技能",]
 
 ```
 `r tab_name <- "学生在数学学科“知识技能”上的平均得分率（％）" `
+
 \begin{itshape}
-\footnotesize
+\mytable
 \begin{longtable}{|c|c|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|c|c|}
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\
 \hline
@@ -589,7 +592,7 @@ answer <- answer.all[answer.all[,var.dimention]=="知识技能",]
 
 \end{landscape}
 
-\textbf{典型题目1： M3AS131}
+\questiontitle{典型题目1： M3AS131}
 
 700平方分米 =_____平方米
 `r row <- point.rate[point.rate[,var.variable]=="M3AS131_X",]`
@@ -601,6 +604,7 @@ answer <- answer.all[answer.all[,var.dimention]=="知识技能",]
 ```{r answer.M3AS131.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "answer.segment.bar.ma"
 report$plot$answer.segment.bar.ma$data$keep <- list(list(var = "变量", value=list("M3AS131")))
+report$plot$answer.segment.bar.ma$ggplot$label$xlab <- "得分"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -620,7 +624,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
         \includegraphics[width=\textwidth]{ma_M3AS131_02}
     \end{subfigure}  
 \end{figure}
-\addtocounter{figure}{-1}建议：加强概念教学，让学生在动手操作过程中丰富常用长度单位和面积单位的量感，从而建立起正确的面积单位和长度单位的概念，厘清相应单位之间的进率。\textbf{典型题目2：M3AS201}用三角尺上的直角判断下面图形中的每个角，是直角的用直角符号在图中标出来．
+\addtocounter{figure}{-1}建议：加强概念教学，让学生在动手操作过程中丰富常用长度单位和面积单位的量感，从而建立起正确的面积单位和长度单位的概念，厘清相应单位之间的进率。\questiontitle{典型题目2：M3AS201}用三角尺上的直角判断下面图形中的每个角，是直角的用直角符号在图中标出来．
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.2\textwidth]{ma_M3AS201_01}
@@ -631,6 +635,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 ```{r answer.M3AS201.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "answer.segment.bar.ma"
 report$plot$answer.segment.bar.ma$data$keep <- list(list(var = "变量", value=list("M3AS201")))
+report$plot$answer.segment.bar.ma$ggplot$label$xlab <- "得分"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -664,8 +669,9 @@ point.rate <- point.rate.all[point.rate.all[,var.dimention]=="数学理解",]
 answer <- answer.all[answer.all[,var.dimention]=="数学理解",]
 ```
 `r tab_name <- "学生在数学学科“数学理解”上的平均得分率（％）" `
+
 \begin{itshape}
-\footnotesize
+\mytable
 \begin{longtable}{|c|c|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|c|c|}
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\
 \hline
@@ -806,7 +812,7 @@ answer <- answer.all[answer.all[,var.dimention]=="数学理解",]
 
 
 \end{landscape}
-\textbf{典型题目3：M3AO071}把52根小棒平均分成2份，每份有几根？小芳通过竖式计算得到了答案．竖式中箭头所指的数相当于下图中的（    ）．
+\questiontitle{典型题目3：M3AO071}把52根小棒平均分成2份，每份有几根？小芳通过竖式计算得到了答案．竖式中箭头所指的数相当于下图中的（    ）．
 \begin{figure}[H]
   \begin{center}
     \includegraphics[width=0.16\textwidth]{ma_M3AO071_01}
@@ -832,6 +838,7 @@ C. &
 ```{r answer.M3AO071.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "answer.segment.bar.ma"
 report$plot$answer.segment.bar.ma$data$keep <- list(list(var = "变量", value=list("M3AO071")))
+report$plot$answer.segment.bar.ma$ggplot$label$xlab <- "选项"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -840,7 +847,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \label{fig:`r fig_name`}
 \end{figure}本题考查的是能借助具体例子，解释除法竖式每一步的含义。全体学生得分率为`r row[row[,var.key]=="总体",var.param]`%，较14年的得分率上升了近14%，说明绝大部分学生对于算式中每一步蕴含的具体意义的理解比较清晰，能结合具体的情境对数学对象进行理解和解释；也说明我们的教师在教学中改变了只重视解答，而忽视对操作中的每一步所表达的含义的关注，在除法计算教学中能借助操作帮助学生理解算理，通过数形结合，帮助学生沟通横式与竖式之间的联系，故得分率有了显著的提高。
 
-\textbf{典型题目4: M3AO111}
+\questiontitle{典型题目4: M3AO111}
 当你面对西面时，你的右手边是（    ）面．
 \begin{table}[H]
 \begin{tabularx}{\textwidth}{XXXX}
@@ -856,6 +863,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 ```{r answer.M3AO1111.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "answer.segment.bar.ma"
 report$plot$answer.segment.bar.ma$data$keep <- list(list(var = "变量", value=list("M3AO111")))
+report$plot$answer.segment.bar.ma$ggplot$label$xlab <- "选项"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -870,7 +878,7 @@ answer <- answer.all[answer.all[,var.dimention]=="规则运用",]
 ```
 `r tab_name <- "学生在数学学科“规则运用”上的平均得分率（％）" `
 \begin{itshape}
-\footnotesize
+\mytable
 \begin{longtable}{|c|c|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|c|c|}
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\
 \hline
@@ -1023,6 +1031,7 @@ answer <- answer.all[answer.all[,var.dimention]=="规则运用",]
 ```{r answer.M3AO061.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "answer.segment.bar.ma"
 report$plot$answer.segment.bar.ma$data$keep <- list(list(var = "变量", value=list("M3AO061")))
+report$plot$answer.segment.bar.ma$ggplot$label$xlab <- "选项"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -1048,6 +1057,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 ```{r answer.M3AS181.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "answer.segment.bar.ma"
 report$plot$answer.segment.bar.ma$data$keep <- list(list(var = "变量", value=list("M3AS181")))
+report$plot$answer.segment.bar.ma$ggplot$label$xlab <- "得分"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -1069,11 +1079,12 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \addtocounter{figure}{-1}
 建议：
 
-在探索规律的过程中，必须引导学生通过动手操作活动，获得体验，进而寻求图形之间（数之间）的关系，培养学生数学推理能力。\begin{wrapfigure}{r}{0.3\textwidth}
+在探索规律的过程中，必须引导学生通过动手操作活动，获得体验，进而寻求图形之间（数之间）的关系，培养学生数学推理能力。\questiontitle{典型题目7：M3AO101}
+\begin{wrapfigure}{r}{0.3\textwidth}
   \begin{center}
     \includegraphics[width=0.25\textwidth]{ma_M3AO101_01}
   \end{center}
-\end{wrapfigure}\questiontitle{典型题目7：M3AO101}
+\end{wrapfigure}
 右图中的长方形长5厘米，宽3厘米，从这个长方形上剪下一个最大的正方形（可以在图中画一画），这个正方形的面积是（   ）平方厘米。
 
 \begin{table}[H]
@@ -1086,20 +1097,24 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
   							
 \end{tabularx}
 \end{table}
-`r row <- point.rate[point.rate[,var.variable]=="M3AO101_X",]`- 内容维度：图形与几何- 能力维度：规则运用- 正确答案：B- 本题满分：4分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%
+`r row <- point.rate[point.rate[,var.variable]=="M3AO101_X",]`
+- 内容维度：图形与几何- 能力维度：规则运用- 正确答案：B- 本题满分：4分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%
 
 
 `r fig_name <- "全体学生在题目M3AO101上的作答情况" `
 ```{r answer.M3AO101.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "answer.segment.bar.ma"
 report$plot$answer.segment.bar.ma$data$keep <- list(list(var = "变量", value=list("M3AO101")))
+report$plot$answer.segment.bar.ma$ggplot$label$xlab <- "选项"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
+
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
+
 本题考查学生能根据正方形的特征、面积含义的理解，运用正确的计算公式计算出正方形的面积。
 
 本题`r answer[answer[,var.variable]=="M3AO101" & answer[,var.key]=="B",var.param]`%的学生能正确解答，但有`r answer[answer[,var.variable]=="M3AO101" & answer[,var.key]=="C",var.param]`%的学生选择错误答案C。这些学生能掌握正方形的特征，能得出或画出最大的正方形，但在计算这个正方形面积时错误的采用周长的计算方法，从而选择错误的答案。一方面是学生对周长和面积的含义理解还不够清晰，同时对面积计算方法的由来还没有真正理解，因而选用错误的计算方法。
@@ -1117,7 +1132,7 @@ answer <- answer.all[answer.all[,var.dimention]=="问题解决",]
 ```
 `r tab_name <- "学生在数学学科“问题解决”上的平均得分率（％）" `
 \begin{itshape}
-\footnotesize
+\mytable
 
 \begin{longtable}{|c|c|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|c|c|}
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\
@@ -1230,6 +1245,7 @@ answer <- answer.all[answer.all[,var.dimention]=="问题解决",]
 ```{r answer. M3AO121.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "answer.segment.bar.ma"
 report$plot$answer.segment.bar.ma$data$keep <- list(list(var = "变量", value=list("M3AO121")))
+report$plot$answer.segment.bar.ma$ggplot$label$xlab <- "选项"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -1249,6 +1265,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 ```{r answer.M3AS211.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "answer.segment.bar.ma"
 report$plot$answer.segment.bar.ma$data$keep <- list(list(var = "变量", value=list("M3AS211")))
+report$plot$answer.segment.bar.ma$ggplot$label$xlab <- "得分"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -1314,6 +1331,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 ```{r answer.M3AS231.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "answer.segment.bar.ma"
 report$plot$answer.segment.bar.ma$data$keep <- list(list(var = "变量", value=list("M3AS231")))
+report$plot$answer.segment.bar.ma$ggplot$label$xlab <- "得分"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -1364,6 +1382,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 ```{r answer. M3AS232.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "answer.segment.bar.ma"
 report$plot$answer.segment.bar.ma$data$keep <- list(list(var = "变量", value=list("M3AS232")))
+report$plot$answer.segment.bar.ma$ggplot$label$xlab <- "得分"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -1407,6 +1426,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 ```{r answer.M3AS223.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "answer.segment.bar.ma"
 report$plot$answer.segment.bar.ma$data$keep <- list(list(var = "变量", value=list("M3AS223")))
+report$plot$answer.segment.bar.ma$ggplot$label$xlab <- "得分"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]

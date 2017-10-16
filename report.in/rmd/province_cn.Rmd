@@ -1080,7 +1080,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 ```{r answer.C3AS261.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "answer.segment.bar.cn"
 report$plot$answer.segment.bar.cn$data$keep <- list(list(var = "变量", value=list(c("C3AS261"))))
-report$plot$answer.segment.bar.cn$ggplot$label$xlab <- "分值"
+report$plot$answer.segment.bar.cn$ggplot$label$xlab <- "得分"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -1308,9 +1308,9 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 \mytable
 \begin{tabularx}{\textwidth}{|c|c|c|c|c|c|c|c|c|c|}
 
-\hline
+\cline{1-10}
 \makecell[c]{\mytablehead{水平分层}} & \makecell[c]{\mytablehead{公办}} & \makecell[c]{\mytablehead{普通民办}} & \makecell[c]{\mytablehead{随迁子女小学}} & \makecell[c]{\mytablehead{小学}} & \makecell[c]{\mytablehead{一贯制}} & \mytablehead{男} & \mytablehead{女} & \makecell[c]{\mytablehead{沪籍}} & \makecell[c]{\mytablehead{非沪籍}} \\
-\hline
+\cline{1-10}
 
 \makecell[c]{A} & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AS310_X" & point.rate[,var.key]=="A",]`
@@ -1323,7 +1323,7 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 `r row[row[,var.sample]=="女",var.param]` & 
 `r row[row[,var.sample]=="沪籍",var.param]` & 
 `r row[row[,var.sample]=="非沪籍",var.param]` \\
-\hline
+\cline{1-10}
 \makecell[c]{B} & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AS310_X" & point.rate[,var.key]=="B",]`
 `r row[row[,var.sample]=="公办",var.param]` & 
@@ -1335,7 +1335,7 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 `r row[row[,var.sample]=="女",var.param]` & 
 `r row[row[,var.sample]=="沪籍",var.param]` & 
 `r row[row[,var.sample]=="非沪籍",var.param]` \\
-\hline
+\cline{1-10}
 \makecell[c]{C} & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AS310_X" & point.rate[,var.key]=="C",]`
 `r row[row[,var.sample]=="公办",var.param]` & 
@@ -1347,7 +1347,7 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 `r row[row[,var.sample]=="女",var.param]` & 
 `r row[row[,var.sample]=="沪籍",var.param]` & 
 `r row[row[,var.sample]=="非沪籍",var.param]` \\
-\hline
+\cline{1-10}
 
 \end{tabularx}
 \end{table}
@@ -1393,9 +1393,9 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \mytable
 \begin{tabularx}{\textwidth}{|c|c|c|c|c|c|c|c|c|c|}
 
-\hline
+\cline{1-10}
 \makecell[c]{\mytablehead{水平分层}} & \makecell[c]{\mytablehead{公办}} & \makecell[c]{\mytablehead{普通民办}} & \makecell[c]{\mytablehead{随迁子女小学}} & \makecell[c]{\mytablehead{小学}} & \makecell[c]{\mytablehead{一贯制}} & \mytablehead{男} & \mytablehead{女} & \makecell[c]{\mytablehead{沪籍}} & \makecell[c]{\mytablehead{非沪籍}} \\
-\hline
+\cline{1-10}
 \makecell[c]{A} & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AS311_X" & point.rate[,var.key]=="A",]`
 `r row[row[,var.sample]=="公办",var.param]` & 
@@ -1407,7 +1407,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 `r row[row[,var.sample]=="女",var.param]` & 
 `r row[row[,var.sample]=="沪籍",var.param]` & 
 `r row[row[,var.sample]=="非沪籍",var.param]` \\
-\hline
+\cline{1-10}
 \makecell[c]{B} & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AS311_X" & point.rate[,var.key]=="B",]`
 `r row[row[,var.sample]=="公办",var.param]` & 
@@ -1419,7 +1419,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 `r row[row[,var.sample]=="女",var.param]` & 
 `r row[row[,var.sample]=="沪籍",var.param]` & 
 `r row[row[,var.sample]=="非沪籍",var.param]` \\
-\hline
+\cline{1-10}
 \makecell[c]{C} & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AS311_X" & point.rate[,var.key]=="C",]`
 `r row[row[,var.sample]=="公办",var.param]` & 
@@ -1431,7 +1431,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 `r row[row[,var.sample]=="女",var.param]` & 
 `r row[row[,var.sample]=="沪籍",var.param]` & 
 `r row[row[,var.sample]=="非沪籍",var.param]` \\
-\hline
+\cline{1-10}
 \end{tabularx}
 \end{table}`r row <- point.rate[point.rate[,var.variable]=="C3AS311_X" & point.rate[,var.key]=="B",]`从数据看，公办学校B水平的比普通民办学校高出`r row[row[,var.sample]=="公办",var.param] - row[row[,var.sample]=="民办",var.param]`%，比随迁子女小学高出`r row[row[,var.sample]=="公办",var.param] - row[row[,var.sample]=="随迁子女民办",var.param]`%；女生B水平的比男生高出`r row[row[,var.sample]=="女",var.param] - row[row[,var.sample]=="男",var.param]`%；本市学生B水平的比非本市学生高出`r row[row[,var.sample]=="沪籍",var.param] - row[row[,var.sample]=="非沪籍",var.param]`%。在“材料的选择”这一分项上，公办学校的学生能力明显优于普通民办和随迁子女小学；女生明显优于男生。C水平的学生比率总计近`r dimention.param[dimention.param[,var.variable]=="writing_level"& dimention.param[,var.key]=="C" & dimention.param[,var.sample]=="总体",var.param]`%，这个比率超出预期较多，暴露出作文教学质量不尽如人意。\questiontitle{C3AS312 (维度2  满分6分)}
 
