@@ -107,7 +107,14 @@ index.percent <- function(
         obs$variable  <- max(data.value[,g.var$variable])
         obs$weight <-  max(data.value[,g.var$weight])
         #print(data.value)
-        value <- value + data.value[1 ,g.var$value]
+        #
+        if(nrow(data.value)>1){
+          value <- mean(data.value[ ,g.var$value])
+        }
+        else{
+          value <- value + data.value[1 ,g.var$value]
+        }
+        
       }
       if(!is.null(stat$coef)){
         #print("系数")
@@ -169,7 +176,13 @@ index.passedrate <- function(
         obs$variable  <- max(data.value[,g.var$variable])
         obs$weight <-  max(data.value[,g.var$weight])
         #print(data.value)
-        value <- value + data.value[1 ,g.var$value]
+        if(nrow(data.value)>1){
+          value <- mean(data.value[ ,g.var$value])
+        }
+        else{
+          value <- value + data.value[1 ,g.var$value]
+        }
+        
       }
       #print(stat$coef)
       if(!is.null(stat$coef)){
@@ -238,7 +251,13 @@ index.cv <- function(
         obs$variable  <- data.value[1,g.var$variable]
         obs$weight <-  data.value[1,g.var$weight]
         #print(data.value)
-        value <- data.value[1 ,g.var$value]
+        if(nrow(data.value)>1){
+          value <- mean(data.value[ ,g.var$value])
+        }
+        else{
+          value <- value + data.value[1 ,g.var$value]
+        }
+        #value <- data.value[1 ,g.var$value]
       }
       
       if(!is.null(stat$coef)){

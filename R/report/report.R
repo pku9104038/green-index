@@ -88,8 +88,8 @@ report.render <- function(
   print(paste("Read Table:",report$table))
   report$data <- db.ReadTable(report$table)
   
-  
-  scopes <- levels(factor(report$data[report$data[,g.var$tier]==report$tier,g.var$scope]))
+  data.assesment  <- report$data[report$data[,g.var$assesment]==report$assesment,]
+  scopes <- levels(factor(data.assesment[data.assesment[,g.var$tier]==report$tier,g.var$scope]))
   n <- length(scopes)
   if(report$skip){
     n  <- 1

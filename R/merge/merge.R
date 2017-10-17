@@ -1,5 +1,6 @@
 #############################
 library(yaml)
+library(dplyr)
 
 conf <- yaml.load_file("yaml/conf.yaml")
 g.dir <- conf$dir
@@ -19,7 +20,7 @@ merge.subject <-  function(subject){
       table.right <- merge$table.right
       table.merge <-  merge$table.merge
       timestamp()
-      print(paste("Read Table:",table.left))
+      print(paste("Read Table:",table.left$tab.name))
       data.left <- db.ReadTable(table.left$tab.name)
       drop.left <- table.left$drop
       if(length(drop.left)>0){
@@ -38,7 +39,7 @@ merge.subject <-  function(subject){
       if(length(keep.left)>0){
         data.left <- data.left[,unlist(keep.left)]
       }
-      
+      print(paste("Read Table:",table.right$tab.name))
       data.right <- db.ReadTable(table.right$tab.name)
       drop.right <- table.right$drop
       if(length(drop.right)>0){
@@ -58,7 +59,44 @@ merge.subject <-  function(subject){
         data.right <- data.right[,unlist(keep.right)]
       }
       
-      data.merge <- merge(data.left, data.right, by = merge$merge.by, all.x = TRUE)
+      if(!is.null(merge$merge.type)){
+        if(merge$merge.type == "outer"){
+          print("merge outer")
+          data.merge <- merge(data.left, data.right, by = merge$merge.by, all = TRUE)
+        }
+        else{
+          print("merge.type")
+          data.merge <- merge(data.left, data.right, by = merge$merge.by, all.x = TRUE)
+        }
+      }
+      else{
+        print("merge left")
+        data.merge <- merge(data.left, data.right, by = merge$merge.by, all.x = TRUE)
+      }
+      merge.column <- merge$merge.column
+      if(length(merge.column)>0){
+        for(j in 1:length(merge.column)){
+          col <- merge.column[[j]]
+          #print(col)
+          col.x <- paste0(col, ".x")
+          #print(col.x)
+          col.y <- paste0(col, ".y")
+          #print(col.y)
+          print(nrow(data.merge))
+          
+          data.merge.x <- data.merge[!is.na(data.merge[,col.x]),]
+          print(nrow(data.merge.x))
+          data.merge.y <- data.merge[is.na(data.merge[,col.x]),]
+          print(nrow(data.merge.y))
+          
+          data.merge.x[,col] <-  data.merge.x[,col.x]
+          data.merge.y[,col] <-  data.merge.y[,col.y]
+          data.merge  <- rbind(data.merge.x, data.merge.y)
+          data.merge[,col.x] <- NULL 
+          data.merge[,col.y] <- NULL
+          print(summary(data.merge))
+        }
+      }
       
       drop <- merge$drop
       if(length(drop)>0){

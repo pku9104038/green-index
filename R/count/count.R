@@ -146,6 +146,7 @@ count.subject <-  function(
   
             data.out[index, stat$var.name] <- group$Group.1
             data.out[index, stat$var.value] <- group$x
+            data.out[index, stat$var.tier] <- groupby
             #print(data.out)
             for(m in 1:length(stat$set)){
               set <-  stat$set[[m]]

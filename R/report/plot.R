@@ -824,6 +824,8 @@ plot.data <- function(
     #print(report$aliasdata)
     data.right <- report$aliasdata[,c(g.var$scope,g.var$alias)]
     scopes <- data.right[,g.var$scope]
+    #print(scopes)
+    print(data.left)
     for(i in 1:nrow(data.left)){
       if(is.element(data.left[i,plot$data$alias$var],unlist(scopes))){
         data.out[i,plot$data$alias$arg] <- 

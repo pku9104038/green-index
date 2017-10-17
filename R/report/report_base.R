@@ -24,6 +24,9 @@ report.base <- function(
       report$plot.out  <- paste0(getwd(),"/",g.dir$report.out.plot)
       
       report$skip <- reports$skip
+      if(is.null(report$assesment)){
+        report$assesment <-  reports$assesment
+      }
       if(is.null(report$table)){
         report$table <-  reports$table
       }
