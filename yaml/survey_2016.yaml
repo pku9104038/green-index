@@ -36122,6 +36122,7 @@ report:
         - "pre.render.report.preface"
         - "pre.render.table.of.contents"
         - "pre.render.project.summary"
+        - "passed.rate.all.bar"
 
       plot:
         passed.rate.all.bar.perspective: 

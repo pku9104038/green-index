@@ -47,7 +47,7 @@ pre.render.table.of.contents
 # 学生学业水平指数
 
 学生学业水平指数包含学生学业成绩标准达成指数、学生高层次思维能力发展指数以及学生学业成绩均衡指数。其中学生学业成绩均衡指数包括个体间均衡指数、学校间均衡指数和各区之间均衡指数三个方面。## 学生学业成绩标准达成度指数学生学业成绩的水平是依据课程标准，在大规模测试数据基础上，运用国际上通用的研究方法，对学生在某一学科、某一阶段应该掌握的基本内容与核心能力的发展水平进行的等级标定。学业成绩的标准达成度指数指的是学生在各学科达到合格水平的程度。学业成绩的标准达成度指数划分为9级，指数越高，表示该区域学生学业成绩达到课程标准基本要求的合格率越高。\mylist-  9级：表示学业成绩的标准达成系数\footnote{将学业成绩合格率经过标准化等一系列转化后得到的数值，转化后的数据具有可加性和可比性，用于划分学业成绩标准达成指数的等级。}在0.9及以上（含0.9）-  8级：表示学业成绩的标准达成系数在0.8-0.9之间（含0.8）-  7级：表示学业成绩的标准达成系数在0.7-0.8之间（含0.7）-  6级：表示学业成绩的标准达成系数在0.6-0.7之间（含0.6）-  5级：表示学业成绩的标准达成系数在0.5-0.6之间（含0.5）-  4级：表示学业成绩的标准达成系数在0.4-0.5之间（含0.4）-  3级：表示学业成绩的标准达成系数在0.3-0.4之间（含0.3）-  2级：表示学业成绩的标准达成系数在0.2-0.3之间（含0.2）-  1级：表示学业成绩的标准达成系数在0.2以下\mytext
-`r fig_name <- "四年级学生学业成绩标准达成度指数" `
+`r fig_name <- "不同群体四年级学生学业成绩标准达成度指数" `
 ```{r passed.rate.all.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "passed.rate.all.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -57,6 +57,14 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
+
+
+\begin{landscape}
+
+passed.rate.all.bar
+\end{landscape}
+
+
 
 `r fig_name <- "四年级语文学业成绩标准达成度指数" `
 ```{r passed.rate.cn.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
