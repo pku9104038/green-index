@@ -825,7 +825,6 @@ plot.data <- function(
     data.right <- report$aliasdata[,c(g.var$scope,g.var$alias)]
     scopes <- data.right[,g.var$scope]
     #print(scopes)
-    print(data.left)
     for(i in 1:nrow(data.left)){
       if(is.element(data.left[i,plot$data$alias$var],unlist(scopes))){
         data.out[i,plot$data$alias$arg] <- 
@@ -863,9 +862,9 @@ plot.data <- function(
     }
   }
   
-  if(!is.null(plot$data$aliaskeeper)){
-    print("data aliaskeeper")
-    keeps <- plot$data$aliaskeeper
+  if(!is.null(plot$data$postkeep)){
+    print("data postkeep")
+    keeps <- plot$data$postkeep
     data.in <- data.out
     data.out <- data.frame()
     for(i in 1:length(keeps)){
@@ -897,11 +896,11 @@ plot.data <- function(
     print("data sort")
     for(i in 1:length(plot$data$sort)){
       sort <- plot$data$sort[[i]]
-      print(data.out)
+      #print(data.out)
       data.sort <- data.out[data.out[,sort$variable]==sort$option,]
-      print(data.sort)
+      #print(data.sort)
       data.sorted <- arrange(data.sort,desc(data.sort[,sort$value]))
-      print(data.sorted)
+      #print(data.sorted)
       sort$list <-list()
       n <- nrow(data.sorted)
       for(i in 1:n){
@@ -919,10 +918,7 @@ plot.data <- function(
     
   }
   
-  
-  
-  
-  print(data.out)
+  #print(data.out)
   return(data.out)
 }
 ##############################

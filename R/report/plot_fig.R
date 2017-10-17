@@ -10,14 +10,14 @@ g.var <- yaml$global$stat$var
 g.tier <- yaml$global$stat$def$tier
 source(paste0(g.dir$R,"report/plot.R"))
 #######################################################
-plot.name <- "province.county.index.radar"
+plot.name <- "passed.rate.all.bar"
 
 
 reports <- yaml.load_file(paste0(g.dir$yaml,g.yaml$survey))$report
 ############
-# 1 base, 2 green, 3 cn, 4 ma, 5 county_base 6 school_report
+# 1 base, 2 green, 3 cn, 4 ma, 5 county_base 6 county_green, 7 county_cn, 8 county_ma, 9 school_report
 ############
-i <- 2
+i <- 6
 report <-  reports$report[[i]]
 
 report$scope <- "浦东新区"  #"上海市浦东新区第二中心小学（巨野校区）"
@@ -80,5 +80,5 @@ plot <- report$plot[[plot.name]]
 #plot$dir  <- paste0(getwd(),"/",g.dir$report.out.plot)
 #plot$data$keep <- list(list(var = "区县", value=list(report$county)))
 #plot$data$keep <- list(list(var = "统计范围", value=list(report$scope,"上海市")))
-plot$data$aliaskeeper <- list(list(var = "x", value=list("本市")))
+#plot$data$postkeep <- list(list(var = "x", value=list("本市")))
 plot.figure( report = report, plot.in = plot,fig_name = plot$fig.name)
