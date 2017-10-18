@@ -10,7 +10,7 @@ g.var <- yaml$global$stat$var
 g.tier <- yaml$global$stat$def$tier
 source(paste0(g.dir$R,"report/plot.R"))
 #######################################################
-plot.name <- "passed.rate.all.bar"
+plot.name <- "course.leadership.bar"
 
 
 reports <- yaml.load_file(paste0(g.dir$yaml,g.yaml$survey))$report
@@ -80,5 +80,6 @@ plot <- report$plot[[plot.name]]
 #plot$dir  <- paste0(getwd(),"/",g.dir$report.out.plot)
 #plot$data$keep <- list(list(var = "区县", value=list(report$county)))
 #plot$data$keep <- list(list(var = "统计范围", value=list(report$scope,"上海市")))
+#plot$data$keep <- list(list(var = "统计范围", value=list(report$county)))
 #plot$data$postkeep <- list(list(var = "x", value=list("本市")))
 plot.figure( report = report, plot.in = plot,fig_name = plot$fig.name)

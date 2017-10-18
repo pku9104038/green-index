@@ -721,6 +721,7 @@ plot.data <- function(
     
     data.out <- bind_rows(data.out,data)
   }
+  print(data.out)
   
   if(!is.null(plot$data$county.filter)){
     if(plot$data$county.filter==TRUE){
@@ -759,7 +760,7 @@ plot.data <- function(
       }
     }
   }
-  
+  #print(data.out)
   
   
   #print(data.out)
@@ -853,6 +854,7 @@ plot.data <- function(
     #g.var$scope <-  "统计范围"
     #g.var$alias <-  "别名"
     #print(report$aliasdata)
+    #print(data.left)
     data.right <- report$aliasdata[,c(g.var$scope,g.var$alias)]
     scopes <- data.right[,g.var$scope]
     for(i in 1:nrow(data.left)){
@@ -1061,8 +1063,17 @@ plot.bar_dodging  <- function(
   }
   
   if(!is.null(plot$ggplot$axisx)){
-    figure <- figure + theme(axis.text.x = element_text(angle = plot$ggplot$axisx$text_angle,
-                                                        size = plot$ggplot$axisx$text_size,  hjust = 1))
+    if(!is.null(plot$ggplot$axisx$text_angle) && !is.null(plot$ggplot$axisx$text_size)){
+      figure <- figure + theme(axis.text.x = element_text(angle = plot$ggplot$axisx$text_angle,
+                                                          size = plot$ggplot$axisx$text_size,  hjust = 1))
+    }
+    if(!is.null(plot$ggplot$axisx$discrete_limits)){
+      figure <- figure + scale_x_discrete(limits=unlist(plot$ggplot$axisx$discrete_limits))
+    }
+    if(!is.null(plot$ggplot$axisx$xlim)){
+      figure <- figure + coord_cartesian(xlim=unlist(plot$ggplot$axisx$xlim))
+    }
+    
   }
   if(!is.null(plot$ggplot$axisy)){
     figure <- figure + scale_y_discrete(limits=unlist(plot$ggplot$axisy$discrete_limits))
