@@ -4948,7 +4948,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -4959,7 +4959,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -4970,7 +4970,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -4993,7 +4993,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -5004,7 +5004,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -5015,7 +5015,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -5038,7 +5038,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -5049,7 +5049,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -5060,7 +5060,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -5084,7 +5084,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -5095,7 +5095,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -5106,7 +5106,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -5131,7 +5131,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -5142,7 +5142,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -5153,7 +5153,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -5176,7 +5176,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -5187,7 +5187,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -5198,7 +5198,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -5221,7 +5221,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -5232,7 +5232,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -5243,7 +5243,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -5266,7 +5266,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -5277,7 +5277,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -5288,7 +5288,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -5311,7 +5311,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -5322,7 +5322,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -5333,7 +5333,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -5356,7 +5356,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -5367,7 +5367,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -5378,7 +5378,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -5401,7 +5401,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -5412,7 +5412,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -5423,7 +5423,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -5446,7 +5446,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -5457,7 +5457,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -5468,7 +5468,7 @@ survey:
                       point: 1
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -5491,7 +5491,7 @@ survey:
                       point: 2
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -5502,7 +5502,7 @@ survey:
                       point: 2
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -5513,7 +5513,7 @@ survey:
                       point: 2
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -5536,7 +5536,7 @@ survey:
                       point: 2
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -5547,7 +5547,7 @@ survey:
                       point: 2
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -5558,7 +5558,7 @@ survey:
                       point: 2
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -5581,7 +5581,7 @@ survey:
                       point: 2
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -5592,7 +5592,7 @@ survey:
                       point: 2
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -5603,7 +5603,7 @@ survey:
                       point: 2
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -5626,7 +5626,7 @@ survey:
                       point: 2
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -5637,7 +5637,7 @@ survey:
                       point: 2
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -5648,7 +5648,7 @@ survey:
                       point: 2
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -5671,7 +5671,7 @@ survey:
                       point: 2
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -5682,7 +5682,7 @@ survey:
                       point: 2
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -5693,7 +5693,7 @@ survey:
                       point: 2
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -5716,7 +5716,7 @@ survey:
                       point: 3
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -5727,7 +5727,7 @@ survey:
                       point: 3
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -5738,7 +5738,7 @@ survey:
                       point: 3
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -5761,7 +5761,7 @@ survey:
                       point: 3
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -5772,7 +5772,7 @@ survey:
                       point: 3
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -5783,7 +5783,7 @@ survey:
                       point: 3
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -5806,7 +5806,7 @@ survey:
                       point: 3
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -5817,7 +5817,7 @@ survey:
                       point: 3
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -5828,7 +5828,7 @@ survey:
                       point: 3
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -5855,7 +5855,7 @@ survey:
                       point: 3
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -5866,7 +5866,7 @@ survey:
                       point: 3
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -5877,7 +5877,7 @@ survey:
                       point: 3
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -5900,7 +5900,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -5911,7 +5911,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -5922,7 +5922,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -5945,7 +5945,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -5956,7 +5956,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -5967,7 +5967,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -5990,7 +5990,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -6001,7 +6001,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -6012,7 +6012,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -6035,7 +6035,7 @@ survey:
                       point: 3
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -6046,7 +6046,7 @@ survey:
                       point: 3
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -6057,7 +6057,7 @@ survey:
                       point: 3
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -6080,7 +6080,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -6091,7 +6091,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -6102,7 +6102,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -6125,7 +6125,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -6136,7 +6136,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -6147,7 +6147,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -6170,7 +6170,7 @@ survey:
                       point: 5
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -6181,7 +6181,7 @@ survey:
                       point: 5
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -6192,7 +6192,7 @@ survey:
                       point: 5
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -6215,7 +6215,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -6226,7 +6226,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -6237,7 +6237,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -6260,7 +6260,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -6271,7 +6271,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -6282,7 +6282,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -6949,7 +6949,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -6960,7 +6960,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -6971,7 +6971,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -6994,7 +6994,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -7005,7 +7005,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -7016,7 +7016,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -7039,7 +7039,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -7050,7 +7050,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -7061,7 +7061,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -7084,7 +7084,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -7095,7 +7095,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -7106,7 +7106,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -7129,7 +7129,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -7140,7 +7140,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -7151,7 +7151,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -7174,7 +7174,7 @@ survey:
                       point: 2
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -7185,7 +7185,7 @@ survey:
                       point: 2
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -7196,7 +7196,7 @@ survey:
                       point: 2
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -7219,7 +7219,7 @@ survey:
                       point: 2
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -7230,7 +7230,7 @@ survey:
                       point: 2
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -7241,7 +7241,7 @@ survey:
                       point: 2
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -7267,7 +7267,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -7278,7 +7278,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -7289,7 +7289,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -7312,7 +7312,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -7323,7 +7323,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -7334,7 +7334,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -7357,7 +7357,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -7368,7 +7368,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -7379,7 +7379,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -7402,7 +7402,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -7413,7 +7413,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -7424,7 +7424,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -7447,7 +7447,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -7458,7 +7458,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -7469,7 +7469,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -7492,7 +7492,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -7503,7 +7503,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -7514,7 +7514,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -7537,7 +7537,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -7548,7 +7548,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -7559,7 +7559,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -7582,7 +7582,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -7593,7 +7593,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -7604,7 +7604,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -7632,7 +7632,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -7643,7 +7643,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -7654,7 +7654,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -7677,7 +7677,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -7688,7 +7688,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -7699,7 +7699,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -7722,7 +7722,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -7733,7 +7733,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -7744,7 +7744,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -7767,7 +7767,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -7778,7 +7778,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -7789,7 +7789,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -7812,7 +7812,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -7823,7 +7823,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -7834,7 +7834,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -7857,7 +7857,7 @@ survey:
                       point: 3
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -7868,7 +7868,7 @@ survey:
                       point: 3
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -7879,7 +7879,7 @@ survey:
                       point: 3
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -7907,7 +7907,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -7918,7 +7918,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -7929,7 +7929,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -7952,7 +7952,7 @@ survey:
                       point: 6
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -7963,7 +7963,7 @@ survey:
                       point: 6
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -7974,7 +7974,7 @@ survey:
                       point: 6
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -7997,7 +7997,7 @@ survey:
                       point: 2
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -8008,7 +8008,7 @@ survey:
                       point: 2
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -8019,7 +8019,7 @@ survey:
                       point: 2
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -8042,7 +8042,7 @@ survey:
                       point: 5
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -8053,7 +8053,7 @@ survey:
                       point: 5
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -8064,7 +8064,7 @@ survey:
                       point: 5
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
@@ -8087,7 +8087,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "A"
@@ -8098,7 +8098,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "B"
@@ -8109,7 +8109,7 @@ survey:
                       point: 4
                       statistics:
                         - *stat_point_rate
-                      perspective: *perspective_province_total_only
+                      perspective: *perspective_total_only
                       condition:
                         name: *total_score_level_cn
                         value: "C"
