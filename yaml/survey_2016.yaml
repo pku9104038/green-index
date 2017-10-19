@@ -1521,6 +1521,10 @@ global:
               - "区新优"
             xlab: &xlab_prov_coun_acad_xin
               - "|                       总体                           |                             学制                               |                        新优质学校                         |"
+          county_province:
+            order: &order_coun_prov
+              - "本区"
+              - "本市"
           province_county:
             order: &order_prov_coun
               - "本市"
@@ -23252,7 +23256,7 @@ report:
                   value: *tier_province
                 -
                   variable: *perspective
-                  value: *per_xinyouzhi
+                  value: *per_academicsystem
                 - 
                   variable: *topic
                   value: *top_jilei_score_mean_cn
@@ -23278,7 +23282,7 @@ report:
                   value: *tier_province
                 -
                   variable: *perspective
-                  value: *per_academicsystem
+                  value: *per_xinyouzhi
                 - 
                   variable: *topic
                   value: *top_jilei_score_mean_cn
@@ -23702,7 +23706,7 @@ report:
                   value: *tier_province
                 -
                   variable: *perspective
-                  value: *per_xinyouzhi
+                  value: *per_academicsystem
                 - 
                   variable: *topic
                   value: *top_reading_score_mean_cn
@@ -23728,7 +23732,7 @@ report:
                   value: *tier_province
                 -
                   variable: *perspective
-                  value: *per_academicsystem
+                  value: *per_xinyouzhi
                 - 
                   variable: *topic
                   value: *top_reading_score_mean_cn
@@ -24152,7 +24156,7 @@ report:
                   value: *tier_province
                 -
                   variable: *perspective
-                  value: *per_xinyouzhi
+                  value: *per_academicsystem
                 - 
                   variable: *topic
                   value: *top_writing_score_mean_cn
@@ -24178,7 +24182,7 @@ report:
                   value: *tier_province
                 -
                   variable: *perspective
-                  value: *per_academicsystem
+                  value: *per_xinyouzhi
                 - 
                   variable: *topic
                   value: *top_writing_score_mean_cn
@@ -35522,7 +35526,7 @@ report:
                   value: *top_point_rate
 
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "county_green.Rmd"
 
@@ -40284,7 +40288,7 @@ report:
 
  
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "county_cn.Rmd"
 
@@ -40309,74 +40313,16 @@ report:
         - "pre.render.table.of.contents"
         - "pre.render.project.summary"
         - "pre.render.introduce.cn"
+        - "level.bar.province.county.school.cn"
+        - "score.box.province.county.school.cn"
+        - "jelei.bar.province.county.school.cn"
+        - "jilei.box.province.county.school.cn"
+        - "reading.bar.province.county.school.cn"
+        - "reading.box.province.county.school.cn"
+        - "writing.bar.province.county.school.cn"
+        - "writing.box.province.county.school.cn"
 
       plot:
-
-        level.bar.province.urbannization.cn: 
-          fig.name: "不同区域学生在语文学科各水平上的人数比例"
-          data:
-            digits: *plot_data_digits
-            filter:
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_total_score_level
-                -
-                  x: "x"
-                  from: *scope
-                
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_urbannization
-                - 
-                  variable: *topic
-                  value: *top_total_score_level
-                -
-                  x: "x"
-                  from: *sample
-            aes:
-              #- 
-              #  arg: "x"
-              #  var: *scope
-              -  
-                arg: "y"
-                var: *value
-              - 
-                arg: "fill"
-                var: *key
-              -  
-                arg: "label"
-                var: *label
-            order:
-              -
-                var: "x"
-                list: *order_prov_urba
-          ggplot:
-            width: *plot_canvas_width
-            height: *plot_canvas_height
-            geom: *plot_bar_stacking 
-            legend: *plot_legend_top
-            bar:
-              width: *plot_bar_width_thin
-            label:
-              xlab: ""
-              ylab: "百分数（%）"
 
         score.segment.bar.cn: 
           fig.name: "学生总体语文分数分布"
@@ -40389,7 +40335,7 @@ report:
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_total
@@ -40422,7 +40368,7 @@ report:
               xlab: "标准分"
               ylab: "百分数（%）"
 
-        level.bar.province.perspective.cn: 
+        level.bar.perspective.cn: 
           fig.name: "不同群体学生在语文学科各水平上的人数比例"
           data:
             digits: *plot_data_digits
@@ -40432,70 +40378,63 @@ report:
                   variable: *subject
                   value: *subject_cn
                 -
-                  variable: *tier
-                  value: *tier_province
-                -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_total_score_level
+                -
+                  x: "x"
+                  from: *scope
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_academicsystem
                 - 
                   variable: *topic
                   value: *top_total_score_level
+                -
+                  x: "x"
+                  from: *sample
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_xinyouzhi
-                - 
-                  variable: *topic
-                  value: *top_total_score_level
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_gender
                 - 
                   variable: *topic
                   value: *top_total_score_level
+                -
+                  x: "x"
+                  from: *sample
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_huji
                 - 
                   variable: *topic
                   value: *top_total_score_level
+                -
+                  x: "x"
+                  from: *sample
             aes:
-              - 
-                arg: "x"
-                var: *sample
               -  
                 arg: "y"
                 var: *value
@@ -40508,7 +40447,7 @@ report:
             order:
               -
                 var: "x"
-                list: *order_prov_acad_xin_gen_hu
+                list: *order_prov_coun_acad_gen_hu
               
           ggplot:
             width: *plot_canvas_width
@@ -40518,10 +40457,10 @@ report:
             bar:
               width: *plot_bar_width
             label:
-              xlab: *xlab_prov_acad_xin_gen_hu
+              xlab: *xlab_prov_coun_acad_gen_hu
               ylab: "百分数（%）"
 
-        score.box.province.perspective.cn: 
+        score.box.perspective.cn: 
           fig.name: "不同群体学生在语文学科上的得分分布"
           data:
             digits: *plot_data_digits
@@ -40531,141 +40470,156 @@ report:
                   variable: *subject
                   value: *subject_cn
                 -
-                  variable: *tier
-                  value: *tier_province
-                -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_total_score_quantile
+                -
+                  x: "x"
+                  from: *scope
+                -
+                  fill: "fill"
+                  by: *tier
               -
                 - 
                   variable: *subject
                   value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_total_score_mean
+                -
+                  x: "x"
+                  from: *scope
+                -
+                  fill: "fill"
+                  by: *tier
+
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_academicsystem
                 - 
                   variable: *topic
                   value: *top_total_score_quantile
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "fill"
+                  by: *perspective
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_xinyouzhi
-                - 
-                  variable: *topic
-                  value: *top_total_score_mean
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_xinyouzhi
-                - 
-                  variable: *topic
-                  value: *top_total_score_quantile
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_academicsystem
                 - 
                   variable: *topic
                   value: *top_total_score_mean
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "fill"
+                  by: *perspective
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_gender
                 - 
                   variable: *topic
                   value: *top_total_score_quantile
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "fill"
+                  by: *perspective
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_gender
                 - 
                   variable: *topic
                   value: *top_total_score_mean
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "fill"
+                  by: *perspective
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_huji
                 - 
                   variable: *topic
                   value: *top_total_score_quantile
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "fill"
+                  by: *perspective
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_huji
                 - 
                   variable: *topic
                   value: *top_total_score_mean
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "fill"
+                  by: *perspective
+
             derivative: 
-              group: *sample
+              group: "x"
               key: *key
               keep:
-                - *sample
-                - *perspective
+                - "x"
+                - "fill"
             aes:
-              - 
-                arg: "x"
-                var: *sample
               -  
                 arg: "ymin"
                 var: *stat_quantile_key_bottom
@@ -40682,22 +40636,19 @@ report:
                 arg: "ymax"
                 var: *stat_quantile_key_top
               -  
-                arg: "fill"
-                var: *perspective
-              -  
                 arg: "mean"
                 var: *key_score_mean
             order:
               - 
                 var: "x"
-                list: *order_prov_acad_xin_gen_hu
+                list: *order_prov_coun_acad_gen_hu
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_box
             legend: *plot_legend_top
             label:
-              xlab: *xlab_prov_acad_xin_gen_hu
+              xlab: *xlab_prov_coun_acad_gen_hu
               ylab: "标准分"
             #axisy:
             #  continuous_limits:
@@ -40707,31 +40658,23 @@ report:
             #    - 0
             #    - 800
 
-        level.bar.province.county.cn: 
-          fig.name: "各区学生在语文学科各水平上的人数比例"
+        level.bar.province.county.school.cn: 
+          fig.name: "各学校学生在语文学科各水平上的人数比例"
+          entry: "level.bar.province.county.school.cn"
+          ext.tex: ".tex"
+          ext.fig: ".pdf"
+          fig.limit: *plot_multi_fig_limit
+          x.leader: *leader_prov_coun
+          
           data:
             digits: *plot_data_digits
+            county.filter:  TRUE
+          
             filter:
               -
                 - 
                   variable: *subject
                   value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_total_score_level
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_total
@@ -40751,34 +40694,44 @@ report:
               -  
                 arg: "label"
                 var: *label
-            order:
-              - 
+            sort:
+              -
                 var: "x"
-                list: *order_prov_coun
+                variable: *key
+                option: "A"
+                value: *value
+                asc_desc: "DESC"
           ggplot:
-            width: *plot_canvas_width
-            height: *plot_canvas_height
-            geom: *plot_bar_stacking 
+            width: *plot_multi_fig_width
+            height: *plot_multi_fig_height
+            geom: *plot_bar_stacking
             legend: *plot_legend_top
             bar:
-              width: 0.6
+              width: *plot_bar_width
             label:
               xlab: ""
               ylab: "百分数（%）"
-
-        score.box.province.county.cn: 
-          fig.name: "各区学生在语文学科上的得分分布"
+            axisx:
+              text_angle: 90
+              text_size: *plot_multi_fig_lab_size
+            
+        score.box.province.county.school.cn: 
+          fig.name: "各学校学生在语文学科上的得分分布"
+          entry: "score.box.province.county.school.cn"
+          ext.tex: ".tex"
+          ext.fig: ".pdf"
+          fig.limit: *plot_multi_fig_limit
+          x.leader: *leader_prov_coun
+          
           data:
             digits: *plot_data_digits
+            county.filter:  TRUE
             filter:
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
-                  variable: *tier
-                  value: *tier_province
-                -
                   variable: *perspective
                   value: *per_total
                 - 
@@ -40789,48 +40742,18 @@ report:
                   variable: *subject
                   value: *subject_cn
                 -
-                  variable: *tier
-                  value: *tier_province
-                -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_total_score_mean
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_county
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_total_score_quantile
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_county
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_total_score_mean
-
             derivative: 
               group: *scope
               key: *key
               keep:
                 - *scope
                 - *tier
-
+                - *perspective
             aes:
               - 
                 arg: "x"
@@ -40856,23 +40779,28 @@ report:
               -  
                 arg: "mean"
                 var: *key_score_mean
-            order:
-              - 
+            sort:
+              -
                 var: "x"
-                list: *order_prov_coun
-
+                #variable: *perspective
+                #option: *per_total
+                value: "middle"
+                asc_desc: "DESC"
           ggplot:
-            width: *plot_canvas_width
-            height: *plot_canvas_height
+            width: *plot_multi_fig_width
+            height: *plot_multi_fig_height
             geom: *plot_box
             legend: *plot_legend_top
             bar:
-              width: 0.3
+              width: *plot_bar_width
             label:
               xlab: ""
               ylab: "标准分"
+            axisx:
+              text_angle: 90
+              text_size: *plot_multi_fig_lab_size
 
-        level.bar.province.dimention.cn: 
+        level.bar.dimention.cn: 
           fig.name: "学生在语文学科各能力维度各水平上的人数比例"
           data:
             digits: *plot_data_digits
@@ -40881,9 +40809,6 @@ report:
                 - 
                   variable: *subject
                   value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
@@ -40895,9 +40820,6 @@ report:
                   variable: *subject
                   value: *subject_cn
                 -
-                  variable: *tier
-                  value: *tier_province
-                -
                   variable: *perspective
                   value: *per_total
                 - 
@@ -40908,9 +40830,6 @@ report:
                   variable: *subject
                   value: *subject_cn
                 -
-                  variable: *tier
-                  value: *tier_province
-                -
                   variable: *perspective
                   value: *per_total
                 - 
@@ -40919,7 +40838,7 @@ report:
             aes:
               - 
                 arg: "x"
-                var: *dimention
+                var: "alias"
               -  
                 arg: "y"
                 var: *value
@@ -40929,17 +40848,24 @@ report:
               -  
                 arg: "label"
                 var: *label
+              -
+                arg: "Group"
+                var: *dimention
+            alias:
+              arg: "alias"
+              var: *scope
             order:
               - 
                 var: "x"
-                list: 
-                  - *dim_cn_jilei
-                  - *dim_cn_reading
-                  - *dim_cn_writing
+                list: *order_coun_prov               
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
-            geom: *plot_bar_stacking 
+            geom: *plot_bar_stacking
+            group:
+              variable: *dimention
+              scales: "fixed"
+              position: "bottom" 
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width_thin
@@ -40947,7 +40873,7 @@ report:
               xlab: ""
               ylab: "百分数（%）"
 
-        score.box.province.dimention.cn: 
+        score.box.dimention.cn: 
           fig.name: "学生在语文学科各能力维度上的得分分布"
           data:
             digits: *plot_data_digits
@@ -40957,90 +40883,108 @@ report:
                   variable: *subject
                   value: *subject_cn
                 -
-                  variable: *tier
-                  value: *tier_province
-                -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_jilei_score_quantile_cn
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
+
               -
                 - 
                   variable: *subject
                   value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_jilei_score_mean_cn
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
               -
                 - 
                   variable: *subject
                   value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_reading_score_quantile_cn
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
               -
                 - 
                   variable: *subject
                   value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_reading_score_mean_cn
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
               -
                 - 
                   variable: *subject
                   value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_writing_score_quantile_cn
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
               -
                 - 
                   variable: *subject
                   value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_writing_score_mean_cn
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
               
             derivative: 
-              group: *dimention
+              group: "groupby"
               key: *key
               keep:
                 - *dimention
+                #- "groupby"
+                - *scope
 
+            alias:
+              arg: "alias"
+              var: *scope
             aes:
               - 
                 arg: "x"
-                var: *dimention
+                var: "alias"
               -  
                 arg: "ymin"
                 var: *stat_quantile_key_bottom
@@ -41062,18 +41006,22 @@ report:
               -  
                 arg: "mean"
                 var: *key_score_mean
-            order:
-              - 
-                var: "x"
-                list: 
-                  - *dim_cn_jilei
-                  - *dim_cn_reading
-                  - *dim_cn_writing
+              -
+                arg: "Group"
+                var: *dimention
+            #order:
+            #  - 
+            #    var: "x"
+            #    list: *order_coun_prov
 
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_box
+            group:
+              variable: *dimention
+              scales: "fixed"
+              position: "bottom" 
             legend: *plot_legend_top
             box:
               box.width: 0.2
@@ -41089,7 +41037,7 @@ report:
             #    - 0
             #    - 500
 
-        jilei.bar.province.perspective.cn: 
+        jilei.bar.perspective.cn: 
           fig.name: "不同群体学生在“积累”各水平上的人数比例"
           data:
             digits: *plot_data_digits
@@ -41099,70 +41047,63 @@ report:
                   variable: *subject
                   value: *subject_cn
                 -
-                  variable: *tier
-                  value: *tier_province
-                -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_jilei_score_level_cn
+                -
+                  x: "x"
+                  from: *scope
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_academicsystem
                 - 
                   variable: *topic
                   value: *top_jilei_score_level_cn
+                -
+                  x: "x"
+                  from: *sample
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_xinyouzhi
-                - 
-                  variable: *topic
-                  value: *top_jilei_score_level_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_gender
                 - 
                   variable: *topic
                   value: *top_jilei_score_level_cn
+                -
+                  x: "x"
+                  from:  *sample
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_huji
                 - 
                   variable: *topic
                   value: *top_jilei_score_level_cn
+                -
+                  x: "x"
+                  from: *sample
             aes:
-              - 
-                arg: "x"
-                var: *sample
               -  
                 arg: "y"
                 var: *value
@@ -41175,7 +41116,7 @@ report:
             order:
               -
                 var: "x"
-                list: *order_prov_acad_xin_gen_hu
+                list: *order_prov_coun_acad_gen_hu
               
           ggplot:
             width: *plot_canvas_width
@@ -41185,10 +41126,10 @@ report:
             bar:
               width: *plot_bar_width
             label:
-              xlab: *xlab_prov_acad_xin_gen_hu
+              xlab: *xlab_prov_coun_acad_gen_hu
               ylab: "百分数（%）"
 
-        jilei.box.province.perspective.cn: 
+        jilei.box.perspective.cn: 
           fig.name: "不同群体学生在“积累”上的得分分布"
           data:
             digits: *plot_data_digits
@@ -41198,141 +41139,204 @@ report:
                   variable: *subject
                   value: *subject_cn
                 -
-                  variable: *tier
-                  value: *tier_province
-                -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_jilei_score_quantile_cn
+                -
+                  x: "x"
+                  from: *scope
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope                  
+                - 
+                  fill: "fill"
+                  by:
+                    - *scope
               -
                 - 
                   variable: *subject
                   value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_jilei_score_mean_cn
+                -
+                  x: "x"
+                  from: *scope
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *scope
+
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_academicsystem
                 - 
                   variable: *topic
                   value: *top_jilei_score_quantile_cn
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_xinyouzhi
-                - 
-                  variable: *topic
-                  value: *top_jilei_score_mean_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_xinyouzhi
-                - 
-                  variable: *topic
-                  value: *top_jilei_score_quantile_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_academicsystem
                 - 
                   variable: *topic
                   value: *top_jilei_score_mean_cn
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_gender
                 - 
                   variable: *topic
                   value: *top_jilei_score_quantile_cn
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_gender
                 - 
                   variable: *topic
                   value: *top_jilei_score_mean_cn
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_huji
                 - 
                   variable: *topic
                   value: *top_jilei_score_quantile_cn
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_huji
                 - 
                   variable: *topic
                   value: *top_jilei_score_mean_cn
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: *perspective
+
             derivative: 
-              group: *sample
+              group: "groupby"
               key: *key
               keep:
-                - *sample
-                - *perspective
+                - "x"
+                - "fill"
+                - "groupby"
+                
             aes:
-              - 
-                arg: "x"
-                var: *sample
               -  
                 arg: "ymin"
                 var: *stat_quantile_key_bottom
@@ -41349,22 +41353,19 @@ report:
                 arg: "ymax"
                 var: *stat_quantile_key_top
               -  
-                arg: "fill"
-                var: *perspective
-              -  
                 arg: "mean"
                 var: *key_score_mean
             order:
               - 
                 var: "x"
-                list: *order_prov_acad_xin_gen_hu
+                list: *order_prov_coun_acad_gen_hu
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_box
             legend: *plot_legend_top
             label:
-              xlab: *xlab_prov_acad_xin_gen_hu
+              xlab: *xlab_prov_coun_acad_gen_hu
               ylab: "标准分"
             #axisy:
             #  continuous_limits:
@@ -41374,31 +41375,23 @@ report:
             #    - 0
             #    - 800
 
-        jilei.bar.province.county.cn: 
-          fig.name: "不同区学生在“积累”各水平上的人数比例"
+        jelei.bar.province.county.school.cn: 
+          fig.name: "各学校学生在“积累”各水平上的人数比例"
+          entry: "jelei.bar.province.county.school.cn"
+          ext.tex: ".tex"
+          ext.fig: ".pdf"
+          fig.limit: *plot_multi_fig_limit
+          x.leader: *leader_prov_coun
+          
           data:
             digits: *plot_data_digits
+            county.filter:  TRUE
+          
             filter:
               -
                 - 
                   variable: *subject
                   value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_jilei_score_level_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_total
@@ -41418,34 +41411,44 @@ report:
               -  
                 arg: "label"
                 var: *label
-            order:
-              - 
+            sort:
+              -
                 var: "x"
-                list: *order_prov_coun
+                variable: *key
+                option: "A"
+                value: *value
+                asc_desc: "DESC"
           ggplot:
-            width: *plot_canvas_width
-            height: *plot_canvas_height
-            geom: *plot_bar_stacking 
+            width: *plot_multi_fig_width
+            height: *plot_multi_fig_height
+            geom: *plot_bar_stacking
             legend: *plot_legend_top
             bar:
-              width: 0.6
+              width: *plot_bar_width
             label:
               xlab: ""
               ylab: "百分数（%）"
+            axisx:
+              text_angle: 90
+              text_size: *plot_multi_fig_lab_size
 
-        jilei.box.province.county.cn: 
-          fig.name: "不同区学生在“积累”上的得分分布"
+        jilei.box.province.county.school.cn: 
+          fig.name: "各学校学生在“积累”上的得分分布"
+          entry: "jilei.box.province.county.school.cn"
+          ext.tex: ".tex"
+          ext.fig: ".pdf"
+          fig.limit: *plot_multi_fig_limit
+          x.leader: *leader_prov_coun
+          
           data:
             digits: *plot_data_digits
+            county.filter:  TRUE
             filter:
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
-                  variable: *tier
-                  value: *tier_province
-                -
                   variable: *perspective
                   value: *per_total
                 - 
@@ -41456,48 +41459,18 @@ report:
                   variable: *subject
                   value: *subject_cn
                 -
-                  variable: *tier
-                  value: *tier_province
-                -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_jilei_score_mean_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_county
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_jilei_score_quantile_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_county
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_jilei_score_mean_cn
-
             derivative: 
               group: *scope
               key: *key
               keep:
                 - *scope
                 - *tier
-
+                - *perspective
             aes:
               - 
                 arg: "x"
@@ -41523,23 +41496,28 @@ report:
               -  
                 arg: "mean"
                 var: *key_score_mean
-            order:
-              - 
+            sort:
+              -
                 var: "x"
-                list: *order_prov_coun
-
+                #variable: *perspective
+                #option: *per_total
+                value: "middle"
+                asc_desc: "DESC"
           ggplot:
-            width: *plot_canvas_width
-            height: *plot_canvas_height
+            width: *plot_multi_fig_width
+            height: *plot_multi_fig_height
             geom: *plot_box
             legend: *plot_legend_top
             bar:
-              width: 0.3
+              width: *plot_bar_width
             label:
               xlab: ""
               ylab: "标准分"
+            axisx:
+              text_angle: 90
+              text_size: *plot_multi_fig_lab_size
 
-        reading.bar.province.perspective.cn: 
+        reading.bar.perspective.cn: 
           fig.name: "不同群体学生在“阅读”各水平上的人数比例"
           data:
             digits: *plot_data_digits
@@ -41549,70 +41527,63 @@ report:
                   variable: *subject
                   value: *subject_cn
                 -
-                  variable: *tier
-                  value: *tier_province
-                -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_reading_score_level_cn
+                -
+                  x: "x"
+                  from: *scope
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_academicsystem
                 - 
                   variable: *topic
                   value: *top_reading_score_level_cn
+                -
+                  x: "x"
+                  from: *sample
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_xinyouzhi
-                - 
-                  variable: *topic
-                  value: *top_reading_score_level_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_gender
                 - 
                   variable: *topic
                   value: *top_reading_score_level_cn
+                -
+                  x: "x"
+                  from:  *sample
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_huji
                 - 
                   variable: *topic
                   value: *top_reading_score_level_cn
+                -
+                  x: "x"
+                  from: *sample
             aes:
-              - 
-                arg: "x"
-                var: *sample
               -  
                 arg: "y"
                 var: *value
@@ -41625,7 +41596,7 @@ report:
             order:
               -
                 var: "x"
-                list: *order_prov_acad_xin_gen_hu
+                list: *order_prov_coun_acad_gen_hu
               
           ggplot:
             width: *plot_canvas_width
@@ -41635,10 +41606,10 @@ report:
             bar:
               width: *plot_bar_width
             label:
-              xlab: *xlab_prov_acad_xin_gen_hu
+              xlab: *xlab_prov_coun_acad_gen_hu
               ylab: "百分数（%）"
 
-        reading.box.province.perspective.cn: 
+        reading.box.perspective.cn: 
           fig.name: "不同群体学生在“阅读”上的得分分布"
           data:
             digits: *plot_data_digits
@@ -41648,141 +41619,204 @@ report:
                   variable: *subject
                   value: *subject_cn
                 -
-                  variable: *tier
-                  value: *tier_province
-                -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_reading_score_quantile_cn
+                -
+                  x: "x"
+                  from: *scope
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope                  
+                - 
+                  fill: "fill"
+                  by:
+                    - *scope
               -
                 - 
                   variable: *subject
                   value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_reading_score_mean_cn
+                -
+                  x: "x"
+                  from: *scope
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *scope
+
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_academicsystem
                 - 
                   variable: *topic
                   value: *top_reading_score_quantile_cn
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_xinyouzhi
-                - 
-                  variable: *topic
-                  value: *top_reading_score_mean_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_xinyouzhi
-                - 
-                  variable: *topic
-                  value: *top_reading_score_quantile_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_academicsystem
                 - 
                   variable: *topic
                   value: *top_reading_score_mean_cn
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_gender
                 - 
                   variable: *topic
                   value: *top_reading_score_quantile_cn
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_gender
                 - 
                   variable: *topic
                   value: *top_reading_score_mean_cn
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_huji
                 - 
                   variable: *topic
                   value: *top_reading_score_quantile_cn
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_huji
                 - 
                   variable: *topic
                   value: *top_reading_score_mean_cn
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: *perspective
+
             derivative: 
-              group: *sample
+              group: "groupby"
               key: *key
               keep:
-                - *sample
-                - *perspective
+                - "x"
+                - "fill"
+                - "groupby"
+                
             aes:
-              - 
-                arg: "x"
-                var: *sample
               -  
                 arg: "ymin"
                 var: *stat_quantile_key_bottom
@@ -41799,22 +41833,19 @@ report:
                 arg: "ymax"
                 var: *stat_quantile_key_top
               -  
-                arg: "fill"
-                var: *perspective
-              -  
                 arg: "mean"
                 var: *key_score_mean
             order:
               - 
                 var: "x"
-                list: *order_prov_acad_xin_gen_hu
+                list: *order_prov_coun_acad_gen_hu
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_box
             legend: *plot_legend_top
             label:
-              xlab: *xlab_prov_acad_xin_gen_hu
+              xlab: *xlab_prov_coun_acad_gen_hu
               ylab: "标准分"
             #axisy:
             #  continuous_limits:
@@ -41824,31 +41855,23 @@ report:
             #    - 0
             #    - 800
 
-        reading.bar.province.county.cn: 
-          fig.name: "不同区学生在“阅读”各水平上的人数比例"
+        reading.bar.province.county.school.cn: 
+          fig.name: "各学校学生在“阅读”各水平上的人数比例"
+          entry: "reading.bar.province.county.school.cn"
+          ext.tex: ".tex"
+          ext.fig: ".pdf"
+          fig.limit: *plot_multi_fig_limit
+          x.leader: *leader_prov_coun
+          
           data:
             digits: *plot_data_digits
+            county.filter:  TRUE
+          
             filter:
               -
                 - 
                   variable: *subject
                   value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_reading_score_level_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_total
@@ -41868,34 +41891,44 @@ report:
               -  
                 arg: "label"
                 var: *label
-            order:
-              - 
+            sort:
+              -
                 var: "x"
-                list: *order_prov_coun
+                variable: *key
+                option: "A"
+                value: *value
+                asc_desc: "DESC"
           ggplot:
-            width: *plot_canvas_width
-            height: *plot_canvas_height
-            geom: *plot_bar_stacking 
+            width: *plot_multi_fig_width
+            height: *plot_multi_fig_height
+            geom: *plot_bar_stacking
             legend: *plot_legend_top
             bar:
-              width: 0.6
+              width: *plot_bar_width
             label:
               xlab: ""
               ylab: "百分数（%）"
+            axisx:
+              text_angle: 90
+              text_size: *plot_multi_fig_lab_size
 
-        reading.box.province.county.cn: 
-          fig.name: "不同区学生在“阅读”上的得分分布"
+        reading.box.province.county.school.cn: 
+          fig.name: "各学校学生在“阅读”上的得分分布"
+          entry: "reading.box.province.county.school.cn"
+          ext.tex: ".tex"
+          ext.fig: ".pdf"
+          fig.limit: *plot_multi_fig_limit
+          x.leader: *leader_prov_coun
+          
           data:
             digits: *plot_data_digits
+            county.filter:  TRUE
             filter:
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
-                  variable: *tier
-                  value: *tier_province
-                -
                   variable: *perspective
                   value: *per_total
                 - 
@@ -41906,48 +41939,18 @@ report:
                   variable: *subject
                   value: *subject_cn
                 -
-                  variable: *tier
-                  value: *tier_province
-                -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_reading_score_mean_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_county
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_reading_score_quantile_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_county
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_reading_score_mean_cn
-
             derivative: 
               group: *scope
               key: *key
               keep:
                 - *scope
                 - *tier
-
+                - *perspective
             aes:
               - 
                 arg: "x"
@@ -41973,24 +41976,29 @@ report:
               -  
                 arg: "mean"
                 var: *key_score_mean
-            order:
-              - 
+            sort:
+              -
                 var: "x"
-                list: *order_prov_coun
-
+                #variable: *perspective
+                #option: *per_total
+                value: "middle"
+                asc_desc: "DESC"
           ggplot:
-            width: *plot_canvas_width
-            height: *plot_canvas_height
+            width: *plot_multi_fig_width
+            height: *plot_multi_fig_height
             geom: *plot_box
             legend: *plot_legend_top
             bar:
-              width: 0.3
+              width: *plot_bar_width
             label:
               xlab: ""
               ylab: "标准分"
+            axisx:
+              text_angle: 90
+              text_size: *plot_multi_fig_lab_size
 
-        writing.bar.province.perspective.cn: 
-          fig.name: "不同群体学生在“阅读”各水平上的人数比例"
+        writing.bar.perspective.cn: 
+          fig.name: "不同群体学生在“习作”各水平上的人数比例"
           data:
             digits: *plot_data_digits
             filter:
@@ -41999,70 +42007,63 @@ report:
                   variable: *subject
                   value: *subject_cn
                 -
-                  variable: *tier
-                  value: *tier_province
-                -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_writing_score_level_cn
+                -
+                  x: "x"
+                  from: *scope
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_academicsystem
                 - 
                   variable: *topic
                   value: *top_writing_score_level_cn
+                -
+                  x: "x"
+                  from: *sample
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_xinyouzhi
-                - 
-                  variable: *topic
-                  value: *top_writing_score_level_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_gender
                 - 
                   variable: *topic
                   value: *top_writing_score_level_cn
+                -
+                  x: "x"
+                  from:  *sample
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_huji
                 - 
                   variable: *topic
                   value: *top_writing_score_level_cn
+                -
+                  x: "x"
+                  from: *sample
             aes:
-              - 
-                arg: "x"
-                var: *sample
               -  
                 arg: "y"
                 var: *value
@@ -42075,7 +42076,7 @@ report:
             order:
               -
                 var: "x"
-                list: *order_prov_acad_xin_gen_hu
+                list: *order_prov_coun_acad_gen_hu
               
           ggplot:
             width: *plot_canvas_width
@@ -42085,11 +42086,11 @@ report:
             bar:
               width: *plot_bar_width
             label:
-              xlab: *xlab_prov_acad_xin_gen_hu
+              xlab: *xlab_prov_coun_acad_gen_hu
               ylab: "百分数（%）"
 
-        writing.box.province.perspective.cn: 
-          fig.name: "不同群体学生在“阅读”上的得分分布"
+        writing.box.perspective.cn: 
+          fig.name: "不同群体学生在“习作”上的得分分布"
           data:
             digits: *plot_data_digits
             filter:
@@ -42098,141 +42099,204 @@ report:
                   variable: *subject
                   value: *subject_cn
                 -
-                  variable: *tier
-                  value: *tier_province
-                -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_writing_score_quantile_cn
+                -
+                  x: "x"
+                  from: *scope
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope                  
+                - 
+                  fill: "fill"
+                  by:
+                    - *scope
               -
                 - 
                   variable: *subject
                   value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_writing_score_mean_cn
+                -
+                  x: "x"
+                  from: *scope
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *scope
+
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_academicsystem
                 - 
                   variable: *topic
                   value: *top_writing_score_quantile_cn
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_xinyouzhi
-                - 
-                  variable: *topic
-                  value: *top_writing_score_mean_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_xinyouzhi
-                - 
-                  variable: *topic
-                  value: *top_writing_score_quantile_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_academicsystem
                 - 
                   variable: *topic
                   value: *top_writing_score_mean_cn
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_gender
                 - 
                   variable: *topic
                   value: *top_writing_score_quantile_cn
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_gender
                 - 
                   variable: *topic
                   value: *top_writing_score_mean_cn
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_huji
                 - 
                   variable: *topic
                   value: *top_writing_score_quantile_cn
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_huji
                 - 
                   variable: *topic
                   value: *top_writing_score_mean_cn
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: *perspective
+
             derivative: 
-              group: *sample
+              group: "groupby"
               key: *key
               keep:
-                - *sample
-                - *perspective
+                - "x"
+                - "fill"
+                - "groupby"
+                
             aes:
-              - 
-                arg: "x"
-                var: *sample
               -  
                 arg: "ymin"
                 var: *stat_quantile_key_bottom
@@ -42249,22 +42313,19 @@ report:
                 arg: "ymax"
                 var: *stat_quantile_key_top
               -  
-                arg: "fill"
-                var: *perspective
-              -  
                 arg: "mean"
                 var: *key_score_mean
             order:
               - 
                 var: "x"
-                list: *order_prov_acad_xin_gen_hu
+                list: *order_prov_coun_acad_gen_hu
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_box
             legend: *plot_legend_top
             label:
-              xlab: *xlab_prov_acad_xin_gen_hu
+              xlab: *xlab_prov_coun_acad_gen_hu
               ylab: "标准分"
             #axisy:
             #  continuous_limits:
@@ -42274,31 +42335,23 @@ report:
             #    - 0
             #    - 800
 
-        writing.bar.province.county.cn: 
-          fig.name: "不同区学生在“阅读”各水平上的人数比例"
+        writing.bar.province.county.school.cn: 
+          fig.name: "各学校学生在“习作”各水平上的人数比例"
+          entry: "writing.bar.province.county.school.cn"
+          ext.tex: ".tex"
+          ext.fig: ".pdf"
+          fig.limit: *plot_multi_fig_limit
+          x.leader: *leader_prov_coun
+          
           data:
             digits: *plot_data_digits
+            county.filter:  TRUE
+          
             filter:
               -
                 - 
                   variable: *subject
                   value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_writing_score_level_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_total
@@ -42318,34 +42371,44 @@ report:
               -  
                 arg: "label"
                 var: *label
-            order:
-              - 
+            sort:
+              -
                 var: "x"
-                list: *order_prov_coun
+                variable: *key
+                option: "A"
+                value: *value
+                asc_desc: "DESC"
           ggplot:
-            width: *plot_canvas_width
-            height: *plot_canvas_height
-            geom: *plot_bar_stacking 
+            width: *plot_multi_fig_width
+            height: *plot_multi_fig_height
+            geom: *plot_bar_stacking
             legend: *plot_legend_top
             bar:
-              width: 0.6
+              width: *plot_bar_width
             label:
               xlab: ""
               ylab: "百分数（%）"
+            axisx:
+              text_angle: 90
+              text_size: *plot_multi_fig_lab_size
 
-        writing.box.province.county.cn: 
-          fig.name: "不同区学生在“阅读”上的得分分布"
+        writing.box.province.county.school.cn: 
+          fig.name: "各学校学生在“习作”上的得分分布"
+          entry: "writing.box.province.county.school.cn"
+          ext.tex: ".tex"
+          ext.fig: ".pdf"
+          fig.limit: *plot_multi_fig_limit
+          x.leader: *leader_prov_coun
+          
           data:
             digits: *plot_data_digits
+            county.filter:  TRUE
             filter:
               -
                 - 
                   variable: *subject
                   value: *subject_cn
                 -
-                  variable: *tier
-                  value: *tier_province
-                -
                   variable: *perspective
                   value: *per_total
                 - 
@@ -42356,48 +42419,18 @@ report:
                   variable: *subject
                   value: *subject_cn
                 -
-                  variable: *tier
-                  value: *tier_province
-                -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_writing_score_mean_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_county
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_writing_score_quantile_cn
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_county
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_writing_score_mean_cn
-
             derivative: 
               group: *scope
               key: *key
               keep:
                 - *scope
                 - *tier
-
+                - *perspective
             aes:
               - 
                 arg: "x"
@@ -42423,21 +42456,26 @@ report:
               -  
                 arg: "mean"
                 var: *key_score_mean
-            order:
-              - 
+            sort:
+              -
                 var: "x"
-                list: *order_prov_coun
-
+                #variable: *perspective
+                #option: *per_total
+                value: "middle"
+                asc_desc: "DESC"
           ggplot:
-            width: *plot_canvas_width
-            height: *plot_canvas_height
+            width: *plot_multi_fig_width
+            height: *plot_multi_fig_height
             geom: *plot_box
             legend: *plot_legend_top
             bar:
-              width: 0.3
+              width: *plot_bar_width
             label:
               xlab: ""
               ylab: "标准分"
+            axisx:
+              text_angle: 90
+              text_size: *plot_multi_fig_lab_size
 
         answer.segment.bar.cn: 
           fig.name: "全体学生在题目C3AO011上的作答情况"
@@ -42450,7 +42488,7 @@ report:
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_total
@@ -42536,6 +42574,48 @@ report:
 
       param:
 
+        point.rate.table.cn: 
+          name: "学生在语文学科上的平均得分率"
+          data:
+            digits: 1
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_cn
+                -
+                  variable: *tier
+                  value: *tier_province
+                - 
+                  variable: *topic
+                  value: *top_point_rate
+              -
+                - 
+                  variable: *subject
+                  value: *subject_cn
+                -
+                  variable: *tier
+                  value: *tier_county
+                - 
+                  variable: *topic
+                  value: *top_point_rate
+
+        answer.table.cn: 
+          name: "学生在语文学科“积累”上的作答情况"
+          data:
+            digits: 1
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_cn
+                -
+                  variable: *tier
+                  value: *tier_county
+                - 
+                  variable: *topic
+                  value: *top_answer
+
         jilei.point.rate.table.cn: 
           name: "学生在语文学科“积累”上的平均得分率"
           data:
@@ -42548,6 +42628,19 @@ report:
                 -
                   variable: *tier
                   value: *tier_province
+                -
+                  variable: *dimention
+                  value: *dim_cn_jilei
+                - 
+                  variable: *topic
+                  value: *top_point_rate
+              -
+                - 
+                  variable: *subject
+                  value: *subject_cn
+                -
+                  variable: *tier
+                  value: *tier_county
                 -
                   variable: *dimention
                   value: *dim_cn_jilei
@@ -42567,6 +42660,19 @@ report:
                 -
                   variable: *tier
                   value: *tier_province
+                -
+                  variable: *dimention
+                  value: *dim_cn_jilei
+                - 
+                  variable: *topic
+                  value: *top_answer
+              -
+                - 
+                  variable: *subject
+                  value: *subject_cn
+                -
+                  variable: *tier
+                  value: *tier_county
                 -
                   variable: *dimention
                   value: *dim_cn_jilei

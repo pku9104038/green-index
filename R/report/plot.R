@@ -714,6 +714,8 @@ plot.data <- function(
         
       }
       else{
+        #print(fil$variable)
+        #print(fil$value)
         data <- data[data[,fil$variable] == fil$value,]
       }
       #data <- data[data[,fil$variable] == fil$value,]
@@ -721,7 +723,7 @@ plot.data <- function(
     
     data.out <- bind_rows(data.out,data)
   }
-  print(data.out)
+  #print(data.out)
   
   if(!is.null(plot$data$county.filter)){
     if(plot$data$county.filter==TRUE){
@@ -744,11 +746,14 @@ plot.data <- function(
   if(!is.null(plot$data$keep)){
     print("data keep")
     keeps <- plot$data$keep
-    data.in <- data.out
-    data.out <- data.frame()
+    
+    
     for(i in 1:length(keeps)){
+      data.in <- data.out
+      data.out <- data.frame()
       keep <- keeps[[i]]
       var <- keep$var
+      
       #print(var)
       values <- keep$value
       for(j in 1:length(values)){
@@ -763,8 +768,7 @@ plot.data <- function(
   #print(data.out)
   
   
-  #print(data.out)
-  
+   
   #data.out[,g.var$value] <- data.out[,g.var$value]/100.0
   #data.out[,g.var$value] <- round(data.out[,g.var$value], digits = plot$data$digits)
   data.out[,g.var$label] <- round(data.out[,g.var$value], digits = plot$data$digits)
@@ -778,14 +782,16 @@ plot.data <- function(
     groups <- levels(factor(data.in[,plot$data$derivative$group]))
     for(i  in 1:length(groups)){
       group <- groups[i]
-      #print(group)
+      print(group)
       #print(plot$data$derivative$group)
       #data <- subset(data.in,plot$data$derivative$group==group)
       data <- data.in[data.in[,plot$data$derivative$group]==group,]
       #print(data)
       n <- nrow(data.out)
       for(j in 1:length(plot$data$derivative$keep)){
+        #print(j)
         var <- plot$data$derivative$keep[[j]]
+        #print(var)
         data.out[n+1,var] <- data[1,var]
       }
       
@@ -867,9 +873,10 @@ plot.data <- function(
   if(!is.null(plot$data$postkeep)){
     print("data postkeep")
     keeps <- plot$data$postkeep
-    data.in <- data.out
-    data.out <- data.frame()
+    
     for(i in 1:length(keeps)){
+      data.in <- data.out
+      data.out <- data.frame()
       keep <- keeps[[i]]
       var <- keep$var
       #print(var)
@@ -899,7 +906,14 @@ plot.data <- function(
     for(i in 1:length(plot$data$sort)){
       sort <- plot$data$sort[[i]]
       #print(data.out)
-      data.sort <- data.out[data.out[,sort$variable]==sort$option,]
+      if(!is.null(sort$variable)){
+        data.sort <- data.out[data.out[,sort$variable]==sort$option,]
+      }
+      else{
+        data.sort <- data.out
+      }
+      
+    
       #print(data.sort)
       data.sorted <- arrange(data.sort,desc(data.sort[,sort$value]))
       #print(data.sorted)
@@ -1120,6 +1134,11 @@ plot.box  <- function(
                                    aes(x =x,width =  box.width,ymin=ymin, lower=lower,middle=middle,upper=upper,ymax=ymax,fill = fill)
                                   ) 
   figure <- figure + geom_point(shape=20, size=3,colour="red")
+  if(!is.null(plot$ggplot$group)){
+    figure <- figure + facet_wrap(facets = ~Group, nrow = 1,
+                                  strip.position = plot$ggplot$group$position, 
+                                  scales = plot$ggplot$group$scales)
+  }
   #figure <- figure + geom_text(aes(label = label), position = position_stack(vjust = 0.5)) 
   #figure <- figure + ggtitle(plot$fig.name) 
   if(!is.null(plot$ggplot$axisy)){
