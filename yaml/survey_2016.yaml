@@ -1603,6 +1603,19 @@ global:
             order: &order_subject
               - "语文"
               - "数学"
+            cn_dim: &order_cn_dim
+              - *dim_cn_jilei
+              - *dim_cn_reading
+              - *dim_cn_writing
+            ma_dom: &order_ma_dom
+              - *dim_ma_number
+              - *dim_ma_space
+              - *dim_ma_statistics
+            ma_dim: &order_ma_dim
+              - *dim_ma_skill
+              - *dim_ma_concept
+              - *dim_ma_apply
+              - *dim_ma_problem
           x.leader:
             prov_coun: &leader_prov_coun
               - "本市"
@@ -40285,10 +40298,9 @@ report:
             #axisy:
             #  discrete_limits: *axisy_discrete_limits_index
             #  ylim: *axisy_ylim
-
  
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "county_cn.Rmd"
 
@@ -42616,108 +42628,6 @@ report:
                   variable: *topic
                   value: *top_answer
 
-        jilei.point.rate.table.cn: 
-          name: "学生在语文学科“积累”上的平均得分率"
-          data:
-            digits: 1
-            filter:
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *dimention
-                  value: *dim_cn_jilei
-                - 
-                  variable: *topic
-                  value: *top_point_rate
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_county
-                -
-                  variable: *dimention
-                  value: *dim_cn_jilei
-                - 
-                  variable: *topic
-                  value: *top_point_rate
-
-        jilei.answer.table.cn: 
-          name: "学生在语文学科“积累”上的作答情况"
-          data:
-            digits: 1
-            filter:
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *dimention
-                  value: *dim_cn_jilei
-                - 
-                  variable: *topic
-                  value: *top_answer
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_county
-                -
-                  variable: *dimention
-                  value: *dim_cn_jilei
-                - 
-                  variable: *topic
-                  value: *top_answer
-
-        reading.point.rate.table.cn: 
-          name: "学生在语文学科“阅读”上的平均得分率"
-          data:
-            digits: 1
-            filter:
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *dimention
-                  value: *dim_cn_reading
-                - 
-                  variable: *topic
-                  value: *top_point_rate
-
-        reading.answer.table.cn: 
-          name: "学生在语文学科“阅读”上的作答情况"
-          data:
-            digits: 1
-            filter:
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *dimention
-                  value: *dim_cn_reading
-                - 
-                  variable: *topic
-                  value: *top_answer
-
         writing.table.cn: 
           name: "学生在语文学科“习作”上的作答情况"
           data:
@@ -42733,45 +42643,7 @@ report:
                 -
                   variable: *dimention
                   value: *dim_cn_writing
-
-        writing.point.rate.table.cn: 
-          name: "学生在语文学科“习作”上的平均得分率"
-          data:
-            digits: 1
-            filter:
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *dimention
-                  value: *dim_cn_writing
-                - 
-                  variable: *topic
-                  value: *top_point_rate
-
-        writing.answer.table.cn: 
-          name: "学生在语文学科“习作”上的作答情况"
-          data:
-            digits: 1
-            filter:
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *dimention
-                  value: *dim_cn_writing
-                - 
-                  variable: *topic
-                  value: *top_answer
-                      
+                     
     -
       process: FALSE
       table: "统计指标汇总"
@@ -42798,75 +42670,25 @@ report:
         - "pre.render.table.of.contents"
         - "pre.render.project.summary"
         - "pre.render.introduce.ma"
+        - "level.bar.province.county.school.ma"
+        - "score.box.province.county.school.ma"
+        - "number.bar.province.county.school.ma"
+        - "number.box.province.county.school.ma"
+        - "space.bar.province.county.school.ma"
+        - "space.box.province.county.school.ma"
+        - "statistics.bar.province.county.school.ma"
+        - "statistics.box.province.county.school.ma"
+        - "skill.bar.province.county.school.ma"
+        - "skill.box.province.county.school.ma"
+        - "concept.bar.province.county.school.ma"
+        - "concept.box.province.county.school.ma"
+        - "apply.bar.province.county.school.ma"
+        - "apply.box.province.county.school.ma"
+        - "problem.bar.province.county.school.ma"
+        - "problem.box.province.county.school.ma"
 
 
       plot:
-
-        level.bar.province.urbannization.ma: 
-          fig.name: "不同区域学生在数学学科各水平上的人数比例"
-          data:
-            digits: *plot_data_digits
-            filter:
-              -
-                - 
-                  variable: *subject
-                  value: *subject_ma
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_total_score_level
-                -
-                  x: "x"
-                  from: *scope
-                
-              -
-                - 
-                  variable: *subject
-                  value: *subject_ma
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_urbannization
-                - 
-                  variable: *topic
-                  value: *top_total_score_level
-                -
-                  x: "x"
-                  from: *sample
-            aes:
-              #- 
-              #  arg: "x"
-              #  var: *scope
-              -  
-                arg: "y"
-                var: *value
-              - 
-                arg: "fill"
-                var: *key
-              -  
-                arg: "label"
-                var: *label
-            order:
-              -
-                var: "x"
-                list: *order_prov_urba
-          ggplot:
-            width: *plot_canvas_width
-            height: *plot_canvas_height
-            geom: *plot_bar_stacking 
-            legend: *plot_legend_top
-            bar:
-              width: *plot_bar_width_thin
-            label:
-              xlab: ""
-              ylab: "百分数（%）"
 
         score.segment.bar.ma: 
           fig.name: "学生总体数学分数分布"
@@ -42879,7 +42701,7 @@ report:
                   value: *subject_ma
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_total
@@ -42912,7 +42734,7 @@ report:
               xlab: "标准分"
               ylab: "百分数（%）"
 
-        level.bar.province.perspective.ma: 
+        level.bar.perspective.ma: 
           fig.name: "不同群体学生在数学学科各水平上的人数比例"
           data:
             digits: *plot_data_digits
@@ -42922,70 +42744,63 @@ report:
                   variable: *subject
                   value: *subject_ma
                 -
-                  variable: *tier
-                  value: *tier_province
-                -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_total_score_level
+                -
+                  x: "x"
+                  from: *scope
               -
                 - 
                   variable: *subject
                   value: *subject_ma
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_academicsystem
                 - 
                   variable: *topic
                   value: *top_total_score_level
+                -
+                  x: "x"
+                  from: *sample
               -
                 - 
                   variable: *subject
                   value: *subject_ma
                 -
                   variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_xinyouzhi
-                - 
-                  variable: *topic
-                  value: *top_total_score_level
-              -
-                - 
-                  variable: *subject
-                  value: *subject_ma
-                -
-                  variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_gender
                 - 
                   variable: *topic
                   value: *top_total_score_level
+                -
+                  x: "x"
+                  from: *sample
               -
                 - 
                   variable: *subject
                   value: *subject_ma
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_huji
                 - 
                   variable: *topic
                   value: *top_total_score_level
+                -
+                  x: "x"
+                  from: *sample
             aes:
-              - 
-                arg: "x"
-                var: *sample
               -  
                 arg: "y"
                 var: *value
@@ -42998,7 +42813,7 @@ report:
             order:
               -
                 var: "x"
-                list: *order_prov_acad_xin_gen_hu
+                list: *order_prov_coun_acad_gen_hu
               
           ggplot:
             width: *plot_canvas_width
@@ -43008,10 +42823,10 @@ report:
             bar:
               width: *plot_bar_width
             label:
-              xlab: *xlab_prov_acad_xin_gen_hu
+              xlab: *xlab_prov_coun_acad_gen_hu
               ylab: "百分数（%）"
 
-        score.box.province.perspective.ma: 
+        score.box.perspective.ma: 
           fig.name: "不同群体学生在语文学科上的得分分布"
           data:
             digits: *plot_data_digits
@@ -43021,141 +42836,156 @@ report:
                   variable: *subject
                   value: *subject_ma
                 -
-                  variable: *tier
-                  value: *tier_province
-                -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_total_score_quantile
+                -
+                  x: "x"
+                  from: *scope
+                -
+                  fill: "fill"
+                  by: *tier
               -
                 - 
                   variable: *subject
                   value: *subject_ma
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_total_score_mean
+                -
+                  x: "x"
+                  from: *scope
+                -
+                  fill: "fill"
+                  by: *tier
+
               -
                 - 
                   variable: *subject
                   value: *subject_ma
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_academicsystem
                 - 
                   variable: *topic
                   value: *top_total_score_quantile
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "fill"
+                  by: *perspective
               -
                 - 
                   variable: *subject
                   value: *subject_ma
                 -
                   variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_xinyouzhi
-                - 
-                  variable: *topic
-                  value: *top_total_score_mean
-              -
-                - 
-                  variable: *subject
-                  value: *subject_ma
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_xinyouzhi
-                - 
-                  variable: *topic
-                  value: *top_total_score_quantile
-              -
-                - 
-                  variable: *subject
-                  value: *subject_ma
-                -
-                  variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_academicsystem
                 - 
                   variable: *topic
                   value: *top_total_score_mean
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "fill"
+                  by: *perspective
               -
                 - 
                   variable: *subject
                   value: *subject_ma
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_gender
                 - 
                   variable: *topic
                   value: *top_total_score_quantile
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "fill"
+                  by: *perspective
               -
                 - 
                   variable: *subject
                   value: *subject_ma
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_gender
                 - 
                   variable: *topic
                   value: *top_total_score_mean
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "fill"
+                  by: *perspective
               -
                 - 
                   variable: *subject
                   value: *subject_ma
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_huji
                 - 
                   variable: *topic
                   value: *top_total_score_quantile
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "fill"
+                  by: *perspective
               -
                 - 
                   variable: *subject
                   value: *subject_ma
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_huji
                 - 
                   variable: *topic
                   value: *top_total_score_mean
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "fill"
+                  by: *perspective
+
             derivative: 
-              group: *sample
+              group: "x"
               key: *key
               keep:
-                - *sample
-                - *perspective
+                - "x"
+                - "fill"
             aes:
-              - 
-                arg: "x"
-                var: *sample
               -  
                 arg: "ymin"
                 var: *stat_quantile_key_bottom
@@ -43172,22 +43002,19 @@ report:
                 arg: "ymax"
                 var: *stat_quantile_key_top
               -  
-                arg: "fill"
-                var: *perspective
-              -  
                 arg: "mean"
                 var: *key_score_mean
             order:
               - 
                 var: "x"
-                list: *order_prov_acad_xin_gen_hu
+                list: *order_prov_coun_acad_gen_hu
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_box
             legend: *plot_legend_top
             label:
-              xlab: *xlab_prov_acad_xin_gen_hu
+              xlab: *xlab_prov_coun_acad_gen_hu
               ylab: "标准分"
             #axisy:
             #  continuous_limits:
@@ -43197,31 +43024,23 @@ report:
             #    - 0
             #    - 800
 
-        level.bar.province.county.ma: 
-          fig.name: "各区学生在数学学科各水平上的人数比例"
+        level.bar.province.county.school.ma: 
+          fig.name: "各学校学生在数学学科各水平上的人数比例"
+          entry: "level.bar.province.county.school.ma"
+          ext.tex: ".tex"
+          ext.fig: ".pdf"
+          fig.limit: *plot_multi_fig_limit
+          x.leader: *leader_prov_coun
+          
           data:
             digits: *plot_data_digits
+            county.filter:  TRUE
+          
             filter:
               -
                 - 
                   variable: *subject
                   value: *subject_ma
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_total_score_level
-              -
-                - 
-                  variable: *subject
-                  value: *subject_ma
-                -
-                  variable: *tier
-                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_total
@@ -43241,34 +43060,44 @@ report:
               -  
                 arg: "label"
                 var: *label
-            order:
-              - 
+            sort:
+              -
                 var: "x"
-                list: *order_prov_coun
+                variable: *key
+                option: "A"
+                value: *value
+                asc_desc: "DESC"
           ggplot:
-            width: *plot_canvas_width
-            height: *plot_canvas_height
-            geom: *plot_bar_stacking 
+            width: *plot_multi_fig_width
+            height: *plot_multi_fig_height
+            geom: *plot_bar_stacking
             legend: *plot_legend_top
             bar:
-              width: 0.6
+              width: *plot_bar_width
             label:
               xlab: ""
               ylab: "百分数（%）"
-
-        score.box.province.county.ma: 
-          fig.name: "各区学生在数学学科上的得分分布"
+            axisx:
+              text_angle: 90
+              text_size: *plot_multi_fig_lab_size
+            
+        score.box.province.county.school.ma: 
+          fig.name: "各学校学生在数学学科上的得分分布"
+          entry: "score.box.province.county.school.ma"
+          ext.tex: ".tex"
+          ext.fig: ".pdf"
+          fig.limit: *plot_multi_fig_limit
+          x.leader: *leader_prov_coun
+          
           data:
             digits: *plot_data_digits
+            county.filter:  TRUE
             filter:
               -
                 - 
                   variable: *subject
                   value: *subject_ma
                 -
-                  variable: *tier
-                  value: *tier_province
-                -
                   variable: *perspective
                   value: *per_total
                 - 
@@ -43279,48 +43108,18 @@ report:
                   variable: *subject
                   value: *subject_ma
                 -
-                  variable: *tier
-                  value: *tier_province
-                -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_total_score_mean
-              -
-                - 
-                  variable: *subject
-                  value: *subject_ma
-                -
-                  variable: *tier
-                  value: *tier_county
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_total_score_quantile
-              -
-                - 
-                  variable: *subject
-                  value: *subject_ma
-                -
-                  variable: *tier
-                  value: *tier_county
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *top_total_score_mean
-
             derivative: 
               group: *scope
               key: *key
               keep:
                 - *scope
                 - *tier
-
+                - *perspective
             aes:
               - 
                 arg: "x"
@@ -43346,24 +43145,30 @@ report:
               -  
                 arg: "mean"
                 var: *key_score_mean
-            order:
-              - 
+            sort:
+              -
                 var: "x"
-                list: *order_prov_coun
-
+                #variable: *perspective
+                #option: *per_total
+                value: "middle"
+                asc_desc: "DESC"
           ggplot:
-            width: *plot_canvas_width
-            height: *plot_canvas_height
+            width: *plot_multi_fig_width
+            height: *plot_multi_fig_height
             geom: *plot_box
             legend: *plot_legend_top
             bar:
-              width: 0.3
+              width: *plot_bar_width
             label:
               xlab: ""
               ylab: "标准分"
+            axisx:
+              text_angle: 90
+              text_size: *plot_multi_fig_lab_size
 
-        level.bar.province.domain.ma: 
-          fig.name: "学生在数学学科各内容领域各水平上的人数比例"
+
+        level.bar.domain.ma: 
+          fig.name: "学生在数学学科各内容维度各水平上的人数比例"
           data:
             digits: *plot_data_digits
             filter:
@@ -43371,9 +43176,6 @@ report:
                 - 
                   variable: *subject
                   value: *subject_ma
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
@@ -43385,9 +43187,6 @@ report:
                   variable: *subject
                   value: *subject_ma
                 -
-                  variable: *tier
-                  value: *tier_province
-                -
                   variable: *perspective
                   value: *per_total
                 - 
@@ -43398,9 +43197,6 @@ report:
                   variable: *subject
                   value: *subject_ma
                 -
-                  variable: *tier
-                  value: *tier_province
-                -
                   variable: *perspective
                   value: *per_total
                 - 
@@ -43409,7 +43205,7 @@ report:
             aes:
               - 
                 arg: "x"
-                var: *dimention
+                var: "alias"
               -  
                 arg: "y"
                 var: *value
@@ -43419,17 +43215,27 @@ report:
               -  
                 arg: "label"
                 var: *label
+              -
+                arg: "Group"
+                var: *dimention
+            alias:
+              arg: "alias"
+              var: *scope
             order:
               - 
                 var: "x"
-                list: 
-                  - *dim_ma_number
-                  - *dim_ma_space
-                  - *dim_ma_statistics
+                list: *order_coun_prov    
+              -
+                var: *dimention
+                list: *order_ma_dom           
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
-            geom: *plot_bar_stacking 
+            geom: *plot_bar_stacking
+            group:
+              variable: *dimention
+              scales: "fixed"
+              position: "bottom" 
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width_thin
@@ -43437,8 +43243,8 @@ report:
               xlab: ""
               ylab: "百分数（%）"
 
-        score.box.province.domain.ma: 
-          fig.name: "学生在数学学科各内容领域上的得分分布"
+        score.box.domain.ma: 
+          fig.name: "学生在数学学科各内容维度上的得分分布"
           data:
             digits: *plot_data_digits
             filter:
@@ -43447,90 +43253,108 @@ report:
                   variable: *subject
                   value: *subject_ma
                 -
-                  variable: *tier
-                  value: *tier_province
-                -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_number_score_quantile_ma
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
+
               -
                 - 
                   variable: *subject
                   value: *subject_ma
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_number_score_mean_ma
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
               -
                 - 
                   variable: *subject
                   value: *subject_ma
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_space_score_quantile_ma
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
               -
                 - 
                   variable: *subject
                   value: *subject_ma
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_space_score_mean_ma
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
               -
                 - 
                   variable: *subject
                   value: *subject_ma
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_statistics_score_quantile_ma
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
               -
                 - 
                   variable: *subject
                   value: *subject_ma
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_statistics_score_mean_ma
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
               
             derivative: 
-              group: *dimention
+              group: "groupby"
               key: *key
               keep:
                 - *dimention
+                #- "groupby"
+                - *scope
 
+            alias:
+              arg: "alias"
+              var: *scope
             aes:
               - 
                 arg: "x"
-                var: *dimention
+                var: "alias"
               -  
                 arg: "ymin"
                 var: *stat_quantile_key_bottom
@@ -43552,18 +43376,25 @@ report:
               -  
                 arg: "mean"
                 var: *key_score_mean
+              -
+                arg: "Group"
+                var: *dimention
             order:
               - 
                 var: "x"
-                list: 
-                  - *dim_ma_number
-                  - *dim_ma_space
-                  - *dim_ma_statistics
+                list: *order_coun_prov
+              - 
+                var: *dimention
+                list: *order_ma_dom
 
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_box
+            group:
+              variable: *dimention
+              scales: "fixed"
+              position: "bottom" 
             legend: *plot_legend_top
             box:
               box.width: 0.2
@@ -43579,7 +43410,7 @@ report:
             #    - 0
             #    - 500
 
-        level.bar.province.dimention.ma: 
+        level.bar.dimention.ma: 
           fig.name: "学生在数学学科各能力维度各水平上的人数比例"
           data:
             digits: *plot_data_digits
@@ -43588,9 +43419,6 @@ report:
                 - 
                   variable: *subject
                   value: *subject_ma
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
@@ -43602,9 +43430,6 @@ report:
                   variable: *subject
                   value: *subject_ma
                 -
-                  variable: *tier
-                  value: *tier_province
-                -
                   variable: *perspective
                   value: *per_total
                 - 
@@ -43614,9 +43439,6 @@ report:
                 - 
                   variable: *subject
                   value: *subject_ma
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
@@ -43628,9 +43450,6 @@ report:
                   variable: *subject
                   value: *subject_ma
                 -
-                  variable: *tier
-                  value: *tier_province
-                -
                   variable: *perspective
                   value: *per_total
                 - 
@@ -43639,7 +43458,7 @@ report:
             aes:
               - 
                 arg: "x"
-                var: *dimention
+                var: "alias"
               -  
                 arg: "y"
                 var: *value
@@ -43649,18 +43468,27 @@ report:
               -  
                 arg: "label"
                 var: *label
+              -
+                arg: "Group"
+                var: *dimention
+            alias:
+              arg: "alias"
+              var: *scope
             order:
               - 
                 var: "x"
-                list: 
-                  - *dim_ma_skill
-                  - *dim_ma_concept
-                  - *dim_ma_apply
-                  - *dim_ma_problem
+                list: *order_coun_prov    
+              -
+                var: *dimention
+                list: *order_ma_dim           
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
-            geom: *plot_bar_stacking 
+            geom: *plot_bar_stacking
+            group:
+              variable: *dimention
+              scales: "fixed"
+              position: "bottom" 
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width_thin
@@ -43668,7 +43496,7 @@ report:
               xlab: ""
               ylab: "百分数（%）"
 
-        score.box.province.dimention.ma: 
+        score.box.dimention.ma: 
           fig.name: "学生在数学学科各能力维度上的得分分布"
           data:
             digits: *plot_data_digits
@@ -43678,116 +43506,137 @@ report:
                   variable: *subject
                   value: *subject_ma
                 -
-                  variable: *tier
-                  value: *tier_province
-                -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_skill_score_quantile_ma
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
+
               -
                 - 
                   variable: *subject
                   value: *subject_ma
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_skill_score_mean_ma
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
               -
                 - 
                   variable: *subject
                   value: *subject_ma
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_concept_score_quantile_ma
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
               -
                 - 
                   variable: *subject
                   value: *subject_ma
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_concept_score_mean_ma
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
               -
                 - 
                   variable: *subject
                   value: *subject_ma
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_apply_score_quantile_ma
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
               -
                 - 
                   variable: *subject
                   value: *subject_ma
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_apply_score_mean_ma
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
               -
                 - 
                   variable: *subject
                   value: *subject_ma
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_problem_score_quantile_ma
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
               -
                 - 
                   variable: *subject
                   value: *subject_ma
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
                 - 
                   variable: *topic
                   value: *top_problem_score_mean_ma
-              
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
             derivative: 
-              group: *dimention
+              group: "groupby"
               key: *key
               keep:
                 - *dimention
+                #- "groupby"
+                - *scope
 
+            alias:
+              arg: "alias"
+              var: *scope
             aes:
               - 
                 arg: "x"
-                var: *dimention
+                var: "alias"
               -  
                 arg: "ymin"
                 var: *stat_quantile_key_bottom
@@ -43809,19 +43658,25 @@ report:
               -  
                 arg: "mean"
                 var: *key_score_mean
+              -
+                arg: "Group"
+                var: *dimention
             order:
               - 
                 var: "x"
-                list: 
-                  - *dim_ma_skill
-                  - *dim_ma_concept
-                  - *dim_ma_apply
-                  - *dim_ma_problem
+                list: *order_coun_prov
+              - 
+                var: *dimention
+                list: *order_ma_dim
 
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_box
+            group:
+              variable: *dimention
+              scales: "fixed"
+              position: "bottom" 
             legend: *plot_legend_top
             box:
               box.width: 0.2
@@ -43836,6 +43691,3369 @@ report:
             #  ylim:
             #    - 0
             #    - 500
+
+
+        number.bar.perspective.ma: 
+          fig.name: "不同群体学生在“数与代数”各水平上的人数比例"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_number_score_level_ma
+                -
+                  x: "x"
+                  from: *scope
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_academicsystem
+                - 
+                  variable: *topic
+                  value: *top_number_score_level_ma
+                -
+                  x: "x"
+                  from: *sample
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_gender
+                - 
+                  variable: *topic
+                  value: *top_number_score_level_ma
+                -
+                  x: "x"
+                  from:  *sample
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_huji
+                - 
+                  variable: *topic
+                  value: *top_number_score_level_ma
+                -
+                  x: "x"
+                  from: *sample
+            aes:
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+            order:
+              -
+                var: "x"
+                list: *order_prov_coun_acad_gen_hu
+              
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_stacking 
+            legend: *plot_legend_top
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: *xlab_prov_coun_acad_gen_hu
+              ylab: "百分数（%）"
+
+        number.box.perspective.ma: 
+          fig.name: "不同群体学生在“数与代数”上的得分分布"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_number_score_quantile_ma
+                -
+                  x: "x"
+                  from: *scope
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope                  
+                - 
+                  fill: "fill"
+                  by:
+                    - *scope
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_number_score_mean_ma
+                -
+                  x: "x"
+                  from: *scope
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *scope
+
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_academicsystem
+                - 
+                  variable: *topic
+                  value: *top_number_score_quantile_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_academicsystem
+                - 
+                  variable: *topic
+                  value: *top_number_score_mean_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_gender
+                - 
+                  variable: *topic
+                  value: *top_number_score_quantile_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_gender
+                - 
+                  variable: *topic
+                  value: *top_number_score_mean_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_huji
+                - 
+                  variable: *topic
+                  value: *top_number_score_quantile_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_huji
+                - 
+                  variable: *topic
+                  value: *top_number_score_mean_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: *perspective
+
+            derivative: 
+              group: "groupby"
+              key: *key
+              keep:
+                - "x"
+                - "fill"
+                - "groupby"
+                
+            aes:
+              -  
+                arg: "ymin"
+                var: *stat_quantile_key_bottom
+              -  
+                arg: "lower"
+                var: *stat_quantile_key_lower
+              -  
+                arg: "middle"
+                var: *stat_quantile_key_median
+              -  
+                arg: "upper"
+                var: *stat_quantile_key_upper
+              -  
+                arg: "ymax"
+                var: *stat_quantile_key_top
+              -  
+                arg: "mean"
+                var: *key_score_mean
+            order:
+              - 
+                var: "x"
+                list: *order_prov_coun_acad_gen_hu
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_box
+            legend: *plot_legend_top
+            label:
+              xlab: *xlab_prov_coun_acad_gen_hu
+              ylab: "标准分"
+            #axisy:
+            #  continuous_limits:
+            #    - 0
+            #    - 800
+            #  ylim:
+            #    - 0
+            #    - 800
+
+        number.bar.province.county.school.ma: 
+          fig.name: "各学校学生在“数与代数”各水平上的人数比例"
+          entry: "number.bar.province.county.school.ma"
+          ext.tex: ".tex"
+          ext.fig: ".pdf"
+          fig.limit: *plot_multi_fig_limit
+          x.leader: *leader_prov_coun
+          
+          data:
+            digits: *plot_data_digits
+            county.filter:  TRUE
+          
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_number_score_level_ma
+            aes:
+              - 
+                arg: "x"
+                var: *scope
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+            sort:
+              -
+                var: "x"
+                variable: *key
+                option: "A"
+                value: *value
+                asc_desc: "DESC"
+          ggplot:
+            width: *plot_multi_fig_width
+            height: *plot_multi_fig_height
+            geom: *plot_bar_stacking
+            legend: *plot_legend_top
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+            axisx:
+              text_angle: 90
+              text_size: *plot_multi_fig_lab_size
+
+        number.box.province.county.school.ma: 
+          fig.name: "各学校学生在“数与代数”上的得分分布"
+          entry: "number.box.province.county.school.ma"
+          ext.tex: ".tex"
+          ext.fig: ".pdf"
+          fig.limit: *plot_multi_fig_limit
+          x.leader: *leader_prov_coun
+          
+          data:
+            digits: *plot_data_digits
+            county.filter:  TRUE
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_number_score_quantile_ma
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_number_score_mean_ma
+            derivative: 
+              group: *scope
+              key: *key
+              keep:
+                - *scope
+                - *tier
+                - *perspective
+            aes:
+              - 
+                arg: "x"
+                var: *scope
+              -  
+                arg: "ymin"
+                var: *stat_quantile_key_bottom
+              -  
+                arg: "lower"
+                var: *stat_quantile_key_lower
+              -  
+                arg: "middle"
+                var: *stat_quantile_key_median
+              -  
+                arg: "upper"
+                var: *stat_quantile_key_upper
+              -  
+                arg: "ymax"
+                var: *stat_quantile_key_top
+              -  
+                arg: "fill"
+                var: *tier
+              -  
+                arg: "mean"
+                var: *key_score_mean
+            sort:
+              -
+                var: "x"
+                #variable: *perspective
+                #option: *per_total
+                value: "middle"
+                asc_desc: "DESC"
+          ggplot:
+            width: *plot_multi_fig_width
+            height: *plot_multi_fig_height
+            geom: *plot_box
+            legend: *plot_legend_top
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "标准分"
+            axisx:
+              text_angle: 90
+              text_size: *plot_multi_fig_lab_size
+
+        space.bar.perspective.ma: 
+          fig.name: "不同群体学生在“图形与几何”各水平上的人数比例"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_space_score_level_ma
+                -
+                  x: "x"
+                  from: *scope
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_academicsystem
+                - 
+                  variable: *topic
+                  value: *top_space_score_level_ma
+                -
+                  x: "x"
+                  from: *sample
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_gender
+                - 
+                  variable: *topic
+                  value: *top_space_score_level_ma
+                -
+                  x: "x"
+                  from:  *sample
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_huji
+                - 
+                  variable: *topic
+                  value: *top_space_score_level_ma
+                -
+                  x: "x"
+                  from: *sample
+            aes:
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+            order:
+              -
+                var: "x"
+                list: *order_prov_coun_acad_gen_hu
+              
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_stacking 
+            legend: *plot_legend_top
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: *xlab_prov_coun_acad_gen_hu
+              ylab: "百分数（%）"
+
+        space.box.perspective.ma: 
+          fig.name: "不同群体学生在“图形与几何”上的得分分布"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_space_score_quantile_ma
+                -
+                  x: "x"
+                  from: *scope
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope                  
+                - 
+                  fill: "fill"
+                  by:
+                    - *scope
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_space_score_mean_ma
+                -
+                  x: "x"
+                  from: *scope
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *scope
+
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_academicsystem
+                - 
+                  variable: *topic
+                  value: *top_space_score_quantile_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_academicsystem
+                - 
+                  variable: *topic
+                  value: *top_space_score_mean_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_gender
+                - 
+                  variable: *topic
+                  value: *top_space_score_quantile_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_gender
+                - 
+                  variable: *topic
+                  value: *top_space_score_mean_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_huji
+                - 
+                  variable: *topic
+                  value: *top_space_score_quantile_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_huji
+                - 
+                  variable: *topic
+                  value: *top_space_score_mean_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: *perspective
+
+            derivative: 
+              group: "groupby"
+              key: *key
+              keep:
+                - "x"
+                - "fill"
+                - "groupby"
+                
+            aes:
+              -  
+                arg: "ymin"
+                var: *stat_quantile_key_bottom
+              -  
+                arg: "lower"
+                var: *stat_quantile_key_lower
+              -  
+                arg: "middle"
+                var: *stat_quantile_key_median
+              -  
+                arg: "upper"
+                var: *stat_quantile_key_upper
+              -  
+                arg: "ymax"
+                var: *stat_quantile_key_top
+              -  
+                arg: "mean"
+                var: *key_score_mean
+            order:
+              - 
+                var: "x"
+                list: *order_prov_coun_acad_gen_hu
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_box
+            legend: *plot_legend_top
+            label:
+              xlab: *xlab_prov_coun_acad_gen_hu
+              ylab: "标准分"
+            #axisy:
+            #  continuous_limits:
+            #    - 0
+            #    - 800
+            #  ylim:
+            #    - 0
+            #    - 800
+
+        space.bar.province.county.school.ma: 
+          fig.name: "各学校学生在“图形与几何”各水平上的人数比例"
+          entry: "space.bar.province.county.school.ma"
+          ext.tex: ".tex"
+          ext.fig: ".pdf"
+          fig.limit: *plot_multi_fig_limit
+          x.leader: *leader_prov_coun
+          
+          data:
+            digits: *plot_data_digits
+            county.filter:  TRUE
+          
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_space_score_level_ma
+            aes:
+              - 
+                arg: "x"
+                var: *scope
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+            sort:
+              -
+                var: "x"
+                variable: *key
+                option: "A"
+                value: *value
+                asc_desc: "DESC"
+          ggplot:
+            width: *plot_multi_fig_width
+            height: *plot_multi_fig_height
+            geom: *plot_bar_stacking
+            legend: *plot_legend_top
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+            axisx:
+              text_angle: 90
+              text_size: *plot_multi_fig_lab_size
+
+        space.box.province.county.school.ma: 
+          fig.name: "各学校学生在“图形与几何”上的得分分布"
+          entry: "space.box.province.county.school.ma"
+          ext.tex: ".tex"
+          ext.fig: ".pdf"
+          fig.limit: *plot_multi_fig_limit
+          x.leader: *leader_prov_coun
+          
+          data:
+            digits: *plot_data_digits
+            county.filter:  TRUE
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_space_score_quantile_ma
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_space_score_mean_ma
+            derivative: 
+              group: *scope
+              key: *key
+              keep:
+                - *scope
+                - *tier
+                - *perspective
+            aes:
+              - 
+                arg: "x"
+                var: *scope
+              -  
+                arg: "ymin"
+                var: *stat_quantile_key_bottom
+              -  
+                arg: "lower"
+                var: *stat_quantile_key_lower
+              -  
+                arg: "middle"
+                var: *stat_quantile_key_median
+              -  
+                arg: "upper"
+                var: *stat_quantile_key_upper
+              -  
+                arg: "ymax"
+                var: *stat_quantile_key_top
+              -  
+                arg: "fill"
+                var: *tier
+              -  
+                arg: "mean"
+                var: *key_score_mean
+            sort:
+              -
+                var: "x"
+                #variable: *perspective
+                #option: *per_total
+                value: "middle"
+                asc_desc: "DESC"
+          ggplot:
+            width: *plot_multi_fig_width
+            height: *plot_multi_fig_height
+            geom: *plot_box
+            legend: *plot_legend_top
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "标准分"
+            axisx:
+              text_angle: 90
+              text_size: *plot_multi_fig_lab_size
+
+        statistics.bar.perspective.ma: 
+          fig.name: "不同群体学生在“统计与概率”各水平上的人数比例"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_statistics_score_level_ma
+                -
+                  x: "x"
+                  from: *scope
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_academicsystem
+                - 
+                  variable: *topic
+                  value: *top_statistics_score_level_ma
+                -
+                  x: "x"
+                  from: *sample
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_gender
+                - 
+                  variable: *topic
+                  value: *top_statistics_score_level_ma
+                -
+                  x: "x"
+                  from:  *sample
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_huji
+                - 
+                  variable: *topic
+                  value: *top_statistics_score_level_ma
+                -
+                  x: "x"
+                  from: *sample
+            aes:
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+            order:
+              -
+                var: "x"
+                list: *order_prov_coun_acad_gen_hu
+              
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_stacking 
+            legend: *plot_legend_top
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: *xlab_prov_coun_acad_gen_hu
+              ylab: "百分数（%）"
+
+        statistics.box.perspective.ma: 
+          fig.name: "不同群体学生在“统计与概率”上的得分分布"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_statistics_score_quantile_ma
+                -
+                  x: "x"
+                  from: *scope
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope                  
+                - 
+                  fill: "fill"
+                  by:
+                    - *scope
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_statistics_score_mean_ma
+                -
+                  x: "x"
+                  from: *scope
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *scope
+
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_academicsystem
+                - 
+                  variable: *topic
+                  value: *top_statistics_score_quantile_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_academicsystem
+                - 
+                  variable: *topic
+                  value: *top_statistics_score_mean_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_gender
+                - 
+                  variable: *topic
+                  value: *top_statistics_score_quantile_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_gender
+                - 
+                  variable: *topic
+                  value: *top_statistics_score_mean_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_huji
+                - 
+                  variable: *topic
+                  value: *top_statistics_score_quantile_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_huji
+                - 
+                  variable: *topic
+                  value: *top_statistics_score_mean_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: *perspective
+
+            derivative: 
+              group: "groupby"
+              key: *key
+              keep:
+                - "x"
+                - "fill"
+                - "groupby"
+                
+            aes:
+              -  
+                arg: "ymin"
+                var: *stat_quantile_key_bottom
+              -  
+                arg: "lower"
+                var: *stat_quantile_key_lower
+              -  
+                arg: "middle"
+                var: *stat_quantile_key_median
+              -  
+                arg: "upper"
+                var: *stat_quantile_key_upper
+              -  
+                arg: "ymax"
+                var: *stat_quantile_key_top
+              -  
+                arg: "mean"
+                var: *key_score_mean
+            order:
+              - 
+                var: "x"
+                list: *order_prov_coun_acad_gen_hu
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_box
+            legend: *plot_legend_top
+            label:
+              xlab: *xlab_prov_coun_acad_gen_hu
+              ylab: "标准分"
+            #axisy:
+            #  continuous_limits:
+            #    - 0
+            #    - 800
+            #  ylim:
+            #    - 0
+            #    - 800
+
+        statistics.bar.province.county.school.ma: 
+          fig.name: "各学校学生在“统计与概率”各水平上的人数比例"
+          entry: "statistics.bar.province.county.school.ma"
+          ext.tex: ".tex"
+          ext.fig: ".pdf"
+          fig.limit: *plot_multi_fig_limit
+          x.leader: *leader_prov_coun
+          
+          data:
+            digits: *plot_data_digits
+            county.filter:  TRUE
+          
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_statistics_score_level_ma
+            aes:
+              - 
+                arg: "x"
+                var: *scope
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+            sort:
+              -
+                var: "x"
+                variable: *key
+                option: "A"
+                value: *value
+                asc_desc: "DESC"
+          ggplot:
+            width: *plot_multi_fig_width
+            height: *plot_multi_fig_height
+            geom: *plot_bar_stacking
+            legend: *plot_legend_top
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+            axisx:
+              text_angle: 90
+              text_size: *plot_multi_fig_lab_size
+
+        statistics.box.province.county.school.ma: 
+          fig.name: "各学校学生在“统计与概率”上的得分分布"
+          entry: "statistics.box.province.county.school.ma"
+          ext.tex: ".tex"
+          ext.fig: ".pdf"
+          fig.limit: *plot_multi_fig_limit
+          x.leader: *leader_prov_coun
+          
+          data:
+            digits: *plot_data_digits
+            county.filter:  TRUE
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_statistics_score_quantile_ma
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_statistics_score_mean_ma
+            derivative: 
+              group: *scope
+              key: *key
+              keep:
+                - *scope
+                - *tier
+                - *perspective
+            aes:
+              - 
+                arg: "x"
+                var: *scope
+              -  
+                arg: "ymin"
+                var: *stat_quantile_key_bottom
+              -  
+                arg: "lower"
+                var: *stat_quantile_key_lower
+              -  
+                arg: "middle"
+                var: *stat_quantile_key_median
+              -  
+                arg: "upper"
+                var: *stat_quantile_key_upper
+              -  
+                arg: "ymax"
+                var: *stat_quantile_key_top
+              -  
+                arg: "fill"
+                var: *tier
+              -  
+                arg: "mean"
+                var: *key_score_mean
+            sort:
+              -
+                var: "x"
+                #variable: *perspective
+                #option: *per_total
+                value: "middle"
+                asc_desc: "DESC"
+          ggplot:
+            width: *plot_multi_fig_width
+            height: *plot_multi_fig_height
+            geom: *plot_box
+            legend: *plot_legend_top
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "标准分"
+            axisx:
+              text_angle: 90
+              text_size: *plot_multi_fig_lab_size
+
+        skill.bar.perspective.ma: 
+          fig.name: "不同群体学生在“知识技能”各水平上的人数比例"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_skill_score_level_ma
+                -
+                  x: "x"
+                  from: *scope
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_academicsystem
+                - 
+                  variable: *topic
+                  value: *top_skill_score_level_ma
+                -
+                  x: "x"
+                  from: *sample
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_gender
+                - 
+                  variable: *topic
+                  value: *top_skill_score_level_ma
+                -
+                  x: "x"
+                  from:  *sample
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_huji
+                - 
+                  variable: *topic
+                  value: *top_skill_score_level_ma
+                -
+                  x: "x"
+                  from: *sample
+            aes:
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+            order:
+              -
+                var: "x"
+                list: *order_prov_coun_acad_gen_hu
+              
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_stacking 
+            legend: *plot_legend_top
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: *xlab_prov_coun_acad_gen_hu
+              ylab: "百分数（%）"
+
+        skill.box.perspective.ma: 
+          fig.name: "不同群体学生在“知识技能”上的得分分布"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_skill_score_quantile_ma
+                -
+                  x: "x"
+                  from: *scope
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope                  
+                - 
+                  fill: "fill"
+                  by:
+                    - *scope
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_skill_score_mean_ma
+                -
+                  x: "x"
+                  from: *scope
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *scope
+
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_academicsystem
+                - 
+                  variable: *topic
+                  value: *top_skill_score_quantile_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_academicsystem
+                - 
+                  variable: *topic
+                  value: *top_skill_score_mean_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_gender
+                - 
+                  variable: *topic
+                  value: *top_skill_score_quantile_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_gender
+                - 
+                  variable: *topic
+                  value: *top_skill_score_mean_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_huji
+                - 
+                  variable: *topic
+                  value: *top_skill_score_quantile_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_huji
+                - 
+                  variable: *topic
+                  value: *top_skill_score_mean_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: *perspective
+
+            derivative: 
+              group: "groupby"
+              key: *key
+              keep:
+                - "x"
+                - "fill"
+                - "groupby"
+                
+            aes:
+              -  
+                arg: "ymin"
+                var: *stat_quantile_key_bottom
+              -  
+                arg: "lower"
+                var: *stat_quantile_key_lower
+              -  
+                arg: "middle"
+                var: *stat_quantile_key_median
+              -  
+                arg: "upper"
+                var: *stat_quantile_key_upper
+              -  
+                arg: "ymax"
+                var: *stat_quantile_key_top
+              -  
+                arg: "mean"
+                var: *key_score_mean
+            order:
+              - 
+                var: "x"
+                list: *order_prov_coun_acad_gen_hu
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_box
+            legend: *plot_legend_top
+            label:
+              xlab: *xlab_prov_coun_acad_gen_hu
+              ylab: "标准分"
+            #axisy:
+            #  continuous_limits:
+            #    - 0
+            #    - 800
+            #  ylim:
+            #    - 0
+            #    - 800
+
+        skill.bar.province.county.school.ma: 
+          fig.name: "各学校学生在“知识技能”各水平上的人数比例"
+          entry: "skill.bar.province.county.school.ma"
+          ext.tex: ".tex"
+          ext.fig: ".pdf"
+          fig.limit: *plot_multi_fig_limit
+          x.leader: *leader_prov_coun
+          
+          data:
+            digits: *plot_data_digits
+            county.filter:  TRUE
+          
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_skill_score_level_ma
+            aes:
+              - 
+                arg: "x"
+                var: *scope
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+            sort:
+              -
+                var: "x"
+                variable: *key
+                option: "A"
+                value: *value
+                asc_desc: "DESC"
+          ggplot:
+            width: *plot_multi_fig_width
+            height: *plot_multi_fig_height
+            geom: *plot_bar_stacking
+            legend: *plot_legend_top
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+            axisx:
+              text_angle: 90
+              text_size: *plot_multi_fig_lab_size
+
+        skill.box.province.county.school.ma: 
+          fig.name: "各学校学生在“知识技能”上的得分分布"
+          entry: "skill.box.province.county.school.ma"
+          ext.tex: ".tex"
+          ext.fig: ".pdf"
+          fig.limit: *plot_multi_fig_limit
+          x.leader: *leader_prov_coun
+          
+          data:
+            digits: *plot_data_digits
+            county.filter:  TRUE
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_skill_score_quantile_ma
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_skill_score_mean_ma
+            derivative: 
+              group: *scope
+              key: *key
+              keep:
+                - *scope
+                - *tier
+                - *perspective
+            aes:
+              - 
+                arg: "x"
+                var: *scope
+              -  
+                arg: "ymin"
+                var: *stat_quantile_key_bottom
+              -  
+                arg: "lower"
+                var: *stat_quantile_key_lower
+              -  
+                arg: "middle"
+                var: *stat_quantile_key_median
+              -  
+                arg: "upper"
+                var: *stat_quantile_key_upper
+              -  
+                arg: "ymax"
+                var: *stat_quantile_key_top
+              -  
+                arg: "fill"
+                var: *tier
+              -  
+                arg: "mean"
+                var: *key_score_mean
+            sort:
+              -
+                var: "x"
+                #variable: *perspective
+                #option: *per_total
+                value: "middle"
+                asc_desc: "DESC"
+          ggplot:
+            width: *plot_multi_fig_width
+            height: *plot_multi_fig_height
+            geom: *plot_box
+            legend: *plot_legend_top
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "标准分"
+            axisx:
+              text_angle: 90
+              text_size: *plot_multi_fig_lab_size
+
+        concept.bar.perspective.ma: 
+          fig.name: "不同群体学生在“数学理解”各水平上的人数比例"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_concept_score_level_ma
+                -
+                  x: "x"
+                  from: *scope
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_academicsystem
+                - 
+                  variable: *topic
+                  value: *top_concept_score_level_ma
+                -
+                  x: "x"
+                  from: *sample
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_gender
+                - 
+                  variable: *topic
+                  value: *top_concept_score_level_ma
+                -
+                  x: "x"
+                  from:  *sample
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_huji
+                - 
+                  variable: *topic
+                  value: *top_concept_score_level_ma
+                -
+                  x: "x"
+                  from: *sample
+            aes:
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+            order:
+              -
+                var: "x"
+                list: *order_prov_coun_acad_gen_hu
+              
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_stacking 
+            legend: *plot_legend_top
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: *xlab_prov_coun_acad_gen_hu
+              ylab: "百分数（%）"
+
+        concept.box.perspective.ma: 
+          fig.name: "不同群体学生在“数学理解”上的得分分布"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_concept_score_quantile_ma
+                -
+                  x: "x"
+                  from: *scope
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope                  
+                - 
+                  fill: "fill"
+                  by:
+                    - *scope
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_concept_score_mean_ma
+                -
+                  x: "x"
+                  from: *scope
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *scope
+
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_academicsystem
+                - 
+                  variable: *topic
+                  value: *top_concept_score_quantile_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_academicsystem
+                - 
+                  variable: *topic
+                  value: *top_skill_score_mean_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_gender
+                - 
+                  variable: *topic
+                  value: *top_concept_score_quantile_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_gender
+                - 
+                  variable: *topic
+                  value: *top_concept_score_mean_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_huji
+                - 
+                  variable: *topic
+                  value: *top_concept_score_quantile_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_huji
+                - 
+                  variable: *topic
+                  value: *top_concept_score_mean_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: *perspective
+
+            derivative: 
+              group: "groupby"
+              key: *key
+              keep:
+                - "x"
+                - "fill"
+                - "groupby"
+                
+            aes:
+              -  
+                arg: "ymin"
+                var: *stat_quantile_key_bottom
+              -  
+                arg: "lower"
+                var: *stat_quantile_key_lower
+              -  
+                arg: "middle"
+                var: *stat_quantile_key_median
+              -  
+                arg: "upper"
+                var: *stat_quantile_key_upper
+              -  
+                arg: "ymax"
+                var: *stat_quantile_key_top
+              -  
+                arg: "mean"
+                var: *key_score_mean
+            order:
+              - 
+                var: "x"
+                list: *order_prov_coun_acad_gen_hu
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_box
+            legend: *plot_legend_top
+            label:
+              xlab: *xlab_prov_coun_acad_gen_hu
+              ylab: "标准分"
+            #axisy:
+            #  continuous_limits:
+            #    - 0
+            #    - 800
+            #  ylim:
+            #    - 0
+            #    - 800
+
+        concept.bar.province.county.school.ma: 
+          fig.name: "各学校学生在“数学理解”各水平上的人数比例"
+          entry: "concept.bar.province.county.school.ma"
+          ext.tex: ".tex"
+          ext.fig: ".pdf"
+          fig.limit: *plot_multi_fig_limit
+          x.leader: *leader_prov_coun
+          
+          data:
+            digits: *plot_data_digits
+            county.filter:  TRUE
+          
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_concept_score_level_ma
+            aes:
+              - 
+                arg: "x"
+                var: *scope
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+            sort:
+              -
+                var: "x"
+                variable: *key
+                option: "A"
+                value: *value
+                asc_desc: "DESC"
+          ggplot:
+            width: *plot_multi_fig_width
+            height: *plot_multi_fig_height
+            geom: *plot_bar_stacking
+            legend: *plot_legend_top
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+            axisx:
+              text_angle: 90
+              text_size: *plot_multi_fig_lab_size
+
+        concept.box.province.county.school.ma: 
+          fig.name: "各学校学生在“数学理解”上的得分分布"
+          entry: "concept.box.province.county.school.ma"
+          ext.tex: ".tex"
+          ext.fig: ".pdf"
+          fig.limit: *plot_multi_fig_limit
+          x.leader: *leader_prov_coun
+          
+          data:
+            digits: *plot_data_digits
+            county.filter:  TRUE
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_concept_score_quantile_ma
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_concept_score_mean_ma
+            derivative: 
+              group: *scope
+              key: *key
+              keep:
+                - *scope
+                - *tier
+                - *perspective
+            aes:
+              - 
+                arg: "x"
+                var: *scope
+              -  
+                arg: "ymin"
+                var: *stat_quantile_key_bottom
+              -  
+                arg: "lower"
+                var: *stat_quantile_key_lower
+              -  
+                arg: "middle"
+                var: *stat_quantile_key_median
+              -  
+                arg: "upper"
+                var: *stat_quantile_key_upper
+              -  
+                arg: "ymax"
+                var: *stat_quantile_key_top
+              -  
+                arg: "fill"
+                var: *tier
+              -  
+                arg: "mean"
+                var: *key_score_mean
+            sort:
+              -
+                var: "x"
+                #variable: *perspective
+                #option: *per_total
+                value: "middle"
+                asc_desc: "DESC"
+          ggplot:
+            width: *plot_multi_fig_width
+            height: *plot_multi_fig_height
+            geom: *plot_box
+            legend: *plot_legend_top
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "标准分"
+            axisx:
+              text_angle: 90
+              text_size: *plot_multi_fig_lab_size
+
+        apply.bar.perspective.ma: 
+          fig.name: "不同群体学生在“规则应用”各水平上的人数比例"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_apply_score_level_ma
+                -
+                  x: "x"
+                  from: *scope
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_academicsystem
+                - 
+                  variable: *topic
+                  value: *top_apply_score_level_ma
+                -
+                  x: "x"
+                  from: *sample
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_gender
+                - 
+                  variable: *topic
+                  value: *top_apply_score_level_ma
+                -
+                  x: "x"
+                  from:  *sample
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_huji
+                - 
+                  variable: *topic
+                  value: *top_apply_score_level_ma
+                -
+                  x: "x"
+                  from: *sample
+            aes:
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+            order:
+              -
+                var: "x"
+                list: *order_prov_coun_acad_gen_hu
+              
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_stacking 
+            legend: *plot_legend_top
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: *xlab_prov_coun_acad_gen_hu
+              ylab: "百分数（%）"
+
+        apply.box.perspective.ma: 
+          fig.name: "不同群体学生在“规则应用”上的得分分布"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_apply_score_quantile_ma
+                -
+                  x: "x"
+                  from: *scope
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope                  
+                - 
+                  fill: "fill"
+                  by:
+                    - *scope
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_apply_score_mean_ma
+                -
+                  x: "x"
+                  from: *scope
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *scope
+
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_academicsystem
+                - 
+                  variable: *topic
+                  value: *top_apply_score_quantile_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_academicsystem
+                - 
+                  variable: *topic
+                  value: *top_apply_score_mean_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_gender
+                - 
+                  variable: *topic
+                  value: *top_apply_score_quantile_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_gender
+                - 
+                  variable: *topic
+                  value: *top_apply_score_mean_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_huji
+                - 
+                  variable: *topic
+                  value: *top_apply_score_quantile_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_huji
+                - 
+                  variable: *topic
+                  value: *top_apply_score_mean_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: *perspective
+
+            derivative: 
+              group: "groupby"
+              key: *key
+              keep:
+                - "x"
+                - "fill"
+                - "groupby"
+                
+            aes:
+              -  
+                arg: "ymin"
+                var: *stat_quantile_key_bottom
+              -  
+                arg: "lower"
+                var: *stat_quantile_key_lower
+              -  
+                arg: "middle"
+                var: *stat_quantile_key_median
+              -  
+                arg: "upper"
+                var: *stat_quantile_key_upper
+              -  
+                arg: "ymax"
+                var: *stat_quantile_key_top
+              -  
+                arg: "mean"
+                var: *key_score_mean
+            order:
+              - 
+                var: "x"
+                list: *order_prov_coun_acad_gen_hu
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_box
+            legend: *plot_legend_top
+            label:
+              xlab: *xlab_prov_coun_acad_gen_hu
+              ylab: "标准分"
+            #axisy:
+            #  continuous_limits:
+            #    - 0
+            #    - 800
+            #  ylim:
+            #    - 0
+            #    - 800
+
+        apply.bar.province.county.school.ma: 
+          fig.name: "各学校学生在“规则应用”各水平上的人数比例"
+          entry: "apply.bar.province.county.school.ma"
+          ext.tex: ".tex"
+          ext.fig: ".pdf"
+          fig.limit: *plot_multi_fig_limit
+          x.leader: *leader_prov_coun
+          
+          data:
+            digits: *plot_data_digits
+            county.filter:  TRUE
+          
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_apply_score_level_ma
+            aes:
+              - 
+                arg: "x"
+                var: *scope
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+            sort:
+              -
+                var: "x"
+                variable: *key
+                option: "A"
+                value: *value
+                asc_desc: "DESC"
+          ggplot:
+            width: *plot_multi_fig_width
+            height: *plot_multi_fig_height
+            geom: *plot_bar_stacking
+            legend: *plot_legend_top
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+            axisx:
+              text_angle: 90
+              text_size: *plot_multi_fig_lab_size
+
+        apply.box.province.county.school.ma: 
+          fig.name: "各学校学生在“规则应用”上的得分分布"
+          entry: "apply.box.province.county.school.ma"
+          ext.tex: ".tex"
+          ext.fig: ".pdf"
+          fig.limit: *plot_multi_fig_limit
+          x.leader: *leader_prov_coun
+          
+          data:
+            digits: *plot_data_digits
+            county.filter:  TRUE
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_apply_score_quantile_ma
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_apply_score_mean_ma
+            derivative: 
+              group: *scope
+              key: *key
+              keep:
+                - *scope
+                - *tier
+                - *perspective
+            aes:
+              - 
+                arg: "x"
+                var: *scope
+              -  
+                arg: "ymin"
+                var: *stat_quantile_key_bottom
+              -  
+                arg: "lower"
+                var: *stat_quantile_key_lower
+              -  
+                arg: "middle"
+                var: *stat_quantile_key_median
+              -  
+                arg: "upper"
+                var: *stat_quantile_key_upper
+              -  
+                arg: "ymax"
+                var: *stat_quantile_key_top
+              -  
+                arg: "fill"
+                var: *tier
+              -  
+                arg: "mean"
+                var: *key_score_mean
+            sort:
+              -
+                var: "x"
+                #variable: *perspective
+                #option: *per_total
+                value: "middle"
+                asc_desc: "DESC"
+          ggplot:
+            width: *plot_multi_fig_width
+            height: *plot_multi_fig_height
+            geom: *plot_box
+            legend: *plot_legend_top
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "标准分"
+            axisx:
+              text_angle: 90
+              text_size: *plot_multi_fig_lab_size
+
+        problem.bar.perspective.ma: 
+          fig.name: "不同群体学生在“问题解决”各水平上的人数比例"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_problem_score_level_ma
+                -
+                  x: "x"
+                  from: *scope
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_academicsystem
+                - 
+                  variable: *topic
+                  value: *top_problem_score_level_ma
+                -
+                  x: "x"
+                  from: *sample
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_gender
+                - 
+                  variable: *topic
+                  value: *top_problem_score_level_ma
+                -
+                  x: "x"
+                  from:  *sample
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_huji
+                - 
+                  variable: *topic
+                  value: *top_problem_score_level_ma
+                -
+                  x: "x"
+                  from: *sample
+            aes:
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+            order:
+              -
+                var: "x"
+                list: *order_prov_coun_acad_gen_hu
+              
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_stacking 
+            legend: *plot_legend_top
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: *xlab_prov_coun_acad_gen_hu
+              ylab: "百分数（%）"
+
+        problem.box.perspective.ma: 
+          fig.name: "不同群体学生在“问题解决”上的得分分布"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_problem_score_quantile_ma
+                -
+                  x: "x"
+                  from: *scope
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope                  
+                - 
+                  fill: "fill"
+                  by:
+                    - *scope
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_problem_score_mean_ma
+                -
+                  x: "x"
+                  from: *scope
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *scope
+
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_academicsystem
+                - 
+                  variable: *topic
+                  value: *top_problem_score_quantile_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_academicsystem
+                - 
+                  variable: *topic
+                  value: *top_problem_score_mean_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_gender
+                - 
+                  variable: *topic
+                  value: *top_problem_score_quantile_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_gender
+                - 
+                  variable: *topic
+                  value: *top_problem_score_mean_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_huji
+                - 
+                  variable: *topic
+                  value: *top_problem_score_quantile_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: 
+                    - *perspective
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_huji
+                - 
+                  variable: *topic
+                  value: *top_problem_score_mean_ma
+                -
+                  x: "x"
+                  from: *sample
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *sample
+                -
+                  fill: "fill"
+                  by: *perspective
+
+            derivative: 
+              group: "groupby"
+              key: *key
+              keep:
+                - "x"
+                - "fill"
+                - "groupby"
+                
+            aes:
+              -  
+                arg: "ymin"
+                var: *stat_quantile_key_bottom
+              -  
+                arg: "lower"
+                var: *stat_quantile_key_lower
+              -  
+                arg: "middle"
+                var: *stat_quantile_key_median
+              -  
+                arg: "upper"
+                var: *stat_quantile_key_upper
+              -  
+                arg: "ymax"
+                var: *stat_quantile_key_top
+              -  
+                arg: "mean"
+                var: *key_score_mean
+            order:
+              - 
+                var: "x"
+                list: *order_prov_coun_acad_gen_hu
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_box
+            legend: *plot_legend_top
+            label:
+              xlab: *xlab_prov_coun_acad_gen_hu
+              ylab: "标准分"
+            #axisy:
+            #  continuous_limits:
+            #    - 0
+            #    - 800
+            #  ylim:
+            #    - 0
+            #    - 800
+
+        problem.bar.province.county.school.ma: 
+          fig.name: "各学校学生在“问题解决”各水平上的人数比例"
+          entry: "problem.bar.province.county.school.ma"
+          ext.tex: ".tex"
+          ext.fig: ".pdf"
+          fig.limit: *plot_multi_fig_limit
+          x.leader: *leader_prov_coun
+          
+          data:
+            digits: *plot_data_digits
+            county.filter:  TRUE
+          
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_problem_score_level_ma
+            aes:
+              - 
+                arg: "x"
+                var: *scope
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+            sort:
+              -
+                var: "x"
+                variable: *key
+                option: "A"
+                value: *value
+                asc_desc: "DESC"
+          ggplot:
+            width: *plot_multi_fig_width
+            height: *plot_multi_fig_height
+            geom: *plot_bar_stacking
+            legend: *plot_legend_top
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+            axisx:
+              text_angle: 90
+              text_size: *plot_multi_fig_lab_size
+
+        problem.box.province.county.school.ma: 
+          fig.name: "各学校学生在“问题解决”上的得分分布"
+          entry: "problem.box.province.county.school.ma"
+          ext.tex: ".tex"
+          ext.fig: ".pdf"
+          fig.limit: *plot_multi_fig_limit
+          x.leader: *leader_prov_coun
+          
+          data:
+            digits: *plot_data_digits
+            county.filter:  TRUE
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_problem_score_quantile_ma
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_problem_score_mean_ma
+            derivative: 
+              group: *scope
+              key: *key
+              keep:
+                - *scope
+                - *tier
+                - *perspective
+            aes:
+              - 
+                arg: "x"
+                var: *scope
+              -  
+                arg: "ymin"
+                var: *stat_quantile_key_bottom
+              -  
+                arg: "lower"
+                var: *stat_quantile_key_lower
+              -  
+                arg: "middle"
+                var: *stat_quantile_key_median
+              -  
+                arg: "upper"
+                var: *stat_quantile_key_upper
+              -  
+                arg: "ymax"
+                var: *stat_quantile_key_top
+              -  
+                arg: "fill"
+                var: *tier
+              -  
+                arg: "mean"
+                var: *key_score_mean
+            sort:
+              -
+                var: "x"
+                #variable: *perspective
+                #option: *per_total
+                value: "middle"
+                asc_desc: "DESC"
+          ggplot:
+            width: *plot_multi_fig_width
+            height: *plot_multi_fig_height
+            geom: *plot_box
+            legend: *plot_legend_top
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "标准分"
+            axisx:
+              text_angle: 90
+              text_size: *plot_multi_fig_lab_size
+
+
 
         dom.dim.bar.province.perspective.ma: 
           fig.name: "不同群体学生在“领域／维度”各水平上的人数比例"
@@ -44235,7 +47453,7 @@ report:
                   value: *subject_ma
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_total
@@ -44289,6 +47507,16 @@ report:
                 - 
                   variable: *topic
                   value: *top_point_rate
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
+                - 
+                  variable: *topic
+                  value: *top_point_rate
 
         dom.dim.answer.table.ma: 
           name: "学生在数学学科“领域／维度”上的作答情况"
@@ -44302,6 +47530,16 @@ report:
                 -
                   variable: *tier
                   value: *tier_province
+                - 
+                  variable: *topic
+                  value: *top_answer
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_county
                 - 
                   variable: *topic
                   value: *top_answer

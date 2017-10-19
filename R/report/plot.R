@@ -782,7 +782,7 @@ plot.data <- function(
     groups <- levels(factor(data.in[,plot$data$derivative$group]))
     for(i  in 1:length(groups)){
       group <- groups[i]
-      print(group)
+      #print(group)
       #print(plot$data$derivative$group)
       #data <- subset(data.in,plot$data$derivative$group==group)
       data <- data.in[data.in[,plot$data$derivative$group]==group,]
