@@ -41,6 +41,10 @@ global:
         - "别名"
       label: &label
         - "标注值"
+      school.hq: &school_hq
+        - "总校"
+      school.camp: &school_camp
+        - "校区"
 
     def: &stat_def
       assesment: &def_assesment
@@ -80,7 +84,7 @@ global:
         topic: &tier_topic
           - *tier_province
           - *tier_county
-          #- *tier_school #ignore school tier to save test time
+          - *tier_school #ignore school tier to save test time
       scope: # one of the record group in the tier 
         province: &scope_province
           - "本市"
@@ -1229,6 +1233,8 @@ global:
           - "百分比"
         count: &key_count
           - "计数"
+        index: &key_index
+          - "指标"
 
       value: 
       weight: 
@@ -8283,10 +8289,7 @@ count:
             col.value: *def_grade
           -
             col.name: *subject
-            col.value: *survey_st
-          #-
-          #  col.name: *tier
-          #  col.value: *tier_school
+            col.value: *participant_cnt
           -
             col.name: *perspective
             col.value: *per_total
@@ -8346,9 +8349,6 @@ count:
           -
             col.name: *subject
             col.value: *survey_st
-          #-
-          #  col.name: *tier
-          #  col.value: *tier_school
           -
             col.name: *perspective
             col.value: *per_total
@@ -8408,9 +8408,6 @@ count:
           -
             col.name: *subject
             col.value: *survey_te
-          #-
-          #  col.name: *tier
-          #  col.value: *tier_school
           -
             col.name: *perspective
             col.value: *per_total
@@ -8471,9 +8468,6 @@ count:
             col.name: *subject
             col.value: *survey_pr
           -
-            col.name: *tier
-            col.value: *tier_school
-          -
             col.name: *perspective
             col.value: *per_total
           -
@@ -8532,9 +8526,6 @@ count:
           -
             col.name: *subject
             col.value: *survey_pa
-          -
-            col.name: *tier
-            col.value: *tier_school
           -
             col.name: *perspective
             col.value: *per_total
@@ -8595,9 +8586,6 @@ count:
             col.name: *subject
             col.value: *subject_cn
           -
-            col.name: *tier
-            col.value: *tier_school
-          -
             col.name: *perspective
             col.value: *per_total
           -
@@ -8656,9 +8644,6 @@ count:
           -
             col.name: *subject
             col.value: *subject_ma
-          -
-            col.name: *tier
-            col.value: *tier_school
           -
             col.name: *perspective
             col.value: *per_total
@@ -47546,8 +47531,8 @@ report:
 
         
     -
-      process: FALSE
-      table: "统计指标汇总20171010"
+      process: TRUE
+      table: "统计指标汇总"
       markdown: "school_report.Rmd"
 
       year: "2016年度"
@@ -47555,7 +47540,7 @@ report:
       county: "黄浦区"
       school: "上海市比乐中学"
       
-      project: "中小学学业质量"
+      project: "学业质量"
       subject: ""
       report: "绿色指标综合评价"
       title: ""
@@ -47567,28 +47552,158 @@ report:
 
       pre.render:
         - "pre.render.global.setting"
-        - "pre.render.cover.page"
+        - "pre.render.cover.page.sch"
         - "pre.render.head.foot"
-        - "pre.render.report.preface"
+        - "pre.render.report.preface.sch"
         - "pre.render.table.of.contents"
-        - "pre.render.project.summary"
-        - "level.bar.province.county.school.cn"
-        - "level.bar.province.county.school.cn2"
+        - "pre.render.introduce.subject.sch"
+        - "pre.render.introduce.cn.sch"
+        - "pre.render.introduce.ma.sch"
+        
 
       plot:
-        level.bar.province.county.school.cn:
-          entry: "level.bar.province.county.school.cn"
-          ext.tex: ".tex"
-          ext.fig: ".pdf"
-          fig.name: "测试"
-          fig.limit: *plot_multi_fig_limit
-          x.leader:
-            - "本市"
-            - "本区"
-          
+        score.segment.bar.cn: 
+          fig.name: "学生总体语文分数分布"
           data:
             digits: *plot_data_digits
-            county.filter:  TRUE
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_cn
+                -
+                  variable: *tier
+                  value: *tier_school
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_total_score_segment
+            aes:
+              - 
+                arg: "x"
+                var: *key
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_segment  
+            text:
+              vjust: 0.5
+            bar:
+              width: *plot_bar_width
+
+            label:
+              xlab: "标准分"
+              ylab: "百分数（%）"
+
+        score.segment.bar.ma: 
+          fig.name: "学生总体数学分数分布"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_school
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_total_score_segment
+            aes:
+              - 
+                arg: "x"
+                var: *key
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_segment  
+            text:
+              vjust: 0.5
+            bar:
+              width: *plot_bar_width
+
+            label:
+              xlab: "标准分"
+              ylab: "百分数（%）"
+
+        level.bar.subject: 
+          fig.name: "学生在语文和数学学科各水平上的人数比例"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_total_score_level
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              - 
+                arg: "Group"
+                var: *subject
+            alias:
+              arg: "alias"
+              var: *scope
+            order:
+              -
+                var: "Group"
+                list: *order_subject
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_stacking 
+            group:
+              variable: *subject
+              scales: "fixed"
+              position: "bottom"
+            legend: *plot_legend_top
+            bar:
+              width: 0.3
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        level.bar.dimention.cn: 
+          fig.name: "学生在语文学科各能力维度各水平上的人数比例"
+          data:
+            digits: *plot_data_digits
             filter:
               -
                 - 
@@ -47599,11 +47714,31 @@ report:
                   value: *per_total
                 - 
                   variable: *topic
-                  value: *top_total_score_level
+                  value: *top_jilei_score_level_cn
+              -
+                - 
+                  variable: *subject
+                  value: *subject_cn
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_reading_score_level_cn
+              -
+                - 
+                  variable: *subject
+                  value: *subject_cn
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_writing_score_level_cn
             aes:
               - 
                 arg: "x"
-                var: *scope
+                var: "alias"
               -  
                 arg: "y"
                 var: *value
@@ -47613,42 +47748,35 @@ report:
               -  
                 arg: "label"
                 var: *label
-
-            sort:
               -
-                var: "x"
-                variable: *key
-                option: "A"
-                value: *value
-                asc_desc: "ASC"
-
+                arg: "Group"
+                var: *dimention
+            alias:
+              arg: "alias"
+              var: *scope
+            order:
+              - 
+                var: "Group"
+                list: *order_cn_dim          
           ggplot:
-            width: *plot_multi_fig_width
-            height: *plot_multi_fig_height
-            geom: *plot_bar_stacking 
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_stacking
+            group:
+              variable: "Group"
+              scales: "fixed"
+              position: "bottom" 
             legend: *plot_legend_top
             bar:
-              width: *plot_multi_fig_bar_width
+              width: *plot_bar_width_thin
             label:
               xlab: ""
               ylab: "百分数（%）"
-            axisx:
-              text_angle: 90
-              text_size: *plot_multi_fig_lab_size
 
-        level.bar.province.county.school.cn2:
-          entry: "level.bar.province.county.school.cn2"
-          ext.tex: ".tex"
-          ext.fig: ".pdf"
-          fig.name: "补充"
-          fig.limit: *plot_multi_fig_limit
-          x.leader:
-            - "本市"
-            - "本区"
-          
+        score.box.dimention.cn: 
+          fig.name: "学生在语文学科各能力维度上的得分分布"
           data:
             digits: *plot_data_digits
-            county.filter:  TRUE
             filter:
               -
                 - 
@@ -47659,57 +47787,13 @@ report:
                   value: *per_total
                 - 
                   variable: *topic
-                  value: *top_total_score_level
-            aes:
-              - 
-                arg: "x"
-                var: *scope
-              -  
-                arg: "y"
-                var: *value
-              - 
-                arg: "fill"
-                var: *key
-              -  
-                arg: "label"
-                var: *label
+                  value: *top_jilei_score_quantile_cn
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
 
-            sort:
-              -
-                var: "x"
-                variable: *key
-                option: "A"
-                value: *value
-                asc_desc: "ASC"
-
-          ggplot:
-            width: *plot_multi_fig_width
-            height: *plot_multi_fig_height
-            geom: *plot_bar_stacking 
-            legend: *plot_legend_top
-            bar:
-              width: *plot_multi_fig_bar_width
-            label:
-              xlab: ""
-              ylab: "百分数（%）"
-            axisx:
-              text_angle: 90
-              text_size: *plot_multi_fig_lab_size
-
-
-        level.bar.province.county.school.cn3:
-          entry: "level.bar.province.county.school.cn3"
-          ext.tex: ".tex"
-          ext.fig: ".pdf"
-          fig.name: "补充"
-          x.leader:
-            - "本市"
-            - "本区"
-          
-          data:
-            digits: *plot_data_digits
-            county.filter:  TRUE
-            filter:
               -
                 - 
                   variable: *subject
@@ -47719,11 +47803,166 @@ report:
                   value: *per_total
                 - 
                   variable: *topic
-                  value: *top_total_score_level
+                  value: *top_jilei_score_mean_cn
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
+              -
+                - 
+                  variable: *subject
+                  value: *subject_cn
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_reading_score_quantile_cn
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
+              -
+                - 
+                  variable: *subject
+                  value: *subject_cn
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_reading_score_mean_cn
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
+              -
+                - 
+                  variable: *subject
+                  value: *subject_cn
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_writing_score_quantile_cn
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
+              -
+                - 
+                  variable: *subject
+                  value: *subject_cn
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_writing_score_mean_cn
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
+              
+            derivative: 
+              group: "groupby"
+              key: *key
+              keep:
+                - *dimention
+                #- "groupby"
+                - *scope
+
+            alias:
+              arg: "alias"
+              var: *scope
             aes:
               - 
                 arg: "x"
-                var: *scope
+                var: "alias"
+              -  
+                arg: "ymin"
+                var: *stat_quantile_key_bottom
+              -  
+                arg: "lower"
+                var: *stat_quantile_key_lower
+              -  
+                arg: "middle"
+                var: *stat_quantile_key_median
+              -  
+                arg: "upper"
+                var: *stat_quantile_key_upper
+              -  
+                arg: "ymax"
+                var: *stat_quantile_key_top
+              -  
+                arg: "fill"
+                var: *dimention
+              -  
+                arg: "mean"
+                var: *key_score_mean
+              -
+                arg: "Group"
+                var: *dimention
+            order:
+              - 
+                var: "Group"
+                list: *order_cn_dim
+
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_box
+            group:
+              variable: "Group"
+              scales: "fixed"
+              position: "bottom" 
+            legend: *plot_legend_top
+            box:
+              box.width: 0.2
+              error.width: 0.05
+            label:
+              xlab: ""
+              ylab: "标准分"
+            #axisy:
+            #  continuous_limits:
+            #    - 0
+            #    - 500
+            #  ylim:
+            #    - 0
+            #    - 500
+
+        answer.segment.bar.cn: 
+          fig.name: "全体学生在题目C3AO011上的作答情况"
+          data:
+            digits: 1
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_cn
+                -
+                  variable: *tier
+                  value: *tier_school
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_answer
+            #keep:
+            #    - 
+            #      variable: *variable
+            #      value: "C3AO011"
+            aes:
+              - 
+                arg: "x"
+                var: *key
               -  
                 arg: "y"
                 var: *value
@@ -47733,30 +47972,3962 @@ report:
               -  
                 arg: "label"
                 var: *label
-
-            sort:
-              -
-                var: "x"
-                variable: *key
-                option: "A"
-                value: *value
-                asc_desc: "ASC"
-
           ggplot:
-            width: 22
-            height: 5
-            geom: *plot_bar_stacking 
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_segment  
+            text:
+              vjust: 0.5
+            bar:
+              width: *plot_bar_width
+
+            label:
+              xlab: "选项"
+              ylab: "百分数（%）"
+
+        level.bar.domain.ma: 
+          fig.name: "学生在数学学科各内容维度各水平上的人数比例"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_number_score_level_ma
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_space_score_level_ma
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_statistics_score_level_ma
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: *dimention
+            alias:
+              arg: "alias"
+              var: *scope
+            order:
+              - 
+                var: "Group"
+                list: *order_ma_dom          
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_stacking
+            group:
+              variable: "Group"
+              scales: "fixed"
+              position: "bottom" 
             legend: *plot_legend_top
             bar:
-              width: 0.6
+              width: *plot_bar_width_thin
             label:
               xlab: ""
               ylab: "百分数（%）"
-            axisx:
-              text_angle: 90
-              text_size: 8
 
+        score.box.domain.ma: 
+          fig.name: "学生在数学学科各内容维度上的得分分布"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_number_score_quantile_ma
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
+
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_number_score_mean_ma
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_space_score_quantile_ma
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_space_score_mean_ma
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_statistics_score_quantile_ma
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_statistics_score_mean_ma
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
+              
+            derivative: 
+              group: "groupby"
+              key: *key
+              keep:
+                - *dimention
+                #- "groupby"
+                - *scope
+
+            alias:
+              arg: "alias"
+              var: *scope
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "ymin"
+                var: *stat_quantile_key_bottom
+              -  
+                arg: "lower"
+                var: *stat_quantile_key_lower
+              -  
+                arg: "middle"
+                var: *stat_quantile_key_median
+              -  
+                arg: "upper"
+                var: *stat_quantile_key_upper
+              -  
+                arg: "ymax"
+                var: *stat_quantile_key_top
+              -  
+                arg: "fill"
+                var: *dimention
+              -  
+                arg: "mean"
+                var: *key_score_mean
+              -
+                arg: "Group"
+                var: *dimention
+            order:
+              - 
+                var: "Group"
+                list: *order_ma_dom
+
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_box
+            group:
+              variable: "Group"
+              scales: "fixed"
+              position: "bottom" 
+            legend: *plot_legend_top
+            box:
+              box.width: 0.2
+              error.width: 0.05
+            label:
+              xlab: ""
+              ylab: "标准分"
+            #axisy:
+            #  continuous_limits:
+            #    - 0
+            #    - 500
+            #  ylim:
+            #    - 0
+            #    - 500
+
+        level.bar.dimention.ma: 
+          fig.name: "学生在数学学科各能力维度各水平上的人数比例"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_skill_score_level_ma
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_concept_score_level_ma
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_apply_score_level_ma
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_problem_score_level_ma
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: *dimention
+            alias:
+              arg: "alias"
+              var: *scope
+            order:
+              - 
+                var: "Group"
+                list: *order_ma_dim          
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_stacking
+            group:
+              variable: "Group"
+              scales: "fixed"
+              position: "bottom" 
+            legend: *plot_legend_top
+            bar:
+              width: *plot_bar_width_thin
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        score.box.dimention.ma: 
+          fig.name: "学生在数学学科各能力维度上的得分分布"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_skill_score_quantile_ma
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
+
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_skill_score_mean_ma
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_concept_score_quantile_ma
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_concept_score_mean_ma
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_apply_score_quantile_ma
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_apply_score_mean_ma
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_problem_score_quantile_ma
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_problem_score_mean_ma
+                -
+                  fill: "groupby"
+                  by:
+                    - *scope
+                    - *dimention
+              
+            derivative: 
+              group: "groupby"
+              key: *key
+              keep:
+                - *dimention
+                #- "groupby"
+                - *scope
+
+            alias:
+              arg: "alias"
+              var: *scope
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "ymin"
+                var: *stat_quantile_key_bottom
+              -  
+                arg: "lower"
+                var: *stat_quantile_key_lower
+              -  
+                arg: "middle"
+                var: *stat_quantile_key_median
+              -  
+                arg: "upper"
+                var: *stat_quantile_key_upper
+              -  
+                arg: "ymax"
+                var: *stat_quantile_key_top
+              -  
+                arg: "fill"
+                var: *dimention
+              -  
+                arg: "mean"
+                var: *key_score_mean
+              -
+                arg: "Group"
+                var: *dimention
+            order:
+              - 
+                var: "Group"
+                list: *order_ma_dim
+
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_box
+            group:
+              variable: "Group"
+              scales: "fixed"
+              position: "bottom" 
+            legend: *plot_legend_top
+            box:
+              box.width: 0.2
+              error.width: 0.05
+            label:
+              xlab: ""
+              ylab: "标准分"
+            #axisy:
+            #  continuous_limits:
+            #    - 0
+            #    - 500
+            #  ylim:
+            #    - 0
+            #    - 500
+
+        answer.segment.bar.ma: 
+          fig.name: "全体学生在题目M3AO011上的作答情况"
+          data:
+            digits: 1
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                -
+                  variable: *tier
+                  value: *tier_school
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_answer
+            #keep:
+            #    - 
+            #      variable: *variable
+            #      value: "C3AO011"
+            aes:
+              - 
+                arg: "x"
+                var: *key
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_segment  
+            text:
+              vjust: 0.5
+            bar:
+              width: *plot_bar_width
+
+            label:
+              xlab: "选项"
+              ylab: "百分数（%）"
+
+
+        onechild.bar: 
+          fig.name: "四年级学生为独生子女情况"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_one_child_st        
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope                
+            order:
+              -
+                var: "fill"
+                list:
+                  - "是"
+                  - "不是"
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        book.bar: 
+          fig.name: "四年级学生家里的图书量"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_books        
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope                
+            order:
+              -
+                var: "fill"
+                list:
+                  - "20本以下"
+                  - "21-50本之间"
+                  - "51-100本之间"
+                  - "101-200本之间"
+                  - "200本以上"
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        car.bar: 
+          fig.name: "四年级学生家庭汽车拥有量"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_cars        
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope                
+            order:
+              -
+                var: "fill"
+                list:
+                  - "没有"
+                  - "有，1辆"
+                  - "有，2辆"
+                  - "有，2辆以上"
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        trip.bar: 
+          fig.name: "四年级学生出境旅游的总体情况"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_oversea_trip        
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope                
+            order:
+              -
+                var: "fill"
+                list:
+                  - "目前还没有去过"
+                  - "1次"
+                  - "2次"
+                  - "3次"
+                  - "4次及以上"
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        father_edu.bar: 
+          fig.name: "四年级学生父亲的受教育情况"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_father_edu        
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope                
+            order:
+              -
+                var: "fill"
+                list:
+                  - "初中及以下"
+                  - "高中(职高、中专)"
+                  - "大专"
+                  - "本科"
+                  - "研究生"
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        mother_edu.bar: 
+          fig.name: "四年级学生母亲的受教育情况"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_mother_edu        
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope                
+            order:
+              -
+                var: "fill"
+                list:
+                  - "初中及以下"
+                  - "高中(职高、中专)"
+                  - "大专"
+                  - "本科"
+                  - "研究生"
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        sleep.bar: 
+          fig.name: "四年级学生平时上学时每天的睡眠时间"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_sleep_weekend        
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope                
+            order:
+              -
+                var: "fill"
+                list:
+                  - "少于7小时"
+                  - "7-8小时(含7小时)"
+                  - "8-9小时(含8小时)"
+                  - "9-10小时(含9小时)"
+                  - "10小时及以上"
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        sleep_weekend.bar: 
+          fig.name: "四年级学生放假时每天的睡眠时间"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_sleep_weekend        
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope                
+            order:
+              -
+                var: "fill"
+                list:
+                  - "少于7小时"
+                  - "7-8小时(含7小时)"
+                  - "8-9小时(含8小时)"
+                  - "9-10小时(含9小时)"
+                  - "10小时及以上"
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        sleep_enough.bar: 
+          fig.name: "四年级学生对自己睡眠时间是否充足的看法"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_sleep_enough        
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope                
+            order:
+              -
+                var: "fill"
+                list:
+                  - "非常不充足"
+                  - "比较不充足"
+                  - "比较充足"
+                  - "非常充足"
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        sleep_not_enough.bar: 
+          fig.name: "四年级学生睡眠不充足的原因"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_sleep_not_enough
+
+            alias:
+              arg: "alias"
+              var: *scope
+
+            aes:
+              - 
+                arg: "x"
+                var: *key
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: "alias"
+              -  
+                arg: "label"
+                var: *label
+            sort:
+              -
+                var: "x"
+                variable: *tier
+                option: *tier_county
+                value: *value
+                asc_desc: "ASC"
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            position: "dodge" 
+            legend: *plot_legend_right
+            coord: "flip"
+            text:
+              hjust: 0.5
+            bar:
+              width: *plot_bar_width_fat
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        writing_homework_hours.bar: 
+          fig.name: "四年级学生每天书面作业的时间"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_writing_homework_hours        
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope                
+            order:
+              -
+                var: "fill"
+                list:
+                  - "1小时以内"
+                  - "1-2小时（含1小时）"
+                  - "2-3小时（含2小时）"
+                  - "3-4小时（含3小时）"
+                  - "4小时及以上"
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        writing_homework_difficulty.bar: 
+          fig.name: "四年级学生作业的难易程度"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_writing_homework_difficulty       
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope                
+            order:
+              -
+                var: "fill"
+                list:
+                  - "非常容易"
+                  - "比较容易"
+                  - "难易适中"
+                  - "比较难"
+                  - "非常难"
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        extra_homework_yes.bar: 
+          fig.name: "四年级学生参加与考试科目相关的家教补习或课外辅导比例"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_extra_homework_yes       
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: "alias"
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope                
+            order:
+              #-
+              #  var: "fill"
+              #  list:
+              #    - "没有"
+              #    - "1-4本"
+              #    - "5-8本"
+              #    - "9-12本"
+              #    - "13本及以上"
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            #group:
+            #  variable: "alias"
+            #  scales: "fixed"
+            #  position: "bottom"            
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        extra_homework_subject.bar: 
+          fig.name: "四年级学生参加与考试科目相关的家教补习或课外辅导情况"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *subject
+                  value: *survey_pa
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_extra_homework_subject
+
+            alias:
+              arg: "alias"
+              var: *scope
+
+            aes:
+              - 
+                arg: "x"
+                var: *key
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: "alias"
+              -  
+                arg: "label"
+                var: *label
+            sort:
+              -
+                var: "x"
+                variable: *tier
+                option: *tier_county
+                value: *value
+                asc_desc: "ASC"
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            position: "dodge" 
+            legend: *plot_legend_right
+            coord: "flip"
+            text:
+              hjust: 0.5
+            bar:
+              width: *plot_bar_width_fat
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        extra_homework_hour.bar: 
+          fig.name: "四年级学生参加与考试科目相关的家教补习、课外辅导时间"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_extra_homework_hour        
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope                
+            order:
+              -
+                var: "fill"
+                list:
+                  - "2小时以下"
+                  - "2-4小时（含2小时）"
+                  - "4-6小时（含4小时）"
+                  - "6-8小时（含6小时）"
+                  - "8小时及以上"
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            #group:
+            #  variable: "alias"
+            #  scales: "fixed"
+            #  position: "bottom"            
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        extra_homework_reason.bar: 
+          fig.name: "四年级学生参加与考试科目相关的家教补习、课外辅导的主要原因"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *subject
+                  value: *survey_pa
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_extra_homework_reason
+
+            alias:
+              arg: "alias"
+              var: *scope
+
+            aes:
+              - 
+                arg: "x"
+                var: *key
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: "alias"
+              -  
+                arg: "label"
+                var: *label
+            sort:
+              -
+                var: "x"
+                variable: *tier
+                option: *tier_county
+                value: *value
+                asc_desc: "ASC"
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            position: "dodge" 
+            legend: *plot_legend_right
+            coord: "flip"
+            text:
+              hjust: 0.5
+            bar:
+              width: *plot_bar_width_fat
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        extra_interesting_yes.bar: 
+          fig.name: "四年级学生参加校外兴趣班的比例"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_extra_interesting_yes        
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: "alias"
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope                
+            order:
+              #-
+              #  var: "fill"
+              #  list:
+              #    - "没有"
+              #    - "1-4本"
+              #    - "5-8本"
+              #    - "9-12本"
+              #    - "13本及以上"
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            #group:
+            #  variable: "alias"
+            #  scales: "fixed"
+            #  position: "bottom"            
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        extra_interesting_subject.bar: 
+          fig.name: "四年级学生参加校外兴趣班的种类"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *subject
+                  value: *survey_pa
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_extra_interesting_subject
+
+            alias:
+              arg: "alias"
+              var: *scope
+
+            aes:
+              - 
+                arg: "x"
+                var: *key
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: "alias"
+              -  
+                arg: "label"
+                var: *label
+            sort:
+              -
+                var: "x"
+                variable: *tier
+                option: *tier_county
+                value: *value
+                asc_desc: "ASC"
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            position: "dodge" 
+            legend: *plot_legend_right
+            coord: "flip"
+            text:
+              hjust: 0.5
+            bar:
+              width: *plot_bar_width_fat
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        extra_interesting_hour.bar: 
+          fig.name: "四年级学生参加校外兴趣班的时间"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_extra_interesting_hour        
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope                
+            order:
+              #-
+              #  var: "fill"
+              #  list:
+              #    - "没有"
+              #    - "1-4本"
+              #    - "5-8本"
+              #    - "9-12本"
+              #    - "13本及以上"
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            #group:
+            #  variable: "alias"
+            #  scales: "fixed"
+            #  position: "bottom"            
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        extra_interesting_reason.bar: 
+          fig.name: "四年级学生参加校外兴趣班的主要原因"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *subject
+                  value: *survey_pa
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_extra_interesting_reason
+
+            alias:
+              arg: "alias"
+              var: *scope
+
+            aes:
+              - 
+                arg: "x"
+                var: *key
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: "alias"
+              -  
+                arg: "label"
+                var: *label
+            sort:
+              -
+                var: "x"
+                variable: *tier
+                option: *tier_county
+                value: *value
+                asc_desc: "ASC"
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            position: "dodge" 
+            legend: *plot_legend_right
+            coord: "flip"
+            text:
+              hjust: 0.5
+            bar:
+              width: *plot_bar_width_fat
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        month_test.bar: 
+          fig.name: "四年级学生每个月参加考试和测验频率"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_month_test         
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope                
+            order:
+              #-
+              #  var: "fill"
+              #  list:
+              #    - "没有"
+              #    - "1-4本"
+              #    - "5-8本"
+              #    - "9-12本"
+              #    - "13本及以上"
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            #group:
+            #  variable: "alias"
+            #  scales: "fixed"
+            #  position: "bottom"            
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        year_reading.bar: 
+          fig.name: "四年级学生过去一年内阅读课外读物的数量"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_year_reading         
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope                
+            order:
+              -
+                var: "fill"
+                list:
+                  - "没有"
+                  - "1-4本"
+                  - "5-8本"
+                  - "9-12本"
+                  - "13本及以上"
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            #group:
+            #  variable: "alias"
+            #  scales: "fixed"
+            #  position: "bottom"            
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        daily_sport_hour.bar: 
+          fig.name: "四年级学生每天放学回家后的运动时间"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_daily_sport_hour
+
+              
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope                
+            #order:
+            #  -
+            #    var: "fill"
+            #    list: *
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            #group:
+            #  variable: "alias"
+            #  scales: "fixed"
+            #  position: "bottom"            
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        teacher_fair.bar: 
+          fig.name: "四年级学生对教师是否公平、平等的对待学生的评价"
+          data:
+            digits: 0
+            filter:
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_fair
+              
+            aes:
+              - 
+                arg: "x"
+                var: *topic
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope                
+            order:
+              -
+                var: "fill"
+                list: *legend_order_aggree
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            group:
+              variable: "alias"
+              scales: "fixed"
+              position: "bottom"            
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        teacher_respect.bar: 
+          fig.name: "四年级学生对教师是否尊重学生的评价"
+          data:
+            digits: 0
+            filter:
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_respect
+              
+            aes:
+              - 
+                arg: "x"
+                var: *topic
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope
+            order:
+              -
+                var: "fill"
+                list: *legend_order_aggree
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            group:
+              variable: "alias"
+              scales: "fixed"
+              position: "bottom"
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        teacher_trust.bar: 
+          fig.name: "四年级学生对教师是否信任学生的评价"
+          data:
+            digits: 0
+            filter:
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_trust
+              
+            aes:
+              - 
+                arg: "x"
+                var: *topic
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope
+
+            order:
+              -
+                var: "fill"
+                list: *legend_order_aggree
+
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            group:
+              variable: "alias"
+              scales: "fixed"
+              position: "bottom"
+
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        learning_pressure.bar: 
+          fig.name: "四年级学生对学习压力相关问题的看法"
+          data:
+            digits: 0
+            filter:
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_pressure
+                - variable: *variable
+                  value: "staa048"
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_pressure
+                - variable: *variable
+                  value: "staa049"
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_pressure
+                - variable: *variable
+                  value: "staa050"
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_pressure
+                - variable: *variable
+                  value: "staa051"
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_pressure
+                - variable: *variable
+                  value: "staa052"
+            aes:
+              - 
+                arg: "x"
+                var: *topic
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope
+
+            order:
+              -
+                var: "fill"
+                list: *legend_order_aggree
+
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            group:
+              variable: "alias"
+              scales: "fixed"
+              position: "bottom"
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        learning_motivation.bar: 
+          fig.name: "四年级学生对学习动机相关问题的看法"
+          data:
+            digits: 0
+            filter:
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_motivation
+                -
+                  variable: *variable
+                  value: "staa040"
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_motivation
+                -
+                  variable: *variable
+                  value: "staa041"
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_motivation
+                -
+                  variable: *variable
+                  value: "staa042"
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_motivation
+                -
+                  variable: *variable
+                  value: "staa043"
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_motivation
+                -
+                  variable: *variable
+                  value: "staa044"
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_motivation
+                -
+                  variable: *variable
+                  value: "staa045"
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_motivation
+                -
+                  variable: *variable
+                  value: "staa046"
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_motivation
+                -
+                  variable: *variable
+                  value: "staa047"
+
+            aes:
+              - 
+                arg: "x"
+                var: *topic
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope
+            order:
+              -
+                var: "fill"
+                list: *legend_order_aggree
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            group:
+              variable: "alias"
+              scales: "fixed"
+              position: "bottom"
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        school_identity.bar: 
+          fig.name: "四年级学生对学校认同度相关问题的看法"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_identity
+                -
+                  variable: *variable
+                  value: "staa017"
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_identity
+                -
+                  variable: *variable
+                  value: "staa023"
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_identity
+                -
+                  variable: *variable
+                  value: "staa024"
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_identity
+                -
+                  variable: *variable
+                  value: "staa025"
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_identity
+                -
+                  variable: *variable
+                  value: "staa026"
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_identity
+                -
+                  variable: *variable
+                  value: "staa027"
+
+            aes:
+              - 
+                arg: "x"
+                var: *topic
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope
+            order:
+              -
+                var: "fill"
+                list: *legend_order_aggree
+
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            group:
+              variable: "alias"
+              scales: "fixed"
+              position: "bottom"
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        learning_confidence.bar: 
+          fig.name: "四年级学生对学习自信心相关问题的看法"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_confidence
+                -
+                  variable: *variable
+                  value: "staa028"
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_confidence
+                -
+                  variable: *variable
+                  value: "staa029"
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_confidence
+                -
+                  variable: *variable
+                  value: "staa030"
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_confidence
+                -
+                  variable: *variable
+                  value: "staa031"
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_confidence
+                -
+                  variable: *variable
+                  value: "staa032"
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_confidence
+                -
+                  variable: *variable
+                  value: "staa033"
+
+            aes:
+              - 
+                arg: "x"
+                var: *topic
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope
+            order:
+              -
+                var: "fill"
+                list: *legend_order_aggree
+
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            group:
+              variable: "alias"
+              scales: "fixed"
+              position: "bottom"
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        learning_method.bar: 
+          fig.name: "四年级学生对自己某些学习方法的评价"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_method
+
+            aes:
+              - 
+                arg: "x"
+                var: *topic
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope
+
+            order:
+              -
+                var: "fill"
+                list: *legend_order_match
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            group:
+              variable: "alias"
+              scales: "fixed"
+              position: "bottom"
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        teaching_yincaishijiao.bar: 
+          fig.name: "四年级学生对教师教学方式的评价——因材施教"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_yincaishijiao
+
+            aes:
+              - 
+                arg: "x"
+                var: *topic
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope
+            order:
+              -
+                var: "fill"
+                list: *legend_order_frequency
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            group:
+              variable: "alias"
+              scales: "fixed"
+              position: "bottom"
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        teaching_hudongjiaoxue.bar: 
+          fig.name: "四年级学生对教师教学方式的评价——互动教学"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_hudongjiaoxue
+
+            aes:
+              - 
+                arg: "x"
+                var: *topic
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope
+            order:
+              -
+                var: "fill"
+                list: *legend_order_frequency
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            group:
+              variable: "alias"
+              scales: "fixed"
+              position: "bottom"
+
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        teaching_gulitanjiu.bar: 
+          fig.name: "四年级学生对教师教学方式的评价——鼓励学生探究与发展"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_gulitanjiu
+
+            aes:
+              - 
+                arg: "x"
+                var: *topic
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope
+            order:
+              -
+                var: "fill"
+                list: *legend_order_frequency
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            group:
+              variable: "alias"
+              scales: "fixed"
+              position: "bottom"
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        morality_respect_others.bar: 
+          fig.name: "四年级学生尊重他人行为的总体情况"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_respect_others
+
+            aes:
+              - 
+                arg: "x"
+                var: *topic
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope
+            order:
+              -
+                var: "fill"
+                list: *legend_order_people
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            group:
+              variable: "alias"
+              scales: "fixed"
+              position: "bottom"
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        morality_integrity.bar: 
+          fig.name: "四年级学生遇到各种诚信问题时的行为表现情况"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_integrity
+
+            aes:
+              - 
+                arg: "x"
+                var: *topic
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope
+
+            order:
+              -
+                var: "fill"
+                list: *legend_order_people
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            group:
+              variable: "alias"
+              scales: "fixed"
+              position: "bottom"
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        morality_responsibility.bar: 
+          fig.name: "四年级学生关于社会责任感方面问题的表现情况"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_responsibility
+
+            aes:
+              - 
+                arg: "x"
+                var: *topic
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope
+            order:
+              -
+                var: "fill"
+                list: *legend_order_people
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            group:
+              variable: "alias"
+              scales: "fixed"
+              position: "bottom"
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        psychological_renjimangan.bar: 
+          fig.name: "四年级学生对人际敏感性相关问题的看法"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_renjimingan
+
+            aes:
+              - 
+                arg: "x"
+                var: *topic
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope
+            order:
+              -
+                var: "fill"
+                list: *legend_order_aggree
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            group:
+              variable: "alias"
+              scales: "fixed"
+              position: "bottom"
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        psychological_renjiguanxi.bar: 
+          fig.name: "四年级学生对人际关系相关问题的看法"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_renjiguanxi
+
+            aes:
+              - 
+                arg: "x"
+                var: *topic
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope
+
+            order:
+              -
+                var: "fill"
+                list: *legend_order_aggree
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            group:
+              variable: "alias"
+              scales: "fixed"
+              position: "bottom"
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        psychological_self_respect.bar: 
+          fig.name: "四年级学生对自尊相关问题的看法"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                - 
+                  variable: *dimention
+                  value: *dim_st_self_respect
+
+            aes:
+              - 
+                arg: "x"
+                var: *topic
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope
+            order:
+              -
+                var: "fill"
+                list: *legend_order_aggree
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            group:
+              variable: "alias"
+              scales: "fixed"
+              position: "bottom"
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+
+        family_structure.bar: 
+          fig.name: "学生的家庭结构情况"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *subject
+                  value: *survey_pa
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_family_structure
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope                
+            order:
+              -
+                var: "fill"
+                list: 
+                  - "扩大家庭"
+                  - "主干家庭"
+                  - "核心家庭"   
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        query_about_school.bar: 
+          fig.name: "家长主动询问孩子在校发生情况"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *subject
+                  value: *survey_pa
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_query_about_school
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope                
+            order:
+              -
+                var: "fill"
+                list: *legend_order_frequency   
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        family_discuss.bar: 
+          fig.name: "给出了家长认为孩子参与家庭事务讨论的情况"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *subject
+                  value: *survey_pa
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_family_discuss
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope                
+            order:
+              -
+                var: "fill"
+                list: *legend_order_frequency  
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        family_work.bar: 
+          fig.name: "家长认为孩子平均每天在家做家务情况"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *subject
+                  value: *survey_pa
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_family_work
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope                
+            order:
+              -
+                var: "fill"
+                list: 
+                  - "几乎不用做"
+                  - "10分钟以内"
+                  - "11-30分钟"
+                  - "31-60分钟"
+                  - "61分钟及以上"  
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        parent_accompany.bar: 
+          fig.name: "家长每周陪孩子共同活动的情况"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *subject
+                  value: *survey_pa
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_parent_accompany
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope                
+            order:
+              -
+                var: "fill"
+                list:
+                  - "3小时以内"
+                  - "3-6小时（含3小时）"
+                  - "6-9小时（含6小时）"
+                  - "9-12小时（含9小时）"
+                  - "12小时及以上" 
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        quarrel_frequency.bar: 
+          fig.name: "家长与孩子吵架频率的总体情况"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *subject
+                  value: *survey_pa
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_quarrel_frequency
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope                
+            order:
+              -
+                var: "fill"
+                list: 
+                  - "几乎不吵架或从不吵架"
+                  - "偶尔（大约一个月一次或更少）"
+                  - "大约每周吵架一次"
+                  - "每天吵架"
+                  - "一天吵架好几次"  
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        quarrel_level.bar: 
+          fig.name: "家长与孩子吵架程度的总体情况"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *subject
+                  value: *survey_pa
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_quarrel_level  
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope                
+            order:
+              -
+                var: "fill"
+                list:
+                  - "如果有的话，也是很轻微"
+                  - "有时（不到半数）会吵得很厉害"
+                  - "大约有一半的情况会吵得很厉害"
+                  - "差不多都吵得很厉害"
+                  - "总是吵得很厉害"  
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+  
+        family_coach.bar: 
+          fig.name: "家长辅导有关问题的总体情况"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *subject
+                  value: *survey_pa
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *dimention
+                  value: *dim_pa_coach
+
+            aes:
+              - 
+                arg: "x"
+                var: *topic
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope             
+            order:
+              - 
+                var: "fill"
+                list: *legend_order_aggree
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            group:
+              variable: "alias"
+              scales: "fixed"
+              position: "bottom"
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width_thin
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        family_coach_person.bar: 
+          fig.name: "家里负责孩子学习的人的总体情况"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *subject
+                  value: *survey_pa
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *dimention
+                  value: *dim_pa_coach_person   
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope                
+            order:
+              -
+                var: "fill"
+                list:
+                  - "其他"
+                  - "（外）祖父母"
+                  - "家庭教师"
+                  - "父母分工"
+                  - "母亲"
+                  - "父亲"  
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
  
+        parent_feeling.bar: 
+          fig.name: "家长对学校教育感受的情况"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *subject
+                  value: *survey_pa
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *dimention
+                  value: *dim_pa_feelings
+
+            aes:
+              - 
+                arg: "x"
+                var: *topic
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope
+            order:
+              -
+                var: "fill"
+                list: *legend_order_match
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            group:
+              variable: "alias"
+              scales: "fixed"
+              position: "bottom"
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        parent_expection.bar: 
+          fig.name: "家长在教育期望方面的总体情况"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *subject
+                  value: *survey_pa
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: "您期待孩子将来上学上到什么程度"     
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope                
+            order:
+              -
+                var: "fill"
+                list:
+                  - "高中（含职业中专）"
+                  - "大学专科"
+                  - "大学本科"
+                  - "硕士"
+                  - "博士"
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+          
+        parent_philosophy.bar: 
+          fig.name: "家长教育观的总体情况"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *subject
+                  value: *survey_pa
+                - 
+                  variable: *dimention
+                  value: *dim_pa_philosophy
+
+            aes:
+              - 
+                arg: "x"
+                var: *topic
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope
+            order:
+              -
+                var: "fill"
+                list: *legend_order_aggree
+
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            group:
+              variable: "alias"
+              scales: "fixed"
+              position: "bottom"
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        school_reasonable.bar: 
+          fig.name: "家长心目中理想的小学，最重要的前三项特征"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                -
+                  variable: *subject
+                  value: *survey_pa
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *top_school_reasonable
+            aes:
+              - 
+                arg: "x"
+                var: *key
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *key
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope
+            sort:
+              -
+                var: "x"
+                variable: *tier
+                option: *tier_county
+                value: *value
+                asc_desc: "ASC"
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            group:
+              variable: "alias"
+              scales: "fixed"
+              position: "bottom"
+            position: "dodge" 
+            text:
+              vjust: 0.5
+            coord: "flip"
+            bar:
+              width: *plot_bar_width_fat
+            label:
+              xlab: ""
+              ylab: "百分数（%）"
+
+        school.index.bar: 
+          fig.name: "学校绿色指标指数"
+          data:
+            digits: 0
+            filter:
+              -
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *key
+                  value: "指标"       
+            aes:
+              - 
+                arg: "x"
+                var: "alias"
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: "alias"
+              -  
+                arg: "label"
+                var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope                
+            order:
+              #-
+              #  var: "fill"
+              #  list:
+              #    - "没有"
+              #    - "1-4本"
+              #    - "5-8本"
+              #    - "9-12本"
+              #    - "13本及以上"
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_bar_dodging
+            #group:
+            #  variable: "alias"
+            #  scales: "fixed"
+            #  position: "bottom"            
+            position: "stack" 
+            coord: "flip"
+            text:
+              vjust: 0.5
+            legend: *plot_legend_right
+            bar:
+              width: *plot_bar_width
+            label:
+              xlab: ""
+              ylab: "指数"
+
+        school.county.index.radar: 
+          fig.name: "四年级各指标雷达分析图"
+          data:
+            digits: *plot_data_digits
+            filter:
+              -
+                -
+                  variable: *subject
+                  value: *subject_all
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *idx_passed_rate
+              -
+                -
+                  variable: *subject
+                  value: *subject_all
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *idx_high_level_thinking
+              -
+                -
+                  variable: *subject
+                  value: *subject_all
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *idx_individual_balance
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *idx_confidence
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *idx_motivation
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *idx_pressure
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *idx_sleep
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *idx_writing_homework
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *idx_extra_homework
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *idx_teacher
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *idx_teaching
+
+            aes:
+              - 
+                arg: "x"
+                var: *scope
+              -  
+                arg: "y"
+                var: *value
+              - 
+                arg: "fill"
+                var: *tier
+              -  
+                arg: "label"
+                var: *label
+
+            #postkeep:
+            #  -
+            #    var: "x"
+            #    value:
+            #      - "本校"
+            #      - "75区"
+
+            #order: 
+            #  -
+            #    var: "x"
+            #    list: *order_prov_coun
+          ggplot:
+            width: *plot_canvas_width
+            height: *plot_canvas_height
+            geom: *plot_radar 
+
+      param:
+
+        participant.count: 
+          name: "学校参与人数统计"
+          data:
+            digits: 0
+            filter:
+              -
+                - 
+                  variable: *topic
+                  value: *top_participant
+
+        point.rate.table.cn: 
+          name: "学生在语文学科上的平均得分率"
+          data:
+            digits: 1
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_cn
+                - 
+                  variable: *topic
+                  value: *top_point_rate
+
+        answer.table.cn: 
+          name: "学生在语文学科“积累”上的作答情况"
+          data:
+            digits: 1
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_cn
+                - 
+                  variable: *topic
+                  value: *top_answer
+
+        writing.table.cn: 
+          name: "学生在语文学科“习作”上的作答情况"
+          data:
+            digits: 1
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_cn
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *dimention
+                  value: *dim_cn_writing
+
+        point.rate.table.ma: 
+          name: "学生在数学学科上的平均得分率"
+          data:
+            digits: 1
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                - 
+                  variable: *topic
+                  value: *top_point_rate
+
+        answer.table.ma: 
+          name: "学生在数学学科上的作答情况"
+          data:
+            digits: 1
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_ma
+                - 
+                  variable: *topic
+                  value: *top_answer
+
+        index.table: 
+          name: "绿色指标"
+          data:
+            digits: 0
+            filter:
+              -
+                - 
+                  variable: *key
+                  value: *key_index
+                - 
+                  variable: *perspective
+                  value: *per_total
+              
+
+
+  
     -
       process: FALSE
       table: "统计指标汇总"

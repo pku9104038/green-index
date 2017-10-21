@@ -131,6 +131,8 @@ report.render <- function(
         
         report$aliasdata[report$aliasdata[,g.var$scope]==report$county, g.var$alias] = "本区"
         report$aliasdata[report$aliasdata[,g.var$scope]==report$school, g.var$alias] = "本校"
+        report$school.hq  <- report$aliasdata[report$aliasdata[,g.var$scope]==report$school, g.var$school.hq]
+        report$school.camp  <- report$aliasdata[report$aliasdata[,g.var$scope]==report$school, g.var$school.camp]
         
       }
     

@@ -57,54 +57,47 @@ pre.render.introduce.ma
 
 pre.render.test
 
+`r tab_name <- "本校及本区各指标" `
 
-\questiontitle{典型题目3: C3AO0123}
+\begin{table}[H]
+\centering
 
-\begin{landscape}
-\chapter{各指标历年测试结果比较}
-`r fig_name <- "上海市四年级历年测试结果比较" `
-图\ref{fig:`r fig_name`}给出了上海市四年级各指标历年测试结果比较。```{r history.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "history.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
+\caption{`r tab_name`} \label{tab: `r tab_name`} 
+\itshape
+\mytable
 
-\begin{figure}[H]
-\includegraphics[width=25cm]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
+\begin{tabularx}{\textwidth}{|X|X|X|}
+ \hline 
+
+& \mytablehead{本区} & \mytablehead{本校} \\ 
+
+\hline
+
+学业成绩标准达成指数 &  & \\ 
+
+\hline 
+
+\end{tabularx}
+\end{table}
 
 
-\end{landscape}
+\begin{table}[H]
+\centering
+
+\itshape
+\mytable
+
+\begin{tabularx}{\textwidth}{X}
+\hline
+
+希望此份报告有助于您的教学和管理!  \\ 
+
+同时祝愿您和贵校的教师工作顺利、身体健康!祝愿贵校的孩子们学习进步、健康成长! \\
+
+\hline 
+
+\end{tabularx}
+\end{table}
 
 
-
-```{r passed.rate.table.cn, echo=TRUE, message=TRUE, include = FALSE, result="hide"}
-param.entry <- "passed.rate.table.cn"
-pass.rate.cn  <- dataframe.table( report = report, param = report$param[[param.entry]])
-var.variable <- "变量" 
-var.key <- "键"
-var.param <- "标注值"
-var.sample <- "统计样本"
-```
-```{r passed.rate.table.ma, echo=TRUE, message=TRUE, include = FALSE, result="hide"}
-param.entry <- "passed.rate.table.ma"
-pass.rate.ma  <- dataframe.table( report = report, param = report$param[[param.entry]])
-```
-
-本章分析了上海市四年级学生学业水平的总体情况及不同群体学生学业质量，主要结果如下：
-
-- 总体看来，上海市四年级学生总体达到语文课程标准的基本要求的比例为`r pass.rate.cn[pass.rate.cn[,var.sample]=="总体",var.param]`%；达到数学课程标准的基本要求的人数比例为`r pass.rate.ma[pass.rate.ma[,var.sample]=="总体",var.param]`%；
-
-- 中心城区\footnote{中心城区：包括黄浦区、徐汇区、长宁区、普陀区、虹口区、杨浦区、静安区。}、郊区\footnote{郊区：包括闵行区、宝山区、嘉定区、浦东新区、金山区、松江区、青浦区、奉贤区、崇明区。}四年级学生达到语文课程标准基本要求的比例分别为`r pass.rate.cn[pass.rate.cn[,var.sample]=="中心城区",var.param]`%和`r pass.rate.cn[pass.rate.cn[,var.sample]=="郊区",var.param]`%；达到数学课程标准的基本要求的人数比例分别为`r pass.rate.ma[pass.rate.ma[,var.sample]=="中心城区",var.param]`%和`r pass.rate.ma[pass.rate.ma[,var.sample]=="郊区",var.param]`%；
-
-- 市级新优质学校\footnote{新优质学校为新优质建设学校项目简称。}学生达到语文课程标准的基本要求的比例为`r pass.rate.cn[pass.rate.cn[,var.sample]=="市新优",var.param]`%；达到数学课程标准的基本要求的人数比例为`r pass.rate.ma[pass.rate.ma[,var.sample]=="市新优",var.param]`%；区级新优质学校学生达到语文课程标准的基本要求的比例为`r pass.rate.cn[pass.rate.cn[,var.sample]=="区新优",var.param]`%；达到数学课程标准的基本要求的人数比例为`r pass.rate.ma[pass.rate.ma[,var.sample]=="区新优",var.param]`%；
-
-- 在语文学科上，除区82、区83和区88外，其他各区达到课程标准的人数比例在98.5%（含）以上；在数学学科上，除区75、81、82、83、89外其他各区县达到课程标准的人数比例在99.5%（含）以上；
-
-- 一贯制学校与非一贯制小学的学生达到语文课程标准基本要求的人数比例分别为`r pass.rate.cn[pass.rate.cn[,var.sample]=="一贯制",var.param]`%和`r pass.rate.cn[pass.rate.cn[,var.sample]=="小学",var.param]`%；达到数学课程标准基本要求的人数比例分别为`r pass.rate.ma[pass.rate.ma[,var.sample]=="一贯制",var.param]`%和`r pass.rate.ma[pass.rate.ma[,var.sample]=="小学",var.param]`%；
-
-- 四年级男生和女生达到语文课程标准基本要求的人数比例分别为`r pass.rate.cn[pass.rate.cn[,var.sample]=="男",var.param]`%和`r pass.rate.cn[pass.rate.cn[,var.sample]=="女",var.param]`%；达到数学课程标准基本要求的人数比例分别为`r pass.rate.ma[pass.rate.ma[,var.sample]=="男",var.param]`%和`r pass.rate.ma[pass.rate.ma[,var.sample]=="女",var.param]`%；
-
-- 本市和非本市户籍四年级学生达到语文课程标准基本要求的人数比例分别为`r pass.rate.cn[pass.rate.cn[,var.sample]=="沪籍",var.param]`%和`r pass.rate.cn[pass.rate.cn[,var.sample]=="非沪籍",var.param]`%；达到数学课程标准基本要求的人数比例分别为`r pass.rate.ma[pass.rate.ma[,var.sample]=="沪籍",var.param]`%和`r pass.rate.ma[pass.rate.ma[,var.sample]=="非沪籍",var.param]`%；
-
+ 

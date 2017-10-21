@@ -822,7 +822,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 \begin{longtable}{|c|c|c|p{5cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\
 \hline
-\makecell[c]{内容\\领域} & \makecell[c]{具体内容} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{本\\市} & \makecell[c]{本\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{随迁\\子女\\民办} & \makecell[c]{普通\\小学} & \makecell[c]{一\\贯\\制} & \makecell[c]{市\\新\\优} & \makecell[c]{区\\新\\优} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
+\makecell[c]{内容\\领域} & \makecell[c]{具体内容} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{本\\市} & \makecell[c]{本\\区} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{随迁\\子女\\民办} & \makecell[c]{普通\\小学} & \makecell[c]{一\\贯\\制} & \makecell[c]{市\\新\\优} & \makecell[c]{区\\新\\优} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
 
 \multirow{4}{*}{\makecell[c]{数与\\代数}} & \multirow{3}{*}{\makecell[c]{数的运算}} & M3AS161 & 能根据多位数除以两位数的算法来判断商是几位数 & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="M3AS161_X",]`

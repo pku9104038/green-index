@@ -689,6 +689,7 @@ plot.data <- function(
     print("data filter")
     filter <- filters[[i]]
     data <- data.in
+    #print(summary(data))
     for(j in 1:length(filter)){
       fil <- filter[[j]]
       if(!is.null(fil$x)){
@@ -826,6 +827,7 @@ plot.data <- function(
   if(!is.null(plot$data$alias)){
     print("label alias")
     data.left <- data.out
+    #print(data.left)
     #g.var$scope <-  "统计范围"
     #g.var$alias <-  "别名"
     #print(report$aliasdata)
@@ -833,6 +835,10 @@ plot.data <- function(
     scopes <- data.right[,g.var$scope]
     #print(scopes)
     for(i in 1:nrow(data.left)){
+      #print(i)
+      #print(plot$data$alias$var)
+      #print(data.left[i,plot$data$alias$var])
+      #print(scopes)
       if(is.element(data.left[i,plot$data$alias$var],unlist(scopes))){
         data.out[i,plot$data$alias$arg] <- 
           data.right[data.right[,g.var$scope]==data.left[i,plot$data$alias$var],g.var$alias]
