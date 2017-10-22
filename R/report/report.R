@@ -170,6 +170,9 @@ report.render <- function(
       
       ##################################################
       print(paste("Render",report$input_file,Sys.time()))
+      f <- file("render.now")
+      writeLines(c(report$input_file),f)
+      close(f)
       render(input = report$input_file, 
              output_format = output$format, 
              output_dir = output_dir,
