@@ -149,7 +149,9 @@ report.render <- function(
       output <-  report$output[[j]]
       report$file <- paste0(report$title,"_",report$datetime,output$ext)
       if(report$tier == g.tier$school){
-        report$file <- paste0(report$county,"_",report$file)
+        #report$file <- paste0(report$county,"_",report$file)
+        #report$file <- paste0(report$county,"/",report$file)
+        output_dir <- paste0(output_dir,"/",report$county,"/")
       }
       zipfile <- paste0(report$title,"_",report$datetime,".zip")
       sqlfile <- paste0(report$title,"_",report$datetime,".sql")
@@ -171,7 +173,7 @@ report.render <- function(
       ##################################################
       print(paste("Render",report$input_file,Sys.time()))
       f <- file("render.now")
-      writeLines(c(report$input_file),f)
+      writeLines(c(report$county,report$file),f)
       close(f)
       render(input = report$input_file, 
              output_format = output$format, 
