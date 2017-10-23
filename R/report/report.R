@@ -148,7 +148,7 @@ report.render <- function(
     for(j in 1:length(report$output)){
       output <-  report$output[[j]]
       report$file <- paste0(report$title,"_",report$datetime,output$ext)
-      if(report$tier == g.tier$school){
+      if(report$tier == g.tier$school | report$tier == g.tier$county){
         #report$file <- paste0(report$county,"_",report$file)
         #report$file <- paste0(report$county,"/",report$file)
         output_dir <- paste0(output_dir,"/",report$county,"/")

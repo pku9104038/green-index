@@ -1394,7 +1394,7 @@ global:
 
     plot: &plot
       dummy.fig: &plot_dummy_fig
-        -  "reports.jpg"
+        - "dummy.jpg"
       data:
         digits: &plot_data_digits
           - 0
@@ -1859,13 +1859,10 @@ survey:
             - "学生姓名"
             - "班级"
             - "区县编码"
-          rename:
-            -
-              old: "区县名称"
-              new: "区县"
-            -
-              old: "学校名称"
-              new: "学校"
+            - "区县名称"
+            - "学校名称"
+            - "办学"
+            - "学制"
       -
         table.merge: *m_survey_st
         merge.by: "学校代码"
@@ -1874,27 +1871,29 @@ survey:
         table.right:
           tab.name: *table_school
           drop:
-            - "区县编码"
-            - "学校名称"
-            - "办学"
-            - "学制"
             - "区县名称"
+          rename: 
+            - 
+              old: "学校名称"
+              new: "学校"
         drop:
           - "学校代码"
       -
         table.merge: *m_survey_st
-        merge.by: "区县"
+        merge.by: "区县编码"
         table.left: 
           tab.name: *m_survey_st
         table.right:
           tab.name: *table_county
           drop:
-            - "区县编码"
             - "区县代码"
+            - "区县别名"
           rename:
             -
               old: "区县名称"
               new: "区县"
+        drop:
+          - "区县编码"
       -
         table.merge: *m_survey_st
         merge.by: "准考证号"
@@ -3226,30 +3225,29 @@ survey:
         table.right:
           tab.name: *table_school
           drop:
-            - "区县编码"
-          rename:
-            -
-              old: "区县名称"
-              new: "区县"
-            -
+            - "区县名称"
+          rename: 
+            - 
               old: "学校名称"
               new: "学校"
         drop:
           - "学校代码"
       -
         table.merge: *m_survey_te
-        merge.by: "区县"
+        merge.by: "区县编码"
         table.left: 
           tab.name: *m_survey_te
         table.right:
           tab.name: *table_county
           drop:
-            - "区县编码"
             - "区县代码"
+            - "区县别名"
           rename:
             -
               old: "区县名称"
               new: "区县"
+        drop:
+          - "区县编码"
 
     weight:
       -
@@ -3733,30 +3731,29 @@ survey:
         table.right:
           tab.name: *table_school
           drop:
-            - "区县编码"
-          rename:
-            -
-              old: "区县名称"
-              new: "区县"
-            -
+            - "区县名称"
+          rename: 
+            - 
               old: "学校名称"
               new: "学校"
         drop:
           - "学校代码"
       -
         table.merge: *m_survey_pr
-        merge.by: "区县"
+        merge.by: "区县编码"
         table.left: 
           tab.name: *m_survey_pr
         table.right:
           tab.name: *table_county
           drop:
-            - "区县编码"
             - "区县代码"
+            - "区县别名"
           rename:
             -
               old: "区县名称"
               new: "区县"
+        drop:
+          - "区县编码"
 
     weight:
       -
@@ -4064,13 +4061,10 @@ survey:
             - "学生姓名"
             - "班级"
             - "区县编码"
-          rename:
-            -
-              old: "区县名称"
-              new: "区县"
-            -
-              old: "学校名称"
-              new: "学校"
+            - "区县名称"
+            - "学校名称"
+            - "办学"
+            - "学制"
       -
         table.merge: *m_survey_pa
         merge.by: "学校代码"
@@ -4079,27 +4073,29 @@ survey:
         table.right:
           tab.name: *table_school
           drop:
-            - "区县编码"
-            - "学校名称"
-            - "办学"
-            - "学制"
             - "区县名称"
+          rename: 
+            - 
+              old: "学校名称"
+              new: "学校"
         drop:
           - "学校代码"        
       -
         table.merge: *m_survey_pa
-        merge.by: "区县"
+        merge.by: "区县编码"
         table.left: 
           tab.name: *m_survey_pa
         table.right:
           tab.name: *table_county
           drop:
-            - "区县编码"
             - "区县代码"
+            - "区县别名"
           rename:
             -
               old: "区县名称"
               new: "区县"
+        drop:
+          - "区县编码"
 
     weight:
       -
@@ -4566,13 +4562,10 @@ survey:
             - "学生姓名"
             - "班级"
             - "区县编码"
-          rename:
-            -
-              old: "区县名称"
-              new: "区县"
-            -
-              old: "学校名称"
-              new: "学校"
+            - "区县名称"
+            - "学校名称"
+            - "办学"
+            - "学制"
       -
         table.merge: *m_score_cn
         merge.by: "学校代码"
@@ -4581,27 +4574,29 @@ survey:
         table.right:
           tab.name: *table_school
           drop:
-            - "区县编码"
-            - "学校名称"
-            - "办学"
-            - "学制"
             - "区县名称"
+          rename: 
+            - 
+              old: "学校名称"
+              new: "学校"
         drop:
-          - "学校代码"        
+          - "学校代码"           
       -
         table.merge: *m_score_cn
-        merge.by: "区县"
+        merge.by: "区县编码"
         table.left: 
           tab.name: *m_score_cn
         table.right:
           tab.name: *table_county
           drop:
-            - "区县编码"
             - "区县代码"
+            - "区县别名"
           rename:
             -
               old: "区县名称"
               new: "区县"
+        drop:
+          - "区县编码"
 
     weight:
       -
@@ -6600,13 +6595,10 @@ survey:
             - "学生姓名"
             - "班级"
             - "区县编码"
-          rename:
-            -
-              old: "区县名称"
-              new: "区县"
-            -
-              old: "学校名称"
-              new: "学校"
+            - "区县名称"
+            - "学校名称"
+            - "办学"
+            - "学制"
       -
         table.merge: *m_score_ma
         merge.by: "学校代码"
@@ -6615,28 +6607,30 @@ survey:
         table.right:
           tab.name: *table_school
           drop:
-            - "区县编码"
-            - "学校名称"
-            - "办学"
-            - "学制"
             - "区县名称"
+          rename: 
+            - 
+              old: "学校名称"
+              new: "学校"
         drop:
           - "学校代码"        
         
       -
         table.merge: *m_score_ma
-        merge.by: "区县"
+        merge.by: "区县编码"
         table.left: 
           tab.name: *m_score_ma
         table.right:
           tab.name: *table_county
           drop:
-            - "区县编码"
             - "区县代码"
+            - "区县别名"
           rename:
             -
               old: "区县名称"
               new: "区县"
+        drop:
+          - "区县编码"
 
     weight:
       -
@@ -8911,7 +8905,7 @@ report:
   province: "上海市"
   skip: TRUE #skip other county／school  
   test:
-    county: "奉贤区"
+    county: "崇明区"
     # "黄浦区" 
     school: "上海奉贤区民办青溪小学" 
     #"上海市浦东新区第二中心小学（巨野校区）"
@@ -40287,7 +40281,7 @@ report:
             #  ylim: *axisy_ylim
  
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "county_cn.Rmd"
 
@@ -47533,7 +47527,7 @@ report:
 
         
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "school_report.Rmd"
 

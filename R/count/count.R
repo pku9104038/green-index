@@ -137,7 +137,8 @@ count.subject <-  function(
         
         for(k in 1:length(stat$groupby)){
           groupby <- stat$groupby[[k]]
-          #print(groupby)
+          print(groupby)
+          print(summary(data.stat))
           groups <- aggregate(data.stat[,stat$var.count], by=list(data.stat[,groupby]),FUN = sum)
           #print(groups)
           for(l in 1:nrow(groups)){
