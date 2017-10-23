@@ -8911,13 +8911,15 @@ report:
   province: "上海市"
   skip: TRUE #skip other county／school  
   test:
-    county: "浦东新区"
+    county: "奉贤区"
     # "黄浦区" 
-    school: "上海市浦东新区第二中心小学（巨野校区）"
+    school: "上海奉贤区民办青溪小学" 
+    #"上海市浦东新区第二中心小学（巨野校区）"
     # "上海市西郊学校"
     # 
     # "上海浦东新区民办联营小学" #    缺学生问卷
     # "上海市浦东新区第二中心小学(张江校区)" 缺校长问卷
+  brake: TRUE
   dummy.fig: *plot_dummy_fig
   geom: *plot_geom
   output:

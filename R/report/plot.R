@@ -472,9 +472,21 @@ myggradar <- function(plot.data,
   #library(ggplot2)
   
   plot.data <- as.data.frame(plot.data)
+  #print(plot.data)
   
   plot.data[,1] <- as.factor(as.character(plot.data[,1]))
   names(plot.data)[1] <- "group"
+  #print(plot.data)
+  print(plot.data[,-1])
+  
+  for(i in 1:nrow(plot.data)){
+    for(j in 1:ncol(plot.data)){
+      if(is.na(plot.data[i,j])){
+        plot.data[i,j] <- 0
+      }
+    }
+  }
+  print(plot.data)
   
   var.names <- colnames(plot.data)[-1]  #'Short version of variable names 
   #axis.labels [if supplied] is designed to hold 'long version' of variable names
@@ -662,7 +674,7 @@ myggradar <- function(plot.data,
                                                                                     family = font.radar)) +
     theme(legend.text = element_text(size = legend.text.size), legend.position="left") +
     theme(legend.key.height=unit(2,"line")) +
-    scale_colour_manual(values=rep(c("#FF5A5F", "#FFB400", "#007A87",  "#8CE071", "#7B0051", 
+    scale_colour_manual(values=rep(c("#FF5A5F", "#007A87", "#FFB400", "#8CE071", "#7B0051", 
                                      "#00D1C1", "#FFAA91", "#B4A76C", "#9CA299", "#565A5C", "#00A04B", "#E54C20"), 100)) +
     theme(text=element_text(family=font.radar)) + 
     theme(legend.title=element_blank())
@@ -682,8 +694,10 @@ plot.data <- function(
   plot
 ){
   data.in <- report$data
-  
   data.out <- data.frame()
+  
+  ########## data filter
+  
   filters <- plot$data$filter
   for(i in  1:length(filters)){
     print("data filter")
@@ -724,7 +738,13 @@ plot.data <- function(
     
     data.out <- bind_rows(data.out,data)
   }
-  #print(data.out)
+  print(data.out)
+  if(nrow(data.out)==0 & !(report$brake)){
+    print("Data  NULL!")
+    return(data.out)
+  }
+  
+  ############## data county.filter
   
   if(!is.null(plot$data$county.filter)){
     if(plot$data$county.filter==TRUE){
@@ -744,6 +764,13 @@ plot.data <- function(
     }
   }
   
+  if(nrow(data.out)==0 & !(report$brake)){
+    print("Data  NULL!")
+    return(data.out)
+  }
+  
+  ########################## data keep
+  
   if(!is.null(plot$data$keep)){
     print("data keep")
     keeps <- plot$data$keep
@@ -755,25 +782,31 @@ plot.data <- function(
       keep <- keeps[[i]]
       var <- keep$var
       
-      #print(var)
+      print(var)
       values <- keep$value
       for(j in 1:length(values)){
         value <- values[[j]]
-        #print(value)
+        print(value)
         data.keep <- data.in[data.in[,var] == value,]
         #print(data.keep)
         data.out <- rbind(data.out,data.keep)
       }
     }
   }
-  #print(data.out)
+  print(data.out)
   
+  if(nrow(data.out)==0 & !(report$brake)){
+    print("Data  NULL!")
+    return(data.out)
+  }
   
-   
+  ####################### data label digits
+  
   #data.out[,g.var$value] <- data.out[,g.var$value]/100.0
   #data.out[,g.var$value] <- round(data.out[,g.var$value], digits = plot$data$digits)
   data.out[,g.var$label] <- round(data.out[,g.var$value], digits = plot$data$digits)
   
+  ###################  data derivative
   
   if(!is.null(plot$data$derivative)){
     print("data derivative")
@@ -811,6 +844,8 @@ plot.data <- function(
     
   }
   
+  ############ data join 
+  
   if(!is.null(plot$data$join)){
     print("data join")
     data.left <- data.out[data.out[,plot$data$join$left$variable]
@@ -822,6 +857,9 @@ plot.data <- function(
     
     data.out <- merge(x=data.left,y=data.right,by=plot$data$join$linkon,all.x=TRUE)
   }
+  
+  
+  ############ data alias
   
   # while alias is label
   if(!is.null(plot$data$alias)){
@@ -846,6 +884,7 @@ plot.data <- function(
     }
   }
   
+  ##############   data aes
   
   aes <- plot$data$aes
   for(i in  1:length(aes)){
@@ -859,6 +898,8 @@ plot.data <- function(
     #print(data.out)
   }
   
+  ############  data x alias
+  
   #  while alias is x 
   if(!is.null(report$aliasFlag)){
     print("aliasFlag")
@@ -866,7 +907,7 @@ plot.data <- function(
     #g.var$scope <-  "统计范围"
     #g.var$alias <-  "别名"
     #print(report$aliasdata)
-    #print(data.left)
+    print(data.left)
     data.right <- report$aliasdata[,c(g.var$scope,g.var$alias)]
     scopes <- data.right[,g.var$scope]
     for(i in 1:nrow(data.left)){
@@ -875,6 +916,9 @@ plot.data <- function(
       }
     }
   }
+  
+  
+  ############## data postkeep
   
   if(!is.null(plot$data$postkeep)){
     print("data postkeep")
@@ -897,6 +941,13 @@ plot.data <- function(
     }
   }
   
+  if(nrow(data.out)==0 & !(report$brake)){
+    print("Data  NULL!")
+    return(data.out)
+  }
+  
+  ################### data order
+  
   if(!is.null(plot$data$order)){
     print("data order")
     for(i in 1:length(plot$data$order)){
@@ -906,6 +957,9 @@ plot.data <- function(
         
   }
   #print(data.out)
+  
+  
+  ################### data sort
   
   if(!is.null(plot$data$sort)){
     print("data sort")
@@ -940,6 +994,7 @@ plot.data <- function(
     
   }
   
+  ################# data out
   #print(data.out)
   return(data.out)
 }
@@ -947,6 +1002,7 @@ plot.data <- function(
 plot.bar_segment <- function(
   plot
 ){
+  
   figure <- ggplot(data=plot$data$set, aes(x=x, y=y , fill = fill))
   figure <- figure + geom_bar( stat="identity", width = plot$ggplot$bar$width) 
   figure <- figure + geom_text(aes(label = label), position = position_stack(vjust = 0.5)) 
@@ -1213,31 +1269,11 @@ plot.point <- function(
 plot.radar  <- function(
   plot
 ){
-  print(plot$data$set)
+  #print(plot$data$set)
   data.in <- plot$data$set
-  print(plot$data$keep)
-  if(!is.null(plot$data$keep)){
-    keeps <- plot$data$keep
-    data <- data.frame()
-    for(i in 1:length(keeps)){
-      keep <- keeps[[i]]
-      var <- keep$var
-      print(var)
-      values <- keep$value
-      for(j in 1:length(values)){
-        value <- values[[j]]
-        print(value)
-        data.keep <- data.in[data.in[,var] == value,]
-        print(data.keep)
-        data <- rbind(data,data.keep)
-      }
-    }
-  }
-  else{
-    data <- plot$data$set
-  }
+  data <- plot$data$set
   
-  print(data)
+  #print(data)
   data.radar <- data.frame()
   groups <- levels(factor(data[,"x"] ))
   for(i in 1:length(groups)){
@@ -1274,11 +1310,14 @@ plot.figure  <- function(
     plot$title <- report$title
     plot$dir  <- report$plot.out
     
-    plot$file <- paste0(plot$dir,plot$title,"_",fig_name,"_",report.datetime(),plot$output$ext)
-    print(plot$file)
+    
+    #print(plot$file)
     plot$data$set <- plot.data(report,plot)
     
     if(nrow(plot$data$set)>0){
+      
+      plot$file <- paste0(plot$dir,plot$title,"_",fig_name,"_",report.datetime(),plot$output$ext)
+      
       pdf(plot$file, width = plot$ggplot$width, height = plot$ggplot$height)
       showtext.begin()
       
@@ -1311,6 +1350,7 @@ plot.figure  <- function(
     }
     else{
       print("Plot Data NULL!")
+      plot$file <- paste0(plot$dir,report$dummy.fig)
     }
     
     return(plot$file)

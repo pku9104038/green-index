@@ -10,8 +10,7 @@ g.var <- yaml$global$stat$var
 g.tier <- yaml$global$stat$def$tier
 source(paste0(g.dir$R,"report/plot.R"))
 #######################################################
-plot.name <- "school.index.bar"
-
+plot.name <- "school.county.index.radar"
 
 reports <- yaml.load_file(paste0(g.dir$yaml,g.yaml$survey))$report
 ############
@@ -22,10 +21,12 @@ i <- 9
 
 report <-  reports$report[[i]]
 
-report$scope <- "上海市浦东新区第二中心小学（巨野校区）"  #"浦东新区"  #
+report$scope <- "上海奉贤区民办青溪小学"  #"浦东新区"  #
 report$school <- report$scope
-report$county <- "浦东新区"
+report$county <- "奉贤区"
 report$province  <- "上海市"
+report$brake <- TRUE
+report$dummy.fig <- "reports.jpg"
 
 report$plot.out  <- paste0(getwd(),"/",g.dir$report.out.plot)
 
@@ -81,10 +82,11 @@ plot <- report$plot[[plot.name]]
 #plot$title <- report$title
 #plot$dir  <- paste0(getwd(),"/",g.dir$report.out.plot)
 #plot$data$keep <- list(list(var = "区县", value=list(report$county)))
-#plot$data$keep <- list(list(var = "统计范围", value=list(report$scope,report$county)))
-plot$data$keep <- list(list(var = "统计范围", value=list(report$county,report$scope)),
-                       list(var = "学科", value=list("学业成绩")),
-                       list(var = "主题", value=list("高层次思维能力指数")))
+#plot$data$keep <- list(list(var = "统计范围", value=list(report$scope)))
+plot$data$keep <- list(list(var = "统计范围", value=list(report$county,report$scope)))
+#plot$data$keep <- list(list(var = "统计范围", value=list(report$county,report$scope)),
+#                       list(var = "学科", value=list("学业成绩")),
+#                       list(var = "主题", value=list("高层次思维能力指数")))
 #plot$data$keep <- list(list(var = "统计范围", value=list(report$county)))
 #plot$data$postkeep <- list(list(var = "x", value=list("本市")))
 #plot$data$keep <- list(list(var = "统计范围", value=list(report$school)),list(var = "变量", value=list("C3AS261")))

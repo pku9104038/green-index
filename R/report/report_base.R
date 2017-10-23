@@ -61,6 +61,9 @@ report.base <- function(
       if(is.null(report$command)){
         report$command  <- reports$command
       }
+      if(is.null(report$brake)){
+        report$brake  <- reports$brake
+      }
       if(is.null(report$test)){
         report$test  <- reports$test
       }
