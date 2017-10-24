@@ -20,14 +20,14 @@ count.statistics.max <- function(
   
   print("Score.Mean")
   data.stat  <- data.in
-  print(nrow(data.stat))
+  #print(nrow(data.stat))
   set <-  data.frame()
   if(!is.null(stat$set)){
     for(i in 1:length(stat$set)){
       set[1,stat$set[[i]]$col.name] <-  stat$set[[i]]$col.value
     }
   }
-  print(set)
+  #print(set)
   
   equal  <- data.frame()
   if(!is.null(stat$equal)){
@@ -37,10 +37,10 @@ count.statistics.max <- function(
       print(nrow(data.stat))
     }
   }
-  print(equal)
+  #print(equal)
   obs1 <- statistics.obs.merge(set,equal)
-  print(obs1)
-  print(nrow(data.stat))
+  #print(obs1)
+  #print(nrow(data.stat))
   if(nrow(data.stat)>0){
     obs <- data.frame()
     if(!is.null(stat$groupby)){
@@ -137,8 +137,8 @@ count.subject <-  function(
         
         for(k in 1:length(stat$groupby)){
           groupby <- stat$groupby[[k]]
-          print(groupby)
-          print(summary(data.stat))
+          #print(groupby)
+          #print(summary(data.stat))
           groups <- aggregate(data.stat[,stat$var.count], by=list(data.stat[,groupby]),FUN = sum)
           #print(groups)
           for(l in 1:nrow(groups)){

@@ -40,6 +40,11 @@ source(paste0(yaml.load_file("yaml/conf.yaml")$dir$R,"variable/variable_data.R")
 variable.data()
 
 ########################
+library(yaml)
+source(paste0(yaml.load_file("yaml/conf.yaml")$dir$R,"variable/variable_data.R"))
+variable.data2()
+
+########################
 
 library(yaml)
 source(paste0(yaml.load_file("yaml/conf.yaml")$dir$R,"statistics/statistics_data.R"))

@@ -84,7 +84,7 @@ global:
         topic: &tier_topic
           - *tier_province
           - *tier_county
-          - *tier_school #ignore school tier to save test time
+          #- *tier_school #ignore school tier to save test time
       scope: # one of the record group in the tier 
         province: &scope_province
           - "本市"
@@ -1144,9 +1144,9 @@ global:
         # index name
         name:
           idx_passed_rate: &idx_passed_rate
-            - "成绩达标指数"
+            - "成绩标准达成度指数"
           coef_passed_rate: &coef_passed_rate
-            - "成绩标准达成系数"          
+            - "成绩标准达成度系数"          
 
           idx_high_level_thinking: &idx_high_level_thinking
             - "高层次思维能力指数"
@@ -1154,29 +1154,41 @@ global:
             - "高层次思维能力系数"
 
           idx_individual_balance: &idx_individual_balance
-            - "个体间均衡指数"
+            - "学业成绩个体间均衡指数"
+          coef_individual_balance: &coef_individual_balance
+            - "学业成绩个体间均衡系数"
+            
           idx_school_balance: &idx_school_balance
-            - "学校间均衡指数"
+            - "学业成绩学校间均衡指数"
           coef_school_balance: &coef_school_balance
             - "学业成绩学校间均衡系数"
 
           idx_county_balance: &idx_county_balance
-            - "区县间均衡指数"
+            - "学业成绩各区间均衡指数"
+          coef_county_balance: &coef_county_balance
+            - "学业成绩各区间均衡系数"
+
 
           idx_confidence: &idx_confidence
-            - "自信心指数"
+            - "学习自信心指数"
+          coef_confidence: &coef_confidence
+            - "学习自信心系数"
+            
           idx_pressure: &idx_pressure
-            - "压力指数"
+            - "学习压力指数"
           coef_pressure: &coef_pressure
             - "学习压力系数"
 
           idx_motivation: &idx_motivation
-            - "动机指数"
+            - "学习动机指数"
           coef_motivation: &coef_motivation
             - "学习动机系数"
             
           idx_school_identiy: &idx_school_identiy
-            - "认同度指数"
+            - "学校认同度指数"
+          coef_school_identiy: &coef_school_identiy
+            - "学校认同度系数"
+            
           idx_sleep: &idx_sleep
             - "睡眠指数"
           coef_sleep: &coef_sleep
@@ -1191,16 +1203,27 @@ global:
           idx_extra_homework: &idx_extra_homework
             - "校外补课指数"
           coef_extra_homework: &coef_extra_homework
-            - "补课系数"
+            - "校外补课系数"
 
           idx_burden: &idx_burden
-            - "学业负担指数"
+            - "学业负担综合指数"
+          coef_burden: &coef_burden
+            - "学业负担综合系数"
+            
           idx_morality: &idx_morality
             - "品德行为指数"
+          coef_morality: &coef_morality
+            - "品德行为系数"
+
           idx_physique: &idx_physique
             - "体质健康指数"
+          coef_physique: &coef_physique
+            - "体质健康系数"
+
           idx_psychological: &idx_psychological
             - "心理健康指数"
+          coef_psychological: &coef_psychological
+            - "心理健康系数"
 
           idx_teacher: &idx_teacher
             - "师生关系指数"
@@ -1218,9 +1241,9 @@ global:
             - "课程领导力系数"
 
           idx_economic: &idx_economic
-            - "家庭背景影响指数"
+            - "社会经济背景影响指数"
           coef_economic: &coef_economic
-            - "家庭背景影响系数"
+            - "社会经济背景影响系数"
 
       key: 
         score_mean: &key_score_mean
@@ -4786,7 +4809,37 @@ survey:
               col.name:
                 - "C3AS314"
           var.default: 0
-
+    
+    variable2:
+      table.in: *v_score_cn
+      table.out: *v_score_cn
+      var:
+        -
+          var.name: "C3AS310_S"
+          var.type: *var_type_point_segment
+          segment:
+            -
+              min: -0.5
+              max: 15
+              key: "0-15"
+            -
+              min: 15
+              max: 20
+              key: "15-20"
+            -
+              min: 20
+              max: 25
+              key: "20-25"
+            -
+              min: 25
+              max: 30
+              key: "25-30"    
+          var.column: 
+            -
+              col.name:
+                - "C3AS310_X"
+          var.default: 0
+   
     statistics:
       table.in: *v_score_cn
       table.out: *s_score_cn
@@ -6517,6 +6570,10 @@ survey:
                         name: *total_score_level_cn
                         value: "C"
                       key: "C"
+                    -
+                      name: *top_answer
+                      variable: "C3AS310_S"
+                      perspective: *perspective_total_only
                     
     index:
       table.in: *s_score_cn

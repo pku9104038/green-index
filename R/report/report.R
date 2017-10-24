@@ -173,7 +173,12 @@ report.render <- function(
       ##################################################
       print(paste("Render",report$input_file,Sys.time()))
       f <- file("render.now")
-      writeLines(c(report$county,report$file),f)
+      writeLines(c(timestamp(),
+                   report$scope,
+                   report$province,
+                   report$county,
+                   report$school,
+                   report$file),f)
       close(f)
       render(input = report$input_file, 
              output_format = output$format, 

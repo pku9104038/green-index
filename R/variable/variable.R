@@ -372,3 +372,64 @@ variable.subject <-  function(
   }
 
 }
+
+
+###########################################################
+#############################
+variable.subject2 <-  function(
+  subject,
+  algorithms,
+  update = FALSE
+){
+  if(!is.null(subject$variable2)){
+    table.in <- subject$variable2$table.in
+    table.out <- subject$variable2$table.out
+    timestamp()
+    print(paste("Read Table:",table.in))
+    if(update){
+      data <- db.ReadTable(table.out)
+    }
+    else{
+      data <- db.ReadTable(table.in)
+    }
+    
+    
+    variables <- subject$variable2$var
+    n <- length(variables)
+    if(n>0 && subject$process){
+      for(i in 1:n){
+        variable <- variables[[i]]
+        algorithm <- variable$var.type
+        if(algorithm == algorithms$constant){
+          data <- variable.constant(data, variable)
+        }
+        else if(algorithm == algorithms$polymer){
+          data <- variable.polymer(data, variable)
+        }
+        else if(algorithm == algorithms$derivative){
+          data <- variable.derivative(data, variable)
+        }
+        else if(algorithm == algorithms$classify){
+          data <- variable.classify(data, variable)
+        }
+        else if(algorithm == algorithms$school_statistics){
+          data <- variable.school_statistics(data, variable)
+        }
+        else if(algorithm == algorithms$segment){
+          data <- variable.segment(data, variable)
+        }
+        else if(algorithm == algorithms$sum){
+          data <- variable.sum(data, variable)
+        }
+        else if(algorithm == algorithms$point_segment){
+          data <- variable.point_segment(data, variable)
+        }
+      }
+    }
+    
+    timestamp()
+    print(paste("Write Table:",table.out))
+    db.WriteTable(data =data,  table = table.out)    
+  }
+  
+}
