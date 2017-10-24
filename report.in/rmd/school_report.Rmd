@@ -43,7 +43,7 @@ var.topic <- "主题"
 var.subject <- "学科"
 `
 
-pre.render.report.preface.sch
+pre.render.report.preface
 
 <!-- table of cntents -->
 
@@ -52,7 +52,11 @@ pre.render.table.of.contents
 
 \mytext
 
-<!-- chapter 1 -->
+
+<!-- chapter 1 project summary -->
+
+pre.render.project.summary
+
 
 # 本校四年级学生总体学业水平
 
@@ -417,9 +421,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \label{fig:`r fig_name`}
 \end{figure}本题考查学生理解词义的能力。要求学生能够理解常用词语的基本意思，分辨词义间的差别，进而做出判断，找出与“凝视”意思最接近的词语。
 
-本题正确选项为A。题目给出的词语是“凝望”“凝固”“凝神”“凝聚”和“凝视”，从字面看，它们都有一个相同的汉字“凝”。“凝”有凝结和注意力集中两种意思。选项B“凝固”和选项D“凝聚”中的“凝”是凝结的意思。“凝固”一般是指“由液体变固体”；“凝聚”的本义是“气体由稀变浓或变成液体”，表示聚集、积聚的意思。而选项C“凝神”、选项A“凝望”与 “凝视”中的“凝”是注意力集中的意思。选项C“凝神”的意思是聚精会神，可以用来形容 “思索”“注视”等词，如凝神思索、凝神注视等。要注意的是，“凝神”的本义没有“看”的意思。“凝视”和“凝望”这两个词语中的“视”和“望”都有“看”的意思，词义分别为“聚精会神地看”和“目不转睛地看”。两个词语的意思非常接近。由实际测查结果来看，三个选项均具有一定的干扰性，尤其是C选项，它与 “凝视”的词义间的差异需要仔细分辨。在本次测试中，语文总体能力处于A、B、C三个水平的学生在本题上的平均得分率分别为`r row[row[,var.key]=="A",var.param]`%、
-`r row[row[,var.key]=="B",var.param]`%和
-`r row[row[,var.key]=="C",var.param]`%。\questiontitle{典型题目5: C3AO131}
+本题正确选项为A。题目给出的词语是“凝望”“凝固”“凝神”“凝聚”和“凝视”，从字面看，它们都有一个相同的汉字“凝”。“凝”有凝结和注意力集中两种意思。选项B“凝固”和选项D“凝聚”中的“凝”是凝结的意思。“凝固”一般是指“由液体变固体”；“凝聚”的本义是“气体由稀变浓或变成液体”，表示聚集、积聚的意思。而选项C“凝神”、选项A“凝望”与 “凝视”中的“凝”是注意力集中的意思。选项C“凝神”的意思是聚精会神，可以用来形容 “思索”“注视”等词，如凝神思索、凝神注视等。要注意的是，“凝神”的本义没有“看”的意思。“凝视”和“凝望”这两个词语中的“视”和“望”都有“看”的意思，词义分别为“聚精会神地看”和“目不转睛地看”。两个词语的意思非常接近。由实际测查结果来看，三个选项均具有一定的干扰性，尤其是C选项，它与 “凝视”的词义间的差异需要仔细分辨。\questiontitle{典型题目5: C3AO131}
 下面每道小题中，哪一个词语填入画线处最恰当？请把它找出来。
 
 我不小心把同桌的书弄丢了，我\uline{~~~~~}他原谅。
@@ -593,8 +595,8 @@ answer  <- answer.all[answer.all[,var.scope]==report$school & answer.all[,var.di
 \multirow{2}{*}{\makecell[c]{解决问题}} & C3AO251 & 能根据一定的标准对文本的内容、观点及语言运用作出评价 &
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="C3AO251_X",]`
 `r row <- point.rate[point.rate[,var.variable]=="C3AO251_X",]`
-`r row[row[,var.key]=="总体",var.param]`  & 
-`r row.p[row.p[,var.key]=="总体",var.param]`   \\ \cline{2-5}
+`r row.p[row.p[,var.key]=="总体",var.param]`  & 
+`r row[row[,var.key]=="总体",var.param]`   \\ \cline{2-5}
 
  & C3AO301 & 能利用文本信息完成任务 & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="C3AO301_X",]`
@@ -784,7 +786,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 简言之，北京奥运会入场排序有三条规定：1、希腊第一；2、主办国（中华人民共和国）最后；3、其他国家按其中文名称的第一个字笔画数由少到多出场。从具体的选项看，选项B只满足第2条规定；选项C完全是随意安排，不符合所有规定；选项D满足第1、2条规定，但不符合第3条规定。唯有选项A满足3条规定，符合题目要求。
 
 
-由实际测查结果来看，三个选项均具有一定的干扰性。尤其是选择B的学生高达`r answer[answer[,var.variable]=="C3AO301" & answer[,var.key]=="B" & answer[,var.sample]=="总体",var.param]`%，超过选择A的学生，究其原因，应该是提取信息不够完整，考虑问题不够全面。
+由实际测查结果来看，三个选项均具有一定的干扰性。尤其是选择B的学生高达`r answer[answer[,var.variable]=="C3AO301" & answer[,var.key]=="B" & answer[,var.sample]=="总体",var.param]`%，究其原因，应该是提取信息不够完整，考虑问题不够全面。
 
 
 
@@ -888,60 +890,9 @@ answer  <- answer.all[answer.all[,var.scope]==report$school & answer.all[,var.di
 
 \end{longtable}
 \end{itshape}
+
 `r row <- point.rate[point.rate[,var.variable]=="C3AS310_X",]`
-“习作”从“选择材料”、“组织材料”、“语言表达”及“书写”四个分项考查学生在叙述事情上的能力表现。在本报告中分为四个题目，编号分别为C3AS311、C3AS312、C3AS313、C3AS314。从测试结果来看，作文平均得分率为`r row[row[,var.key]=="总体",var.param]`%，总体情况为：A水平的`r row[row[,var.sample]=="总体" & row[,var.key]=="A",var.param]`%，B水平的`r row[row[,var.sample]=="总体" & row[,var.key]=="B",var.param]`%，C水平的`r row[row[,var.sample]=="总体" & row[,var.key]=="C",var.param]`%。具体情况如下：
-
-\begin{table}[H]
-\centering
-\itshape
-\mytable
-\begin{tabularx}{\textwidth}{|c|c|c|c|c|c|c|c|c|c|}
-
-\cline{1-10}
-\makecell[c]{\mytablehead{水平分层}} & \makecell[c]{\mytablehead{公办}} & \makecell[c]{\mytablehead{普通民办}} & \makecell[c]{\mytablehead{随迁子女小学}} & \makecell[c]{\mytablehead{小学}} & \makecell[c]{\mytablehead{一贯制}} & \mytablehead{男} & \mytablehead{女} & \makecell[c]{\mytablehead{沪籍}} & \makecell[c]{\mytablehead{非沪籍}} \\
-\cline{1-10}
-
-\makecell[c]{A} & 
-`r row <- point.rate[point.rate[,var.variable]=="C3AS310_X" & point.rate[,var.key]=="A",]`
-`r row[row[,var.sample]=="公办",var.param]` & 
-`r row[row[,var.sample]=="民办",var.param]` & 
-`r row[row[,var.sample]=="随迁子女民办",var.param]` & 
-`r row[row[,var.sample]=="小学",var.param]` & 
-`r row[row[,var.sample]=="一贯制",var.param]` & 
-`r row[row[,var.sample]=="男",var.param]` & 
-`r row[row[,var.sample]=="女",var.param]` & 
-`r row[row[,var.sample]=="沪籍",var.param]` & 
-`r row[row[,var.sample]=="非沪籍",var.param]` \\
-\cline{1-10}
-\makecell[c]{B} & 
-`r row <- point.rate[point.rate[,var.variable]=="C3AS310_X" & point.rate[,var.key]=="B",]`
-`r row[row[,var.sample]=="公办",var.param]` & 
-`r row[row[,var.sample]=="民办",var.param]` & 
-`r row[row[,var.sample]=="随迁子女民办",var.param]` & 
-`r row[row[,var.sample]=="小学",var.param]` & 
-`r row[row[,var.sample]=="一贯制",var.param]` & 
-`r row[row[,var.sample]=="男",var.param]` & 
-`r row[row[,var.sample]=="女",var.param]` & 
-`r row[row[,var.sample]=="沪籍",var.param]` & 
-`r row[row[,var.sample]=="非沪籍",var.param]` \\
-\cline{1-10}
-\makecell[c]{C} & 
-`r row <- point.rate[point.rate[,var.variable]=="C3AS310_X" & point.rate[,var.key]=="C",]`
-`r row[row[,var.sample]=="公办",var.param]` & 
-`r row[row[,var.sample]=="民办",var.param]` & 
-`r row[row[,var.sample]=="随迁子女民办",var.param]` & 
-`r row[row[,var.sample]=="小学",var.param]` & 
-`r row[row[,var.sample]=="一贯制",var.param]` & 
-`r row[row[,var.sample]=="男",var.param]` & 
-`r row[row[,var.sample]=="女",var.param]` & 
-`r row[row[,var.sample]=="沪籍",var.param]` & 
-`r row[row[,var.sample]=="非沪籍",var.param]` \\
-\cline{1-10}
-
-\end{tabularx}
-\end{table}
-`r row <- point.rate[point.rate[,var.variable]=="C3AS310_X" & point.rate[,var.key]=="B",]`
-从数据看，小学和一贯制学校在四个水平上的比率情况几乎没有差异。但公办学校B水平的比普通民办学校高出`r row[row[,var.sample]=="公办",var.param] - row[row[,var.sample]=="民办",var.param]`%，比随迁子女小学高出`r row[row[,var.sample]=="公办",var.param] - row[row[,var.sample]=="随迁子女民办",var.param]`%；女生B水平的比男生高出`r row[row[,var.sample]=="女",var.param] - row[row[,var.sample]=="男",var.param]`%；本市学生B水平的比非本市学生高出`r row[row[,var.sample]=="沪籍",var.param] - row[row[,var.sample]=="非沪籍",var.param]`%。反映出学校之间的差异较大，女生在作文水平上的优势明显。下面分别呈现学生在写作分项上的作答情况。
+“习作”从“选择材料”、“组织材料”、“语言表达”及“书写”四个分项考查学生在叙述事情上的能力表现。在本报告中分为四个题目，编号分别为C3AS311、C3AS312、C3AS313、C3AS314。下面分别呈现学生在写作分项上的作答情况。
 
 \questiontitle{C3AS311 (维度1  满分6分)}
 
@@ -974,55 +925,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \label{fig:`r fig_name`}
 \end{figure}
 
-本市学生在“选择材料”上的平均得分率为`r point.rate[point.rate[,var.variable]=="C3AS311_X" & point.rate[,var.key]=="总体" & point.rate[,var.sample]=="总体",var.param]`%。从上图可以看出，仅有`r answer[answer[,var.variable]=="C3AS311_S" & answer[,var.key]=="5.5-6" & answer[,var.sample]=="总体",var.param]`%的学生得5.5-6分，表明极少部分学生能够围绕题目给出的情境展开想象，做到想象合理，内容具体；`r answer[answer[,var.variable]=="C3AS311_S" & answer[,var.key]=="3.5-5" & answer[,var.sample]=="总体",var.param]`%的学生得3.5-5分，表明大多数学生能够围绕给定的话题展开想象，内容较具体；`r answer[answer[,var.variable]=="C3AS311_S" & answer[,var.key]=="1.5-3" & answer[,var.sample]=="总体",var.param]`%的学生得1.5-3分，表明一部分学生能围绕给定的话题想象，但想象不够合理，内容过于简单；还有`r answer[answer[,var.variable]=="C3AS311_S" & answer[,var.key]=="0-1" & answer[,var.sample]=="总体",var.param]`%的学生得0-1分，表明极少部分学生不能围绕给定的话题想象，跑题。具体情况如下：
-
-\begin{table}[H]
-\centering
-\itshape
-\mytable
-\begin{tabularx}{\textwidth}{|c|c|c|c|c|c|c|c|c|c|}
-
-\cline{1-10}
-\makecell[c]{\mytablehead{水平分层}} & \makecell[c]{\mytablehead{公办}} & \makecell[c]{\mytablehead{普通民办}} & \makecell[c]{\mytablehead{随迁子女小学}} & \makecell[c]{\mytablehead{小学}} & \makecell[c]{\mytablehead{一贯制}} & \mytablehead{男} & \mytablehead{女} & \makecell[c]{\mytablehead{沪籍}} & \makecell[c]{\mytablehead{非沪籍}} \\
-\cline{1-10}
-\makecell[c]{A} & 
-`r row <- point.rate[point.rate[,var.variable]=="C3AS311_X" & point.rate[,var.key]=="A",]`
-`r row[row[,var.sample]=="公办",var.param]` & 
-`r row[row[,var.sample]=="民办",var.param]` & 
-`r row[row[,var.sample]=="随迁子女民办",var.param]` & 
-`r row[row[,var.sample]=="小学",var.param]` & 
-`r row[row[,var.sample]=="一贯制",var.param]` & 
-`r row[row[,var.sample]=="男",var.param]` & 
-`r row[row[,var.sample]=="女",var.param]` & 
-`r row[row[,var.sample]=="沪籍",var.param]` & 
-`r row[row[,var.sample]=="非沪籍",var.param]` \\
-\cline{1-10}
-\makecell[c]{B} & 
-`r row <- point.rate[point.rate[,var.variable]=="C3AS311_X" & point.rate[,var.key]=="B",]`
-`r row[row[,var.sample]=="公办",var.param]` & 
-`r row[row[,var.sample]=="民办",var.param]` & 
-`r row[row[,var.sample]=="随迁子女民办",var.param]` & 
-`r row[row[,var.sample]=="小学",var.param]` & 
-`r row[row[,var.sample]=="一贯制",var.param]` & 
-`r row[row[,var.sample]=="男",var.param]` & 
-`r row[row[,var.sample]=="女",var.param]` & 
-`r row[row[,var.sample]=="沪籍",var.param]` & 
-`r row[row[,var.sample]=="非沪籍",var.param]` \\
-\cline{1-10}
-\makecell[c]{C} & 
-`r row <- point.rate[point.rate[,var.variable]=="C3AS311_X" & point.rate[,var.key]=="C",]`
-`r row[row[,var.sample]=="公办",var.param]` & 
-`r row[row[,var.sample]=="民办",var.param]` & 
-`r row[row[,var.sample]=="随迁子女民办",var.param]` & 
-`r row[row[,var.sample]=="小学",var.param]` & 
-`r row[row[,var.sample]=="一贯制",var.param]` & 
-`r row[row[,var.sample]=="男",var.param]` & 
-`r row[row[,var.sample]=="女",var.param]` & 
-`r row[row[,var.sample]=="沪籍",var.param]` & 
-`r row[row[,var.sample]=="非沪籍",var.param]` \\
-\cline{1-10}
-\end{tabularx}
-\end{table}`r row <- point.rate[point.rate[,var.variable]=="C3AS311_X" & point.rate[,var.key]=="B",]`从数据看，公办学校B水平的比普通民办学校高出`r row[row[,var.sample]=="公办",var.param] - row[row[,var.sample]=="民办",var.param]`%，比随迁子女小学高出`r row[row[,var.sample]=="公办",var.param] - row[row[,var.sample]=="随迁子女民办",var.param]`%；女生B水平的比男生高出`r row[row[,var.sample]=="女",var.param] - row[row[,var.sample]=="男",var.param]`%；本市学生B水平的比非本市学生高出`r row[row[,var.sample]=="沪籍",var.param] - row[row[,var.sample]=="非沪籍",var.param]`%。在“材料的选择”这一分项上，公办学校的学生能力明显优于普通民办和随迁子女小学；女生明显优于男生。C水平的学生比率总计近`r dimention.param[dimention.param[,var.variable]=="writing_level"& dimention.param[,var.key]=="C" & dimention.param[,var.sample]=="总体",var.param]`%，这个比率超出预期较多，暴露出作文教学质量不尽如人意。\questiontitle{C3AS312 (维度2  满分6分)}
+本校学生在“选择材料”上的平均得分率为`r point.rate[point.rate[,var.variable]=="C3AS311_X" & point.rate[,var.key]=="总体" & point.rate[,var.sample]=="总体",var.param]`%。\questiontitle{C3AS312 (维度2  满分6分)}
 
 \begin{table}[H]
 \centering
@@ -1054,7 +957,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \end{figure}
 
 
-本市学生在“组织材料”上的平均得分率为`r point.rate[point.rate[,var.variable]=="C3AS312_X" & point.rate[,var.key]=="总体" & point.rate[,var.sample]=="总体",var.param]`%。从上图可以看出，仅有`r answer[answer[,var.variable]=="C3AS312_S" & answer[,var.key]=="5.5-6",var.param]`%的学生得5.5-6分，表明极少部分学生能够在叙述时做到过程很清楚；`r answer[answer[,var.variable]=="C3AS312_S" & answer[,var.key]=="3.5-5",var.param]`%的学生得3.5-5分，表明大多数学生能够做到叙述较完整，过程较清楚；`r answer[answer[,var.variable]=="C3AS312_S" & answer[,var.key]=="1.5-3",var.param]`%的学生得1.5-3分，表明还有一部分学生叙述不完整，过程不清楚，不能分小节；还有`r answer[answer[,var.variable]=="C3AS312_S" & answer[,var.key]=="0-1",var.param]`%的学生得0-1分，表明这部分学生只能写一两句话，不能形成文段，或逻辑混乱。
+本校学生在“组织材料”上的平均得分率为`r point.rate[point.rate[,var.variable]=="C3AS312_X" & point.rate[,var.key]=="总体" & point.rate[,var.sample]=="总体",var.param]`%。
 
 
 \questiontitle{C3AS313 (维度3  满分15分)}
@@ -1080,7 +983,9 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 report$plot$answer.segment.bar.cn$ggplot$label$xlab <- "分数段"
 plot.entry <- report$plot$answer.segment.bar.cn
 plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school)),list(var = var.variable, value=list("C3AS313_S")))
+report$plot$answer.segment.bar.cn$data$order <- list(list(var = "x", list <- list("0-5","5.5-9","9.5-12","12.5-15")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
+report$plot$answer.segment.bar.cn$data$order <- NULL
 ```
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{`r fig_file`}
@@ -1089,7 +994,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \end{figure}
 
 
-本市学生在“语言表达”上的平均得分率为`r point.rate[point.rate[,var.variable]=="C3AS313_X" & point.rate[,var.key]=="总体" & point.rate[,var.sample]=="总体",var.param]`%。从上图可以看出，有`r answer[answer[,var.variable]=="C3AS313_S" & answer[,var.key]=="12.5-15",var.param]`%的学生得12.5-15分，表明近30%的学生能够做到语意连贯，用词准确；`r answer[answer[,var.variable]=="C3AS313_S" & answer[,var.key]=="9.5-12",var.param]`%的学生得9.5-12分，表明有超过60%的学生能够做到语意基本连贯，用词基本恰当；`r answer[answer[,var.variable]=="C3AS313_S" & answer[,var.key]=="5.5-9",var.param]`%的学生得5.5-9分，表明有近6%的学生叙述时有一些病句或词语运用有不恰当之处，但不影响理解；还有`r answer[answer[,var.variable]=="C3AS313_S" & answer[,var.key]=="0-5",var.param]`%的学生得0-5分，表明这部分学生语言表达混乱，词不达意，不能表达自己的意思。
+本校学生在“语言表达”上的平均得分率为`r point.rate[point.rate[,var.variable]=="C3AS313_X" & point.rate[,var.key]=="总体" & point.rate[,var.sample]=="总体",var.param]`%。
 
 \questiontitle{C3AS314 (维度4  满分3分)}\begin{table}[H]
 \centering
@@ -1119,7 +1024,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \label{fig:`r fig_name`}
 \end{figure}
 
-本市学生在“书写”上的平均得分率为`r point.rate[point.rate[,var.variable]=="C3AS314_X" & point.rate[,var.key]=="总体" & point.rate[,var.sample]=="总体",var.param]`%。从上图可以看出，有`r answer[answer[,var.variable]=="C3AS314_S" & answer[,var.key]=="2.5-3",var.param]`%的学生得2.5-3分，表明近90%的学生书写做到字迹端正，书面整洁；`r answer[answer[,var.variable]=="C3AS314_S" & answer[,var.key]=="1.5-2",var.param]`%的学生得1.5-2分，表明近12%的学生能做到字迹比较端正，书面比较整洁；`r answer[answer[,var.variable]=="C3AS314_S" & answer[,var.key]=="0.5-1",var.param]`%的学生得0.5-1分，表明极少部分学生的字迹潦草，看不清；`r answer[answer[,var.variable]=="C3AS314_S" & answer[,var.key]=="0",var.param]`%的学生得0分书写非常乱，看不清。数据表明学生的书写的态度较大的进步。“习作”部分，根据本次测试的能力要求将学生的作文划分为4个水平：A水平：能够围绕题目给出的情境展开想象，想象合理，内容具体；叙述完整，过程清楚；语句通顺，语意连贯，用词准确。B（中上）水平：能够围绕题目给出的情境展开想象，内容较具体；叙述较完整，过程较清楚；语言通顺，语意比较连贯，用词基本恰当。B（中下）水平：能够围绕题目给出的情境展开想象，但想象不够合理；结构不完整，内容过于简单；语言比较通顺，有个别病句或词语运用不恰当之处，但不影响意思的理解。C水平：不能够围绕题目给出的情景展开想象或跑题；叙述不完整，过程不清楚；语言表达比较混乱，词不达意。下面将结合不同水平的四篇作文样例来做具体分析。A水平：能够围绕题目给出的情境展开想象，想象合理，内容具体；叙述完整，过程清楚；语句通顺，语意连贯，用词准确。学生样例：
+本校学生在“书写”上的平均得分率为`r point.rate[point.rate[,var.variable]=="C3AS314_X" & point.rate[,var.key]=="总体" & point.rate[,var.sample]=="总体",var.param]`%。“习作”部分，根据本次测试的能力要求将学生的作文划分为4个层次：A水平：能够围绕题目给出的情境展开想象，想象合理，内容具体；叙述完整，过程清楚；语句通顺，语意连贯，用词准确。B（中上）水平：能够围绕题目给出的情境展开想象，内容较具体；叙述较完整，过程较清楚；语言通顺，语意比较连贯，用词基本恰当。B（中下）水平：能够围绕题目给出的情境展开想象，但想象不够合理；结构不完整，内容过于简单；语言比较通顺，有个别病句或词语运用不恰当之处，但不影响意思的理解。C水平：不能够围绕题目给出的情景展开想象或跑题；叙述不完整，过程不清楚；语言表达比较混乱，词不达意。下面将结合不同水平的四篇作文样例来做具体分析。A水平：能够围绕题目给出的情境展开想象，想象合理，内容具体；叙述完整，过程清楚；语句通顺，语意连贯，用词准确。学生样例：
 `r fig_file <- "cn_C3AS31_A_01.png" `
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{`r fig_file`}
@@ -1327,7 +1232,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-大部分学生掌握情况较好，但是也有`r answer[answer[,var.variable]=="M3AS131" & answer[,var.key]!="4",var.param]`%的学生答错。学生的错误大致可以分成两类。第一类是面积单位和长度单位之间的换算混淆，得出错误结果70；第二类是单位之间的换算混淆，得出错误结果70000；也有个别学生两类错误都犯，得出错误结果7000。
+从全市层面看，大部分学生掌握情况较好。学生的错误大致可以分成两类。第一类是面积单位和长度单位之间的换算混淆，得出错误结果70；第二类是单位之间的换算混淆，得出错误结果70000；也有个别学生两类错误都犯，得出错误结果7000。
 
 \begin{figure}[H]
 	\centering
@@ -1358,7 +1263,8 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}本题考查学生能正确用三角尺判断直角，并能用正确的直角符号标注出直角。`r cap_name <- "M3AS201错例" ``r subcap_name <- "错例-1" `
-`r subcap_name1 <- "错例-2" `本题得分率仅为`r row[row[,var.key]=="总体",var.param]`%。主要问题是一部分学生不会正确用直角符号来表示直角，有些对直角标注符号不规范（如图\ref{fig:`r subcap_name`}），另一部分学生虽然能找到图中相对标准状态下的直角，但对非标准状态下的角不会或者不善于用三角尺进行正确判断（如图\ref{fig:`r subcap_name1`}）。
+`r subcap_name1 <- "错例-2" `
+从全市层面上看，做错的原因主要是一部分学生不会正确用直角符号来表示直角，有些对直角标注符号不规范（如图\ref{fig:`r subcap_name`}），另一部分学生虽然能找到图中相对标准状态下的直角，但对非标准状态下的角不会或者不善于用三角尺进行正确判断（如图\ref{fig:`r subcap_name1`}）。
 
 \begin{figure}[H]
     \centering
@@ -1489,7 +1395,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}本题考查的是能借助具体例子，解释除法竖式每一步的含义。全体学生得分率为`r row[row[,var.key]=="总体",var.param]`%，较14年的得分率上升了近14%，说明绝大部分学生对于算式中每一步蕴含的具体意义的理解比较清晰，能结合具体的情境对数学对象进行理解和解释；也说明我们的教师在教学中改变了只重视解答，而忽视对操作中的每一步所表达的含义的关注，在除法计算教学中能借助操作帮助学生理解算理，通过数形结合，帮助学生沟通横式与竖式之间的联系，故得分率有了显著的提高。
+\end{figure}本题考查的是能借助具体例子，解释除法竖式每一步的含义。从全市层面看，较14年的得分率上升了近14%，说明绝大部分学生对于算式中每一步蕴含的具体意义的理解比较清晰，能结合具体的情境对数学对象进行理解和解释；也说明我们的教师在教学中改变了只重视解答，而忽视对操作中的每一步所表达的含义的关注，在除法计算教学中能借助操作帮助学生理解算理，通过数形结合，帮助学生沟通横式与竖式之间的联系，故得分率比较高。
 
 \questiontitle{典型题目4: M3AO111}
 当你面对西面时，你的右手边是（    ）面．
@@ -1631,7 +1537,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \label{fig:`r fig_name`}
 \end{figure}
 
-本题考查的是能借助情境中已经给出的标准，对于较大数量进行估计。从学生作答情况看，`r answer[answer[,var.variable]=="M3AO061" & answer[,var.key]=="C",var.param]`%的学生能灵活运用估算方法，先将给出的标准“198本书”的数据简化为“200本书”，明确简化数据的目的是使较大数量的估计变得较为容易。但统计数据显示还有`r answer[answer[,var.variable]=="M3AO061" & answer[,var.key]=="B",var.param]`%的学生选择了B这个错误选项。通过与学生访谈了解到，这种典型错误中比较有代表性的思维过程是：先根据题中给出的条件列式计算：198×6=1188（本）得出6个书架一共放图书1188本，再将结果凑整为1000本。显然，还是有一部分学生并没有掌握估算的一般策略方法，将估算方法和将计算结果凑整的方法混淆。建议：
+本题考查的是能借助情境中已经给出的标准，对于较大数量进行估计。从学生作答情况看，`r answer[answer[,var.variable]=="M3AO061" & answer[,var.key]=="C",var.param]`%的学生能灵活运用估算方法，先将给出的标准“198本书”的数据简化为“200本书”，明确简化数据的目的是使较大数量的估计变得较为容易。从全市层面看，学生的典型错误中比较有代表性的思维过程是：先根据题中给出的条件列式计算：198×6=1188（本）得出6个书架一共放图书1188本，再将结果凑整为1000本。显然，还是有一部分学生并没有掌握估算的一般策略方法，将估算方法和将计算结果凑整的方法混淆。建议：
 
 教师在教学中还需进一步结合现实情境问题的解决，进一步强化学生的估算意识，掌握灵活估算方法，获得估算能力提高。\questiontitle{典型题目6: M3AS181}从下面4幅图中找出规律，在横线上画出第四幅图．
 
@@ -1708,7 +1614,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 
 本题考查学生能根据正方形的特征、面积含义的理解，运用正确的计算公式计算出正方形的面积。
 
-本题`r answer[answer[,var.variable]=="M3AO101" & answer[,var.key]=="B",var.param]`%的学生能正确解答，但有`r answer[answer[,var.variable]=="M3AO101" & answer[,var.key]=="C",var.param]`%的学生选择错误答案C。这些学生能掌握正方形的特征，能得出或画出最大的正方形，但在计算这个正方形面积时错误的采用周长的计算方法，从而选择错误的答案。一方面是学生对周长和面积的含义理解还不够清晰，同时对面积计算方法的由来还没有真正理解，因而选用错误的计算方法。
+本题`r answer[answer[,var.variable]=="M3AO101" & answer[,var.key]=="B",var.param]`%的学生能正确解答。这些学生能掌握正方形的特征，能得出或画出最大的正方形，但在计算这个正方形面积时错误的采用周长的计算方法，从而选择错误的答案。一方面是学生对周长和面积的含义理解还不够清晰，同时对面积计算方法的由来还没有真正理解，因而选用错误的计算方法。
 
 建议:
 
@@ -1800,7 +1706,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \label{fig:`r fig_name`}
 \end{figure}
 
-本题要求学生能根据运算的法则来判断算式与结果之间的关系。从作答的情况来看，得分率为`r row[row[,var.key]=="总体",var.param]`%，虽较14年此题的得分率有了近14%的显著的提高，但从数据上来看仍有待进一步提高。有`r answer[answer[,var.variable]=="M3AO121" & answer[,var.key]=="B",var.param]`%的学生选择了B，说明学生对于除法的运算法则和顺序还不够清晰，同时也反映出教师平时教学中比较重视计算的结果，而忽视学生对运算法则和顺序的理解。120÷6 = 120÷(3×2）= 120÷3÷2 较原题 120÷3 缩小了2倍，要得到本题正确的结果必须再扩大2倍，即乘2，选A。
+本题要求学生能根据运算的法则来判断算式与结果之间的关系。从作答的情况来看，得分率为`r row[row[,var.key]=="总体",var.param]`%，从全市层面看，选择B选项的学生对于除法的运算法则和顺序还不够清晰，同时也反映出教师平时教学中比较重视计算的结果，而忽视学生对运算法则和顺序的理解。120÷6 = 120÷(3×2）= 120÷3÷2 较原题 120÷3 缩小了2倍，要得到本题正确的结果必须再扩大2倍，即乘2，选A。
 
 建议：
 
@@ -1892,7 +1798,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
   \end{center}
 \end{figure}说明广大教师在进行周长教学时，不拘泥于让学生只掌握单一的周长计算公式，而是根据周长的意义，来灵活地解决具体实际问题。
 
-当然，也有`r answer[answer[,var.variable]=="M3AS231" & answer[,var.key]=="1",var.param] + answer[answer[,var.variable]=="M3AS231" & answer[,var.key]=="0",var.param]`%的学生产生不同类型的错误，主要也有以下几种：
+从全市层面看，学生产生了不同类型的错误，主要也有以下几种：
 
 1. 计算错误。公式用对，但结果得到48、24、18等，主要对14×2两位数乘一位数计算方法掌握不够牢固。2. 混淆“面积”与“周长”概念。
 
@@ -2192,7 +2098,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \label{fig:`r fig_name`}
 \end{figure}
 
-以下为对参加家教补习、课外辅导的学生情况的进一步分析。
+\myschool{以下为对参加了家教补习、课外辅导的学生情况的进一步分析。}
 
 `r fig_name <- "四年级学生参加与考试科目相关的家教补习或课外辅导情况" `
 图\ref{fig:`r fig_name`}给出了四年级学生每周参加与考试科目相关的家教补习、课外辅导的总体情况及各群体之间的比较。
@@ -2498,7 +2404,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 ### 诚信
 
 `r fig_name <- "四年级学生遇到各种诚信问题时的行为表现情况" `
-图\ref{fig:`r fig_name`}给出了四年级学生认为班里同学遇到各种诚信问题时的诚信行为的行为表现情况。
+图\ref{fig:`r fig_name`}给出了四年级学生认为班里同学遇到各种诚信问题时的行为表现情况。
 ```{r morality_integrity.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$morality_integrity.bar
 plot.entry$data$keep <- list(list(var = var.scope, value=list(report$scope,report$county)))
@@ -2513,7 +2419,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 
 
 `r fig_name <- "四年级学生关于社会责任感方面问题的表现情况" `
-图\ref{fig:`r fig_name`}给出了四年级学生在发现有人把空饮料瓶扔到操场中央时的行为表现。
+图\ref{fig:`r fig_name`}给出了四年级学生关于社会责任感方面问题的表现情况。
 ```{r morality_responsibility.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$morality_responsibility.bar
 plot.entry$data$keep <- list(list(var = var.scope, value=list(report$scope,report$county)))
@@ -2593,7 +2499,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-`r fig_name <- "给出了家长认为孩子参与家庭事务讨论的情况" `
+`r fig_name <- "家长认为孩子参与家庭事务讨论的情况" `
 图\ref{fig:`r fig_name`}给出了家长报告孩子参与家庭事务讨论的总体情况及各群体之间的比较。
 ```{r family_discuss.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$family_discuss.bar
@@ -2737,7 +2643,7 @@ var.topic <- "主题" `
 ## 学生学业水平指数
 
 学生学业水平指数包含学生学业成绩标准达成指数、学生高层次思维能力发展指数以及学生学业成绩个体均衡指数。### 学生学业成绩标准达成度指数学生学业成绩的水平是依据课程标准，在大规模测试数据基础上，运用国际上通用的研究方法，对学生在某一学科、某一阶段应该掌握的基本内容与核心能力的发展水平进行的等级标定。学业成绩的标准达成度指数指的是学生在各学科达到合格水平的程度。学业成绩的标准达成度指数划分为9级，指数越高，表示该区域学生学业成绩达到课程标准基本要求的合格率越高。\mylist-  9级：表示学业成绩的标准达成系数\footnote{将学业成绩合格率经过标准化等一系列转化后得到的数值，转化后的数据具有可加性和可比性，用于划分学业成绩标准达成指数的等级。}在0.9及以上（含0.9）-  8级：表示学业成绩的标准达成系数在0.8-0.9之间（含0.8）-  7级：表示学业成绩的标准达成系数在0.7-0.8之间（含0.7）-  6级：表示学业成绩的标准达成系数在0.6-0.7之间（含0.6）-  5级：表示学业成绩的标准达成系数在0.5-0.6之间（含0.5）-  4级：表示学业成绩的标准达成系数在0.4-0.5之间（含0.4）-  3级：表示学业成绩的标准达成系数在0.3-0.4之间（含0.3）-  2级：表示学业成绩的标准达成系数在0.2-0.3之间（含0.2）-  1级：表示学业成绩的标准达成系数在0.2以下\mytext
-`r fig_name <- "不同群体四年级学生学业成绩标准达成度指数" `
+`r fig_name <- "四年级学生学业成绩标准达成度指数" `
 ```{r passed.rate.all.school.index.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$school.index.bar
 plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$scope)),list(var = var.subject, value=list("学业成绩")),list(var = var.topic, value=list("成绩达标指数")))
@@ -3002,10 +2908,10 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \label{fig:`r fig_name`}
 \end{figure}
 
-#### 校外考试学科补课指数\mylist
+#### 校外补课指数（考试学科）\mylist
 - 9级：表示90%以上的学生每周参加与考试学科相关的校外补课2小时以下（含90%）- 8级：表示80%-90%的学生每周参加与考试学科相关的校外补课2小时以下（含80%）- 7级：表示70%-80%的学生每周参加与考试学科相关的校外补课2小时以下（含70%）- 6级：表示60%-70%的学生每周参加与考试学科相关的校外补课2小时以下（含60%）- 5级：表示50%-60%的学生每周参加与考试学科相关的校外补课2小时以下（含50%）- 4级：表示40%-50%的学生每周参加与考试学科相关的校外补课2小时以下（含40%）- 3级：表示30%-40%的学生每周参加与考试学科相关的校外补课2小时以下（含30%）- 2级：表示20%-30%的学生每周参加与考试学科相关的校外补课2小时以下（含20%）- 1级：表示20%以下的学生每周参加与考试学科相关的校外补课2小时以下\mytext
 
-`r fig_name <- "四年级学生校外补课指数" `
+`r fig_name <- "四年级学生校外补课指数（考试学科）" `
 ```{r extra.homework.school.index.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$school.index.bar
 plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$scope)),list(var = var.subject, value=list("学生问卷")),list(var = var.topic, value=list("校外补课指数")))

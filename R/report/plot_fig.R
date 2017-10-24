@@ -52,7 +52,7 @@ if(is.null(report$aliasFlag)){
 timestamp()
 print(paste("Read Table:",report$table))
 report$data <- db.ReadTable(report$table)
-
+timestamp()
   print(paste("Read Table:",report$aliasTable))
   report$aliasdata <- db.ReadTable(report$aliasTable)
   
@@ -91,4 +91,6 @@ plot$data$keep <- list(list(var = "统计范围", value=list(report$county,repor
 #plot$data$postkeep <- list(list(var = "x", value=list("本市")))
 #plot$data$keep <- list(list(var = "统计范围", value=list(report$school)),list(var = "变量", value=list("C3AS261")))
 #plot$data$postkeep <- list(list(var = "变量", value=list("C3AS261")))
+timestamp()
 plot.figure( report = report, plot.in = plot,fig_name = plot$fig.name)
+timestamp()

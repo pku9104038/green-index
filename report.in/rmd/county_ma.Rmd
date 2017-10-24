@@ -160,7 +160,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \end{figure}
 
 
-\begin{landscape}\section{不同学校学生的表现}
+\begin{landscape}\subsubsection{不同学校学生的表现}
 number.bar.province.county.school.ma
 
 number.box.province.county.school.ma
@@ -186,7 +186,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}\begin{landscape}\section{不同学校学生的表现}
+\end{figure}\begin{landscape}\subsubsection{不同学校学生的表现}
 space.bar.province.county.school.ma
 
 space.box.province.county.school.ma
@@ -214,7 +214,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-\begin{landscape}\section{不同学校学生的表现}
+\begin{landscape}\subsubsection{不同学校学生的表现}
 statistics.bar.province.county.school.ma
 
 statistics.box.province.county.school.ma
@@ -244,7 +244,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 
 
 \begin{landscape}
-\section{不同学校学生的表现}
+\subsubsection{不同学校学生的表现}
 skill.bar.province.county.school.ma
 
 skill.box.province.county.school.ma
@@ -270,7 +270,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}\begin{landscape}
-\section{不同学校学生的表现}
+\subsubsection{不同学校学生的表现}
 concept.bar.province.county.school.ma
 
 concept.box.province.county.school.ma
@@ -298,7 +298,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \end{figure}
 
 \begin{landscape}
-\section{不同学校学生的表现}
+\subsubsection{不同学校学生的表现}
 apply.bar.province.county.school.ma
 
 apply.box.province.county.school.ma
@@ -327,7 +327,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \label{fig:`r fig_name`}
 \end{figure}
 \begin{landscape}
-\section{不同学校学生的表现}
+\subsubsection{不同学校学生的表现}
 problem.bar.province.county.school.ma
 
 problem.box.province.county.school.ma
@@ -781,7 +781,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}本题考查的是能借助具体例子，解释除法竖式每一步的含义。全体学生得分率为`r row[row[,var.key]=="总体",var.param]`%，较14年的得分率上升了近14%，说明绝大部分学生对于算式中每一步蕴含的具体意义的理解比较清晰，能结合具体的情境对数学对象进行理解和解释；也说明我们的教师在教学中改变了只重视解答，而忽视对操作中的每一步所表达的含义的关注，在除法计算教学中能借助操作帮助学生理解算理，通过数形结合，帮助学生沟通横式与竖式之间的联系，故得分率有了显著的提高。
+\end{figure}本题考查的是能借助具体例子，解释除法竖式每一步的含义。全体学生得分率为`r row[row[,var.key]=="总体",var.param]`%，从全市层面看，较14年的得分率上升了近14%，说明绝大部分学生对于算式中每一步蕴含的具体意义的理解比较清晰，能结合具体的情境对数学对象进行理解和解释；也说明我们的教师在教学中改变了只重视解答，而忽视对操作中的每一步所表达的含义的关注，在除法计算教学中能借助操作帮助学生理解算理，通过数形结合，帮助学生沟通横式与竖式之间的联系，故得分率有了显著的提高。
 
 \questiontitle{典型题目4: M3AO111}
 当你面对西面时，你的右手边是（    ）面．
@@ -1219,7 +1219,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \label{fig:`r fig_name`}
 \end{figure}
 
-本题要求学生能根据运算的法则来判断算式与结果之间的关系。从作答的情况来看，得分率为`r row[row[,var.key]=="总体",var.param]`%，虽较14年此题的得分率有了近14%的显著的提高，但从数据上来看仍有待进一步提高。有`r answer[answer[,var.variable]=="M3AO121" & answer[,var.key]=="B",var.param]`%的学生选择了B，说明学生对于除法的运算法则和顺序还不够清晰，同时也反映出教师平时教学中比较重视计算的结果，而忽视学生对运算法则和顺序的理解。120÷6 = 120÷(3×2）= 120÷3÷2 较原题 120÷3 缩小了2倍，要得到本题正确的结果必须再扩大2倍，即乘2，选A。
+本题要求学生能根据运算的法则来判断算式与结果之间的关系。从作答的情况来看，得分率为`r row[row[,var.key]=="总体",var.param]`%，从全市层面看，虽较14年此题的得分率有了近14%的显著的提高，但从数据上来看仍有待进一步提高。有`r answer[answer[,var.variable]=="M3AO121" & answer[,var.key]=="B",var.param]`%的学生选择了B，说明学生对于除法的运算法则和顺序还不够清晰，同时也反映出教师平时教学中比较重视计算的结果，而忽视学生对运算法则和顺序的理解。120÷6 = 120÷(3×2）= 120÷3÷2 较原题 120÷3 缩小了2倍，要得到本题正确的结果必须再扩大2倍，即乘2，选A。
 
 建议：
 

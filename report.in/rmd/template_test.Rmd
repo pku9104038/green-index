@@ -7,13 +7,13 @@ output:
     fig_caption: yes
     template: pdf_template.tex
     includes:
-      in_header: header_subject.tex
+      in_header: header_test.tex
     latex_engine: xelatex
     number_sections: yes
     keep_tex: no
 params:
   report: 2015
-  dummy.fig: "reports.jpg"
+  dummy.fig: "dummy.jpg"
   conf: "conf"
   
 ---
@@ -35,9 +35,15 @@ pre.render.report.preface
 
 <!-- table of cntents -->
 
+
+每一所参加调查的学校是根据其学校规模按照随机等距抽样 的方式抽取一定数量的样本学生每一所参加调查的学校是根据其学校规模按照随机等距抽样 的方式抽取一定数量的样本学生每一所参加调查的学校是根据其学校规模按照随机等距抽样 的方式抽取一定数量的样本学生每一所参加调查的学校是根据其学校规模按照随机等距抽样 的方式抽取一定数量的样本学生
+
+
 pre.render.table.of.contents
 
 <!-- document body -->
+
+
 
 \mytext
 
@@ -56,6 +62,19 @@ pre.render.introduce.ma
 
 
 pre.render.test
+
+每一所参加调查的学校是根据其学校规模按照随机等距抽样 的方式抽取一定数量的样本学生每一所参加调查的学校是根据其学校规模按照随机等距抽样 的方式抽取一定数量的样本学生每一所参加调查的学校是根据其学校规模按照随机等距抽样 的方式抽取一定数量的样本学生每一所参加调查的学校是根据其学校规模按照随机等距抽样 的方式抽取一定数量的样本学生
+
+
+\myquot
+
+
+每一所参加调查的学校是根据其学校规模按照随机等距抽样 的方式抽取一定数量的样本学生每一所参加调查的学校是根据其学校规模按照随机等距抽样 的方式抽取一定数量的样本学生每一所参加调查的学校是根据其学校规模按照随机等距抽样 的方式抽取一定数量的样本学生每一所参加调查的学校是根据其学校规模按照随机等距抽样 的方式抽取一定数量的样本学生
+
+2016 年，全市 16 个区均抽样参加了 “绿色指标” 测试。普通民办学校自愿参加，所有 公办小学全部参加本次调查。每一所参加调查的学校是根据其学校规模按照随机等距抽样 的方式抽取一定数量的样本学生。
+
+本次共有 905 所小学 68046 名四年级学生参加了学科测试和问卷调查, 其中每名学生 参加语文和数学两门学科的测试。6240 位教师、1593 位校长(含分管教学的副校长)、 66347 位学生家长分别参加了教师问卷、校长问卷及家长问卷的调查。
+
 
 `r tab_name <- "本校及本区各指标" `
 
@@ -99,5 +118,14 @@ pre.render.test
 \end{tabularx}
 \end{table}
 
+`r fig_name <- "测试图片标题-A-1"`
+图\ref{fig:`r fig_name`}分别给出了上海市全体学生及不同区域\footnote{中心城区：包括黄浦区、徐汇区、长宁区、普陀区、虹口区、杨浦区、静安区。郊区：包括闵行区、宝山区、嘉定区、浦东新区、金山区、松江区、青浦区、奉贤区、崇明区。}学生在语文学科各水平上的人数比例和得分分布。
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{dummy.jpg}
+\caption{`r fig_name`}
+\label{fig:`r fig_name`}
+\end{figure}
+\clearpage
 
  

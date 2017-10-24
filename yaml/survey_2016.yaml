@@ -8244,13 +8244,16 @@ survey:
           - "区县"
           - "学校"
 
-
     weight:
       -
         algorithm: *w_algo_individual
         col.weight: *w_col_individual
         table.out: *table_participant_st
         table.in: *table_participant_st      
+
+    clean:
+      table.in: *table_participant_st
+      table.out: "参与清洗"
 
 count:
   -
@@ -8905,9 +8908,10 @@ report:
   province: "上海市"
   skip: TRUE #skip other county／school  
   test:
-    county: "崇明区"
+    county: "奉贤区"
     # "黄浦区" 
-    school: "上海奉贤区民办青溪小学" 
+    school: "上海奉贤区民办青溪小学"
+    #  "" 
     #"上海市浦东新区第二中心小学（巨野校区）"
     # "上海市西郊学校"
     # 
@@ -40281,7 +40285,7 @@ report:
             #  ylim: *axisy_ylim
  
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "county_cn.Rmd"
 
@@ -40850,13 +40854,17 @@ report:
             order:
               - 
                 var: "x"
-                list: *order_coun_prov               
+                list: *order_coun_prov   
+              -
+                var: "Group"
+                list: *order_cn_dim
+
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking
             group:
-              variable: *dimention
+              variable: "Group"
               scales: "fixed"
               position: "bottom" 
             legend: *plot_legend_top
@@ -41002,17 +41010,21 @@ report:
               -
                 arg: "Group"
                 var: *dimention
-            #order:
-            #  - 
-            #    var: "x"
-            #    list: *order_coun_prov
+            order:
+              - 
+                var: "x"
+                list: *order_coun_prov
+              -
+                var: "Group"
+                list: *order_cn_dim
+
 
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_box
             group:
-              variable: *dimention
+              variable: "Group"
               scales: "fixed"
               position: "bottom" 
             legend: *plot_legend_top
@@ -46075,7 +46087,7 @@ report:
               text_size: *plot_multi_fig_lab_size
 
         apply.bar.perspective.ma: 
-          fig.name: "不同群体学生在“规则应用”各水平上的人数比例"
+          fig.name: "不同群体学生在“规则运用”各水平上的人数比例"
           data:
             digits: *plot_data_digits
             filter:
@@ -46167,7 +46179,7 @@ report:
               ylab: "百分数（%）"
 
         apply.box.perspective.ma: 
-          fig.name: "不同群体学生在“规则应用”上的得分分布"
+          fig.name: "不同群体学生在“规则运用”上的得分分布"
           data:
             digits: *plot_data_digits
             filter:
@@ -46413,7 +46425,7 @@ report:
             #    - 800
 
         apply.bar.province.county.school.ma: 
-          fig.name: "各学校学生在“规则应用”各水平上的人数比例"
+          fig.name: "各学校学生在“规则运用”各水平上的人数比例"
           entry: "apply.bar.province.county.school.ma"
           ext.tex: ".tex"
           ext.fig: ".pdf"
@@ -46470,7 +46482,7 @@ report:
               text_size: *plot_multi_fig_lab_size
 
         apply.box.province.county.school.ma: 
-          fig.name: "各学校学生在“规则应用”上的得分分布"
+          fig.name: "各学校学生在“规则运用”上的得分分布"
           entry: "apply.box.province.county.school.ma"
           ext.tex: ".tex"
           ext.fig: ".pdf"
@@ -47527,7 +47539,7 @@ report:
 
         
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "school_report.Rmd"
 
@@ -47550,8 +47562,9 @@ report:
         - "pre.render.global.setting"
         - "pre.render.cover.page.sch"
         - "pre.render.head.foot"
-        - "pre.render.report.preface.sch"
+        - "pre.render.report.preface"
         - "pre.render.table.of.contents"
+        - "pre.render.project.summary"
         - "pre.render.introduce.subject.sch"
         - "pre.render.introduce.cn.sch"
         - "pre.render.introduce.ma.sch"

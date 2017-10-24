@@ -693,6 +693,8 @@ plot.data <- function(
   report,
   plot
 ){
+  timestamp()
+  print("plot data")
   data.in <- report$data
   data.out <- data.frame()
   
@@ -731,14 +733,16 @@ plot.data <- function(
       else{
         #print(fil$variable)
         #print(fil$value)
+        timestamp()
         data <- data[data[,fil$variable] == fil$value,]
+        timestamp()
       }
       #data <- data[data[,fil$variable] == fil$value,]
     }
     
     data.out <- bind_rows(data.out,data)
   }
-  print(data.out)
+  #print(data.out)
   if(nrow(data.out)==0 & !(report$brake)){
     print("Data  NULL!")
     return(data.out)
@@ -793,8 +797,8 @@ plot.data <- function(
       }
     }
   }
-  print(data.out)
   
+  #print(data.out)
   if(nrow(data.out)==0 & !(report$brake)){
     print("Data  NULL!")
     return(data.out)
@@ -907,7 +911,7 @@ plot.data <- function(
     #g.var$scope <-  "统计范围"
     #g.var$alias <-  "别名"
     #print(report$aliasdata)
-    print(data.left)
+    #print(data.left)
     data.right <- report$aliasdata[,c(g.var$scope,g.var$alias)]
     scopes <- data.right[,g.var$scope]
     for(i in 1:nrow(data.left)){
@@ -996,6 +1000,8 @@ plot.data <- function(
   
   ################# data out
   #print(data.out)
+  timestamp()
+  print("plot data out")
   return(data.out)
 }
 ##############################
@@ -1379,7 +1385,7 @@ plot.multi.figure  <- function(
   
    
   plot <-  plot.in
-  plot$ggplot$text$colour  <-  "gold2"
+  plot$ggplot$text$colour  <-  "red"
   plot$data$set.multi.fig <- plot.data(report,plot)
   
   items  <- levels(factor(plot$data$set.multi.fig[,"x"]))

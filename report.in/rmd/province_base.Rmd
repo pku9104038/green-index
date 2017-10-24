@@ -70,7 +70,7 @@ pass.rate.ma  <- dataframe.table( report = report, param = report$param[[param.e
 
 - 市级新优质学校\footnote{新优质学校为新优质建设学校项目简称。}学生达到语文课程标准的基本要求的比例为`r pass.rate.cn[pass.rate.cn[,var.sample]=="市新优",var.param]`%；达到数学课程标准的基本要求的人数比例为`r pass.rate.ma[pass.rate.ma[,var.sample]=="市新优",var.param]`%；区级新优质学校学生达到语文课程标准的基本要求的比例为`r pass.rate.cn[pass.rate.cn[,var.sample]=="区新优",var.param]`%；达到数学课程标准的基本要求的人数比例为`r pass.rate.ma[pass.rate.ma[,var.sample]=="区新优",var.param]`%；
 
-- 在语文学科上，除区82、区83和区88外，其他各区达到课程标准的人数比例在98.5%（含）以上；在数学学科上，除区75、81、82、83、89外其他各区县达到课程标准的人数比例在99.5%（含）以上；
+- 在语文学科上，除区82、区83和区88外，其他各区达到课程标准的人数比例在98.5%（含）以上；在数学学科上，除区75、81、82、83、89外其他各区达到课程标准的人数比例在99.5%（含）以上；
 
 - 一贯制学校与非一贯制小学的学生达到语文课程标准基本要求的人数比例分别为`r pass.rate.cn[pass.rate.cn[,var.sample]=="一贯制",var.param]`%和`r pass.rate.cn[pass.rate.cn[,var.sample]=="小学",var.param]`%；达到数学课程标准基本要求的人数比例分别为`r pass.rate.ma[pass.rate.ma[,var.sample]=="一贯制",var.param]`%和`r pass.rate.ma[pass.rate.ma[,var.sample]=="小学",var.param]`%；
 
@@ -241,8 +241,8 @@ summary.pa  <- dataframe.table( report = report, param = report$param[[param.ent
 学生问卷包括学生基本情况、师生关系、学习压力、学校认同度、学习动机、自信心和学习方法等。本章对学生问卷调查结果进行分析，以下是分析得到的主要结果：
 - 四年级学生是独生子女的占`r summary.st[summary.st[,var.topic]=="独生子女" & summary.st[,var.key]=="是",var.param]`%。- 四年级学生家庭图书量超过100本的占`r summary.pa[summary.pa[,var.topic]=="家庭藏书" & summary.pa[,var.key]=="101-200本之间",var.param] + summary.pa[summary.pa[,var.topic]=="家庭藏书" & summary.pa[,var.key]=="200本以上",var.param]`%，不超过50本的占`r summary.pa[summary.pa[,var.topic]=="家庭藏书" & summary.pa[,var.key]=="20本以下",var.param] + summary.pa[summary.pa[,var.topic]=="家庭藏书" & summary.pa[,var.key]=="21-50本之间",var.param]`%。- 四年级学生家庭汽车拥有量为零的占`r summary.pa[summary.pa[,var.topic]=="家庭汽车" & summary.pa[,var.key]=="没有",var.param]`%，两辆及以上的占`r summary.pa[summary.pa[,var.topic]=="家庭汽车" & summary.pa[,var.key]=="有，2辆",var.param] + summary.pa[summary.pa[,var.topic]=="家庭汽车" & summary.pa[,var.key]=="有，2辆以上",var.param]`%。- 四年级学生没有出境旅游的比例为`r summary.pa[summary.pa[,var.topic]=="出境旅游" & summary.pa[,var.key]=="目前还没有去过",var.param]`%，出境旅游过两次及以上的占`r summary.pa[summary.pa[,var.topic]=="出境旅游" & summary.pa[,var.key]=="2次",var.param] + summary.pa[summary.pa[,var.topic]=="出境旅游" & summary.pa[,var.key]=="3次",var.param] + summary.pa[summary.pa[,var.topic]=="出境旅游" & summary.pa[,var.key]=="4次及以上",var.param]`%。- 四年级学生的父亲受教育程度为大学及以上的占`r summary.pa[summary.pa[,var.topic]=="父亲学历" & summary.pa[,var.key]=="大专",var.param] + summary.pa[summary.pa[,var.topic]=="父亲学历" & summary.pa[,var.key]=="本科",var.param] + summary.pa[summary.pa[,var.topic]=="父亲学历" & summary.pa[,var.key]=="研究生",var.param]`%，初中及以下的占`r summary.pa[summary.pa[,var.topic]=="父亲学历" & summary.pa[,var.key]=="初中及以下",var.param]`%。四年级学生的母亲受教育程度为大学及以上的占`r summary.pa[summary.pa[,var.topic]=="母亲学历" & summary.pa[,var.key]=="大专",var.param] + summary.pa[summary.pa[,var.topic]=="母亲学历" & summary.pa[,var.key]=="本科",var.param] + summary.pa[summary.pa[,var.topic]=="母亲学历" & summary.pa[,var.key]=="研究生",var.param]`%，初中及以下的占`r summary.pa[summary.pa[,var.topic]=="母亲学历" & summary.pa[,var.key]=="初中及以下",var.param]`%。
 - 四年级学生每天做学校老师布置的书面作业时间超过2小时的占`r summary.st[summary.st[,var.topic]=="作业时间" & summary.st[,var.key]=="2-3小时（含2小时）",var.param] + summary.st[summary.st[,var.topic]=="作业时间" & summary.st[,var.key]=="3-4小时（含3小时）",var.param] + summary.st[summary.st[,var.topic]=="作业时间" & summary.st[,var.key]=="4小时及以上",var.param]`%，其中3小时以上的占`r summary.st[summary.st[,var.topic]=="作业时间" & summary.st[,var.key]=="3-4小时（含3小时）",var.param] + summary.st[summary.st[,var.topic]=="作业时间" & summary.st[,var.key]=="4小时及以上",var.param]`%，1小时以下的占`r summary.st[summary.st[,var.topic]=="作业时间" & summary.st[,var.key]=="1小时以内",var.param]`%。
-- 四年级学生认为学校作业难易适中的占`r summary.st[summary.st[,var.topic]=="作业难度" & summary.st[,var.key]=="难易适中",var.param]`%，认为非常难和很容易的共占`r summary.st[summary.st[,var.topic]=="作业难度" & summary.st[,var.key]=="非常难",var.param] + summary.st[summary.st[,var.topic]=="作业难度" & summary.st[,var.key]=="非常容易",var.param]`%。- 四年级学生每周参加与考试科目相关的家教补习或课外辅导的时间在6小时以上的占`r summary.pa[summary.pa[,var.topic]=="家教补课时间全体" & summary.pa[,var.key]=="6-8小时（含6小时）",var.param] + summary.pa[summary.pa[,var.topic]=="家教补课时间全体" & summary.pa[,var.key]=="8小时及以上",var.param]`％。- 四年级学生每周参加校外兴趣班的时间在2小时及以上的占`r summary.pa[summary.pa[,var.topic]=="兴趣班时间全体" & summary.pa[,var.key]=="2-3小时（含2小时）",var.param] + summary.pa[summary.pa[,var.topic]=="兴趣班时间全体" & summary.pa[,var.key]=="3-4小时（含3小时）",var.param] + summary.pa[summary.pa[,var.topic]=="兴趣班时间全体" & summary.pa[,var.key]=="4-5小时（含4小时）",var.param] + summary.pa[summary.pa[,var.topic]=="兴趣班时间全体" & summary.pa[,var.key]=="5小时及以上",var.param]`%，没有参加校外兴趣班的学生占`r summary.pa[summary.pa[,var.topic]=="兴趣班时间全体" & summary.pa[,var.key]=="(空)",var.param] + summary.pa[summary.pa[,var.topic]=="兴趣班时间全体" & summary.pa[,var.key]=="(跳过)",var.param]`%。- 四年级学生每个月参加考试和测验的频率在4次及以上的占`r summary.st[summary.st[,var.topic]=="月考次数" & summary.st[,var.key]=="4次及以上",var.param]`%，频率在1次至3次的占`r summary.st[summary.st[,var.topic]=="月考次数" & summary.st[,var.key]=="1次",var.param] + summary.st[summary.st[,var.topic]=="月考次数" & summary.st[,var.key]=="2次",var.param] + summary.st[summary.st[,var.topic]=="月考次数" & summary.st[,var.key]=="3次",var.param]`%，0次的占`r summary.st[summary.st[,var.topic]=="月考次数" & summary.st[,var.key]=="0次",var.param]`%。- 四年级学生一年阅读课外读物量达到9本及以上的比例为`r summary.st[summary.st[,var.topic]=="年度阅读" & summary.st[,var.key]=="9-12本",var.param] + summary.st[summary.st[,var.topic]=="年度阅读" & summary.st[,var.key]=="13本及以上",var.param]`%，有`r summary.st[summary.st[,var.topic]=="年度阅读" & summary.st[,var.key]=="1-4本",var.param] + summary.st[summary.st[,var.topic]=="年度阅读" & summary.st[,var.key]=="没有",var.param]`%的学生年阅读量不足5本，有`r summary.st[summary.st[,var.topic]=="年度阅读" & summary.st[,var.key]=="没有",var.param]`%的学生几乎不进行课外阅读。- 四年级学生每天放学回家后运动时间在40分钟以内的占`r summary.pa[summary.pa[,var.topic]=="运动时间" & summary.pa[,var.key]=="41-60分钟",var.param] + summary.pa[summary.pa[,var.topic]=="运动时间" & summary.pa[,var.key]=="61-80分钟",var.param] + summary.pa[summary.pa[,var.topic]=="运动时间" & summary.pa[,var.key]=="81分钟及以上",var.param]`%，在60分钟及以上的占`r summary.pa[summary.pa[,var.topic]=="运动时间" & summary.pa[,var.key]=="61-80分钟",var.param] + summary.pa[summary.pa[,var.topic]=="运动时间" & summary.pa[,var.key]=="81分钟及以上",var.param]`%。
-
+- 四年级学生认为学校作业难易适中的占`r summary.st[summary.st[,var.topic]=="作业难度" & summary.st[,var.key]=="难易适中",var.param]`%，认为非常难和非常容易的共占`r summary.st[summary.st[,var.topic]=="作业难度" & summary.st[,var.key]=="非常难",var.param] + summary.st[summary.st[,var.topic]=="作业难度" & summary.st[,var.key]=="非常容易",var.param]`%。- 四年级学生每周参加与考试科目相关的家教补习或课外辅导的时间在6小时以上的占`r summary.pa[summary.pa[,var.topic]=="家教补课时间全体" & summary.pa[,var.key]=="6-8小时（含6小时）",var.param] + summary.pa[summary.pa[,var.topic]=="家教补课时间全体" & summary.pa[,var.key]=="8小时及以上",var.param]`％。- 四年级学生每周参加校外兴趣班的时间在2小时及以上的占`r summary.pa[summary.pa[,var.topic]=="兴趣班时间全体" & summary.pa[,var.key]=="2-3小时（含2小时）",var.param] + summary.pa[summary.pa[,var.topic]=="兴趣班时间全体" & summary.pa[,var.key]=="3-4小时（含3小时）",var.param] + summary.pa[summary.pa[,var.topic]=="兴趣班时间全体" & summary.pa[,var.key]=="4-5小时（含4小时）",var.param] + summary.pa[summary.pa[,var.topic]=="兴趣班时间全体" & summary.pa[,var.key]=="5小时及以上",var.param]`%，没有参加校外兴趣班的学生占`r summary.pa[summary.pa[,var.topic]=="兴趣班时间全体" & summary.pa[,var.key]=="(空)",var.param] + summary.pa[summary.pa[,var.topic]=="兴趣班时间全体" & summary.pa[,var.key]=="(跳过)",var.param]`%。- 四年级学生每个月参加考试和测验的频率在4次及以上的占`r summary.st[summary.st[,var.topic]=="月考次数" & summary.st[,var.key]=="4次及以上",var.param]`%，频率在1次至3次的占`r summary.st[summary.st[,var.topic]=="月考次数" & summary.st[,var.key]=="1次",var.param] + summary.st[summary.st[,var.topic]=="月考次数" & summary.st[,var.key]=="2次",var.param] + summary.st[summary.st[,var.topic]=="月考次数" & summary.st[,var.key]=="3次",var.param]`%，0次的占`r summary.st[summary.st[,var.topic]=="月考次数" & summary.st[,var.key]=="0次",var.param]`%。- 四年级学生一年阅读课外读物量达到9本及以上的比例为`r summary.st[summary.st[,var.topic]=="年度阅读" & summary.st[,var.key]=="9-12本",var.param] + summary.st[summary.st[,var.topic]=="年度阅读" & summary.st[,var.key]=="13本及以上",var.param]`%，有`r summary.st[summary.st[,var.topic]=="年度阅读" & summary.st[,var.key]=="1-4本",var.param] + summary.st[summary.st[,var.topic]=="年度阅读" & summary.st[,var.key]=="没有",var.param]`%的学生年阅读量不足5本，有`r summary.st[summary.st[,var.topic]=="年度阅读" & summary.st[,var.key]=="没有",var.param]`%的学生几乎不进行课外阅读。- 四年级学生每天放学回家后运动时间在40分钟以内的占`r summary.pa[summary.pa[,var.topic]=="运动时间" & summary.pa[,var.key]=="41-60分钟",var.param] + summary.pa[summary.pa[,var.topic]=="运动时间" & summary.pa[,var.key]=="61-80分钟",var.param] + summary.pa[summary.pa[,var.topic]=="运动时间" & summary.pa[,var.key]=="81分钟及以上",var.param]`%，在60分钟及以上的占`r summary.pa[summary.pa[,var.topic]=="运动时间" & summary.pa[,var.key]=="61-80分钟",var.param] + summary.pa[summary.pa[,var.topic]=="运动时间" & summary.pa[,var.key]=="81分钟及以上",var.param]`%。
+- 四年级学生，95%以上对师生关系评价较高，具体表现在教师是否公平、平等的对待学生、是否信任学生这三个方面。- 四年级大部分学生感到学习压力较小，同时对学习的焦虑依旧存在。- 四年级学生中有91.5%的学生有比较强的学习动机。- 89.2%学生对学校认同度高，具体表现为喜欢自己的学校、老师，同学关系和睦。- 四年级学生中学习自信心较强的学生所占比例为89.4%，自信心水平比较高，对自己的能力有比较恰当的评估。- 四年级学生对教师教学方式中的因材施教、互动教学、鼓励学生探究与发展这三个方面评价比较高。- 四年级学生总体心理健康水平比较高，但还有进一步培养的空间。
 
 ## 学生基本情况### 家庭背景#### 学生为独生子女情况`r fig_name <- "四年级学生为独生子女情况" `
 图\ref{fig:`r fig_name`}给出了四年级学生为独生子女的总体情况及各群体之间的比较。
@@ -689,7 +689,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 ### 诚信
 
 `r fig_name <- "四年级学生遇到各种诚信问题时的行为表现情况" `
-图\ref{fig:`r fig_name`}给出了四年级学生认为班里同学遇到各种诚信问题时的诚信行为的行为表现情况。
+图\ref{fig:`r fig_name`}给出了四年级学生认为班里同学遇到各种诚信问题时的行为表现情况。
 ```{r morality_integrity.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "morality_integrity.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -703,7 +703,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 
 
 `r fig_name <- "四年级学生关于社会责任感方面问题的表现情况" `
-图\ref{fig:`r fig_name`}给出了四年级学生在发现有人把空饮料瓶扔到操场中央时的行为表现。
+图\ref{fig:`r fig_name`}给出了四年级学生在关于社会责任感方面问题的表现情况。
 ```{r morality_responsibility.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "morality_responsibility.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -873,7 +873,8 @@ param.entry <- "survey.summary.table.te"
 summary.te  <- dataframe.table( report = report, param = report$param[[param.entry]])
 ```
 教师背景问卷包含教师的基本情况、教师的教学方法、教师对学校教学管理的评价、教师的教学观念和教师的专业发展五个方面。本章对四年级教师在这五个方面的回答进行了分析，得到如下主要结论：
-- 四年级教师中男老师占`r summary.te[summary.te[,var.topic]=="教师性别" & summary.te[,var.key]=="男",var.param]`%，女老师占`r summary.te[summary.te[,var.topic]=="教师性别" & summary.te[,var.key]=="女",var.param]`%。- 四年级教师教龄在5年及以下的占`r summary.te[summary.te[,var.topic]=="教师教龄" & summary.te[,var.key]=="5年及以下",var.param]`%，在20年以上的占`r summary.te[summary.te[,var.topic]=="教师教龄" & summary.te[,var.key]=="20年以上",var.param]`%，在6-20年的占`r summary.te[summary.te[,var.topic]=="教师教龄" & summary.te[,var.key]=="6-10年",var.param] + summary.te[summary.te[,var.topic]=="教师教龄" & summary.te[,var.key]=="11-15年",var.param] + summary.te[summary.te[,var.topic]=="教师教龄" & summary.te[,var.key]=="16-20年",var.param]`%。- 四年级教师中，有`r summary.te[summary.te[,var.topic]=="教师职称" & summary.te[,var.key]=="中学高级",var.param] + summary.te[summary.te[,var.topic]=="教师职称" & summary.te[,var.key]=="小学高级",var.param]`%的教师具有小学高级或中学高级职称。- 四年级`r summary.te[summary.te[,var.topic]=="教师学历" & summary.te[,var.key]=="本科",var.param] + summary.te[summary.te[,var.topic]=="教师学历" & summary.te[,var.key]=="研究生",var.param]`%的教师是本科及以上学历，`r summary.te[summary.te[,var.topic]=="教师学历" & summary.te[,var.key]=="中师或中专、高中",var.param] + summary.te[summary.te[,var.topic]=="教师学历" & summary.te[,var.key]=="初中或以下",var.param] + summary.te[summary.te[,var.topic]=="教师学历" & summary.te[,var.key]=="大专",var.param]`%的教师是大专及以下学历。- 四年级教师就职前接受过师范教育的比例为`r summary.te[summary.te[,var.topic]=="师范教育" & summary.te[,var.key]=="是",var.param] `%，所教学科与所学专业一致的比例为`r summary.te[summary.te[,var.topic]=="专业对口" & summary.te[,var.key]=="是",var.param] `%。- 四年级教师每周上课节数在11-15节的占`r summary.te[summary.te[,var.topic]=="每周课时" & summary.te[,var.key]=="11-15节",var.param] `%，在6节以下的占`r summary.te[summary.te[,var.topic]=="每周课时" & summary.te[,var.key]=="6节以下",var.param] `%，在20节以上的占`r summary.te[summary.te[,var.topic]=="每周课时" & summary.te[,var.key]=="20节以上",var.param] `%。- 四年级教师每天的工作时间在8-11小时的占`r summary.te[summary.te[,var.topic]=="每日工时" & summary.te[,var.key]=="8-9小时(含9小时)",var.param] + summary.te[summary.te[,var.topic]=="每日工时" & summary.te[,var.key]=="9-11小时(含11小时)",var.param] `％，8小时及以下的占`r summary.te[summary.te[,var.topic]=="每日工时" & summary.te[,var.key]=="8小时及以下",var.param] `%，11小时以上的占`r summary.te[summary.te[,var.topic]=="每日工时" & summary.te[,var.key]=="11-13小时(含13小时)",var.param] + summary.te[summary.te[,var.topic]=="每日工时" & summary.te[,var.key]=="13小时以上",var.param]`%。- 四年级教师有`r summary.te[summary.te[,var.topic]=="职业喜爱" & summary.te[,var.key]=="非常喜欢",var.param] + summary.te[summary.te[,var.topic]=="职业喜爱" & summary.te[,var.key]=="比较喜欢",var.param]`％喜欢教师职业。- 多数教师认同教师的角色是引导学生自行探究；多数教师认同在课堂上应尽可能多创造机会让学生向教师提问；多数教师对学生最大的期望是通过教学使他们变得更爱学习。- 四年级教师专业发展的途径主要是与同事分享经验、讨论问题，观摩他人的课并在课后进行研讨以及参加学校或教研部门组织的教研活动；教师专业发展的需求主要集中在对个性化教学的方法，教学技能，所教学科领域知识及学生评价和测量方法；教师专业发展遇到的困难主要是缺乏专业活动的资金，时间的冲突及缺乏参加相关活动的机会。- 四年级教师有`r summary.te[summary.te[,var.topic]=="学校的课程建设思路与方案具有本校特色" & summary.te[,var.key]=="非常符合",var.param] + summary.te[summary.te[,var.topic]=="学校的课程建设思路与方案具有本校特色" & summary.te[,var.key]=="比较符合",var.param]`％认为学校的课程建设思路与方案具有本校特色。## 教师基本情况### 教师性别
+- 四年级教师中男老师占`r summary.te[summary.te[,var.topic]=="教师性别" & summary.te[,var.key]=="男",var.param]`%，女老师占`r summary.te[summary.te[,var.topic]=="教师性别" & summary.te[,var.key]=="女",var.param]`%。- 四年级教师教龄在5年及以下的占`r summary.te[summary.te[,var.topic]=="教师教龄" & summary.te[,var.key]=="5年及以下",var.param]`%，在20年以上的占`r summary.te[summary.te[,var.topic]=="教师教龄" & summary.te[,var.key]=="20年以上",var.param]`%，在6-20年的占`r summary.te[summary.te[,var.topic]=="教师教龄" & summary.te[,var.key]=="6-10年",var.param] + summary.te[summary.te[,var.topic]=="教师教龄" & summary.te[,var.key]=="11-15年",var.param] + summary.te[summary.te[,var.topic]=="教师教龄" & summary.te[,var.key]=="16-20年",var.param]`%。- 四年级教师中，有`r summary.te[summary.te[,var.topic]=="教师职称" & summary.te[,var.key]=="中学高级",var.param] + summary.te[summary.te[,var.topic]=="教师职称" & summary.te[,var.key]=="小学高级",var.param]`%的教师具有小学高级及以上的职称。- 四年级`r summary.te[summary.te[,var.topic]=="教师学历" & summary.te[,var.key]=="本科",var.param] + summary.te[summary.te[,var.topic]=="教师学历" & summary.te[,var.key]=="研究生",var.param]`%的教师是本科及以上学历，`r summary.te[summary.te[,var.topic]=="教师学历" & summary.te[,var.key]=="中师或中专、高中",var.param] + summary.te[summary.te[,var.topic]=="教师学历" & summary.te[,var.key]=="初中或以下",var.param] + summary.te[summary.te[,var.topic]=="教师学历" & summary.te[,var.key]=="大专",var.param]`%的教师是大专及以下学历。- 四年级教师就职前接受过师范教育的比例为`r summary.te[summary.te[,var.topic]=="师范教育" & summary.te[,var.key]=="是",var.param] `%，所教学科与所学专业一致的比例为`r summary.te[summary.te[,var.topic]=="专业对口" & summary.te[,var.key]=="是",var.param] `%。- 四年级教师每周上课节数在11-15节的占`r summary.te[summary.te[,var.topic]=="每周课时" & summary.te[,var.key]=="11-15节",var.param] `%，在6节以下的占`r summary.te[summary.te[,var.topic]=="每周课时" & summary.te[,var.key]=="6节以下",var.param] `%，在20节以上的占`r summary.te[summary.te[,var.topic]=="每周课时" & summary.te[,var.key]=="20节以上",var.param] `%。- 四年级教师每天的工作时间在8-11小时的占`r summary.te[summary.te[,var.topic]=="每日工时" & summary.te[,var.key]=="8-9小时(含9小时)",var.param] + summary.te[summary.te[,var.topic]=="每日工时" & summary.te[,var.key]=="9-11小时(含11小时)",var.param] `％，8小时及以下的占`r summary.te[summary.te[,var.topic]=="每日工时" & summary.te[,var.key]=="8小时及以下",var.param] `%，11小时以上的占`r summary.te[summary.te[,var.topic]=="每日工时" & summary.te[,var.key]=="11-13小时(含13小时)",var.param] + summary.te[summary.te[,var.topic]=="每日工时" & summary.te[,var.key]=="13小时以上",var.param]`%。- 四年级教师有`r summary.te[summary.te[,var.topic]=="职业喜爱" & summary.te[,var.key]=="非常喜欢",var.param] + summary.te[summary.te[,var.topic]=="职业喜爱" & summary.te[,var.key]=="比较喜欢",var.param]`％喜欢教师职业。- 四年级教师中有`r summary.te[summary.te[,var.topic]=="作为教师，我的角色就是引导学生自行探究" & summary.te[,var.key]=="非常同意",var.param] + summary.te[summary.te[,var.topic]=="作为教师，我的角色就是引导学生自行探究" & summary.te[,var.key]=="比较同意",var.param]`%认同教师的角色是引导学生自行探究；有`r summary.te[summary.te[,var.topic]=="在课堂上应尽可能多创造机会让学生向教师" & summary.te[,var.key]=="非常同意",var.param] + summary.te[summary.te[,var.topic]=="在课堂上应尽可能多创造机会让学生向教师" & summary.te[,var.key]=="比较同意",var.param]`%认同在课堂上应尽可能多创造机会让学生向教师提问；有`r summary.te[summary.te[,var.topic]=="对学生最大的期望在于通过教学使他们变得" & summary.te[,var.key]=="非常同意",var.param] + summary.te[summary.te[,var.topic]=="对学生最大的期望在于通过教学使他们变得" & summary.te[,var.key]=="比较同意",var.param]`%对学生最大的期望是通过教学使他们变得更爱学习。
+- 四年级教师的教学方式得到了学生比较高的评价，且教师的自我评估与学生的真切感受一致性程度相当高，教师群体已经形成比较明确的育人观和能力观。- 四年级教师专业发展的途径主要是与同事分享经验、讨论问题，观摩他人的课并在课后进行研讨以及参加学校或教研部门组织的教研活动；教师专业发展的需求主要集中在对个性化教学的方法，教学技能，所教学科领域知识及学生评价和测量方法；教师专业发展遇到的困难主要是缺乏专业活动的资金，时间的冲突及缺乏参加相关活动的机会。- 四年级教师有`r summary.te[summary.te[,var.topic]=="学校的课程建设思路与方案具有本校特色" & summary.te[,var.key]=="非常符合",var.param] + summary.te[summary.te[,var.topic]=="学校的课程建设思路与方案具有本校特色" & summary.te[,var.key]=="比较符合",var.param]`％认为学校的课程建设思路与方案具有本校特色。## 教师基本情况### 教师性别
 
 `r fig_name <- "四年级教师性别情况" `
 图\ref{fig:`r fig_name`}给出了四年级教师性别的总体情况及不同群体之间的比较。
@@ -899,7 +900,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-### 专业职称
+### 教师专业职称
 
 `r fig_name <- "四年级教师专业职称情况" `
 图\ref{fig:`r fig_name`}给出了四年级教师职务（职称）的总体情况及不同群体之间的比较。
@@ -955,7 +956,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
- ### 所教学科是否专业对口`r fig_name <- "四年级教师所教学科是否专业对口的情况" `
+ ### 教师所教学科是否专业对口`r fig_name <- "四年级教师所教学科是否专业对口的情况" `
 图\ref{fig:`r fig_name`}给出了四年级教师所教学科是否专业对口的总体情况及不同群体的比较。
 ```{r teacher_major_match.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher_major_match.bar"
@@ -966,7 +967,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-### 每周的上课节数`r fig_name <- "四年级教师每周的上课节数情况" `
+### 教师每周的上课节数`r fig_name <- "四年级教师每周的上课节数情况" `
 图\ref{fig:`r fig_name`}给出了四年级教师每周上课节数的总体情况及不同群体的比较。
 ```{r teacher_weekly_hours.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher_weekly_hours.bar"
@@ -977,7 +978,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-### 每天的工作时间`r fig_name <- "四年级教师每天的工作时间情况" `
+### 教师每天的工作时间`r fig_name <- "四年级教师每天的工作时间情况" `
 图\ref{fig:`r fig_name`}给出了四年级教师每天工作时间的总体情况及不同群体的比较。
 ```{r teacher_daily_hours.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher_daily_hours.bar"
@@ -988,7 +989,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-## 教师的职业感受 ### 职业喜爱程度`r fig_name <- "四年级教师对教师职业喜爱程度的情况" `
+## 教师的职业感受 ### 教师职业喜爱程度`r fig_name <- "四年级教师对教师职业喜爱程度的情况" `
 图\ref{fig:`r fig_name`}给出了四年级教师对教师职业喜爱程度的总体情况及不同群体的比较。
 ```{r teacher_job_favorite.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher_job_favorite.bar"
@@ -1010,7 +1011,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-### 工作感受`r fig_name <- "四年级教师对现有工作的感受情况" `
+### 教师工作感受`r fig_name <- "四年级教师对现有工作的感受情况" `
 图\ref{fig:`r fig_name`}给出了四年级教师对现有工作感受方面的总体情况。
 ```{r teacher_feelings.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "teacher_feelings.bar"

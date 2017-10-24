@@ -644,7 +644,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 ### 诚信
 
 `r fig_name <- "四年级学生遇到各种诚信问题时的行为表现情况" `
-图\ref{fig:`r fig_name`}给出了四年级学生认为班里同学遇到各种诚信问题时的诚信行为的行为表现情况。
+图\ref{fig:`r fig_name`}给出了四年级学生认为班里同学遇到各种诚信问题时的行为表现情况。
 ```{r morality_integrity.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$morality_integrity.bar
 plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
@@ -659,7 +659,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 
 
 `r fig_name <- "四年级学生关于社会责任感方面问题的表现情况" `
-图\ref{fig:`r fig_name`}给出了四年级学生在发现有人把空饮料瓶扔到操场中央时的行为表现。
+图\ref{fig:`r fig_name`}给出了四年级学生在关于社会责任感方面问题的表现情况。
 ```{r morality_responsibility.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$morality_responsibility.bar
 plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
@@ -866,7 +866,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-### 专业职称
+### 教师专业职称
 
 `r fig_name <- "四年级教师专业职称情况" `
 图\ref{fig:`r fig_name`}给出了四年级教师职务（职称）的总体情况及不同群体之间的比较。
@@ -927,7 +927,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
- ### 所教学科是否专业对口`r fig_name <- "四年级教师所教学科是否专业对口的情况" `
+ ### 教师所教学科是否专业对口`r fig_name <- "四年级教师所教学科是否专业对口的情况" `
 图\ref{fig:`r fig_name`}给出了四年级教师所教学科是否专业对口的总体情况及不同群体的比较。
 ```{r teacher_major_match.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$teacher_major_match.bar
@@ -939,7 +939,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-### 每周的上课节数`r fig_name <- "四年级教师每周的上课节数情况" `
+### 教师每周的上课节数`r fig_name <- "四年级教师每周的上课节数情况" `
 图\ref{fig:`r fig_name`}给出了四年级教师每周上课节数的总体情况及不同群体的比较。
 ```{r teacher_weekly_hours.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$teacher_weekly_hours.bar
@@ -951,7 +951,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-### 每天的工作时间`r fig_name <- "四年级教师每天的工作时间情况" `
+### 教师每天的工作时间`r fig_name <- "四年级教师每天的工作时间情况" `
 图\ref{fig:`r fig_name`}给出了四年级教师每天工作时间的总体情况及不同群体的比较。
 ```{r teacher_daily_hours.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$teacher_daily_hours.bar
@@ -963,7 +963,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-## 教师的职业感受 ### 职业喜爱程度`r fig_name <- "四年级教师对教师职业喜爱程度的情况" `
+## 教师的职业感受 ### 教师职业喜爱程度`r fig_name <- "四年级教师对教师职业喜爱程度的情况" `
 图\ref{fig:`r fig_name`}给出了四年级教师对教师职业喜爱程度的总体情况及不同群体的比较。
 ```{r teacher_job_favorite.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$teacher_job_favorite.bar
@@ -987,7 +987,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-### 工作感受`r fig_name <- "四年级教师对现有工作的感受情况" `
+### 教师工作感受`r fig_name <- "四年级教师对现有工作的感受情况" `
 图\ref{fig:`r fig_name`}给出了四年级教师对现有工作感受方面的总体情况。
 ```{r teacher_feelings.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$teacher_feelings.bar

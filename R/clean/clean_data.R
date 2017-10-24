@@ -19,6 +19,7 @@ clean.data <- function(){
   #  main 
   
   algorithm <- g.stat$clean
+  print(algorithm)
   subjects <- yaml.load_file(paste0(g.dir$yaml,g.yaml$survey))$survey
   n_subject <- mini.loop(g.test$loop.limit,length(subjects))
   for(i in 1:n_subject){
