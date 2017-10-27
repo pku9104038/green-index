@@ -13,7 +13,7 @@ output:
     keep_tex: no
 params:
   report: 2015
-  dummy.fig: "reports.jpg"
+  dummy.fig: "dummy.jpg"
   conf: "conf"
   
 ---
@@ -84,7 +84,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}```{r score.box.province.perspective.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+\end{figure}```{r score.box.province.perspective.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "score.box.province.perspective.ma"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
@@ -92,7 +92,11 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name1`}
 \label{fig:`r fig_name1`}
-\end{figure}## 不同区学生的总体表现`r fig_name <- "不同区学生在数学学科各水平上的人数比例" `
+\end{figure}\mylist
+注：盒须图，须的底部为5分位（表示有5\%的学生总分低于此对应的分数)；盒的底部为25分位（表示有25\%的学生得分低于此线对应的分数）；盒中横线为50分位（表示50\%的学生得分高于此线对应的分数）；盒的顶部为75分位（表示有25\%的学生得分高于此线对应的分数）；须的顶部为95分位（表示有5\%的学生得分高于此线对应的分数）。盒的高度表示中间50\%的学生得分在此分数区间，从一定程度上描述了学生成绩离散程度的大小。红点对应的成绩为平均分。
+
+\mytext\clearpage
+## 不同区学生的总体表现`r fig_name <- "不同区学生在数学学科各水平上的人数比例" `
 `r fig_name1 <- "不同区学生在数学学科上的得分分布" `图\ref{fig:`r fig_name`}和图\ref{fig:`r fig_name1`}分别给出了上海市不同区学生在数学学科各水平上的人数比例和得分分布。 
 ```{r level.bar.province.county.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "level.bar.province.county.ma"
@@ -624,7 +628,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
         \includegraphics[width=\textwidth]{ma_M3AS131_02}
     \end{subfigure}  
 \end{figure}
-\addtocounter{figure}{-1}建议：加强概念教学，让学生在动手操作过程中丰富常用长度单位和面积单位的量感，从而建立起正确的面积单位和长度单位的概念，厘清相应单位之间的进率。\questiontitle{典型题目2：M3AS201}用三角尺上的直角判断下面图形中的每个角，是直角的用直角符号在图中标出来．
+\addtocounter{figure}{-1}建议：加强概念教学，让学生在动手操作过程中丰富常用长度单位和面积单位的量感，从而建立起正确的面积单位和长度单位的概念，厘清相应单位之间的进率。\clearpage
+\questiontitle{典型题目2：M3AS201}用三角尺上的直角判断下面图形中的每个角，是直角的用直角符号在图中标出来．
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.2\textwidth]{ma_M3AS201_01}
@@ -1360,7 +1365,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
   \end{center}
 \end{figure}建议：
 
-加强概念教学，注意概念之间的辨析，通过解决具体问题过程中沟通相关知识间的联系，提高显示解决实际问题的能力，同时也要注意学生良好学习习惯的培养！\questiontitle{典型题目10（2）：M3AS232}
+加强概念教学，注意概念之间的辨析，通过解决具体问题过程中沟通相关知识间的联系，提高显示解决实际问题的能力，同时也要注意学生良好学习习惯的培养！\questiontitle{典型题目10（2）：M3AS232}
 用3个长4厘米，宽2厘米的长方形拼图形，不能重叠。 
 
 \begin{figure}[H]
@@ -1407,14 +1412,15 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 
 \hline
 \end{tabularx}
-\end{table}从学生作答情况看，主要问题如下：1.	审题不清。要求拼出一种不同形状的长方形，结果学生拼出的并不是长方形。2.	图画对了，但对“周长”概念的理解不清晰，算成了三个长方形周长之和，或知道要从三个长方形周长之和中去掉一些线段长度，但又不清晰要去掉多少条。3.	混淆“面积”与“周长”概念，要求周长，结果求面积了。4.	完全不理解题意，瞎做。\begin{figure}[H]
+\end{table}从学生作答情况看，主要问题如下：1.	审题不清。要求拼出一种不同形状的长方形，结果学生拼出的并不是长方形。2.	图画对了，但对“周长”概念的理解不清晰，算成了三个长方形周长之和，或知道要从三个长方形周长之和中去掉一些线段长度，但又不清晰要去掉多少条。3.	混淆“面积”与“周长”概念，要求周长，结果求面积了。4.	完全不理解题意，随意作答。\begin{figure}[H]
   \begin{center}
     \includegraphics[width=\textwidth]{ma_M3AS232_03}
   \end{center}
 \end{figure}
 建议：
 
-在几何初步知识教学中，要加强概念教学，注重给予学生充分的时间和空间从事数学活动，让他们通过观察、操作、有条理的思考和推理、交流等活动，积累“周长”的经验与周长的计算方法，提高学生解决问题的能力。\questiontitle{典型题目11：M3AS223}
+在几何初步知识教学中，要加强概念教学，注重给予学生充分的时间和空间从事数学活动，让他们通过观察、操作、有条理的思考和推理、交流等活动，积累“周长”的经验与周长的计算方法，提高学生解决问题的能力。\clearpage
+\questiontitle{典型题目11：M3AS223}
 下图是2010年济南市某月的天气情况统计图。\begin{figure}[H]
   \begin{center}
     \includegraphics[width=0.8\textwidth]{ma_M3AS223_01}

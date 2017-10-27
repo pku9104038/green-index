@@ -13,7 +13,7 @@ output:
     keep_tex: no
 params:
   report: 2015
-  dummy.fig: "reports.jpg"
+  dummy.fig: "dummy.jpg"
   conf: "conf"
 
 ---
@@ -538,7 +538,7 @@ course.leadership.bar
 
 # 学生社会经济背景对学业成绩的影响指数父母受教育程度、职业、家庭文化资源等因素合成为学生社会经济背景。将学生社会经济背景与学生学业成绩进行相关分析，描述家庭背景对学生学业成绩的影响。学生社会经济背景对学业成绩的影响指数分为9级，指数越高，表示学业成绩受家庭背景因素的影响越小，同时意味着学校在很大程度上弥补了家庭环境不利对学生学业的负面影响。\mylist
 - 9级：表示家庭背景影响系数\footnote{将学生社会经济背景解释率经过标准化等一系列转化后得到的数值，转化后的数据具有可加性和可比性，用于划分学生社会经济背景对学业成绩的影响指数的等级。}为0- 8级：表示家庭背景影响系数在0-0.1之间（含0.1）- 7级：表示家庭背景影响系数在0.1-0.2之间（含0.2）- 6级：表示家庭背景影响系数在0.2-0.3之间（含0.3）- 5级：表示家庭背景影响系数在0.3-0.4之间（含0.4）- 4级：表示家庭背景影响系数在0.4-0.5之间（含0.5）- 3级：表示家庭背景影响系数在0.5-0.6之间（含0.6）- 2级：表示家庭背景影响系数在0.6-0.7之间（含0.7）- 1级：表示家庭背景影响系数在0.7以上\mytext
-`r fig_name <- "四年级学生家庭背景影响指数" `
+`r fig_name <- "四年级学生社会经济背景影响指数" `
 ```{r economic.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$economic.bar
 plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)))

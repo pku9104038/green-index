@@ -55,9 +55,9 @@ var.key <- "键"
 var.param <- "标注值"
 var.sample <- "统计样本"
 var.scope <- "统计范围" `
-# 学生总体表现## 全体学生的总体表现
+# 学生总体表现## 学生的总体表现
 
-`r fig_name <- "本区全体学生在语文学科上的得分分布" `
+`r fig_name <- "本区学生在语文学科上的得分分布" `
 
 
 ```{r score.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
@@ -69,8 +69,9 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}## 不同群体学生的总体表现`r fig_name <- "不同群体学生在语文学科各水平上的人数比例" `
-`r fig_name1 <- "不同群体学生在语文学科上的得分分布" `图\ref{fig:`r fig_name`}和图\ref{fig:`r fig_name1`}分别给出了本区不同群体学生在语文学科各水平上的人数比例和得分分布。
+\end{figure}\clearpage
+## 不同群体学生的总体表现`r fig_name <- "不同群体学生在语文学科各水平上的人数比例" `
+`r fig_name1 <- "不同群体学生在语文学科上的得分分布" `图\ref{fig:`r fig_name`}和图\ref{fig:`r fig_name1`}分别给出了本区不同群体学生在语文学科各水平上的人数比例和得分分布\footnote{盒须图，须的底部为5分位（表示有5\%的学生总分低于此对应的分数)；盒的底部为25分位（表示有25\%的学生得分低于此线对应的分数）；盒中横线为50分位（表示50\%的学生得分高于此线对应的分数）；盒的顶部为75分位（表示有25\%的学生得分高于此线对应的分数）；须的顶部为95分位（表示有5\%的学生得分高于此线对应的分数）。盒的高度表示中间50\%的学生得分在此分数区间，从一定程度上描述了学生成绩离散程度的大小。红点对应的成绩为平均分。}。
  ```{r level.bar.perspective.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$level.bar.perspective.cn
 plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
@@ -89,13 +90,17 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name1`}
 \label{fig:`r fig_name1`}
-\end{figure}\begin{landscape}\section{不同学校学生的总体表现}
+\end{figure}\mylist
+
+
+\mytext
+\begin{landscape}\section{不同学校学生的总体表现}
 level.bar.province.county.school.cn
 
 score.box.province.county.school.cn
 
 \end{landscape}
-# 学生在各能力维度上的表现情况## 全体学生在各能力维度上的表现`r fig_name <- "学生在语文学科各能力维度各水平上的人数比例" `
+# 学生在各能力维度上的表现情况## 学生在各能力维度上的表现`r fig_name <- "学生在语文学科各能力维度各水平上的人数比例" `
 `r fig_name1 <- "学生在语文学科各能力维度上的得分分布" `图\ref{fig:`r fig_name`}和图\ref{fig:`r fig_name1`}分别给出了上海市学生在语文学科各能力维度各水平上的人数比例和得分分布。
  ```{r level.bar.dimention.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$level.bar.dimention.cn
@@ -224,7 +229,7 @@ point.rate  <- point.rate.all[point.rate.all[,var.scope]==report$county & point.
 `r tab_name <- "学生在语文学科“积累”上的平均得分率（％）" `
 \begin{itshape}
 \mytable
-\begin{longtable}{|c|c|p{7cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\begin{longtable}{|c|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\
 
 \hline
@@ -232,14 +237,14 @@ point.rate  <- point.rate.all[point.rate.all[,var.scope]==report$county & point.
 \makecell[c]{内容领域} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{本\\市} & \makecell[c]{本\\区} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{随迁\\子女\\民办} & \makecell[c]{普通\\小学} & \makecell[c]{一\\贯\\制} & \makecell[c]{市\\新\\优} & \makecell[c]{区\\新\\优} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ 
 \hline
 
-\multirow{4}{*}{\makecell[c]{读准字音}} & C3AO011 & \makecell[l]{能读准学过的常用字的字音} & 
+\multirow{4}{*}{\makecell[c]{读准字音}} & C3AO011 & 能读准学过的常用字的字音 & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="C3AO011_X",]`
 `r row <- point.rate[point.rate[,var.variable]=="C3AO011_X",]`
 `r row.p[row.p[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -250,14 +255,14 @@ point.rate  <- point.rate.all[point.rate.all[,var.scope]==report$county & point.
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-16}
 
 
- & C3AO021 & \makecell[l]{能读准学过的常用字的字音} & 
+ & C3AO021 & 能读准学过的常用字的字音 & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="C3AO021_X",]`
 `r row <- point.rate[point.rate[,var.variable]=="C3AO021_X",]`
 `r row.p[row.p[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -269,14 +274,14 @@ point.rate  <- point.rate.all[point.rate.all[,var.scope]==report$county & point.
  \cline{2-16}
  
  
-  & C3AO031 & \makecell[l]{能读准学过的常用字的字音} & 
+  & C3AO031 & 能读准学过的常用字的字音 & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="C3AO031_X",]`
 `r row <- point.rate[point.rate[,var.variable]=="C3AO031_X",]`
 `r row.p[row.p[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -286,14 +291,14 @@ point.rate  <- point.rate.all[point.rate.all[,var.scope]==report$county & point.
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\  \cline{2-16}
   
-  & C3AO041 & \makecell[l]{能读准学过的常用字的字音} & 
+  & C3AO041 & 、能读准学过的常用字的字音 & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="C3AO041_X",]`
 `r row <- point.rate[point.rate[,var.variable]=="C3AO041_X",]`
 `r row.p[row.p[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -303,14 +308,14 @@ point.rate  <- point.rate.all[point.rate.all[,var.scope]==report$county & point.
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\  \hline
  
-  \multirow{4}{*}{\makecell[c]{认清字形}} & C3AO051 & \makecell[l]{能认清学过的常用字的字形} & 
+  \multirow{4}{*}{\makecell[c]{认清字形}} & C3AO051 & 能认清学过的常用字的字形 & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="C3AO051_X",]`
 `r row <- point.rate[point.rate[,var.variable]=="C3AO051_X",]`
 `r row.p[row.p[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -321,14 +326,14 @@ point.rate  <- point.rate.all[point.rate.all[,var.scope]==report$county & point.
 `r row[row[,var.key]=="非沪籍",var.param]` \\  
 \cline{2-16}
 
-  & C3AO061 & \makecell[l]{能认清学过的常用字的字形} & 
+  & C3AO061 & 能认清学过的常用字的字形 & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="C3AO061_X",]`
 `r row <- point.rate[point.rate[,var.variable]=="C3AO061_X",]`
 `r row.p[row.p[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -338,14 +343,14 @@ point.rate  <- point.rate.all[point.rate.all[,var.scope]==report$county & point.
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-16}
 
-  & C3AO071 & \makecell[l]{能认清学过的常用字的字形} & 
+  & C3AO071 & 能认清学过的常用字的字形 & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="C3AO071_X",]`
 `r row <- point.rate[point.rate[,var.variable]=="C3AO071_X",]`
 `r row.p[row.p[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -356,14 +361,14 @@ point.rate  <- point.rate.all[point.rate.all[,var.scope]==report$county & point.
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-16}
 
   \cline{2-16}
-  & C3AO081 & \makecell[l]{能认清学过的常用字的字形} & 
+  & C3AO081 & 能认清学过的常用字的字形 & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="C3AO081_X",]`
 `r row <- point.rate[point.rate[,var.variable]=="C3AO081_X",]`
 `r row.p[row.p[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -373,14 +378,14 @@ point.rate  <- point.rate.all[point.rate.all[,var.scope]==report$county & point.
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ 
 \hline
- \multirow{9}{*}{\makecell[c]{理解词义}} & C3AO091 & \makecell[l]{能正确理解常用字词的字义、词义} & 
+ \multirow{9}{*}{\makecell[c]{理解词义}} & C3AO091 & 能正确理解常用字词的字义、词义 & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="C3AO091_X",]`
 `r row <- point.rate[point.rate[,var.variable]=="C3AO091_X",]`
 `r row.p[row.p[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -390,14 +395,14 @@ point.rate  <- point.rate.all[point.rate.all[,var.scope]==report$county & point.
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-16}
 
- & C3AO101 & \makecell[l]{能正确理解常用字词的字义、词义} &
+ & C3AO101 & 能正确理解常用字词的字义、词义 &
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="C3AO101_X",]` 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO101_X",]`
 `r row.p[row.p[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -407,14 +412,14 @@ point.rate  <- point.rate.all[point.rate.all[,var.scope]==report$county & point.
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-16}
  
-  & C3AO111 & \makecell[l]{能正确理解常用字词的字义、词义} & 
+  & C3AO111 & 能正确理解常用字词的字义、词义 & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="C3AO111_X",]`
 `r row <- point.rate[point.rate[,var.variable]=="C3AO111_X",]`
 `r row.p[row.p[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -424,14 +429,14 @@ point.rate  <- point.rate.all[point.rate.all[,var.scope]==report$county & point.
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-16}
   
-  & C3AO121 & \makecell[l]{能正确理解常用字词的字义、词义} & 
+  & C3AO121 & 能正确理解常用字词的字义、词义 & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="C3AO121_X",]`
 `r row <- point.rate[point.rate[,var.variable]=="C3AO121_X",]`
 `r row.p[row.p[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -441,14 +446,14 @@ point.rate  <- point.rate.all[point.rate.all[,var.scope]==report$county & point.
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-16}
 
- & C3AO131 & \makecell[l]{能正确理解常用字词的字义、词义} & 
+ & C3AO131 & 能正确理解常用字词的字义、词义 & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="C3AO131_X",]`
 `r row <- point.rate[point.rate[,var.variable]=="C3AO131_X",]`
 `r row.p[row.p[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -458,14 +463,14 @@ point.rate  <- point.rate.all[point.rate.all[,var.scope]==report$county & point.
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-16}
  
-  & C3AO141 & \makecell[l]{能正确理解常用字词的字义、词义} & 
+  & C3AO141 & 能正确理解常用字词的字义、词义 & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="C3AO141_X",]`
 `r row <- point.rate[point.rate[,var.variable]=="C3AO141_X",]`
 `r row.p[row.p[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -475,14 +480,14 @@ point.rate  <- point.rate.all[point.rate.all[,var.scope]==report$county & point.
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\\cline{2-16}
   
-  & C3AO151 & \makecell[l]{能正确理解常用字词的字义、词义} & 
+  & C3AO151 & 能正确理解常用字词的字义、词义 & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="C3AO151_X",]`
 `r row <- point.rate[point.rate[,var.variable]=="C3AO151_X",]`
 `r row.p[row.p[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -491,14 +496,14 @@ point.rate  <- point.rate.all[point.rate.all[,var.scope]==report$county & point.
 `r row[row[,var.key]=="女",var.param]` & 
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-16}
- & C3AO161 & \makecell[l]{能正确理解常用字词的字义、词义} & 
+ & C3AO161 & 能正确理解常用字词的字义、词义 & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="C3AO161_X",]`
 `r row <- point.rate[point.rate[,var.variable]=="C3AO161_X",]`
 `r row.p[row.p[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -508,14 +513,14 @@ point.rate  <- point.rate.all[point.rate.all[,var.scope]==report$county & point.
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-16}
  
-  & C3AO171 & \makecell[l]{能正确理解常用字词的字义、词义} & 
+  & C3AO171 & 能正确理解常用字词的字义、词义 & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="C3AO171_X",]`
 `r row <- point.rate[point.rate[,var.variable]=="C3AO171_X",]`
 `r row.p[row.p[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -525,14 +530,14 @@ point.rate  <- point.rate.all[point.rate.all[,var.scope]==report$county & point.
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \hline
   
- \multirow{3}{*}{\makecell[c]{积累和运用\\常见古诗文}} & C3AO181 & \makecell[l]{能记忆教材中的古诗} & 
+ \multirow{3}{*}{\makecell[c]{积累和运用\\常见古诗文}} & C3AO181 & 能记忆教材中的古诗 & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="C3AO181_X",]`
 `r row <- point.rate[point.rate[,var.variable]=="C3AO181_X",]`
 `r row.p[row.p[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -542,14 +547,14 @@ point.rate  <- point.rate.all[point.rate.all[,var.scope]==report$county & point.
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-16}
 
- & C3AO191 & \makecell[l]{能记忆教材中的古诗} & 
+ & C3AO191 & 能记忆教材中的古诗 & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="C3AO191_X",]`
 `r row <- point.rate[point.rate[,var.variable]=="C3AO191_X",]`
 `r row.p[row.p[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -559,14 +564,14 @@ point.rate  <- point.rate.all[point.rate.all[,var.scope]==report$county & point.
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-16}
 
- & C3AO201 & \makecell[l]{能记忆教材中的古诗} & 
+ & C3AO201 & 能记忆教材中的古诗 & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="C3AO201_X",]`
 `r row <- point.rate[point.rate[,var.variable]=="C3AO201_X",]`
 `r row.p[row.p[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -580,9 +585,9 @@ point.rate  <- point.rate.all[point.rate.all[,var.scope]==report$county & point.
 \end{longtable}
 \end{itshape}
 
-\end{landscape}
-
 “积累”部分着重考查学生“读准字音”、“认清字形”、“理解词义”和“积累和运用常见古诗文”四方面的能力。下面将结合“积累”部分的典型题目做具体分析。
+
+\end{landscape}
 
 \questiontitle{典型题目1： C3AO031}
 
@@ -605,10 +610,10 @@ point.rate  <- point.rate.all[point.rate.all[,var.scope]==report$county & point.
 `r row <- point.rate[point.rate[,var.variable]=="C3AO031_X",]`
 - 内容维度：积累- 考查能力：读准字音•能分辨出常见误读- 正确答案：C- 本题满分：1分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%
 
-`r fig_name <- "全体学生在题目C3AO031上的作答情况" `
+`r fig_name <- "学生在题目C3AO031上的作答情况" `
 ```{r answer.C3AO031.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)),list(var = var.variable, value=list("C3AO031")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county, report$province)),list(var = var.variable, value=list("C3AO031")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -620,6 +625,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 
 本题正确选项为C。从四个选项的设计来看，主要考查点是能分辨出常见汉字平翘舌音的误读。四个选项所选汉字都属于常用汉字的范围，是学生应该掌握的。A、B、D三个干扰项中均包含学生容易误读的汉字。部分学生受上海等方言的影响，将平翘舌音混淆，如A选项中的汉字“稚”，D选项中的汉字“梢”可能误以为是平舌音，把B选项中平舌音的汉字“泽”误读为翘舌音。由实际测查结果来看，三个选项均具有一定的干扰性。
 
+\clearpage
 \questiontitle{典型题目2：C3AO051}下面每道小题中，都有一项含有错别字。请把它找出来。
 
 \begin{table}[H]
@@ -633,17 +639,18 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \end{table}
 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO051_X",]`- 内容维度：积累- 考查能力：认清字形•能分辨音同形近字的误用- 正确答案：D- 本题满分：1分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%
-`r fig_name <- "全体学生在题目C3AO051上的作答情况" `
+`r fig_name <- "学生在题目C3AO051上的作答情况" `
 ```{r answer.C3AO051.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)),list(var = var.variable, value=list("C3AO051")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county, report$province)),list(var = var.variable, value=list("C3AO051")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}这道题目考查的是学生认清字形的能力。要求学生能够正确分辨音同形近字“竟”和“竞”的字形。本题正确选项为D。从四个选项的设计来看，三个干扰项中均包含学生容易出错的汉字，其中A选项的主要考查点是正确书写“忘”字，有学生可能会把“忘”错写成同音字“望”，或是误以为“忘”写错了；C选项的主要考查点是正确书写“爆”字，有学生可能混淆它的同音字或形近字，如把“爆”错写同音字“暴”，或者是形近字“瀑”；C选项的主要考查点是正确书写“慧”字，个别学生可能会把“慧”错写成同音字“惠”“彗”或其他别字。由实际测查结果来看，三个选项均具有一定的干扰性。\questiontitle{典型题目3：C3AO071}下面每道小题中，都有一项含有错别字。请把它找出来。\begin{table}[H]
+\end{figure}这道题目考查的是学生认清字形的能力。要求学生能够正确分辨音同形近字“竟”和“竞”的字形。本题正确选项为D。从四个选项的设计来看，三个干扰项中均包含学生容易出错的汉字，其中A选项的主要考查点是正确书写“忘”字，有学生可能会把“忘”错写成同音字“望”，或是误以为“忘”写错了；C选项的主要考查点是正确书写“爆”字，有学生可能混淆它的同音字或形近字，如把“爆”错写同音字“暴”，或者是形近字“瀑”；C选项的主要考查点是正确书写“慧”字，个别学生可能会把“慧”错写成同音字“惠”“彗”或其他别字。由实际测查结果来看，三个选项均具有一定的干扰性。\clearpage
+\questiontitle{典型题目3：C3AO071}下面每道小题中，都有一项含有错别字。请把它找出来。\begin{table}[H]
 \begin{tabularx}{\textwidth}{XXXX}
 
   \makecell[c]{A．审迅}	& 
@@ -654,10 +661,10 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \end{tabularx}
 \end{table}
 
-`r row <- point.rate[point.rate[,var.variable]=="C3AO071_X",]`- 内容维度：积累- 考查能力：认清字形•能分辨音同形近字的误用- 正确答案：A- 本题满分：1分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目C3AO071上的作答情况" `
+`r row <- point.rate[point.rate[,var.variable]=="C3AO071_X",]`- 内容维度：积累- 考查能力：认清字形•能分辨音同形近字的误用- 正确答案：A- 本题满分：1分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目C3AO071上的作答情况" `
 ```{r answer.C3AO071.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)),list(var = var.variable, value=list("C3AO071")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county, report$province)),list(var = var.variable, value=list("C3AO071")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -666,7 +673,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \label{fig:`r fig_name`}
 \end{figure}这道题目考查的是学生认清字形的能力。要求学生能够正确分辨音同形近字“讯”和“迅”的字形。
 
-本题正确选项为A。从四个选项的设计来看，三个干扰项中均包含学生容易出错的汉字，其中B选项的主要考查点是正确书写“仁”字，有学生可能会把“仁”错写成它的同音字“人”；C选项的主要考查点是正确书写“概”字，有学生可能把它与形近字“慨”混淆；D选项的主要考查点是正确书写“朗”字，有学生可能会把“朗”错写成同音字“琅”或音近汉字“郎”。由实际测查结果来看，三个选项均具有一定的干扰性。
+本题正确选项为A。从四个选项的设计来看，三个干扰项中均包含学生容易出错的汉字，其中B选项的主要考查点是正确书写“仁”字，有学生可能会把“仁”错写成它的同音字“人”；C选项的主要考查点是正确书写“概”字，有学生可能把它与形近字“慨”混淆；D选项的主要考查点是正确书写“朗”字，有学生可能会把“朗”错写成同音字“琅”或音近汉字“郎”。由实际测查结果来看，三个选项均具有一定的干扰性。\clearpage
 
 \questiontitle{典型题目4: C3AO091}
 下面每道小题中，哪一个词语和划线词语的意思最接近？请把它找出来。
@@ -680,10 +687,10 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
   \makecell[c]{D．凝聚} \\
   							
 \end{tabularx}
-\end{table}`r row <- point.rate[point.rate[,var.variable]=="C3AO091_X",]`                            - 内容维度：积累- 考查能力：能正确理解常用字词的字义、词义- 正确答案：A- 本题满分：1分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目C3AO091上的作答情况" `
+\end{table}`r row <- point.rate[point.rate[,var.variable]=="C3AO091_X",]`                            - 内容维度：积累- 考查能力：能正确理解常用字词的字义、词义- 正确答案：A- 本题满分：1分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目C3AO091上的作答情况" `
 ```{r answer.C3AO091.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)),list(var = var.variable, value=list("C3AO091")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county, report$province)),list(var = var.variable, value=list("C3AO091")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -706,10 +713,10 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
   \makecell[c]{D．哀求} \\
   							
 \end{tabularx}
-\end{table}`r row <- point.rate[point.rate[,var.variable]=="C3AO131_X",]`                           - 内容维度：积累- 考查能力：能正确理解常用字词的字义、词义- 正确答案：A- 本题满分：2分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目C3AO131上的作答情况" `
+\end{table}`r row <- point.rate[point.rate[,var.variable]=="C3AO131_X",]`                           - 内容维度：积累- 考查能力：能正确理解常用字词的字义、词义- 正确答案：A- 本题满分：2分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目C3AO131上的作答情况" `
 ```{r answer.C3AO131.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)),list(var = var.variable, value=list("C3AO131")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county, report$province)),list(var = var.variable, value=list("C3AO131")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -735,10 +742,10 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \end{tabularx}
 \end{table}`r row <- point.rate[point.rate[,var.variable]=="C3AO161_X",]`  - 内容维度：积累- 考查能力：能正确理解常用字词的字义、词义- 正确答案：B- 本题满分：2分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%
 
-`r fig_name <- "全体学生在题目C3AO161上的作答情况" `
+`r fig_name <- "学生在题目C3AO161上的作答情况" `
 ```{r answer.C3AO161.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)),list(var = var.variable, value=list("C3AO161")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county, report$province)),list(var = var.variable, value=list("C3AO161")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -766,10 +773,10 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \end{table}`r row <- point.rate[point.rate[,var.variable]=="C3AO191_X",]`- 内容维度：积累- 考查能力：能记忆教材中的古诗- 正确答案：B- 本题满分：3分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%
 
 
-`r fig_name <- "全体学生在题目C3AO191上的作答情况" `
+`r fig_name <- "学生在题目C3AO191上的作答情况" `
 ```{r answer.C3AO191.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)),list(var = var.variable, value=list("C3AO191")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county, report$province)),list(var = var.variable, value=list("C3AO191")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -801,7 +808,7 @@ answer  <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.di
 \caption{`r tab_name`} \label{tab: `r tab_name`} 
 \itshape
 \mytable
-\begin{tabularx}{22cm}{|c|c|p{7cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\begin{tabularx}{22cm}{|c|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 
 \cline{1-16}
 
@@ -815,7 +822,7 @@ answer  <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.di
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -832,7 +839,7 @@ answer  <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.di
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -849,7 +856,7 @@ answer  <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.di
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -868,7 +875,7 @@ answer  <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.di
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -885,7 +892,7 @@ answer  <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.di
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -902,7 +909,7 @@ answer  <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.di
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -920,7 +927,7 @@ answer  <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.di
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -937,7 +944,7 @@ answer  <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.di
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -955,7 +962,7 @@ answer  <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.di
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -972,7 +979,7 @@ answer  <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.di
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -1018,10 +1025,10 @@ answer  <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.di
   							
 \end{tabular}
 \end{table}
-`r row <- point.rate[point.rate[,var.variable]=="C3AO221_X",]`- 内容维度：阅读- 考查能力：能根据文本信息、联系个人经验对文本内容作出合理的解释- 正确答案：D（选A得2分，选B得0分，选C得0分，选D得4分）- 本题满分：4分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目C3AO221上的作答情况" `
+`r row <- point.rate[point.rate[,var.variable]=="C3AO221_X",]`- 内容维度：阅读- 考查能力：能根据文本信息、联系个人经验对文本内容作出合理的解释- 正确答案：D（选A得2分，选B得0分，选C得0分，选D得4分）- 本题满分：4分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目C3AO221上的作答情况" `
 ```{r answer.C3AO221.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)),list(var = var.variable, value=list("C3AO221")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county, report$province)),list(var = var.variable, value=list("C3AO221")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -1044,10 +1051,10 @@ C．农夫的船撞了个洞，他忘记修了。漆匠在给农夫漆船时修�
 
 D．漆匠把船漆得很漂亮，农夫和两个儿子看到了非常开心。春天，农夫的两个孩子去湖里划船，他们玩得很高兴。
 
-`r row <- point.rate[point.rate[,var.variable]=="C3AO231_X",]`- 内容维度：阅读- 考查能力：能形成对文本内容的整体感知，对阅读材料的内容进行归纳- 正确答案：C（选A得1分，选B得2分，选C得4分，选D得0分）- 本题满分：4分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目C3AO231上的作答情况" `
+`r row <- point.rate[point.rate[,var.variable]=="C3AO231_X",]`- 内容维度：阅读- 考查能力：能形成对文本内容的整体感知，对阅读材料的内容进行归纳- 正确答案：C（选A得1分，选B得2分，选C得4分，选D得0分）- 本题满分：4分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目C3AO231上的作答情况" `
 ```{r answer.C3AO231.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)),list(var = var.variable, value=list("C3AO231")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county, report$province)),list(var = var.variable, value=list("C3AO231")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -1056,7 +1063,8 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \label{fig:`r fig_name`}
 \end{figure}
 
-这是“为获得文学体验”阅读情境中的一道题，考查的是学生整体感知文本内容，对阅读材料的主要内容进行归纳的能力。这道题的四个选项是根据对学生语文素养实际发展水平以及同龄学生阅读这个文段的口语报告分析设计的，分别代表了学生阅读能力发展的四个不同水平：选择C选项的学生水平最高，他们把文章看成一个整体，能在读懂各段落意思的基础上，提炼出关键信息，用简要的语言加以归纳, 具有较强的整体把握文章内容的能力；选择B选项的学生处于第二个水平，这些学生能把文章看成一个整体，但遗漏了“避免危险发生”这一关键信息，归纳不完整；选择A选项的学生处于第三个水平，这些学生还不具备整体感知的能力，只能从文章中提取出部分信息，以偏概全；而选择D选项的学生水平是最低的，他们没有理解文章内容。\questiontitle{典型题目10：C3AO251}从这个故事当中，可以看出漆匠是一个\uline{~~~~~~~~~~}的人。
+这是“为获得文学体验”阅读情境中的一道题，考查的是学生整体感知文本内容，对阅读材料的主要内容进行归纳的能力。这道题的四个选项是根据对学生语文素养实际发展水平以及同龄学生阅读这个文段的口语报告分析设计的，分别代表了学生阅读能力发展的四个不同水平：选择C选项的学生水平最高，他们把文章看成一个整体，能在读懂各段落意思的基础上，提炼出关键信息，用简要的语言加以归纳, 具有较强的整体把握文章内容的能力；选择B选项的学生处于第二个水平，这些学生能把文章看成一个整体，但遗漏了“避免危险发生”这一关键信息，归纳不完整；选择A选项的学生处于第三个水平，这些学生还不具备整体感知的能力，只能从文章中提取出部分信息，以偏概全；而选择D选项的学生水平是最低的，他们没有理解文章内容。\clearpage
+\questiontitle{典型题目10：C3AO251}从这个故事当中，可以看出漆匠是一个\uline{~~~~~~~~~~}的人。
 
 \begin{table}[H]
 \begin{tabularx}{\textwidth}{XXXX}
@@ -1068,10 +1076,10 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
   							
 \end{tabularx}
 \end{table}
-`r row <- point.rate[point.rate[,var.variable]=="C3AO251_X",]`     - 内容维度：阅读- 考查能力：能根据一定的标准对文本的内容、观点及语言运用作出评价- 正确答案：B （选A得0分，选B得4分，选C得1分，选D得2分）- 本题满分：4分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目C3AO251上的作答情况" `
+`r row <- point.rate[point.rate[,var.variable]=="C3AO251_X",]`     - 内容维度：阅读- 考查能力：能根据一定的标准对文本的内容、观点及语言运用作出评价- 正确答案：B （选A得0分，选B得4分，选C得1分，选D得2分）- 本题满分：4分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目C3AO251上的作答情况" `
 ```{r answer.C3AO251.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)),list(var = var.variable, value=list("C3AO251")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county, report$province)),list(var = var.variable, value=list("C3AO251")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -1090,11 +1098,11 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 
 \end{itshape}\questiontitle{典型题目11：C3AS261}
 在文中摘录两个能表现东北林区面积大的词语：\uline{~~~~~~~~}、\uline{~~~~~~~~}。
-`r row <- point.rate[point.rate[,var.variable]=="C3AS261_X",]` - 内容维度：阅读- 考查能力：能根据文本信息、联系个人经验对文本内容作出合理的解释- 正确答案：林海茫茫、一望无际、绵延千里 （答对1个给2分，答对2个给4分）- 本题满分：4分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目C3AS261上的作答情况" `
+`r row <- point.rate[point.rate[,var.variable]=="C3AS261_X",]` - 内容维度：阅读- 考查能力：能根据文本信息、联系个人经验对文本内容作出合理的解释- 正确答案：林海茫茫、一望无际、绵延千里 （答对1个给2分，答对2个给4分）- 本题满分：4分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目C3AS261上的作答情况" `
 ```{r answer.C3AS261.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 report$plot$answer.segment.bar.cn$ggplot$label$xlab <- "得分"
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)),list(var = var.variable, value=list("C3AS261")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county, report$province)),list(var = var.variable, value=list("C3AS261")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -1115,11 +1123,11 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \end{tabular}
 \end{table}
 
-`r row <- point.rate[point.rate[,var.variable]=="C3AO291_X",]`- 内容维度：阅读- 考查能力：能形成对文本内容的整体感知，对阅读材料的内容进行归纳- 正确答案：D （选A得0分，选B得2分，选C得2分，选D得4分）- 本题满分：4分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目C3AO291上的作答情况" `
+`r row <- point.rate[point.rate[,var.variable]=="C3AO291_X",]`- 内容维度：阅读- 考查能力：能形成对文本内容的整体感知，对阅读材料的内容进行归纳- 正确答案：D （选A得0分，选B得2分，选C得2分，选D得4分）- 本题满分：4分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目C3AO291上的作答情况" `
 ```{r answer. C3AO291.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 report$plot$answer.segment.bar.cn$ggplot$label$xlab <- "选项"
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)),list(var = var.variable, value=list("C3AO291")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county, report$province)),list(var = var.variable, value=list("C3AO291")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 
@@ -1144,11 +1152,11 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
   D．希腊~~美国~~印度~~中华人民共和国 } \\
   							
 \end{tabular}
-\end{table}`r row <- point.rate[point.rate[,var.variable]=="C3AO301_X",]`- 内容维度：阅读- 考查能力：能利用文本信息完成任务- 正确答案：A- 本题满分：5分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目C3AO301上的作答情况" `
+\end{table}`r row <- point.rate[point.rate[,var.variable]=="C3AO301_X",]`- 内容维度：阅读- 考查能力：能利用文本信息完成任务- 正确答案：A- 本题满分：5分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目C3AO301上的作答情况" `
 ```{r answer.C3AO301.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 report$plot$answer.segment.bar.cn$ggplot$label$xlab <- "选项"
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)),list(var = var.variable, value=list("C3AO301")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county, report$province)),list(var = var.variable, value=list("C3AO301")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -1192,21 +1200,21 @@ answer  <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.di
 \itshape
 \mytable
 
-\begin{tabularx}{22cm}{|c|c|p{7cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\begin{tabularx}{22cm}{|c|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 
-\hline
+\cline{1-16}
 
 \makecell[c]{内容领域} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{本\\市} & \makecell[c]{本\\区} &\makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{随迁\\子女\\民办} & \makecell[c]{普通\\小学} & \makecell[c]{一\\贯\\制} & \makecell[c]{市\\新\\优} & \makecell[c]{区\\新\\优} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ 
-\hline
+\cline{1-16}
 
-\makecell[c]{选择材料} & C3AS311 & \makecell[l]{能够切合题意、中心突出、感情真实、内容具体 } & 
+\makecell[c]{选择材料} & C3AS311 & 能够切合题意、中心突出、感情真实、内容具体 & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="C3AS311_X",]`
 `r row <- point.rate[point.rate[,var.variable]=="C3AS311_X",]`
 `r row.p[row.p[,var.key]=="总体",var.param]`  &
 `r row[row[,var.key]=="总体",var.param]`  &  
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -1215,16 +1223,16 @@ answer  <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.di
 `r row[row[,var.key]=="女",var.param]` & 
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\  
-\hline
+\cline{1-16}
  
- \makecell[c]{组织材料} & C3AS312 & \makecell[l]{能够语言通顺、简洁得体} & 
+ \makecell[c]{组织材料} & C3AS312 & 能够语言通顺、简洁得体 & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="C3AS312_X",]`
 `r row <- point.rate[point.rate[,var.variable]=="C3AS312_X",]`
 `r row.p[row.p[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -1233,15 +1241,15 @@ answer  <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.di
 `r row[row[,var.key]=="女",var.param]` & 
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ 
-\hline
- \makecell[c]{语言表达} & C3AS313 & \makecell[l]{能够结构合理、层次清晰、详略得体 } & 
+\cline{1-16}
+ \makecell[c]{语言表达} & C3AS313 & 能够结构合理、层次清晰、详略得体 & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="C3AS313_X",]`
 `r row <- point.rate[point.rate[,var.variable]=="C3AS313_X",]`
 `r row.p[row.p[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -1250,15 +1258,15 @@ answer  <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.di
 `r row[row[,var.key]=="女",var.param]` & 
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ 
-\hline
-\makecell[c]{书写及标点} & C3AS314 & \makecell[l]{能够书写清晰，标点符号使用正确，错别字较少 } & 
+\cline{1-16}
+\makecell[c]{书写及标点} & C3AS314 & 能够书写清晰，标点符号使用正确，错别字较少 & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="C3AS314_X",]`
 `r row <- point.rate[point.rate[,var.variable]=="C3AS314_X",]`
 `r row.p[row.p[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -1268,7 +1276,7 @@ answer  <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.di
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ 
 
-\hline
+\cline{1-16}
 \end{tabularx}
 \end{table}
 
@@ -1331,7 +1339,7 @@ answer  <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.di
 `r row <- point.rate[point.rate[,var.variable]=="C3AS310_X" & point.rate[,var.key]=="A",]`
 `r row[row[,var.sample]=="公办",var.param]` & 
 `r row[row[,var.sample]=="民办",var.param]` & 
-`r row[row[,var.sample]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.sample]=="随迁子女民办",var.param])` & 
 `r row[row[,var.sample]=="小学",var.param]` & 
 `r row[row[,var.sample]=="一贯制",var.param]` & 
 `r row[row[,var.sample]=="男",var.param]` & 
@@ -1343,7 +1351,7 @@ answer  <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.di
 `r row <- point.rate[point.rate[,var.variable]=="C3AS310_X" & point.rate[,var.key]=="B",]`
 `r row[row[,var.sample]=="公办",var.param]` & 
 `r row[row[,var.sample]=="民办",var.param]` & 
-`r row[row[,var.sample]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.sample]=="随迁子女民办",var.param])` & 
 `r row[row[,var.sample]=="小学",var.param]` & 
 `r row[row[,var.sample]=="一贯制",var.param]` & 
 `r row[row[,var.sample]=="男",var.param]` & 
@@ -1354,13 +1362,13 @@ answer  <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.di
 \makecell[c]{C} & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AS310_X" & point.rate[,var.key]=="C",]`
 `r row[row[,var.sample]=="公办",var.param]` & 
-`r row[row[,var.sample]=="民办",var.param]` & 
-`r row[row[,var.sample]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.sample]=="民办",var.param])` & 
+`r null.check(row[row[,var.sample]=="随迁子女民办",var.param])` & 
 `r row[row[,var.sample]=="小学",var.param]` & 
 `r row[row[,var.sample]=="一贯制",var.param]` & 
 `r row[row[,var.sample]=="男",var.param]` & 
 `r row[row[,var.sample]=="女",var.param]` & 
-`r row[row[,var.sample]=="沪籍",var.param]` & 
+`r null.check(row[row[,var.sample]=="沪籍",var.param])` & 
 `r row[row[,var.sample]=="非沪籍",var.param]` \\
 \cline{1-10}
 
@@ -1391,7 +1399,7 @@ answer  <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.di
 ```{r answer.C3AS311.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 report$plot$answer.segment.bar.cn$ggplot$label$xlab <- "分数段"
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)),list(var = var.variable, value=list("C3AS311_S")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county, report$province)),list(var = var.variable, value=list("C3AS311_S")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -1400,7 +1408,8 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \label{fig:`r fig_name`}
 \end{figure}
 
-本区学生在“选择材料”上的平均得分率为`r point.rate[point.rate[,var.variable]=="C3AS311_X" & point.rate[,var.key]=="总体" & point.rate[,var.sample]=="总体",var.param]`%。从上图可以看出，有`r answer[answer[,var.variable]=="C3AS311_S" & answer[,var.key]=="5.5-6" & answer[,var.sample]=="总体",var.param]`%的学生得5.5-6分；`r answer[answer[,var.variable]=="C3AS311_S" & answer[,var.key]=="3.5-5" & answer[,var.sample]=="总体",var.param]`%的学生得3.5-5分；`r answer[answer[,var.variable]=="C3AS311_S" & answer[,var.key]=="1.5-3" & answer[,var.sample]=="总体",var.param]`%的学生得1.5-3分；还有`r answer[answer[,var.variable]=="C3AS311_S" & answer[,var.key]=="0-1" & answer[,var.sample]=="总体",var.param]`%的学生得0-1分。\questiontitle{C3AS312 (维度2  满分6分)}
+本区学生在“选择材料”上的平均得分率为`r point.rate[point.rate[,var.variable]=="C3AS311_X" & point.rate[,var.key]=="总体" & point.rate[,var.sample]=="总体",var.param]`%。从上图可以看出，有`r answer[answer[,var.variable]=="C3AS311_S" & answer[,var.key]=="5.5-6" & answer[,var.sample]=="总体",var.param]`%的学生得5.5-6分；`r answer[answer[,var.variable]=="C3AS311_S" & answer[,var.key]=="3.5-5" & answer[,var.sample]=="总体",var.param]`%的学生得3.5-5分；`r answer[answer[,var.variable]=="C3AS311_S" & answer[,var.key]=="1.5-3" & answer[,var.sample]=="总体",var.param]`%的学生得1.5-3分；还有`r answer[answer[,var.variable]=="C3AS311_S" & answer[,var.key]=="0-1" & answer[,var.sample]=="总体",var.param]`%的学生得0-1分。\clearpage
+\questiontitle{C3AS312 (维度2  满分6分)}
 
 \begin{table}[H]
 \centering
@@ -1422,7 +1431,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 ```{r answer.C3AS312.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 report$plot$answer.segment.bar.cn$ggplot$label$xlab <- "分数段"
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)),list(var = var.variable, value=list("C3AS312_S")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county, report$province)),list(var = var.variable, value=list("C3AS312_S")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -1434,6 +1443,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 
 本区学生在“组织材料”上的平均得分率为`r point.rate[point.rate[,var.variable]=="C3AS312_X" & point.rate[,var.key]=="总体" & point.rate[,var.sample]=="总体",var.param]`%。从上图可以看出，`r answer[answer[,var.variable]=="C3AS312_S" & answer[,var.key]=="5.5-6",var.param]`%的学生得5.5-6分；`r answer[answer[,var.variable]=="C3AS312_S" & answer[,var.key]=="3.5-5",var.param]`%的学生得3.5-5分；`r answer[answer[,var.variable]=="C3AS312_S" & answer[,var.key]=="1.5-3",var.param]`%的学生得1.5-3分；`r answer[answer[,var.variable]=="C3AS312_S" & answer[,var.key]=="0-1",var.param]`%的学生得0-1分。
 
+\clearpage
 
 \questiontitle{C3AS313 (维度3  满分15分)}
 
@@ -1457,8 +1467,8 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 ```{r answer.C3AS313.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 report$plot$answer.segment.bar.cn$ggplot$label$xlab <- "分数段"
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)),list(var = var.variable, value=list("C3AS313_S")))
-report$plot$answer.segment.bar.cn$data$order <- list(list(var = "x", list <- list("0-5","5.5-9","9.5-12","12.5-15")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county, report$province)),list(var = var.variable, value=list("C3AS313_S")))
+report$plot$answer.segment.bar.cn$data$order <- list(list(var = "x", list = list("0-5","5.5-9","9.5-12","12.5-15")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 report$plot$answer.segment.bar.cn$data$order <- NULL
 ```
@@ -1471,6 +1481,7 @@ report$plot$answer.segment.bar.cn$data$order <- NULL
 
 本区学生在“语言表达”上的平均得分率为`r point.rate[point.rate[,var.variable]=="C3AS313_X" & point.rate[,var.key]=="总体" & point.rate[,var.sample]=="总体",var.param]`%。从上图可以看出，`r answer[answer[,var.variable]=="C3AS313_S" & answer[,var.key]=="12.5-15",var.param]`%的学生得12.5-15分；`r answer[answer[,var.variable]=="C3AS313_S" & answer[,var.key]=="9.5-12",var.param]`%的学生得9.5-12分；`r answer[answer[,var.variable]=="C3AS313_S" & answer[,var.key]=="5.5-9",var.param]`%的学生得5.5-9分；`r answer[answer[,var.variable]=="C3AS313_S" & answer[,var.key]=="0-5",var.param]`%的学生得0-5分。
 
+\clearpage
 \questiontitle{C3AS314 (维度4  满分3分)}\begin{table}[H]
 \centering
 \itshape
@@ -1490,7 +1501,7 @@ report$plot$answer.segment.bar.cn$data$order <- NULL
 ```{r answer.C3AS314.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 report$plot$answer.segment.bar.cn$ggplot$label$xlab <- "分数段"
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)),list(var = var.variable, value=list("C3AS314_S")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county, report$province)),list(var = var.variable, value=list("C3AS314_S")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]

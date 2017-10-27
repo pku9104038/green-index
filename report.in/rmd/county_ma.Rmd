@@ -13,7 +13,7 @@ output:
     keep_tex: no
 params:
   report: 2015
-  dummy.fig: "reports.jpg"
+  dummy.fig: "dummy.jpg"
   conf: "conf"
   
 ---
@@ -57,9 +57,9 @@ var.param <- "标注值"
 var.sample <- "统计样本"
 var.scope <- "统计范围" `
 
-# 学生总体表现## 全体学生的总体表现
+# 学生总体表现## 学生的总体表现
 
-`r fig_name <- "全体学生在数学学科上的得分分布" `
+`r fig_name <- "学生在数学学科上的得分分布" `
 ```{r score.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$score.segment.bar.ma
 plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
@@ -69,8 +69,10 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}## 不同群体学生的总体表现`r fig_name <- "不同群体学生在数学学科各水平上的人数比例" `
-`r fig_name1 <- "不同群体学生在数学学科上的得分分布" `图\ref{fig:`r fig_name`}和图\ref{fig:`r fig_name1`}分别给出了本区不同群体学生在数学学科各水平上的人数比例和得分分布。
+\end{figure}
+
+\clearpage## 不同群体学生的总体表现`r fig_name <- "不同群体学生在数学学科各水平上的人数比例" `
+`r fig_name1 <- "不同群体学生在数学学科上的得分分布" `图\ref{fig:`r fig_name`}和图\ref{fig:`r fig_name1`}分别给出了本区不同群体学生在数学学科各水平上的人数比例和得分分布\footnote{盒须图，须的底部为5分位（表示有5\%的学生总分低于此对应的分数)；盒的底部为25分位（表示有25\%的学生得分低于此线对应的分数）；盒中横线为50分位（表示50\%的学生得分高于此线对应的分数）；盒的顶部为75分位（表示有25\%的学生得分高于此线对应的分数）；须的顶部为95分位（表示有5\%的学生得分高于此线对应的分数）。盒的高度表示中间50\%的学生得分在此分数区间，从一定程度上描述了学生成绩离散程度的大小。红点对应的成绩为平均分。}。
  ```{r level.bar.province.perspective.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$level.bar.perspective.ma
 plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
@@ -89,15 +91,17 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name1`}
 \label{fig:`r fig_name1`}
-\end{figure}\begin{landscape}\section{不同学校学生的总体表现}
+\end{figure}\mylist
+\mytext
+\begin{landscape}\section{不同学校学生的总体表现}
 level.bar.province.county.school.ma
 
 score.box.province.county.school.ma
 
-\end{landscape}# 学生在各内容领域和能力维度上的表现情况## 全体学生在各内容领域和能力维度上的表现
+\end{landscape}# 学生在各内容领域和能力维度上的表现情况## 学生在各内容领域和能力维度上的表现
 
 
-### 全体学生在各内容领域上的表现`r fig_name <- "学生在数学学科各内容领域各水平上的人数比例" `
+### 学生在各内容领域上的表现`r fig_name <- "学生在数学学科各内容领域各水平上的人数比例" `
 `r fig_name1 <- "学生在数学学科各内容领域上的得分分布" `图\ref{fig:`r fig_name`}和图\ref{fig:`r fig_name1`}分别给出了本区学生在数学学科各内容领域各水平上的人数比例和得分分布。
  ```{r level.bar.domain.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$level.bar.domain.ma
@@ -117,7 +121,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name1`}
 \label{fig:`r fig_name1`}
-\end{figure}### 全体学生在各能力维度上的表现`r fig_name <- "学生在数学学科各能力维度各水平上的人数比例" `
+\end{figure}### 学生在各能力维度上的表现`r fig_name <- "学生在数学学科各能力维度各水平上的人数比例" `
 `r fig_name1 <- "学生在数学学科各能力维度上的得分分布" `图\ref{fig:`r fig_name`}和图\ref{fig:`r fig_name1`}分别给出了本区学生在数学学科各能力维度各水平上的人数比例和得分分布。
  ```{r level.bar.dimention.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$level.bar.dimention.ma
@@ -335,6 +339,7 @@ problem.box.province.county.school.ma
 \end{landscape}
 
 \begin{landscape}
+
 \chapter{典型题目分析}
 
 以下从“知识技能”、“数学理解”、“规则运用”和“问题解决”四个能力维度来分析典型题目。\section{知识技能}
@@ -368,7 +373,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 
 \begin{itshape}
 \mytable
-\begin{longtable}{|c|c|c|p{5cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\begin{longtable}{|c|c|c|p{4cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\
 \hline
 \makecell[c]{内容\\领域} & \makecell[c]{具体内容} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{本\\市} & \makecell[c]{本\\区} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{随迁\\子女\\民办} & \makecell[c]{普通\\小学} & \makecell[c]{一\\贯\\制} & \makecell[c]{市\\新\\优} & \makecell[c]{区\\新\\优} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
@@ -380,7 +385,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -398,7 +403,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -417,7 +422,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -434,7 +439,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -452,7 +457,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -470,7 +475,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -488,7 +493,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -516,10 +521,10 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 - 内容维度：图形与几何
 - 能力维度: 知识技能- 正确答案：7- 本题满分：4分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%
 
-`r fig_name <- "全体学生在题目M3AS131上的作答情况" `
+`r fig_name <- "学生在题目M3AS131上的作答情况" `
 ```{r answer.M3AS131.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.ma
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)),list(var = var.variable, value=list("M3AS131")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)),list(var = var.variable, value=list("M3AS131")))
 plot.entry$ggplot$label$xlab <- "得分"
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
@@ -540,17 +545,18 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
         \includegraphics[width=\textwidth]{ma_M3AS131_02}
     \end{subfigure}  
 \end{figure}
-\addtocounter{figure}{-1}建议：加强概念教学，让学生在动手操作过程中丰富常用长度单位和面积单位的量感，从而建立起正确的面积单位和长度单位的概念，厘清相应单位之间的进率。\questiontitle{典型题目2：M3AS201}用三角尺上的直角判断下面图形中的每个角，是直角的用直角符号在图中标出来．
+\addtocounter{figure}{-1}建议：加强概念教学，让学生在动手操作过程中丰富常用长度单位和面积单位的量感，从而建立起正确的面积单位和长度单位的概念，厘清相应单位之间的进率。\clearpage
+\questiontitle{典型题目2：M3AS201}用三角尺上的直角判断下面图形中的每个角，是直角的用直角符号在图中标出来．
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.2\textwidth]{ma_M3AS201_01}
 \end{figure}
 
 `r row <- point.rate[point.rate[,var.variable]=="M3AS201_X",]`- 内容维度：图形与几何- 能力维度：知识技能- 正确答案：在图中用直角符号标出2个直角- 本题满分：2分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%
-`r fig_name <- "全体学生在题目M3AS201上的作答情况" `
+`r fig_name <- "学生在题目M3AS201上的作答情况" `
 ```{r answer.M3AS201.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.ma
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)),list(var = var.variable, value=list("M3AS201")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)),list(var = var.variable, value=list("M3AS201")))
 plot.entry$ggplot$label$xlab <- "得分"
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
@@ -592,7 +598,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 
 \begin{itshape}
 \mytable
-\begin{longtable}{|c|c|c|p{5cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\begin{longtable}{|c|c|c|p{4cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\
 \hline
 \makecell[c]{内容\\领域} & \makecell[c]{具体内容} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{本\\市} & \makecell[c]{本\\区} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{随迁\\子女\\民办} & \makecell[c]{普通\\小学} & \makecell[c]{一\\贯\\制} & \makecell[c]{市\\新\\优} & \makecell[c]{区\\新\\优} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
@@ -604,7 +610,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -621,7 +627,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -639,7 +645,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -657,7 +663,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -675,7 +681,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -693,7 +699,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -702,7 +708,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r row[row[,var.key]=="女",var.param]` & 
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ 
-\cline{2-16}
+\cline{2-17}
 
  & \multirow{2}{*}{\makecell[c]{测量}} & M3AS171 & 通过观察，借助对长度的理解，在具体情境中进行测量 & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="M3AS171_X",]`
@@ -711,7 +717,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -720,7 +726,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r row[row[,var.key]=="女",var.param]` & 
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ 
-  \cline{3-16}
+  \cline{3-17}
   
  &  & M3AS191 & 借助对于周长含义的理解，运用观察与比较等方法，得到一些图形的周长 & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="M3AS191_X",]`
@@ -729,7 +735,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -770,10 +776,10 @@ C. &
 \end{table}
 
 `r row <- point.rate[point.rate[,var.variable]=="M3AO071_X",]`
-- 内容维度：数与运算- 能力维度：数学理解- 正确答案：D- 本题满分：4分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目M3AO071上的作答情况" `
+- 内容维度：数与运算- 能力维度：数学理解- 正确答案：D- 本题满分：4分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目M3AO071上的作答情况" `
 ```{r answer.M3AO071.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.ma
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)),list(var = var.variable, value=list("M3AO071")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)),list(var = var.variable, value=list("M3AO071")))
 plot.entry$ggplot$label$xlab <- "选项"
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
@@ -781,7 +787,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}本题考查的是能借助具体例子，解释除法竖式每一步的含义。全体学生得分率为`r row[row[,var.key]=="总体",var.param]`%，从全市层面看，较14年的得分率上升了近14%，说明绝大部分学生对于算式中每一步蕴含的具体意义的理解比较清晰，能结合具体的情境对数学对象进行理解和解释；也说明我们的教师在教学中改变了只重视解答，而忽视对操作中的每一步所表达的含义的关注，在除法计算教学中能借助操作帮助学生理解算理，通过数形结合，帮助学生沟通横式与竖式之间的联系，故得分率有了显著的提高。
+\end{figure}本题考查的是能借助具体例子，解释除法竖式每一步的含义。学生得分率为`r row[row[,var.key]=="总体",var.param]`%，从全市层面看，较14年的得分率上升了近14%，说明绝大部分学生对于算式中每一步蕴含的具体意义的理解比较清晰，能结合具体的情境对数学对象进行理解和解释；也说明我们的教师在教学中改变了只重视解答，而忽视对操作中的每一步所表达的含义的关注，在除法计算教学中能借助操作帮助学生理解算理，通过数形结合，帮助学生沟通横式与竖式之间的联系，故得分率有了显著的提高。
 
 \questiontitle{典型题目4: M3AO111}
 当你面对西面时，你的右手边是（    ）面．
@@ -795,10 +801,10 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
   							
 \end{tabularx}
 \end{table}`r row <- point.rate[point.rate[,var.variable]=="M3AO111_X",]` 
-                           - 内容维度：图形与几何- 能力维度：数学理解- 正确答案：D- 本题满分：4分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目M3AO111上的作答情况" `
+                           - 内容维度：图形与几何- 能力维度：数学理解- 正确答案：D- 本题满分：4分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目M3AO111上的作答情况" `
 ```{r answer.M3AO1111.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.ma
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)),list(var = var.variable, value=list("M3AO111")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)),list(var = var.variable, value=list("M3AO111")))
 plot.entry$ggplot$label$xlab <- "选项"
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
@@ -819,7 +825,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r tab_name <- "学生在数学学科“规则运用”上的平均得分率（％）" `
 \begin{itshape}
 \mytable
-\begin{longtable}{|c|c|c|p{5cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\begin{longtable}{|c|c|c|p{4cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\
 \hline
 \makecell[c]{内容\\领域} & \makecell[c]{具体内容} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{本\\市} & \makecell[c]{本\\区} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{随迁\\子女\\民办} & \makecell[c]{普通\\小学} & \makecell[c]{一\\贯\\制} & \makecell[c]{市\\新\\优} & \makecell[c]{区\\新\\优} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
@@ -831,7 +837,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -848,7 +854,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -866,7 +872,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -884,7 +890,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -902,7 +908,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -920,7 +926,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -979,10 +985,10 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
         \includegraphics[width=\textwidth]{ma_M3AO061_01}
     \end{subfigure}
 \end{figure}
-\addtocounter{figure}{-1}`r row <- point.rate[point.rate[,var.variable]=="M3AO061_X",]`                           - 内容维度：数与运算- 能力维度：规则运用- 正确答案：C- 本题满分：4分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目M3AO061上的作答情况" `
+\addtocounter{figure}{-1}`r row <- point.rate[point.rate[,var.variable]=="M3AO061_X",]`                           - 内容维度：数与运算- 能力维度：规则运用- 正确答案：C- 本题满分：4分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目M3AO061上的作答情况" `
 ```{r answer.M3AO061.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.ma
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)),list(var = var.variable, value=list("M3AO061")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)),list(var = var.variable, value=list("M3AO061")))
 plot.entry$ggplot$label$xlab <- "选项"
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
@@ -1005,10 +1011,10 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 	\includegraphics[width=0.2\textwidth]{ma_M3AS181_02}
 \end{figure}- 本题满分：4分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%
 
-`r fig_name <- "全体学生在题目M3AS181上的作答情况" `
+`r fig_name <- "学生在题目M3AS181上的作答情况" `
 ```{r answer.M3AS181.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.ma
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)),list(var = var.variable, value=list("M3AS181")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)),list(var = var.variable, value=list("M3AS181")))
 plot.entry$ggplot$label$xlab <- "得分"
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
@@ -1053,10 +1059,10 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 - 内容维度：图形与几何- 能力维度：规则运用- 正确答案：B- 本题满分：4分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%
 
 
-`r fig_name <- "全体学生在题目M3AO101上的作答情况" `
+`r fig_name <- "学生在题目M3AO101上的作答情况" `
 ```{r answer.M3AO101.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.ma
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)),list(var = var.variable, value=list("M3AO101")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)),list(var = var.variable, value=list("M3AO101")))
 plot.entry$ggplot$label$xlab <- "选项"
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
@@ -1089,7 +1095,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 \begin{itshape}
 \mytable
 
-\begin{longtable}{|c|c|c|p{5cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\begin{longtable}{|c|c|c|p{4cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\
 \hline
 \makecell[c]{内容\\领域} & \makecell[c]{具体内容} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{本\\市} & \makecell[c]{本\\区} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{随迁\\子女\\民办} & \makecell[c]{普通\\小学} & \makecell[c]{一\\贯\\制} & \makecell[c]{市\\新\\优} & \makecell[c]{区\\新\\优} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
@@ -1101,7 +1107,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -1109,7 +1115,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r row[row[,var.key]=="男",var.param]` & 
 `r row[row[,var.key]=="女",var.param]` & 
 `r row[row[,var.key]=="沪籍",var.param]` & 
-`r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{3-16}
+`r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{3-17}
 
 & & M3AS211 & 能灵活运用不同的方法，解决生活中的非常规问题 & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="M3AS211_X",]`
@@ -1118,7 +1124,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -1135,7 +1141,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -1143,7 +1149,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r row[row[,var.key]=="男",var.param]` & 
 `r row[row[,var.key]=="女",var.param]` & 
 `r row[row[,var.key]=="沪籍",var.param]` & 
-`r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{3-16}
+`r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{3-17}
 
   & & M3AS232 & 能在观察、操作等活动中，建立知识间的联系，解决实际问题  & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="M3AS232_X",]`
@@ -1152,7 +1158,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -1170,7 +1176,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
 `r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
+`r null.check(row[row[,var.key]=="随迁子女民办",var.param])` & 
 `r row[row[,var.key]=="小学",var.param]` & 
 `r row[row[,var.key]=="一贯制",var.param]` & 
 `r row[row[,var.key]=="市新优",var.param]` & 
@@ -1206,10 +1212,10 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 \end{tabularx}
 \end{table}
 `r row <- point.rate[point.rate[,var.variable]=="M3AO121_X",]`- 内容维度：数与运算- 能力维度：问题解决- 正确答案：A- 本题满分：4分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%
-`r fig_name <- "全体学生在题目M3AO121上的作答情况" `
+`r fig_name <- "学生在题目M3AO121上的作答情况" `
 ```{r answer. M3AO121.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.ma
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)),list(var = var.variable, value=list("M3AO121")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)),list(var = var.variable, value=list("M3AO121")))
 plot.entry$ggplot$label$xlab <- "选项"
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
@@ -1226,10 +1232,10 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 加强概念教学，注重让学生经历观察、比较、猜想、验证等数学活动，自我探索一些运算法则和方法，丰富数感，发展计算的灵活性。\questiontitle{典型题目9：M3AS211}商场对某玩具熊进行促销活动，单买1个是150元，如果购买1包（每包装3个玩具熊），则需要400元．某幼儿园需要购买14个这样的玩具熊，最少要花多少元？ 
 
 `r row <- point.rate[point.rate[,var.variable]=="M3AS211_X",]`
-- 内容维度：数与运算- 能力维度：问题解决- 正确答案：	- 解： 14÷3 = 4（包）……2（个）	- 400×4+150×2 = 1600+300 = 1900（元）	- 答：最少要花1900元。	- （解答方法不唯一）- 本题满分：6分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目M3AS211上的作答情况" `
+- 内容维度：数与运算- 能力维度：问题解决- 正确答案：	- 解： 14÷3 = 4（包）……2（个）	- 400×4+150×2 = 1600+300 = 1900（元）	- 答：最少要花1900元。	- （解答方法不唯一）- 本题满分：6分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目M3AS211上的作答情况" `
 ```{r answer.M3AS211.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.ma
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)),list(var = var.variable, value=list("M3AS211")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)),list(var = var.variable, value=list("M3AS211")))
 plot.entry$ggplot$label$xlab <- "得分"
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
@@ -1292,10 +1298,10 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
   \end{center}
 \end{figure}
 
-`r row <- point.rate[point.rate[,var.variable]=="M3AS231_X",]`     - 内容维度：图形与几何- 能力维度：问题解决- 正确答案：（4×3+2）× 2 = 28（厘米）- 本题满分：2分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目M3AS231上的作答情况" `
+`r row <- point.rate[point.rate[,var.variable]=="M3AS231_X",]`     - 内容维度：图形与几何- 能力维度：问题解决- 正确答案：（4×3+2）× 2 = 28（厘米）- 本题满分：2分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目M3AS231上的作答情况" `
 ```{r answer.M3AS231.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.ma
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)),list(var = var.variable, value=list("M3AS231")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)),list(var = var.variable, value=list("M3AS231")))
 plot.entry$ggplot$label$xlab <- "得分"
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
@@ -1343,10 +1349,10 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
   \end{center}
 \end{figure}
 
-`r row <- point.rate[point.rate[,var.variable]=="M3AS232_X",]` - 内容维度：图形与几何- 能力维度：问题解决- 正确答案：（4+2×3）×2= 20(厘米)或（4+2+4）×2= 20(厘米)- 本题满分：5分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目M3AS232上的作答情况" `
+`r row <- point.rate[point.rate[,var.variable]=="M3AS232_X",]` - 内容维度：图形与几何- 能力维度：问题解决- 正确答案：（4+2×3）×2= 20(厘米)或（4+2+4）×2= 20(厘米)- 本题满分：5分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目M3AS232上的作答情况" `
 ```{r answer. M3AS232.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.ma
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)),list(var = var.variable, value=list("M3AS232")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)),list(var = var.variable, value=list("M3AS232")))
 plot.entry$ggplot$label$xlab <- "得分"
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
@@ -1372,14 +1378,15 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 
 \hline
 \end{tabularx}
-\end{table}从学生作答情况看，主要问题如下：1.	审题不清。要求拼出一种不同形状的长方形，结果学生拼出的并不是长方形。2.	图画对了，但对“周长”概念的理解不清晰，算成了三个长方形周长之和，或知道要从三个长方形周长之和中去掉一些线段长度，但又不清晰要去掉多少条。3.	混淆“面积”与“周长”概念，要求周长，结果求面积了。4.	完全不理解题意，瞎做。\begin{figure}[H]
+\end{table}从学生作答情况看，主要问题如下：1.	审题不清。要求拼出一种不同形状的长方形，结果学生拼出的并不是长方形。2.	图画对了，但对“周长”概念的理解不清晰，算成了三个长方形周长之和，或知道要从三个长方形周长之和中去掉一些线段长度，但又不清晰要去掉多少条。3.	混淆“面积”与“周长”概念，要求周长，结果求面积了。4.	完全不理解题意，随意作答。\begin{figure}[H]
   \begin{center}
     \includegraphics[width=\textwidth]{ma_M3AS232_03}
   \end{center}
 \end{figure}
 建议：
 
-在几何初步知识教学中，要加强概念教学，注重给予学生充分的时间和空间从事数学活动，让他们通过观察、操作、有条理的思考和推理、交流等活动，积累“周长”的经验与周长的计算方法，提高学生解决问题的能力。\questiontitle{典型题目11：M3AS223}
+在几何初步知识教学中，要加强概念教学，注重给予学生充分的时间和空间从事数学活动，让他们通过观察、操作、有条理的思考和推理、交流等活动，积累“周长”的经验与周长的计算方法，提高学生解决问题的能力。\clearpage
+\questiontitle{典型题目11：M3AS223}
 下图是2010年济南市某月的天气情况统计图。\begin{figure}[H]
   \begin{center}
     \includegraphics[width=0.8\textwidth]{ma_M3AS223_01}
@@ -1387,10 +1394,10 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \end{figure}
 
 （3）请根据这个月的天数判断这是几月份，请你说说理由。
-`r row <- point.rate[point.rate[,var.variable]=="M3AS223_X",]`- 内容维度：统计与概率- 能力维度：问题解决- 正确答案：根据总天数是28天，判断是2月份- 本题满分：4分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目M3AS223上的作答情况" `
+`r row <- point.rate[point.rate[,var.variable]=="M3AS223_X",]`- 内容维度：统计与概率- 能力维度：问题解决- 正确答案：根据总天数是28天，判断是2月份- 本题满分：4分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目M3AS223上的作答情况" `
 ```{r answer.M3AS223.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.ma
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)),list(var = var.variable, value=list("M3AS223")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)),list(var = var.variable, value=list("M3AS223")))
 plot.entry$ggplot$label$xlab <- "得分"
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```

@@ -13,7 +13,7 @@ output:
     keep_tex: no
 params:
   report: 2015
-  dummy.fig: "reports.jpg"
+  dummy.fig: "dummy.jpg"
   conf: "conf"
   
 ---
@@ -194,7 +194,7 @@ point.rate  <- point.rate.all[point.rate.all[,var.scope]==report$school & point.
 `r row[row[,var.key]=="总体",var.param]`   
 \\  \hline
  
-  \multirow{4}{*}{\makecell[c]{认清字形}} & C3AO051 & \makecell[l]{能认清学过的常用字的字形} & 
+   & C3AO051 & \makecell[l]{能认清学过的常用字的字形} & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="C3AO051_X",]`
 `r row <- point.rate[point.rate[,var.variable]=="C3AO051_X",]`
 `r row.p[row.p[,var.key]=="总体",var.param]`  & 
@@ -202,7 +202,7 @@ point.rate  <- point.rate.all[point.rate.all[,var.scope]==report$school & point.
 \\  
 \cline{2-5}
 
-  & C3AO061 & \makecell[l]{能认清学过的常用字的字形} & 
+ \multirow{3}{*}{\makecell[c]{认清字形}} & C3AO061 & \makecell[l]{能认清学过的常用字的字形} & 
 `r row.p <- point.rate.p[point.rate.p[,var.variable]=="C3AO061_X",]`
 `r row <- point.rate[point.rate[,var.variable]=="C3AO061_X",]`
 `r row.p[row.p[,var.key]=="总体",var.param]`  & 
@@ -334,10 +334,10 @@ point.rate  <- point.rate.all[point.rate.all[,var.scope]==report$school & point.
 `r row <- point.rate[point.rate[,var.variable]=="C3AO031_X",]`
 - 内容维度：积累- 考查能力：读准字音•能分辨出常见误读- 正确答案：C- 本题满分：1分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%
 
-`r fig_name <- "全体学生在题目C3AO031上的作答情况" `
+`r fig_name <- "学生在题目C3AO031上的作答情况" `
 ```{r answer.C3AO031.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school)),list(var = var.variable, value=list("C3AO031")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school,report$county)),list(var = var.variable, value=list("C3AO031")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -362,10 +362,10 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \end{table}
 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO051_X",]`- 内容维度：积累- 考查能力：认清字形•能分辨音同形近字的误用- 正确答案：D- 本题满分：1分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%
-`r fig_name <- "全体学生在题目C3AO051上的作答情况" `
+`r fig_name <- "学生在题目C3AO051上的作答情况" `
 ```{r answer.C3AO051.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school)),list(var = var.variable, value=list("C3AO051")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school,report$county)),list(var = var.variable, value=list("C3AO051")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -383,10 +383,10 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \end{tabularx}
 \end{table}
 
-`r row <- point.rate[point.rate[,var.variable]=="C3AO071_X",]`- 内容维度：积累- 考查能力：认清字形•能分辨音同形近字的误用- 正确答案：A- 本题满分：1分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目C3AO071上的作答情况" `
+`r row <- point.rate[point.rate[,var.variable]=="C3AO071_X",]`- 内容维度：积累- 考查能力：认清字形•能分辨音同形近字的误用- 正确答案：A- 本题满分：1分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目C3AO071上的作答情况" `
 ```{r answer.C3AO071.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school)),list(var = var.variable, value=list("C3AO071")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school,report$county)),list(var = var.variable, value=list("C3AO071")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -409,10 +409,10 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
   \makecell[c]{D．凝聚} \\
   							
 \end{tabularx}
-\end{table}`r row <- point.rate[point.rate[,var.variable]=="C3AO091_X",]`                            - 内容维度：积累- 考查能力：能正确理解常用字词的字义、词义- 正确答案：A- 本题满分：1分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目C3AO091上的作答情况" `
+\end{table}`r row <- point.rate[point.rate[,var.variable]=="C3AO091_X",]`                            - 内容维度：积累- 考查能力：能正确理解常用字词的字义、词义- 正确答案：A- 本题满分：1分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目C3AO091上的作答情况" `
 ```{r answer.C3AO091.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school)),list(var = var.variable, value=list("C3AO091")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school,report$county)),list(var = var.variable, value=list("C3AO091")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -435,10 +435,10 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
   \makecell[c]{D．哀求} \\
   							
 \end{tabularx}
-\end{table}`r row <- point.rate[point.rate[,var.variable]=="C3AO131_X",]`                           - 内容维度：积累- 考查能力：能正确理解常用字词的字义、词义- 正确答案：A- 本题满分：2分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目C3AO131上的作答情况" `
+\end{table}`r row <- point.rate[point.rate[,var.variable]=="C3AO131_X",]`                           - 内容维度：积累- 考查能力：能正确理解常用字词的字义、词义- 正确答案：A- 本题满分：2分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目C3AO131上的作答情况" `
 ```{r answer.C3AO131.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school)),list(var = var.variable, value=list("C3AO131")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school,report$county)),list(var = var.variable, value=list("C3AO131")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -464,10 +464,10 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \end{tabularx}
 \end{table}`r row <- point.rate[point.rate[,var.variable]=="C3AO161_X",]`  - 内容维度：积累- 考查能力：能正确理解常用字词的字义、词义- 正确答案：B- 本题满分：2分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%
 
-`r fig_name <- "全体学生在题目C3AO161上的作答情况" `
+`r fig_name <- "学生在题目C3AO161上的作答情况" `
 ```{r answer.C3AO161.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school)),list(var = var.variable, value=list("C3AO161")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school,report$county)),list(var = var.variable, value=list("C3AO161")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -495,10 +495,10 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \end{table}`r row <- point.rate[point.rate[,var.variable]=="C3AO191_X",]`- 内容维度：积累- 考查能力：能记忆教材中的古诗- 正确答案：B- 本题满分：3分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%
 
 
-`r fig_name <- "全体学生在题目C3AO191上的作答情况" `
+`r fig_name <- "学生在题目C3AO191上的作答情况" `
 ```{r answer.C3AO191.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school)),list(var = var.variable, value=list("C3AO191")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school,report$county)),list(var = var.variable, value=list("C3AO191")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -639,10 +639,10 @@ answer  <- answer.all[answer.all[,var.scope]==report$school & answer.all[,var.di
   							
 \end{tabular}
 \end{table}
-`r row <- point.rate[point.rate[,var.variable]=="C3AO221_X",]`- 内容维度：阅读- 考查能力：能根据文本信息、联系个人经验对文本内容作出合理的解释- 正确答案：D（选A得2分，选B得0分，选C得0分，选D得4分）- 本题满分：4分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目C3AO221上的作答情况" `
+`r row <- point.rate[point.rate[,var.variable]=="C3AO221_X",]`- 内容维度：阅读- 考查能力：能根据文本信息、联系个人经验对文本内容作出合理的解释- 正确答案：D（选A得2分，选B得0分，选C得0分，选D得4分）- 本题满分：4分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目C3AO221上的作答情况" `
 ```{r answer.C3AO221.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school)),list(var = var.variable, value=list("C3AO221")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school,report$county)),list(var = var.variable, value=list("C3AO221")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -665,10 +665,10 @@ C．农夫的船撞了个洞，他忘记修了。漆匠在给农夫漆船时修�
 
 D．漆匠把船漆得很漂亮，农夫和两个儿子看到了非常开心。春天，农夫的两个孩子去湖里划船，他们玩得很高兴。
 
-`r row <- point.rate[point.rate[,var.variable]=="C3AO231_X",]`- 内容维度：阅读- 考查能力：能形成对文本内容的整体感知，对阅读材料的内容进行归纳- 正确答案：C（选A得1分，选B得2分，选C得4分，选D得0分）- 本题满分：4分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目C3AO231上的作答情况" `
+`r row <- point.rate[point.rate[,var.variable]=="C3AO231_X",]`- 内容维度：阅读- 考查能力：能形成对文本内容的整体感知，对阅读材料的内容进行归纳- 正确答案：C（选A得1分，选B得2分，选C得4分，选D得0分）- 本题满分：4分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目C3AO231上的作答情况" `
 ```{r answer.C3AO231.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school)),list(var = var.variable, value=list("C3AO231")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school,report$county)),list(var = var.variable, value=list("C3AO231")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -689,10 +689,10 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
   							
 \end{tabularx}
 \end{table}
-`r row <- point.rate[point.rate[,var.variable]=="C3AO251_X",]`     - 内容维度：阅读- 考查能力：能根据一定的标准对文本的内容、观点及语言运用作出评价- 正确答案：B （选A得0分，选B得4分，选C得1分，选D得2分）- 本题满分：4分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目C3AO251上的作答情况" `
+`r row <- point.rate[point.rate[,var.variable]=="C3AO251_X",]`     - 内容维度：阅读- 考查能力：能根据一定的标准对文本的内容、观点及语言运用作出评价- 正确答案：B （选A得0分，选B得4分，选C得1分，选D得2分）- 本题满分：4分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目C3AO251上的作答情况" `
 ```{r answer.C3AO251.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school)),list(var = var.variable, value=list("C3AO251")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school,report$county)),list(var = var.variable, value=list("C3AO251")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -711,11 +711,11 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 
 \end{itshape}\questiontitle{典型题目11：C3AS261}
 在文中摘录两个能表现东北林区面积大的词语：\uline{~~~~~~~~}、\uline{~~~~~~~~}。
-`r row <- point.rate[point.rate[,var.variable]=="C3AS261_X",]` - 内容维度：阅读- 考查能力：能根据文本信息、联系个人经验对文本内容作出合理的解释- 正确答案：林海茫茫、一望无际、绵延千里 （答对1个给2分，答对2个给4分）- 本题满分：4分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目C3AS261上的作答情况" `
+`r row <- point.rate[point.rate[,var.variable]=="C3AS261_X",]` - 内容维度：阅读- 考查能力：能根据文本信息、联系个人经验对文本内容作出合理的解释- 正确答案：林海茫茫、一望无际、绵延千里 （答对1个给2分，答对2个给4分）- 本题满分：4分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目C3AS261上的作答情况" `
 ```{r answer.C3AS261.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 report$plot$answer.segment.bar.cn$ggplot$label$xlab <- "得分"
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school)),list(var = var.variable, value=list("C3AS261")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school,report$county)),list(var = var.variable, value=list("C3AS261")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -736,11 +736,11 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \end{tabular}
 \end{table}
 
-`r row <- point.rate[point.rate[,var.variable]=="C3AO291_X",]`- 内容维度：阅读- 考查能力：能形成对文本内容的整体感知，对阅读材料的内容进行归纳- 正确答案：D （选A得0分，选B得2分，选C得2分，选D得4分）- 本题满分：4分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目C3AO291上的作答情况" `
+`r row <- point.rate[point.rate[,var.variable]=="C3AO291_X",]`- 内容维度：阅读- 考查能力：能形成对文本内容的整体感知，对阅读材料的内容进行归纳- 正确答案：D （选A得0分，选B得2分，选C得2分，选D得4分）- 本题满分：4分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目C3AO291上的作答情况" `
 ```{r answer. C3AO291.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 report$plot$answer.segment.bar.cn$ggplot$label$xlab <- "选项"
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school)),list(var = var.variable, value=list("C3AO291")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school,report$county)),list(var = var.variable, value=list("C3AO291")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 
@@ -765,11 +765,11 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
   D．希腊~~美国~~印度~~中华人民共和国 } \\
   							
 \end{tabular}
-\end{table}`r row <- point.rate[point.rate[,var.variable]=="C3AO301_X",]`- 内容维度：阅读- 考查能力：能利用文本信息完成任务- 正确答案：A- 本题满分：5分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目C3AO301上的作答情况" `
+\end{table}`r row <- point.rate[point.rate[,var.variable]=="C3AO301_X",]`- 内容维度：阅读- 考查能力：能利用文本信息完成任务- 正确答案：A- 本题满分：5分- 得分情况：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目C3AO301上的作答情况" `
 ```{r answer.C3AO301.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 report$plot$answer.segment.bar.cn$ggplot$label$xlab <- "选项"
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school)),list(var = var.variable, value=list("C3AO301")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school,report$county)),list(var = var.variable, value=list("C3AO301")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -851,8 +851,7 @@ answer  <- answer.all[answer.all[,var.scope]==report$school & answer.all[,var.di
 
 “习作”部分着重考查学生“选择材料”、“组织材料”、“语言表达”和“书写及标点”四方面的能力。
 
-下面将结合“习作”部分的典型题目来做具体分析。\end{landscape}
-- 内容维度：习作- 作文题目：\textit{一只小鸟刚学会飞，就去旅行了。它会到哪里去？旅途中会发生什么事呢？请你展开想象，写一个故事。题目自拟，250字左右。}- 考查能力：选择材料、组织材料、语言表达、书写。- 本题满分：30分- 评分标准：
+下面将结合“习作”部分的典型题目来做具体分析。- 内容维度：习作- 作文题目：\textit{一只小鸟刚学会飞，就去旅行了。它会到哪里去？旅途中会发生什么事呢？请你展开想象，写一个故事。题目自拟，250字左右。}- 考查能力：选择材料、组织材料、语言表达、书写。- 本题满分：30分- 评分标准：
 
 
 \begin{itshape}
@@ -875,7 +874,7 @@ answer  <- answer.all[answer.all[,var.scope]==report$school & answer.all[,var.di
 \hline
 			
  & 14-15分 & \makecell[l]{语句通顺，语意连贯，用词准确； \\ 标点使用正确，基本上没有错别字。 \\ （个别标点出错，不影响表达。有2、3个错别字。）} \\ \cline{2-3}
-	\multirow{4}{*}{\makecell[c]{语言表达\\写得怎么样\\（6分）}}	& 11-13分 & \makecell[l]{语言通顺，语意比较连贯，用词基本恰当； \\ 标点使用有一些错误，有一些错别字。\\ （有4—6个错别字）} \\ \cline{2-3}
+	\multirow{2}{*}{\makecell[c]{语言表达\\写得怎么样\\（6分）}}	& 11-13分 & \makecell[l]{语言通顺，语意比较连贯，用词基本恰当； \\ 标点使用有一些错误，有一些错别字。\\ （有4—6个错别字）} \\ \cline{2-3}
 		& 8-10分 & \makecell[l]{语言基本通顺，有个别病句或词语运用不恰当之处，\\ 不影响意思的理解。 \\ 漏用、用错的标点较多，错别字较多（10个以上）。} \\ \cline{2-3}
 		& 3-7分 & \makecell[l]{病句很多，语意比较混乱，词不达意。\\ 逻辑混乱，语意不明，没有标点，错别字很多。} \\ \cline{2-3}
 		& 0-2分 & 逻辑混乱，语意不明，没有标点，错别字很多。 \\ 
@@ -916,7 +915,7 @@ answer  <- answer.all[answer.all[,var.scope]==report$school & answer.all[,var.di
 ```{r answer.C3AS311.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 report$plot$answer.segment.bar.cn$ggplot$label$xlab <- "分数段"
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school)),list(var = var.variable, value=list("C3AS311_S")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school,report$county)),list(var = var.variable, value=list("C3AS311_S")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -947,7 +946,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 ```{r answer.C3AS312.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 report$plot$answer.segment.bar.cn$ggplot$label$xlab <- "分数段"
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school)),list(var = var.variable, value=list("C3AS312_S")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school,report$county)),list(var = var.variable, value=list("C3AS312_S")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -982,8 +981,8 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 ```{r answer.C3AS313.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 report$plot$answer.segment.bar.cn$ggplot$label$xlab <- "分数段"
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school)),list(var = var.variable, value=list("C3AS313_S")))
-report$plot$answer.segment.bar.cn$data$order <- list(list(var = "x", list <- list("0-5","5.5-9","9.5-12","12.5-15")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school,report$county)),list(var = var.variable, value=list("C3AS313_S")))
+report$plot$answer.segment.bar.cn$data$order <- list(list(var = "x", list = list("0-5","5.5-9","9.5-12","12.5-15")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 report$plot$answer.segment.bar.cn$data$order <- NULL
 ```
@@ -1015,7 +1014,7 @@ report$plot$answer.segment.bar.cn$data$order <- NULL
 ```{r answer.C3AS314.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 report$plot$answer.segment.bar.cn$ggplot$label$xlab <- "分数段"
 plot.entry <- report$plot$answer.segment.bar.cn
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school)),list(var = var.variable, value=list("C3AS314_S")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school,report$county)),list(var = var.variable, value=list("C3AS314_S")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -1211,6 +1210,7 @@ answer <- answer.all[answer.all[,var.scope]==report$school & answer.all[,var.dim
 
 下面将结合“知识技能”部分的典型题目做具体分析。
 
+\clearpage
 
 \questiontitle{典型题目1： M3AS131}
 
@@ -1220,10 +1220,10 @@ answer <- answer.all[answer.all[,var.scope]==report$school & answer.all[,var.dim
 - 内容维度：图形与几何
 - 能力维度: 知识技能- 正确答案：7- 本题满分：4分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%
 
-`r fig_name <- "全体学生在题目M3AS131上的作答情况" `
+`r fig_name <- "学生在题目M3AS131上的作答情况" `
 ```{r answer.M3AS131.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.ma
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school)),list(var = var.variable, value=list("M3AS131")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school,report$county)),list(var = var.variable, value=list("M3AS131")))
 plot.entry$ggplot$label$xlab <- "得分"
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
@@ -1244,17 +1244,18 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
         \includegraphics[width=\textwidth]{ma_M3AS131_02}
     \end{subfigure}  
 \end{figure}
-\addtocounter{figure}{-1}建议：加强概念教学，让学生在动手操作过程中丰富常用长度单位和面积单位的量感，从而建立起正确的面积单位和长度单位的概念，厘清相应单位之间的进率。\questiontitle{典型题目2：M3AS201}用三角尺上的直角判断下面图形中的每个角，是直角的用直角符号在图中标出来．
+\addtocounter{figure}{-1}建议：加强概念教学，让学生在动手操作过程中丰富常用长度单位和面积单位的量感，从而建立起正确的面积单位和长度单位的概念，厘清相应单位之间的进率。\clearpage
+\questiontitle{典型题目2：M3AS201}用三角尺上的直角判断下面图形中的每个角，是直角的用直角符号在图中标出来．
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.2\textwidth]{ma_M3AS201_01}
 \end{figure}
 
 `r row <- point.rate[point.rate[,var.variable]=="M3AS201_X",]`- 内容维度：图形与几何- 能力维度：知识技能- 正确答案：在图中用直角符号标出2个直角- 本题满分：2分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%
-`r fig_name <- "全体学生在题目M3AS201上的作答情况" `
+`r fig_name <- "学生在题目M3AS201上的作答情况" `
 ```{r answer.M3AS201.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.ma
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school)),list(var = var.variable, value=list("M3AS201")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school,report$county)),list(var = var.variable, value=list("M3AS201")))
 plot.entry$ggplot$label$xlab <- "得分"
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
@@ -1362,7 +1363,8 @@ answer <- answer.all[answer.all[,var.scope]==report$school & answer.all[,var.dim
 
 
 下面将结合“数学理解”部分的典型题目做具体分析。
-\questiontitle{典型题目3：M3AO071}把52根小棒平均分成2份，每份有几根？小芳通过竖式计算得到了答案．竖式中箭头所指的数相当于下图中的（    ）．
+
+\clearpage\questiontitle{典型题目3：M3AO071}把52根小棒平均分成2份，每份有几根？小芳通过竖式计算得到了答案．竖式中箭头所指的数相当于下图中的（    ）．
 \begin{figure}[H]
   \begin{center}
     \includegraphics[width=0.16\textwidth]{ma_M3AO071_01}
@@ -1384,7 +1386,7 @@ C. &
 \end{table}
 
 `r row <- point.rate[point.rate[,var.variable]=="M3AO071_X",]`
-- 内容维度：数与运算- 能力维度：数学理解- 正确答案：D- 本题满分：4分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目M3AO071上的作答情况" `
+- 内容维度：数与运算- 能力维度：数学理解- 正确答案：D- 本题满分：4分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目M3AO071上的作答情况" `
 ```{r answer.M3AO071.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.ma
 plot.entry$data$keep <- list(list(var = var.scope, value=list(report$scope)),list(var = var.variable, value=list("M3AO071")))
@@ -1395,7 +1397,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}本题考查的是能借助具体例子，解释除法竖式每一步的含义。从全市层面看，较14年的得分率上升了近14%，说明绝大部分学生对于算式中每一步蕴含的具体意义的理解比较清晰，能结合具体的情境对数学对象进行理解和解释；也说明我们的教师在教学中改变了只重视解答，而忽视对操作中的每一步所表达的含义的关注，在除法计算教学中能借助操作帮助学生理解算理，通过数形结合，帮助学生沟通横式与竖式之间的联系，故得分率比较高。
+\end{figure}本题考查的是能借助具体例子，解释除法竖式每一步的含义。从全市层面看，较14年的得分率上升了近14%，说明绝大部分学生对于算式中每一步蕴含的具体意义的理解比较清晰，能结合具体的情境对数学对象进行理解和解释；也说明我们的教师在教学中改变了只重视解答，而忽视对操作中的每一步所表达的含义的关注，在除法计算教学中能借助操作帮助学生理解算理，通过数形结合，帮助学生沟通横式与竖式之间的联系，故得分率比较高。
 
 \questiontitle{典型题目4: M3AO111}
 当你面对西面时，你的右手边是（    ）面．
@@ -1409,7 +1411,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
   							
 \end{tabularx}
 \end{table}`r row <- point.rate[point.rate[,var.variable]=="M3AO111_X",]` 
-                           - 内容维度：图形与几何- 能力维度：数学理解- 正确答案：D- 本题满分：4分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目M3AO111上的作答情况" `
+                           - 内容维度：图形与几何- 能力维度：数学理解- 正确答案：D- 本题满分：4分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目M3AO111上的作答情况" `
 ```{r answer.M3AO1111.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.ma
 plot.entry$data$keep <- list(list(var = var.scope, value=list(report$scope)),list(var = var.variable, value=list("M3AO111")))
@@ -1420,7 +1422,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}本题考查的是能在东、南、西、北中根据给定的一个方向辨认其余三个方向。从学生作答情况看，有`r answer[answer[,var.variable]=="M3AO111" & answer[,var.key]=="A", var.param]`%的学生选择了A这个错误选项。通过与学生访谈了解到，这种典型错误中比较有代表性的想法是：“因为 ‘上北下南左西右东’，所以我的右手边是东面”。显然，这些学生并不能根据所给的一个方向，正确辨认其余的三个方向，而是将在地图上确认方向的方法机械迁移到现实情境中。建议教师在教学中要重视通过现实情境中确认方向的数学活动，培养学生的方向感，进一步发展空间观念。\clearpage### 规则运用
+\end{figure}本题考查的是能在东、南、西、北中根据给定的一个方向辨认其余三个方向。从学生作答情况看，有`r answer[answer[,var.variable]=="M3AO111" & answer[,var.key]=="A", var.param]`%的学生选择了A这个错误选项。通过与学生访谈了解到，这种典型错误中比较有代表性的想法是：“因为 ‘上北下南左西右东’，所以我的右手边是东面”。显然，这些学生并不能根据所给的一个方向，正确辨认其余的三个方向，而是将在地图上确认方向的方法机械迁移到现实情境中。建议教师在教学中要重视通过现实情境中确认方向的数学活动，培养学生的方向感，进一步发展空间观念。### 规则运用
 
 ```{r apply.point.rate.table.ma, echo=TRUE, message=TRUE, include = FALSE, result="hide"}
 
@@ -1524,10 +1526,10 @@ answer <- answer.all[answer.all[,var.scope]==report$school & answer.all[,var.dim
         \includegraphics[width=\textwidth]{ma_M3AO061_01}
     \end{subfigure}
 \end{figure}
-\addtocounter{figure}{-1}`r row <- point.rate[point.rate[,var.variable]=="M3AO061_X",]`                           - 内容维度：数与运算- 能力维度：规则运用- 正确答案：C- 本题满分：4分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目M3AO061上的作答情况" `
+\addtocounter{figure}{-1}`r row <- point.rate[point.rate[,var.variable]=="M3AO061_X",]`                           - 内容维度：数与运算- 能力维度：规则运用- 正确答案：C- 本题满分：4分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目M3AO061上的作答情况" `
 ```{r answer.M3AO061.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.ma
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school)),list(var = var.variable, value=list("M3AO061")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school,report$county)),list(var = var.variable, value=list("M3AO061")))
 plot.entry$ggplot$label$xlab <- "选项"
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
@@ -1539,7 +1541,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 
 本题考查的是能借助情境中已经给出的标准，对于较大数量进行估计。从学生作答情况看，`r answer[answer[,var.variable]=="M3AO061" & answer[,var.key]=="C",var.param]`%的学生能灵活运用估算方法，先将给出的标准“198本书”的数据简化为“200本书”，明确简化数据的目的是使较大数量的估计变得较为容易。从全市层面看，学生的典型错误中比较有代表性的思维过程是：先根据题中给出的条件列式计算：198×6=1188（本）得出6个书架一共放图书1188本，再将结果凑整为1000本。显然，还是有一部分学生并没有掌握估算的一般策略方法，将估算方法和将计算结果凑整的方法混淆。建议：
 
-教师在教学中还需进一步结合现实情境问题的解决，进一步强化学生的估算意识，掌握灵活估算方法，获得估算能力提高。\questiontitle{典型题目6: M3AS181}从下面4幅图中找出规律，在横线上画出第四幅图．
+教师在教学中还需进一步结合现实情境问题的解决，进一步强化学生的估算意识，掌握灵活估算方法，获得估算能力提高。\clearpage\questiontitle{典型题目6: M3AS181}从下面4幅图中找出规律，在横线上画出第四幅图．
 
 \begin{figure}[H]
 	\centering
@@ -1550,10 +1552,10 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 	\includegraphics[width=0.2\textwidth]{ma_M3AS181_02}
 \end{figure}- 本题满分：4分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%
 
-`r fig_name <- "全体学生在题目M3AS181上的作答情况" `
+`r fig_name <- "学生在题目M3AS181上的作答情况" `
 ```{r answer.M3AS181.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.ma
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school)),list(var = var.variable, value=list("M3AS181")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school,report$county)),list(var = var.variable, value=list("M3AS181")))
 plot.entry$ggplot$label$xlab <- "得分"
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
@@ -1576,7 +1578,8 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \addtocounter{figure}{-1}
 建议：
 
-在探索规律的过程中，必须引导学生通过动手操作活动，获得体验，进而寻求图形之间（数之间）的关系，培养学生数学推理能力。\questiontitle{典型题目7：M3AO101}
+在探索规律的过程中，必须引导学生通过动手操作活动，获得体验，进而寻求图形之间（数之间）的关系，培养学生数学推理能力。
+\questiontitle{典型题目7：M3AO101}
 \begin{wrapfigure}{r}{0.3\textwidth}
   \begin{center}
     \includegraphics[width=0.25\textwidth]{ma_M3AO101_01}
@@ -1598,10 +1601,10 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 - 内容维度：图形与几何- 能力维度：规则运用- 正确答案：B- 本题满分：4分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%
 
 
-`r fig_name <- "全体学生在题目M3AO101上的作答情况" `
+`r fig_name <- "学生在题目M3AO101上的作答情况" `
 ```{r answer.M3AO101.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.ma
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school)),list(var = var.variable, value=list("M3AO101")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school,report$county)),list(var = var.variable, value=list("M3AO101")))
 plot.entry$ggplot$label$xlab <- "选项"
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
@@ -1693,10 +1696,10 @@ answer <- answer.all[answer.all[,var.scope]==report$school & answer.all[,var.dim
 \end{tabularx}
 \end{table}
 `r row <- point.rate[point.rate[,var.variable]=="M3AO121_X",]`- 内容维度：数与运算- 能力维度：问题解决- 正确答案：A- 本题满分：4分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%
-`r fig_name <- "全体学生在题目M3AO121上的作答情况" `
+`r fig_name <- "学生在题目M3AO121上的作答情况" `
 ```{r answer. M3AO121.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.ma
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school)),list(var = var.variable, value=list("M3AO121")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school,report$county)),list(var = var.variable, value=list("M3AO121")))
 plot.entry$ggplot$label$xlab <- "选项"
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
@@ -1713,10 +1716,10 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 加强概念教学，注重让学生经历观察、比较、猜想、验证等数学活动，自我探索一些运算法则和方法，丰富数感，发展计算的灵活性。\questiontitle{典型题目9：M3AS211}商场对某玩具熊进行促销活动，单买1个是150元，如果购买1包（每包装3个玩具熊），则需要400元．某幼儿园需要购买14个这样的玩具熊，最少要花多少元？ 
 
 `r row <- point.rate[point.rate[,var.variable]=="M3AS211_X",]`
-- 内容维度：数与运算- 能力维度：问题解决- 正确答案：	- 解： 14÷3 = 4（包）……2（个）	- 400×4+150×2 = 1600+300 = 1900（元）	- 答：最少要花1900元。	- （解答方法不唯一）- 本题满分：6分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目M3AS211上的作答情况" `
+- 内容维度：数与运算- 能力维度：问题解决- 正确答案：	- 解： 14÷3 = 4（包）……2（个）	- 400×4+150×2 = 1600+300 = 1900（元）	- 答：最少要花1900元。	- （解答方法不唯一）- 本题满分：6分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目M3AS211上的作答情况" `
 ```{r answer.M3AS211.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.ma
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school)),list(var = var.variable, value=list("M3AS211")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school,report$county)),list(var = var.variable, value=list("M3AS211")))
 plot.entry$ggplot$label$xlab <- "得分"
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
@@ -1762,6 +1765,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 统计数据显示，有近四成的学生在解决此类较复杂的情境问题时，表现出的综合运用数学知识和方法解决非常规问题的能力还较弱。教师在教学中，还需进一步加强学生分析问题和灵活应用数学知识解决非常规问题能力训练。
 
 
+\clearpage
 \questiontitle{典型题目10（1）：M3AS231}用3个长4厘米，宽2厘米的长方形拼图形，不能重叠。
 
 \begin{figure}[H]
@@ -1779,10 +1783,10 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
   \end{center}
 \end{figure}
 
-`r row <- point.rate[point.rate[,var.variable]=="M3AS231_X",]`     - 内容维度：图形与几何- 能力维度：问题解决- 正确答案：（4×3+2）× 2 = 28（厘米）- 本题满分：2分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目M3AS231上的作答情况" `
+`r row <- point.rate[point.rate[,var.variable]=="M3AS231_X",]`     - 内容维度：图形与几何- 能力维度：问题解决- 正确答案：（4×3+2）× 2 = 28（厘米）- 本题满分：2分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目M3AS231上的作答情况" `
 ```{r answer.M3AS231.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.ma
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school)),list(var = var.variable, value=list("M3AS231")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school,report$county)),list(var = var.variable, value=list("M3AS231")))
 plot.entry$ggplot$label$xlab <- "得分"
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
@@ -1830,10 +1834,10 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
   \end{center}
 \end{figure}
 
-`r row <- point.rate[point.rate[,var.variable]=="M3AS232_X",]` - 内容维度：图形与几何- 能力维度：问题解决- 正确答案：（4+2×3）×2= 20(厘米)或（4+2+4）×2= 20(厘米)- 本题满分：5分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目M3AS232上的作答情况" `
+`r row <- point.rate[point.rate[,var.variable]=="M3AS232_X",]` - 内容维度：图形与几何- 能力维度：问题解决- 正确答案：（4+2×3）×2= 20(厘米)或（4+2+4）×2= 20(厘米)- 本题满分：5分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目M3AS232上的作答情况" `
 ```{r answer. M3AS232.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.ma
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school)),list(var = var.variable, value=list("M3AS232")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school,report$county)),list(var = var.variable, value=list("M3AS232")))
 plot.entry$ggplot$label$xlab <- "得分"
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
@@ -1859,7 +1863,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 
 \hline
 \end{tabularx}
-\end{table}从学生作答情况看，主要问题如下：1.	审题不清。要求拼出一种不同形状的长方形，结果学生拼出的并不是长方形。2.	图画对了，但对“周长”概念的理解不清晰，算成了三个长方形周长之和，或知道要从三个长方形周长之和中去掉一些线段长度，但又不清晰要去掉多少条。3.	混淆“面积”与“周长”概念，要求周长，结果求面积了。4.	完全不理解题意，瞎做。\begin{figure}[H]
+\end{table}从学生作答情况看，主要问题如下：1.	审题不清。要求拼出一种不同形状的长方形，结果学生拼出的并不是长方形。2.	图画对了，但对“周长”概念的理解不清晰，算成了三个长方形周长之和，或知道要从三个长方形周长之和中去掉一些线段长度，但又不清晰要去掉多少条。3.	混淆“面积”与“周长”概念，要求周长，结果求面积了。4.	完全不理解题意，随意作答。\begin{figure}[H]
   \begin{center}
     \includegraphics[width=\textwidth]{ma_M3AS232_03}
   \end{center}
@@ -1874,10 +1878,10 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \end{figure}
 
 （3）请根据这个月的天数判断这是几月份，请你说说理由。
-`r row <- point.rate[point.rate[,var.variable]=="M3AS223_X",]`- 内容维度：统计与概率- 能力维度：问题解决- 正确答案：根据总天数是28天，判断是2月份- 本题满分：4分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目M3AS223上的作答情况" `
+`r row <- point.rate[point.rate[,var.variable]=="M3AS223_X",]`- 内容维度：统计与概率- 能力维度：问题解决- 正确答案：根据总天数是28天，判断是2月份- 本题满分：4分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目M3AS223上的作答情况" `
 ```{r answer.M3AS223.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$answer.segment.bar.ma
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school)),list(var = var.variable, value=list("M3AS223")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$school,report$county)),list(var = var.variable, value=list("M3AS223")))
 plot.entry$ggplot$label$xlab <- "得分"
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
@@ -1936,7 +1940,8 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-#### 学生家庭的藏书量
+\clearpage
+#### 学生家庭的藏书量
 
 `r fig_name <- "四年级学生家里的图书量" `
 图\ref{fig:`r fig_name`}给出了四年级学生家里图书量的总体情况及各群体之间的比较。
@@ -1964,7 +1969,8 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-#### 学生出境旅游情况
+\clearpage
+#### 学生出境旅游情况
 
 `r fig_name <- "四年级学生出境旅游的总体情况" `
 图\ref{fig:`r fig_name`}给出了四年级学生家庭出境旅游的总体情况及各群体之间的比较。
@@ -1992,7 +1998,8 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-#### 学生母亲的受教育情况
+\clearpage
+#### 学生母亲的受教育情况
 
 `r fig_name <- "四年级学生母亲的受教育情况" `
 图\ref{fig:`r fig_name`}给出了四年级学生的母亲受教育的总体情况及各群体之间的比较。
@@ -2021,7 +2028,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-`r fig_name <- "四年级学生放假时每天的睡眠时间" `
+\clearpage`r fig_name <- "四年级学生放假时每天的睡眠时间" `
 图\ref{fig:`r fig_name`}给出了四年级学生放假时（包括双休日）每天睡眠时间的总体情况。
 ```{r sleep_weekend.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$sleep_weekend.bar
@@ -2045,7 +2052,8 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \label{fig:`r fig_name`}
 \end{figure}
 
-`r fig_name <- "四年级学生睡眠不充足的原因" `
+\clearpage
+`r fig_name <- "四年级学生睡眠不充足的原因" `
 图\ref{fig:`r fig_name`}给出了四年级学生睡眠不充足的原因：
 ```{r sleep_not_enough.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$sleep_not_enough.bar
@@ -2069,7 +2077,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}#### 学校作业难易程度
+\end{figure}\clearpage#### 学校作业难易程度
 
 `r fig_name <- "四年级学生作业的难易程度" `
 图\ref{fig:`r fig_name`}给出了四年级学生学校作业的难易程度的总体情况及各群体之间的比较。
@@ -2098,7 +2106,9 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \label{fig:`r fig_name`}
 \end{figure}
 
-\myschool{以下为对参加了家教补习、课外辅导的学生情况的进一步分析。}
+\clearpage
+
+\mynote{以下为对参加了家教补习、课外辅导的学生情况的进一步分析}
 
 `r fig_name <- "四年级学生参加与考试科目相关的家教补习或课外辅导情况" `
 图\ref{fig:`r fig_name`}给出了四年级学生每周参加与考试科目相关的家教补习、课外辅导的总体情况及各群体之间的比较。
@@ -2124,7 +2134,8 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-`r fig_name <- "四年级学生参加与考试科目相关的家教补习、课外辅导的主要原因" `
+\clearpage
+`r fig_name <- "四年级学生参加与考试科目相关的家教补习、课外辅导的主要原因" `
 图\ref{fig:`r fig_name`}给出了四年级学生每周参加与考试科目相关的家教补习、课外辅导的主要原因
 ```{r extra_homework_reason.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$extra_homework_reason.bar
@@ -2152,7 +2163,9 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry,fig_name = fig_n
 \label{fig:`r fig_name`}
 \end{figure}
 
-以下为对参加校外兴趣班的学生情况的进一步分析。
+\clearpage
+
+\mynote{以下为对参加校外兴趣班的学生情况的进一步分析}
 
 `r fig_name <- "四年级学生参加校外兴趣班的种类" `
 图\ref{fig:`r fig_name`}给出了四年级学生参加校外兴趣班种类的比例情况。
@@ -2178,7 +2191,8 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-`r fig_name <- "四年级学生参加校外兴趣班的主要原因" `
+\clearpage
+`r fig_name <- "四年级学生参加校外兴趣班的主要原因" `
 图\ref{fig:`r fig_name`}给出了四年级学生参加校外兴趣班的主要原因
 ```{r extra_interesting_reason.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$extra_interesting_reason.bar
@@ -2204,7 +2218,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-#### 学生课外阅读量调查结果
+\clearpage#### 学生课外阅读量调查结果
 
 `r fig_name <- "四年级学生过去一年内阅读课外读物的数量" `
 图\ref{fig:`r fig_name`}给出了四年级学生过去一年内阅读课外读物数量的总体情况及各群体之间的比较。
@@ -2232,7 +2246,8 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-## 与师生关系有关问题的调查结果
+\clearpage
+## 与师生关系有关问题的调查结果
 
 本问卷对教师是否公平、平等的对待学生，是否尊重学生，是否信任学生这三个方面进行了调查，现将调查到的师生关系进行如下分析。
 
@@ -2261,7 +2276,8 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-`r fig_name <- "四年级学生对教师是否信任学生的评价" `
+\clearpage
+`r fig_name <- "四年级学生对教师是否信任学生的评价" `
 图\ref{fig:`r fig_name`}给出了四年级学生对教师是否信任学生的评价的总体情况。
 ```{r teacher_trust.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$teacher_trust.bar
@@ -2287,7 +2303,8 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-## 与学习动机有关问题的调查结果
+\clearpage
+## 与学习动机有关问题的调查结果
 
 `r fig_name <- "四年级学生对学习动机相关问题的看法" `
 图\ref{fig:`r fig_name`}给出了四年级学生对学习动机相关问题看法的情况。
@@ -2315,7 +2332,8 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-## 与学习自信心有关问题的调查结果
+\clearpage
+## 与学习自信心有关问题的调查结果
 
 `r fig_name <- "四年级学生对学习自信心相关问题的看法" `
 图\ref{fig:`r fig_name`}给出了四年级学生对学习自信心相关问题看法的情况。
@@ -2344,7 +2362,8 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-## 与教师教学方式有关问题的调查结果
+\clearpage
+## 与教师教学方式有关问题的调查结果
 
 本问卷对教师教学方式中的因材施教、互动教学、鼓励学生探究与发展这三个方面进行了调查，现将调查到的教师教学方式进行如下分析。
 
@@ -2372,7 +2391,8 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-`r fig_name <- "四年级学生对教师教学方式的评价——鼓励学生探究与发展" `
+\clearpage
+`r fig_name <- "四年级学生对教师教学方式的评价——鼓励学生探究与发展" `
 图\ref{fig:`r fig_name`}给出了四年级学生对教师鼓励学生探究与发展的评价。
 ```{r teaching_gulitanjiu.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$teaching_gulitanjiu.bar
@@ -2487,7 +2507,8 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-## 与亲子关系有关问题的调查`r fig_name <- "家长主动询问孩子在校发生情况" `
+\clearpage
+## 与亲子关系有关问题的调查`r fig_name <- "家长主动询问孩子在校发生情况" `
 图\ref{fig:`r fig_name`}给出了家长主动询问孩子在校情况及各群体之间的比较。
 ```{r query_about_school.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$query_about_school.bar
@@ -2511,7 +2532,9 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-`r fig_name <- "家长认为孩子平均每天在家做家务情况" `
+
+
+\clearpage`r fig_name <- "家长认为孩子平均每天在家做家务情况" `
 图\ref{fig:`r fig_name`}给出了孩子平均每天在家做家务的总体情况及各群体之间的比较。
 ```{r family_work.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$family_work.bar
@@ -2536,7 +2559,8 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-`r fig_name <- "家长与孩子吵架频率的总体情况" `
+\clearpage
+`r fig_name <- "家长与孩子吵架频率的总体情况" `
 图\ref{fig:`r fig_name`}给出了家长与孩子吵架频率的总体情况
 ```{r quarrel_frequency.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$quarrel_frequency.bar
@@ -2559,7 +2583,8 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}## 与家长辅导有关问题的调查结果`r fig_name <- "家长辅导有关问题的总体情况" `
+\end{figure}\clearpage
+## 与家长辅导有关问题的调查结果`r fig_name <- "家长辅导有关问题的总体情况" `
 图\ref{fig:`r fig_name`}给出了与家长辅导有关问题的总体情况
 ```{r family_coach.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$family_coach.bar
@@ -2582,6 +2607,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
+\clearpage
 ## 与家长对学校教育感受问题的调查结果`r fig_name <- "家长对学校教育感受的情况" `
 图\ref{fig:`r fig_name`}给出了家长对学校教育感受的情况。
 ```{r parent_feeling.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
@@ -2606,7 +2632,8 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-## 与家长教育观有关问题的调查结果`r fig_name <- "家长教育观的总体情况" `
+\clearpage
+## 与家长教育观有关问题的调查结果`r fig_name <- "家长教育观的总体情况" `
 图\ref{fig:`r fig_name`}给出了家长教育观的总体情况
 ```{r parent_philosophy.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$parent_philosophy.bar
@@ -2646,7 +2673,7 @@ var.topic <- "主题" `
 `r fig_name <- "四年级学生学业成绩标准达成度指数" `
 ```{r passed.rate.all.school.index.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$school.index.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$scope)),list(var = var.subject, value=list("学业成绩")),list(var = var.topic, value=list("成绩达标指数")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$scope)),list(var = var.subject, value=list("学业成绩")),list(var = var.topic, value=list("成绩标准达成度指数")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -2660,7 +2687,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 `r fig_name <- "四年级语文学业成绩标准达成度指数" `
 ```{r passed.rate.cn.school.index.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$school.index.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$scope)),list(var = var.subject, value=list("语文")),list(var = var.topic, value=list("成绩达标指数")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$scope)),list(var = var.subject, value=list("语文")),list(var = var.topic, value=list("成绩标准达成度指数")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -2673,7 +2700,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 `r fig_name <- "四年级数学学业成绩标准达成度指数" `
 ```{r passed.rate.ma.school.index.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$school.index.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$scope)),list(var = var.subject, value=list("数学")),list(var = var.topic, value=list("成绩达标指数")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$scope)),list(var = var.subject, value=list("数学")),list(var = var.topic, value=list("成绩标准达成度指数")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -2744,7 +2771,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 `r fig_name <- "四年级学生学业成绩个体间均衡指数" `
 ```{r individual.balance.all.school.index.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$school.index.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$scope)),list(var = var.subject, value=list("学业成绩")),list(var = var.topic, value=list("个体间均衡指数")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$scope)),list(var = var.subject, value=list("学业成绩")),list(var = var.topic, value=list("学业成绩个体间均衡指数")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -2756,7 +2783,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 `r fig_name <- "四年级学生语文学业成绩个体间均衡指数" `
 ```{r individual.balance.cn.school.index.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$school.index.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$scope)),list(var = var.subject, value=list("语文")),list(var = var.topic, value=list("个体间均衡指数")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$scope)),list(var = var.subject, value=list("语文")),list(var = var.topic, value=list("学业成绩个体间均衡指数")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -2770,7 +2797,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 `r fig_name <- "四年级学生数学学业成绩个体间均衡指数" `
 ```{r individual.balance.ma.school.index.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$school.index.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$scope)),list(var = var.subject, value=list("数学")),list(var = var.topic, value=list("个体间均衡指数")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$scope)),list(var = var.subject, value=list("数学")),list(var = var.topic, value=list("学业成绩个体间均衡指数")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -2789,7 +2816,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 `r fig_name <- "四年级学生学习自信心指数" `
 ```{r learning.confidence.school.index.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$school.index.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$scope)),list(var = var.subject, value=list("学生问卷")),list(var = var.topic, value=list("自信心指数")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$scope)),list(var = var.subject, value=list("学生问卷")),list(var = var.topic, value=list("学习自信心指数")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -2805,7 +2832,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 `r fig_name <- "四年级学生学习动机指数" `
 ```{r learning.motivation.school.index.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$school.index.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$scope)),list(var = var.subject, value=list("学生问卷")),list(var = var.topic, value=list("动机指数")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$scope)),list(var = var.subject, value=list("学生问卷")),list(var = var.topic, value=list("学习动机指数")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -2825,7 +2852,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 `r fig_name <- "四年级学生学习压力指数" `
 ```{r learning.pressure.school.index.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$school.index.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$scope)),list(var = var.subject, value=list("学生问卷")),list(var = var.topic, value=list("压力指数")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$scope)),list(var = var.subject, value=list("学生问卷")),list(var = var.topic, value=list("学习压力指数")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -2842,7 +2869,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 `r fig_name <- "四年级学生对学校认同度指数" `
 ```{r school.identity.school.index.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$school.index.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$scope)),list(var = var.subject, value=list("学生问卷")),list(var = var.topic, value=list("认同度指数")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$scope)),list(var = var.subject, value=list("学生问卷")),list(var = var.topic, value=list("学校认同度指数")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -2853,14 +2880,14 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 
 ## 学生学业负担指数
 
-### 学业负担综合指数我们通过调查学生的睡眠时间、做作业时间和补课时间来反映当前学生的学业负担。学业负担指数是通过采集学生问卷数据，进行数据分析得到的结果。学生学业负担指数分为9级，指数越高，表示该区域学生学业负担越轻。\mylist
+### 学业负担综合指数我们通过调查学生的睡眠时间、做作业时间和补课时间来反映当前学生的学业负担。学业负担综合指数是通过采集学生问卷数据，进行数据分析得到的结果。学生学业负担综合指数分为9级，指数越高，表示该区域学生学业负担越轻。\mylist
 - 9级：表示学业负担适中与较轻\footnote{我们将以下三个条件满足两个的小学生界定为学业负担适中与较轻的学生：1、睡眠时间在9小时以上；2、做作业时间在1小时以下；3、每周参加与考试学科的补课在2小时以下。}的学生所占比例在90%以上（含90%）- 8级：表示学业负担适中与较轻的学生所占比例在80%-90%之间（含80%）- 7级：表示学业负担适中与较轻的学生所占比例在70%-80%之间（含70%）- 6级：表示学业负担适中与较轻的学生所占比例在60%-70%之间（含60%）- 5级：表示学业负担适中与较轻的学生所占比例在50%-60%之间（含50%）- 4级：表示学业负担适中与较轻的学生所占比例在40%-50%之间（含40%）- 3级：表示学业负担适中与较轻的学生所占比例在30%-40%之间（含30%）- 2级：表示学业负担适中与较轻的学生所占比例在20%-30%之间（含20%）- 1级：表示学业负担适中与较轻的学生所占比例在20%以下
 \mytext
 
-`r fig_name <- "四年级学生学业负担指数" `
+`r fig_name <- "四年级学生学业负担综合指数" `
 ```{r burden.school.index.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$school.index.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$scope)),list(var = var.subject, value=list("学生问卷")),list(var = var.topic, value=list("学业负担指数")))
+plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$scope)),list(var = var.subject, value=list("学生问卷")),list(var = var.topic, value=list("学业负担综合指数")))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
@@ -2991,19 +3018,19 @@ index  <- index.all[index.all[,var.scope]==report$scope,]
 
 & \makecell[c]{\mytablehead{本区}} & \makecell[c]{\mytablehead{本校}} \\ \hline
 
-\makecell[c]{学业成绩标准达成指数} & \makecell[c]{`r index.p[index.p[,var.topic]=="成绩达标指数" & index.p[,var.subject]=="学业成绩",var.param]`} & \makecell[c]{`r index[index[,var.topic]=="成绩达标指数" & index.p[,var.subject]=="学业成绩",var.param]`} \\ \hline 
+\makecell[c]{学业成绩标准达成指数} & \makecell[c]{`r index.p[index.p[,var.topic]=="成绩标准达成度指数" & index.p[,var.subject]=="学业成绩",var.param]`} & \makecell[c]{`r index[index[,var.topic]=="成绩标准达成度指数" & index.p[,var.subject]=="学业成绩",var.param]`} \\ \hline 
 
 \makecell[c]{高层次思维能力指数} &  \makecell[c]{`r index.p[index.p[,var.topic]=="高层次思维能力指数" & index.p[,var.subject]=="学业成绩",var.param]`} &  \makecell[c]{`r index[index[,var.topic]=="高层次思维能力指数" & index.p[,var.subject]=="学业成绩",var.param]`}\\ \hline 
 
-\makecell[c]{学业成绩个体间均衡指数} &  \makecell[c]{`r index.p[index.p[,var.topic]=="个体间均衡指数" & index.p[,var.subject]=="学业成绩",var.param]`} &  \makecell[c]{`r index[index[,var.topic]=="个体间均衡指数" & index.p[,var.subject]=="学业成绩",var.param]`} \\ \hline 
+\makecell[c]{学业成绩个体间均衡指数} &  \makecell[c]{`r index.p[index.p[,var.topic]=="学业成绩个体间均衡指数" & index.p[,var.subject]=="学业成绩",var.param]`} &  \makecell[c]{`r index[index[,var.topic]=="学业成绩个体间均衡指数" & index.p[,var.subject]=="学业成绩",var.param]`} \\ \hline 
 
-\makecell[c]{自信心指数} &  \makecell[c]{`r index.p[index.p[,var.topic]=="自信心指数",var.param]`} &  \makecell[c]{`r index[index[,var.topic]=="自信心指数",var.param]`} \\ \hline 
+\makecell[c]{自信心指数} &  \makecell[c]{`r index.p[index.p[,var.topic]=="学习自信心指数",var.param]`} &  \makecell[c]{`r index[index[,var.topic]=="学习自信心指数",var.param]`} \\ \hline 
 
-\makecell[c]{学习动机指数} &  \makecell[c]{`r index.p[index.p[,var.topic]=="动机指数",var.param]`} &  \makecell[c]{`r index[index[,var.topic]=="动机指数",var.param]`} \\ \hline 
+\makecell[c]{学习动机指数} &  \makecell[c]{`r index.p[index.p[,var.topic]=="学习动机指数",var.param]`} &  \makecell[c]{`r index[index[,var.topic]=="学习动机指数",var.param]`} \\ \hline 
 
-\makecell[c]{学习压力指数} &  \makecell[c]{`r index.p[index.p[,var.topic]=="压力指数",var.param]`} &  \makecell[c]{`r index[index[,var.topic]=="压力指数",var.param]`} \\ \hline 
+\makecell[c]{学习压力指数} &  \makecell[c]{`r index.p[index.p[,var.topic]=="学习压力指数",var.param]`} &  \makecell[c]{`r index[index[,var.topic]=="学习压力指数",var.param]`} \\ \hline 
 
-\makecell[c]{学校认同度指数} &  \makecell[c]{`r index.p[index.p[,var.topic]=="认同度指数",var.param]`} &  \makecell[c]{`r index[index[,var.topic]=="认同度指数",var.param]`} \\ \hline 
+\makecell[c]{学校认同度指数} &  \makecell[c]{`r index.p[index.p[,var.topic]=="学校认同度指数",var.param]`} &  \makecell[c]{`r index[index[,var.topic]=="学校认同度指数",var.param]`} \\ \hline 
 
 \makecell[c]{睡眠指数} &  \makecell[c]{`r index.p[index.p[,var.topic]=="睡眠指数",var.param]`} &  \makecell[c]{`r index[index[,var.topic]=="睡眠指数",var.param]`} \\ \hline 
 

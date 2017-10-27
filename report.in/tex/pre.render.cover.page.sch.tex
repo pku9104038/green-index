@@ -6,13 +6,15 @@
 \mytitle{`r report$report`}
 \myschool{`r report$school.hq`}
 ```{r cover.page.campus, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+campus <- ""
+
 if(is.na(report$school.camp)){
 	campus <- ""
 }else{
 	campus <- paste0("（",report$school.camp,"）")
 }
 ```
-\myschool{（`r campus`）}
+\myschool{`r campus`}
 
 
 \vfill

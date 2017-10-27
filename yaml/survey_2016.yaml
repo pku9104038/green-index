@@ -1436,9 +1436,9 @@ global:
         fig_limit: &plot_multi_fig_limit
           - 50
         fig_width: &plot_multi_fig_width
-          -  25
+          -  22
         fig_height: &plot_multi_fig_height
-          - 6
+          - 5.28
         lab_size: &plot_multi_fig_lab_size
           - 12
         bar_width: &plot_multi_fig_bar_width
@@ -1450,6 +1450,18 @@ global:
       legend_right: &plot_legend_right
         position: "right"
         direction: "vertical"
+      legend_top_big: &plot_legend_top_big
+        position: "top"
+        direction: "horizontal"
+        width: 1
+        height: 1
+        size: 12
+      legend_right_big: &plot_legend_right_big
+        position: "right"
+        direction: "vertical"
+        width: 1
+        height: 1
+        size: 12
       geom: &plot_geom
         bar_segment: &plot_bar_segment
           - "分数段条形图"
@@ -8965,16 +8977,16 @@ report:
   province: "上海市"
   skip: TRUE #skip other county／school  
   test:
-    county: "奉贤区"
+    county: "浦东新区"
     # "黄浦区" 
-    school: "上海奉贤区民办青溪小学"
-    #  "" 
+    school: "上海市浦东新区第二中心小学（巨野校区）"
+    #  "上海浦东新区民办金德小学" 
     #"上海市浦东新区第二中心小学（巨野校区）"
     # "上海市西郊学校"
     # 
     # "上海浦东新区民办联营小学" #    缺学生问卷
     # "上海市浦东新区第二中心小学(张江校区)" 缺校长问卷
-  brake: TRUE
+  brake: FALSE
   dummy.fig: *plot_dummy_fig
   geom: *plot_geom
   output:
@@ -9030,8 +9042,6 @@ report:
       process: FALSE
       table: "统计指标汇总"
       markdown: "province_base.Rmd"
-
-      
 
       year: "2016年度"
       tier: *tier_province
@@ -9176,16 +9186,16 @@ report:
               - 
                 arg: "Group"
                 var: *subject
-
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
+            text:
+              vjust: 0.5
             group:
-              variable: *subject
+              variable: "Group"
               scales: "fixed"
               position: "bottom"
-
             legend: *plot_legend_top
             bar:
               width: 0.3
@@ -17597,7 +17607,7 @@ report:
                   value: *per_total
 
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "province_green.Rmd"
 
@@ -17774,9 +17784,9 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_dodging
-            position: "dodge" 
             text:
               vjust: 0.5
+            position: "dodge"
             bar:
               width: *plot_bar_width
             label:
@@ -21942,22 +21952,29 @@ report:
               -  
                 arg: "label"
                 var: *label
+            postkeep:
+              - 
+                variable: "year"
+                value: 
+                  - "2014年"
+                  - "2016年"
+
             order:
               - 
                 var: "x"
                 list:
-                  - "成绩标准达成系数" 
-                  - "高层次思维能力系数"
-                  - "学业成绩学校间均衡系数"
-                  - "学习动机系数"
-                  - "学习压力系数"
-                  - "睡眠系数"
-                  - "作业系数"
-                  - "补课系数"
-                  - "师生关系系数"
-                  - "教学方式系数"
-                  - "课程领导力系数"
-                  - "家庭背景影响系数"
+                  - *coef_passed_rate 
+                  - *coef_high_level_thinking
+                  - *coef_school_balance
+                  - *coef_motivation
+                  - *coef_pressure
+                  - *coef_sleep
+                  - *coef_writing_homework
+                  - *coef_extra_homework
+                  - *coef_teacher
+                  - *coef_teaching
+                  - *coef_course_leadership
+                  - *coef_economic
             
           ggplot:
             width: 25
@@ -21968,13 +21985,13 @@ report:
             #  vjust: 0.5
             bar:
               width: *plot_bar_width_fat
-            legend: *plot_legend_right
+            legend: *plot_legend_right_big
             label:
               xlab: ""
               ylab: "百分数"
             axisx:
               text_angle: 90
-              text_size: 12
+              text_size: 16
             #axisy:
             #  discrete_limits: *axisy_discrete_limits_index
             #  ylim: *axisy_ylim
@@ -21989,9 +22006,6 @@ report:
                   variable: *subject
                   value: *subject_all
                 -
-                  variable: *tier
-                  value: *tier_province
-                -
                   variable: *perspective
                   value: *per_total
                 - 
@@ -22001,22 +22015,6 @@ report:
                 -
                   variable: *subject
                   value: *subject_all
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *idx_passed_rate
-                - 
-                  variable: *tier
-                  value: *tier_county
-              -
-                -
-                  variable: *subject
-                  value: *subject_all
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
@@ -22032,43 +22030,11 @@ report:
                   value: *per_total
                 - 
                   variable: *topic
-                  value: *idx_high_level_thinking
-                - 
-                  variable: *tier
-                  value: *tier_county
-              -
-                -
-                  variable: *subject
-                  value: *subject_all
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
                   value: *idx_school_balance
-              -
-                -
-                  variable: *subject
-                  value: *subject_all
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *idx_school_balance
-                - 
-                  variable: *tier
-                  value: *tier_county
               -
                 -
                   variable: *subject
                   value: *survey_st
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
@@ -22084,43 +22050,11 @@ report:
                   value: *per_total
                 - 
                   variable: *topic
-                  value: *idx_confidence
-                - 
-                  variable: *tier
-                  value: *tier_county
-              -
-                -
-                  variable: *subject
-                  value: *survey_st
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
                   value: *idx_motivation
               -
                 -
                   variable: *subject
                   value: *survey_st
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *idx_motivation
-                - 
-                  variable: *tier
-                  value: *tier_county
-              -
-                -
-                  variable: *subject
-                  value: *survey_st
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
@@ -22136,23 +22070,7 @@ report:
                   value: *per_total
                 - 
                   variable: *topic
-                  value: *idx_pressure
-                - 
-                  variable: *tier
-                  value: *tier_county
-              -
-                -
-                  variable: *subject
-                  value: *survey_st
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *idx_sleep
+                  value: *idx_school_identiy
               -
                 -
                   variable: *subject
@@ -22163,16 +22081,10 @@ report:
                 - 
                   variable: *topic
                   value: *idx_sleep
-                - 
-                  variable: *tier
-                  value: *tier_county
               -
                 -
                   variable: *subject
                   value: *survey_st
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
@@ -22188,43 +22100,11 @@ report:
                   value: *per_total
                 - 
                   variable: *topic
-                  value: *idx_writing_homework
-                - 
-                  variable: *tier
-                  value: *tier_county            
-              -
-                -
-                  variable: *subject
-                  value: *survey_st
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
                   value: *idx_extra_homework
               -
                 -
                   variable: *subject
                   value: *survey_st
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *idx_extra_homework
-                - 
-                  variable: *tier
-                  value: *tier_county            
-              -
-                -
-                  variable: *subject
-                  value: *survey_st
-                -
-                  variable: *tier
-                  value: *tier_province
                 -
                   variable: *perspective
                   value: *per_total
@@ -22240,49 +22120,7 @@ report:
                   value: *per_total
                 - 
                   variable: *topic
-                  value: *idx_teacher
-                - 
-                  variable: *tier
-                  value: *tier_county              
-              -
-                -
-                  variable: *subject
-                  value: *survey_st
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
                   value: *idx_teaching
-              -
-                -
-                  variable: *subject
-                  value: *survey_st
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *idx_teaching
-                - 
-                  variable: *tier
-                  value: *tier_county              
-              -
-                -
-                  variable: *subject
-                  value: *survey_te
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *idx_course_leadership
               -
                 -
                   variable: *subject
@@ -22293,22 +22131,6 @@ report:
                 - 
                   variable: *topic
                   value: *idx_course_leadership
-                - 
-                  variable: *tier
-                  value: *tier_county            
-              -
-                -
-                  variable: *subject
-                  value: *survey_st
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *idx_economic
               -
                 -
                   variable: *subject
@@ -22319,10 +22141,7 @@ report:
                 - 
                   variable: *topic
                   value: *idx_economic
-                - 
-                  variable: *tier
-                  value: *tier_county
-
+              
             aes:
               - 
                 arg: "x"
@@ -22342,7 +22161,7 @@ report:
                 var: "x"
                 value:
                   - "本市"
-                  - "75区"
+                  - "区75"
 
             #order: 
             #  -
@@ -24544,6 +24363,15 @@ report:
               -  
                 arg: "label"
                 var: *label
+            #order:
+            #  -
+            #    var: "x"
+            #    list: 
+            #      - "0-5"
+            #      - "5.5-9"
+            #      - "9.5-12"
+            #      - "12.5-15"
+
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
@@ -26475,7 +26303,8 @@ report:
               variable: *subject
               scales: "fixed"
               position: "bottom"
-
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: 0.3
@@ -26531,6 +26360,8 @@ report:
             width: *plot_multi_fig_width
             height: *plot_multi_fig_height
             geom: *plot_bar_stacking 
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_multi_fig_bar_width
@@ -26621,6 +26452,8 @@ report:
             height: *plot_multi_fig_height
             geom: *plot_box
             legend: *plot_legend_top
+            text:
+              vjust: 0.5
             bar:
               width: *plot_multi_fig_bar_width
             label:
@@ -26679,6 +26512,8 @@ report:
             height: *plot_multi_fig_height
             geom: *plot_bar_stacking 
             legend: *plot_legend_top
+            text:
+              vjust: 0.5
             bar:
               width: *plot_multi_fig_bar_width
             label:
@@ -26768,6 +26603,8 @@ report:
             height: *plot_multi_fig_height
             geom: *plot_box
             legend: *plot_legend_top
+            text:
+              vjust: 0.5
             bar:
               width: *plot_multi_fig_bar_width
             label:
@@ -26866,6 +26703,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
+            text:
+              vjust: 0.5
             group:
               variable: *subject
               scales: "fixed"
@@ -26916,6 +26755,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
+            text:
+              vjust: 0.5
             group:
               variable: *subject
               scales: "fixed"
@@ -27055,7 +26896,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width
@@ -27178,6 +27020,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
+            text:
+              vjust: 0.5
             legend: 
               position: "top"
               direction: "horizontal"
@@ -27423,7 +27267,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width
@@ -27547,7 +27392,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width
@@ -27669,7 +27515,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width
@@ -27791,7 +27638,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width
@@ -27913,7 +27761,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width
@@ -28035,7 +27884,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width
@@ -28228,7 +28078,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width
@@ -28350,7 +28201,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width
@@ -28700,7 +28552,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width
@@ -29073,7 +28926,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width
@@ -29253,7 +29107,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width_thin
@@ -29372,7 +29227,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width
@@ -31365,7 +31221,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width_thin
@@ -31469,7 +31326,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width_thin
@@ -31574,7 +31432,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width_thin
@@ -31679,7 +31538,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width_thin
@@ -31764,7 +31624,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width_thin
@@ -31868,7 +31729,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width_thin
@@ -31946,7 +31808,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width_thin
@@ -32043,7 +31906,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width_thin
@@ -32148,7 +32012,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width_thin
@@ -32253,7 +32118,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width_thin
@@ -32358,7 +32224,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width_thin
@@ -32455,7 +32322,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width_thin
@@ -33187,7 +33055,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width_thin
@@ -33272,7 +33141,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width_thin
@@ -33357,7 +33227,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width_thin
@@ -33444,7 +33315,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width_thin
@@ -33529,7 +33401,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width_thin
@@ -33606,7 +33479,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             #legend: *plot_legend_top
             bar:
               width: *plot_bar_width_thin
@@ -33683,7 +33557,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             #legend: *plot_legend_top
             bar:
               width: *plot_bar_width_thin
@@ -33760,7 +33635,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             #legend: *plot_legend_top
             bar:
               width: *plot_bar_width_thin
@@ -33837,7 +33713,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             #legend: *plot_legend_top
             bar:
               width: *plot_bar_width_thin
@@ -33916,7 +33793,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             #legend: *plot_legend_top
             bar:
               width: *plot_bar_width_thin
@@ -33994,7 +33872,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             #legend: *plot_legend_top
             bar:
               width: *plot_bar_width_thin
@@ -34140,7 +34019,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width_thin
@@ -34225,7 +34105,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width_thin
@@ -34310,7 +34191,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width_thin
@@ -34524,7 +34406,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width
@@ -34622,7 +34505,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width
@@ -34718,7 +34602,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width
@@ -34820,7 +34705,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width
@@ -34921,7 +34807,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width
@@ -35023,7 +34910,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width
@@ -35283,7 +35171,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
-            
+            text:
+              vjust: 0.5
             legend: *plot_legend_top
             bar:
               width: *plot_bar_width
@@ -35433,6 +35322,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
+            text:
+              vjust: 0.5
             group:
               variable: "alias"
               scales: "fixed"
@@ -35581,7 +35472,7 @@ report:
                   value: *top_point_rate
 
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "county_green.Rmd"
 
@@ -35732,6 +35623,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -35768,21 +35661,7 @@ report:
                 - 
                   variable: *topic
                   value: *idx_passed_rate
-                                    
-              -
-                -
-                  variable: *subject
-                  value: *subject_all
-                -
-                  variable: *tier
-                  value: *tier_school
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *idx_passed_rate
-                             
+                                                       
             aes:
               - 
                 arg: "x"
@@ -35809,6 +35688,8 @@ report:
             width: *plot_multi_fig_width
             height: *plot_multi_fig_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -35926,6 +35807,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -35962,21 +35845,7 @@ report:
                 - 
                   variable: *topic
                   value: *idx_passed_rate
-                                    
-              -
-                -
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_school
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *idx_passed_rate
-                             
+                                                             
             aes:
               - 
                 arg: "x"
@@ -36003,6 +35872,8 @@ report:
             width: *plot_multi_fig_width
             height: *plot_multi_fig_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -36120,6 +35991,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -36156,21 +36029,7 @@ report:
                 - 
                   variable: *topic
                   value: *idx_passed_rate
-                                    
-              -
-                -
-                  variable: *subject
-                  value: *subject_ma
-                -
-                  variable: *tier
-                  value: *tier_school
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *idx_passed_rate
-                             
+                                                             
             aes:
               - 
                 arg: "x"
@@ -36197,6 +36056,8 @@ report:
             width: *plot_multi_fig_width
             height: *plot_multi_fig_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -36314,6 +36175,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -36351,19 +36214,6 @@ report:
                   variable: *topic
                   value: *idx_high_level_thinking
                                     
-              -
-                -
-                  variable: *subject
-                  value: *subject_all
-                -
-                  variable: *tier
-                  value: *tier_school
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *idx_high_level_thinking
                              
             aes:
               - 
@@ -36391,6 +36241,8 @@ report:
             width: *plot_multi_fig_width
             height: *plot_multi_fig_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -36508,6 +36360,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -36544,20 +36398,6 @@ report:
                 - 
                   variable: *topic
                   value: *idx_high_level_thinking
-                                    
-              -
-                -
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_school
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *idx_high_level_thinking
                              
             aes:
               - 
@@ -36585,6 +36425,8 @@ report:
             width: *plot_multi_fig_width
             height: *plot_multi_fig_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -36702,6 +36544,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -36738,20 +36582,6 @@ report:
                 - 
                   variable: *topic
                   value: *idx_high_level_thinking
-                                    
-              -
-                -
-                  variable: *subject
-                  value: *subject_ma
-                -
-                  variable: *tier
-                  value: *tier_school
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *idx_high_level_thinking
                              
             aes:
               - 
@@ -36779,6 +36609,8 @@ report:
             width: *plot_multi_fig_width
             height: *plot_multi_fig_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -36896,6 +36728,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -36932,20 +36766,6 @@ report:
                 - 
                   variable: *topic
                   value: *idx_individual_balance
-                                    
-              -
-                -
-                  variable: *subject
-                  value: *subject_all
-                -
-                  variable: *tier
-                  value: *tier_school
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *idx_individual_balance
                              
             aes:
               - 
@@ -36973,6 +36793,8 @@ report:
             width: *plot_multi_fig_width
             height: *plot_multi_fig_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -37090,6 +36912,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -37126,21 +36950,7 @@ report:
                 - 
                   variable: *topic
                   value: *idx_individual_balance
-                                    
-              -
-                -
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_school
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *idx_individual_balance
-                             
+                                
             aes:
               - 
                 arg: "x"
@@ -37167,6 +36977,8 @@ report:
             width: *plot_multi_fig_width
             height: *plot_multi_fig_height
             geom: *plot_bar_dodging
+            text:
+              vjust:  0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -37284,6 +37096,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_dodging
+            text:
+              vjust:  0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -37320,20 +37134,6 @@ report:
                 - 
                   variable: *topic
                   value: *idx_individual_balance
-                                    
-              -
-                -
-                  variable: *subject
-                  value: *subject_ma
-                -
-                  variable: *tier
-                  value: *tier_school
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *idx_individual_balance
                              
             aes:
               - 
@@ -37361,6 +37161,8 @@ report:
             width: *plot_multi_fig_width
             height: *plot_multi_fig_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -37411,7 +37213,7 @@ report:
             height: *plot_canvas_height
             geom: *plot_bar_dodging
             position: "dodge" 
-            coord: "flip"
+            #coord: "flip"
             text:
               vjust: 0.5
             bar:
@@ -37464,7 +37266,7 @@ report:
             height: *plot_canvas_height
             geom: *plot_bar_dodging
             position: "dodge" 
-            coord: "flip"
+            #coord: "flip"
             text:
               vjust: 0.5
             bar:
@@ -37517,7 +37319,7 @@ report:
             height: *plot_canvas_height
             geom: *plot_bar_dodging
             position: "dodge" 
-            coord: "flip"
+            #coord: "flip"
             text:
               vjust: 0.5
             bar:
@@ -37636,6 +37438,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -37673,20 +37477,6 @@ report:
                   variable: *topic
                   value: *idx_confidence
                                     
-              -
-                -
-                  variable: *subject
-                  value: *survey_st
-                -
-                  variable: *tier
-                  value: *tier_school
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *idx_confidence
-                             
             aes:
               - 
                 arg: "x"
@@ -37713,6 +37503,8 @@ report:
             width: *plot_multi_fig_width
             height: *plot_multi_fig_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -37830,6 +37622,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -37867,20 +37661,6 @@ report:
                   variable: *topic
                   value: *idx_motivation
                                     
-              -
-                -
-                  variable: *subject
-                  value: *survey_st
-                -
-                  variable: *tier
-                  value: *tier_school
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *idx_motivation
-                             
             aes:
               - 
                 arg: "x"
@@ -37907,6 +37687,8 @@ report:
             width: *plot_multi_fig_width
             height: *plot_multi_fig_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -38024,6 +37806,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -38061,19 +37845,7 @@ report:
                   variable: *topic
                   value: *idx_pressure
                                     
-              -
-                -
-                  variable: *subject
-                  value: *survey_st
-                -
-                  variable: *tier
-                  value: *tier_school
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *idx_pressure
+              
                              
             aes:
               - 
@@ -38101,6 +37873,8 @@ report:
             width: *plot_multi_fig_width
             height: *plot_multi_fig_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -38218,6 +37992,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -38281,6 +38057,8 @@ report:
             width: *plot_multi_fig_width
             height: *plot_multi_fig_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -38398,6 +38176,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -38435,20 +38215,6 @@ report:
                   variable: *topic
                   value: *idx_burden
                                     
-              -
-                -
-                  variable: *subject
-                  value: *survey_st
-                -
-                  variable: *tier
-                  value: *tier_school
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *idx_burden
-                             
             aes:
               - 
                 arg: "x"
@@ -38475,6 +38241,8 @@ report:
             width: *plot_multi_fig_width
             height: *plot_multi_fig_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -38592,6 +38360,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -38629,20 +38399,6 @@ report:
                   variable: *topic
                   value: *idx_sleep
                                     
-              -
-                -
-                  variable: *subject
-                  value: *survey_st
-                -
-                  variable: *tier
-                  value: *tier_school
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *idx_sleep
-                             
             aes:
               - 
                 arg: "x"
@@ -38669,6 +38425,8 @@ report:
             width: *plot_multi_fig_width
             height: *plot_multi_fig_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -38786,6 +38544,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -38823,20 +38583,6 @@ report:
                   variable: *topic
                   value: *idx_writing_homework
                                     
-              -
-                -
-                  variable: *subject
-                  value: *survey_st
-                -
-                  variable: *tier
-                  value: *tier_school
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *idx_writing_homework
-                             
             aes:
               - 
                 arg: "x"
@@ -38863,6 +38609,8 @@ report:
             width: *plot_multi_fig_width
             height: *plot_multi_fig_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -38980,6 +38728,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -39017,20 +38767,6 @@ report:
                   variable: *topic
                   value: *idx_extra_homework
                                     
-              -
-                -
-                  variable: *subject
-                  value: *survey_st
-                -
-                  variable: *tier
-                  value: *tier_school
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *idx_extra_homework
-                             
             aes:
               - 
                 arg: "x"
@@ -39057,6 +38793,8 @@ report:
             width: *plot_multi_fig_width
             height: *plot_multi_fig_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -39174,6 +38912,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -39211,20 +38951,6 @@ report:
                   variable: *topic
                   value: *idx_teacher
                                     
-              -
-                -
-                  variable: *subject
-                  value: *survey_st
-                -
-                  variable: *tier
-                  value: *tier_school
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *idx_teacher
-                             
             aes:
               - 
                 arg: "x"
@@ -39251,6 +38977,8 @@ report:
             width: *plot_multi_fig_width
             height: *plot_multi_fig_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -39368,6 +39096,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -39405,20 +39135,6 @@ report:
                   variable: *topic
                   value: *idx_morality
                                     
-              -
-                -
-                  variable: *subject
-                  value: *survey_st
-                -
-                  variable: *tier
-                  value: *tier_school
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *idx_morality
-                             
             aes:
               - 
                 arg: "x"
@@ -39445,6 +39161,8 @@ report:
             width: *plot_multi_fig_width
             height: *plot_multi_fig_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -39494,7 +39212,7 @@ report:
             height: *plot_canvas_height
             geom: *plot_bar_dodging
             position: "dodge" 
-            coord: "flip"
+            #coord: "flip"
             text:
               vjust: 0.5
             bar:
@@ -39613,6 +39331,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -39650,20 +39370,6 @@ report:
                   variable: *topic
                   value: *idx_psychological
                                     
-              -
-                -
-                  variable: *subject
-                  value: *survey_st
-                -
-                  variable: *tier
-                  value: *tier_school
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *idx_psychological
-                             
             aes:
               - 
                 arg: "x"
@@ -39690,6 +39396,8 @@ report:
             width: *plot_multi_fig_width
             height: *plot_multi_fig_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -39807,6 +39515,8 @@ report:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -39844,20 +39554,6 @@ report:
                   variable: *topic
                   value: *idx_teaching
                                     
-              -
-                -
-                  variable: *subject
-                  value: *survey_st
-                -
-                  variable: *tier
-                  value: *tier_school
-                -
-                  variable: *perspective
-                  value: *per_total
-                - 
-                  variable: *topic
-                  value: *idx_teaching
-                             
             aes:
               - 
                 arg: "x"
@@ -39884,6 +39580,8 @@ report:
             width: *plot_multi_fig_width
             height: *plot_multi_fig_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -39996,6 +39694,8 @@ report:
             width: *plot_multi_fig_width
             height: *plot_multi_fig_height
             geom: *plot_bar_dodging
+            text:
+              vjust: 0.5
             position: "dodge" 
             bar:
               width: *plot_bar_width
@@ -40304,30 +40004,36 @@ report:
               -  
                 arg: "label"
                 var: *label
+            postkeep:
+              - 
+                variable: "year"
+                value: 
+                  - "2014年"
+                  - "2016年"
             order:
               - 
                 var: "x"
                 list:
-                  - "成绩标准达成系数" 
-                  - "高层次思维能力系数"
-                  - "学业成绩学校间均衡系数"
-                  - "学习动机系数"
-                  - "学习压力系数"
-                  - "睡眠系数"
-                  - "作业系数"
-                  - "补课系数"
-                  - "师生关系系数"
-                  - "教学方式系数"
-                  - "课程领导力系数"
-                  - "家庭背景影响系数"
+                  - *coef_passed_rate 
+                  - *coef_high_level_thinking
+                  - *coef_school_balance
+                  - *coef_motivation
+                  - *coef_pressure
+                  - *coef_sleep
+                  - *coef_writing_homework
+                  - *coef_extra_homework
+                  - *coef_teacher
+                  - *coef_teaching
+                  - *coef_course_leadership
+                  - *coef_economic
             
           ggplot:
             width: 25
             height: 8
             geom: *plot_bar_dodging
             position: "dodge" 
-            #text:
-            #  vjust: 0.5
+            text:
+              hjust: 0.5
             bar:
               width: *plot_bar_width_fat
             legend: *plot_legend_right
@@ -42549,9 +42255,6 @@ report:
                   variable: *subject
                   value: *subject_cn
                 -
-                  variable: *tier
-                  value: *tier_county
-                -
                   variable: *perspective
                   value: *per_total
                 - 
@@ -42574,10 +42277,20 @@ report:
               -  
                 arg: "label"
                 var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_segment  
+            group:
+              variable: "Group"
+              scales: "fixed"
+              position: "bottom" 
             text:
               vjust: 0.5
             bar:
@@ -43216,7 +42929,6 @@ report:
               text_angle: 90
               text_size: *plot_multi_fig_lab_size
 
-
         level.bar.domain.ma: 
           fig.name: "学生在数学学科各内容维度各水平上的人数比例"
           data:
@@ -43276,14 +42988,14 @@ report:
                 var: "x"
                 list: *order_coun_prov    
               -
-                var: *dimention
+                var: "Group"
                 list: *order_ma_dom           
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking
             group:
-              variable: *dimention
+              variable: "Group"
               scales: "fixed"
               position: "bottom" 
             legend: *plot_legend_top
@@ -43434,7 +43146,7 @@ report:
                 var: "x"
                 list: *order_coun_prov
               - 
-                var: *dimention
+                var: "Group"
                 list: *order_ma_dom
 
           ggplot:
@@ -43442,7 +43154,7 @@ report:
             height: *plot_canvas_height
             geom: *plot_box
             group:
-              variable: *dimention
+              variable: "Group"
               scales: "fixed"
               position: "bottom" 
             legend: *plot_legend_top
@@ -43529,14 +43241,14 @@ report:
                 var: "x"
                 list: *order_coun_prov    
               -
-                var: *dimention
+                var: "Group"
                 list: *order_ma_dim           
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking
             group:
-              variable: *dimention
+              variable: "Group"
               scales: "fixed"
               position: "bottom" 
             legend: *plot_legend_top
@@ -43716,7 +43428,7 @@ report:
                 var: "x"
                 list: *order_coun_prov
               - 
-                var: *dimention
+                var: "Group"
                 list: *order_ma_dim
 
           ggplot:
@@ -43724,7 +43436,7 @@ report:
             height: *plot_canvas_height
             geom: *plot_box
             group:
-              variable: *dimention
+              variable: "Group"
               scales: "fixed"
               position: "bottom" 
             legend: *plot_legend_top
@@ -43741,7 +43453,6 @@ report:
             #  ylim:
             #    - 0
             #    - 500
-
 
         number.bar.perspective.ma: 
           fig.name: "不同群体学生在“数与代数”各水平上的人数比例"
@@ -47103,8 +46814,6 @@ report:
               text_angle: 90
               text_size: *plot_multi_fig_lab_size
 
-
-
         dom.dim.bar.province.perspective.ma: 
           fig.name: "不同群体学生在“领域／维度”各水平上的人数比例"
           data:
@@ -47502,9 +47211,6 @@ report:
                   variable: *subject
                   value: *subject_ma
                 -
-                  variable: *tier
-                  value: *tier_county
-                -
                   variable: *perspective
                   value: *per_total
                 - 
@@ -47527,10 +47233,20 @@ report:
               -  
                 arg: "label"
                 var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
-            geom: *plot_bar_segment  
+            geom: *plot_bar_segment
+            group:
+              variable: "Group"
+              scales: "fixed"
+              position: "bottom"
             text:
               vjust: 0.5
             bar:
@@ -47596,7 +47312,7 @@ report:
 
         
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "school_report.Rmd"
 
@@ -48013,9 +47729,6 @@ report:
                   variable: *subject
                   value: *subject_cn
                 -
-                  variable: *tier
-                  value: *tier_school
-                -
                   variable: *perspective
                   value: *per_total
                 - 
@@ -48038,10 +47751,20 @@ report:
               -  
                 arg: "label"
                 var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_segment  
+            group:
+              variable: "Group"
+              scales: "fixed"
+              position: "bottom"
             text:
               vjust: 0.5
             bar:
@@ -48575,9 +48298,6 @@ report:
                   variable: *subject
                   value: *subject_ma
                 -
-                  variable: *tier
-                  value: *tier_school
-                -
                   variable: *perspective
                   value: *per_total
                 - 
@@ -48600,10 +48320,20 @@ report:
               -  
                 arg: "label"
                 var: *label
+              -
+                arg: "Group"
+                var: "alias"
+            alias:
+              arg: "alias"
+              var: *scope
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_segment  
+            group:
+              variable: "Group"
+              scales: "fixed"
+              position: "bottom" 
             text:
               vjust: 0.5
             bar:
@@ -51741,7 +51471,8 @@ report:
             #  variable: "alias"
             #  scales: "fixed"
             #  position: "bottom"            
-            position: "stack" 
+            #position: "stack" 
+            position: "dodge" 
             coord: "flip"
             text:
               vjust: 0.5
@@ -51751,6 +51482,12 @@ report:
             label:
               xlab: ""
               ylab: "指数"
+            #axisx:
+            #  text_angle: 90
+            #  text_size: 8
+            axisy:
+              #discrete_limits: *axisy_discrete_limits_index
+              ylim: *axisy_ylim
 
         school.county.index.radar: 
           fig.name: "四年级各指标雷达分析图"
@@ -51817,6 +51554,16 @@ report:
                 - 
                   variable: *topic
                   value: *idx_pressure
+              -
+                -
+                  variable: *subject
+                  value: *survey_st
+                -
+                  variable: *perspective
+                  value: *per_total
+                - 
+                  variable: *topic
+                  value: *idx_school_identiy
               -
                 -
                   variable: *subject
@@ -52000,11 +51747,13 @@ report:
       markdown: "template_test.Rmd"
 
       year: "2016年度"
-      tier: *tier_province
-      project: "中小学学业质量"
-      report: "绿色指标学科测试分析报告"
-      subject: "测试模版"
-
+      tier: *tier_school
+      county: "黄浦区"
+      school: "上海市比乐中学"
+      
+      project: "学业质量"
+      subject: ""
+      report: "绿色指标综合评价"
       title: ""
       header: "" 
 
@@ -52014,7 +51763,7 @@ report:
 
       pre.render:
         - "pre.render.global.setting"
-        - "pre.render.cover.page"
+        - "pre.render.cover.page.sch"
         - "pre.render.head.foot"
         - "pre.render.report.preface"
         - "pre.render.table.of.contents"
@@ -52286,18 +52035,18 @@ report:
               - 
                 var: "x"
                 list:
-                  - "成绩标准达成系数" 
-                  - "高层次思维能力系数"
-                  - "学业成绩学校间均衡系数"
-                  - "学习动机系数"
-                  - "学习压力系数"
-                  - "睡眠系数"
-                  - "作业系数"
-                  - "补课系数"
-                  - "师生关系系数"
-                  - "教学方式系数"
-                  - "课程领导力系数"
-                  - "家庭背景影响系数"
+                  - *coef_passed_rate 
+                  - *coef_high_level_thinking
+                  - *coef_school_balance
+                  - *coef_motivation
+                  - *coef_pressure
+                  - *coef_sleep
+                  - *coef_writing_homework
+                  - *coef_extra_homework
+                  - *coef_teacher
+                  - *coef_teaching
+                  - *coef_course_leadership
+                  - *coef_economic
             
           ggplot:
             width: 25
@@ -52308,7 +52057,7 @@ report:
             #  vjust: 0.5
             bar:
               width: *plot_bar_width_fat
-            legend: *plot_legend_right
+            legend: *plot_legend_right_big
             label:
               xlab: ""
               ylab: "百分数"

@@ -62,3 +62,15 @@ dataframe.element <- function(
   }
   
 }
+
+
+#########################3
+null.check <- function(data){
+  if(length(data)<=0){
+    return("-")
+  }
+  else{
+    return(data)
+  }
+  
+}

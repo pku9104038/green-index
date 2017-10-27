@@ -13,7 +13,7 @@ output:
     keep_tex: no
 params:
   report: 2015
-  dummy.fig: "reports.jpg"
+  dummy.fig: "dummy.jpg"
   conf: "conf"
   
 ---
@@ -92,7 +92,11 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name1`}
 \label{fig:`r fig_name1`}
-\end{figure}## 不同区学生的总体表现`r fig_name <- "不同区学生在语文学科各水平上的人数比例" `
+\end{figure}\mylist
+注：盒须图，须的底部为5分位（表示有5\%的学生总分低于此对应的分数)；盒的底部为25分位（表示有25\%的学生得分低于此线对应的分数）；盒中横线为50分位（表示50\%的学生得分高于此线对应的分数）；盒的顶部为75分位（表示有25\%的学生得分高于此线对应的分数）；须的顶部为95分位（表示有5\%的学生得分高于此线对应的分数）。盒的高度表示中间50\%的学生得分在此分数区间，从一定程度上描述了学生成绩离散程度的大小。红点对应的成绩为平均分。
+
+\mytext
+## 不同区学生的总体表现`r fig_name <- "不同区学生在语文学科各水平上的人数比例" `
 `r fig_name1 <- "不同区学生在语文学科上的得分分布" `图\ref{fig:`r fig_name`}和图\ref{fig:`r fig_name1`}分别给出了上海市不同区学生在语文学科各水平上的人数比例和得分分布。 
 ```{r level.bar.province.county.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "level.bar.province.county.cn"
@@ -255,7 +259,7 @@ var.sample <- "统计样本"
 `r tab_name <- "学生在语文学科“积累”上的平均得分率（％）" `
 \begin{itshape}
 \mytable
-\begin{longtable}{|c|c|p{8cm}|c|c|c|c|c|c|c|c|c|c|c|c|}
+\begin{longtable}{|c|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|c|c|}
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\
 
 \hline
@@ -263,7 +267,7 @@ var.sample <- "统计样本"
 \makecell[c]{内容领域} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{随迁\\子女\\民办} & \makecell[c]{普通\\小学} & \makecell[c]{一\\贯\\制} & \makecell[c]{市\\新\\优} & \makecell[c]{区\\新\\优} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ 
 \hline
 
-\multirow{4}{*}{\makecell[c]{读准字音}} & C3AO011 & \makecell[l]{能读准学过的常用字的字音} & 
+\multirow{4}{*}{\makecell[c]{读准字音}} & C3AO011 & 能读准学过的常用字的字音 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO011_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -279,7 +283,7 @@ var.sample <- "统计样本"
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
 
 
- & C3AO021 & \makecell[l]{能读准学过的常用字的字音} & 
+ & C3AO021 & 能读准学过的常用字的字音 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO021_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -296,7 +300,7 @@ var.sample <- "统计样本"
  \cline{2-15}
  
  
-  & C3AO031 & \makecell[l]{能读准学过的常用字的字音} & 
+  & C3AO031 & 能读准学过的常用字的字音 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO031_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -311,7 +315,7 @@ var.sample <- "统计样本"
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\  \cline{2-15}
   
-  & C3AO041 & \makecell[l]{能读准学过的常用字的字音} & 
+  & C3AO041 & 能读准学过的常用字的字音 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO041_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -326,7 +330,7 @@ var.sample <- "统计样本"
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\  \hline
  
-  \multirow{4}{*}{\makecell[c]{认清字形}} & C3AO051 & \makecell[l]{能认清学过的常用字的字形} & 
+  \multirow{4}{*}{\makecell[c]{认清字形}} & C3AO051 & 能认清学过的常用字的字形 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO051_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -342,7 +346,7 @@ var.sample <- "统计样本"
 `r row[row[,var.key]=="非沪籍",var.param]` \\  
 \cline{2-15}
 
-  & C3AO061 & \makecell[l]{能认清学过的常用字的字形} & 
+  & C3AO061 & 能认清学过的常用字的字形 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO061_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -356,7 +360,7 @@ var.sample <- "统计样本"
 `r row[row[,var.key]=="女",var.param]` & 
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
-  & C3AO071 & \makecell[l]{能认清学过的常用字的字形} & 
+  & C3AO071 & 能认清学过的常用字的字形 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO071_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -372,7 +376,7 @@ var.sample <- "统计样本"
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
 
   \cline{2-15}
-  & C3AO081 & \makecell[l]{能认清学过的常用字的字形} & 
+  & C3AO081 & 能认清学过的常用字的字形 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO081_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -387,7 +391,7 @@ var.sample <- "统计样本"
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ 
 \hline
- \multirow{9}{*}{\makecell[c]{理解词义}} & C3AO091 & \makecell[l]{能正确理解常用字词的字义、词义} & 
+ \multirow{9}{*}{\makecell[c]{理解词义}} & C3AO091 & 能正确理解常用字词的字义、词义 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO091_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -402,7 +406,7 @@ var.sample <- "统计样本"
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
 
- & C3AO101 & \makecell[l]{能正确理解常用字词的字义、词义} & 
+ & C3AO101 & 能正确理解常用字词的字义、词义 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO101_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -417,7 +421,7 @@ var.sample <- "统计样本"
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
  
-  & C3AO111 & \makecell[l]{能正确理解常用字词的字义、词义} & 
+  & C3AO111 & 能正确理解常用字词的字义、词义 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO111_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -432,7 +436,7 @@ var.sample <- "统计样本"
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
   
-  & C3AO121 & \makecell[l]{能正确理解常用字词的字义、词义} & 
+  & C3AO121 & 能正确理解常用字词的字义、词义 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO121_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -447,7 +451,7 @@ var.sample <- "统计样本"
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
 
- & C3AO131 & \makecell[l]{能正确理解常用字词的字义、词义} & 
+ & C3AO131 & 能正确理解常用字词的字义、词义 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO131_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -462,7 +466,7 @@ var.sample <- "统计样本"
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
  
-  & C3AO141 & \makecell[l]{能正确理解常用字词的字义、词义} & 
+  & C3AO141 & 能正确理解常用字词的字义、词义 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO141_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -477,7 +481,7 @@ var.sample <- "统计样本"
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\\cline{2-15}
   
-  & C3AO151 & \makecell[l]{能正确理解常用字词的字义、词义} & 
+  & C3AO151 & 能正确理解常用字词的字义、词义 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO151_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -491,7 +495,7 @@ var.sample <- "统计样本"
 `r row[row[,var.key]=="女",var.param]` & 
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
- & C3AO161 & \makecell[l]{能正确理解常用字词的字义、词义} & 
+ & C3AO161 & 能正确理解常用字词的字义、词义 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO161_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -506,7 +510,7 @@ var.sample <- "统计样本"
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
  
-  & C3AO171 & \makecell[l]{能正确理解常用字词的字义、词义} & 
+  & C3AO171 & 能正确理解常用字词的字义、词义 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO171_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -521,7 +525,7 @@ var.sample <- "统计样本"
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \hline
   
- \multirow{3}{*}{\makecell[c]{积累和运用\\常见古诗文}} & C3AO181 & \makecell[l]{能记忆教材中的古诗} & 
+ \multirow{3}{*}{\makecell[c]{积累和运用\\常见古诗文}} & C3AO181 & 能记忆教材中的古诗 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO181_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -536,7 +540,7 @@ var.sample <- "统计样本"
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
 
- & C3AO191 & \makecell[l]{能记忆教材中的古诗} & 
+ & C3AO191 & 能记忆教材中的古诗 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO191_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -551,7 +555,7 @@ var.sample <- "统计样本"
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-15}
 
- & C3AO201 & \makecell[l]{能记忆教材中的古诗} & 
+ & C3AO201 & 能记忆教材中的古诗 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AO201_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -612,7 +616,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 
 在本次测试中，语文总体能力处于A、B、C三个水平的学生在本题上的平均得分率分别为`r row[row[,var.key]=="A",var.param]`%、
 `r row[row[,var.key]=="B",var.param]`%和
-`r row[row[,var.key]=="C",var.param]`%。\questiontitle{典型题目2：C3AO051}下面每道小题中，都有一项含有错别字。请把它找出来。
+`r row[row[,var.key]=="C",var.param]`%。\clearpage
+\questiontitle{典型题目2：C3AO051}下面每道小题中，都有一项含有错别字。请把它找出来。
 
 \begin{table}[H]
 \begin{tabularx}{\textwidth}{XXXX}
@@ -802,7 +807,7 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 \caption{`r tab_name`} \label{tab: `r tab_name`} 
 \itshape
 \mytable
-\begin{tabularx}{22cm}{|c|c|p{8cm}|c|c|c|c|c|c|c|c|c|c|c|c|}
+\begin{tabularx}{22cm}{|c|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|c|c|}
 
 \cline{1-15}
 
@@ -1185,14 +1190,14 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 \itshape
 \mytable
 
-\begin{tabularx}{1.5\textwidth}{|c|c|X|c|c|c|c|c|c|c|c|c|c|c|c|}
+\begin{tabularx}{1.5\textwidth}{|c|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|c|c|}
 
-\hline
+\cline{1-15}
 
 \makecell[c]{内容领域} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{随迁\\子女\\民办} & \makecell[c]{普通\\小学} & \makecell[c]{一\\贯\\制} & \makecell[c]{市\\新\\优} & \makecell[c]{区\\新\\优} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ 
-\hline
+\cline{1-15}
 
-\makecell[c]{选择材料} & C3AS311 & \makecell[l]{能够切合题意、中心突出、感情真实、内容具体 } & 
+\makecell[c]{选择材料} & C3AS311 & 能够切合题意、中心突出、感情真实、内容具体 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AS311_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -1206,9 +1211,9 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 `r row[row[,var.key]=="女",var.param]` & 
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\  
-\hline
+\cline{1-15}
  
- \makecell[c]{组织材料} & C3AS312 & \makecell[l]{能够语言通顺、简洁得体} & 
+ \makecell[c]{组织材料} & C3AS312 & 能够语言通顺、简洁得体 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AS312_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -1222,8 +1227,8 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 `r row[row[,var.key]=="女",var.param]` & 
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ 
-\hline
- \makecell[c]{语言表达} & C3AS313 & \makecell[l]{能够结构合理、层次清晰、详略得体 } & 
+\cline{1-15}
+ \makecell[c]{语言表达} & C3AS313 & 能够结构合理、层次清晰、详略得体 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AS313_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -1237,8 +1242,8 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 `r row[row[,var.key]=="女",var.param]` & 
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ 
-\hline
-\makecell[c]{书写及标点} & C3AS314 & \makecell[l]{能够书写清晰，标点符号使用正确，错别字较少 } & 
+\cline{1-15}
+\makecell[c]{书写及标点} & C3AS314 & 能够书写清晰，标点符号使用正确，错别字较少 & 
 `r row <- point.rate[point.rate[,var.variable]=="C3AS314_X",]`
 `r row[row[,var.key]=="总体",var.param]`  & 
 `r row[row[,var.key]=="公办",var.param]` & 
@@ -1253,7 +1258,7 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 `r row[row[,var.key]=="沪籍",var.param]` & 
 `r row[row[,var.key]=="非沪籍",var.param]` \\ 
 
-\hline
+\cline{1-15}
 \end{tabularx}
 \end{table}
 
@@ -1443,7 +1448,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 plot.entry <- "answer.segment.bar.cn"
 report$plot$answer.segment.bar.cn$data$keep <- list(list(var = "变量", value=list(c("C3AS313_S"))))
 report$plot$answer.segment.bar.cn$ggplot$label$xlab <- "分数段"
-report$plot$answer.segment.bar.cn$data$order <- list(list(var = "x", list <- list("0-5","5.5-9","9.5-12","12.5-15")))
+report$plot$answer.segment.bar.cn$data$order <- list(list(var = "x", list = list("0-5","5.5-9","9.5-12","12.5-15")))
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 report$plot$answer.segment.bar.cn$data$order <- NULL
 ```

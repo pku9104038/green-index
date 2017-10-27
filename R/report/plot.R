@@ -999,7 +999,7 @@ plot.data <- function(
   }
   
   ################# data out
-  #print(data.out)
+  print(data.out)
   timestamp()
   print("plot data out")
   return(data.out)
@@ -1013,6 +1013,11 @@ plot.bar_segment <- function(
   figure <- figure + geom_bar( stat="identity", width = plot$ggplot$bar$width) 
   figure <- figure + geom_text(aes(label = label), position = position_stack(vjust = 0.5)) 
   #figure <- figure + ggtitle(plot$fig.name) 
+  if(!is.null(plot$ggplot$group)){
+    figure <- figure + facet_wrap(facets = ~Group, nrow = 1,
+                                  strip.position = plot$ggplot$group$position, 
+                                  scales = plot$ggplot$group$scales)
+  }
   figure <- figure + xlab(plot$ggplot$label$xlab) + ylab(plot$ggplot$label$ylab) 
   figure <- figure + guides(fill=FALSE) 
   figure <- figure + theme(panel.background = element_blank()) 
@@ -1027,7 +1032,8 @@ plot.bar_stacking  <- function(
   figure <- ggplot(data=plot$data$set, aes(x=x, y=y , fill = fill))
   figure <- figure + theme_economist() + scale_fill_economist()
   figure <- figure + geom_bar( stat="identity", width = plot$ggplot$bar$width,position = "stack") 
-  figure <- figure + geom_text(aes(label = label), colour= plot$ggplot$text$colour , position = position_stack(vjust = 0.5)) 
+  figure <- figure + geom_text(aes(label = label), colour= plot$ggplot$colour$text , position = position_stack(vjust = 0.5)) 
+  
   if(!is.null(plot$ggplot$legend)){
     figure <- figure + guides(fill=guide_legend(keywidth = 0.6, keyheight = 0.6))
     figure <- figure +  theme(legend.position = plot$ggplot$legend$position, 
@@ -1037,20 +1043,22 @@ plot.bar_stacking  <- function(
   else{
     figure <- figure + guides(fill=FALSE) 
   }
+  
   if(!is.null(plot$ggplot$group)){
     figure <- figure + facet_wrap(facets = ~Group, nrow = 1,
                                   strip.position = plot$ggplot$group$position, 
                                   scales = plot$ggplot$group$scales)
   }
-  if(!is.null(plot$ggplot$axisx)){
-    figure <- figure + theme(axis.text.x = element_text(angle = plot$ggplot$axisx$text_angle,
-                                                        size = plot$ggplot$axisx$text_size,  hjust = 1))
-  }
   
   #figure <- figure + ggtitle(plot$fig.name) 
   figure <- figure + xlab(plot$ggplot$label$xlab) + ylab(plot$ggplot$label$ylab) 
   
-  
+ 
+  if(!is.null(plot$ggplot$axisx)){
+    figure <- figure + theme(axis.text.x = element_text(angle = plot$ggplot$axisx$text_angle,
+                                                        size = plot$ggplot$axisx$text_size,  hjust = 1))
+  }
+ 
   figure <- figure + theme(plot.background = element_blank()) +
     theme(panel.background = element_blank()) +
     theme(panel.grid.major = element_line(colour="grey", size=0.2, linetype = "dashed") ) +
@@ -1065,11 +1073,11 @@ plot.bar_stacking  <- function(
 plot.bar_stacking.raw  <- function(
   plot
 ){
-  print(plot$data$set)
+  
   figure <- ggplot(data=plot$data$set, aes(x=x, y=y , fill = fill)) + scale_fill_economist()
   #figure <- figure + theme_economist() + scale_fill_economist()
   figure <- figure + geom_bar( stat="identity", width = plot$ggplot$bar$width,position = "stack") 
-  figure <- figure + geom_text(aes(label = label), colour=plot$ggplot$text$colour, position = position_stack(vjust = 0.5)) 
+  figure <- figure + geom_text(aes(label = label), colour=plot$ggplot$colour$text, position = position_stack(vjust = 0.5)) 
   figure <- figure + guides(fill=FALSE) 
   figure <- figure + coord_flip()
    
@@ -1102,37 +1110,59 @@ plot.bar_stacking.raw  <- function(
 plot.bar_dodging  <- function(
   plot
 ){
-  #print(plot$data$set)
+  #print(plot$ggplot$text$colour)
  
   figure <- ggplot(data=plot$data$set, aes(x=x, y=y , fill = fill))
   figure <- figure + theme_economist() + scale_fill_economist()
   figure <- figure + geom_bar( stat="identity", width = plot$ggplot$bar$width,position = plot$ggplot$position) 
+  #print(plot$ggplot)
+  
+  #figure <- figure + geom_text(aes(label = label),colour=plot$ggplot$colour$text, 
+  #                             position = position_stack(vjust = 0.5)) 
+
   if(!is.null(plot$ggplot$text)){
     if(!is.null(plot$ggplot$text$vjust)){
-      figure <- figure + geom_text(aes(label = label),colour=plot$ggplot$text$colour, 
+     # print("vjust")
+      figure <- figure + geom_text(aes(label = label),colour=plot$ggplot$colour$text, 
                                    position = position_stack(vjust = plot$ggplot$text$vjust)) 
     }
-    else if(!is.null(plot$ggplot$text$hjust)){
+    else if(!is.null(plot$ggplot$adjust$hjust)){
+     # print("hjust")
       figure <- figure + geom_text(aes(label = label, y =  y+2 ), 
                                    position = position_dodge(plot$ggplot$bar$width),
-                                   vjust  = 0.5, hjust = 0.5, colour=plot$ggplot$text$colour) 
+                                   vjust  = 0.5, hjust = 0.5, colour=plot$ggplot$colour$text) 
     }
     
     
-    #figure <- figure + geom_text(aes(label = label),colour="red", vjust = plot$ggplot$text$vjust) 
+    #figure <- figure + geom_text(aes(label = label),colour=plot$ggplot$colour$text, vjust = plot$ggplot$text$vjust) 
   }
-  if(!is.null(plot$ggplot$coord)){
-    if(plot$ggplot$coord=="flip"){
-      figure <- figure + coord_flip()
-    }
-    
-  }
+  
 
   if(!is.null(plot$ggplot$legend)){
-    figure <- figure + guides(fill=guide_legend(keywidth = 0.6, keyheight = 0.6))
+    if(!is.null(plot$ggplot$legend$width)){
+      width =  plot$ggplot$legend$width
+    }
+    else{
+      width =  0.6
+    }
+    if(!is.null(plot$ggplot$legend$height)){
+      height = plot$ggplot$legend$height
+    }
+    else{
+      height = 0.6
+    }
+    if(!is.null(plot$ggplot$legend$size)){
+      size = plot$ggplot$legend$size
+    }
+    else{
+      size = 8
+    }
+    
+    
+    figure <- figure + guides(fill=guide_legend(keywidth = width, keyheight = height))
     figure <- figure +  theme(legend.position = plot$ggplot$legend$position, 
                               legend.direction = plot$ggplot$legend$direction , 
-    legend.text = element_text(size = 8),legend.title=element_blank()) #+
+    legend.text = element_text(size = size),legend.title=element_blank()) #+
     
   }
   else{
@@ -1158,12 +1188,27 @@ plot.bar_dodging  <- function(
     
   }
   if(!is.null(plot$ggplot$axisy)){
-    figure <- figure + scale_y_discrete(limits=unlist(plot$ggplot$axisy$discrete_limits))
-    if(!is.null(plot$ggplot$axisy$ylim)){
-      figure <- figure + coord_cartesian(ylim=unlist(plot$ggplot$axisy$ylim))
+    if(!is.null(plot$ggplot$axisy$discrete_limits)){
+      figure <- figure + scale_y_discrete(limits=unlist(plot$ggplot$axisy$discrete_limits))
     }
+    
+    if(!is.null(plot$ggplot$axisy$ylim)){
+      #figure <- figure + ylim(plot$ggplot$axisy$ylim) 
+      #figure <- figure +  scale_y_continuous(breaks=seq(0,9,1))
+      #  theme(aixs.y = element_line(colour="grey", size=0.2, linetype = "dashed") )
+      
+      figure <- figure + scale_y_continuous(limits = unlist(plot$ggplot$axisy$ylim),
+                                            breaks=seq(min(plot$ggplot$axisy$ylim),max(plot$ggplot$axisy$ylim),1))
+    }
+    
   }
   
+  if(!is.null(plot$ggplot$coord)){
+    if(plot$ggplot$coord=="flip"){
+      figure <- figure + coord_flip()
+    }
+    
+  }
   
   #figure <- figure + ggtitle(plot$fig.name) 
   figure <- figure + xlab(plot$ggplot$label$xlab) + ylab(plot$ggplot$label$ylab) 
@@ -1201,7 +1246,7 @@ plot.box  <- function(
   figure <- figure + geom_boxplot( stat="identity", 
                                    aes(x =x,width =  box.width,ymin=ymin, lower=lower,middle=middle,upper=upper,ymax=ymax,fill = fill)
                                   ) 
-  figure <- figure + geom_point(shape=20, size=3,colour="red")
+  figure <- figure + geom_point(shape=20, size=3,colour=plot$ggplot$colour$text)
   if(!is.null(plot$ggplot$group)){
     figure <- figure + facet_wrap(facets = ~Group, nrow = 1,
                                   strip.position = plot$ggplot$group$position, 
@@ -1309,7 +1354,10 @@ plot.figure  <- function(
   fig_name = NULL
 ){
   plot <-  plot.in
-  plot$ggplot$text$colour  <-  "gold2"
+  #if(is.null(plot$ggplot$text$colour)){
+  plot$ggplot$colour$text  <-  "red2"
+  #}
+  
   if(is.null(plot$fig.limit)){
     
     plot$output <-  report$output[[1]]
@@ -1366,7 +1414,7 @@ plot.figure  <- function(
     print("plot multi figure")
     plot.multi.figure(
       report,
-      plot.in,
+      plot,
       fig_name
     )
   }
@@ -1385,7 +1433,7 @@ plot.multi.figure  <- function(
   
    
   plot <-  plot.in
-  plot$ggplot$text$colour  <-  "red"
+  
   plot$data$set.multi.fig <- plot.data(report,plot)
   
   items  <- levels(factor(plot$data$set.multi.fig[,"x"]))
@@ -1402,7 +1450,13 @@ plot.multi.figure  <- function(
     plot$output <-  report$output[[1]]
     plot$title <- report$title
     plot$dir  <- report$plot.out
-    caption <- paste0(plot$fig.name,"-",LETTERS[i])
+    if(fig.number>1){
+      caption <- paste0(plot$fig.name,"-",LETTERS[i])
+    }
+    else{
+      caption <- plot$fig.name
+    }
+    
     plot.fig.name <- paste0(plot$title,"_",caption,"_",report.datetime(),plot$output$ext)
     plot$file <- paste0(plot$dir,plot.fig.name)
     print(plot$file)

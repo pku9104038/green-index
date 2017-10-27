@@ -134,6 +134,7 @@ report.render <- function(
         report$school.hq  <- report$aliasdata[report$aliasdata[,g.var$scope]==report$school, g.var$school.hq]
         report$school.camp  <- report$aliasdata[report$aliasdata[,g.var$scope]==report$school, g.var$school.camp]
         
+        
       }
     
     
@@ -206,7 +207,7 @@ report.render <- function(
       # zip csv, sql, plot
       
         command <- paste(report$command$zip$command, 
-                         paste0(output_dir,"/",zipfile),
+                         paste0(output_dir,"/zip/",zipfile),
                          report$command$zip$from)
         print(command)
         system(command = command)
