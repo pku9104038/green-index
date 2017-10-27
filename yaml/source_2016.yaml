@@ -54,14 +54,8 @@ datasource:
         name: "zkzh"
         newname: "准考证号"
         type: "text"
-  -
-    format: "xlsx"
-    table: "经济体质均衡指数"
-    file: "2016年区县均衡与社会经济背景的影响数据.xlsx"
-  -
-    format: "xlsx"
-    table: "历年指标"
-    file: "历年数据汇总.xlsx"
+  
+  
   -
     format: "csv"
     table: "学生问卷调查"
@@ -98,25 +92,8 @@ datasource:
         name: "xxdm"
         newname: "学校代码"
         type: "text"
-  -
-    format: "xlsx"
-    table: "区县"
-    file: "区县信息.xlsx"
-    column:
-      -
-        name: "区县代码"
-        type: "text"
-  -
-    format: "xlsx"
-    table: "学校"
-    file: "学校.xlsx"
-    column:
-      -
-        name: "学校代码"
-        type: "text"       
-      -
-        name: "区县编码"
-        type: "text"       
+  
+  
   -
     format: "csv"
     table: "学生原始信息"
@@ -139,3 +116,30 @@ datasource:
     format: "xlsx"
     table: "别名"
     file: "别名.xlsx"
+  -
+    format: "xlsx"
+    table: "历年指标"
+    file: "历史指标.xlsx"
+  -
+    format: "xlsx"
+    table: "学校"
+    file: "学校.xlsx"
+    column:
+      -
+        name: "学校代码"
+        type: "text"       
+      -
+        name: "区县编码"
+        type: "text"       
+  -
+    format: "xlsx"
+    table: "区县"
+    file: "区县.xlsx"
+    column:
+      -
+        name: "区县代码"
+        type: "text"
+  -
+    format: "xlsx"
+    table: "经济体质均衡指数"
+    file: "外部指标.xlsx"
