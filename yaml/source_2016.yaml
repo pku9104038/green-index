@@ -109,7 +109,7 @@ datasource:
   -
     format: "xlsx"
     table: "学校"
-    file: "抽样学校20170903.xlsx"
+    file: "学校.xlsx"
     column:
       -
         name: "学校代码"
