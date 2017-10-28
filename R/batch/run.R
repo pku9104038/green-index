@@ -48,7 +48,7 @@ variable.data2()
 
 library(yaml)
 source(paste0(yaml.load_file("yaml/conf.yaml")$dir$R,"statistics/statistics_data.R"))
-statistics.data()  #topic.name = "得分率"
+statistics.data(topic.name = "作答")  #topic.name = "得分率"
 
 ########################
 
