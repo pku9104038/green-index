@@ -616,8 +616,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 
 在本次测试中，语文总体能力处于A、B、C三个水平的学生在本题上的平均得分率分别为`r row[row[,var.key]=="A",var.param]`%、
 `r row[row[,var.key]=="B",var.param]`%和
-`r row[row[,var.key]=="C",var.param]`%。\clearpage
-\questiontitle{典型题目2：C3AO051}下面每道小题中，都有一项含有错别字。请把它找出来。
+`r row[row[,var.key]=="C",var.param]`%。\questiontitle{典型题目2：C3AO051}下面每道小题中，都有一项含有错别字。请把它找出来。
 
 \begin{table}[H]
 \begin{tabularx}{\textwidth}{XXXX}
@@ -1305,7 +1304,7 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 \end{longtable}
 \end{itshape}
 `r row <- point.rate[point.rate[,var.variable]=="C3AS310_X",]`
-“习作”从“选择材料”、“组织材料”、“语言表达”及“书写”四个分项考查学生在叙述事情上的能力表现。在本报告中分为四个题目，编号分别为C3AS311、C3AS312、C3AS313、C3AS314。从测试结果来看，作文平均得分率为`r row[row[,var.key]=="总体",var.param]`%，总体情况为：A水平的`r row[row[,var.sample]=="总体" & row[,var.key]=="A",var.param]`%，B水平的`r row[row[,var.sample]=="总体" & row[,var.key]=="B",var.param]`%，C水平的`r row[row[,var.sample]=="总体" & row[,var.key]=="C",var.param]`%。具体情况如下：
+“习作”从“选择材料”、“组织材料”、“语言表达”及“书写”四个分项考查学生在叙述事情上的能力表现。在本报告中分为四个题目，编号分别为C3AS311、C3AS312、C3AS313、C3AS314。从测试结果来看，作文平均得分率为`r row[row[,var.key]=="总体",var.param]`%，总体情况为：A水平的`r row[row[,var.sample]=="总体" & row[,var.key]=="A",var.param]`%，B水平的`r row[row[,var.sample]=="总体" & row[,var.key]=="B",var.param]`%，C水平的`r row[row[,var.sample]=="总体" & row[,var.key]=="C",var.param]`%。不同群体各分数段的人数比例如下：
 
 \begin{table}[H]
 \centering
@@ -1314,11 +1313,12 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 \begin{tabularx}{\textwidth}{|c|c|c|c|c|c|c|c|c|c|}
 
 \cline{1-10}
-\makecell[c]{\mytablehead{水平分层}} & \makecell[c]{\mytablehead{公办}} & \makecell[c]{\mytablehead{普通民办}} & \makecell[c]{\mytablehead{随迁子女小学}} & \makecell[c]{\mytablehead{小学}} & \makecell[c]{\mytablehead{一贯制}} & \mytablehead{男} & \mytablehead{女} & \makecell[c]{\mytablehead{沪籍}} & \makecell[c]{\mytablehead{非沪籍}} \\
+\makecell[c]{\mytablehead{分数段}} & \makecell[c]{\mytablehead{公办}} & \makecell[c]{\mytablehead{普通民办}} & \makecell[c]{\mytablehead{随迁子女小学}} & \makecell[c]{\mytablehead{小学}} & \makecell[c]{\mytablehead{一贯制}} & \mytablehead{男} & \mytablehead{女} & \makecell[c]{\mytablehead{沪籍}} & \makecell[c]{\mytablehead{非沪籍}} \\
 \cline{1-10}
 
-\makecell[c]{A} & 
-`r row <- point.rate[point.rate[,var.variable]=="C3AS310_X" & point.rate[,var.key]=="A",]`
+\makecell[c]{25.5-30} & 
+`r row <- answer[answer[,var.variable]=="C3AS310_S" & point.rate[,var.key]=="25-30",]`
+
 `r row[row[,var.sample]=="公办",var.param]` & 
 `r row[row[,var.sample]=="民办",var.param]` & 
 `r row[row[,var.sample]=="随迁子女民办",var.param]` & 
@@ -1329,8 +1329,8 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 `r row[row[,var.sample]=="沪籍",var.param]` & 
 `r row[row[,var.sample]=="非沪籍",var.param]` \\
 \cline{1-10}
-\makecell[c]{B} & 
-`r row <- point.rate[point.rate[,var.variable]=="C3AS310_X" & point.rate[,var.key]=="B",]`
+\makecell[c]{20.5-25} & 
+`r row <- answer[answer[,var.variable]=="C3AS310_S" & point.rate[,var.key]=="20-25",]`
 `r row[row[,var.sample]=="公办",var.param]` & 
 `r row[row[,var.sample]=="民办",var.param]` & 
 `r row[row[,var.sample]=="随迁子女民办",var.param]` & 
@@ -1341,8 +1341,21 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 `r row[row[,var.sample]=="沪籍",var.param]` & 
 `r row[row[,var.sample]=="非沪籍",var.param]` \\
 \cline{1-10}
-\makecell[c]{C} & 
-`r row <- point.rate[point.rate[,var.variable]=="C3AS310_X" & point.rate[,var.key]=="C",]`
+\makecell[c]{15.5-20} & 
+`r row <- answer[answer[,var.variable]=="C3AS310_S" & point.rate[,var.key]=="15-20",]`
+`r row[row[,var.sample]=="公办",var.param]` & 
+`r row[row[,var.sample]=="民办",var.param]` & 
+`r row[row[,var.sample]=="随迁子女民办",var.param]` & 
+`r row[row[,var.sample]=="小学",var.param]` & 
+`r row[row[,var.sample]=="一贯制",var.param]` & 
+`r row[row[,var.sample]=="男",var.param]` & 
+`r row[row[,var.sample]=="女",var.param]` & 
+`r row[row[,var.sample]=="沪籍",var.param]` & 
+`r row[row[,var.sample]=="非沪籍",var.param]` \\
+\cline{1-10}
+
+\makecell[c]{0-15} & 
+`r row <- answer[answer[,var.variable]=="C3AS310_S" & point.rate[,var.key]=="0-15",]`
 `r row[row[,var.sample]=="公办",var.param]` & 
 `r row[row[,var.sample]=="民办",var.param]` & 
 `r row[row[,var.sample]=="随迁子女民办",var.param]` & 
@@ -1356,8 +1369,8 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 
 \end{tabularx}
 \end{table}
-`r row <- point.rate[point.rate[,var.variable]=="C3AS310_X" & point.rate[,var.key]=="B",]`
-从数据看，小学和一贯制学校在四个水平上的比率情况几乎没有差异。但公办学校B水平的比普通民办学校高出`r row[row[,var.sample]=="公办",var.param] - row[row[,var.sample]=="民办",var.param]`%，比随迁子女小学高出`r row[row[,var.sample]=="公办",var.param] - row[row[,var.sample]=="随迁子女民办",var.param]`%；女生B水平的比男生高出`r row[row[,var.sample]=="女",var.param] - row[row[,var.sample]=="男",var.param]`%；本市学生B水平的比非本市学生高出`r row[row[,var.sample]=="沪籍",var.param] - row[row[,var.sample]=="非沪籍",var.param]`%。反映出学校之间的差异较大，女生在作文水平上的优势明显。下面分别呈现学生在写作分项上的作答情况。
+
+下面分别呈现学生在写作分项上的作答情况。
 
 \questiontitle{C3AS311 (维度1  满分6分)}
 

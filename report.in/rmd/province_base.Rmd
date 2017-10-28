@@ -143,9 +143,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}\mylist
-注：盒须图，须的底部为5分位（表示有5\%的学生总分低于此对应的分数)；盒的底部为25分位（表示有25\%的学生得分低于此线对应的分数）；盒中横线为50分位（表示50\%的学生得分高于此线对应的分数）；盒的顶部为75分位（表示有25\%的学生得分高于此线对应的分数）；须的顶部为95分位（表示有5\%的学生得分高于此线对应的分数）。盒的高度表示中间50\%的学生得分在此分数区间，从一定程度上描述了学生成绩离散程度的大小。红点对应的成绩为平均分。}可以看出上海市不同区学生在“语文”上得分得分分布的离散程度。
-
+\end{figure}\mylist注：盒须图————须下限为5分位（5\%学生得分小于等于此分数)；盒底为25分位（25\%学生得分小于等于此分数）；盒中横线为中位数（50\%学生得分小于等于此分数）；盒顶为75分位（75\%学生得分小于等于此分数）；须上限为95分位（95\%学生得分小于等于此分数）；盒高度为四分位距（IQR），一定程度上反映了得分的离散程度；红点为均值（多数情况下得分均值小于得分中位数）。
 \mytext
 
 \begin{itshape}
@@ -169,7 +167,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}从上图可以看出上海市不同区学生在“数学”上得分的平均水平和得分分布的离散程度。### 不同类型学校学生学业水平
+\end{figure}### 不同类型学校学生学业水平
 
 `r fig_name <- "不同类型学校学生在各学科各水平上的人数比例" `
 ```{r level.bar.academy.subject, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
@@ -209,6 +207,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \label{fig:`r fig_name`}
 \end{figure}
 
+\clearpage
+
 ### 不同户籍类型学生学业水平
 
 `r fig_name <- "不同户籍类型学生在各学科各水平上的人数比例" `
@@ -222,8 +222,6 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \label{fig:`r fig_name`}
 \end{figure}
 
-
-\clearpage
 
 # 学生背景问卷调查结果分析
 

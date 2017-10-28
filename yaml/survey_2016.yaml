@@ -1421,6 +1421,8 @@ global:
       data:
         digits: &plot_data_digits
           - 0
+      angle: &plot_lab_angle
+          - 45
       size:
         width: &plot_canvas_width
           - 8
@@ -1432,6 +1434,8 @@ global:
           - 0.4
         bar_width_fat: &plot_bar_width_fat
           - 0.7
+        lab_size: &plot_lab_size
+          - 8
       multi_fig:
         fig_limit: &plot_multi_fig_limit
           - 50
@@ -1439,6 +1443,8 @@ global:
           -  22
         fig_height: &plot_multi_fig_height
           - 5.28
+        fig_angle: &plot_multi_fig_lab_angle
+          - 60
         lab_size: &plot_multi_fig_lab_size
           - 12
         bar_width: &plot_multi_fig_bar_width
@@ -8986,7 +8992,7 @@ report:
     # 
     # "上海浦东新区民办联营小学" #    缺学生问卷
     # "上海市浦东新区第二中心小学(张江校区)" 缺校长问卷
-  brake: FALSE
+  brake: TRUE
   dummy.fig: *plot_dummy_fig
   geom: *plot_geom
   output:
@@ -9039,7 +9045,7 @@ report:
   report:
     
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "province_base.Rmd"
 
@@ -9186,6 +9192,10 @@ report:
               - 
                 arg: "Group"
                 var: *subject
+            order:
+              -
+                var: "Group"
+                list: *order_subject
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
@@ -9234,12 +9244,16 @@ report:
               - 
                 arg: "Group"
                 var: *subject
+            order:
+              -
+                var: "Group"
+                list: *order_subject
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
             group:
-              variable: *subject
+              variable: "Group"
               scales: "fixed"
               position: "bottom"
             legend: *plot_legend_top
@@ -9280,12 +9294,16 @@ report:
               - 
                 arg: "Group"
                 var: *subject
+            order:
+              -
+                var: "Group"
+                list: *order_subject
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
             group:
-              variable: *subject
+              variable: "Group"
               scales: "fixed"
               position: "bottom"
             legend: *plot_legend_top
@@ -9336,12 +9354,16 @@ report:
               - 
                 arg: "Group"
                 var: *subject
+            order:
+              -
+                var: "Group"
+                list: *order_subject
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
             group:
-              variable: *subject
+              variable: "Group"
               scales: "fixed"
               position: "bottom"
             legend: *plot_legend_top
@@ -9382,12 +9404,16 @@ report:
               - 
                 arg: "Group"
                 var: *subject
+            order:
+              -
+                var: "Group"
+                list: *order_subject
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
             geom: *plot_bar_stacking 
             group:
-              variable: *subject
+              variable: "Group"
               scales: "fixed"
               position: "bottom"
             legend: *plot_legend_top
@@ -9440,7 +9466,7 @@ report:
               ylab: "百分数（%）"
 
         score.box.county.cn: 
-          fig.name: "各区县学生在语文学科上的得分分布"
+          fig.name: "各区学生在语文学科上的得分分布"
           data:
             digits: *plot_data_digits
             filter:
@@ -9499,7 +9525,7 @@ report:
                 var: *stat_quantile_key_top
               -  
                 arg: "fill"
-                var: *tier
+                var: *key_score_mean
               -  
                 arg: "mean"
                 var: *key_score_mean
@@ -9517,7 +9543,7 @@ report:
               ylab: "标准分"
 
         level.bar.county.ma: 
-          fig.name: "各区县学生在数学学科各水平上的人数比例"
+          fig.name: "各区学生在数学学科各水平上的人数比例"
           data:
             digits: *plot_data_digits
             filter:
@@ -9618,7 +9644,7 @@ report:
                 var: *stat_quantile_key_top
               -  
                 arg: "fill"
-                var: *tier
+                var: *key_score_mean
               -  
                 arg: "mean"
                 var: *key_score_mean
@@ -17793,10 +17819,9 @@ report:
               xlab: ""
               ylab: "标准达成度指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         passed.rate.cn.bar: 
@@ -17960,10 +17985,9 @@ report:
               xlab: ""
               ylab: "标准达成度指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         passed.rate.ma.bar: 
@@ -18127,10 +18151,9 @@ report:
               xlab: ""
               ylab: "标准达成度指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         high.thinking.all.bar: 
@@ -18294,10 +18317,9 @@ report:
               xlab: ""
               ylab: "高层次思维能力指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
               
         high.thinking.cn.bar: 
@@ -18461,10 +18483,9 @@ report:
               xlab: ""
               ylab: "高层次思维能力指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         high.thinking.ma.bar: 
@@ -18628,10 +18649,9 @@ report:
               xlab: ""
               ylab: "高层次思维能力指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         individual.balance.all.bar: 
@@ -18795,10 +18815,9 @@ report:
               xlab: ""
               ylab: "学业成绩均衡指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         individual.balance.cn.bar: 
@@ -18962,10 +18981,9 @@ report:
               xlab: ""
               ylab: "学业成绩均衡指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         individual.balance.ma.bar: 
@@ -19129,10 +19147,9 @@ report:
               xlab: ""
               ylab: "学业成绩均衡指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         school.balance.all.bar: 
@@ -19196,10 +19213,9 @@ report:
               xlab: ""
               ylab: "学校间均衡指数"
             #axisx:
-            #  text_angle: 90
-            #  text_size: 8
+            #  text_angle: *plot_lab_angle
+            #  text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         school.balance.cn.bar: 
@@ -19263,10 +19279,9 @@ report:
               xlab: ""
               ylab: "学校间均衡指数"
             #axisx:
-            #  text_angle: 90
-            #  text_size: 8
+            #  text_angle: *plot_lab_angle
+            #  text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         school.balance.ma.bar: 
@@ -19330,10 +19345,9 @@ report:
               xlab: ""
               ylab: "学校间均衡指数"
             #axisx:
-            #  text_angle: 90
-            #  text_size: 8
+            #  text_angle: *plot_lab_angle
+            #  text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         county.balance.all.bar: 
@@ -19399,10 +19413,9 @@ report:
               xlab: ""
               ylab: "区间学业成绩均衡指数"
             #axisx:
-            #  text_angle: 90
-            #  text_size: 8
+            #  text_angle: *plot_lab_angle
+            #  text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         learning.confidence.bar: 
@@ -19566,10 +19579,9 @@ report:
               xlab: ""
               ylab: "学习自信心指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         learning.motivation.bar: 
@@ -19733,10 +19745,9 @@ report:
               xlab: ""
               ylab: "学习动机指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         learning.pressure.bar: 
@@ -19900,10 +19911,9 @@ report:
               xlab: ""
               ylab: "学习压力指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         school.identity.bar: 
@@ -20067,14 +20077,13 @@ report:
               xlab: ""
               ylab: "学校认同度指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         burden.bar: 
-          fig.name: "四年级学生学业负担指数"
+          fig.name: "四年级学生学业负担综合指数"
           data:
             digits: *plot_data_digits
             filter:
@@ -20232,12 +20241,11 @@ report:
               width: *plot_bar_width
             label:
               xlab: ""
-              ylab: "学业负担指数"
+              ylab: "学业负担综合指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         sleep.bar: 
@@ -20401,10 +20409,9 @@ report:
               xlab: ""
               ylab: "睡眠指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         writing.homework.bar: 
@@ -20568,10 +20575,9 @@ report:
               xlab: ""
               ylab: "作业指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         extra.homework.bar: 
@@ -20735,10 +20741,9 @@ report:
               xlab: ""
               ylab: "校外补课指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         teacher.relationship.bar: 
@@ -20902,10 +20907,9 @@ report:
               xlab: ""
               ylab: "师生关系指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         student.morality.bar: 
@@ -21069,10 +21073,9 @@ report:
               xlab: ""
               ylab: "品德行为指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         student.physique.bar: 
@@ -21236,10 +21239,9 @@ report:
               xlab: ""
               ylab: "体质健康指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         student.psychological.bar: 
@@ -21403,10 +21405,9 @@ report:
               xlab: ""
               ylab: "心理健康指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         teaching.method.bar: 
@@ -21528,10 +21529,9 @@ report:
               xlab: ""
               ylab: "教学方式指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         course.leadership.bar: 
@@ -21653,14 +21653,13 @@ report:
               xlab: ""
               ylab: "课程领导力指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         economic.bar: 
-          fig.name: "四年级学生家庭背景影响指数"
+          fig.name: "四年级学生经济背景影响指数"
           data:
             digits: *plot_data_digits
             filter:
@@ -21734,12 +21733,11 @@ report:
               width: *plot_bar_width
             label:
               xlab: ""
-              ylab: "家庭背景影响指数"
+              ylab: "经济背景影响指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         history.bar:
@@ -21977,24 +21975,22 @@ report:
                   - *coef_economic
             
           ggplot:
-            width: 25
-            height: 8
+            width: *plot_multi_fig_width
+            height: *plot_multi_fig_height
             geom: *plot_bar_dodging
             position: "dodge" 
             #text:
             #  vjust: 0.5
             bar:
               width: *plot_bar_width_fat
-            legend: *plot_legend_right_big
+            legend: *plot_legend_top_big
             label:
               xlab: ""
               ylab: "百分数"
             axisx:
-              text_angle: 90
+              text_angle: *plot_lab_angle
               text_size: 16
-            #axisy:
-            #  discrete_limits: *axisy_discrete_limits_index
-            #  ylim: *axisy_ylim
+          
 
         province.county.index.radar: 
           fig.name: "四年级各指标雷达分析图"
@@ -22173,7 +22169,7 @@ report:
             geom: *plot_radar 
 
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "province_cn.Rmd"
 
@@ -24565,7 +24561,7 @@ report:
                   value: *top_answer
                       
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "province_ma.Rmd"
 
@@ -26100,7 +26096,7 @@ report:
 
           
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "county_base.Rmd"
 
@@ -26369,7 +26365,7 @@ report:
               xlab: ""
               ylab: "百分数（%）"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
 
         score.box.province.county.school.cn: 
@@ -26460,7 +26456,7 @@ report:
               xlab: ""
               ylab: "标准分"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
 
         level.bar.province.county.school.ma:
@@ -26520,7 +26516,7 @@ report:
               xlab: ""
               ylab: "百分数（%）"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
 
         score.box.province.county.school.ma: 
@@ -26611,7 +26607,7 @@ report:
               xlab: ""
               ylab: "标准分"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
 
         level.bar.academy.subject: 
@@ -35632,10 +35628,9 @@ report:
               xlab: ""
               ylab: "标准达成度指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         passed.rate.all.bar: 
@@ -35697,10 +35692,9 @@ report:
               xlab: ""
               ylab: "标准达成度指数"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         passed.rate.cn.bar.perspective: 
@@ -35816,10 +35810,9 @@ report:
               xlab: ""
               ylab: "标准达成度指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         passed.rate.cn.bar: 
@@ -35881,10 +35874,9 @@ report:
               xlab: ""
               ylab: "标准达成度指数"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         passed.rate.ma.bar.perspective: 
@@ -36000,10 +35992,9 @@ report:
               xlab: ""
               ylab: "标准达成度指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         passed.rate.ma.bar: 
@@ -36065,10 +36056,9 @@ report:
               xlab: ""
               ylab: "标准达成度指数"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         high.level.thinking.all.bar.perspective: 
@@ -36184,10 +36174,9 @@ report:
               xlab: ""
               ylab: "高层次思维能力指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         high.level.thinking.all.bar: 
@@ -36250,10 +36239,9 @@ report:
               xlab: ""
               ylab: "高层次思维能力指数"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         high.level.thinking.cn.bar.perspective: 
@@ -36369,10 +36357,9 @@ report:
               xlab: ""
               ylab: "高层次思维能力指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         high.level.thinking.cn.bar: 
@@ -36434,10 +36421,9 @@ report:
               xlab: ""
               ylab: "高层次思维能力指数"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         high.level.thinking.ma.bar.perspective: 
@@ -36553,10 +36539,9 @@ report:
               xlab: ""
               ylab: "高层次思维能力指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         high.level.thinking.ma.bar: 
@@ -36618,10 +36603,9 @@ report:
               xlab: ""
               ylab: "高层次思维能力指数"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         individual.balance.all.bar.perspective: 
@@ -36737,10 +36721,9 @@ report:
               xlab: ""
               ylab: "学业成绩均衡指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         individual.balance.all.bar: 
@@ -36802,10 +36785,9 @@ report:
               xlab: ""
               ylab: "学业成绩均衡指数"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         individual.balance.cn.bar.perspective: 
@@ -36921,10 +36903,9 @@ report:
               xlab: ""
               ylab: "学业成绩均衡指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         individual.balance.cn.bar: 
@@ -36986,10 +36967,9 @@ report:
               xlab: ""
               ylab: "学业成绩均衡指数"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         individual.balance.ma.bar.perspective: 
@@ -37105,10 +37085,9 @@ report:
               xlab: ""
               ylab: "学业成绩均衡指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         individual.balance.ma.bar: 
@@ -37170,10 +37149,9 @@ report:
               xlab: ""
               ylab: "学业成绩均衡指数"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         school.balance.all.bar: 
@@ -37204,10 +37182,7 @@ report:
               -  
                 arg: "label"
                 var: *label
-            #order: 
-            #  -
-            #    var: "x"
-            #    list: *order_prov_coun
+            
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
@@ -37221,11 +37196,8 @@ report:
             label:
               ylab: ""
               xlab: "学校间均衡指数"
-            #axisx:
-            #  text_angle: 90
-            #  text_size: 8
+            
             axisy:
-            #  discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         school.balance.cn.bar: 
@@ -37257,10 +37229,7 @@ report:
               -  
                 arg: "label"
                 var: *label
-            #order: 
-            #  -
-            #    var: "x"
-            #    list: *order_prov_coun
+            
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
@@ -37274,11 +37243,7 @@ report:
             label:
               ylab: ""
               xlab: "学校间均衡指数"
-            #axisx:
-            #  text_angle: 90
-            #  text_size: 8
             axisy:
-            #  discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         school.balance.ma.bar: 
@@ -37310,10 +37275,7 @@ report:
               -  
                 arg: "label"
                 var: *label
-            #order: 
-            #  -
-            #    var: "x"
-            #    list: *order_prov_coun
+            
           ggplot:
             width: *plot_canvas_width
             height: *plot_canvas_height
@@ -37327,12 +37289,9 @@ report:
             label:
               ylab: ""
               xlab: "学校间均衡指数"
-            #axisx:
-            #  text_angle: 90
-            #  text_size: 8
+            
             axisy:
-            #  discrete_limits: *axisy_discrete_limits_index
-               ylim: *axisy_ylim
+              ylim: *axisy_ylim
 
         learning.confidence.bar.perspective: 
           fig.name: "不同群体四年级学生学习自信心指数"
@@ -37447,10 +37406,9 @@ report:
               xlab: ""
               ylab: "学习自信心指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         learning.confidence.bar: 
@@ -37512,10 +37470,9 @@ report:
               xlab: ""
               ylab: "学习自信心指数"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         learning.motivation.bar.perspective: 
@@ -37631,10 +37588,9 @@ report:
               xlab: ""
               ylab: "学习动机指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         learning.motivation.bar: 
@@ -37696,10 +37652,9 @@ report:
               xlab: ""
               ylab: "学习动机指数"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         learning.pressure.bar.perspective: 
@@ -37815,10 +37770,9 @@ report:
               xlab: ""
               ylab: "学习压力指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
         
         learning.pressure.bar: 
@@ -37882,10 +37836,9 @@ report:
               xlab: ""
               ylab: "学习压力指数"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         school.identity.bar.perspective: 
@@ -38001,10 +37954,9 @@ report:
               xlab: ""
               ylab: "学校认同度指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         school.identity.bar: 
@@ -38066,14 +38018,13 @@ report:
               xlab: ""
               ylab: "学校认同度指数"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         burden.bar.perspective: 
-          fig.name: "不同群体四年级学生学业负担指数"
+          fig.name: "不同群体四年级学生学业负担综合指数"
           data:
             digits: *plot_data_digits
             filter:
@@ -38183,16 +38134,15 @@ report:
               width: *plot_bar_width
             label:
               xlab: ""
-              ylab: "学业负担指数"
+              ylab: "学业负担综合指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         burden.bar: 
-          fig.name: "四年级学生学业负担指数"
+          fig.name: "四年级学生学业负担综合指数"
           entry: "burden.bar"
           ext.tex: ".tex"
           ext.fig: ".pdf"
@@ -38248,12 +38198,11 @@ report:
               width: *plot_bar_width
             label:
               xlab: ""
-              ylab: "学业负担指数"
+              ylab: "学业负担综合指数"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         sleep.bar.perspective: 
@@ -38369,10 +38318,9 @@ report:
               xlab: ""
               ylab: "睡眠指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         sleep.bar: 
@@ -38434,10 +38382,9 @@ report:
               xlab: ""
               ylab: "睡眠指数"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         writing.homework.bar.perspective: 
@@ -38553,10 +38500,9 @@ report:
               xlab: ""
               ylab: "作业指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         writing.homework.bar: 
@@ -38618,10 +38564,9 @@ report:
               xlab: ""
               ylab: "作业指数"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         extra.homework.bar.perspective: 
@@ -38737,10 +38682,9 @@ report:
               xlab: ""
               ylab: "补课指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         extra.homework.bar: 
@@ -38802,10 +38746,9 @@ report:
               xlab: ""
               ylab: "补课指数"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         teacher.relationship.bar.perspective: 
@@ -38921,10 +38864,9 @@ report:
               xlab: ""
               ylab: "师生关系指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         teacher.relationship.bar: 
@@ -38986,10 +38928,9 @@ report:
               xlab: ""
               ylab: "师生关系指数"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
         
         student.morality.bar.perspective: 
@@ -39105,10 +39046,9 @@ report:
               xlab: ""
               ylab: "品德行为指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         student.morality.bar: 
@@ -39170,10 +39110,9 @@ report:
               xlab: ""
               ylab: "品德行为指数"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
         
         student.physique.bar: 
@@ -39220,11 +39159,8 @@ report:
             label:
               ylab: ""
               xlab: "体质健康指数"
-            #axisx:
-            #  text_angle: 90
-            #  text_size: 8
+          
             axisy:
-            #  discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         student.psychological.bar.perspective: 
@@ -39340,10 +39276,9 @@ report:
               xlab: ""
               ylab: "心理健康指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         student.psychological.bar: 
@@ -39405,10 +39340,9 @@ report:
               xlab: ""
               ylab: "心理健康指数"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
         
         teaching.method.bar.perspective: 
@@ -39524,10 +39458,9 @@ report:
               xlab: ""
               ylab: "教学方式指数"
             axisx:
-              text_angle: 90
-              text_size: 8
+              text_angle: *plot_lab_angle
+              text_size: *plot_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         teaching.method.bar: 
@@ -39589,10 +39522,9 @@ report:
               xlab: ""
               ylab: "教学方式指数"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         course.leadership.bar: 
@@ -39664,11 +39596,10 @@ report:
               xlab: ""
               ylab: "课程领导力指数"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
             axisy:
-              discrete_limits: *axisy_discrete_limits_index
-              #ylim: *axisy_ylim
+              ylim: *axisy_ylim
 
         economic.bar: 
           fig.name: "四年级学生经济背景影响指数"
@@ -39746,12 +39677,8 @@ report:
               width: *plot_bar_width
             label:
               ylab: ""
-              xlab: "家庭背景影响指数"
-            axisx:
-              text_angle: 90
-              text_size: 8
+              xlab: "经济背景影响指数"
             axisy:
-              #discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         history.bar:
@@ -39989,27 +39916,24 @@ report:
                   - *coef_economic
             
           ggplot:
-            width: 25
-            height: 8
+            width: *plot_multi_fig_width
+            height: *plot_multi_fig_height
             geom: *plot_bar_dodging
             position: "dodge" 
             text:
               hjust: 0.5
             bar:
               width: *plot_bar_width_fat
-            legend: *plot_legend_right
+            legend: *plot_legend_top_big
             label:
               xlab: ""
               ylab: "百分数"
             axisx:
-              text_angle: 90
-              text_size: 12
-            #axisy:
-            #  discrete_limits: *axisy_discrete_limits_index
-            #  ylim: *axisy_ylim
- 
+              text_angle: *plot_lab_angle
+              text_size: *plot_multi_fig_lab_size
+            
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "county_cn.Rmd"
 
@@ -40433,7 +40357,7 @@ report:
               xlab: ""
               ylab: "百分数（%）"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
             
         score.box.province.county.school.cn: 
@@ -40518,7 +40442,7 @@ report:
               xlab: ""
               ylab: "标准分"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
 
         level.bar.dimention.cn: 
@@ -41158,7 +41082,7 @@ report:
               xlab: ""
               ylab: "百分数（%）"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
 
         jilei.box.province.county.school.cn: 
@@ -41243,7 +41167,7 @@ report:
               xlab: ""
               ylab: "标准分"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
 
         reading.bar.perspective.cn: 
@@ -41638,7 +41562,7 @@ report:
               xlab: ""
               ylab: "百分数（%）"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
 
         reading.box.province.county.school.cn: 
@@ -41723,7 +41647,7 @@ report:
               xlab: ""
               ylab: "标准分"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
 
         writing.bar.perspective.cn: 
@@ -42118,7 +42042,7 @@ report:
               xlab: ""
               ylab: "百分数（%）"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
 
         writing.box.province.county.school.cn: 
@@ -42203,7 +42127,7 @@ report:
               xlab: ""
               ylab: "标准分"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
 
         answer.segment.bar.cn: 
@@ -42369,7 +42293,7 @@ report:
                   value: *dim_cn_writing
                      
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "county_ma.Rmd"
 
@@ -42802,7 +42726,7 @@ report:
               xlab: ""
               ylab: "百分数（%）"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
             
         score.box.province.county.school.ma: 
@@ -42887,7 +42811,7 @@ report:
               xlab: ""
               ylab: "标准分"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
 
         level.bar.domain.ma: 
@@ -43807,7 +43731,7 @@ report:
               xlab: ""
               ylab: "百分数（%）"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
 
         number.box.province.county.school.ma: 
@@ -43892,7 +43816,7 @@ report:
               xlab: ""
               ylab: "标准分"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
 
         space.bar.perspective.ma: 
@@ -44287,7 +44211,7 @@ report:
               xlab: ""
               ylab: "百分数（%）"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
 
         space.box.province.county.school.ma: 
@@ -44372,7 +44296,7 @@ report:
               xlab: ""
               ylab: "标准分"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
 
         statistics.bar.perspective.ma: 
@@ -44767,7 +44691,7 @@ report:
               xlab: ""
               ylab: "百分数（%）"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
 
         statistics.box.province.county.school.ma: 
@@ -44852,7 +44776,7 @@ report:
               xlab: ""
               ylab: "标准分"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
 
         skill.bar.perspective.ma: 
@@ -45247,7 +45171,7 @@ report:
               xlab: ""
               ylab: "百分数（%）"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
 
         skill.box.province.county.school.ma: 
@@ -45332,7 +45256,7 @@ report:
               xlab: ""
               ylab: "标准分"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
 
         concept.bar.perspective.ma: 
@@ -45727,7 +45651,7 @@ report:
               xlab: ""
               ylab: "百分数（%）"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
 
         concept.box.province.county.school.ma: 
@@ -45812,7 +45736,7 @@ report:
               xlab: ""
               ylab: "标准分"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
 
         apply.bar.perspective.ma: 
@@ -46207,7 +46131,7 @@ report:
               xlab: ""
               ylab: "百分数（%）"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
 
         apply.box.province.county.school.ma: 
@@ -46292,7 +46216,7 @@ report:
               xlab: ""
               ylab: "标准分"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
 
         problem.bar.perspective.ma: 
@@ -46687,7 +46611,7 @@ report:
               xlab: ""
               ylab: "百分数（%）"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
 
         problem.box.province.county.school.ma: 
@@ -46772,7 +46696,7 @@ report:
               xlab: ""
               ylab: "标准分"
             axisx:
-              text_angle: 90
+              text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size
 
         dom.dim.bar.province.perspective.ma: 
@@ -47273,7 +47197,7 @@ report:
 
         
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "school_report.Rmd"
 
@@ -51443,11 +51367,7 @@ report:
             label:
               xlab: ""
               ylab: "指数"
-            #axisx:
-            #  text_angle: 90
-            #  text_size: 8
             axisy:
-              #discrete_limits: *axisy_discrete_limits_index
               ylim: *axisy_ylim
 
         school.county.index.radar: 
@@ -51700,8 +51620,6 @@ report:
                   value: *per_total
               
 
-
-  
     -
       process: FALSE
       table: "统计指标汇总"
@@ -52010,24 +51928,22 @@ report:
                   - *coef_economic
             
           ggplot:
-            width: 25
-            height: 8
+            width: *plot_multi_fig_width
+            height: *plot_multi_fig_height
             geom: *plot_bar_dodging
             position: "dodge" 
             #text:
             #  vjust: 0.5
             bar:
               width: *plot_bar_width_fat
-            legend: *plot_legend_right_big
+            legend: *plot_legend_top_big
             label:
               xlab: ""
               ylab: "百分数"
             axisx:
-              text_angle: 90
-              text_size: 14
-            #axisy:
-            #  discrete_limits: *axisy_discrete_limits_index
-            #  ylim: *axisy_ylim
+              text_angle: *plot_lab_angle
+              text_size: *plot_multi_fig_lab_size
+            
 
       
       param:

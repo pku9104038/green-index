@@ -1126,7 +1126,7 @@ plot.bar_dodging  <- function(
       figure <- figure + geom_text(aes(label = label),colour=plot$ggplot$colour$text, 
                                    position = position_stack(vjust = plot$ggplot$text$vjust)) 
     }
-    else if(!is.null(plot$ggplot$adjust$hjust)){
+    else if(!is.null(plot$ggplot$text$hjust)){
      # print("hjust")
       figure <- figure + geom_text(aes(label = label, y =  y+2 ), 
                                    position = position_dodge(plot$ggplot$bar$width),
@@ -1135,6 +1135,19 @@ plot.bar_dodging  <- function(
     
     
     #figure <- figure + geom_text(aes(label = label),colour=plot$ggplot$colour$text, vjust = plot$ggplot$text$vjust) 
+  }
+  else{
+    if(plot$ggplot$position=="stack"){
+      # print("vjust")
+      figure <- figure + geom_text(aes(label = label),colour=plot$ggplot$colour$text, 
+                                   position = position_stack(vjust = plot$ggplot$text$vjust)) 
+    }
+    else if(plot$ggplot$position=="dodge"){
+      # print("hjust")
+      figure <- figure + geom_text(aes(label = label, y =  y+2 ), 
+                                   position = position_dodge(plot$ggplot$bar$width),
+                                   vjust  = 0.5, hjust = 0.5, colour=plot$ggplot$colour$text) 
+    }
   }
   
 
@@ -1168,6 +1181,7 @@ plot.bar_dodging  <- function(
   else{
     figure <- figure + guides(fill=FALSE) 
   }
+  
   if(!is.null(plot$ggplot$group)){
     figure <- figure + facet_wrap(facets = ~Group, nrow = 1,
                            strip.position = plot$ggplot$group$position, 

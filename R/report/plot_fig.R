@@ -11,14 +11,14 @@ g.tier <- yaml$global$stat$def$tier
 source(paste0(g.dir$R,"report/plot.R"))
 source(paste0(g.dir$R,"ETL/db.R"))
 #######################################################
-plot.name <- "history.bar"
+plot.name <- "economic.bar"
 
 reports <- yaml.load_file(paste0(g.dir$yaml,g.yaml$survey))$report
 ############
 # 1 base, 2 green, 3 cn, 4 ma, 5 county_base 6 county_green, 7 county_cn, 8 county_ma, 9 school_report
 ############
 
-i <- 2
+i <- 6
 
 report <-  reports$report[[i]]
 
@@ -84,7 +84,7 @@ plot <- report$plot[[plot.name]]
 #plot$dir  <- paste0(getwd(),"/",g.dir$report.out.plot)
 #plot$data$keep <- list(list(var = "统计范围", value=list(report$school)))
 #plot$data$keep <- list(list(var = "统计范围", value=list(report$scope)))
-#plot$data$keep <- list(list(var = "统计范围", value=list(report$county,report$province)))
+plot$data$keep <- list(list(var = "统计范围", value=list(report$county,report$province)))
 #plot$data$keep <- list(list(var = "统计范围", value=list(report$county,report$scope)),
 #                       list(var = "学科", value=list("学业成绩")),
 #                       list(var = "主题", value=list("高层次思维能力指数")))

@@ -207,7 +207,7 @@ report.render <- function(
       # zip csv, sql, plot
       
         command <- paste(report$command$zip$command, 
-                         paste0(output_dir,"/zip/",zipfile),
+                         paste0(output_dir,zipfile),
                          report$command$zip$from)
         print(command)
         system(command = command)
