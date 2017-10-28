@@ -1117,40 +1117,39 @@ plot.bar_dodging  <- function(
   figure <- figure + geom_bar( stat="identity", width = plot$ggplot$bar$width,position = plot$ggplot$position) 
   #print(plot$ggplot)
   
-  #figure <- figure + geom_text(aes(label = label),colour=plot$ggplot$colour$text, 
-  #                             position = position_stack(vjust = 0.5)) 
-
-  if(!is.null(plot$ggplot$text)){
-    if(!is.null(plot$ggplot$text$vjust)){
-     # print("vjust")
-      figure <- figure + geom_text(aes(label = label),colour=plot$ggplot$colour$text, 
-                                   position = position_stack(vjust = plot$ggplot$text$vjust)) 
-    }
-    else if(!is.null(plot$ggplot$text$hjust)){
-     # print("hjust")
-      figure <- figure + geom_text(aes(label = label, y =  y+2 ), 
-                                   position = position_dodge(plot$ggplot$bar$width),
-                                   vjust  = 0.5, hjust = 0.5, colour=plot$ggplot$colour$text) 
-    }
-    
-    
-    #figure <- figure + geom_text(aes(label = label),colour=plot$ggplot$colour$text, vjust = plot$ggplot$text$vjust) 
+  ###########################################
+  
+  if(!is.null(plot$ggplot$text$size)){
+    lab.size <- plot$ggplot$text$size
   }
   else{
-    if(plot$ggplot$position=="stack"){
-      # print("vjust")
-      figure <- figure + geom_text(aes(label = label),colour=plot$ggplot$colour$text, 
-                                   position = position_stack(vjust = plot$ggplot$text$vjust)) 
-    }
-    else if(plot$ggplot$position=="dodge"){
-      # print("hjust")
-      figure <- figure + geom_text(aes(label = label, y =  y+2 ), 
-                                   position = position_dodge(plot$ggplot$bar$width),
-                                   vjust  = 0.5, hjust = 0.5, colour=plot$ggplot$colour$text) 
-    }
+    lab.size <-4
   }
+  if(!is.null(plot$ggplot$text$vjust)){
+    lab.vjust <-plot$ggplot$text$vjust
+  }
+  else{
+    lab.vjust  <- 0.5
+  }
+  if(!is.null(plot$ggplot$text$hjust)){
+    lab.hjust <- plot$ggplot$text$hjust
+  }
+  else{
+    lab.hjust <- 0.5
+  }
+    
+  if(plot$ggplot$position=="stack"){
+    figure <- figure + geom_text(aes(label = label),colour=plot$ggplot$colour$text, #size = lab.size,
+                                   position = position_stack(vjust = lab.vjust)) 
+  }
+  else if(plot$ggplot$position=="dodge"){
+    figure <- figure + geom_text(aes(label = label, y =  y/2 ), #size = lab.size,
+                                   position = position_dodge(plot$ggplot$bar$width),
+                                   vjust  = lab.vjust, hjust = lab.hjust, colour=plot$ggplot$colour$text) 
+  }
+    
+  ############################################
   
-
   if(!is.null(plot$ggplot$legend)){
     if(!is.null(plot$ggplot$legend$width)){
       width =  plot$ggplot$legend$width
@@ -1248,7 +1247,7 @@ plot.box  <- function(
     error.width <- plot$ggplot$box$error.width
   }
   else{
-    error.width <- 0.1
+    error.width <- 0.2
   }
   figure <- figure + geom_errorbar(aes(x=x, ymin=ymin,ymax=ymax),size = 0.5, width = error.width)
   if(!is.null(plot$ggplot$box$box.width)){

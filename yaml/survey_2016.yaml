@@ -1422,12 +1422,16 @@ global:
         digits: &plot_data_digits
           - 0
       angle: &plot_lab_angle
-          - 45
+          - 90
       size:
         width: &plot_canvas_width
           - 8
         height: &plot_canvas_height
           - 4
+        fullpage_width: &plot_canvas_fullpage_width
+          - 22
+        fullpage_height: &plot_canvas_fullpage_height
+          - 11
         bar_width: &plot_bar_width
           - 0.5
         bar_width_thin: &plot_bar_width_thin
@@ -1444,7 +1448,7 @@ global:
         fig_height: &plot_multi_fig_height
           - 5.28
         fig_angle: &plot_multi_fig_lab_angle
-          - 60
+          - 90
         lab_size: &plot_multi_fig_lab_size
           - 12
         bar_width: &plot_multi_fig_bar_width
@@ -9525,7 +9529,7 @@ report:
                 var: *stat_quantile_key_top
               -  
                 arg: "fill"
-                var: *key_score_mean
+                var: *tier
               -  
                 arg: "mean"
                 var: *key_score_mean
@@ -9644,7 +9648,7 @@ report:
                 var: *stat_quantile_key_top
               -  
                 arg: "fill"
-                var: *key_score_mean
+                var: *tier
               -  
                 arg: "mean"
                 var: *key_score_mean
@@ -11243,6 +11247,7 @@ report:
             position: "dodge" 
             text:
               vjust: 0.5
+              size:  6
             coord: "flip"
             bar:
               width: *plot_bar_width_fat
@@ -17633,7 +17638,7 @@ report:
                   value: *per_total
 
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "province_green.Rmd"
 
@@ -21975,8 +21980,8 @@ report:
                   - *coef_economic
             
           ggplot:
-            width: *plot_multi_fig_width
-            height: *plot_multi_fig_height
+            width: *plot_canvas_fullpage_width
+            height: *plot_canvas_fullpage_height
             geom: *plot_bar_dodging
             position: "dodge" 
             #text:
@@ -22169,7 +22174,7 @@ report:
             geom: *plot_radar 
 
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "province_cn.Rmd"
 
@@ -24561,7 +24566,7 @@ report:
                   value: *top_answer
                       
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "province_ma.Rmd"
 
@@ -26096,7 +26101,7 @@ report:
 
           
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "county_base.Rmd"
 
@@ -26322,7 +26327,7 @@ report:
             filter:
               -
                 - 
-                  variable: *subject
+                  variable: *subjectmulti
                   value: *subject_cn
                 -
                   variable: *perspective
@@ -26358,6 +26363,7 @@ report:
             geom: *plot_bar_stacking 
             text:
               vjust: 0.5
+              size: 12
             legend: *plot_legend_top
             bar:
               width: *plot_multi_fig_bar_width
@@ -35468,7 +35474,7 @@ report:
                   value: *top_point_rate
 
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "county_green.Rmd"
 
@@ -39916,8 +39922,8 @@ report:
                   - *coef_economic
             
           ggplot:
-            width: *plot_multi_fig_width
-            height: *plot_multi_fig_height
+            width: *plot_canvas_fullpage_width
+            height: *plot_canvas_fullpage_height
             geom: *plot_bar_dodging
             position: "dodge" 
             text:
@@ -39933,7 +39939,7 @@ report:
               text_size: *plot_multi_fig_lab_size
             
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "county_cn.Rmd"
 
@@ -42293,7 +42299,7 @@ report:
                   value: *dim_cn_writing
                      
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "county_ma.Rmd"
 
@@ -47197,7 +47203,7 @@ report:
 
         
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "school_report.Rmd"
 
@@ -51928,8 +51934,8 @@ report:
                   - *coef_economic
             
           ggplot:
-            width: *plot_multi_fig_width
-            height: *plot_multi_fig_height
+            width: *plot_canvas_fullpage_width
+            height: *plot_canvas_fullpage_height
             geom: *plot_bar_dodging
             position: "dodge" 
             #text:

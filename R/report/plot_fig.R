@@ -11,14 +11,14 @@ g.tier <- yaml$global$stat$def$tier
 source(paste0(g.dir$R,"report/plot.R"))
 source(paste0(g.dir$R,"ETL/db.R"))
 #######################################################
-plot.name <- "economic.bar"
+plot.name <- "extra_homework_reason.bar"
 
 reports <- yaml.load_file(paste0(g.dir$yaml,g.yaml$survey))$report
 ############
 # 1 base, 2 green, 3 cn, 4 ma, 5 county_base 6 county_green, 7 county_cn, 8 county_ma, 9 school_report
 ############
 
-i <- 6
+i <- 5
 
 report <-  reports$report[[i]]
 

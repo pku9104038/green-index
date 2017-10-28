@@ -143,12 +143,9 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}\mylist注：盒须图————须下限为5分位（5\%学生得分小于等于此分数)；盒底为25分位（25\%学生得分小于等于此分数）；盒中横线为中位数（50\%学生得分小于等于此分数）；盒顶为75分位（75\%学生得分小于等于此分数）；须上限为95分位（95\%学生得分小于等于此分数）；盒高度为四分位距（IQR），一定程度上反映了得分的离散程度；红点为均值（多数情况下得分均值小于得分中位数）。
+\end{figure}\mylist注：盒须图——须下限为5分位（5\%学生得分小于等于此分数)；盒底为25分位（25\%学生得分小于等于此分数）；盒中横线为中位数（50\%学生得分小于等于此分数）；盒顶为75分位（75\%学生得分小于等于此分数）；须上限为95分位（95\%学生得分小于等于此分数）；盒高度为四分位距（IQR），一定程度上反映了得分的离散程度；红点为均值（多数情况下得分均值小于得分中位数）。
 \mytext
-
-\begin{itshape}
-\small
-\end{itshape}#### 各区学生数学学业水平`r fig_name <- "各区学生在数学学科各水平上的人数比例" `
+#### 各区学生数学学业水平`r fig_name <- "各区学生在数学学科各水平上的人数比例" `
 ```{r level.bar.county.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "level.bar.county.ma"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
