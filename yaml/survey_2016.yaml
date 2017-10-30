@@ -1431,7 +1431,7 @@ global:
         fullpage_width: &plot_canvas_fullpage_width
           - 22
         fullpage_height: &plot_canvas_fullpage_height
-          - 11
+          - 8
         bar_width: &plot_bar_width
           - 0.5
         bar_width_thin: &plot_bar_width_thin
@@ -1446,7 +1446,7 @@ global:
         fig_width: &plot_multi_fig_width
           -  22
         fig_height: &plot_multi_fig_height
-          - 5.28
+          - 5
         fig_angle: &plot_multi_fig_lab_angle
           - 90
         lab_size: &plot_multi_fig_lab_size
@@ -8985,7 +8985,24 @@ report:
   cleanFlag: TRUE
 
   province: "上海市"
-  skip: TRUE #skip other county／school  
+  counties:
+    #- "浦东新区"
+    - "黄浦区"
+    #- "静安区"
+    #- "徐汇区"
+    #- "虹口区"
+    #- "长宁区"
+    #- "杨浦区"
+    #- "宝山区"
+    #- "普陀区"
+    #- "嘉定区"
+    #- "青浦区"
+    #- "松江区"
+    #- "金山区"
+    #- "奉贤区"
+    #- "闵行区"
+    #- "崇明区"
+  skip: FALSE #skip other county／school  
   test:
     county: "浦东新区"
     # "黄浦区" 
@@ -9049,7 +9066,7 @@ report:
   report:
     
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "province_base.Rmd"
 
@@ -24467,6 +24484,9 @@ report:
                   variable: *tier
                   value: *tier_province
                 -
+                  variable: *perspective
+                  value: *per_total
+                -
                   variable: *dimention
                   value: *dim_cn_jilei
                 - 
@@ -24505,27 +24525,14 @@ report:
                   variable: *tier
                   value: *tier_province
                 -
+                  variable: *perspective
+                  value: *per_total
+                -
                   variable: *dimention
                   value: *dim_cn_reading
                 - 
                   variable: *topic
                   value: *top_answer
-
-        writing.table.cn: 
-          name: "学生在语文学科“习作”上的作答情况"
-          data:
-            digits: 1
-            filter:
-              -
-                - 
-                  variable: *subject
-                  value: *subject_cn
-                -
-                  variable: *tier
-                  value: *tier_province
-                -
-                  variable: *dimention
-                  value: *dim_cn_writing
 
         writing.point.rate.table.cn: 
           name: "学生在语文学科“习作”上的平均得分率"
@@ -24547,6 +24554,28 @@ report:
                   value: *top_point_rate
 
         writing.answer.table.cn: 
+          name: "学生在语文学科“习作”上的作答情况"
+          data:
+            digits: 1
+            filter:
+              -
+                - 
+                  variable: *subject
+                  value: *subject_cn
+                -
+                  variable: *tier
+                  value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                -
+                  variable: *dimention
+                  value: *dim_cn_writing
+                - 
+                  variable: *topic
+                  value: *top_answer
+
+        writing.answer.table.cn.perspective: 
           name: "学生在语文学科“习作”上的作答情况"
           data:
             digits: 1
@@ -26095,6 +26124,9 @@ report:
                 -
                   variable: *tier
                   value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total             
                 - 
                   variable: *topic
                   value: *top_answer
@@ -26327,7 +26359,7 @@ report:
             filter:
               -
                 - 
-                  variable: *subjectmulti
+                  variable: *subject
                   value: *subject_cn
                 -
                   variable: *perspective
@@ -42278,12 +42310,15 @@ report:
                 -
                   variable: *tier
                   value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_total
                 - 
                   variable: *topic
                   value: *top_answer
 
-        writing.table.cn: 
-          name: "学生在语文学科“习作”上的作答情况"
+        writing.answer.table.cn.perspective: 
+          name: "不同群体学生在语文学科“习作”上的作答情况"
           data:
             digits: 1
             filter:
@@ -42293,10 +42328,13 @@ report:
                   value: *subject_cn
                 -
                   variable: *tier
-                  value: *tier_province
+                  value: *tier_county
                 -
                   variable: *dimention
                   value: *dim_cn_writing
+                - 
+                  variable: *topic
+                  value: *top_answer
                      
     -
       process: FALSE
@@ -47187,6 +47225,10 @@ report:
                 -
                   variable: *tier
                   value: *tier_province
+                -
+                  variable: *perspective
+                  value: *per_total
+                
                 - 
                   variable: *topic
                   value: *top_answer
@@ -47197,13 +47239,17 @@ report:
                 -
                   variable: *tier
                   value: *tier_county
+                -
+                  variable: *perspective
+                  value: *per_total
+                
                 - 
                   variable: *topic
                   value: *top_answer
 
         
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "school_report.Rmd"
 

@@ -1,6 +1,7 @@
 #############################
 library(yaml)
 library(rmarkdown)
+library(dplyr)
 #conf <- yaml.load_file("yaml/conf.yaml")
 
 # source scripts
@@ -87,9 +88,29 @@ report.render <- function(
   timestamp()
   print(paste("Read Table:",report$table))
   report$data <- db.ReadTable(report$table)
+  print(paste("Read Table:",report$aliasTable))
+  report$aliasdata <- db.ReadTable(report$aliasTable)
+  print(report$aliasdata)
   
   data.assesment  <- report$data[report$data[,g.var$assesment]==report$assesment,]
   scopes <- levels(factor(data.assesment[data.assesment[,g.var$tier]==report$tier,g.var$scope]))
+  if(report$tier == g.tier$school){
+    #print(scopes)
+    data.school <- as.data.frame(scopes)
+    data.school[,g.var$scope] <- data.school[,"scopes"]
+    #print(data.school)
+    data.county.school <- merge(data.school,report$aliasdata, by = g.var$scope, all.x = TRUE)
+    data.school <- data.frame()
+    for(i in 1:length(report$counties)){
+      data.filter <- data.county.school[data.county.school[,g.tier$county]==report$counties[[i]],]
+      data.school  <- rbind(data.school,data.filter)
+    }
+    #print(data.school)
+    scopes <- as.list(data.school[,g.var$scope])
+    #print(scopes)
+    #return(1)
+    
+  }
   n <- length(scopes)
   if(report$skip){
     n  <- 1
@@ -115,9 +136,6 @@ report.render <- function(
     
     
    
-      print(paste("Read Table:",report$aliasTable))
-      report$aliasdata <- db.ReadTable(report$aliasTable)
-      #print(report$aliasdata)
       
       print(paste("alias:",report$tier))
       if(report$tier == g.tier$county){

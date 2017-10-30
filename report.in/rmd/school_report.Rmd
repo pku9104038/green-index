@@ -100,9 +100,9 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}说明1：图\ref{fig:`r fig_name`}是柱状图，呈现了贵校四年级学生在各学科不同水平上的人数比例。各水平的含义如下：
+\end{figure}\mylist图\ref{fig:`r fig_name`}是柱状图，呈现了贵校四年级学生在各学科不同水平上的人数比例。各水平的含义如下：
 - A水平：优秀。- B水平：良好。- C水平：达到课程标准的基本要求。
-# 本校学生在语文学科上的表现
+\mytext# 本校学生在语文学科上的表现
 
 pre.render.introduce.cn.sch
 
@@ -128,9 +128,11 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}说明2：
+\end{figure}\mylist
 
-上图是盒须图，须的底部为5分位（表示有5\%的学生总分低于此对应的分数)；盒的底部为25分位（表示有25\%的学生得分低于此线对应的分数）；盒中横线为50分位（表示50\%的学生得分高于此线对应的分数）；盒的顶部为75分位（表示有25\%的学生得分高于此线对应的分数）；须的顶部为95分位（表示有5\%的学生得分高于此线对应的分数）。盒的高度表示中间50\%的学生得分在此分数区间，从一定程度上描述了学生成绩离散程度的大小。红点对应的成绩为平均分。如果人数少于30，此图仅供参考。
+盒须图——5\%学生得分小于等于须下限分数；25\%学生得分小于等于盒底分数；50\%学生得分大于等于盒中横线分数；25\%学生得分大于等于盒顶分数；5\%学生得分大于等于须上限分数；盒高度一定程度上反映了得分分布的离散程度；红点为平均分。
+\mytext
+
 
 ## 语文学科典型题目分析
 
@@ -891,7 +893,9 @@ answer  <- answer.all[answer.all[,var.scope]==report$school & answer.all[,var.di
 \end{itshape}
 
 `r row <- point.rate[point.rate[,var.variable]=="C3AS310_X",]`
-“习作”从“选择材料”、“组织材料”、“语言表达”及“书写”四个分项考查学生在叙述事情上的能力表现。在本报告中分为四个题目，编号分别为C3AS311、C3AS312、C3AS313、C3AS314。下面分别呈现学生在写作分项上的作答情况。
+“习作”从“选择材料”、“组织材料”、“语言表达”及“书写”四个分项考查学生在叙述事情上的能力表现。
+
+下面分别呈现学生在写作分项上的作答情况。
 
 \questiontitle{C3AS311 (维度1  满分6分)}
 

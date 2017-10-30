@@ -72,7 +72,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \end{figure}
 
 \clearpage## 不同群体学生的总体表现`r fig_name <- "不同群体学生在数学学科各水平上的人数比例" `
-`r fig_name1 <- "不同群体学生在数学学科上的得分分布" `图\ref{fig:`r fig_name`}和图\ref{fig:`r fig_name1`}分别给出了本区不同群体学生在数学学科各水平上的人数比例和得分分布\footnote{盒须图，须的底部为5分位（表示有5\%的学生总分低于此对应的分数)；盒的底部为25分位（表示有25\%的学生得分低于此线对应的分数）；盒中横线为50分位（表示50\%的学生得分高于此线对应的分数）；盒的顶部为75分位（表示有25\%的学生得分高于此线对应的分数）；须的顶部为95分位（表示有5\%的学生得分高于此线对应的分数）。盒的高度表示中间50\%的学生得分在此分数区间，从一定程度上描述了学生成绩离散程度的大小。红点对应的成绩为平均分。}。
+`r fig_name1 <- "不同群体学生在数学学科上的得分分布" `图\ref{fig:`r fig_name`}和图\ref{fig:`r fig_name1`}分别给出了本区不同群体学生在数学学科各水平上的人数比例和得分分布。
  ```{r level.bar.province.perspective.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$level.bar.perspective.ma
 plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
@@ -92,7 +92,9 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name1`}
 \label{fig:`r fig_name1`}
 \end{figure}\mylist
-\mytext
+注：盒须图——5\%学生得分小于等于须下限分数；25\%学生得分小于等于盒底分数；50\%学生得分大于等于盒中横线分数；25\%学生得分大于等于盒顶分数；5\%学生得分大于等于须上限分数；盒高度一定程度上反映了得分分布的离散程度；红点为平均分。
+
+\mytext
 \begin{landscape}\section{不同学校学生的总体表现}
 level.bar.province.county.school.ma
 
@@ -361,8 +363,8 @@ var.scope <- "统计范围"
 point.rate.p <- point.rate.all[point.rate.all[,var.scope]==report$province &point.rate.all[,var.dimention]=="知识技能",]
 answer.p <- answer.all[answer.all[,var.scope]==report$province & answer.all[,var.dimention]=="知识技能",]
 
-point.rate <- point.rate.all[point.rate.all[,var.scope]==report$county & point.rate.all[,var.dimention]=="知识技能",]
-answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dimention]=="知识技能",]
+point.rate <- point.rate.all[point.rate.all[,var.scope]==report$scope & point.rate.all[,var.dimention]=="知识技能",]
+answer <- answer.all[answer.all[,var.scope]==report$scope & answer.all[,var.dimention]=="知识技能",]
 
 ```
 

@@ -55,6 +55,9 @@ report.base <- function(
       if(is.null(report$province)){
         report$province  <- reports$province
       }
+      if(is.null(report$counties)){
+        report$counties  <- reports$counties
+      }
       if(is.null(report$inscribed)){
         report$inscribed  <- reports$inscribed
       }

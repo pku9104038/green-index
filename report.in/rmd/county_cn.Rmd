@@ -71,7 +71,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \label{fig:`r fig_name`}
 \end{figure}\clearpage
 ## 不同群体学生的总体表现`r fig_name <- "不同群体学生在语文学科各水平上的人数比例" `
-`r fig_name1 <- "不同群体学生在语文学科上的得分分布" `图\ref{fig:`r fig_name`}和图\ref{fig:`r fig_name1`}分别给出了本区不同群体学生在语文学科各水平上的人数比例和得分分布\footnote{盒须图，须的底部为5分位（表示有5\%的学生总分低于此对应的分数)；盒的底部为25分位（表示有25\%的学生得分低于此线对应的分数）；盒中横线为50分位（表示50\%的学生得分高于此线对应的分数）；盒的顶部为75分位（表示有25\%的学生得分高于此线对应的分数）；须的顶部为95分位（表示有5\%的学生得分高于此线对应的分数）。盒的高度表示中间50\%的学生得分在此分数区间，从一定程度上描述了学生成绩离散程度的大小。红点对应的成绩为平均分。}。
+`r fig_name1 <- "不同群体学生在语文学科上的得分分布" `图\ref{fig:`r fig_name`}和图\ref{fig:`r fig_name1`}分别给出了本区不同群体学生在语文学科各水平上的人数比例和得分分布。
  ```{r level.bar.perspective.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$level.bar.perspective.cn
 plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
@@ -92,6 +92,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \label{fig:`r fig_name1`}
 \end{figure}\mylist
 
+注：盒须图——5\%学生得分小于等于须下限分数；25\%学生得分小于等于盒底分数；50\%学生得分大于等于盒中横线分数；25\%学生得分大于等于盒顶分数；5\%学生得分大于等于须上限分数；盒高度一定程度上反映了得分分布的离散程度；红点为平均分。
 
 \mytext
 \begin{landscape}\section{不同学校学生的总体表现}
@@ -1181,11 +1182,6 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \section{习作}
 
 
-
-```{r writing.table.cn, echo=TRUE, message=TRUE, include = FALSE, result="hide"}
-param.entry <- "writing.table.cn"
-dimention.param  <- dataframe.table( report = report, param = report$param[[param.entry]])
-```
 ```{r writing.point.rate.table.cn, echo=TRUE, message=TRUE, include = FALSE, result="hide"}
 point.rate.p  <- point.rate.all[point.rate.all[,var.scope]==report$province & point.rate.all[,var.dimention]=="习作",]
 point.rate  <- point.rate.all[point.rate.all[,var.scope]==report$county & point.rate.all[,var.dimention]=="习作",]
@@ -1335,8 +1331,15 @@ answer  <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.di
 \makecell[c]{\mytablehead{分数段}} & \makecell[c]{\mytablehead{公办}} & \makecell[c]{\mytablehead{普通民办}} & \makecell[c]{\mytablehead{随迁子女小学}} & \makecell[c]{\mytablehead{小学}} & \makecell[c]{\mytablehead{一贯制}} & \mytablehead{男} & \mytablehead{女} & \makecell[c]{\mytablehead{沪籍}} & \makecell[c]{\mytablehead{非沪籍}} \\
 \cline{1-10}
 
-\makecell[c]{25.5-30} & 
-`r row <- answer[answer[,var.variable]=="C3AS310_S" & point.rate[,var.key]=="25-30",]`
+\makecell[c]{25分以上} & 
+
+```{r writing.answer.table.cn.perspective, echo=TRUE, message=TRUE, include = FALSE, result="hide"}
+param.entry <- "writing.answer.table.cn.perspective"
+answer.per  <- dataframe.table( report = report, param = report$param[[param.entry]])
+```
+
+`r row <- answer.per[answer.per[,var.variable]=="C3AS310_S" & answer.per[,var.scope]==report$scope & answer.per[,var.key]=="25-30",]`
+
 
 `r row[row[,var.sample]=="公办",var.param]` & 
 `r row[row[,var.sample]=="民办",var.param]` & 
@@ -1348,8 +1351,8 @@ answer  <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.di
 `r row[row[,var.sample]=="沪籍",var.param]` & 
 `r row[row[,var.sample]=="非沪籍",var.param]` \\
 \cline{1-10}
-\makecell[c]{20.5-25} & 
-`r row <- answer[answer[,var.variable]=="C3AS310_S" & point.rate[,var.key]=="20-25",]`
+\makecell[c]{20分-25分（含）} & 
+`r row <- answer.per[answer.per[,var.variable]=="C3AS310_S" & answer.per[,var.scope]==report$scope  & answer.per[,var.key]=="20-25",]`
 
 `r row[row[,var.sample]=="公办",var.param]` & 
 `r row[row[,var.sample]=="民办",var.param]` & 
@@ -1361,8 +1364,8 @@ answer  <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.di
 `r row[row[,var.sample]=="沪籍",var.param]` & 
 `r row[row[,var.sample]=="非沪籍",var.param]` \\
 \cline{1-10}
-\makecell[c]{15.5-20} & 
-`r row <- answer[answer[,var.variable]=="C3AS310_S" & point.rate[,var.key]=="15-20",]`
+\makecell[c]{15分-20分（含）} & 
+`r row <- answer.per[answer.per[,var.variable]=="C3AS310_S" & answer.per[,var.scope]==report$scope  & answer.per[,var.key]=="15-20",]`
 
 `r row[row[,var.sample]=="公办",var.param]` & 
 `r null.check(row[row[,var.sample]=="民办",var.param])` & 
@@ -1375,8 +1378,8 @@ answer  <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.di
 `r row[row[,var.sample]=="非沪籍",var.param]` \\
 \cline{1-10}
 
-\makecell[c]{0-15} & 
-`r row <- answer[answer[,var.variable]=="C3AS310_S" & point.rate[,var.key]=="0-15",]`
+\makecell[c]{15分及以下} & 
+`r row <- answer.per[answer.per[,var.variable]=="C3AS310_S" & answer.per[,var.scope]==report$scope  & answer.per[,var.key]=="0-15",]`
 
 `r row[row[,var.sample]=="公办",var.param]` & 
 `r null.check(row[row[,var.sample]=="民办",var.param])` & 

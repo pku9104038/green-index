@@ -1247,7 +1247,7 @@ plot.box  <- function(
     error.width <- plot$ggplot$box$error.width
   }
   else{
-    error.width <- 0.2
+    error.width <- 0.1
   }
   figure <- figure + geom_errorbar(aes(x=x, ymin=ymin,ymax=ymax),size = 0.5, width = error.width)
   if(!is.null(plot$ggplot$box$box.width)){

@@ -92,10 +92,9 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name1`}
 \label{fig:`r fig_name1`}
-\end{figure}\mylist
-注：盒须图，须的底部为5分位（表示有5\%的学生总分低于此对应的分数)；盒的底部为25分位（表示有25\%的学生得分低于此线对应的分数）；盒中横线为50分位（表示50\%的学生得分高于此线对应的分数）；盒的顶部为75分位（表示有25\%的学生得分高于此线对应的分数）；须的顶部为95分位（表示有5\%的学生得分高于此线对应的分数）。盒的高度表示中间50\%的学生得分在此分数区间，从一定程度上描述了学生成绩离散程度的大小。红点对应的成绩为平均分。
-
+\end{figure}\mylist注：盒须图——5\%学生得分小于等于须下限分数；25\%学生得分小于等于盒底分数；50\%学生得分大于等于盒中横线分数；25\%学生得分大于等于盒顶分数；5\%学生得分大于等于须上限分数；盒高度一定程度上反映了得分分布的离散程度；红点为平均分。
 \mytext
+
 ## 不同区学生的总体表现`r fig_name <- "不同区学生在语文学科各水平上的人数比例" `
 `r fig_name1 <- "不同区学生在语文学科上的得分分布" `图\ref{fig:`r fig_name`}和图\ref{fig:`r fig_name1`}分别给出了上海市不同区学生在语文学科各水平上的人数比例和得分分布。 
 ```{r level.bar.province.county.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
@@ -574,9 +573,13 @@ var.sample <- "统计样本"
 \end{longtable}
 \end{itshape}
 
+
+“积累”部分着重考查学生“读准字音”、“认清字形”、“理解词义”和“积累和运用常见古诗文”四方面的能力。
+
+下面将结合“积累”部分的典型题目做具体分析。
+
 \end{landscape}
 
-“积累”部分着重考查学生“读准字音”、“认清字形”、“理解词义”和“积累和运用常见古诗文”四方面的能力。下面将结合“积累”部分的典型题目做具体分析。
 
 \questiontitle{典型题目1： C3AO031}
 
@@ -1095,7 +1098,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 
 这是“为获取信息”阅读情境中的一道题，考查的是学生根据文本信息对相关问题做出合理解释的能力。本题的正确答案为“林海茫茫”、“一望无际”、“绵延千里”。在文中，“林海茫茫”形容森林辽阔，面积非常大；“一望无际”是指森林没有边际，一眼看不到边;“绵延千里”是指树林绵长，延续不断。所以，这三个词语都可以表现东北林区的面积大，学生只要摘录其中的两个词语，就能正确完成此题。根据本次的答题情况，可将学生的阅读能力发展水平分为三个不同水平：两个词语都能正确摘录的学生水平最高，他们能根据要求从文中提取相关的词语；正确摘录一个词语的学生处于第二个水平，他们能根据要求从文中提取相关的词语，但部分词语的理解不恰当；两个词语都未正确摘录的学生水平最低，他们不能根据要求从文中提取相关的词语，如部分学生摘录了“闻名全国”、“安居乐业”、“百花盛开”等词。在本次测试中，语文总体能力处于A、B、C三个水平的学生在本题上的平均得分率分别为`r row[row[,var.key]=="A",var.param]`%、
 `r row[row[,var.key]=="B",var.param]`%和
-`r row[row[,var.key]=="C",var.param]`%。\questiontitle{典型题目12：C3AO291}
+`r row[row[,var.key]=="C",var.param]`%。\clearpage
+\questiontitle{典型题目12：C3AO291}
 这篇文章主要告诉我们的是：\begin{table}[H]
 \begin{tabular}{l}
 
@@ -1153,8 +1157,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 
 
 这是“为了完成任务”阅读情境中的一道题，考查学生合理利用文本信息解决相应情境中问题的能力。
-
-这道题设计的是根据代表团入场排序的规定，来确定2008年北京奥运会中华人民共和国，印度、希腊和美国入场的顺序。这段文字一共5句话。第1句“在奥林匹克运动会开幕式上，各国代表团入场仪式受人瞩目。”与具体怎样排序关系不大。第2句“希腊作为奥运会的发源地，代表团一直都是第一个入场。”说明希腊排在最前面。第3句“主办国出于礼貌，代表团都安排在最后入场。”说明主办国排在最后面。第4句“其他国家的入场顺序一般由主办国家根据本国语言或文化习俗排定。”第5句“2008年在北京举行的第29届夏季奥林匹克运动会入场式，依据各国代表团的中文名称，按其第一个字的笔画数，从少到多安排入场顺序。”这两句联系起来看，就是北京奥运会其他国家按笔画数从少到多排序。
+这道题设计的是根据代表团入场排序的规定，来确定2008年北京奥运会中华人民共和国，印度、希腊和美国入场的顺序。这段文字一共5句话。第1句“在奥林匹克运动会开幕式上，各国代表团入场仪式受人瞩目。”与具体怎样排序关系不大。第2句“希腊作为奥运会的发源地，代表团一直都是第一个入场。”说明希腊排在最前面。第3句“主办国出于礼貌，代表团都安排在最后入场。”说明主办国排在最后面。第4句“其他国家的入场顺序一般由主办国家根据本国语言或文化习俗排定。”第5句“2008年在北京举行的第29届夏季奥林匹克运动会入场式，依据各国代表团的中文名称，按其第一个字的笔画数，从少到多安排入场顺序。”这两句联系起来看，就是北京奥运会其他国家按笔画数从少到多排序。
 
 简言之，北京奥运会入场排序有三条规定：1、希腊第一；2、主办国（中华人民共和国）最后；3、其他国家按其中文名称的第一个字笔画数由少到多出场。从具体的选项看，选项B只满足第2条规定；选项C完全是随意安排，不符合所有规定；选项D满足第1、2条规定，但不符合第3条规定。唯有选项A满足3条规定，符合题目要求。
 
@@ -1170,10 +1173,6 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 
 \section{习作}
 
-```{r writing.table.cn, echo=TRUE, message=TRUE, include = FALSE, result="hide"}
-param.entry <- "writing.table.cn"
-dimention.param  <- dataframe.table( report = report, param = report$param[[param.entry]])
-```
 ```{r writing.point.rate.table.cn, echo=TRUE, message=TRUE, include = FALSE, result="hide"}
 param.entry <- "writing.point.rate.table.cn"
 point.rate  <- dataframe.table( report = report, param = report$param[[param.entry]])
@@ -1316,8 +1315,14 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 \makecell[c]{\mytablehead{分数段}} & \makecell[c]{\mytablehead{公办}} & \makecell[c]{\mytablehead{普通民办}} & \makecell[c]{\mytablehead{随迁子女小学}} & \makecell[c]{\mytablehead{小学}} & \makecell[c]{\mytablehead{一贯制}} & \mytablehead{男} & \mytablehead{女} & \makecell[c]{\mytablehead{沪籍}} & \makecell[c]{\mytablehead{非沪籍}} \\
 \cline{1-10}
 
-\makecell[c]{25.5-30} & 
-`r row <- answer[answer[,var.variable]=="C3AS310_S" & point.rate[,var.key]=="25-30",]`
+\makecell[c]{25分以上} & 
+
+```{r writing.answer.table.cn.perspective, echo=TRUE, message=TRUE, include = FALSE, result="hide"}
+param.entry <- "writing.answer.table.cn.perspective"
+answer.per  <- dataframe.table( report = report, param = report$param[[param.entry]])
+```
+
+`r row <- answer.per[answer.per[,var.variable]=="C3AS310_S" & answer.per[,var.key]=="25-30",]`
 
 `r row[row[,var.sample]=="公办",var.param]` & 
 `r row[row[,var.sample]=="民办",var.param]` & 
@@ -1329,8 +1334,8 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 `r row[row[,var.sample]=="沪籍",var.param]` & 
 `r row[row[,var.sample]=="非沪籍",var.param]` \\
 \cline{1-10}
-\makecell[c]{20.5-25} & 
-`r row <- answer[answer[,var.variable]=="C3AS310_S" & point.rate[,var.key]=="20-25",]`
+\makecell[c]{20分-25分（含）} & 
+`r row <- answer.per[answer.per[,var.variable]=="C3AS310_S" & answer.per[,var.key]=="20-25",]`
 `r row[row[,var.sample]=="公办",var.param]` & 
 `r row[row[,var.sample]=="民办",var.param]` & 
 `r row[row[,var.sample]=="随迁子女民办",var.param]` & 
@@ -1341,8 +1346,8 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 `r row[row[,var.sample]=="沪籍",var.param]` & 
 `r row[row[,var.sample]=="非沪籍",var.param]` \\
 \cline{1-10}
-\makecell[c]{15.5-20} & 
-`r row <- answer[answer[,var.variable]=="C3AS310_S" & point.rate[,var.key]=="15-20",]`
+\makecell[c]{15分-20分（含）} & 
+`r row <- answer.per[answer.per[,var.variable]=="C3AS310_S" & answer.per[,var.key]=="15-20",]`
 `r row[row[,var.sample]=="公办",var.param]` & 
 `r row[row[,var.sample]=="民办",var.param]` & 
 `r row[row[,var.sample]=="随迁子女民办",var.param]` & 
@@ -1354,8 +1359,8 @@ answer  <- dataframe.table( report = report, param = report$param[[param.entry]]
 `r row[row[,var.sample]=="非沪籍",var.param]` \\
 \cline{1-10}
 
-\makecell[c]{0-15} & 
-`r row <- answer[answer[,var.variable]=="C3AS310_S" & point.rate[,var.key]=="0-15",]`
+\makecell[c]{15分及以下} & 
+`r row <- answer.per[answer.per[,var.variable]=="C3AS310_S" & answer.per[,var.key]=="0-15",]`
 `r row[row[,var.sample]=="公办",var.param]` & 
 `r row[row[,var.sample]=="民办",var.param]` & 
 `r row[row[,var.sample]=="随迁子女民办",var.param]` & 
@@ -1437,6 +1442,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 
 本市学生在“组织材料”上的平均得分率为`r point.rate[point.rate[,var.variable]=="C3AS312_X" & point.rate[,var.key]=="总体" & point.rate[,var.sample]=="总体",var.param]`%。从上图可以看出，仅有`r answer[answer[,var.variable]=="C3AS312_S" & answer[,var.key]=="5.5-6",var.param]`%的学生得5.5-6分，表明极少部分学生能够在叙述时做到过程很清楚；`r answer[answer[,var.variable]=="C3AS312_S" & answer[,var.key]=="3.5-5",var.param]`%的学生得3.5-5分，表明大多数学生能够做到叙述较完整，过程较清楚；`r answer[answer[,var.variable]=="C3AS312_S" & answer[,var.key]=="1.5-3",var.param]`%的学生得1.5-3分，表明还有一部分学生叙述不完整，过程不清楚，不能分小节；还有`r answer[answer[,var.variable]=="C3AS312_S" & answer[,var.key]=="0-1",var.param]`%的学生得0-1分，表明这部分学生只能写一两句话，不能形成文段，或逻辑混乱。
 
+\clearpage
 
 \questiontitle{C3AS313 (维度3  满分15分)}
 
@@ -1474,6 +1480,7 @@ report$plot$answer.segment.bar.cn$data$order <- NULL
 
 本市学生在“语言表达”上的平均得分率为`r point.rate[point.rate[,var.variable]=="C3AS313_X" & point.rate[,var.key]=="总体" & point.rate[,var.sample]=="总体",var.param]`%。从上图可以看出，有`r answer[answer[,var.variable]=="C3AS313_S" & answer[,var.key]=="12.5-15",var.param]`%的学生得12.5-15分，表明近30%的学生能够做到语意连贯，用词准确；`r answer[answer[,var.variable]=="C3AS313_S" & answer[,var.key]=="9.5-12",var.param]`%的学生得9.5-12分，表明有超过60%的学生能够做到语意基本连贯，用词基本恰当；`r answer[answer[,var.variable]=="C3AS313_S" & answer[,var.key]=="5.5-9",var.param]`%的学生得5.5-9分，表明有近6%的学生叙述时有一些病句或词语运用有不恰当之处，但不影响理解；还有`r answer[answer[,var.variable]=="C3AS313_S" & answer[,var.key]=="0-5",var.param]`%的学生得0-5分，表明这部分学生语言表达混乱，词不达意，不能表达自己的意思。
 
+\clearpage
 \questiontitle{C3AS314 (维度4  满分3分)}\begin{table}[H]
 \centering
 \itshape
