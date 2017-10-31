@@ -69,7 +69,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=10cm]{`r fig_file`}
+\includegraphics[width=14cm]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
@@ -87,7 +87,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 ```
 \begin{figure}[H]
 \centering
-\includegraphics[width=10cm]{`r fig_file`}
+\includegraphics[width=14cm]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
@@ -105,7 +105,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 ```
 \begin{figure}[H]
 \centering
-\includegraphics[width=10cm]{`r fig_file`}
+\includegraphics[width=14cm]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
@@ -156,7 +156,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 ```
 \begin{figure}[H]
 \centering
-\includegraphics[width=10cm]{`r fig_file`}
+\includegraphics[width=14cm]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig: `r fig_name`}
 \end{figure}
@@ -172,7 +172,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 ```
 \begin{figure}[H]
 \centering
-\includegraphics[width=10cm]{`r fig_file`}
+\includegraphics[width=14cm]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig: `r fig_name`}
 \end{figure}
@@ -221,7 +221,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 ```
 \begin{figure}[H]
 \centering
-\includegraphics[width=10cm]{`r fig_file`}
+\includegraphics[width=14cm]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
@@ -238,7 +238,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 ```
 \begin{figure}[H]
 \centering
-\includegraphics[width=10cm]{`r fig_file`}
+\includegraphics[width=14cm]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
@@ -304,7 +304,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 ```
 \begin{figure}[H]
 \centering
-\includegraphics[width=10cm]{`r fig_file`}
+\includegraphics[width=14cm]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
@@ -394,7 +394,7 @@ school.identity.bar
 \mytext
 
 
-`r fig_name <- "四年级学生学业负担指数" `
+`r fig_name <- "四年级学生学业负担综合指数" `
 ```{r burden.bar.perspective, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$burden.bar.perspective
 plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)))
@@ -402,7 +402,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 ```
 \begin{figure}[H]
 \centering
-\includegraphics[width=10cm]{`r fig_file`}
+\includegraphics[width=11cm]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
@@ -512,7 +512,7 @@ teacher.relationship.bar
 # 学生品德行为指数良好的品德是个人成长、终生发展的基础，更是其成为社会有用之才的重要条件。良好的品德行为包括热爱祖国、自尊自爱、尊重他人、有诚信和责任心、遵守公德以及拥有关怀之心和公正之心。品德行为指数是通过采集学生问卷数据，进行数据分析得到的结果。学生品德行为指数分为9级，指数越高，表示学生具有较好的品德行为素养。\mylist
 - 9级：表示90%以上的学生品德行为素养较高\footnote{我们将得分超过本维度总分50\%界定为品德行为素养较高。}（含90%）- 8级：表示80%-90%的学生品德行为素养较高（含80%）- 7级：表示70%-80%的学生品德行为素养较高（含70%）- 6级：表示60%-70%的学生品德行为素养较高（含60%）- 5级：表示50%-60%的学生品德行为素养较高（含50%）- 4级：表示40%-50%的学生品德行为素养较高（含40%）- 3级：表示30%-40%的学生品德行为素养较高（含30%）- 2级：表示20%-30%的学生品德行为素养较高（含20%）- 1级：表示20%以下的学生品德行为素养较高\mytext
 
-\begin{landscape}
+
 `r fig_name <- "四年级学生品德行为指数" `
 ```{r student.morality.bar.perspective, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$student.morality.bar.perspective
@@ -521,10 +521,12 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 ```
 \begin{figure}[H]
 \centering
-\includegraphics[width=10cm]{`r fig_file`}
+\includegraphics[width=12cm]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
+
+\begin{landscape}
 
 student.morality.bar
 \end{landscape}
@@ -603,11 +605,14 @@ plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,repo
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
+\centering
+\includegraphics[width=12cm]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
 
+\clearpage
+&nbsp;
 \clearpage
 
 \begin{landscape}

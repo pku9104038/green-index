@@ -90,7 +90,7 @@ report.render <- function(
   report$data <- db.ReadTable(report$table)
   print(paste("Read Table:",report$aliasTable))
   report$aliasdata <- db.ReadTable(report$aliasTable)
-  print(report$aliasdata)
+  #print(report$aliasdata)
   
   data.assesment  <- report$data[report$data[,g.var$assesment]==report$assesment,]
   scopes <- levels(factor(data.assesment[data.assesment[,g.var$tier]==report$tier,g.var$scope]))
