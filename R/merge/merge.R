@@ -82,19 +82,19 @@ merge.subject <-  function(subject){
           #print(col.x)
           col.y <- paste0(col, ".y")
           #print(col.y)
-          print(nrow(data.merge))
+          #print(nrow(data.merge))
           
           data.merge.x <- data.merge[!is.na(data.merge[,col.x]),]
-          print(nrow(data.merge.x))
+          #print(nrow(data.merge.x))
           data.merge.y <- data.merge[is.na(data.merge[,col.x]),]
-          print(nrow(data.merge.y))
+          #print(nrow(data.merge.y))
           
           data.merge.x[,col] <-  data.merge.x[,col.x]
           data.merge.y[,col] <-  data.merge.y[,col.y]
           data.merge  <- rbind(data.merge.x, data.merge.y)
           data.merge[,col.x] <- NULL 
           data.merge[,col.y] <- NULL
-          print(summary(data.merge))
+          #print(summary(data.merge))
         }
       }
       

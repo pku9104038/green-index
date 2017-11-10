@@ -21,13 +21,6 @@ source(paste0(yaml.load_file("yaml/conf.yaml")$dir$R,"weight/weight_table.R"))
 weight.table()
 
 
-########################
-library(yaml)
-conf = yaml.load_file("yaml/conf.yaml")
-yaml <- yaml.load_file(paste0(conf$dir$yaml,conf$yaml$survey))
-source(paste0(conf$dir$R,"count/count.R"))
-count.subject(yaml$count)
-
 
 ########################
 library(yaml)
@@ -45,10 +38,17 @@ source(paste0(yaml.load_file("yaml/conf.yaml")$dir$R,"variable/variable_data.R")
 variable.data2()
 
 ########################
+library(yaml)
+conf = yaml.load_file("yaml/conf.yaml")
+yaml <- yaml.load_file(paste0(conf$dir$yaml,conf$yaml$survey))
+source(paste0(conf$dir$R,"count/count.R"))
+count.subject(yaml$count)
+
+########################
 
 library(yaml)
 source(paste0(yaml.load_file("yaml/conf.yaml")$dir$R,"statistics/statistics_data.R"))
-statistics.data(topic.name = "作答")  #topic.name = "得分率"
+statistics.data()  #topic.name = "得分率"
 
 ########################
 

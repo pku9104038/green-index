@@ -84,7 +84,7 @@ global:
         topic: &tier_topic
           - *tier_province
           - *tier_county
-          - *tier_school #ignore school tier to save test time
+          #- *tier_school #ignore school tier to save test time
       scope: # one of the record group in the tier 
         province: &scope_province
           - "本市"
@@ -1759,7 +1759,7 @@ global:
 
 survey: 
   -
-    process: FALSE
+    process: TRUE
     subject: *survey_st
     table: *table_st
 
@@ -2126,22 +2126,8 @@ survey:
               col.value:
                 - "比较不同意"
                 - "非常不同意"
-            -
-              col.name:
-                - "staa054"
-              col.value:
-                - "非常容易"
-                - "比较容易"
-                - "难易适中"
-            -
-              col.name:
-                - "staa055"
-              col.value:
-                - "0次"
-                - "1次"
-                - "2次"
-                - "3次"  
-          var.threshold: 4 # staa052 
+            
+          var.threshold: 3 # staa052 
           var.option:
             T: *T
             F: *F
@@ -3167,7 +3153,7 @@ survey:
                         - *T
 
   -
-    process: FALSE
+    process: TRUE
     subject: *survey_te
     table: *table_te
 
@@ -3726,7 +3712,7 @@ survey:
                         - *T
 
   -
-    process: FALSE
+    process: TRUE
     subject: *survey_pr
     table: *table_pr
 
@@ -4071,7 +4057,7 @@ survey:
                       variable: "se057" 
                      
   -
-    process: FALSE
+    process: TRUE
     subject: *survey_pa
     table: *table_pa
 
@@ -6658,7 +6644,7 @@ survey:
                         - *T
 
   -
-    process: FALSE
+    process: TRUE
     subject: *subject_ma
     table: *table_ma
 
@@ -8261,7 +8247,7 @@ survey:
                         - *T
 
   -
-    process: FALSE
+    process: TRUE
     subject: "学生原始信息"
 
     clean:
@@ -8294,7 +8280,7 @@ survey:
                   new: "女"
 
   -
-    process: FALSE #this must process after variable process 
+    process: TRUE #this must process after variable process 
     subject: *participant_cnt
     table: *table_participant_st
 
@@ -26133,7 +26119,7 @@ report:
 
           
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "county_base.Rmd"
 
@@ -35506,7 +35492,7 @@ report:
                   value: *top_point_rate
 
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "county_green.Rmd"
 
@@ -39971,7 +39957,7 @@ report:
               text_size: *plot_multi_fig_lab_size
             
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "county_cn.Rmd"
 
@@ -42337,7 +42323,7 @@ report:
                   value: *top_answer
                      
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "county_ma.Rmd"
 
@@ -47249,7 +47235,7 @@ report:
 
         
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "school_report.Rmd"
 
