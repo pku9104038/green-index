@@ -442,7 +442,7 @@ global:
           psychological: &dim_st_psychological
             - "心理健康"
           renjimingan: &dim_st_renjimingan
-            - "人际敏感"
+            - "社交敏感"
           renjiguanxi: &dim_st_renjiguanxi
             - "人际关系"
           self_respect: &dim_st_self_respect
@@ -2070,19 +2070,19 @@ survey:
             F: *F
         
         -
-          var.name: *var_learning_burden
+          var.name: *var_learning_burden  # 学习负担较轻
           var.type: *var_type_polymer
           var.column:
             -
               col.name:
-                - "staa002"
+                - "staa002"               # 睡眠时间
               col.value:
                 #- "8-9小时(含8小时)"
                 - "9-10小时（含9小时）"
                 - "10小时及以上" 
             -
               col.name:
-                - "staa053"
+                - "staa053"               # 作业时间
               col.value:
                 - "1小时以内"
                 #- "1-2小时（含1小时）"
@@ -2090,31 +2090,31 @@ survey:
               col.name:
                 - "pg012"
               col.value:
-                - "2小时以下"
+                - "2小时以下"               #校外补课
                 #- "2-4小时（含2小时）"
                 - "(空)"
                 - "(跳过)"
-          var.threshold: 1 # 
+          var.threshold: 1                 #大于 1，三项满足两项及以上 
           var.option:
             T: *T
             F: *F
 
         -
-          var.name: *var_learning_pressure
+          var.name: *var_learning_pressure  # 学习压力
           var.type: *var_type_polymer
           var.column:
             -
               col.name:
-                - "staa048"
-                - "staa051"
-                - "staa052"
+                - "staa048"                 # 如果学校公布成绩和名次，我会非常有压力
+                - "staa051"                 # 我怕因为成绩不好而被别人看不起
+                - "staa052"                 # 我担心自己的学习成绩让父母失望
               col.value:
                 - "比较不同意"
                 - "非常不同意"
                 - "不确定" 
             -
               col.name:
-                - "staa049"
+                - "staa049"                 # 每次考试我总担心自己考不好
               col.value:
                 - "比较不同意"
                 - "非常不同意"
@@ -2122,230 +2122,245 @@ survey:
                 - "比较同意"
             -
               col.name:
-                - "staa050"
+                - "staa050"                 # 考试之前我经常会紧张地睡不着觉
               col.value:
                 - "比较不同意"
                 - "非常不同意"
+            -
+              col.name:
+                - "staa054"                 # 你觉得学校老师布置的书面作业难度是
+              col.value:
+                - "非常容易"
+                - "比较容易"
+                - "难易适中"
+            -
+              col.name:
+                - "staa055"                 # 你每个月参加学校里书面考试及测验的次数是
+              col.value:
+                - "0次"
+                - "1次"
+                - "2次"
+                - "3次"  
             
-          var.threshold: 3 # staa052 
+          var.threshold: 4 # staa052        # 大于 4，满足五项及以上
           var.option:
             T: *T
             F: *F
 
         -
-          var.name: *var_learning_motivation
+          var.name: *var_learning_motivation  # 学习动机
           var.type: *var_type_polymer
           var.column:
             -
               col.name:
-                - "staa040"
-                - "staa042"
+                - "staa040"               # 我有时不想上学
+                - "staa042"               # 一提起学习，我就头疼
               col.value:
                 - "比较不同意"
                 - "非常不同意"
                 - "不确定" 
             -
               col.name:
-                - "staa041"
-                - "staa043"
-                - "staa044"
-                - "staa045"
-                - "staa046"
-                - "staa047"
+                - "staa041"               # 学习本身是一件有趣的事情
+                - "staa043"               # 其他事情再有趣，我也要首先完成学习任务
+                - "staa044"               # 碰到做不出来的题目，我会找各种方法把它做出来
+                - "staa045"               # 我认为只有获得好成绩才能得到老师和父母的表扬
+                - "staa046"               # 我努力学习是为了获得好成绩
+                - "staa047"               # 不管是不是喜欢，我都会努力学好每门功课
               col.value:
                 - "非常同意"
                 - "比较同意"
-          var.threshold: 4 # staa045, staa046 
+          var.threshold: 4                # 大于 4，满足5项及以上 
           var.option:
             T: *T
             F: *F
 
         -
-          var.name: *var_school_identity
+          var.name: *var_school_identity  # 学校认同度
           var.type: *var_type_polymer
           var.column:
             -
               col.name:
-                - "staa027"
+                - "staa027"               # 我在学校时常感觉很孤独
               col.value:
                 - "比较不同意"
                 - "非常不同意"
             -
               col.name:
-                - "staa017"
-                - "staa023"
-                - "staa024"
-                - "staa025"
-                - "staa026"
+                - "staa017"               # 我非常敬佩学校老师
+                - "staa023"               # 我和同学关系不错
+                - "staa024"               # 我很愿意参加自己学校组织的集体活动
+                - "staa025"               # 我喜欢我的学校
+                - "staa026"               # 我为我的学校感到自豪
               col.value:
                 - "非常同意"
                 - "比较同意"
-          var.threshold: 3 #  pa038 不计入统计
+          var.threshold: 3 #  pa038 不计入统计    # 大于 3， 满足4项及以上
           var.option:
             T: *T
             F: *F
 
         -
-          var.name: *var_learning_confidence
+          var.name: *var_learning_confidence  # 学习自信心 
           var.type: *var_type_polymer
           var.column:
             -
               col.name:
-                - "staa028"
-                - "staa030"
+                - "staa028"                   # 我天生不是学习的料
+                - "staa030"                   # 如果某个问题看起来很难，我就不愿意去尝试解决
               col.value:
                 - "比较不同意"
                 - "非常不同意"
                 - "不确定"
             -
               col.name:
-                - "staa029"
-                - "staa031"
+                - "staa029"                   # 只要我努力就会学得更好
+                - "staa031"                   # 我相信自己能在考试中取得好成绩
               col.value:
                 - "非常同意"
                 - "比较同意"
             -
               col.name:
-                - "staa032"
-                - "staa033"
+                - "staa032"                   # 我总是能实现自己所设定的学习目标
+                - "staa033"                   # 凡是我感兴趣的内容我都能学得很好
               col.value:
                 - "非常同意"
                 - "比较同意"
                 - "不确定"
-          var.threshold: 3 #  staa033
+          var.threshold: 3 #  staa033         # 大于 3，满足4项及以上
           var.option:
             T: *T
             F: *F
 
         -
-          var.name: *var_morality
+          var.name: *var_morality             #品德行为
           var.type: *var_type_polymer
           var.column:
             -
               col.name:
-                - "staa072"
-                - "staa073"
-                - "staa075"
-                - "staa077"
-                - "staa078"
-                - "staa079"
-                - "staa080"
-                - "staa081"
-                - "staa082"
-                - "staa083"
-                - "staa084"
-                - "staa085"
-                - "staa086"           
+                - "staa072"                   # 如果你的同班好友在学校举办的越野长跑中，在没有老师监督的路段上，让经过的自行车载了自己一段路程，随后顺利到达终点，却被你们班的同学看到了。你认为你们班会有多少人提醒他要诚信对待比赛？
+                - "staa073"                   # 如果有去敬老院为老人们服务的机会。你认为你们班会有多少同学愿意报名参加？
+                - "staa075"                   # 下课时，不知道是谁把空饮料瓶扔到了操场中央。你认为你们班有多少同学会把它捡起来扔进垃圾箱？
+                - "staa077"                   # 如果有事要进老师办公室，你认为你们班的同学有多少人会经老师允许后才进入？
+                - "staa078"                   # 老师布置作文后，有同学会从范文书或网上抄别人的文章。你认为你们班的同学有多少人不会这么做？
+                - "staa079"                   # 自己已经和同学约好周末一起去郊游，另一个好朋友又约自己去他（她）的生日聚会。你认为你们班的同学有多少人还会和同学去郊游？
+                - "staa080"                   # 考试中有些同学会在老师不注意时偷看别人的答案，你认为你们班的同学有多少人不会这么做？
+                - "staa081"                   # 学校集体大扫除时，老师给每个同学都分配了任务。你认为你们班的同学有多少人会把自己的任务做好？
+                - "staa082"                   # 看到同学的课桌上有漂亮的文具，有人偷偷地装到自己的口袋里，你认为你们班的同学有多少人不会这样做？
+                - "staa083"                   # 班上转来一个外地的学生，他（她）说话带有家乡口音，你认为你们班上有多少人不会笑话他（她）？
+                - "staa084"                   # 有同学在私底下骂老师，你认为你们班的同学有多少人不会这样做？
+                - "staa085"                   # 同学们一起去野外郊游，走了一段路没有发现垃圾桶。你觉得你们班的同学有多少人不会随手把垃圾丢在路边？
+                - "staa086"                   # 在校园内进出或上下楼梯与老师相遇时，你认为你们班的同学有多少人会主动向老师问好？        
               col.value:
                 - "几乎所有人"
                 - "大部分人"
                 - "约一半人"
             -
               col.name:
-                - "staa074"
-                - "staa076"
+                - "staa074"                   # 学校组织全班同学在礼堂里听讲座。你认为你们班会有多少同学与周围的同学小声交谈？
+                - "staa076"                   # 你的同学和家人在黄金周去科技馆参观，售票处排了很长的队伍，你的同学正好看见自己的好友排在前面。你认为你们班会有多少同学要求好友让自己排在他的前面？
               col.value:
                 - "小部分人"
                 - "几乎没有人"
-          var.threshold: 7
+          var.threshold: 7                    # 大于 7，  满足8项及以上
           var.option:
             T: *T
             F: *F
 
         -
-          var.name: *var_psychological_health
+          var.name: *var_psychological_health # 心理健康
           var.type: *var_type_polymer
           var.column:
             -
               col.name:
-                - "staa087"
-                - "staa088"
-                - "staa089"
-                - "staa094"
-                - "staa095"
-                - "staa097"
-                - "staa098"
-                - "staa099"
-                - "staa102"
-                - "staa103"
+                - "staa087"                   # 我害怕在同学面前做自己不擅长的事情
+                - "staa088"                   # 我担心被别人取笑
+                - "staa089"                   # 不认识的人围着我时，我会觉得害羞
+                - "staa094"                   # 我担心其他同学会背地里说我
+                - "staa095"                   # 同学们不喜欢和我做朋友
+                - "staa097"                   # 我的父母不理解我
+                - "staa098"                   # 我不喜欢我的父母
+                - "staa099"                   # 大多数同学都不理睬我
+                - "staa102"                   # 我对自己的长相不太满意
+                - "staa103"                   # 我担心别的小朋友会不喜欢我
               col.value:
                 - "非常不同意"
                 - "比较不同意"
             -
               col.name:
-                - "staa090"
-                - "staa091"
-                - "staa092"
-                - "staa093"
-                - "staa096"
-                - "staa100"
-                - "staa101"
+                - "staa090"                   # 我与父母相处得很好
+                - "staa091"                   # 我很容易和其他同学成为朋友
+                - "staa092"                   # 我对自己的外貌感到满意
+                - "staa093"                   # 我对自己的外表很自信
+                - "staa096"                   # 我能很好地与同学相处
+                - "staa100"                   # 我觉得父母很爱我
+                - "staa101"                   # 我觉得自己比多数同学长得好看
               col.value:
                 - "非常同意"
                 - "比较同意"
-          var.threshold: 10
+          var.threshold: 10                   # 大于 10， 满足11项及以上
           var.option:
             T: *T
             F: *F
 
         -
-          var.name: *var_teacher_relationship
+          var.name: *var_teacher_relationship # 师生关系
           var.type: *var_type_polymer
           var.column:
             -
               col.name:
-                - "staa006"
-                - "staa007"
-                - "staa008"
-                - "staa009"
-                - "staa010"
-                - "staa011"
-                - "staa012"
-                - "staa013"
-                - "staa014"
-                - "staa015"
-                - "staa018"
-                - "staa019"
-                - "staa020"
+                - "staa006"                   # 老师处理事情很公平
+                - "staa007"                   # 老师对我们很友好
+                - "staa008"                   # 老师和我们是朋友
+                - "staa009"                   # 老师关心每一位学生
+                - "staa010"                   # 老师允许我们有不同的见解
+                - "staa011"                   # 老师会耐心听我们说话
+                - "staa012"                   # 老师不讽刺、挖苦我们
+                - "staa013"                   # 老师很信任我们
+                - "staa014"                   # 老师经常鼓励我们
+                - "staa015"                   # 当我犯错误时，老师会主动询问我原因
+                - "staa018"                   # 我愿意把自己的心里话告诉老师
+                - "staa019"                   # 当我遇到学习以外的困难时，会想找老师帮
+                - "staa020"                   # 我愿意在老师面前展示自己
               col.value:
                 - "非常同意"
                 - "比较同意"  
             -
               col.name:
-                - "staa016"
+                - "staa016"                   # 老师要求我必须接受他（她）的观点
               col.value:
                 - "非常不同意"
                 - "比较不同意"  
-          var.threshold: 8 # 题数 14 vs 15， 阈值暂不变
+          var.threshold: 8 # 题数 14 vs 15， 阈值暂不变  # 大于 8，满足9项及以上
           var.option:
             T: *T
             F: *F
  
         -
-          var.name: *var_teaching_method
+          var.name: *var_teaching_method    # 教学方法
           var.type: *var_type_polymer
           var.column:
             -
               col.name:
-                - "staa057"
-                - "staa058"
-                - "staa059"
-                - "staa060"
-                - "staa061"
-                - "staa062"
-                - "staa063"
-                - "staa064"
-                - "staa065"
-                - "staa066"
-                - "staa067"
-                - "staa068"
-                - "staa069"
-                - "staa070"
+                - "staa057"                 # 老师鼓励我们使用不同的学习方法
+                - "staa058"                 # 老师给我们提出不同的学习建议
+                - "staa059"                 # 老师给我们布置不同的学习任务
+                - "staa060"                 # 老师采用恰当的方法使课堂具有活跃的气氛
+                - "staa061"                 # 老师讲课时将所教内容与我们生活实际相联
+                - "staa062"                 # 老师在课上组织我们进行小组活动
+                - "staa063"                 # 老师在课堂上设置一些让我们独立思考的问
+                - "staa064"                 # 老师对我们的表现做出及时的回应
+                - "staa065"                 # 老师引导我们就某个问题进行讨论
+                - "staa066"                 # 老师和我们共同交流学习心得
+                - "staa067"                 # 老师鼓励我们猜想并通过各种方法验证猜想
+                - "staa068"                 # 老师引导我们提出自己的观点
+                - "staa069"                 # 老师鼓励我们用不同的思路解决问题
+                - "staa070"                 # 老师指出我在学习上的优点和不足
                 
               col.value:
                 - "总是"
                 - "常常"
-          var.threshold: 8
+          var.threshold: 8                  # 大于 8，满足9项及以上
           var.option:
             T: *T
             F: *F
@@ -3315,34 +3330,34 @@ survey:
         #  var.value: *sample_province
 
         -
-          var.name: *var_course_leadership
+          var.name: *var_course_leadership  # 课程领导力
           var.type: *var_type_polymer
           var.column:
             -
               col.name:
-                - "tec017"
-                - "tec018"
-                - "tec019"
-                - "tec020"
-                - "tec021"
-                - "tec022"
-                - "tec023"
-                - "tec029"
-                - "tec030"
-                - "tec031"
-                - "tec032"
-                - "tec033"
-                - "tec034"
-                - "tec035"
-                - "tec036"
-                - "tec037"
-                - "tec038"
-                - "tec030"
-                - "tec040"
+                - "tec017"                  # 学校使教师有机会畅所欲言表达自己的意见      
+                - "tec018"                  # 学校能鼓励教师尝试新的教学方法与接受新
+                - "tec019"                  # 学校能够给予教师教学自主权
+                - "tec020"                  # 校长能领导学校各职能部门积极支持教学
+                - "tec021"                  # 学校能考虑教师的专长及能力来安排教师的
+                - "tec022"                  # 学校建立了本校的教学质量保障系统并能定
+                - "tec023"                  # 学校能根据课程与教学诊断的结果及时调整
+                - "tec029"                  # 学校成立了课程开发领导小组负责组织学校
+                - "tec030"                  # 学校能带领全体教师为实现课程目标共同努
+                - "tec031"                  # 学校的课程建设思路与方案具有本校特色
+                - "tec032"                  # 学校的课程规划与学校的办学理念和办学目
+                - "tec033"                  # 学校很重视探究型课程与拓展型课程的建设
+                - "tec034"                  # 校长善于利用校内外各种资源服务于各学科
+                - "tec035"                  # 学校经常组织学生参加校外的各类社会实践
+                - "tec036"                  # 学校对教师“教学过程”的关注甚于对“教学结果”的关注
+                - "tec037"                  # 学校领导班子经常参加学校的教研和备课活
+                - "tec038"                  # 学校领导班子经常到教室听课，并能给授
+                - "tec039"                  # 学校很关注学生在学校是否学得开心、愉
+                - "tec040"                  # 学校很重视学生对每门课程教学质量改进
               col.value:
                 - "非常符合"
                 - "比较符合"
-          var.threshold: 11
+          var.threshold: 11                 # 大于 11，满足12项及以上
           var.option:
             T: *T
             F: *F
@@ -8972,23 +8987,23 @@ report:
 
   province: "上海市"
   counties:
-    #- "浦东新区"
+    - "浦东新区"
     - "黄浦区"
-    #- "静安区"
-    #- "徐汇区"
-    #- "虹口区"
-    #- "长宁区"
-    #- "杨浦区"
-    #- "宝山区"
-    #- "普陀区"
-    #- "嘉定区"
-    #- "青浦区"
-    #- "松江区"
-    #- "金山区"
-    #- "奉贤区"
-    #- "闵行区"
-    #- "崇明区"
-  skip: TRUE #skip other county／school  
+    - "静安区"
+    - "徐汇区"
+    - "虹口区"
+    - "长宁区"
+    - "杨浦区"
+    - "宝山区"
+    - "普陀区"
+    - "嘉定区"
+    - "青浦区"
+    - "松江区"
+    - "金山区"
+    - "奉贤区"
+    - "闵行区"
+    - "崇明区"
+  skip: FALSE #skip other county／school  
   test:
     county: "浦东新区"
     # "黄浦区" 
@@ -12718,7 +12733,7 @@ report:
               ylab: "百分数（%）"
 
         psychological_renjimangan.bar: 
-          fig.name: "四年级学生对人际敏感性相关问题的看法"
+          fig.name: "四年级学生对社交敏感性相关问题的看法"
           data:
             digits: *plot_data_digits
             filter:
@@ -26119,7 +26134,7 @@ report:
 
           
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "county_base.Rmd"
 
@@ -30260,7 +30275,7 @@ report:
               ylab: "百分数（%）"
 
         psychological_renjimangan.bar: 
-          fig.name: "四年级学生对人际敏感性相关问题的看法"
+          fig.name: "四年级学生对社交敏感性相关问题的看法"
           data:
             digits: *plot_data_digits
             filter:
@@ -35492,7 +35507,7 @@ report:
                   value: *top_point_rate
 
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "county_green.Rmd"
 
@@ -39957,7 +39972,7 @@ report:
               text_size: *plot_multi_fig_lab_size
             
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "county_cn.Rmd"
 
@@ -42323,7 +42338,7 @@ report:
                   value: *top_answer
                      
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "county_ma.Rmd"
 
@@ -47235,7 +47250,7 @@ report:
 
         
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "school_report.Rmd"
 
@@ -50447,7 +50462,7 @@ report:
               ylab: "百分数（%）"
 
         psychological_renjimangan.bar: 
-          fig.name: "四年级学生对人际敏感性相关问题的看法"
+          fig.name: "四年级学生对社交敏感性相关问题的看法"
           data:
             digits: *plot_data_digits
             filter:
