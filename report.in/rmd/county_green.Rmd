@@ -362,7 +362,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 
 \begin{landscape}
 
-learning.motivation.bar
+learning.pressure.bar
 \end{landscape}
 
 ## 学生对学校的认同度指数学生对学校的认同度主要指学生对学校的归属感和认可程度，包括同学关系、是否愿意参加学校集体活动、是否喜欢学校、在学校是否会感到孤独等。学生对学校的认同度是通过采集学生问卷数据，进行数据分析得到的结果。学生对学校的认同度指数分为9级，指数越高，表示学生对学校的认同度越高。\mylist
