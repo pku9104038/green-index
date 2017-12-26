@@ -1375,6 +1375,7 @@ plot.figure  <- function(
     
     plot$output <-  report$output[[1]]
     plot$title <- report$title
+    plot$title <- chartr("()","（）",plot$title)
     plot$dir  <- report$plot.out
     
     

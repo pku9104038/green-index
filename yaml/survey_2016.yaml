@@ -9003,11 +9003,11 @@ report:
     - "奉贤区"
     - "闵行区"
     - "崇明区"
-  skip: FALSE #skip other county／school  
+  skip: TRUE #skip other county／school  
   test:
-    county: "浦东新区"
+    county: "崇明区"
     # "黄浦区" 
-    school: "上海市浦东新区第二中心小学（巨野校区）"
+    school: "上海市崇明区新海学校(海桥校区）"
     #  "上海浦东新区民办金德小学" 
     #"上海市浦东新区第二中心小学（巨野校区）"
     # "上海市西郊学校"
@@ -9067,7 +9067,7 @@ report:
   report:
     
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "province_base.Rmd"
 
@@ -17656,7 +17656,7 @@ report:
                   value: *per_total
 
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "province_green.Rmd"
 
@@ -22192,7 +22192,7 @@ report:
             geom: *plot_radar 
 
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "province_cn.Rmd"
 
@@ -24596,7 +24596,7 @@ report:
                   value: *top_answer
                       
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "province_ma.Rmd"
 
@@ -26134,7 +26134,7 @@ report:
 
           
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "county_base.Rmd"
 
@@ -35507,7 +35507,7 @@ report:
                   value: *top_point_rate
 
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "county_green.Rmd"
 
@@ -39972,7 +39972,7 @@ report:
               text_size: *plot_multi_fig_lab_size
             
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "county_cn.Rmd"
 
@@ -42338,7 +42338,7 @@ report:
                   value: *top_answer
                      
     -
-      process: TRUE
+      process: FALSE
       table: "统计指标汇总"
       markdown: "county_ma.Rmd"
 

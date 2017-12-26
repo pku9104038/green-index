@@ -158,6 +158,7 @@ report.render <- function(
     
     report$datetime  <- report.datetime()
     report$title <- paste0(report$year,report$scope,report$project,report$subject,report$report)
+    report$title <- chartr("()","（）",report$title)
     report$header  <- paste0(report$year,report$scope,report$project,
                              report$subject,report$report)
     print(paste("report ",report$header))
