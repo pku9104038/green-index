@@ -733,8 +733,8 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 
 `r fig_name <- "四年级学生对社交敏感性相关问题的看法" `
 图\ref{fig:`r fig_name`}给出了四年级学生对社交敏感相关问题看法的情况。
-```{r psychological_renjimangan.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "psychological_renjimangan.bar"
+```{r psychological_shejiaomingan.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- "psychological_shejiaomingan.bar"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
 \begin{figure}[H]

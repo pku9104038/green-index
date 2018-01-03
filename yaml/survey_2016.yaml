@@ -84,7 +84,7 @@ global:
         topic: &tier_topic
           - *tier_province
           - *tier_county
-          #- *tier_school #ignore school tier to save test time
+          - *tier_school #ignore school tier to save test time
       scope: # one of the record group in the tier 
         province: &scope_province
           - "本市"
@@ -441,7 +441,7 @@ global:
             - "体质健康"
           psychological: &dim_st_psychological
             - "心理健康"
-          renjimingan: &dim_st_renjimingan
+          renjimingan: &dim_st_shejiaomingan
             - "社交敏感"
           renjiguanxi: &dim_st_renjiguanxi
             - "人际关系"
@@ -2898,7 +2898,7 @@ survey:
                         name: *var_st_survey_A
                         value: *F
                 -
-                  name: *dim_st_renjimingan
+                  name: *dim_st_shejiaomingan
                   perspective: *perspective_total_only
                   topic:
                     -
@@ -9005,9 +9005,9 @@ report:
     - "崇明区"
   skip: TRUE #skip other county／school  
   test:
-    county: "崇明区"
+    county: "黄浦区"
     # "黄浦区" 
-    school: "上海市崇明区新海学校(海桥校区）"
+    school: "上海市浦东新区第二中心小学（巨野校区）"
     #  "上海浦东新区民办金德小学" 
     #"上海市浦东新区第二中心小学（巨野校区）"
     # "上海市西郊学校"
@@ -12732,7 +12732,7 @@ report:
               xlab: ""
               ylab: "百分数（%）"
 
-        psychological_renjimangan.bar: 
+        psychological_shejiaomingan.bar: 
           fig.name: "四年级学生对社交敏感性相关问题的看法"
           data:
             digits: *plot_data_digits
@@ -12743,7 +12743,7 @@ report:
                   value: *tier_province
                 - 
                   variable: *dimention
-                  value: *dim_st_renjimingan
+                  value: *dim_st_shejiaomingan
 
             aes:
               - 
@@ -26134,7 +26134,7 @@ report:
 
           
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "county_base.Rmd"
 
@@ -30274,7 +30274,7 @@ report:
               xlab: ""
               ylab: "百分数（%）"
 
-        psychological_renjimangan.bar: 
+        psychological_shejiaomingan.bar: 
           fig.name: "四年级学生对社交敏感性相关问题的看法"
           data:
             digits: *plot_data_digits
@@ -30282,7 +30282,7 @@ report:
               -
                 - 
                   variable: *dimention
-                  value: *dim_st_renjimingan
+                  value: *dim_st_shejiaomingan
 
             aes:
               - 
@@ -35507,7 +35507,7 @@ report:
                   value: *top_point_rate
 
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "county_green.Rmd"
 
@@ -39972,7 +39972,7 @@ report:
               text_size: *plot_multi_fig_lab_size
             
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "county_cn.Rmd"
 
@@ -42338,7 +42338,7 @@ report:
                   value: *top_answer
                      
     -
-      process: FALSE
+      process: TRUE
       table: "统计指标汇总"
       markdown: "county_ma.Rmd"
 
@@ -50461,7 +50461,7 @@ report:
               xlab: ""
               ylab: "百分数（%）"
 
-        psychological_renjimangan.bar: 
+        psychological_shejiaomingan.bar: 
           fig.name: "四年级学生对社交敏感性相关问题的看法"
           data:
             digits: *plot_data_digits
@@ -50469,7 +50469,7 @@ report:
               -
                 - 
                   variable: *dimention
-                  value: *dim_st_renjimingan
+                  value: *dim_st_shejiaomingan
 
             aes:
               - 

@@ -11,7 +11,7 @@ g.tier <- yaml$global$stat$def$tier
 source(paste0(g.dir$R,"report/plot.R"))
 source(paste0(g.dir$R,"ETL/db.R"))
 #######################################################
-plot.name <- "extra_homework_reason.bar"
+plot.name <- "psychological_renjiguanxi.bar"
 
 reports <- yaml.load_file(paste0(g.dir$yaml,g.yaml$survey))$report
 ############
@@ -22,7 +22,7 @@ i <- 5
 
 report <-  reports$report[[i]]
 
-report$scope <- "浦东新区"  #"上海奉贤区民办青溪小学"  #上海市浦东新区第二中心小学（巨野校区）
+report$scope <- "浦东新区" #上海市崇明区新海学校(海桥校区）"  #"上海奉贤区民办青溪小学"  #上海市浦东新区第二中心小学（巨野校区）
 report$school <- report$scope
 report$county <- "浦东新区"
 report$province  <- "上海市"
@@ -85,6 +85,7 @@ plot <- report$plot[[plot.name]]
 #plot$data$keep <- list(list(var = "统计范围", value=list(report$school)))
 #plot$data$keep <- list(list(var = "统计范围", value=list(report$scope)))
 plot$data$keep <- list(list(var = "统计范围", value=list(report$county,report$province)))
+#plot$data$keep <-list(list(var = "统计范围", value=list(report$scope,report$county)))
 #plot$data$keep <- list(list(var = "统计范围", value=list(report$county,report$scope)),
 #                       list(var = "学科", value=list("学业成绩")),
 #                       list(var = "主题", value=list("高层次思维能力指数")))
@@ -95,5 +96,8 @@ plot$data$keep <- list(list(var = "统计范围", value=list(report$county,repor
 #plot$data$postkeep <- list(list(var = "变量", value=list("C3AO031")))
 #plot$data$postkeep <- list(list(var = "x", value=list(report$county,report$province)))
 timestamp()
+print(report$scope)
+print(report$county)
+print(report$province)
 plot.figure( report = report, plot.in = plot,fig_name = plot$fig.name)
 timestamp()

@@ -2458,8 +2458,8 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 
 `r fig_name <- "四年级学生对社交敏感性相关问题的看法" `
 图\ref{fig:`r fig_name`}给出了四年级学生对社交敏感相关问题看法的情况。
-```{r psychological_renjimangan.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$psychological_renjimangan.bar
+```{r psychological_shejiaomingan.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+plot.entry <- report$plot$psychological_shejiaomingan.bar
 plot.entry$data$keep <- list(list(var = var.scope, value=list(report$scope,report$county)))
 fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
 ```
