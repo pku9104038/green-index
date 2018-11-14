@@ -2,7 +2,7 @@
 
 ########################
 library(yaml)
-source("check_yaml.R")
+source(paste0(yaml.load_file("yaml/conf.yaml")$dir$R,"batch/check_yaml.R"))
 check.yaml()
 
 ########################
