@@ -26862,7 +26862,7 @@ report:
                   value: *survey_st
                 -
                   variable: *tier
-                  value: *tier_pcounty
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_xinyouzhi
@@ -31397,7 +31397,7 @@ report:
                   value: *survey_te
                 -
                   variable: *tier
-                  value: *tier_count
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_total
@@ -35169,7 +35169,7 @@ report:
                   value: *survey_pa
                 -
                   variable: *tier
-                  value: *tier_coumnty
+                  value: *tier_county
                 -
                   variable: *perspective
                   value: *per_huji
