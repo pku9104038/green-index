@@ -2,8 +2,8 @@
 
 ########################
 library(yaml)
-source("check_yaml.R")
-check.yaml()
+source("R/batch/check_yaml.R")
+check.yaml("yaml/conf.yaml")
 
 ########################
 library(yaml)

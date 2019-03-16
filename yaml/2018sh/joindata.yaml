@@ -1,0 +1,3 @@
+
+joindata:
+  data.in: *kTableRaw    # suffix of data.in table

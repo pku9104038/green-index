@@ -1,0 +1,32 @@
+---
+asmt:
+  job: "2018sh"
+  name: "2018年上海中小学学业质量绿色指标"
+
+dir:
+  R: "R/"
+  yaml: "yaml/"
+  data.in: "data.in/"
+  data.out: "data.out/"
+  report.in: "report.in/"
+  report.out: "report.out/"
+  latex: "tex/"
+  rmarkdown: "rmd/"
+  picture: "pic/"
+  plot: "plot/"
+  log: "log/"
+
+log:
+  level: "DEBUG"  # "WARN", "INFO", "DEBUG"
+  out: "File"  # "Console", "File"
+
+database:
+  host: "localhost"
+  port: "5432"
+
+consolidate:
+  yaml:
+    - "anchor.yaml"
+    - "loaddata.yaml"
+    - "checkdata.yaml"
+...

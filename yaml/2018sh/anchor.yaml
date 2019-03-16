@@ -1,0 +1,65 @@
+
+
+kSubject: 
+  - &kSubject
+    学科
+  - &kSubjectCN
+    "语文"
+  - &kSubjectMA
+    "数学"
+  - &kSubjectEN
+    "英语"
+  - &kSubjectSC
+    "科学"
+  - &kSubjectAR
+    "艺术"
+
+kRespondent:
+  - &kRespondent
+    受访者
+  - &kRespondentST
+    "学生"
+  - &kRespondentPA
+    "家长"
+  - &kRespondentTE
+    "教师"
+  - &kRespondentPR
+    "校长"
+
+kTableGeneral:
+  - &kTableQuestionAttribute
+    A试题问卷属性表
+  - &kTableDimentionMapping
+    A维度映射关系表
+  - &kTableSubjectSolutionPoint
+    A试题答案分值表
+  - &kTableSurveyResponcePoint
+    A问卷答复赋分表
+  - &kTableStudent
+    I学生信息表
+  - &kTableParent
+    I家长信息表
+  - &kTableTeacher
+    I教师信息表
+  - &kTablePrincipal
+    I校长信息表
+
+kTableSuffix:
+  - &kTableSuffix
+    表后缀
+  - &kTableRaw
+    "原始数据"
+  - &kTableJoin
+    "关联数据"
+  - &kTableClean
+    "清洗数据"
+  - &kTableAggregate    # 区、校、学科等基础数量统计汇总
+    "聚合数据"
+  - &kTableTransform
+    "转换数据"
+  - &kTableStatistics
+    "统计数据"
+  - &kTableIndex
+    "指标数据"
+  - &kTableConverge     # 指标，系数，统计值汇总
+    "汇聚数据"

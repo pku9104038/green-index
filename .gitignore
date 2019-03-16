@@ -3,3 +3,12 @@ setwd.R
 .Rhistory
 data.in
 *.Rmd.Rmd
+.Rproj.user
+
+log/
+
+*.log
+
+\.RData
+
+yaml/2018sh/2018sh\.yaml

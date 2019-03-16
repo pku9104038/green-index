@@ -1,0 +1,8 @@
+
+cleandata:
+  data.in: *kTableRaw    # suffix of data.in table
+  data.out: *kTableClean  # suffix of data.out table
+
+  table: 
+    - 
+      name: *kRespondentST
