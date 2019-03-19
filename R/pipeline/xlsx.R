@@ -7,6 +7,7 @@ xlsx.loaded <- TRUE
 ## define GreenIndexXlsx
 library(methods)
 library(xlsx)
+library(readxl)
 
 GreenIndexXlsx <- setRefClass(
   "GreenIndexXlsx",
@@ -21,7 +22,8 @@ GreenIndexXlsx <- setRefClass(
     ReadXlsxSheet = function(file, sheet.name = "Sheet1"){
       path <- paste0(config$GetDirDataIn(), file)
       LogInfo(paste("Read data.frame from", path, sheet.name))
-      df <- read.xlsx2(path, sheetName = sheet.name)
+      #df <- read.xlsx2(path, sheetName = sheet.name)
+      df <- read_xlsx(path, sheet = sheet.name)
       return(df)
     },
     

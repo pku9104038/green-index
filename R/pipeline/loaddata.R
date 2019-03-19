@@ -18,17 +18,24 @@ GreenIndexLoadData <- setRefClass(
   
   methods = list(
     
+    Init = function(module.name, config.obj, database.obj, xlsx.obj){
+      callSuper(module.name, config.obj)
+      database <<- database.obj
+      xlsx <<- xlsx.obj
+    },
+    
     LoadData = function(){
       
-      data.source <- config$GetLoadDataJob()
-      for (i in 1:length(data.source)){
-        
-        file <- data.source[[i]]$xlsx[1]
-        sheet <- data.source[[i]]$sheet[1]
-        table <- data.source[[i]]$table[1]
-        TODO <- data.source[[i]]$TODO[1]
-        
-        if (TODO) {
+      jobs <- config$GetLoadDataJob()
+      for (i in 1:length(jobs)){
+        job <- jobs[[i]]
+        TODO <- job$TODO
+        if (TODO || config$IsReworkAll()) {
+          
+          file <- job$xlsx
+          sheet <- job$sheet
+          table <- job$table
+          
           if (is.element(table, kSubjectSet)) {
             table <- paste0(table, kTableRaw)
           }
@@ -39,12 +46,6 @@ GreenIndexLoadData <- setRefClass(
         
       }
       
-    },
-    
-    Init = function(module.name, config.obj, database.obj, xlsx.obj){
-      callSuper(module.name, config.obj)
-      database <<- database.obj
-      xlsx <<- xlsx.obj
     }
     
   )

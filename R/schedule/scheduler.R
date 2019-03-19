@@ -40,8 +40,15 @@ GreenIndexScheduler <- setRefClass(
       
       gio.loaddata$LoadData()
       
+      gio.checkdata$CheckData()
       
-
+      gio.joindata$JoinData()
+      
+      gio.splitdata$SplitData()
+      
+      gio.checkdata$CleanData()
+      
+      
     }
     
   )

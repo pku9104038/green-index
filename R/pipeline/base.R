@@ -28,6 +28,9 @@ GreenIndexBase <- setRefClass(
     LogDebug = function(msg, format = ""){
       logdebug(paste0(" ",msg), format, logger = module)
     },
+    LogError = function(msg, format = ""){
+      logerror(paste0(" ",msg), format, logger = module)
+    },
     
     
     # Init 

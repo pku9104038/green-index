@@ -1,5 +1,7 @@
 ## Entry script for green index data analyse
 
+options(java.parameters = "-Xmx16g")  # set java heap size before run.R
+
 
 ## set instance config for global.R
 gi.dir.script <- "R/pipeline/"
@@ -26,6 +28,6 @@ if(!exists("scheduler.loaded", mode = "variable")) {
 gio.scheduler <- GreenIndexScheduler$new()
 gio.scheduler$Init("Scheduler", gio.config)
 
-# options(java.parameters = "-Xmx8g")  # set java heap size before run.R
+
 ## Running
 gio.scheduler$Run()

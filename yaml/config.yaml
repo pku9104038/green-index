@@ -18,7 +18,7 @@ dir:
 
 log:
   level: "DEBUG"  # "WARN", "INFO", "DEBUG"
-  out: "File"  # "Console", "File"
+  out: "Console"  # "Console", "File"
 
 database:
   host: "localhost"
@@ -29,4 +29,9 @@ consolidate:
     - "anchor.yaml"
     - "loaddata.yaml"
     - "checkdata.yaml"
+    - "joindata.yaml"
+    - "splitdata.yaml"
+    - "cleandata.yaml"
+
+reworkall: TRUE   # TRUE, igonre TODO: FALSE flags, rework all jobs
 ...

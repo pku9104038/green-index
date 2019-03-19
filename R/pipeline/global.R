@@ -18,11 +18,11 @@ kPerspective <- "统计视角"
 kSample <- "统计样本"
 kDomain <- "领域"
 kDimention <- "维度"
-kAttribute <- "属性"  # new column for tier3 index from 2018sh
-kmethod <- "方法"  # new column for tier4 of science, mathematics from 2018sh
+kGroup <- "群组"  # new column for tier3 index from 2018sh
+kAttribute <- "属性"  # new column for tier4 of science, mathematics from 2018sh
 kTopic <- "主题"
-kVariable <- "统计变量"  # rename 变量 to 统计变量 from 2018sh
-kStatistics <- "统计方法"  # rename 统计 to 统计方法 from 2018sh
+kVariable <- "变量"  # rename 变量 to 统计变量 from 2018sh
+kAlgorithm <- "算法"  # rename 统计 to 计算方法 from 2018sh
 kKey <- "键"
 kValue <- "值"
 kWeight <- "权重"  # rename 加权 to 权重 from 2018sh
@@ -53,7 +53,10 @@ kSubjectSet <- c(
 # constants for table suffix
 kTableRaw <- "原始数据"
 
-# constants for key
+# constants for choice
+kInvalidSet <- list("", "(跳过)")   # 未作答选项
+kColumnMultipleChoice <- "_多选_"    # 多选项答题结果拆分
+
 
 
 ## basicConfig of logger for every modules
@@ -92,63 +95,39 @@ if (!exists("loaddata.loaded", mode = "variable")){
   source(paste0(gi.dir.script,"loaddata.R"))
 }
 
+# source joindata.R
+if (!exists("joindata.loaded", mode = "variable")){
+  source(paste0(gi.dir.script,"joindata.R"))
+}
+
+# source checkdata.R
+if (!exists("splitdata.loaded", mode = "variable")){
+  source(paste0(gi.dir.script,"splitdata.R"))
+}
+
+# source checkdata.R
+if (!exists("checkdata.loaded", mode = "variable")){
+  source(paste0(gi.dir.script,"checkdata.R"))
+}
+
+# source checkdata.R
+if (!exists("cleandata.loaded", mode = "variable")){
+  source(paste0(gi.dir.script,"cleandata.R"))
+}
 
 ####################################
 
-## GreenIndexObject to access global objects and variables
-GreenIndexObject <- setRefClass(
-  "GreenIndexObject",
-  contains = "GreenIndexBase",
-  
-  fields = list(
-    database.obj = "GreenIndexDatabase",
-    xlsx.obj = "GreenIndexXlsx",
-    loaddata.obj = "GreenIndexLoadData"
-  ),
-  
-  methods = list(
-    
-    # Get databse object
-    GetDatabase = function(){
-      return(database.obj)
-    },
-    
-    # Get xlsx object
-    GetXlsx = function(){
-      return(xlsx.obj)  
-    },
-    
-    # Get loaddata object
-    GetLoadData = function(){
-      return(loaddata.obj)
-    },
-    
-    Init = function(module.name, 
-                    config.obj,
-                    database.obj,
-                    xlsx.obj,
-                    loaddata.obj
-                    ){
-      callSuper(module.name, config.obj)
-      
-      database.obj <<- database.obj
-      loaddata.obj <<- loaddata.obj
-      
-    }
-    
-  )
-)
-
-# create global objects
+## create global objects
 
 gio.config <- GreenIndexConfig$new()
 gio.yaml <- GreenIndexYaml$new()
 gio.xlsx <- GreenIndexXlsx$new()
 gio.database <- GreenIndexDatabase$new()
 gio.loaddata <- GreenIndexLoadData$new()
-
-#gio <- GreenIndexObject$new()
-
+gio.joindata <- GreenIndexJoinData$new()
+gio.splitdata <- GreenIndexSplitData$new()
+gio.checkdata <- GreenIndexCheckData$new()
+gio.cleandata <- GreenIndexCleanData$new()
 
 ## Init global objects
 
@@ -157,13 +136,7 @@ gio.yaml$Init("Yaml", gio.config)
 gio.xlsx$Init("Xlsx", gio.config)
 gio.database$Init("Database", gio.config, gi.db.user, gi.db.pwd)
 gio.loaddata$Init("LoadData", gio.config, gio.database, gio.xlsx)
-
-# create gio
-#gio$Init("Global", 
-#         gio.config,
-#         gio.database,
-#         gio.xlsx,
-#         gio.loaddata
-#         )
-
-gi.data <- data.frame()
+gio.joindata$Init("JoinData", gio.config, gio.database)
+gio.splitdata$Init("SplitData", gio.config, gio.database)
+gio.checkdata$Init("CheckData", gio.config, gio.database)
+gio.cleandata$Init("CleanData", gio.config, gio.database)

@@ -89,6 +89,11 @@ GreenIndexConfig <- setRefClass(
       return(config$consolidate$yaml)
     },
     
+    # Check reworkall
+    IsReworkAll = function(){
+      return(config$reworkall)
+    },
+    
     # Init 
     Init = function(module.name, config.yaml){
       LoadConfig(config.yaml)
@@ -117,6 +122,21 @@ GreenIndexConfig <- setRefClass(
     # Get load data job
     GetLoadDataJob = function(){
       return(job$loaddata)
+    },
+    
+    # Get join data job
+    GetJoinDataJob = function(){
+      return(job$joindata)
+    },
+    
+    # Get check data job
+    GetCheckDataJob = function(){
+      return(job$checkdata)
+    },
+    
+    # Get split data job
+    GetSplitDataJob = function(){
+      return(job$splitdata)
     }
   )
 )

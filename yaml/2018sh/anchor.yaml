@@ -33,8 +33,10 @@ kTableGeneral:
     A维度映射关系表
   - &kTableSubjectSolutionPoint
     A试题答案分值表
-  - &kTableSurveyResponcePoint
+  - &kTableSurveyResponsePoint
     A问卷答复赋分表
+  - &kTableDictionary
+    B标准代码表
   - &kTableStudent
     I学生信息表
   - &kTableParent
@@ -49,8 +51,12 @@ kTableSuffix:
     表后缀
   - &kTableRaw
     "原始数据"
+  - &kTableCkeck
+    "校验数据"
   - &kTableJoin
     "关联数据"
+  - &kTableSplit
+    "拆分数据"
   - &kTableClean
     "清洗数据"
   - &kTableAggregate    # 区、校、学科等基础数量统计汇总
@@ -63,3 +69,39 @@ kTableSuffix:
     "指标数据"
   - &kTableConverge     # 指标，系数，统计值汇总
     "汇聚数据"
+
+
+kColumnName:
+  - &kCoulmnQuestionCode
+    题号
+  - &kColumnQuestionChoice
+    选项
+  - &kColumnKey
+    键
+  - &kColumnValue
+    值
+  - &kColumnCode
+    代码
+  - &kColumnGender
+    性别
+  - &kColumnHuji
+    户籍
+
+kColumnSuffix:
+  - &kColumnSuffix
+    列后缀
+  - &kColumnMultipleChoice   # 多选项答题结果拆分
+    "_多选_"
+
+kDictKeyValue:
+  - &kDictValueMale
+    男
+  - &kDictValueFemale
+    女
+  - &kDictValueResident
+    本市
+  - &kDictValueMigrant
+    非本市
+  - &kDictValueOther
+    其他
+
