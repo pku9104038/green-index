@@ -20,8 +20,6 @@ library(yaml)
 source(paste0(yaml.load_file("yaml/conf.yaml")$dir$R,"weight/weight_table.R"))
 weight.table()
 
-
-
 ########################
 library(yaml)
 source(paste0(yaml.load_file("yaml/conf.yaml")$dir$R,"clean/clean_data.R"))

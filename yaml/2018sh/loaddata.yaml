@@ -1,108 +1,116 @@
 
+# load original data from xlsx sheet into database table
 loaddata:
-  -
-    TODO: FALSE
-    xlsx: "绿色指标属性表.xlsx"
-    sheet: "维度映射关系表"
-    table: *kTableDimentionMapping
-    
-  -
-    TODO: FALSE
-    xlsx: "绿色指标属性表.xlsx"
-    sheet: "试题问卷属性表"
-    table: *kTableQuestionAttribute
-    
-  -
-    TODO: FALSE
-    xlsx: "绿色指标属性表.xlsx"
-    sheet: "试题答案分值表"
-    table: *kTableSubjectSolutionPoint
-    
-  -
-    TODO: TRUE
-    xlsx: "绿色指标属性表.xlsx"
-    sheet: "问卷答复赋分表"
-    table: *kTableSurveyResponsePoint
+  TODO: FALSE    # TRUE, igonre TODO: FALSE flags, rework load data jobs
+  table:
+    - 
+      TODO: FALSE
+      xlsx: "学生密码.xlsx"
+      sheet: "20181011  学生登录密码"
+      table: *kTableStudent
 
-  -
-    TODO: TRUE
-    xlsx: "绿色指标属性表.xlsx"
-    sheet: "标准代码表"
-    table: *kTableDictionary
-    
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "指标体系表"
+      table: *kTableIndex
 
-  - 
-    TODO: FALSE
-    xlsx: "学生密码.xlsx"
-    sheet: "20181011  学生登录密码"
-    table: *kTableStudent
-    
-  - 
-    TODO: FALSE
-    xlsx: "家长密码.xlsx"
-    sheet: "20181011  家长登录密码"
-    table: *kTableParent
-    
-  - 
-    TODO: FALSE
-    xlsx: "教师校长密码.xlsx"
-    sheet: "教师"
-    table: *kTableTeacher
-    
-  - 
-    TODO: FALSE
-    xlsx: "教师校长密码.xlsx"
-    sheet: "校长"
-    table: *kTablePrincipal
-    
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "维度映射关系表"
+      table: *kTableDimentionMapping
+      
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "试题问卷属性表"
+      table: *kTableQuestionAttribute
+      
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "试题答案分值表"
+      table: *kTableSubjectSolutionPoint
+      
+    -
+      TODO: TRUE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "问卷答复赋分表"
+      table: *kTableSurveyResponsePoint
 
-  - 
-    TODO: FALSE
-    xlsx: "语文成绩.xlsx"
-    sheet: "20190103语文总成绩"
-    table: *kSubjectCN
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "标准代码表"
+      table: *kTableDictionary
+      
+    - 
+      TODO: FALSE
+      xlsx: "家长密码.xlsx"
+      sheet: "20181011  家长登录密码"
+      table: *kTableParent
+      
+    - 
+      TODO: FALSE
+      xlsx: "教师校长密码.xlsx"
+      sheet: "教师"
+      table: *kTableTeacher
+      
+    - 
+      TODO: FALSE
+      xlsx: "教师校长密码.xlsx"
+      sheet: "校长"
+      table: *kTablePrincipal
+      
+
+    - 
+      TODO: FALSE
+      xlsx: "语文成绩.xlsx"
+      sheet: "20190103语文总成绩"
+      table: *kSubjectCN
+      
+    - 
+      TODO: FALSE
+      xlsx: "数学成绩.xlsx"
+      sheet: "20190224  数学成绩(删除缺考24400）"
+      table: *kSubjectMA
+      
+    - 
+      TODO: FALSE
+      xlsx: "英语成绩.xlsx"
+      sheet: "20190105  英语成绩"
+      table: *kSubjectEN
+      
+    - 
+      TODO: FALSE
+      xlsx: "科学成绩.xlsx"
+      sheet: "20190105  科学成绩"
+      table: *kSubjectSC
+      
+    - 
+      TODO: FALSE
+      xlsx: "艺术成绩.xlsx"
+      sheet: "20190107 艺术成绩"
+      table: *kSubjectAR
+      
+    - 
+      TODO: FALSE
+      xlsx: "学生问卷.xlsx"
+      sheet: "20190110  学生问卷作答（含基础信息）删除缺考"
+      table: *kRespondentST
+      
+    - 
+      TODO: FALSE
+      xlsx: "家长问卷.xlsx"
+      sheet: "家长问卷"
+      table: *kRespondentPA
+      
+    - 
+      TODO: FALSE
+      xlsx: "教师问卷.xlsx"
+      sheet: "教师问卷"
+      table: *kRespondentTE
+      
     
-  - 
-    TODO: FALSE
-    xlsx: "数学成绩.xlsx"
-    sheet: "20190224  数学成绩(删除缺考24400）"
-    table: *kSubjectMA
-    
-  - 
-    TODO: FALSE
-    xlsx: "英语成绩.xlsx"
-    sheet: "20190105  英语成绩"
-    table: *kSubjectEN
-    
-  - 
-    TODO: FALSE
-    xlsx: "科学成绩.xlsx"
-    sheet: "20190105  科学成绩"
-    table: *kSubjectSC
-    
-  - 
-    TODO: FALSE
-    xlsx: "艺术成绩.xlsx"
-    sheet: "20190107 艺术成绩"
-    table: *kSubjectAR
-    
-  - 
-    TODO: FALSE
-    xlsx: "学生问卷.xlsx"
-    sheet: "20190110  学生问卷作答（含基础信息）删除缺考"
-    table: *kRespondentST
-    
-  - 
-    TODO: FALSE
-    xlsx: "家长问卷.xlsx"
-    sheet: "家长问卷"
-    table: *kRespondentPA
-    
-  - 
-    TODO: FALSE
-    xlsx: "教师问卷.xlsx"
-    sheet: "教师问卷"
-    table: *kRespondentTE
-    
-  
 

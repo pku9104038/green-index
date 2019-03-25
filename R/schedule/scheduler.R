@@ -36,7 +36,7 @@ GreenIndexScheduler <- setRefClass(
       
       LogInfo("Start running!")
       
-      gio.yaml$ConsolidateYaml()
+      gio.config$InitJobs()
       
       gio.loaddata$LoadData()
       
@@ -46,8 +46,9 @@ GreenIndexScheduler <- setRefClass(
       
       gio.splitdata$SplitData()
       
-      gio.checkdata$CleanData()
+      gio.cleandata$CleanData()
       
+      gio.assignpoint$AssignPoint()
       
     }
     

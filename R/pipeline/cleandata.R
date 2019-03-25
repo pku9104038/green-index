@@ -23,13 +23,15 @@ GreenIndexCleanData <- setRefClass(
     },
     
     CleanData = function(){
-      
+      LogInfo("Cleaning Data!")
       # get job configuration
       jobs <- config$GetCleanDataJob()
-      for (i in 1:length(jobs)){
-        job <- jobs[[i]]
+      reworkall <- config$IsReworkAll()
+      reworkjobs <- jobs$TODO
+      for (i in 1:length(jobs$table)){
+        job <- jobs$table[[i]]
         TODO <- job$TODO
-        if (TODO || config$IsReworkAll()) {
+        if (TODO || reworkjobs || reworkall) {
           
           
           # read input, choice data table
@@ -45,11 +47,11 @@ GreenIndexCleanData <- setRefClass(
           
           recovery <- job$recovery
           
-          LogInfo(paste("Checking", input.table))
+          LogInfo(paste("Filtering", input.table, "through", choice.table))
           keys <- colnames(df)
           for (i in 1:length(keys)) {
             key <- keys[i][1]
-            
+            # find column in filter table
             if (is.element(key, key.set)) {
               input <- unique(df[, key])
               input <- setdiff(input, kInvalidSet)
@@ -57,12 +59,8 @@ GreenIndexCleanData <- setRefClass(
               choice.set <- choice.df[choice.df[, choice.key] == key, ]
               choice.set <- choice.set[, choice.value]
               
+              # check input with choice.set
               if (!all(input %in% choice.set)) {
-                # error founded 
-                #LogWarn("Expected input:")
-                #print(choice.set)
-                #LogError(paste("Error input at:", key))
-                #print(input)
                 
                 response.group  <- levels(factor(df[, key]))
                 for(j in 1:length(response.group)){
@@ -70,23 +68,24 @@ GreenIndexCleanData <- setRefClass(
                   response <- setdiff(group, kInvalidSet)
                   
                   if(length(response) > 0){
+                    
                     if (!all(response %in% choice.set)) {
-                      LogWarn("Expected response:")
+                      LogWarn(paste("Expect value in:"))
                       print(unlist(choice.set))
                       
-                      LogError(paste("Error response at:", key))
+                      LogError(paste("Error response:", key))
                       print(response)
-                      
                       
                       k <- 1
                       while(k <= length(recovery)){
                         if (recovery[[k]]$column == key){
+                          
                           response.err <- response
                           response <- sub(paste0("^", recovery[[k]]$error, "$"), 
                                           recovery[[k]]$fixed, response)
                           
                           if (!all(response == response.err)){
-                            LogDebug("fixed response:")
+                            LogDebug("Change value to:")
                             print(response)
                             df[df[, key] == group, key] <- response
                             # break

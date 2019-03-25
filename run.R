@@ -1,6 +1,6 @@
 ## Entry script for green index data analyse
 
-options(java.parameters = "-Xmx16g")  # set java heap size before run.R
+options(java.parameters = "-Xmx8g")  # set java heap size before run.R
 
 
 ## set instance config for global.R
@@ -17,7 +17,6 @@ if (!exists("global.loaded", mode = "variable")){
 }
 
 ######################################
- 
 
 ## source scheduler.R, this must sourced after global.R
 gi.dir.schedule <- "R/schedule/"

@@ -23,13 +23,15 @@ GreenIndexSplitData <- setRefClass(
     },
     
     SplitData = function(){
-      
+      LogInfo("Spliting Data!")
       # get job configuration
       jobs <- config$GetSplitDataJob()
-      for (i in 1:length(jobs)){
-        job <- jobs[[i]]
+      reworkall <- config$IsReworkAll()
+      reworkjobs <- jobs$TODO
+      for (i in 1:length(jobs$table)){
+        job <- jobs$table[[i]]
         TODO <- job$TODO
-        if (TODO || config$IsReworkAll()) {
+        if (TODO || reworkjobs || reworkall) {
           
           # read table.in, table.choice data table
           input.table <- paste0(job$input$table, job$input$suffix)
@@ -43,12 +45,16 @@ GreenIndexSplitData <- setRefClass(
           choice.df <- choice.df[, c(choice.key, choice.value)]
           key.set <- unique(choice.df[,choice.key])
           
+          output.table <- paste0(job$output$table, job$output$suffix)
+          LogInfo(paste("Split", input.table, "multiple choice column into", 
+                        output.table))
+          
           columns <- job$column
           separator <- job$separator
           for (i in 1:length(columns)) {
             column <- columns[[i]]$name
             recovery <- columns[[i]]$recovery
-            LogInfo(column)
+            LogInfo(paste("Processing column",column))
             choice.set <- choice.df[choice.df[, choice.key] == column, ]
             #print(choice.set)
             choice.set <- choice.set[, choice.value]
@@ -64,12 +70,13 @@ GreenIndexSplitData <- setRefClass(
               group <- response.group[j]
               response <- setdiff(group, kInvalidSet)
               response <- unlist(strsplit(response,"┋"))
+              
               if(length(response) > 0){
                 if (!all(response %in% choice.set)) {
-                  LogWarn("Expected response:")
+                  LogWarn(paste("Expect value in:"))
                   print(unlist(choice.set))
                   
-                  LogError(paste("Error response at:", column))
+                  LogError(paste("Error response:", column))
                   print(response)
                   print(df[df[, column] == group, column.id])
                   
@@ -81,7 +88,7 @@ GreenIndexSplitData <- setRefClass(
                                     recovery[[k]]$fixed, response)
                     
                     if (!all(response == response.err)){
-                      LogDebug("fixed response:")
+                      LogDebug("Change value to:")
                       print(response)
                       break
                     }
@@ -96,7 +103,7 @@ GreenIndexSplitData <- setRefClass(
                   if(is.element(choice.set[[k]], response)){
                     df[df[, column] == group, 
                        paste0(column, kColumnMultipleChoice, as.character(k))
-                       ] <- TRUE # choice.set[[k]]
+                       ] <- choice.set[[k]] # TRUE 
                     
                   }
                 }
@@ -110,11 +117,7 @@ GreenIndexSplitData <- setRefClass(
             
           }
           
-          
-          output.table <- paste0(job$output$table, job$output$suffix)
           database$WriteTable(df, output.table)
-          
-          
           
         }
         

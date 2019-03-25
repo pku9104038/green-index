@@ -23,13 +23,16 @@ GreenIndexCheckData <- setRefClass(
     },
     
     CheckData = function(){
+      LogInfo("Checking Data!")
       
       # get job configuration
       jobs <- config$GetCheckDataJob()
-      for (i in 1:length(jobs)){
-        job <- jobs[[i]]
+      reworkall <- config$IsReworkAll()
+      reworkjobs <- jobs$TODO
+      for (i in 1:length(jobs$table)){
+        job <- jobs$table[[i]]
         TODO <- job$TODO
-        if (TODO || config$IsReworkAll()) {
+        if (TODO || reworkjobs || reworkall) {
           
           
           # read input, choice data table
@@ -44,37 +47,40 @@ GreenIndexCheckData <- setRefClass(
           key.set <- unique(choice.df[,choice.key])
           
           recovery <- job$recovery
+          output.table <- paste0(job$output$table, job$output$suffix)
+          LogInfo(paste("Filtering", input.table, "throught", choice.table,
+                        "into", output.table))
           
-          LogInfo(paste("Checking", input.table))
           keys <- colnames(df)
           for (i in 1:length(keys)) {
             key <- keys[i][1]
             
+            # find key in key.set
             if (is.element(key, key.set)) {
+              # all input without invalid set
               input <- unique(df[, key])
               input <- setdiff(input, kInvalidSet)
               
+              # available choice.set
               choice.set <- choice.df[choice.df[, choice.key] == key, ]
               choice.set <- choice.set[, choice.value]
             
+              # check input inside choice.set
               if (!all(input %in% choice.set)) {
-                # error founded 
-                #LogWarn("Expected input:")
-                #print(choice.set)
-                #LogError(paste("Error input at:", key))
-                #print(input)
                
                 response.group  <- levels(factor(df[, key]))
+                print(response.group)
                 for(j in 1:length(response.group)){
                   group <- response.group[j]
-                  response <- setdiff(group, kInvalidSet)
+                  response <- setdiff(group, kSkipSet)
+                  LogDebug(paste("checking response group",group))
                   
                   if(length(response) > 0){
                     if (!all(response %in% choice.set)) {
-                      LogWarn("Expected response:")
+                      LogWarn(paste("Expect value in:"))
                       print(unlist(choice.set))
                       
-                      LogError(paste("Error response at:", key))
+                      LogError(paste("Error response:", key))
                       print(response)
                       
                       
@@ -86,15 +92,13 @@ GreenIndexCheckData <- setRefClass(
                                           recovery[[k]]$fixed, response)
                           
                           if (!all(response == response.err)){
-                            LogDebug("fixed response:")
-                            print(response)
                             df[df[, key] == group, key] <- response
-                            # break
+                            LogDebug("Change value to:")
+                            print(response)
                           }
+                          
                         }
-                        
                         k = k + 1
-                        
                       }
                       
                     }
@@ -107,7 +111,6 @@ GreenIndexCheckData <- setRefClass(
             }
           }
           
-          output.table <- paste0(job$output$table, job$output$suffix)
           database$WriteTable(df, output.table)
         }
         

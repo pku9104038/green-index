@@ -21,20 +21,20 @@ GreenIndexXlsx <- setRefClass(
     
     ReadXlsxSheet = function(file, sheet.name = "Sheet1"){
       path <- paste0(config$GetDirDataIn(), file)
-      LogInfo(paste("Read data.frame from", path, sheet.name))
+      LogDebug(paste("Read data.frame from", path, sheet.name))
       #df <- read.xlsx2(path, sheetName = sheet.name)
-      df <- read_xlsx(path, sheet = sheet.name)
+      df <- read_xlsx(path, sheet = sheet.name, guess_max = 80000)
       return(df)
     },
     
     WriteXlsxSheet = function(x, file, sheet.name = "Sheet1"){
-      LogInfo(paste("Write data.frame to", file, sheet.name))
+      LogDebug(paste("Write data.frame to", file, sheet.name))
       write.xlsx2(x, file, sheetName = sheet.name, row.names = FALSE, 
                   showNA = FALSE)
       
     },
     AppendXlsxSheet = function(x, file, sheet.name = "Sheet1"){
-      LogInfo(paste("Append data.frame to", file, sheet.name))
+      LogDebug(paste("Append data.frame to", file, sheet.name))
       write.xlsx2(x, file, sheetName = sheet.name, row.names = FALSE, 
                   showNA = FALSE, append = TRUE)
       

@@ -50,7 +50,7 @@ GreenIndexBase <- setRefClass(
       setLevel(loglevel, module)
       # setMsgComposer(LogComposer, module)
       
-      LogInfo(paste0("Init ", module, ", log writeTo", logout," ", logfile))
+      LogDebug(paste0("Init ", module, ", log writeTo", logout," ", logfile))
     }
   )
 )

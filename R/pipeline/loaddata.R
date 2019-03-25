@@ -25,22 +25,35 @@ GreenIndexLoadData <- setRefClass(
     },
     
     LoadData = function(){
+      LogInfo("Loading Data!")
       
       jobs <- config$GetLoadDataJob()
-      for (i in 1:length(jobs)){
-        job <- jobs[[i]]
+      reworkall <- config$IsReworkAll()
+      reworkjobs <- jobs$TODO
+      for (i in 1:length(jobs$table)){
+        job <- jobs$table[[i]]
         TODO <- job$TODO
-        if (TODO || config$IsReworkAll()) {
+        if (TODO || reworkjobs || reworkall) {
           
           file <- job$xlsx
           sheet <- job$sheet
           table <- job$table
-          
           if (is.element(table, kSubjectSet)) {
             table <- paste0(table, kTableRaw)
           }
+          LogInfo(paste(file, "sheet", sheet, "into", table))
+          
+          
           df <- xlsx$ReadXlsxSheet(file, sheet)
-          LogInfo(paste(file, sheet, table))
+          columns <- colnames(df)
+          for (i in 1:length(columns)) {
+            # set NULL into "" for all character column
+            if (typeof(columns[i]) == "character"){
+              df[is.na(df[, columns[i]]), columns[i]] <- ""
+            }
+            
+          }
+          
           database$WriteTable(df, table)
         }
         

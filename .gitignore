@@ -12,3 +12,5 @@ log/
 \.RData
 
 yaml/2018sh/2018sh\.yaml
+
+yaml/2018sh/test\.anchor\.yaml

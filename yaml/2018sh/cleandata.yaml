@@ -1,94 +1,94 @@
 
-
+# check column response, recover error value
 cleandata:
+  TODO: FALSE
+  table:
+    - 
+      TODO: FALSE
+      input:
+        table: *kRespondentST
+        suffix: *kTableSplit
+      output:
+        table: *kRespondentST
+        suffix: *kTableClean
+      choice:
+        table: *kTableSurveyResponsePoint
+        suffix: ""
+        column:
+          key: *kCoulmnQuestionCode
+          value: *kColumnQuestionChoice
 
+    - 
+      TODO: FALSE
+      input:
+        table: *kRespondentST
+        suffix: *kTableClean
+      output:
+        table: *kRespondentST
+        suffix: *kTableClean
+      choice:
+        table: *kTableDictionary
+        suffix: ""
+        column:
+          key: *kColumnKey
+          value: *kColumnValue
+      recovery:
+        -
+          column: *kColumnGender
+          error: "1"
+          fixed: *kDictValueMale
+        -
+          column: *kColumnGender
+          error: "2"
+          fixed: *kDictValueFemale
+        -
+          column: *kColumnGender
+          error: "男性"
+          fixed: *kDictValueMale
+        -
+          column: *kColumnGender
+          error: "女性"
+          fixed: *kDictValueFemale
+        -
+          column: *kColumnHuji
+          error: "1"
+          fixed: *kDictValueResident
+        -
+          column: *kColumnHuji
+          error: "2"
+          fixed: *kDictValueMigrant
+        -
+          column: *kColumnHuji
+          error: "无户口"
+          fixed: *kDictValueMigrant
 
-  - 
-    TODO: FALSE
-    input:
-      table: *kRespondentST
-      suffix: *kTableSplit
-    output:
-      table: *kRespondentST
-      suffix: *kTableClean
-    choice:
-      table: *kTableSurveyResponsePoint
-      suffix: ""
-      column:
-        key: *kCoulmnQuestionCode
-        value: *kColumnQuestionChoice
+    - 
+      TODO: FALSE
+      input:
+        table: *kRespondentPA
+        suffix: *kTableSplit
+      output:
+        table: *kRespondentPA
+        suffix: *kTableClean
+      choice:
+        table: *kTableSurveyResponsePoint
+        suffix: ""
+        column:
+          key: *kCoulmnQuestionCode
+          value: *kColumnQuestionChoice
 
-  - 
-    TODO: FALSE
-    input:
-      table: *kRespondentST
-      suffix: *kTableClean
-    output:
-      table: *kRespondentST
-      suffix: *kTableClean
-    choice:
-      table: *kTableDictionary
-      suffix: ""
-      column:
-        key: *kColumnKey
-        value: *kColumnValue
-    recovery:
-      -
-        column: *kColumnGender
-        error: "1"
-        fixed: *kDictValueMale
-      -
-        column: *kColumnGender
-        error: "2"
-        fixed: *kDictValueFemale
-      -
-        column: *kColumnGender
-        error: "男性"
-        fixed: *kDictValueMale
-      -
-        column: *kColumnGender
-        error: "女性"
-        fixed: *kDictValueFemale
-      -
-        column: *kColumnHuji
-        error: "1"
-        fixed: *kDictValueResident
-      -
-        column: *kColumnHuji
-        error: "2"
-        fixed: *kDictValueMigrant
-      -
-        column: *kColumnHuji
-        error: "无户口"
-        fixed: *kDictValueMigrant
-
-  - 
-    TODO: FALSE
-    input:
-      table: *kRespondentPA
-      suffix: *kTableSplit
-    output:
-      table: *kRespondentPA
-      suffix: *kTableClean
-    choice:
-      table: *kTableSurveyResponsePoint
-      suffix: ""
-      column:
-        key: *kCoulmnQuestionCode
-        value: *kColumnQuestionChoice
-
-  - 
-    TODO: FALSE
-    input:
-      table: *kRespondentTE
-      suffix: *kTableSplit
-    output:
-      table: *kRespondentTE
-      suffix: *kTableClean
-    choice:
-      table: *kTableSurveyResponsePoint
-      suffix: ""
-      column:
-        key: *kCoulmnQuestionCode
-        value: *kColumnQuestionChoice
+    - 
+      TODO: FALSE
+      input:
+        table: *kRespondentTE
+        suffix: *kTableSplit
+      output:
+        table: *kRespondentTE
+        suffix: *kTableClean
+      choice:
+        table: *kTableSurveyResponsePoint
+        suffix: ""
+        column:
+          key: *kCoulmnQuestionCode
+          value: *kColumnQuestionChoice
 

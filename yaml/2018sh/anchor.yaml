@@ -1,4 +1,5 @@
 
+## anchor defintion
 
 kSubject: 
   - &kSubject
@@ -27,31 +28,35 @@ kRespondent:
     "校长"
 
 kTableGeneral:
-  - &kTableQuestionAttribute
-    A试题问卷属性表
+  - &kTableIndex
+    属性表指标体系
   - &kTableDimentionMapping
-    A维度映射关系表
+    属性表维度映射关系
+  - &kTableQuestionAttribute
+    属性表试题问卷属性 
   - &kTableSubjectSolutionPoint
-    A试题答案分值表
+    属性表试题答案分值
   - &kTableSurveyResponsePoint
-    A问卷答复赋分表
+    属性表问卷答复赋分
   - &kTableDictionary
-    B标准代码表
+    属性表标准代码
   - &kTableStudent
-    I学生信息表
+    信息表学生
   - &kTableParent
-    I家长信息表
+    信息表家长
   - &kTableTeacher
-    I教师信息表
+    信息表教师
   - &kTablePrincipal
-    I校长信息表
+    信息表校长
+  - &kTableStudentJoin
+    信息表参与学生
 
 kTableSuffix:
   - &kTableSuffix
     表后缀
   - &kTableRaw
     "原始数据"
-  - &kTableCkeck
+  - &kTableCheck
     "校验数据"
   - &kTableJoin
     "关联数据"
@@ -59,6 +64,8 @@ kTableSuffix:
     "拆分数据"
   - &kTableClean
     "清洗数据"
+  - &kTableAssign
+    "赋分数据"
   - &kTableAggregate    # 区、校、学科等基础数量统计汇总
     "聚合数据"
   - &kTableTransform
@@ -76,6 +83,10 @@ kColumnName:
     题号
   - &kColumnQuestionChoice
     选项
+  - &kColumnQuestionPoint
+    赋分
+  - &kColumnQuestionBinary
+    二值化
   - &kColumnKey
     键
   - &kColumnValue
@@ -92,8 +103,23 @@ kColumnSuffix:
     列后缀
   - &kColumnMultipleChoice   # 多选项答题结果拆分
     "_多选_"
+  - &kColumnAssignmentPoint
+    "_赋分"
+  - &kColumnBinaryPoint
+    "_二值分"
+  - &kColumnAggregationPoint
+    "_积分"
 
-kDictKeyValue:
+kColumnStudentInfo: &kColumnStuInfoSelect    # 关联学生信息
+  select:
+    - "准考证号"
+    - "区"
+    - "学校"
+    - "性别"
+    - "户籍"
+    # - "备注"        # 部分学生户籍，学籍异常情况， 学籍异常比影响分析，户籍异常统一为非本市
+
+kDictKeyValue:               # 字典代码
   - &kDictValueMale
     男
   - &kDictValueFemale

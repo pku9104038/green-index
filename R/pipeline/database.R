@@ -30,17 +30,17 @@ GreenIndexDatabase <- setRefClass(
       conn <<- dbConnect(driver, dbname = database,
                          host = host, port = port,
                          user = user, password = password)
-      LogInfo(paste("Connect to database", database))
+      LogDebug(paste("Connect to database", database))
     },
     Disconnect = function(){
       dbDisconnect(conn)
-      LogInfo(paste("Disconnect from database", database))
+      LogDebug(paste("Disconnect from database", database))
     },
     
     ReadTable = function(table.name){
       Connect()
       tabledata <- dbReadTable(conn, table.name)
-      LogInfo(paste("Read database table", table.name))
+      LogDebug(paste("Read database table", table.name))
       Disconnect()
       return(tabledata)
     },
@@ -52,7 +52,7 @@ GreenIndexDatabase <- setRefClass(
       } 
       dbWriteTable(conn, table.name, data.frame, 
                    row.names = FALSE, append = FALSE) 
-      LogInfo(paste("Write database table", table.name))
+      LogDebug(paste("Write database table", table.name))
       Disconnect()
     },
     
@@ -60,14 +60,14 @@ GreenIndexDatabase <- setRefClass(
       Connect()
       dbWriteTable(conn, table.name, data.frame, 
                    row.names = FALSE, append = TRUE) 
-      LogInfo(paste("Append database table", table.name))
+      LogDebug(paste("Append database table", table.name))
       Disconnect()
     },
     
     RemoveTable = function(table.name){
       Connect()
       dbRemoveTable(conn, table.name)
-      LogInfo(paste("Remove database table", table.name))
+      LogDebug(paste("Remove database table", table.name))
       Disconnect()
     },
     

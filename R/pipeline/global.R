@@ -54,7 +54,9 @@ kSubjectSet <- c(
 kTableRaw <- "原始数据"
 
 # constants for choice
-kInvalidSet <- list("", "(跳过)")   # 未作答选项
+kInvalidSet <- list("", "(跳过)")    # 无效选项
+kSkipSet <- list("(跳过)")           # 未作答选项
+kNullStr <- ""
 kColumnMultipleChoice <- "_多选_"    # 多选项答题结果拆分
 
 
@@ -95,24 +97,29 @@ if (!exists("loaddata.loaded", mode = "variable")){
   source(paste0(gi.dir.script,"loaddata.R"))
 }
 
-# source joindata.R
-if (!exists("joindata.loaded", mode = "variable")){
-  source(paste0(gi.dir.script,"joindata.R"))
-}
-
-# source checkdata.R
-if (!exists("splitdata.loaded", mode = "variable")){
-  source(paste0(gi.dir.script,"splitdata.R"))
-}
-
 # source checkdata.R
 if (!exists("checkdata.loaded", mode = "variable")){
   source(paste0(gi.dir.script,"checkdata.R"))
 }
 
-# source checkdata.R
+# source joindata.R
+if (!exists("joindata.loaded", mode = "variable")){
+  source(paste0(gi.dir.script,"joindata.R"))
+}
+
+# source splitdata.R
+if (!exists("splitdata.loaded", mode = "variable")){
+  source(paste0(gi.dir.script,"splitdata.R"))
+}
+
+# source cleandata.R
 if (!exists("cleandata.loaded", mode = "variable")){
   source(paste0(gi.dir.script,"cleandata.R"))
+}
+
+# source assignment.R
+if (!exists("assignpoint.loaded", mode = "variable")){
+  source(paste0(gi.dir.script,"assignment.R"))
 }
 
 ####################################
@@ -128,9 +135,9 @@ gio.joindata <- GreenIndexJoinData$new()
 gio.splitdata <- GreenIndexSplitData$new()
 gio.checkdata <- GreenIndexCheckData$new()
 gio.cleandata <- GreenIndexCleanData$new()
+gio.assignpoint <- GreenIndexAssignPoint$new()
 
 ## Init global objects
-
 gio.config$Init("Config", gi.config.yaml)
 gio.yaml$Init("Yaml", gio.config)
 gio.xlsx$Init("Xlsx", gio.config)
@@ -140,3 +147,4 @@ gio.joindata$Init("JoinData", gio.config, gio.database)
 gio.splitdata$Init("SplitData", gio.config, gio.database)
 gio.checkdata$Init("CheckData", gio.config, gio.database)
 gio.cleandata$Init("CleanData", gio.config, gio.database)
+gio.assignpoint$Init("AssignPoint", gio.config, gio.database)

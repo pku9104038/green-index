@@ -86,7 +86,7 @@ GreenIndexConfig <- setRefClass(
     
     # Get yaml config
     GetConsolidateYaml = function(){
-      return(config$consolidate$yaml)
+      return(config$jobs$yaml)
     },
     
     # Check reworkall
@@ -115,8 +115,30 @@ GreenIndexConfig <- setRefClass(
       LogInfo(paste0("Init ", module,", log writeTo", logout, " ", logfile))
     },
     
-    InitJob = function(yaml.file){
-      job <<- yaml.load_file(yaml.file)
+    #InitJobs = function(yaml.file){
+    #  job <<- yaml.load_file(yaml.file)
+    #},
+    
+    InitJobs = function() {
+    #ConsolidateJob = function(){
+      dir <- GetDirYaml()
+      yaml.list <- GetConsolidateYaml()
+      yaml.out <- paste0(dir, GetAssessmentJob(), ".yaml")
+      
+      outputfile <- file(yaml.out, 'w+')
+      for (i in 1:length(yaml.list)) {
+        inputfile <- file(paste0(dir,yaml.list[[i]]), 'rt')
+        text <- readLines(inputfile)
+        LogDebug(paste("Consolidate", yaml.list[[i]]))
+        writeLines(text, outputfile)
+        close(inputfile)
+      }
+      close(outputfile)
+      LogDebug(yaml.out)
+      job <<- yaml.load_file(yaml.out)
+      
+      #InitJobs(yaml.out)
+      
     },
     
     # Get load data job
@@ -124,20 +146,31 @@ GreenIndexConfig <- setRefClass(
       return(job$loaddata)
     },
     
-    # Get join data job
-    GetJoinDataJob = function(){
-      return(job$joindata)
-    },
-    
     # Get check data job
     GetCheckDataJob = function(){
       return(job$checkdata)
     },
     
+    # Get join data job
+    GetJoinDataJob = function(){
+      return(job$joindata)
+    },
+    
     # Get split data job
     GetSplitDataJob = function(){
       return(job$splitdata)
+    },
+    
+    # Get clean data job
+    GetCleanDataJob = function(){
+      return(job$cleandata)
+    },
+    
+    # Get assign point
+    GetAssignPointJob = function(){
+      return(job$assignment)
     }
+    
   )
 )
 

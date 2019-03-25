@@ -23,29 +23,50 @@ GreenIndexJoinData <- setRefClass(
     },
     
     JoinData = function(){
+      LogInfo("Join Data!")
       
       # get job configuration
       jobs <- config$GetJoinDataJob()
-      for (i in 1:length(jobs)){
-        job <- jobs[[i]]
+      reworkall <- config$IsReworkAll()
+      reworkjobs <- jobs$TODO
+      for (i in 1:length(jobs$table)){
+        job <- jobs$table[[i]]
         TODO <- job$TODO
-        if (TODO || config$IsReworkAll()) {
+        if (TODO || reworkjobs || reworkall) {
           
           # read left, right data table
           left.table <- paste0(job$left$table, job$left$suffix)
           left.by <- job$left$by
+          left.set <- job$left$set
           left.df <- database$ReadTable(left.table)
+          k <- 1
+          while (k <= length(left.set)) {
+            left.df[, left.set[k]] <- TRUE
+            k <- k + 1
+          }
           
           right.table <- paste0(job$right$table, job$right$suffix)
           right.by <- job$right$by
           right.select <- job$right$select
+          right.set <- job$right$set
           right.df <- database$ReadTable(right.table)
           if (length(right.select) > 0) {
             right.df <- right.df[right.select]
           }
+          k <- 1
+          while (k <= length(right.set)) {
+            right.df[, right.set[k]] <- TRUE
+            k <- k + 1
+          }
+          print(colnames(right.df))
           
-          # set the join type
+          out.table <- paste0(job$out$table, job$out$suffix)
           join.type <- job$join.type
+          
+          LogInfo(paste(join.type, "join", left.table, right.table, "into",
+                        out.table ))
+          # set the join type
+          
           all <- FALSE
           all.x <- FALSE
           all.y <- FALSE
@@ -81,11 +102,10 @@ GreenIndexJoinData <- setRefClass(
           
           # keep some columns of the merged dataframe
           if (length(job$keep) > 0) {
-            out.df <- out.df[job$keep]
+            out.df <- out.df[, job$keep]
           }
           
           # save merged data frame to database
-          out.table <- paste0(job$out$table, job$out$suffix)
           database$WriteTable(out.df, out.table)
           
         }

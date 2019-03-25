@@ -27,13 +27,13 @@ GreenIndexYaml <- setRefClass(
       for (i in 1:length(yaml.list)) {
         inputfile <- file(paste0(dir,yaml.list[[i]]), 'rt')
         text <- readLines(inputfile)
-        LogInfo(paste("Consolidate", yaml.list[[i]]))
+        LogDebug(paste("Consolidate", yaml.list[[i]]))
         writeLines(text, outputfile)
         close(inputfile)
       }
       close(outputfile)
       
-      config$InitJob(yaml.out)
+      #config$InitJob(yaml.out)
       
     }
     
