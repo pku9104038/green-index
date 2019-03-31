@@ -19,6 +19,13 @@ GreenIndexXlsx <- setRefClass(
   
   methods = list(
     
+    ReadCsvFile = function(file){
+      path <- paste0(config$GetDirDataIn(), file)
+      LogDebug(paste("Read data.frame from", path))
+      df <- read.csv(path, header = TRUE, quote = "")
+      return(df)
+    },
+    
     ReadXlsxSheet = function(file, sheet.name = "Sheet1"){
       path <- paste0(config$GetDirDataIn(), file)
       LogDebug(paste("Read data.frame from", path, sheet.name))

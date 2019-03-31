@@ -35,16 +35,21 @@ GreenIndexLoadData <- setRefClass(
         TODO <- job$TODO
         if (TODO || reworkjobs || reworkall) {
           
-          file <- job$xlsx
-          sheet <- job$sheet
           table <- job$table
           if (is.element(table, kSubjectSet)) {
             table <- paste0(table, kTableRaw)
           }
-          LogInfo(paste(file, "sheet", sheet, "into", table))
           
+          file <- job$xlsx
+          sheet <- job$sheet
+          if (sheet == "csv") {
+            LogInfo(paste(file, "into", table))
+            df <- xlsx$ReadCsvFile(file)
+          } else {
+            LogInfo(paste(file, "sheet", sheet, "into", table))
+            df <- xlsx$ReadXlsxSheet(file, sheet)
+          }
           
-          df <- xlsx$ReadXlsxSheet(file, sheet)
           columns <- colnames(df)
           for (i in 1:length(columns)) {
             # set NULL into "" for all character column

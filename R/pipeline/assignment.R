@@ -61,19 +61,25 @@ GreenIndexAssignPoint <- setRefClass(
             
             # find code in code.set
             if (is.element(code, code.set)) {
-              # all input without invalid set
-              input <- unique(df[, code])
-              input <- setdiff(input, kInvalidSet)
-              
               
               option <- choice.df[choice.df[, choice.code] == code, ]
               option <- option[c(choice.key, choice.value)]
+              
+              
               # make sure the option should be assign a point
               if (!is.na(option[1, choice.value])){
+                
+                option[nrow(option)+1 , choice.key] <- kNullStr
+                option[nrow(option) , choice.value] <- NA
+                
                 column.assignment <- paste0(code, suffix)
                 names(option) <- sub(paste0("^", choice.value, "$"), 
                                      column.assignment, names(option))
+                
                 LogDebug(column.assignment)
+                if (FALSE) { # skip
+                  
+                
                 df.na <- df[df[, code] == kNullStr, ]
                 df.nna <- df[df[, code] != kNullStr, ]
                 if (nrow(df.na) > 0){
@@ -86,6 +92,14 @@ GreenIndexAssignPoint <- setRefClass(
                   df <- merge(df, option, by.x = code, by.y = choice.key,
                                   all.x = TRUE)
                 }
+                
+                
+                
+                } # end skip
+                
+                df <- merge(df, option, by.x = code, by.y = choice.key,
+                            all.x = TRUE)
+                
                 LogDebug(mean(df[, column.assignment], na.rm = TRUE))
                 
               }

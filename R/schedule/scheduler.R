@@ -32,11 +32,7 @@ GreenIndexScheduler <- setRefClass(
       gio.database$RemoveTable("test_table")
     },
     
-    Run = function(){
-      
-      LogInfo("Start running!")
-      
-      gio.config$InitJobs()
+    DataPrep = function(){
       
       gio.loaddata$LoadData()
       
@@ -47,8 +43,22 @@ GreenIndexScheduler <- setRefClass(
       gio.splitdata$SplitData()
       
       gio.cleandata$CleanData()
-      
+    },
+    
+    DataTransform = function(){
       gio.assignpoint$AssignPoint()
+      
+      gio.transform$TransformData()
+    },
+    
+    Run = function(){
+      
+      LogInfo("Start running!")
+      gio.config$InitJobs()
+      
+      DataPrep()
+      
+      DataTransform()
       
     }
     

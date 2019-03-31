@@ -55,11 +55,31 @@ kTableRaw <- "原始数据"
 
 # constants for choice
 kInvalidSet <- list("", "(跳过)")    # 无效选项
-kSkipSet <- list("(跳过)")           # 未作答选项
-kNullStr <- ""
+kSkipSet <- list("(跳过)")           # 忽略选项
+kNullStr <- ""                       # 未作答选项
 kColumnMultipleChoice <- "_多选_"    # 多选项答题结果拆分
 
+# constants for transform
+kColumnTableName <- "表名称"
+kColumnTableSuffix <- "表后缀"
+kColumnColumnName <- "列名称"
+kColumnColumnSuffix <- "列后缀"
+kColumnVariableName <- "变量名称"
+kColumnVariableSuffix <- "变量后缀"
+kColumnVariableType <- "变量类型"
+kColumnAlgorithm <- "算法"
+kColumnParameter <- "参数"
+kColumnTODO <- "TODO"
 
+# constants for data type
+kDataTypeCharacter <- "character"
+kDataTypeNumeric <- "numeric"
+kDataTypeBoolean <- "boolean"
+
+# constants for algorithm
+kAlgorithmConstant <- "常量赋值"
+kAlgorithmSigmaBinary <- "求和二值化"
+kAlgorithmAssignmentSigmaBinary <- "赋值求和二值化"
 
 ## basicConfig of logger for every modules
 library(logging)
@@ -122,6 +142,11 @@ if (!exists("assignpoint.loaded", mode = "variable")){
   source(paste0(gi.dir.script,"assignment.R"))
 }
 
+# source transform.R
+if (!exists("transform.loaded", mode = "variable")){
+  source(paste0(gi.dir.script,"transform.R"))
+}
+
 ####################################
 
 ## create global objects
@@ -136,6 +161,7 @@ gio.splitdata <- GreenIndexSplitData$new()
 gio.checkdata <- GreenIndexCheckData$new()
 gio.cleandata <- GreenIndexCleanData$new()
 gio.assignpoint <- GreenIndexAssignPoint$new()
+gio.transform <- GreenIndexTransformData$new()
 
 ## Init global objects
 gio.config$Init("Config", gi.config.yaml)
@@ -148,3 +174,4 @@ gio.splitdata$Init("SplitData", gio.config, gio.database)
 gio.checkdata$Init("CheckData", gio.config, gio.database)
 gio.cleandata$Init("CleanData", gio.config, gio.database)
 gio.assignpoint$Init("AssignPoint", gio.config, gio.database)
+gio.transform$Init("TransformData", gio.config, gio.database)

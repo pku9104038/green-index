@@ -38,6 +38,8 @@ kTableGeneral:
     属性表试题答案分值
   - &kTableSurveyResponsePoint
     属性表问卷答复赋分
+  - &kTableTransformAlgorithm
+    属性表转换算法
   - &kTableDictionary
     属性表标准代码
   - &kTableStudent

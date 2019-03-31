@@ -1,0 +1,18 @@
+
+# assign points to response according to the point table
+transform:
+  TODO: FALSE  
+  table:
+
+    # transform
+    - 
+      TODO: FALSE
+      input:
+        table: *kRespondentST
+        suffix: *kTableTransform
+      output:
+        table: *kRespondentST
+        suffix: *kTableTransform
+      transform:
+        table: *kTableTransformAlgorithm
+        suffix: ""

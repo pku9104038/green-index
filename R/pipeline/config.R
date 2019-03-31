@@ -169,6 +169,11 @@ GreenIndexConfig <- setRefClass(
     # Get assign point
     GetAssignPointJob = function(){
       return(job$assignment)
+    },
+    
+    # Get transform data
+    GetTransformJob = function(){
+      return(job$transform)
     }
     
   )

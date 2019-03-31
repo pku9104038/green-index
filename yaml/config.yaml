@@ -1,5 +1,5 @@
 ---
-# assessment name and job code 
+# assessment name and job code
 asmt:
   job: "2018sh"
   name: "2018年上海中小学学业质量绿色指标"
@@ -34,11 +34,13 @@ jobs:
     - "anchor.yaml"          # definition anchor
     - "loaddata.yaml"        # load data
     - "checkdata.yaml"       # check and recovery data
-    - "joindata.yaml"        # join attributes into observe data 
+    - "joindata.yaml"        # join attributes into observe data
     - "splitdata.yaml"       # split multiple choice into single columns
     - "cleandata.yaml"       # clean dirty data
     - "assignment.yaml"      # assign point to survey response
+    - "transform.yaml"       # transform data in survey response
 
-# auto reworkall switch 
+
+# auto reworkall switch
 reworkall: FALSE   # TRUE, igonre TODO: FALSE flags, rework all jobs
 ...

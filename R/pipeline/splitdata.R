@@ -101,9 +101,14 @@ GreenIndexSplitData <- setRefClass(
                 #response <- unlist(response)
                 for(k in 1:length(choice.set)){
                   if(is.element(choice.set[[k]], response)){
-                    df[df[, column] == group, 
-                       paste0(column, kColumnMultipleChoice, as.character(k))
-                       ] <- choice.set[[k]] # TRUE 
+                    column.name <- paste0(column, kColumnMultipleChoice, 
+                                          as.character(k))
+                    df[df[, column] == group, column.name] <- choice.set[[k]]
+                    column.name <- paste0(column, "_", 
+                                          choice.set[[k]])
+                    df[, column.name] <- 0
+                    df[df[, column] == group, column.name] <- 1
+                    # TRUE, choice.set[[k]], 1 for different usage 
                     
                   }
                 }

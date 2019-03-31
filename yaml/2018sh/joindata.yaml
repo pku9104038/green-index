@@ -390,3 +390,25 @@ joindata:
       out:
         table: *kTableStudentJoin
         suffix: ""
+    
+    # join Fam12 from parent survey into student survey
+    -
+      TODO: FALSE
+      left:
+        table: *kRespondentST
+        suffix: *kTableJoin
+        by: "准考证号"
+      right:
+        table: *kRespondentPA
+        suffix: *kTableJoin
+        select:
+          - "准考证号"
+          - "Fam12"
+        by: "准考证号"
+      join.type: "left"
+      drop:
+      rename:
+      keep:
+      out:
+        table: *kRespondentST
+        suffix: *kTableJoin

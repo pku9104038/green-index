@@ -33,43 +33,46 @@ GreenIndexDatabase <- setRefClass(
       LogDebug(paste("Connect to database", database))
     },
     Disconnect = function(){
-      dbDisconnect(conn)
       LogDebug(paste("Disconnect from database", database))
+      dbDisconnect(conn)
     },
     
     ReadTable = function(table.name){
       Connect()
-      tabledata <- dbReadTable(conn, table.name)
       LogDebug(paste("Read database table", table.name))
+      tabledata <- dbReadTable(conn, table.name)
       Disconnect()
       return(tabledata)
+    },
+    
+    RemoveTable = function(table.name){
+      Connect()
+      LogDebug(paste("Remove database table", table.name))
+      dbRemoveTable(conn, table.name)
+      Disconnect()
     },
     
     WriteTable = function(data.frame, table.name){
       Connect()
       if (dbExistsTable(conn, table.name)){
+        LogDebug(paste("Remove database table", table.name))
         dbRemoveTable(conn, table.name)
       } 
+      LogDebug(paste("Write database table", table.name))
       dbWriteTable(conn, table.name, data.frame, 
                    row.names = FALSE, append = FALSE) 
-      LogDebug(paste("Write database table", table.name))
       Disconnect()
     },
     
     AppendTable = function(data.frame, table.name){
       Connect()
+      LogDebug(paste("Append database table", table.name))
       dbWriteTable(conn, table.name, data.frame, 
                    row.names = FALSE, append = TRUE) 
-      LogDebug(paste("Append database table", table.name))
       Disconnect()
     },
     
-    RemoveTable = function(table.name){
-      Connect()
-      dbRemoveTable(conn, table.name)
-      LogDebug(paste("Remove database table", table.name))
-      Disconnect()
-    },
+    
     
     Init = function(module.name, config.obj, user, password){
       callSuper(module.name, config.obj)
