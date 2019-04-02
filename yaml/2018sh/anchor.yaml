@@ -1,7 +1,7 @@
 
 ## anchor defintion
 
-kSubject: 
+kSubject:
   - &kSubject
     学科
   - &kSubjectCN
@@ -27,13 +27,13 @@ kRespondent:
   - &kRespondentPR
     "校长"
 
-kTableGeneral:
+kTableAttribute:
   - &kTableIndex
     属性表指标体系
   - &kTableDimentionMapping
     属性表维度映射关系
   - &kTableQuestionAttribute
-    属性表试题问卷属性 
+    属性表试题问卷属性
   - &kTableSubjectSolutionPoint
     属性表试题答案分值
   - &kTableSurveyResponsePoint
@@ -42,6 +42,12 @@ kTableGeneral:
     属性表转换算法
   - &kTableDictionary
     属性表标准代码
+    
+kTableInfomation:
+  - &kTableCity
+    信息表区
+  - &kTableSchool
+    信息表学校
   - &kTableStudent
     信息表学生
   - &kTableParent
@@ -50,14 +56,14 @@ kTableGeneral:
     信息表教师
   - &kTablePrincipal
     信息表校长
-  - &kTableStudentJoin
-    信息表参与学生
 
 kTableSuffix:
   - &kTableSuffix
     表后缀
   - &kTableRaw
     "原始数据"
+  - &kTableDict
+    "字典数据"
   - &kTableCheck
     "校验数据"
   - &kTableJoin
@@ -112,6 +118,14 @@ kColumnSuffix:
   - &kColumnAggregationPoint
     "_积分"
 
+kDataType:
+  - &kDataTypeCharacter
+    "character"
+  - &kDataTypeNumeric
+    "numeric"
+  - &kDataTypeBoolean
+    "boolean"
+
 kColumnStudentInfo: &kColumnStuInfoSelect    # 关联学生信息
   select:
     - "准考证号"
@@ -132,4 +146,3 @@ kDictKeyValue:               # 字典代码
     非本市
   - &kDictValueOther
     其他
-

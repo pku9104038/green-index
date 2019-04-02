@@ -35,7 +35,7 @@ GreenIndexLoadData <- setRefClass(
         TODO <- job$TODO
         if (TODO || reworkjobs || reworkall) {
           
-          table <- job$table
+          table <- paste0(job$table, job$suffix)
           if (is.element(table, kSubjectSet)) {
             table <- paste0(table, kTableRaw)
           }
@@ -58,6 +58,37 @@ GreenIndexLoadData <- setRefClass(
             }
             
           }
+          #df[, kColumnCount] <- TRUE
+          
+          # rename some columns of the merged dataframe
+          #df[job$drop] <- NULL
+          
+          #j <- 1
+          #while (j <= length(job$rename)){
+          #  name.list <- job$rename[[j]]
+          #  names(df) <- sub(paste0("^", name.list$name, "$"), 
+          #                       name.list$rename, names(df))
+          #  j <- j + 1
+          #}
+          
+          # keep some columns of the merged dataframe
+          #if (length(job$keep) > 0) {
+          #  df <- df[, job$keep]
+          #}
+          
+          # add column
+          #j <- 1
+          #while (j <= length(job$add)){
+          #  name <- job$add[[j]]$name
+          #  value <- job$add[[j]]$value
+          #  df[, name] <- value
+          #  j <- j + 1
+          #}
+          
+          #ColumnProcess()
+          #data.df <- df
+          #job.column <- job
+          df <- ColumnProcessDataFrame(df, job)
           
           database$WriteTable(df, table)
         }

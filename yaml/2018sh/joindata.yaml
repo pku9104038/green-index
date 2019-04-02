@@ -4,232 +4,35 @@ joindata:
   TODO: FALSE
   table:
     -
-      TODO: FALSE # join gender, huji from student survey into student info
+      TODO: TRUE
       left:
-        table: *kTableStudent
-        suffix: ""
-        by: "准考证号"
+        table: *kTableSchool
+        suffix: *kTableDict
+        by: "区编码"
       right:
-        table: *kRespondentST
-        suffix: *kTableCheck
-        select: # if no selected column, will keep all column
-          - "准考证号"
-          - "学籍号"
-          #- "家长问卷密码"
-          - "性别"
-          - "户籍"
-        by: "准考证号"
-      join.type: "left" # "inner", left", "right", "full" 
-      drop:  # drop columns
-        - "考场号"
-        - "座位号"
-        - "学生问卷密码"
-        - "学校编码"
-      rename: # rename columns
-      keep: # keep columns
-      out:
-        table: *kTableStudent
-        suffix: ""
-
-    -
-      TODO: FALSE # join parent password, comment from parent info
-      left:
-        table: *kTableStudent
-        suffix: ""
-        by: "准考证号"
-      right:
-        table: *kTableParent
-        suffix: ""
-        select: # if no selected column, will keep all column
-          - "准考证号"
-          - "备注"
-          - "家长问卷密码"
-        by: "准考证号"
-      join.type: "left" # "inner", left", "right", "full" 
-      drop:  # drop columns
-      rename: # rename columns
-      keep: # keep columns
-      out:
-        table: *kTableStudent
-        suffix: ""
-
-
-    -
-      TODO: FALSE # join student info into student survey
-      left:
-        table: *kRespondentST
-        suffix: *kTableCheck
-        by: "准考证号"
-      right:
-        table: *kTableStudent
-        suffix: ""
-        select: # if no selected column, will keep all column
-          - "准考证号"
-          - "区"
-          - "学校"
-        by: "准考证号"
-      join.type: "left" # "inner", left", "right", "full" 
-      drop:  # drop columns
-        - "学生问卷密码"
-        - "姓名"
-        - "学籍号"
-        - "家长问卷密码"
-      rename: # rename columns
-      keep: # keep columns
-      out:
-        table: *kRespondentST
-        suffix: *kTableJoin
-
-    -
-      TODO: FALSE # join parent info into parent survey
-      left:
-        table: *kRespondentPA
-        suffix: *kTableCheck
-        by: "密码"
-      right:
-        table: *kTableStudent
-        suffix: ""
-        select: # if no selected column, will keep all column
-          - "准考证号"
-          - "家长问卷密码"
-          - "区"
-          - "学校"
-          - "性别"
-          - "户籍"
-        by: "家长问卷密码"
-      join.type: "left" # "inner", left", "right", "full" 
-      drop:  # drop columns
-        - "序号"
-        - "密码"
-      rename: # rename columns
-      keep: # keep columns
-      out:
-        table: *kRespondentPA
-        suffix: *kTableJoin
-
-    -
-      TODO: FALSE # join teacher info into teacher survey
-      left:
-        table: *kRespondentTE
-        suffix: *kTableCheck
-        by: "教师登录密码"
-      right:
-        table: *kTableTeacher
-        suffix: ""
-        select: # if no selected column, will keep all column
-          - "密码"
-          - "区"
-          - "校"
-        by: "密码"
-      join.type: "left" # "inner", left", "right", "full" 
-      drop:  # drop columns
-      rename: # rename columns
-        -
-          name: "校"
-          rename: "学校"
-      keep: # keep columns
-      out:
-        table: *kRespondentTE
-        suffix: *kTableJoin
-
-    -
-      TODO: FALSE # join student info into subject chinese
-      left:
-        table: *kSubjectCN
+        table: *kTableCity
         suffix: *kTableRaw
-        by: "准考证号"
-      right:
-        table: *kTableStudent
-        suffix: ""
-        <<: *kColumnStuInfoSelect
-        by: "准考证号" 
-      join.type: "left" # "inner", left", "right", "full" 
-      drop:  # drop columns
-         - "姓名1"
-      rename: # rename columns
-      keep: # keep columns
+        select:
+        by: "区编码"
+      join.type: "left" # "inner", left", "right", "full"
       out:
-        table: *kSubjectCN
+        table: *kTableSchool
         suffix: *kTableJoin
 
     -
-      TODO: FALSE # join student info into subject mathematics
+      TODO: TRUE
       left:
-        table: *kSubjectMA
-        suffix: *kTableRaw
-        by: "准考证号"
-      right:
         table: *kTableStudent
-        suffix: ""
-        <<: *kColumnStuInfoSelect
-        by: "准考证号"
-      join.type: "left" # "inner", left", "right", "full" 
-      drop:  # drop columns
-         - "姓名1"
-      rename: # rename columns
-      keep: # keep columns
-      out:
-        table: *kSubjectMA
+        suffix: *kTableDict
+        by: "学校编码"
+      right:
+        table: *kTableSchool
         suffix: *kTableJoin
-
-    -
-      TODO: FALSE # join student info into subject english
-      left:
-        table: *kSubjectEN
-        suffix: *kTableRaw
-        by: "准考证号"
-      right:
-        table: *kTableStudent
-        suffix: ""
-        <<: *kColumnStuInfoSelect
-        by: "准考证号"
-      join.type: "left" # "inner", left", "right", "full" 
-      drop:  # drop columns
-         - "姓名1"
-      rename: # rename columns
-      keep: # keep columns
+        select: # if no selected column, will keep all column
+        by: "学校编码"
+      join.type: "left" # "inner", left", "right", "full"
       out:
-        table: *kSubjectEN
-        suffix: *kTableJoin
-
-    -
-      TODO: FALSE # join student info into subject science
-      left:
-        table: *kSubjectSC
-        suffix: *kTableRaw
-        by: "准考证号"
-      right:
         table: *kTableStudent
-        suffix: ""
-        <<: *kColumnStuInfoSelect
-        by: "准考证号"    
-      join.type: "left" # "inner", left", "right", "full" 
-      drop:  # drop columns
-         - "姓名1"
-      rename: # rename columns
-      keep: # keep columns
-      out:
-        table: *kSubjectSC
-        suffix: *kTableJoin
-
-    -
-      TODO: FALSE # join student info into subject art
-      left:
-        table: *kSubjectAR
-        suffix: *kTableRaw
-        by: "准考证号"
-      right:
-        table: *kTableStudent
-        suffix: ""
-        <<: *kColumnStuInfoSelect
-        by: "准考证号"      
-      join.type: "left" # "inner", left", "right", "full" 
-      drop:  # drop columns
-         - "姓名1"
-      rename: # rename columns
-      keep: # keep column
-      out:
-        table: *kSubjectAR
         suffix: *kTableJoin
 
     -
@@ -238,16 +41,12 @@ joindata:
         table: *kRespondentST
         suffix: *kTableJoin
         by: "准考证号"
-        set:
-          - *kRespondentST
       right:
         table: *kSubjectCN
         suffix: *kTableJoin
         select:
           - "准考证号"
         by: "准考证号"
-        set:
-          - *kSubjectCN
       join.type: "full"
       drop:
       rename:
@@ -271,8 +70,7 @@ joindata:
         select:
           - "准考证号"
         by: "准考证号"
-        set:
-          - *kSubjectMA
+
       join.type: "full"
       drop:
       rename:
@@ -280,7 +78,7 @@ joindata:
       out:
         table: *kTableStudentJoin
         suffix: ""
-    
+
     -
       TODO: FALSE
       left:
@@ -390,7 +188,7 @@ joindata:
       out:
         table: *kTableStudentJoin
         suffix: ""
-    
+
     # join Fam12 from parent survey into student survey
     -
       TODO: FALSE

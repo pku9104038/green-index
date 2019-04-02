@@ -70,6 +70,7 @@ kColumnVariableType <- "变量类型"
 kColumnAlgorithm <- "算法"
 kColumnParameter <- "参数"
 kColumnTODO <- "TODO"
+kColumnCount <- "计数"
 
 # constants for data type
 kDataTypeCharacter <- "character"
@@ -117,6 +118,11 @@ if (!exists("loaddata.loaded", mode = "variable")){
   source(paste0(gi.dir.script,"loaddata.R"))
 }
 
+# source dictionary.R
+if (!exists("dictionary.loaded", mode = "variable")){
+  source(paste0(gi.dir.script,"dictionary.R"))
+}
+
 # source checkdata.R
 if (!exists("checkdata.loaded", mode = "variable")){
   source(paste0(gi.dir.script,"checkdata.R"))
@@ -156,6 +162,7 @@ gio.yaml <- GreenIndexYaml$new()
 gio.xlsx <- GreenIndexXlsx$new()
 gio.database <- GreenIndexDatabase$new()
 gio.loaddata <- GreenIndexLoadData$new()
+gio.dictionary <- GreenIndexDictionary$new()
 gio.joindata <- GreenIndexJoinData$new()
 gio.splitdata <- GreenIndexSplitData$new()
 gio.checkdata <- GreenIndexCheckData$new()
@@ -169,6 +176,7 @@ gio.yaml$Init("Yaml", gio.config)
 gio.xlsx$Init("Xlsx", gio.config)
 gio.database$Init("Database", gio.config, gi.db.user, gi.db.pwd)
 gio.loaddata$Init("LoadData", gio.config, gio.database, gio.xlsx)
+gio.dictionary$Init("Dictionary", gio.config, gio.database)
 gio.joindata$Init("JoinData", gio.config, gio.database)
 gio.splitdata$Init("SplitData", gio.config, gio.database)
 gio.checkdata$Init("CheckData", gio.config, gio.database)

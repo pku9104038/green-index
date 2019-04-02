@@ -1,125 +1,249 @@
 
 # load original data from xlsx sheet into database table
 loaddata:
-  TODO: FALSE    # TRUE, igonre TODO: FALSE flags, rework load data jobs
+  TODO: FALSE
+  # TRUE, igonre TODO: FALSE flags, rework load data jobs
   table:
-    #-
-    #  TODO: FALSE
-    #  xlsx: "学生密码.xlsx"
-    #  sheet: "20181011  学生登录密码"
-    #  table: *kTableStudent
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "区信息表"
+      table: *kTableCity
+      suffix: *kTableRaw
+      # select: # select columns
+      #   - column.name
+      # drop:  # drop columns
+      #   - "column.name"
+      # rename: # rename columns
+      #   -
+      #     name: column.name
+      #     rename: column.rename
+      # keep: # keep columns
+      #   - "column.name"
+      # add: # add constant value
+      #   -
+      #     name: column.name
+      #     value: column.value   # numeric, character, boolean
 
     -
       TODO: FALSE
       xlsx: "绿色指标属性表.xlsx"
-      sheet: "指标体系表"
-      table: *kTableIndex
+      sheet: "学校信息表"
+      table: *kTableSchool
+      suffix: *kTableRaw
 
     -
       TODO: FALSE
-      xlsx: "绿色指标属性表.xlsx"
-      sheet: "维度映射关系表"
-      table: *kTableDimentionMapping
-
-    -
-      TODO: FALSE
-      xlsx: "绿色指标属性表.xlsx"
-      sheet: "试题问卷属性表"
-      table: *kTableQuestionAttribute
-
-    -
-      TODO: FALSE
-      xlsx: "绿色指标属性表.xlsx"
-      sheet: "试题答案分值表"
-      table: *kTableSubjectSolutionPoint
-
-    -
-      TODO: FALSE
-      xlsx: "绿色指标属性表.xlsx"
-      sheet: "问卷答复赋分表"
-      table: *kTableSurveyResponsePoint
-
-    -
-      TODO: FALSE
-      xlsx: "绿色指标属性表.xlsx"
-      sheet: "标准代码表"
-      table: *kTableDictionary
-
-    #-
-    #  TODO: FALSE
-    #  xlsx: "家长密码.xlsx"
-    #  sheet: "20181011  家长登录密码"
-    #  table: *kTableParent
+      xlsx: "学生信息.xlsx"
+      sheet: "学生"    # this is a csv file
+      table: *kTableStudent
+      suffix: *kTableRaw
+      rename:
+        -
+          name: "家长问卷密码"
+          rename: "家长密码"
+      keep:
+        - "学校编码"
+        - "准考证号"
+        - "户籍"
+        - "性别"
+        - "家长密码"
 
     -
       TODO: FALSE
       xlsx: "教师校长密码.xlsx"
       sheet: "教师"
       table: *kTableTeacher
+      suffix: *kTableRaw
+      rename:
+        -
+          name: "校代码"
+          rename: "学校编码"
+        -
+          name: "密码"
+          rename: "教师密码"
+      keep:
+        - "学校编码"
+        - "教师密码"
 
     -
       TODO: FALSE
       xlsx: "教师校长密码.xlsx"
       sheet: "校长"
       table: *kTablePrincipal
+      suffix: *kTableRaw
+      rename:
+        -
+          name: "校代码"
+          rename: "学校编码"
+        -
+          name: "密码"
+          rename: "校长密码"
+      keep:
+        - "学校编码"
+        - "校长密码"
 
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "指标体系表"
+      table: *kTableIndex
+      suffix: ""
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "维度映射关系表"
+      table: *kTableDimentionMapping
+      suffix: ""
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "试题问卷属性表"
+      table: *kTableQuestionAttribute
+      suffix: ""
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "试题答案分值表"
+      table: *kTableSubjectSolutionPoint
+      suffix: ""
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "问卷答复赋分表"
+      table: *kTableSurveyResponsePoint
+      suffix: ""
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "标准代码表"
+      table: *kTableDictionary
+      suffix: ""
 
     -
       TODO: FALSE
       xlsx: "语文成绩.xlsx"
       sheet: "20190103语文总成绩"
       table: *kSubjectCN
+      suffix: *kTableRaw
+      drop:
+        - "姓名1"
+      add:
+        -
+          name: *kSubjectCN
+          value: TRUE
 
     -
       TODO: FALSE
       xlsx: "数学成绩.xlsx"
       sheet: "20190224  数学成绩(删除缺考24400）"
       table: *kSubjectMA
+      suffix: *kTableRaw
+      drop:
+        - "姓名1"
+      add:
+        -
+          name: *kSubjectMA
+          value: TRUE
 
     -
       TODO: FALSE
       xlsx: "英语成绩.xlsx"
       sheet: "20190105  英语成绩"
       table: *kSubjectEN
+      suffix: *kTableRaw
+      drop:
+        - "姓名1"
+      add:
+        -
+          name: *kSubjectEN
+          value: TRUE
 
     -
       TODO: FALSE
       xlsx: "科学成绩.xlsx"
       sheet: "20190105  科学成绩"
       table: *kSubjectSC
+      suffix: *kTableRaw
+      drop:
+        - "姓名1"
+      add:
+        -
+          name: *kSubjectSC
+          value: TRUE
 
     -
       TODO: FALSE
       xlsx: "艺术成绩.xlsx"
       sheet: "20190107 艺术成绩"
       table: *kSubjectAR
+      suffix: *kTableRaw
+      drop:
+        - "姓名1"
+      add:
+        -
+          name: *kSubjectAR
+          value: TRUE
 
     -
       TODO: FALSE
       xlsx: "学生问卷.xlsx"
       sheet: "20190110  学生问卷作答（含基础信息）删除缺考"
       table: *kRespondentST
+      suffix: *kTableRaw
+      drop:
+        - "学生问卷密码"
+        - "家长问卷密码"
+        - "姓名"
+        - "学籍号"
+        - "户籍"
+        - "性别"
+      add:
+        -
+          name: *kRespondentST
+          value: TRUE
 
     -
       TODO: FALSE
       xlsx: "家长问卷.xlsx"
       sheet: "家长问卷"
       table: *kRespondentPA
+      suffix: *kTableRaw
+      drop:
+        - "序号"
+      rename:
+        -
+          name: "密码"
+          rename: "家长密码"
+      add:
+        -
+          name: *kRespondentPA
+          value: TRUE
 
     -
       TODO: FALSE
       xlsx: "教师问卷.xlsx"
       sheet: "教师问卷"
       table: *kRespondentTE
+      suffix: *kTableRaw
+      rename:
+        -
+          name: "教师登录密码"
+          rename: "教师密码"
+      add:
+        -
+          name: *kRespondentTE
+          value: TRUE
+
 
     -
-      TODO: TRUE
+      TODO: FALSE
       xlsx: "绿色指标属性表.xlsx"
       sheet: "转换算法参数表"
       table: *kTableTransformAlgorithm
-
-    -
-      TODO: TRUE
-      xlsx: "20190331测试学生信息库.csv"
-      sheet: "csv"    # this is a csv file
-      table: *kTableStudent
+      suffix: ""

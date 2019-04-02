@@ -1,0 +1,35 @@
+# join data, rename column, drop/keep column
+dictionary:
+  TODO: FALSE
+  table:
+    -
+      TODO: FALSE
+      input:
+        table: *kTableStudent
+        suffix: *kTableRaw
+      output:
+        table: *kTableStudent
+        suffix: *kTableDict
+      choice:
+        table: *kTableDictionary
+        suffix: ""
+        column:
+          code: *kColumnKey
+          key: *kColumnCode
+          value: *kColumnValue
+
+    -
+      TODO: FALSE
+      input:
+        table: *kTableSchool
+        suffix: *kTableRaw
+      output:
+        table: *kTableSchool
+        suffix: *kTableDict
+      choice:
+        table: *kTableDictionary
+        suffix: ""
+        column:
+          code: *kColumnKey
+          key: *kColumnCode
+          value: *kColumnValue

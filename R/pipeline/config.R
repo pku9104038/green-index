@@ -146,6 +146,11 @@ GreenIndexConfig <- setRefClass(
       return(job$loaddata)
     },
     
+    # Get dictionary job
+    GetDictionaryJob = function(){
+      return(job$dictionary)
+    },
+    
     # Get check data job
     GetCheckDataJob = function(){
       return(job$checkdata)

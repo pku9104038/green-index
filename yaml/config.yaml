@@ -33,7 +33,8 @@ jobs:
   yaml:
     - "anchor.yaml"          # definition anchor
     - "loaddata.yaml"        # load data
-    - "checkdata.yaml"       # check and recovery data
+    - "dictionary.yaml"        # map dictionary value
+    # - "checkdata.yaml"       # check and recovery data
     - "joindata.yaml"        # join attributes into observe data
     - "splitdata.yaml"       # split multiple choice into single columns
     - "cleandata.yaml"       # clean dirty data
