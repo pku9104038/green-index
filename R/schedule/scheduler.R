@@ -44,13 +44,15 @@ GreenIndexScheduler <- setRefClass(
       
       gio.splitdata$SplitData()
       
-      gio.cleandata$CleanData()
+      #gio.cleandata$CleanData()
     },
     
     DataTransform = function(){
       gio.assignpoint$AssignPoint()
       
       gio.transform$TransformData()
+      
+      gio.statistics$StatisticsData()
     },
     
     Run = function(){

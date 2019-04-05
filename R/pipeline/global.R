@@ -8,24 +8,6 @@ global.loaded <- TRUE
 
 
 ## define global constants
-# column name of the output data table
-kAssessment <- "评测项目"
-kGrade <- "年级"
-kSubject <- "学科"  # or name of respondent
-kTier <- "统计层级"
-kScope <- "统计范围"
-kPerspective <- "统计视角"
-kSample <- "统计样本"
-kDomain <- "领域"
-kDimention <- "维度"
-kGroup <- "群组"  # new column for tier3 index from 2018sh
-kAttribute <- "属性"  # new column for tier4 of science, mathematics from 2018sh
-kTopic <- "主题"
-kVariable <- "变量"  # rename 变量 to 统计变量 from 2018sh
-kAlgorithm <- "算法"  # rename 统计 to 计算方法 from 2018sh
-kKey <- "键"
-kValue <- "值"
-kWeight <- "权重"  # rename 加权 to 权重 from 2018sh
 
 # constants for subject
 kSubjectCN <- "语文"
@@ -33,10 +15,10 @@ kSubjectMA <- "数学"
 kSubjectEN <- "英语"
 kSubjectSC <- "科学"
 kSubjectAR <- "艺术"
-kRespondentSTU <- "学生"
-kRespondentPAR <- "家长"
-kRespondentTEA <- "教师"
-kRespondentPRI <- "校长"
+kRespondentST <- "学生"
+kRespondentPA <- "家长"
+kRespondentTE <- "教师"
+kRespondentPR <- "校长"
 
 kSubjectSet <- c(
   kSubjectCN,
@@ -44,20 +26,41 @@ kSubjectSet <- c(
   kSubjectEN,
   kSubjectSC,
   kSubjectAR,
-  kRespondentSTU,
-  kRespondentPAR,
-  kRespondentTEA,
-  kRespondentPRI
+  kRespondentST,
+  kRespondentPA,
+  kRespondentTE,
+  kRespondentPR
 )
 
 # constants for table suffix
-kTableRaw <- "原始数据"
+# kTableRaw <- "原始数据"
 
 # constants for choice
 kInvalidSet <- list("", "(跳过)")    # 无效选项
 kSkipSet <- list("(跳过)")           # 忽略选项
 kNullStr <- ""                       # 未作答选项
 kColumnMultipleChoice <- "_多选_"    # 多选项答题结果拆分
+kSeparator <- "┋"
+
+# column name of the output data table
+kColumnAssessment <- "评测项目"
+kColumnGrade <- "年级"
+kColumnSubject <- "学科"
+kColumnDomain <- "领域"
+kColumnDimention <- "维度"
+kColumnGroup <- "群组"
+kColumnAttribute <- "属性"
+kColumnTopic <- "主题"
+kColumnStatisticsTier <- "统计层级"
+kColumnStatisticsScope <- "统计范围"
+kColumnStatisticsPerpective <- "统计视角"
+kColumnStatisticsSample <- "统计样本"
+kColumnStatisticsVariable <- "统计变量"
+kColumnStatisticsAlgorithm <- "统计算法"
+kColumnValueType <- "数值类型"
+kColumnKey <- "键"
+kColumnValue <- "值"
+
 
 # constants for transform
 kColumnTableName <- "表名称"
@@ -71,6 +74,9 @@ kColumnAlgorithm <- "算法"
 kColumnParameter <- "参数"
 kColumnTODO <- "TODO"
 kColumnCount <- "计数"
+kColumnFilterName <- "过滤变量"
+kColumnFilterType <- "过滤类型"
+kColumnFilterValue <- "过滤值"
 
 # constants for data type
 kDataTypeCharacter <- "character"
@@ -79,8 +85,10 @@ kDataTypeBoolean <- "boolean"
 
 # constants for algorithm
 kAlgorithmConstant <- "常量赋值"
-kAlgorithmSigmaBinary <- "求和二值化"
-kAlgorithmAssignmentSigmaBinary <- "赋值求和二值化"
+kAlgorithmSigmaBinary <- "求和阈值比较"
+kAlgorithmSingleChoicePercent <- "单选百分比"
+kAlgorithmMultipleChoicePercent <- "多选百分比"
+kAlgorithmBooleanPercent <- "布尔百分比"
 
 ## basicConfig of logger for every modules
 library(logging)
@@ -153,6 +161,11 @@ if (!exists("transform.loaded", mode = "variable")){
   source(paste0(gi.dir.script,"transform.R"))
 }
 
+# source statistics.R
+if (!exists("statistics.loaded", mode = "variable")){
+  source(paste0(gi.dir.script,"statistics.R"))
+}
+
 ####################################
 
 ## create global objects
@@ -169,6 +182,7 @@ gio.checkdata <- GreenIndexCheckData$new()
 gio.cleandata <- GreenIndexCleanData$new()
 gio.assignpoint <- GreenIndexAssignPoint$new()
 gio.transform <- GreenIndexTransformData$new()
+gio.statistics <- GreenIndexStatisticsData$new()
 
 ## Init global objects
 gio.config$Init("Config", gi.config.yaml)
@@ -183,3 +197,4 @@ gio.checkdata$Init("CheckData", gio.config, gio.database)
 gio.cleandata$Init("CleanData", gio.config, gio.database)
 gio.assignpoint$Init("AssignPoint", gio.config, gio.database)
 gio.transform$Init("TransformData", gio.config, gio.database)
+gio.statistics$Init("StatisticsData", gio.config, gio.database)

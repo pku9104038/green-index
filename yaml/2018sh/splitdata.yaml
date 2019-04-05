@@ -3,7 +3,7 @@
 splitdata:
   TODO: FALSE
   table:
-    - 
+    -
       TODO: FALSE
       input:
         table: *kRespondentST
@@ -17,17 +17,17 @@ splitdata:
         table: *kTableSurveyResponsePoint
         suffix: ""
         column:
-          key: *kCoulmnQuestionCode
+          key: *kColumnQuestionCode
           value: *kColumnQuestionChoice
       separator: "┋"
       column:
-        - 
+        -
           name: Stu04      # 睡眠不足原因
-          recovery: 
+          recovery:
             -
-              error: "有时候上网或玩游" 
+              error: "有时候上网或玩游"
               fixed: "有时候上网或玩游戏睡的比较晚"
-        - 
+        -
           name: Stu23_X    # 心理困扰
           recovery:
             -
@@ -38,21 +38,21 @@ splitdata:
               fixed: 觉得自己没有存在感
             -
               error: 没有以上问题的
-              fixed: 没有以上问题的困扰       
-        - 
+              fixed: 没有以上问题的困扰
+        -
           name: Stu24_X    # 求助对象
           recovery:
             -
               error: 校外心理专
               fixed: 校外心理专家
 
-    - 
+    -
       TODO: FALSE
       input:
         table: *kRespondentPA
-        suffix: *kTableJoin
+        suffix: *kTableRaw
         column:
-          id: "家长问卷密码"
+          id: "家长密码"
       output:
         table: *kRespondentPA
         suffix: *kTableSplit
@@ -60,28 +60,28 @@ splitdata:
         table: *kTableSurveyResponsePoint
         suffix: ""
         column:
-          key: *kCoulmnQuestionCode
+          key: *kColumnQuestionCode
           value: *kColumnQuestionChoice
       separator: "┋"
       column:
-        - 
+        -
           name: Fam03      # 家庭结构
-        - 
+        -
           name: Fam11      # 学科补课
-        - 
+        -
           name: Fam13      # 补课原因
-        - 
+        -
           name: Fam14      # 兴趣班
         -
           name: Fam16      # 兴趣班原因
 
-    - 
+    -
       TODO: FALSE
       input:
         table: *kRespondentTE
-        suffix: *kTableJoin
+        suffix: *kTableRaw
         column:
-          id: "教师登录密码"
+          id: "教师密码"
       output:
         table: *kRespondentTE
         suffix: *kTableSplit
@@ -89,11 +89,11 @@ splitdata:
         table: *kTableSurveyResponsePoint
         suffix: ""
         column:
-          key: *kCoulmnQuestionCode
+          key: *kColumnQuestionCode
           value: *kColumnQuestionChoice
       separator: "┋"
       column:
-        - 
+        -
           name: Tea06      # 任教学科
           recovery:
             -
@@ -105,6 +105,3 @@ splitdata:
             -
               error: "初中科学（"
               fixed: "初中科学（含物理、生物、地理）"
-
-        
-

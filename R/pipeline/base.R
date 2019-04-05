@@ -10,9 +10,8 @@ GreenIndexBase <- setRefClass(
   
   fields = list(
     module = "character",
-    config = "GreenIndexConfig",
-    job = "list",
-    df = "data.frame"
+    config = "GreenIndexConfig"
+    
   ),
   
   methods = list(
@@ -55,43 +54,6 @@ GreenIndexBase <- setRefClass(
       LogDebug(paste0("Init ", module, ", log writeTo", logout," ", logfile))
     },
     
-    # some basic method for column operation
-    AddColumn = function() {
-      j <- 1
-      while (j <= length(job$add)){
-        name <- job$add[[j]]$name
-        value <- job$add[[j]]$value
-        df[, name] <<- value
-        j <- j + 1
-      }
-    },
-    
-    DropColumn = function() {
-      df[job$drop] <<- NULL
-    },
-    
-    RenameColumn = function() {
-      j <- 1
-      while (j <= length(job$rename)){
-        name.list <- job$rename[[j]]
-        names(df) <<- sub(paste0("^", name.list$name, "$"), 
-                         name.list$rename, names(df))
-        j <- j + 1
-      }
-    },
-    
-    KeepColumn = function() {
-      if (length(job$keep) > 0) {
-        df <<- df[, job$keep]
-      }
-    },
-    
-    ColumnProcess = function() {
-      DropColumn()
-      RenameColumn()
-      KeepColumn()
-      AddColumn()
-    },
     
     ColumnProcessDataFrame = function(df, job) {
       # select some column from dataframe
@@ -125,7 +87,60 @@ GreenIndexBase <- setRefClass(
         j <- j + 1
       }
       
+      # remove duplicate rows
+      j <- 1
+      while (j <= length(job$unique)){
+        column <- job$unique[[j]]
+        df <- df[!duplicated(df[, column]) ,]
+        j <- j + 1
+      }
+      
+      # set data type
+      j <- 1
+      while (j <= length(job$type)) {
+        column <- job$type[[j]]$name
+        type <- job$type[[j]]$type
+        if (type == kDataTypeCharacter) {
+          df[, column] <- as.character(df[, column])
+        } else if (type == kDataTypeNumeric) {
+          df[, column] <- as.numeric(df[, column])
+        } else if (type == kDataTypeBoolean) {
+          
+        }
+        j <- j+1
+      }
       return(df)
+    },
+    
+    FilteringDataframe = function(df, filter.name, 
+                                  filter.type, filter.value){
+      n1 <- nrow(df)
+      filter.df <- data.frame()
+      if (filter.name == "NO") {
+        filter.df <- df
+      } else {
+        filter.value <- unlist(strsplit(filter.value, kSeparator))
+        for (i in 1:length(filter.value)) {
+          value <- filter.value[i]
+          if (filter.type == kDataTypeCharacter) {
+            tmp.df <- df[df[, filter.name] == value, ]
+          } else if (filter.type == kDataTypeNumeric) {
+            value <- as.numeric(value)
+            tmp.df <- df[df[, filter.name] == value, ]
+          } else if (filter.type == kDataTypeBoolean){
+            if (value == "TRUE") {
+              tmp.df <- df[df[, filter.name] == TRUE, ]
+            } else if (value == "FALSE") {
+              tmp.df <- df[df[, filter.name] == FALSE, ]
+            }
+          }
+          filter.df <- rbind(filter.df, tmp.df)
+        }
+        
+      } 
+      n2 <- nrow(filter.df)
+      LogDebug(paste("FilteringDataframe", n1, filter.name, filter.value, n2))
+      return(filter.df)
     }
     
   )

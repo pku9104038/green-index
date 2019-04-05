@@ -1,11 +1,11 @@
 
-# assign points to response according to the point table
+# transform to new variable for statistics
 transform:
-  TODO: FALSE  
+  TODO: FALSE
   table:
 
     # transform
-    - 
+    -
       TODO: FALSE
       input:
         table: *kRespondentST
@@ -14,5 +14,45 @@ transform:
         table: *kRespondentST
         suffix: *kTableTransform
       transform:
-        table: *kTableTransformAlgorithm
+        table: *kTableVariableTransform
         suffix: ""
+      join:
+        table: *kTableStudent
+        suffix: *kTableJoin
+        by: *kColumnStudentCode
+        <<: *kStatisticsAdd
+
+    -
+      TODO: FALSE
+      input:
+        table: *kRespondentPA
+        suffix: *kTableTransform
+      output:
+        table: *kRespondentPA
+        suffix: *kTableTransform
+      transform:
+        table: *kTableVariableTransform
+        suffix: ""
+      join:
+        table: *kTableStudent
+        suffix: *kTableJoin
+        by: *kColumnStudentCode
+        <<: *kStatisticsAdd
+
+    -
+      TODO: FALSE
+      input:
+        table: *kRespondentTE
+        suffix: *kTableTransform
+      output:
+        table: *kRespondentTE
+        suffix: *kTableTransform
+      transform:
+        table: *kTableVariableTransform
+        suffix: ""
+      join:
+        table: *kTableStudent
+        suffix: *kTableJoin
+        by: *kColumnStudentCode
+        <<: *kStatisticsAdd
+        

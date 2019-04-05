@@ -62,14 +62,14 @@ GreenIndexSplitData <- setRefClass(
             for (j in 1:length(choice.set)) {
               column.name <- paste0(column, kColumnMultipleChoice, 
                                     as.character(j))
-              df[column.name] <- ""
+              df[column.name] <- 0
             }
             
             response.group  <- levels(factor(df[, column]))
             for(j in 1:length(response.group)){
               group <- response.group[j]
               response <- setdiff(group, kInvalidSet)
-              response <- unlist(strsplit(response,"┋"))
+              response <- unlist(strsplit(response, kSeparator))
               
               if(length(response) > 0){
                 if (!all(response %in% choice.set)) {
@@ -103,22 +103,18 @@ GreenIndexSplitData <- setRefClass(
                   if(is.element(choice.set[[k]], response)){
                     column.name <- paste0(column, kColumnMultipleChoice, 
                                           as.character(k))
-                    df[df[, column] == group, column.name] <- choice.set[[k]]
-                    column.name <- paste0(column, "_", 
-                                          choice.set[[k]])
-                    df[, column.name] <- 0
-                    df[df[, column] == group, column.name] <- 1
-                    # TRUE, choice.set[[k]], 1 for different usage 
+                    
+                    df[df[, column] == group, column.name] <- 1  # choice.set[[k]]
                     
                   }
                 }
               }
             }
             
-            names(df) <- sub(paste0("^", column, "$"), 
-                             paste0(column, kColumnMultipleChoice, 
-                                    as.character(0)), 
-                             names(df))
+            # names(df) <- sub(paste0("^", column, "$"), 
+            #                 paste0(column, kColumnMultipleChoice, 
+            #                        as.character(0)), 
+            #                 names(df))
             
           }
           

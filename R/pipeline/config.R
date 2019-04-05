@@ -43,6 +43,10 @@ GreenIndexConfig <- setRefClass(
     GetAssessmentJob = function(){
       return(config$asmt$job)
     },
+    # Get assessment name
+    GetAssessmentName = function(){
+      return(config$asmt$name)
+    },
     
     # Get directories
     GetDirLog = function(){
@@ -179,6 +183,15 @@ GreenIndexConfig <- setRefClass(
     # Get transform data
     GetTransformJob = function(){
       return(job$transform)
+    },
+    
+    # Get pipeline job
+    GetPipelineJob = function(job.name){
+      return(job[job.name])
+    },
+    
+    GetConfigJob = function() {
+      return(job)
     }
     
   )

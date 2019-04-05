@@ -42,18 +42,22 @@ GreenIndexTransformData <- setRefClass(
     
     SigmaBinary = function(){
       
-      columns <- unlist(strsplit(transform[kColumnColumnName][[1]],"┋"))
+      columns <- unlist(strsplit(transform[kColumnColumnName][[1]], kSeparator))
       suffix <- transform[kColumnColumnSuffix] 
-      df[, variable.name] <<- 0
+      variable.value.name <- paste0(variable.name, "_分值")
+      df[, variable.value.name] <<- 0
       
       i <- 1
       while (i <= length(columns)){
         column.name <- paste0(columns[i], suffix)
         LogDebug(column.name)
-        df[, variable.name] <<- df[, variable.name] + df[, column.name]
+        df[, variable.value.name] <<- df[, variable.value.name] + df[, column.name]
         i <- i + 1
       }
-      df[, variable.name] <<- df[, variable.name] > parameter
+      df[is.na(df[, variable.value.name]), variable.value.name] <<- -1
+      df[, variable.name] <<- FALSE
+      df[df[, variable.value.name] > as.numeric(parameter), variable.name] <<- TRUE
+      # df[, variable.value.name] <<- NULL
       SetVariableType()
             
     },
@@ -69,23 +73,6 @@ GreenIndexTransformData <- setRefClass(
       
     },
     
-    AssignmentSigmaBinary = function(){
-      
-      columns <- unlist(strsplit(transform[kColumnColumnName][[1]],"┋"))
-      suffix <- transform[kColumnColumnSuffix] 
-      df[, variable.name] <<- 0
-      
-      i <- 1
-      while (i <= length(columns)){
-        column.name <- paste0(columns[i], suffix)
-        LogDebug(column.name)
-        df[, variable.name] <<- df[, variable.name] + df[, column.name]
-        i <- i + 1
-      }
-      df[, variable.name] <<- df[, variable.name] > parameter
-      SetVariableType()
-      
-    },
     
     TransformJob = function(){
       if (transform[kColumnTODO][[1]] == "FALSE"){
@@ -104,9 +91,7 @@ GreenIndexTransformData <- setRefClass(
           SigmaBinary()
         } else if (algorithm == kAlgorithmConstant) {
           Constant()
-        } else if (algorithm == kAlgorithmAssignmentSigmaBinary) {
-          AssignmentSigmaBinary()
-        }
+        } 
       }
 
     },
@@ -152,6 +137,20 @@ GreenIndexTransformData <- setRefClass(
             
             k <- k + 1
           }
+          
+          # merge join data for more attributes
+          if (!is.na(job$join$table)) {
+            join.table.name <- job$join$table
+            join.table.suffix <- job$join$suffix
+            join.table <- paste0(join.table.name, join.table.suffix)
+            join.df <- database$ReadTable(join.table)
+            join.df <- ColumnProcessDataFrame(join.df, job$join)
+            join.by <- job$join$by
+            
+            df <<- merge(df, join.df, by.x = join.by, by.y = join.by,
+                            all = FALSE, all.x = TRUE, all.y = FALSE)
+          }
+          
           
           database$WriteTable(df, output.table)
         }

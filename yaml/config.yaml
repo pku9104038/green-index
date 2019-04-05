@@ -37,9 +37,10 @@ jobs:
     # - "checkdata.yaml"       # check and recovery data
     - "joindata.yaml"        # join attributes into observe data
     - "splitdata.yaml"       # split multiple choice into single columns
-    - "cleandata.yaml"       # clean dirty data
+    # - "cleandata.yaml"       # clean dirty data
     - "assignment.yaml"      # assign point to survey response
     - "transform.yaml"       # transform data in survey response
+    - "statistics.yaml"      # statistics data
 
 
 # auto reworkall switch

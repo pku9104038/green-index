@@ -77,25 +77,6 @@ GreenIndexAssignPoint <- setRefClass(
                                      column.assignment, names(option))
                 
                 LogDebug(column.assignment)
-                if (FALSE) { # skip
-                  
-                
-                df.na <- df[df[, code] == kNullStr, ]
-                df.nna <- df[df[, code] != kNullStr, ]
-                if (nrow(df.na) > 0){
-                  df.na[, column.assignment] <- NA
-                  df.nna <- merge(df.nna, option, by.x = code, by.y = choice.key,
-                                  all.x = TRUE)
-                  df <- rbind.data.frame(df.na, df.nna)
-    
-                } else {
-                  df <- merge(df, option, by.x = code, by.y = choice.key,
-                                  all.x = TRUE)
-                }
-                
-                
-                
-                } # end skip
                 
                 df <- merge(df, option, by.x = code, by.y = choice.key,
                             all.x = TRUE)

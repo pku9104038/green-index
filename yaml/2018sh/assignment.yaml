@@ -1,16 +1,16 @@
 
 # assign points to response according to the point table
 assignment:
-  TODO: FALSE  
+  TODO: FALSE
   table:
 
     # assignment
-    - 
+    -
       TODO: FALSE
-      suffix: *kColumnAssignmentPoint
+      suffix: *kColumnSuffixAssignment
       input:
         table: *kRespondentST
-        suffix: *kTableClean
+        suffix: *kTableSplit
       output:
         table: *kRespondentST
         suffix: *kTableAssign
@@ -18,16 +18,16 @@ assignment:
         table: *kTableSurveyResponsePoint
         suffix: ""
         column:
-          code: *kCoulmnQuestionCode
+          code: *kColumnQuestionCode
           key: *kColumnQuestionChoice
           value: *kColumnQuestionPoint
 
-    - 
+    -
       TODO: FALSE
-      suffix: *kColumnAssignmentPoint
+      suffix: *kColumnSuffixAssignment
       input:
         table: *kRespondentPA
-        suffix: *kTableClean
+        suffix: *kTableSplit
       output:
         table: *kRespondentPA
         suffix: *kTableAssign
@@ -35,16 +35,16 @@ assignment:
         table: *kTableSurveyResponsePoint
         suffix: ""
         column:
-          code: *kCoulmnQuestionCode
+          code: *kColumnQuestionCode
           key: *kColumnQuestionChoice
           value: *kColumnQuestionPoint
 
-    - 
+    -
       TODO: FALSE
-      suffix: *kColumnAssignmentPoint
+      suffix: *kColumnSuffixAssignment
       input:
         table: *kRespondentTE
-        suffix: *kTableClean
+        suffix: *kTableSplit
       output:
         table: *kRespondentTE
         suffix: *kTableAssign
@@ -52,16 +52,68 @@ assignment:
         table: *kTableSurveyResponsePoint
         suffix: ""
         column:
-          code: *kCoulmnQuestionCode
+          code: *kColumnQuestionCode
           key: *kColumnQuestionChoice
           value: *kColumnQuestionPoint
 
 
-          
-    # binary 
-    - 
+
+    # binary
+    -
       TODO: FALSE
-      suffix: *kColumnBinaryPoint
+      suffix: *kColumnSuffixBinary
+      input:
+        table: *kRespondentST
+        suffix: *kTableAssign
+      output:
+        table: *kRespondentST
+        suffix: *kTableAssign
+      choice:
+        table: *kTableSurveyResponsePoint
+        suffix: ""
+        column:
+          code: *kColumnQuestionCode
+          key: *kColumnQuestionChoice
+          value: *kColumnQuestionBinary
+
+    -
+      TODO: FALSE
+      suffix: *kColumnSuffixBinary
+      input:
+        table: *kRespondentPA
+        suffix: *kTableAssign
+      output:
+        table: *kRespondentPA
+        suffix: *kTableAssign
+      choice:
+        table: *kTableSurveyResponsePoint
+        suffix: ""
+        column:
+          code: *kColumnQuestionCode
+          key: *kColumnQuestionChoice
+          value: *kColumnQuestionBinary
+
+    -
+      TODO: FALSE
+      suffix: *kColumnSuffixBinary
+      input:
+        table: *kRespondentTE
+        suffix: *kTableAssign
+      output:
+        table: *kRespondentTE
+        suffix: *kTableAssign
+      choice:
+        table: *kTableSurveyResponsePoint
+        suffix: ""
+        column:
+          code: *kColumnQuestionCode
+          key: *kColumnQuestionChoice
+          value: *kColumnQuestionBinary
+
+    # dummy assignment to transform table
+    -
+      TODO: FALSE
+      suffix: *kColumnSuffixBinary
       input:
         table: *kRespondentST
         suffix: *kTableAssign
@@ -72,13 +124,13 @@ assignment:
         table: *kTableSurveyResponsePoint
         suffix: ""
         column:
-          code: *kCoulmnQuestionCode
+          code: *kColumnQuestionChoice # set a dummy column
           key: *kColumnQuestionChoice
           value: *kColumnQuestionBinary
 
-    - 
+    -
       TODO: FALSE
-      suffix: *kColumnBinaryPoint
+      suffix: *kColumnSuffixBinary
       input:
         table: *kRespondentPA
         suffix: *kTableAssign
@@ -89,13 +141,13 @@ assignment:
         table: *kTableSurveyResponsePoint
         suffix: ""
         column:
-          code: *kCoulmnQuestionCode
+          code: *kColumnQuestionChoice
           key: *kColumnQuestionChoice
           value: *kColumnQuestionBinary
 
-    - 
+    -
       TODO: FALSE
-      suffix: *kColumnBinaryPoint
+      suffix: *kColumnSuffixBinary
       input:
         table: *kRespondentTE
         suffix: *kTableAssign
@@ -106,7 +158,6 @@ assignment:
         table: *kTableSurveyResponsePoint
         suffix: ""
         column:
-          code: *kCoulmnQuestionCode
+          code: *kColumnQuestionChoice
           key: *kColumnQuestionChoice
           value: *kColumnQuestionBinary
-

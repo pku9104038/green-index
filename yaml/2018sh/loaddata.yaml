@@ -24,6 +24,10 @@ loaddata:
       #   -
       #     name: column.name
       #     value: column.value   # numeric, character, boolean
+      # type:  # set column data type
+      #   -
+      #     name: column.name
+      #     type: data.type
 
     -
       TODO: FALSE
@@ -31,6 +35,172 @@ loaddata:
       sheet: "学校信息表"
       table: *kTableSchool
       suffix: *kTableRaw
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "指标体系表"
+      table: *kTableIndex
+      suffix: ""
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "指标映射表"
+      table: *kTableDimentionMapping
+      suffix: ""
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "试题问卷属性表"
+      table: *kTableQuestionAttribute
+      suffix: ""
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "试题分值表"
+      table: *kTableSubjectSolutionPoint
+      suffix: ""
+
+
+    -
+      TODO: TRUE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "标准代码表"
+      table: *kTableDictionary
+      suffix: ""
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "问卷赋分表"
+      table: *kTableSurveyResponsePoint
+      suffix: ""
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "变量转换表"
+      table: *kTableVariableTransform
+      suffix: ""
+
+    -
+      TODO: TRUE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "系数统计表"
+      table: *kTableCoefficentStatistics
+      suffix: ""
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "指标计算表"
+      table: *kTableIndexComputation
+      suffix: ""
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "绘图参数表"
+      table: *kTablePlotParameter
+      suffix: ""
+
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "数据查询表"
+      table: *kTableDataQuery
+      suffix: ""
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "统计模版表"
+      table: *kRespondentST
+      suffix: *kTableStatistics
+      type:  # set column data type
+        -
+          name: *kColumnValue
+          type: *kDataTypeNumeric
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "统计模版表"
+      table: *kRespondentPA
+      suffix: *kTableStatistics
+      type:  # set column data type
+        -
+          name: *kColumnValue
+          type: *kDataTypeNumeric
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "统计模版表"
+      table: *kRespondentTE
+      suffix: *kTableStatistics
+      type:  # set column data type
+        -
+          name: *kColumnValue
+          type: *kDataTypeNumeric
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "统计模版表"
+      table: *kSubjectCN
+      suffix: *kTableStatistics
+      type:  # set column data type
+        -
+          name: *kColumnValue
+          type: *kDataTypeNumeric
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "统计模版表"
+      table: *kSubjectMA
+      suffix: *kTableStatistics
+      type:  # set column data type
+        -
+          name: *kColumnValue
+          type: *kDataTypeNumeric
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "统计模版表"
+      table: *kSubjectEN
+      suffix: *kTableStatistics
+      type:  # set column data type
+        -
+          name: *kColumnValue
+          type: *kDataTypeNumeric
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "统计模版表"
+      table: *kSubjectSC
+      suffix: *kTableStatistics
+      type:  # set column data type
+        -
+          name: *kColumnValue
+          type: *kDataTypeNumeric
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "统计模版表"
+      table: *kSubjectAR
+      suffix: *kTableStatistics
+      type:  # set column data type
+        -
+          name: *kColumnValue
+          type: *kDataTypeNumeric
 
     -
       TODO: FALSE
@@ -47,6 +217,7 @@ loaddata:
         - "准考证号"
         - "户籍"
         - "性别"
+        - "考试组合"
         - "家长密码"
 
     -
@@ -83,47 +254,6 @@ loaddata:
         - "学校编码"
         - "校长密码"
 
-    -
-      TODO: FALSE
-      xlsx: "绿色指标属性表.xlsx"
-      sheet: "指标体系表"
-      table: *kTableIndex
-      suffix: ""
-
-    -
-      TODO: FALSE
-      xlsx: "绿色指标属性表.xlsx"
-      sheet: "维度映射关系表"
-      table: *kTableDimentionMapping
-      suffix: ""
-
-    -
-      TODO: FALSE
-      xlsx: "绿色指标属性表.xlsx"
-      sheet: "试题问卷属性表"
-      table: *kTableQuestionAttribute
-      suffix: ""
-
-    -
-      TODO: FALSE
-      xlsx: "绿色指标属性表.xlsx"
-      sheet: "试题答案分值表"
-      table: *kTableSubjectSolutionPoint
-      suffix: ""
-
-    -
-      TODO: FALSE
-      xlsx: "绿色指标属性表.xlsx"
-      sheet: "问卷答复赋分表"
-      table: *kTableSurveyResponsePoint
-      suffix: ""
-
-    -
-      TODO: FALSE
-      xlsx: "绿色指标属性表.xlsx"
-      sheet: "标准代码表"
-      table: *kTableDictionary
-      suffix: ""
 
     -
       TODO: FALSE
@@ -133,10 +263,7 @@ loaddata:
       suffix: *kTableRaw
       drop:
         - "姓名1"
-      add:
-        -
-          name: *kSubjectCN
-          value: TRUE
+
 
     -
       TODO: FALSE
@@ -146,10 +273,6 @@ loaddata:
       suffix: *kTableRaw
       drop:
         - "姓名1"
-      add:
-        -
-          name: *kSubjectMA
-          value: TRUE
 
     -
       TODO: FALSE
@@ -159,10 +282,6 @@ loaddata:
       suffix: *kTableRaw
       drop:
         - "姓名1"
-      add:
-        -
-          name: *kSubjectEN
-          value: TRUE
 
     -
       TODO: FALSE
@@ -172,10 +291,6 @@ loaddata:
       suffix: *kTableRaw
       drop:
         - "姓名1"
-      add:
-        -
-          name: *kSubjectSC
-          value: TRUE
 
     -
       TODO: FALSE
@@ -185,10 +300,7 @@ loaddata:
       suffix: *kTableRaw
       drop:
         - "姓名1"
-      add:
-        -
-          name: *kSubjectAR
-          value: TRUE
+
 
     -
       TODO: FALSE
@@ -198,15 +310,15 @@ loaddata:
       suffix: *kTableRaw
       drop:
         - "学生问卷密码"
-        - "家长问卷密码"
         - "姓名"
         - "学籍号"
         - "户籍"
         - "性别"
-      add:
+      rename:
         -
-          name: *kRespondentST
-          value: TRUE
+          name: "家长问卷密码"
+          rename: "家长密码"
+
 
     -
       TODO: FALSE
@@ -220,10 +332,7 @@ loaddata:
         -
           name: "密码"
           rename: "家长密码"
-      add:
-        -
-          name: *kRespondentPA
-          value: TRUE
+
 
     -
       TODO: FALSE
@@ -235,15 +344,3 @@ loaddata:
         -
           name: "教师登录密码"
           rename: "教师密码"
-      add:
-        -
-          name: *kRespondentTE
-          value: TRUE
-
-
-    -
-      TODO: FALSE
-      xlsx: "绿色指标属性表.xlsx"
-      sheet: "转换算法参数表"
-      table: *kTableTransformAlgorithm
-      suffix: ""

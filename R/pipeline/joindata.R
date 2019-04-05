@@ -30,7 +30,7 @@ GreenIndexJoinData <- setRefClass(
       reworkall <- config$IsReworkAll()
       reworkjobs <- jobs$TODO
       for (i in 1:length(jobs$table)){
-        job <<- jobs$table[[i]]
+        job <- jobs$table[[i]]
         TODO <- job$TODO
         if (TODO || reworkjobs || reworkall) {
           
@@ -93,6 +93,10 @@ GreenIndexJoinData <- setRefClass(
           # merge data frame
           out.df <- merge(left.df, right.df, by.x = left.by, by.y = right.by,
                           all = all, all.x = all.x, all.y = all.y)
+          
+          LogDebug(nrow(left.df))
+          LogDebug(nrow(right.df))
+          LogDebug(nrow(out.df))
           
           out.df <- ColumnProcessDataFrame(out.df, job)
           

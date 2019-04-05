@@ -1,35 +1,35 @@
 
 # join data, rename column, drop/keep column
 joindata:
-  TODO: FALSE
+  TODO: TRUE
   table:
     -
-      TODO: TRUE
+      TODO: FALSE
       left:
         table: *kTableSchool
         suffix: *kTableDict
-        by: "区编码"
+        by: *kColumnDistrictCode
       right:
         table: *kTableCity
         suffix: *kTableRaw
         select:
-        by: "区编码"
+        by: *kColumnDistrictCode
       join.type: "left" # "inner", left", "right", "full"
       out:
         table: *kTableSchool
         suffix: *kTableJoin
 
     -
-      TODO: TRUE
+      TODO: FALSE
       left:
         table: *kTableStudent
         suffix: *kTableDict
-        by: "学校编码"
+        by: *kColumnSchoolCode
       right:
         table: *kTableSchool
         suffix: *kTableJoin
         select: # if no selected column, will keep all column
-        by: "学校编码"
+        by: *kColumnSchoolCode
       join.type: "left" # "inner", left", "right", "full"
       out:
         table: *kTableStudent
@@ -38,175 +38,284 @@ joindata:
     -
       TODO: FALSE
       left:
-        table: *kRespondentST
+        table: *kTableStudent
         suffix: *kTableJoin
-        by: "准考证号"
+        by: *kColumnStudentCode
       right:
         table: *kSubjectCN
-        suffix: *kTableJoin
+        suffix: *kTableRaw
         select:
-          - "准考证号"
-        by: "准考证号"
-      join.type: "full"
-      drop:
-      rename:
-      keep:
-        - "准考证号"
-        - *kRespondentST
-        - *kSubjectCN
+          - *kColumnStudentCode
+        add:
+          -
+            name: *kSubjectCN
+            value: TRUE
+        by: *kColumnStudentCode
+      join.type: "left"
       out:
-        table: *kTableStudentJoin
-        suffix: ""
+        table: *kTableStudent
+        suffix: *kTableParticipate
 
     -
       TODO: FALSE
       left:
-        table: *kTableStudentJoin
-        suffix: ""
-        by: "准考证号"
+        table: *kTableStudent
+        suffix: *kTableParticipate
+        by: *kColumnStudentCode
       right:
         table: *kSubjectMA
-        suffix: *kTableJoin
+        suffix: *kTableRaw
         select:
-          - "准考证号"
-        by: "准考证号"
-
-      join.type: "full"
-      drop:
-      rename:
-      keep:
+          - *kColumnStudentCode
+        add:
+          -
+            name: *kSubjectMA
+            value: TRUE
+        by: *kColumnStudentCode
+      join.type: "left"
       out:
-        table: *kTableStudentJoin
-        suffix: ""
+        table: *kTableStudent
+        suffix: *kTableParticipate
 
     -
       TODO: FALSE
       left:
-        table: *kTableStudentJoin
-        suffix: ""
-        by: "准考证号"
+        table: *kTableStudent
+        suffix: *kTableParticipate
+        by: *kColumnStudentCode
       right:
         table: *kSubjectEN
-        suffix: *kTableJoin
+        suffix: *kTableRaw
         select:
-          - "准考证号"
-        by: "准考证号"
-        set:
-          - *kSubjectEN
-      join.type: "full"
-      drop:
-      rename:
-      keep:
+          - *kColumnStudentCode
+        add:
+          -
+            name: *kSubjectEN
+            value: TRUE
+        by: *kColumnStudentCode
+      join.type: "left"
       out:
-        table: *kTableStudentJoin
-        suffix: ""
+        table: *kTableStudent
+        suffix: *kTableParticipate
 
     -
       TODO: FALSE
       left:
-        table: *kTableStudentJoin
-        suffix: ""
-        by: "准考证号"
+        table: *kTableStudent
+        suffix: *kTableParticipate
+        by: *kColumnStudentCode
       right:
         table: *kSubjectSC
-        suffix: *kTableJoin
+        suffix: *kTableRaw
         select:
-          - "准考证号"
-        by: "准考证号"
-        set:
-          - *kSubjectSC
-      join.type: "full"
-      drop:
-      rename:
-      keep:
+          - *kColumnStudentCode
+        add:
+          -
+            name: *kSubjectSC
+            value: TRUE
+        by: *kColumnStudentCode
+      join.type: "left"
       out:
-        table: *kTableStudentJoin
-        suffix: ""
+        table: *kTableStudent
+        suffix: *kTableParticipate
 
     -
       TODO: FALSE
       left:
-        table: *kTableStudentJoin
-        suffix: ""
-        by: "准考证号"
+        table: *kTableStudent
+        suffix: *kTableParticipate
+        by: *kColumnStudentCode
       right:
         table: *kSubjectAR
-        suffix: *kTableJoin
+        suffix: *kTableRaw
         select:
-          - "准考证号"
-        by: "准考证号"
-        set:
-          - *kSubjectAR
-      join.type: "full"
-      drop:
-      rename:
-      keep:
+          - *kColumnStudentCode
+        add:
+          -
+            name: *kSubjectAR
+            value: TRUE
+        by: *kColumnStudentCode
+      join.type: "left"
       out:
-        table: *kTableStudentJoin
-        suffix: ""
+        table: *kTableStudent
+        suffix: *kTableParticipate
 
     -
       TODO: FALSE
       left:
-        table: *kTableStudentJoin
-        suffix: ""
-        by: "准考证号"
+        table: *kTableStudent
+        suffix: *kTableParticipate
+        by: *kColumnStudentCode
+      right:
+        table: *kRespondentST
+        suffix: *kTableRaw
+        select:
+          - *kColumnStudentCode
+        add:
+          -
+            name: *kRespondentST
+            value: TRUE
+        by: *kColumnStudentCode
+      join.type: "left"
+      out:
+        table: *kTableStudent
+        suffix: *kTableParticipate
+
+    -
+      TODO: FALSE
+      left:
+        table: *kTableStudent
+        suffix: *kTableParticipate
+        by: *kColumnParentCode
       right:
         table: *kRespondentPA
-        suffix: *kTableJoin
+        suffix: *kTableRaw
         select:
-          - "准考证号"
-        by: "准考证号"
-        set:
-          - *kRespondentPA
-      join.type: "full"
-      drop:
-      rename:
-      keep:
-      out:
-        table: *kTableStudentJoin
-        suffix: ""
-
-    -
-      TODO: FALSE
-      left:
-        table: *kTableStudentJoin
-        suffix: ""
-        by: "准考证号"
-      right:
-        table: *kTableStudent
-        suffix: ""
-        select:
-          - "准考证号"
-          - "区"
-          - "学校"
-        by: "准考证号"
+          - *kColumnParentCode
+        add:
+          -
+            name: *kRespondentPA
+            value: TRUE
+        unique:
+          - *kColumnParentCode
+        by: *kColumnParentCode
       join.type: "left"
-      drop:
-      rename:
-      keep:
       out:
-        table: *kTableStudentJoin
-        suffix: ""
+        table: *kTableStudent
+        suffix: *kTableParticipate
 
     # join Fam12 from parent survey into student survey
     -
       TODO: FALSE
       left:
         table: *kRespondentST
-        suffix: *kTableJoin
-        by: "准考证号"
+        suffix: *kTableRaw
+        by: *kColumnParentCode
       right:
         table: *kRespondentPA
-        suffix: *kTableJoin
+        suffix: *kTableRaw
         select:
-          - "准考证号"
+          - *kColumnParentCode
           - "Fam12"
-        by: "准考证号"
+        unique:
+          - *kColumnParentCode
+        by: *kColumnParentCode
       join.type: "left"
       drop:
-      rename:
-      keep:
+        - *kColumnParentCode
       out:
         table: *kRespondentST
+        suffix: *kTableJoin
+
+    # join student info
+    -
+      TODO: FALSE
+      left:
+        table: *kRespondentST
+        suffix: *kTableJoin
+        by: *kColumnStudentCode
+      right:
+        table: *kTableStudent
+        suffix: *kTableJoin
+        by: *kColumnStudentCode
+        <<: *kStatisticsAdd
+      join.type: "left"
+      out:
+        table: *kRespondentST
+        suffix: *kTableJoin
+
+    -
+      TODO: FALSE
+      left:
+        table: *kRespondentPA
+        suffix: *kTableRaw
+        by: *kColumnParentCode
+      right:
+        table: *kTableStudent
+        suffix: *kTableJoin
+        by: *kColumnParentCode
+        <<: *kStatisticsAdd
+      join.type: "left"
+      out:
+        table: *kRespondentPA
+        suffix: *kTableJoin
+
+    -
+      TODO: FALSE
+      left:
+        table: *kSubjectCN
+        suffix: *kTableRaw
+        by: *kColumnStudentCode
+      right:
+        table: *kTableStudent
+        suffix: *kTableJoin
+        by: *kColumnStudentCode
+        <<: *kStatisticsAdd
+      join.type: "left"
+      out:
+        table: *kSubjectCN
+        suffix: *kTableJoin
+
+    -
+      TODO: FALSE
+      left:
+        table: *kSubjectMA
+        suffix: *kTableRaw
+        by: *kColumnStudentCode
+      right:
+        table: *kTableStudent
+        suffix: *kTableJoin
+        by: *kColumnStudentCode
+        <<: *kStatisticsAdd
+      join.type: "left"
+      out:
+        table: *kSubjectMA
+        suffix: *kTableJoin
+
+    -
+      TODO: FALSE
+      left:
+        table: *kSubjectEN
+        suffix: *kTableRaw
+        by: *kColumnStudentCode
+      right:
+        table: *kTableStudent
+        suffix: *kTableJoin
+        by: *kColumnStudentCode
+        <<: *kStatisticsAdd
+      join.type: "left"
+      out:
+        table: *kSubjectEN
+        suffix: *kTableJoin
+
+    -
+      TODO: FALSE
+      left:
+        table: *kSubjectSC
+        suffix: *kTableRaw
+        by: *kColumnStudentCode
+      right:
+        table: *kTableStudent
+        suffix: *kTableJoin
+        by: *kColumnStudentCode
+        <<: *kStatisticsAdd
+      join.type: "left"
+      out:
+        table: *kSubjectSC
+        suffix: *kTableJoin
+
+    -
+      TODO: FALSE
+      left:
+        table: *kSubjectAR
+        suffix: *kTableRaw
+        by: *kColumnStudentCode
+      right:
+        table: *kTableStudent
+        suffix: *kTableJoin
+        by: *kColumnStudentCode
+        <<: *kStatisticsAdd
+      join.type: "left"
+      out:
+        table: *kSubjectAR
         suffix: *kTableJoin

@@ -1,0 +1,78 @@
+
+# statistics of variables, coefficents, scores
+statistics:
+  TODO: FALSE
+  <<: *kStatisticsTier
+  table:
+
+    # transform
+    -
+      TODO: TRUE
+      input:
+        table: *kRespondentST
+        suffix: *kTableTransform
+        # <<: *kStatiticsAdd
+        #add:
+        #  -
+        #    name: *kStatisticsPerspectiveTotal
+        #    value: *kStatisticsPerspectiveTotal
+      join:
+        table: *kTableStudent
+        suffix: *kTableJoin
+        by: *kColumnStudentCode
+      output:
+        table: *kRespondentST
+        suffix: *kTableStatistics
+      process:
+        table: *kTableCoefficentStatistics
+        suffix: ""
+      choice:
+        table: *kTableSurveyResponsePoint
+        suffix: ""
+        column:
+          code: *kColumnQuestionCode
+          key: *kColumnQuestionChoice
+
+
+    -
+      TODO: FALSE
+      input:
+        table: *kRespondentPA
+        suffix: *kTableTransform
+      join:
+        table: *kTableStudent
+        suffix: *kTableJoin
+        by: *kColumnParentCode
+      output:
+        table: *kRespondentPA
+        suffix: *kTableStatistics
+      process:
+        table: *kTableCoefficentStatistics
+        suffix: ""
+      choice:
+        table: *kTableSurveyResponsePoint
+        suffix: ""
+        column:
+          code: *kColumnQuestionCode
+          key: *kColumnQuestionChoice
+    -
+      TODO: FALSE
+      input:
+        table: *kRespondentTE
+        suffix: *kTableStatistics
+      join:
+        table: *kTableSchool
+        suffix: *kTableJoin
+        by: *kColumnTeacherCode
+      output:
+        table: *kRespondentTE
+        suffix: *kTableTransform
+      process:
+        table: *kTableCoefficentStatistics
+        suffix: ""
+      choice:
+        table: *kTableSurveyResponsePoint
+        suffix: ""
+        column:
+          code: *kColumnQuestionCode
+          key: *kColumnQuestionChoice
