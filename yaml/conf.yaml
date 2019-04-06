@@ -1,14 +1,16 @@
 ---
 # database connection configuration
 db:
-  host: localhost
-  port: 5433
-  user: "wangpeifenge"
-  password: ""
+  #host: localhost
+  #port: 5433
+  #user: "wangpeifenge"
+  #password: ""
   storage: "postgre"   # "csv" 
   dbname: "sh_green_2016"
-  #host: "greenindex.c8npr1xjfzbx.rds.cn-north-1.amazonaws.com.cn"
-  #password: "PostgreSQL"
+  host: "greenindex.c6h2fdi2tzs1.rds.cn-northwest-1.amazonaws.com.cn"
+  port: 5432
+  user: "admin_greenindex"
+  password: "Greenindex2018"
 
 dir:
   R: "R/"

@@ -3,3 +3,5 @@ setwd.R
 .Rhistory
 data.in
 *.Rmd.Rmd
+
+yaml/conf\.yaml
