@@ -42,9 +42,17 @@ GreenIndexBase <- setRefClass(
       logfile <- config$GetLogFile()
       logout <- config$GetLogOut()
       if (logout == "Console"){
+        removeHandler(writeToConsole)
         addHandler(writeToConsole, logger = module, file = logfile, 
                    levle = loglevel)
+        
       } else if ( logout == "File"){
+        if (file.exists(logfile)){
+          file.rename(from = logfile, 
+                      to = paste0(config$GetDirLog(), 
+                                  format(Sys.Time(), format = "%Y-%m-%d_%H:%M:%S"),
+                                  ".log"))
+        }
         addHandler(writeToFile, logger = module, file = logfile, 
                    levle = loglevel)
       }
@@ -116,7 +124,7 @@ GreenIndexBase <- setRefClass(
                                   filter.type, filter.value){
       n1 <- nrow(df)
       filter.df <- data.frame()
-      if (filter.name == "NO") {
+      if (filter.name == kFilterALL) {
         filter.df <- df
       } else {
         filter.value <- unlist(strsplit(filter.value, kSeparator))

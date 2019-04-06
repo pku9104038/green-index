@@ -342,6 +342,7 @@ index.topic <- function(
                                                data.stat = data.out, 
                                                stat = stat,
                                                update = update)
+                
               }
               
                 

@@ -63,6 +63,7 @@ GreenIndexConfig <- setRefClass(
     GetLogLevel = function(){
       return(config$log$level)
     },
+    
     GetLogFile = function(){
       logfile <- paste0(GetDirLog(),
                         format(Sys.Date(), format = "%Y-%m-%d"), 
@@ -70,6 +71,7 @@ GreenIndexConfig <- setRefClass(
       return(logfile)
       
     },
+    
     GetLogOut = function(){
       return(config$log$out)
     },

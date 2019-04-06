@@ -65,7 +65,7 @@ loaddata:
 
 
     -
-      TODO: TRUE
+      TODO: FALSE
       xlsx: "绿色指标属性表.xlsx"
       sheet: "标准代码表"
       table: *kTableDictionary
@@ -79,7 +79,7 @@ loaddata:
       suffix: ""
 
     -
-      TODO: FALSE
+      TODO: TRUE
       xlsx: "绿色指标属性表.xlsx"
       sheet: "变量转换表"
       table: *kTableVariableTransform
@@ -88,15 +88,29 @@ loaddata:
     -
       TODO: TRUE
       xlsx: "绿色指标属性表.xlsx"
-      sheet: "系数统计表"
-      table: *kTableCoefficentStatistics
+      sheet: "区域系数表"
+      table: *kTableCoefficentRegion
+      suffix: ""
+
+    -
+      TODO: TRUE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "学校系数表"
+      table: *kTableCoefficentSchool
       suffix: ""
 
     -
       TODO: FALSE
       xlsx: "绿色指标属性表.xlsx"
-      sheet: "指标计算表"
-      table: *kTableIndexComputation
+      sheet: "区域指数表"
+      table: *kTableIndexRegion
+      suffix: ""
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "学校指数表"
+      table: *kTableIndexSchool
       suffix: ""
 
     -

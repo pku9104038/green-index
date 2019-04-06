@@ -41,8 +41,19 @@ kSkipSet <- list("(跳过)")           # 忽略选项
 kNullStr <- ""                       # 未作答选项
 kColumnMultipleChoice <- "_多选_"    # 多选项答题结果拆分
 kSeparator <- "┋"
+kColumnSuffixPoint <- "_分值"
+
+
+kTRUE <- "是"
+kFALSE <- "否"
+kNumericNA <- -1
+kHashDigestDefault <- "27f4468f070e6f28b58e39fda7293bf8c3fa6fb7"
+kFilterALL <- "ALL"
+kPilotRun <- "PILOT"
+kAutoRun <- "AUTO"
 
 # column name of the output data table
+kColumnHashDigest <- "哈希值"
 kColumnAssessment <- "评测项目"
 kColumnGrade <- "年级"
 kColumnSubject <- "学科"
@@ -53,7 +64,7 @@ kColumnAttribute <- "属性"
 kColumnTopic <- "主题"
 kColumnStatisticsTier <- "统计层级"
 kColumnStatisticsScope <- "统计范围"
-kColumnStatisticsPerpective <- "统计视角"
+kColumnStatisticsPerspective <- "统计视角"
 kColumnStatisticsSample <- "统计样本"
 kColumnStatisticsVariable <- "统计变量"
 kColumnStatisticsAlgorithm <- "统计算法"
@@ -83,12 +94,20 @@ kDataTypeCharacter <- "character"
 kDataTypeNumeric <- "numeric"
 kDataTypeBoolean <- "boolean"
 
+# constsants for tier
+kTierCity <- "市"
+kTierDistrict <- "区"
+kTierSchool <- "学校"
+
+# constants for perspective
+kPerspectiveTotal <- "总体"
+
 # constants for algorithm
 kAlgorithmConstant <- "常量赋值"
 kAlgorithmSigmaBinary <- "求和阈值比较"
 kAlgorithmSingleChoicePercent <- "单选百分比"
 kAlgorithmMultipleChoicePercent <- "多选百分比"
-kAlgorithmBooleanPercent <- "布尔百分比"
+kAlgorithmValueSpacePercent <- "值域百分比"
 
 ## basicConfig of logger for every modules
 library(logging)

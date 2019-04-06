@@ -42,10 +42,14 @@ kTableAttribute:
     属性表问卷赋分
   - &kTableVariableTransform
     属性表变量转换
-  - &kTableCoefficentStatistics
-    属性表系数统计
-  - &kTableIndexComputation
-    属性表指标计算
+  - &kTableCoefficentRegion
+    属性表区域系数
+  - &kTableCoefficentSchool
+    属性表学校系数
+  - &kTableIndexRegion
+    属性表区域指数
+  - &kTableIndexSchool
+    属性表学校指数
   - &kTablePlotParameter
     属性表绘图参数
   - &kTableDataQuery
@@ -156,3 +160,15 @@ kStatiticsAdd: &kStatisticsAdd
 kDataType:
   - &kDataTypeNumeric
     'numeric'
+
+kPilotRunProfile: &kPilotRunProfile
+  pilot:
+    perspective:
+      - "总体"
+    sample:
+      city:
+        - "本市"
+      district:
+        - "浦东新区"
+      school:
+        - "上海市进才中学北校"

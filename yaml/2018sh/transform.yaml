@@ -4,6 +4,45 @@ transform:
   TODO: FALSE
   table:
 
+    # dummy transform table from assignment
+    -
+      TODO: FALSE
+      suffix: *kColumnSuffixBinary
+      input:
+        table: *kRespondentST
+        suffix: *kTableAssign
+      output:
+        table: *kRespondentST
+        suffix: *kTableTransform
+      dummy:
+        - TRUE
+
+
+
+    -
+      TODO: FALSE
+      suffix: *kColumnSuffixBinary
+      input:
+        table: *kRespondentPA
+        suffix: *kTableAssign
+      output:
+        table: *kRespondentPA
+        suffix: *kTableTransform
+      dummy:
+        - TRUE
+
+    -
+      TODO: FALSE
+      suffix: *kColumnSuffixBinary
+      input:
+        table: *kRespondentTE
+        suffix: *kTableAssign
+      output:
+        table: *kRespondentTE
+        suffix: *kTableTransform
+      dummy:
+        - TRUE
+
     # transform
     -
       TODO: FALSE
@@ -36,7 +75,7 @@ transform:
       join:
         table: *kTableStudent
         suffix: *kTableJoin
-        by: *kColumnStudentCode
+        by: *kColumnParentCode
         <<: *kStatisticsAdd
 
     -
@@ -51,8 +90,7 @@ transform:
         table: *kTableVariableTransform
         suffix: ""
       join:
-        table: *kTableStudent
+        table: *kTableTeacher
         suffix: *kTableJoin
-        by: *kColumnStudentCode
+        by: *kColumnTeacherCode
         <<: *kStatisticsAdd
-        

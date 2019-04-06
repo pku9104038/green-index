@@ -44,7 +44,7 @@ GreenIndexTransformData <- setRefClass(
       
       columns <- unlist(strsplit(transform[kColumnColumnName][[1]], kSeparator))
       suffix <- transform[kColumnColumnSuffix] 
-      variable.value.name <- paste0(variable.name, "_分值")
+      variable.value.name <- paste0(variable.name, kColumnSuffixPoint)
       df[, variable.value.name] <<- 0
       
       i <- 1
@@ -54,9 +54,9 @@ GreenIndexTransformData <- setRefClass(
         df[, variable.value.name] <<- df[, variable.value.name] + df[, column.name]
         i <- i + 1
       }
-      df[is.na(df[, variable.value.name]), variable.value.name] <<- -1
-      df[, variable.name] <<- FALSE
-      df[df[, variable.value.name] > as.numeric(parameter), variable.name] <<- TRUE
+      df[is.na(df[, variable.value.name]), variable.value.name] <<- kNumericNA
+      df[, variable.name] <<- kFALSE
+      df[df[, variable.value.name] > as.numeric(parameter), variable.name] <<- kTRUE
       # df[, variable.value.name] <<- NULL
       SetVariableType()
             
@@ -65,7 +65,7 @@ GreenIndexTransformData <- setRefClass(
     Constant = function(){
       
       if (parameter == "TRUE"){
-        df[, variable.name] <<- TRUE
+        df[, variable.name] <<- kTRUE
       } else {
         df[, variable.name] <<- parameter
       }
@@ -117,42 +117,51 @@ GreenIndexTransformData <- setRefClass(
           input.table <- paste0(job$input$table, job$input$suffix)
           df <<- database$ReadTable(input.table)
           
-          transform.table <- paste0(job$transform$table, job$transform$suffix)
-          transform.df <- database$ReadTable(transform.table)
-          transform.df <- transform.df[
-            transform.df[, kColumnTableName] == input.table.name, 
-          ]
-          transform.df <- transform.df[
-            transform.df[, kColumnTableSuffix] == input.table.suffix,
-          ]
-          
           output.table <- paste0(job$output$table, job$output$suffix)
-          LogInfo(paste("Transform", input.table, "by", transform.table,
-                        "into", output.table))
           
-          k <- 1
-          while (k <= nrow(transform.df)) {
-            transform <<- transform.df[k, ]
-            TransformJob()
+          
+          if (length(job$dummy) > 0) {
+            # clone a dummy transform table
+            LogInfo(paste("Clone", input.table, "into", output.table))
+            database$WriteTable(df, output.table)
+          } else {
             
-            k <- k + 1
-          }
-          
-          # merge join data for more attributes
-          if (!is.na(job$join$table)) {
-            join.table.name <- job$join$table
-            join.table.suffix <- job$join$suffix
-            join.table <- paste0(join.table.name, join.table.suffix)
-            join.df <- database$ReadTable(join.table)
-            join.df <- ColumnProcessDataFrame(join.df, job$join)
-            join.by <- job$join$by
+            transform.table <- paste0(job$transform$table, job$transform$suffix)
+            transform.df <- database$ReadTable(transform.table)
+            transform.df <- transform.df[
+              transform.df[, kColumnTableName] == input.table.name, 
+              ]
+            transform.df <- transform.df[
+              transform.df[, kColumnTableSuffix] == input.table.suffix,
+              ]
             
-            df <<- merge(df, join.df, by.x = join.by, by.y = join.by,
-                            all = FALSE, all.x = TRUE, all.y = FALSE)
+            LogInfo(paste("Transform", input.table, "by", transform.table,
+                          "into", output.table))
+            
+            k <- 1
+            while (k <= nrow(transform.df)) {
+              transform <<- transform.df[k, ]
+              TransformJob()
+              
+              k <- k + 1
+            }
+            
+            # merge join data for more attributes
+            if (!is.na(job$join$table)) {
+              join.table.name <- job$join$table
+              join.table.suffix <- job$join$suffix
+              join.table <- paste0(join.table.name, join.table.suffix)
+              join.df <- database$ReadTable(join.table)
+              join.df <- ColumnProcessDataFrame(join.df, job$join)
+              join.by <- job$join$by
+              
+              df <<- merge(df, join.df, by.x = join.by, by.y = join.by,
+                           all = FALSE, all.x = TRUE, all.y = FALSE)
+            }
+         
+            database$WriteTable(df, output.table)            
           }
-          
-          
-          database$WriteTable(df, output.table)
+         
         }
         
       }
