@@ -981,6 +981,7 @@ plot.data <- function(
       #print(data.sort)
       data.sorted <- arrange(data.sort,desc(data.sort[,sort$value]))
       #print(data.sorted)
+      
       sort$list <-list()
       n <- nrow(data.sorted)
       for(i in 1:n){
@@ -993,7 +994,9 @@ plot.data <- function(
         
         #print(sort$list[[i]])
       }
-      data.out[,sort$var] <- factor(data.out[,sort$var], levels = unlist(sort$list))
+      
+      data.out[,sort$var] <- factor(data.out[,sort$var], levels = unique(unlist(sort$list)))
+ 
     }
     
   }
