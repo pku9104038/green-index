@@ -1,0 +1,6 @@
+export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH=$JAVA_HOME/bin:$PATH
+export CLASS_PATH=$JAVA_HOME/lib
+export LIBJVM=$(find "${JAVA_HOME}" -name 'libjvm.dylib')
+R CMD javareconf JAVA_LIBS="${LIBJVM}" JAVA_LD_LIBRARY_PATH="${LIBJVM}" JAVA_CPPFLAGS="'-I${JAVA_HOME}/include -I${JAVA_HOME}/include/darwin -I$(dirname "${LIBJVM}")'"
+ln -fs "$LIBJVM" /Library/Frameworks/R.framework/Libraries
