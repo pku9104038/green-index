@@ -1,0 +1,12 @@
+
+# create database and tables
+initdatabase:
+  TODO: FALSE
+  # TRUE, igonre TODO: FALSE flags, rework load data jobs
+  table:
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "区信息表"
+      table: *kTableCity
+      suffix: *kTableRaw

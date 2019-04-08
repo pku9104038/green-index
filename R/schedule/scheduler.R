@@ -34,6 +34,8 @@ GreenIndexScheduler <- setRefClass(
     
     DataPrep = function(){
       
+      gio.createtable$CreateTable()
+      
       gio.loaddata$LoadData()
       
       gio.dictionary$Dictionary()

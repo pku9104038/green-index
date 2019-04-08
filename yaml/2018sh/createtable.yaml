@@ -1,0 +1,17 @@
+
+# create tables
+createtable:
+  TODO: FALSE
+  # TRUE, igonre TODO: FALSE flags, rework jobs
+  table:
+    -
+      TODO: FALSE
+      <<: *kDLLStatisticsTable
+      <<: *kTableSubjectRespondent
+      suffix: *kTableStatistics
+
+    -
+      TODO: FALSE
+      <<: *kDLLStatisticsTable
+      <<: *kTableSubjectRespondent
+      suffix: *kTableIndex

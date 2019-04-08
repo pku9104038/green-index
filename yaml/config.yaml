@@ -32,6 +32,7 @@ database:
 jobs:
   yaml:
     - "anchor.yaml"          # definition anchor
+    - "createtable.yaml"     # be careful, it will remove all statistics data
     - "loaddata.yaml"        # load data
     - "dictionary.yaml"        # map dictionary value
     # - "checkdata.yaml"       # check and recovery data
@@ -44,5 +45,5 @@ jobs:
 
 
 # auto reworkall switch
-reworkall: TRUE   # TRUE, igonre TODO: FALSE flags, rework all jobs
+reworkall: FALSE   # TRUE, igonre TODO: FALSE flags, rework all jobs
 ...

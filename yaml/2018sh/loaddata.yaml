@@ -39,7 +39,7 @@ loaddata:
       TODO: FALSE
       xlsx: "绿色指标属性表.xlsx"
       sheet: "指标体系表"
-      table: *kTableIndex
+      table: *kTableIndexSystem
       suffix: ""
 
     -
@@ -127,95 +127,7 @@ loaddata:
       sheet: "数据查询表"
       table: *kTableDataQuery
       suffix: ""
-
-    -
-      TODO: FALSE
-      xlsx: "绿色指标属性表.xlsx"
-      sheet: "统计模版表"
-      table: *kRespondentST
-      suffix: *kTableStatistics
-      type:  # set column data type
-        -
-          name: *kColumnValue
-          type: *kDataTypeNumeric
-
-    -
-      TODO: FALSE
-      xlsx: "绿色指标属性表.xlsx"
-      sheet: "统计模版表"
-      table: *kRespondentPA
-      suffix: *kTableStatistics
-      type:  # set column data type
-        -
-          name: *kColumnValue
-          type: *kDataTypeNumeric
-
-    -
-      TODO: FALSE
-      xlsx: "绿色指标属性表.xlsx"
-      sheet: "统计模版表"
-      table: *kRespondentTE
-      suffix: *kTableStatistics
-      type:  # set column data type
-        -
-          name: *kColumnValue
-          type: *kDataTypeNumeric
-
-    -
-      TODO: FALSE
-      xlsx: "绿色指标属性表.xlsx"
-      sheet: "统计模版表"
-      table: *kSubjectCN
-      suffix: *kTableStatistics
-      type:  # set column data type
-        -
-          name: *kColumnValue
-          type: *kDataTypeNumeric
-
-    -
-      TODO: FALSE
-      xlsx: "绿色指标属性表.xlsx"
-      sheet: "统计模版表"
-      table: *kSubjectMA
-      suffix: *kTableStatistics
-      type:  # set column data type
-        -
-          name: *kColumnValue
-          type: *kDataTypeNumeric
-
-    -
-      TODO: FALSE
-      xlsx: "绿色指标属性表.xlsx"
-      sheet: "统计模版表"
-      table: *kSubjectEN
-      suffix: *kTableStatistics
-      type:  # set column data type
-        -
-          name: *kColumnValue
-          type: *kDataTypeNumeric
-
-    -
-      TODO: FALSE
-      xlsx: "绿色指标属性表.xlsx"
-      sheet: "统计模版表"
-      table: *kSubjectSC
-      suffix: *kTableStatistics
-      type:  # set column data type
-        -
-          name: *kColumnValue
-          type: *kDataTypeNumeric
-
-    -
-      TODO: FALSE
-      xlsx: "绿色指标属性表.xlsx"
-      sheet: "统计模版表"
-      table: *kSubjectAR
-      suffix: *kTableStatistics
-      type:  # set column data type
-        -
-          name: *kColumnValue
-          type: *kDataTypeNumeric
-
+      
     -
       TODO: FALSE
       xlsx: "学生信息.xlsx"

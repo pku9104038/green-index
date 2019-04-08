@@ -2,14 +2,14 @@
 # statistics of variables, coefficents, scores
 statistics:
   TODO: FALSE
-  RUN: "AUTO"  # "AUTO"
+  RUN: "AUTO"  # "AUTO", "PILOT"
   <<: *kPilotRunProfile
 
   table:
 
     # transform
     -
-      TODO: FALSE
+      TODO: TRUE
       input:
         table: *kRespondentST
         suffix: *kTableTransform

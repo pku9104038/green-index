@@ -52,6 +52,21 @@ GreenIndexDatabase <- setRefClass(
       Disconnect()
     },
     
+    CreateTable = function(table.name, DDL) {
+      Connect()
+      LogDebug(paste("create table", table.name))
+      dbGetQuery(conn, DDL)
+      Disconnect()
+    },
+    
+    GetQuery = function(SQL) {
+      #Connect()
+      #LogDebug(paste("GetQuery:", SQL))
+      result <- dbGetQuery(conn, SQL)
+      #Disconnect()
+      return(result)
+    },
+    
     WriteTable = function(data.frame, table.name){
       Connect()
       if (dbExistsTable(conn, table.name)){

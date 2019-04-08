@@ -140,6 +140,11 @@ if (!exists("xlsx.loaded", mode = "variable")){
   source(paste0(gi.dir.script,"xlsx.R"))
 }
 
+# source createtable.R
+if (!exists("createtable.loaded", mode = "variable")){
+  source(paste0(gi.dir.script,"createtable.R"))
+}
+
 # source loaddata.R
 if (!exists("loaddata.loaded", mode = "variable")){
   source(paste0(gi.dir.script,"loaddata.R"))
@@ -193,6 +198,7 @@ gio.config <- GreenIndexConfig$new()
 gio.yaml <- GreenIndexYaml$new()
 gio.xlsx <- GreenIndexXlsx$new()
 gio.database <- GreenIndexDatabase$new()
+gio.createtable <- GreenIndexCreateTable$new()
 gio.loaddata <- GreenIndexLoadData$new()
 gio.dictionary <- GreenIndexDictionary$new()
 gio.joindata <- GreenIndexJoinData$new()
@@ -208,6 +214,7 @@ gio.config$Init("Config", gi.config.yaml)
 gio.yaml$Init("Yaml", gio.config)
 gio.xlsx$Init("Xlsx", gio.config)
 gio.database$Init("Database", gio.config, gi.db.user, gi.db.pwd)
+gio.createtable$Init("CreateTable", gio.config, gio.database)
 gio.loaddata$Init("LoadData", gio.config, gio.database, gio.xlsx)
 gio.dictionary$Init("Dictionary", gio.config, gio.database)
 gio.joindata$Init("JoinData", gio.config, gio.database)

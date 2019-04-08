@@ -27,10 +27,22 @@ kRespondent:
   - &kRespondentPR
     "校长"
 
+kTableSubjectRespondent: &kTableSubjectRespondent
+  table:
+    - *kRespondentST
+    - *kRespondentPA
+    - *kRespondentTE
+    - *kRespondentPR
+    - *kSubjectCN
+    - *kSubjectMA
+    - *kSubjectEN
+    - *kSubjectSC
+    - *kSubjectAR
+
 kTableAttribute:
   - &kTableDictionary
     属性表标准代码
-  - &kTableIndex
+  - &kTableIndexSystem
     属性表指标体系
   - &kTableDimentionMapping
     属性表指标映射
@@ -160,6 +172,27 @@ kStatiticsAdd: &kStatisticsAdd
 kDataType:
   - &kDataTypeNumeric
     'numeric'
+
+kDLLStatisticsTable: &kDLLStatisticsTable
+  DDL: "( 哈希值 text PRIMARY KEY,
+          评测项目 text,
+          年级 text,
+          学科 text,
+          领域 text,
+          维度 text,
+          群组 text,
+          属性 text,
+          主题 text,
+          统计层级 text,
+          统计范围 text,
+          统计视角 text,
+          统计样本 text,
+          统计变量 text,
+          统计算法 text,
+          数值类型 text,
+          键 text,
+          值 double precision
+        );"
 
 kPilotRunProfile: &kPilotRunProfile
   pilot:
