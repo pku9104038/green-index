@@ -35,6 +35,9 @@ GreenIndexCreateTable <- setRefClass(
           
           for (j in 1:length(job$table)) {
             table <- paste0(job$table[j], job$suffix)
+            if (job$drop) {
+              database$RemoveTable(table)
+            }
             DDL <- paste("CREATE TABLE IF NOT EXISTS", table, job$DDL)
             database$CreateTable(table, DDL)
           }

@@ -100,7 +100,7 @@ loaddata:
       suffix: ""
 
     -
-      TODO: FALSE
+      TODO: TRUE
       xlsx: "绿色指标属性表.xlsx"
       sheet: "区域指数表"
       table: *kTableIndexRegion
@@ -127,7 +127,7 @@ loaddata:
       sheet: "数据查询表"
       table: *kTableDataQuery
       suffix: ""
-      
+
     -
       TODO: FALSE
       xlsx: "学生信息.xlsx"
@@ -262,11 +262,16 @@ loaddata:
 
     -
       TODO: FALSE
-      xlsx: "教师问卷.xlsx"
-      sheet: "教师问卷"
+      xlsx: "20190408  教师问卷（删除重复填写）.xlsx"
+      sheet: "20190408  教师问卷（删除重复填写）"
       table: *kRespondentTE
       suffix: *kTableRaw
-      rename:
-        -
-          name: "教师登录密码"
-          rename: "教师密码"
+      drop:
+        - "学校编码"
+        - "区"
+        - "区编码"
+        - "学校"
+        - "学校性质"
+        - "学制"
+        - "强校工程"
+        - "新优质"

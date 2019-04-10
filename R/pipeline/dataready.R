@@ -1,14 +1,14 @@
-## JoinData class for green index data processing and report generation
+## DataReady class for green index data processing and report generation
 
 
 ## flag for source loaded checking
-joindata.loaded <- TRUE
+dataready.loaded <- TRUE
 
 ## define GreenIndexXlsx
 library(methods)
 
-GreenIndexJoinData <- setRefClass(
-  "GreenIndexJoinData",
+GreenIndexDataReady <- setRefClass(
+  "GreenIndexDataReady",
   contains = "GreenIndexBase",
   
   fields = list(
@@ -22,11 +22,11 @@ GreenIndexJoinData <- setRefClass(
       database <<- database.obj
     },
     
-    JoinData = function(){
-      LogInfo("Join Data!")
+    DataReady = function(){
+      LogInfo("Data Ready!")
       
       # get job configuration
-      jobs <- config$GetJoinDataJob()
+      jobs <- config$GetConfigJob()$dataready
       reworkall <- config$IsReworkAll()
       reworkjobs <- jobs$TODO
       for (i in 1:length(jobs$table)){
@@ -53,6 +53,7 @@ GreenIndexJoinData <- setRefClass(
           
           LogInfo(paste(join.type, "join", left.table, right.table, "into",
                         out.table ))
+          
           # set the join type
           
           all <- FALSE
@@ -94,4 +95,3 @@ GreenIndexJoinData <- setRefClass(
     }
   )
 )
-    

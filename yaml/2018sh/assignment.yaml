@@ -4,67 +4,13 @@ assignment:
   TODO: FALSE
   table:
 
-    # assignment
-    -
-      TODO: FALSE
-      suffix: *kColumnSuffixAssignment
-      input:
-        table: *kRespondentST
-        suffix: *kTableSplit
-      output:
-        table: *kRespondentST
-        suffix: *kTableAssign
-      choice:
-        table: *kTableSurveyResponsePoint
-        suffix: ""
-        column:
-          code: *kColumnQuestionCode
-          key: *kColumnQuestionChoice
-          value: *kColumnQuestionPoint
-
-    -
-      TODO: FALSE
-      suffix: *kColumnSuffixAssignment
-      input:
-        table: *kRespondentPA
-        suffix: *kTableSplit
-      output:
-        table: *kRespondentPA
-        suffix: *kTableAssign
-      choice:
-        table: *kTableSurveyResponsePoint
-        suffix: ""
-        column:
-          code: *kColumnQuestionCode
-          key: *kColumnQuestionChoice
-          value: *kColumnQuestionPoint
-
-    -
-      TODO: FALSE
-      suffix: *kColumnSuffixAssignment
-      input:
-        table: *kRespondentTE
-        suffix: *kTableSplit
-      output:
-        table: *kRespondentTE
-        suffix: *kTableAssign
-      choice:
-        table: *kTableSurveyResponsePoint
-        suffix: ""
-        column:
-          code: *kColumnQuestionCode
-          key: *kColumnQuestionChoice
-          value: *kColumnQuestionPoint
-
-
-
     # binary
     -
       TODO: FALSE
       suffix: *kColumnSuffixBinary
       input:
         table: *kRespondentST
-        suffix: *kTableAssign
+        suffix: *kTableSplit
       output:
         table: *kRespondentST
         suffix: *kTableAssign
@@ -81,7 +27,7 @@ assignment:
       suffix: *kColumnSuffixBinary
       input:
         table: *kRespondentPA
-        suffix: *kTableAssign
+        suffix: *kTableSplit
       output:
         table: *kRespondentPA
         suffix: *kTableAssign
@@ -98,7 +44,7 @@ assignment:
       suffix: *kColumnSuffixBinary
       input:
         table: *kRespondentTE
-        suffix: *kTableAssign
+        suffix: *kTableSplit
       output:
         table: *kRespondentTE
         suffix: *kTableAssign
