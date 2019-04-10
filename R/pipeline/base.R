@@ -50,7 +50,7 @@ GreenIndexBase <- setRefClass(
         if (file.exists(logfile)){
           file.rename(from = logfile, 
                       to = paste0(config$GetDirLog(), 
-                                  format(Sys.Time(), format = "%Y-%m-%d_%H:%M:%S"),
+                                  as.character(Sys.time()),
                                   ".log"))
         }
         addHandler(writeToFile, logger = module, file = logfile, 

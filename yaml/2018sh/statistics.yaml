@@ -1,8 +1,8 @@
 
 # statistics of variables, coefficents, scores
 statistics:
-  TODO: FALSE
-  RUN: "AUTO"  # "AUTO", "PILOT"
+  TODO: TRUE
+  RUN: "PILOT"  # "AUTO", "PILOT"
   <<: *kPilotRunProfile
 
   table:
@@ -12,16 +12,7 @@ statistics:
       TODO: TRUE
       input:
         table: *kRespondentST
-        suffix: *kTableTransform
-        # <<: *kStatiticsAdd
-        #add:
-        #  -
-        #    name: *kStatisticsPerspectiveTotal
-        #    value: *kStatisticsPerspectiveTotal
-      join:
-        table: *kTableStudent
-        suffix: *kTableJoin
-        by: *kColumnStudentCode
+        suffix: *kTableReady
       output:
         table: *kRespondentST
         suffix: *kTableStatistics
@@ -39,16 +30,7 @@ statistics:
       TODO: TRUE
       input:
         table: *kRespondentST
-        suffix: *kTableTransform
-        # <<: *kStatiticsAdd
-        #add:
-        #  -
-        #    name: *kStatisticsPerspectiveTotal
-        #    value: *kStatisticsPerspectiveTotal
-      join:
-        table: *kTableStudent
-        suffix: *kTableJoin
-        by: *kColumnStudentCode
+        suffix: *kTableReady
       output:
         table: *kRespondentST
         suffix: *kTableStatistics
@@ -64,14 +46,10 @@ statistics:
 
 
     -
-      TODO: FALSE
+      TODO: TRUE
       input:
         table: *kRespondentPA
-        suffix: *kTableTransform
-      join:
-        table: *kTableStudent
-        suffix: *kTableJoin
-        by: *kColumnParentCode
+        suffix: *kTableReady
       output:
         table: *kRespondentPA
         suffix: *kTableStatistics
@@ -86,14 +64,10 @@ statistics:
           key: *kColumnQuestionChoice
 
     -
-      TODO: FALSE
+      TODO: TRUE
       input:
         table: *kRespondentPA
-        suffix: *kTableTransform
-      join:
-        table: *kTableStudent
-        suffix: *kTableJoin
-        by: *kColumnParentCode
+        suffix: *kTableReady
       output:
         table: *kRespondentPA
         suffix: *kTableStatistics
@@ -108,17 +82,13 @@ statistics:
           key: *kColumnQuestionChoice
 
     -
-      TODO: FALSE
+      TODO: TRUE
       input:
         table: *kRespondentTE
-        suffix: *kTableStatistics
-      join:
-        table: *kTableSchool
-        suffix: *kTableJoin
-        by: *kColumnTeacherCode
+        suffix: *kTableReady
       output:
         table: *kRespondentTE
-        suffix: *kTableTransform
+        suffix: *kTableStatistics
       process:
         table: *kTableCoefficentRegion
         suffix: ""
@@ -130,17 +100,13 @@ statistics:
           key: *kColumnQuestionChoice
 
     -
-      TODO: FALSE
+      TODO: TRUE
       input:
         table: *kRespondentTE
-        suffix: *kTableStatistics
-      join:
-        table: *kTableSchool
-        suffix: *kTableJoin
-        by: *kColumnTeacherCode
+        suffix: *kTableReady
       output:
         table: *kRespondentTE
-        suffix: *kTableTransform
+        suffix: *kTableStatistics
       process:
         table: *kTableCoefficentSchool
         suffix: ""

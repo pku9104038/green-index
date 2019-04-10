@@ -55,11 +55,6 @@ transform:
       transform:
         table: *kTableVariableTransform
         suffix: ""
-      join:
-        table: *kTableStudent
-        suffix: *kTableJoin
-        by: *kColumnStudentCode
-        <<: *kStatisticsAdd
 
     -
       TODO: FALSE
@@ -72,11 +67,7 @@ transform:
       transform:
         table: *kTableVariableTransform
         suffix: ""
-      join:
-        table: *kTableStudent
-        suffix: *kTableJoin
-        by: *kColumnParentCode
-        <<: *kStatisticsAdd
+
 
     -
       TODO: FALSE
@@ -89,8 +80,3 @@ transform:
       transform:
         table: *kTableVariableTransform
         suffix: ""
-      join:
-        table: *kTableTeacher
-        suffix: *kTableJoin
-        by: *kColumnTeacherCode
-        <<: *kStatisticsAdd

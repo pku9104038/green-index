@@ -39,6 +39,7 @@ kTableSubjectRespondent: &kTableSubjectRespondent
     - *kSubjectSC
     - *kSubjectAR
 
+
 kTableAttribute:
   - &kTableDictionary
     属性表标准代码
@@ -105,6 +106,8 @@ kTableSuffix:
     "聚合数据"
   - &kTableTransform
     "转换数据"
+  - &kTableReady
+    "就绪数据"
   - &kTableStatistics
     "统计数据"
   - &kTableIndex
@@ -189,6 +192,7 @@ kDLLStatisticsTable: &kDLLStatisticsTable
           统计样本 text,
           统计变量 text,
           统计算法 text,
+          指标类型 text,
           数值类型 text,
           键 text,
           值 double precision
@@ -202,6 +206,64 @@ kPilotRunProfile: &kPilotRunProfile
       city:
         - "本市"
       district:
-        - "浦东新区"
+      #  - "浦东新区"
       school:
         - "上海市进才中学北校"
+
+
+kTableStatisticsIndex: &kTableStatisticsIndex
+  table:
+    -
+      name: *kRespondentST
+      suffix: *kTableStatistics
+    -
+      name: *kRespondentPA
+      suffix: *kTableStatistics
+    -
+      name: *kRespondentTE
+      suffix: *kTableStatistics
+    -
+      name: *kRespondentPR
+      suffix: *kTableStatistics
+    -
+      name: *kSubjectCN
+      suffix: *kTableStatistics
+    -
+      name: *kSubjectMA
+      suffix: *kTableStatistics
+    -
+      name: *kSubjectEN
+      suffix: *kTableStatistics
+    -
+      name: *kSubjectSC
+      suffix: *kTableStatistics
+    -
+      name: *kSubjectAR
+      suffix: *kTableStatistics
+    -
+      name: *kRespondentST
+      suffix: *kTableIndex
+    -
+      name: *kRespondentPA
+      suffix: *kTableIndex
+    -
+      name: *kRespondentTE
+      suffix: *kTableIndex
+    -
+      name: *kRespondentPR
+      suffix: *kTableIndex
+    -
+      name: *kSubjectCN
+      suffix: *kTableIndex
+    -
+      name: *kSubjectMA
+      suffix: *kTableIndex
+    -
+      name: *kSubjectEN
+      suffix: *kTableIndex
+    -
+      name: *kSubjectSC
+      suffix: *kTableIndex
+    -
+      name: *kSubjectAR
+      suffix: *kTableIndex

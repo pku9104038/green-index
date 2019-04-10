@@ -66,6 +66,7 @@ GreenIndexStatisticsData <- setRefClass(
       stat.list[kColumnStatisticsSample] <<- ""
       stat.list[kColumnStatisticsVariable] <<- ""
       stat.list[kColumnStatisticsAlgorithm] <<- process[1, kColumnStatisticsAlgorithm]
+      stat.list[kColumnStatisticsOutcome] <<- process[1, kColumnStatisticsOutcome]
       stat.list[kColumnValueType] <<- process[1, kColumnValueType]
       stat.list[kColumnKey] <<- ""
       stat.list[kColumnValue] <<- NA
@@ -87,6 +88,7 @@ GreenIndexStatisticsData <- setRefClass(
                    stat.list[kColumnStatisticsSample],
                    stat.list[kColumnStatisticsVariable],
                    stat.list[kColumnStatisticsAlgorithm],
+                   stat.list[kColumnStatisticsOutcome],
                    stat.list[kColumnValueType],
                    stat.list[kColumnKey])
       stat.list[kColumnHashDigest] <<- digest(msg, algo = "sha256")
@@ -104,7 +106,7 @@ GreenIndexStatisticsData <- setRefClass(
       stat.list[kColumnValue] <<- statistics.value
       
       if (is.na(stat.list[kColumnKey]) || is.na(stat.list[kColumnValue][[1]])) {
-        LogError(paste("AddStat",
+        msg <- paste("AddStat",
                        stat.list[kColumnStatisticsAlgorithm], 
                        stat.list[kColumnStatisticsVariable], 
                        stat.list[kColumnDomain],
@@ -117,7 +119,9 @@ GreenIndexStatisticsData <- setRefClass(
                        stat.list[kColumnStatisticsScope], 
                        stat.list[kColumnStatisticsSample], 
                        stat.list[kColumnKey],
-                       stat.list[kColumnValue]))
+                       stat.list[kColumnValue])
+        LogError(gsub("%*", "", msg))
+                 
       } else {
         HashStatList()
         stat.df <<- rbind(stat.df, data.frame(stat.list))
@@ -126,42 +130,12 @@ GreenIndexStatisticsData <- setRefClass(
     },
     
     InsertStatDataframe = function(){
-      
-      i <- 1
-      while (i <= nrow(stat.df)) {
-        
-        LogDebug(paste("Insert",
-                       stat.df[i, kColumnStatisticsTier], 
-                       stat.df[i, kColumnStatisticsPerspective],
-                       stat.df[i, kColumnStatisticsScope], 
-                       stat.df[i, kColumnStatisticsSample], 
-                       stat.df[i, kColumnStatisticsAlgorithm], 
-                       stat.df[i, kColumnStatisticsVariable], 
-                       stat.df[i, kColumnKey],
-                       stat.df[i, kColumnValue]))
-        
-        df <- out.df[out.df[, kColumnHashDigest] == stat.df[i, kColumnHashDigest], ]
-        if (nrow(df) == 0) {
-          # out.df <<- rbind(out.df, stat.df[i, ])
-          out.df[nrow(out.df)+1, ] <<- stat.df[i, kColumnValue]
-        } else {
-          
-          out.df[out.df[, kColumnHashDigest] == stat.df[i, kColumnHashDigest],
-                 kColumnValue] <<- stat.df[i, kColumnValue] 
-          
-        }
-        i <- i + 1
-      }
-      
-    },
-    
-    InsertStatDataframe2 = function(){
       database$Connect()
       
       i <- 1
       while (i <= nrow(stat.df)) {
         
-        LogDebug(paste("Insert",
+        msg <- paste("Insert",
                        stat.df[i, kColumnStatisticsTier], 
                        stat.df[i, kColumnStatisticsPerspective],
                        stat.df[i, kColumnStatisticsScope], 
@@ -169,10 +143,12 @@ GreenIndexStatisticsData <- setRefClass(
                        stat.df[i, kColumnStatisticsAlgorithm], 
                        stat.df[i, kColumnStatisticsVariable], 
                        stat.df[i, kColumnKey],
-                       stat.df[i, kColumnValue]))
+                       stat.df[i, kColumnValue])
+        LogDebug(gsub("%*", "", msg))
+        
         SQL <- paste0("SELECT ", kColumnHashDigest, " FROM ", output.table, 
                      " WHERE ", kColumnHashDigest, " = ",  
-                     "'", stat.df[i, kColumnHashDigest], "'", ";")
+                     "'", stat.df[i, kColumnHashDigest], "';")
         df <- database$GetQuery(SQL)
         
         if (nrow(df) == 0) {
@@ -192,6 +168,7 @@ GreenIndexStatisticsData <- setRefClass(
                         kColumnStatisticsSample, ",",
                         kColumnStatisticsVariable, ",",
                         kColumnStatisticsAlgorithm, ",",
+                        kColumnStatisticsOutcome, ",",
                         kColumnValueType, ",",
                         kColumnKey, ",",
                         kColumnValue, " ) ",
@@ -211,32 +188,34 @@ GreenIndexStatisticsData <- setRefClass(
                         "'", stat.df[i, kColumnStatisticsSample], "',",
                         "'", stat.df[i, kColumnStatisticsVariable], "',",
                         "'", stat.df[i, kColumnStatisticsAlgorithm], "',",
+                        "'", stat.df[i, kColumnStatisticsOutcome], "',",
                         "'", stat.df[i, kColumnValueType], "',",
                         "'", stat.df[i, kColumnKey], "',",
-                        stat.df[i, kColumnValue], ")", ";")
+                        stat.df[i, kColumnValue], ");")
           df <- database$GetQuery(SQL)
         } else {
           
           SQL <- paste0("UPDATE ", output.table, " SET ", 
-                        kColumnAssessment, " = ", "'", stat.df[i, kColumnAssessment], "'",
-                        kColumnGrade, " = ", "'", stat.df[i, kColumnGrade], "'",
-                        kColumnSubject, " = ", "'", stat.df[i, kColumnSubject], "'",
-                        kColumnDomain, " = ", "'", stat.df[i, kColumnDomain], "'",
-                        kColumnDimention, " = ", "'", stat.df[i, kColumnDimention], "'",
-                        kColumnGroup, " = ", "'", stat.df[i, kColumnGroup], "'",
-                        kColumnAttribute, " = ", "'", stat.df[i, kColumnAttribute], "'",
-                        kColumnTopic, " = ", "'", stat.df[i, kColumnTopic], "'",
-                        kColumnStatisticsTier, " = ", "'", stat.df[i, kColumnStatisticsTier], "'",
-                        kColumnStatisticsScope, " = ", "'", stat.df[i, kColumnStatisticsScope], "'",
-                        kColumnStatisticsPerspective, " = ", "'", stat.df[i, kColumnStatisticsPerspective], "'",
-                        kColumnStatisticsSample, " = ", "'", stat.df[i, kColumnStatisticsSample], "'",
-                        kColumnStatisticsVariable, " = ", "'", stat.df[i, kColumnStatisticsVariable], "'",
-                        kColumnStatisticsAlgorithm, " = ", "'", stat.df[i, kColumnStatisticsAlgorithm], "'",
-                        kColumnValueType, " = ", "'", stat.df[i, kColumnValueType], "'",
-                        kColumnKey, " = ", "'", stat.df[i, kColumnKey], "'",
-                        kColumnValue, " = ", as.character(stat.df[i, kColumnAssessment]),
+                        kColumnAssessment, " = ", "'", stat.df[i, kColumnAssessment], "', ",
+                        kColumnGrade, " = ", "'", stat.df[i, kColumnGrade], "', ",
+                        kColumnSubject, " = ", "'", stat.df[i, kColumnSubject], "', ",
+                        kColumnDomain, " = ", "'", stat.df[i, kColumnDomain], "', ",
+                        kColumnDimention, " = ", "'", stat.df[i, kColumnDimention], "', ",
+                        kColumnGroup, " = ", "'", stat.df[i, kColumnGroup], "', ",
+                        kColumnAttribute, " = ", "'", stat.df[i, kColumnAttribute], "', ",
+                        kColumnTopic, " = ", "'", stat.df[i, kColumnTopic], "', ",
+                        kColumnStatisticsTier, " = ", "'", stat.df[i, kColumnStatisticsTier], "', ",
+                        kColumnStatisticsScope, " = ", "'", stat.df[i, kColumnStatisticsScope], "', ",
+                        kColumnStatisticsPerspective, " = ", "'", stat.df[i, kColumnStatisticsPerspective], "', ",
+                        kColumnStatisticsSample, " = ", "'", stat.df[i, kColumnStatisticsSample], "', ",
+                        kColumnStatisticsVariable, " = ", "'", stat.df[i, kColumnStatisticsVariable], "', ",
+                        kColumnStatisticsAlgorithm, " = ", "'", stat.df[i, kColumnStatisticsAlgorithm], "', ",
+                        kColumnStatisticsOutcome, " = ", "'", stat.df[i, kColumnStatisticsOutcome], "', ",
+                        kColumnValueType, " = ", "'", stat.df[i, kColumnValueType], "', ",
+                        kColumnKey, " = ", "'", stat.df[i, kColumnKey], "', ",
+                        kColumnValue, " = ", as.character(stat.df[i, kColumnValue]),
                         " WHERE ", kColumnHashDigest, " = ", 
-                        "'", stat.df[i, kColumnHashDigest], "'", ";")
+                        "'", stat.df[i, kColumnHashDigest], "';")
           df <- database$GetQuery(SQL)
           
           
@@ -260,12 +239,13 @@ GreenIndexStatisticsData <- setRefClass(
         choice.size <- nrow(sample.df[sample.df[, variable.name] == choice.name, ])
         statistics.value <<- choice.size / sample.size * 100.0
         
-        LogDebug(paste(algorithm, variable.name, 
+        msg <- paste(algorithm, variable.name, 
                        kColumnStatisticsTier, tier.name, 
                        kColumnStatisticsPerspective, perspective.name,
                        kColumnStatisticsScope, scope.name, 
                        kColumnStatisticsSample, sample.name, 
-                       choice.name, statistics.value))
+                       choice.name, statistics.value)
+        LogDebug(gsub("%*", "", msg))
         
         AddStatDataframe()    
       }
@@ -283,12 +263,15 @@ GreenIndexStatisticsData <- setRefClass(
         choice.size <- nrow(sample.df[sample.df[, variable.name] == choice.name, ])
         statistics.value <<- choice.size / sample.size * 100.0
         
-        LogDebug(paste(algorithm, variable.name, 
+        msg <- paste(algorithm, variable.name, 
                        kColumnStatisticsTier, tier.name, 
                        kColumnStatisticsPerspective, perspective.name,
                        kColumnStatisticsScope, scope.name, 
                        kColumnStatisticsSample, sample.name, 
-                       choice.name, statistics.value))
+                       choice.name, statistics.value, 
+                     as.character(choice.size), as.character(sample.size))
+  
+        LogDebug(gsub("%*", "", msg))
 
         AddStatDataframe()    
       }
@@ -308,14 +291,16 @@ GreenIndexStatisticsData <- setRefClass(
         
       choice.size <- nrow(sample.df[sample.df[, variable.name] == 1, ])
       statistics.value <<- choice.size / sample.size * 100.0
-        
-      LogDebug(paste(algorithm, variable.name, 
+      
+      msg <- paste(algorithm, variable.name, 
                      kColumnStatisticsTier, tier.name, 
                      kColumnStatisticsPerspective, perspective.name,
                      kColumnStatisticsScope, scope.name, 
                      kColumnStatisticsSample, sample.name, 
-                     choice.name, statistics.value))
-        
+                     choice.name, statistics.value)
+  
+      LogDebug(gsub("%*", "", msg))
+      
       AddStatDataframe()    
 
     },
@@ -382,17 +367,18 @@ GreenIndexStatisticsData <- setRefClass(
               
               
               # limit scope for pilot run
-              scopes <- unique(perspective.df[, tier.name])
+              scopes <- unique(perspective.df[!is.na(perspective.df[, tier.name]), tier.name])
               if (pilotrun == kPilotRun && length(pilot$sample) > 0 && 
                   perspective.name == kPerspectiveTotal) {
                 if (tier.name == kTierCity){
                   scopes <- pilot$sample$city
-                } else if (tier.name == kTierDistrict){
+                } else if (tier.name == kTierDistrict && length(pilot$sample$district) > 0){
                   scopes <- pilot$sample$district
-                } else if (tier.name == kTierSchool){
+                } else if (tier.name == kTierSchool && length(pilot$sample$school) > 0){
                   scopes <- pilot$sample$school
                 }
               } 
+             
               # loop for scope
               for (l in 1:length(scopes)) {
                 scope.name <<- scopes[l] 
@@ -400,7 +386,7 @@ GreenIndexStatisticsData <- setRefClass(
                                              scope.name, ]
                 
                 # loop for sample
-                samples <- unique(scope.df[, perspective.name])
+                samples <- unique(scope.df[!is.na(scope.df[, perspective.name]), perspective.name])
                 for (m in 1:length(samples)) {
                   sample.name <<- samples[m]
                   if (is.na(sample.name))
@@ -423,7 +409,7 @@ GreenIndexStatisticsData <- setRefClass(
           }
         }
         
-        InsertStatDataframe2()
+        InsertStatDataframe()
       }
     },
     
@@ -450,24 +436,13 @@ GreenIndexStatisticsData <- setRefClass(
           in.df <<- database$ReadTable(input.table)
           in.df <<- ColumnProcessDataFrame(in.df, job$input)
           
-          # merge join data for more attributes
-          join.table.name <- job$join$table
-          join.table.suffix <- job$join$suffix
-          join.table <- paste0(join.table.name, join.table.suffix)
-          join.df <- database$ReadTable(join.table)
-          join.by <- job$join$by
-          
-          # in.df <<- merge(in.df, join.df, by.x = join.by, by.y = join.by,
-          #                all = FALSE, all.x = TRUE, all.y = FALSE)
           
           process.table <- paste0(job$process$table, job$process$suffix)
           process.df <- database$ReadTable(process.table)
           process.df <- process.df[
-            process.df[, kColumnTableName] == input.table.name, 
-            ]
+            process.df[, kColumnTableName] == input.table.name, ]
           process.df <- process.df[
-            process.df[, kColumnTableSuffix] == input.table.suffix,
-            ]
+            process.df[, kColumnTableSuffix] == input.table.suffix, ]
           
           choice.table <- paste0(job$choice$table, job$choice$suffix)
           choice.df <<- database$ReadTable(choice.table)
@@ -477,7 +452,6 @@ GreenIndexStatisticsData <- setRefClass(
           
           
           output.table <<- paste0(job$output$table, job$output$suffix)
-          # out.df <<- database$ReadTable(output.table)
           
           LogInfo(paste("Statistics", input.table, "through", process.table,
                         "into", output.table))
@@ -491,7 +465,6 @@ GreenIndexStatisticsData <- setRefClass(
             k <- k + 1
           }
           
-          # database$WriteTable(out.df, output.table)
         }
         
       }

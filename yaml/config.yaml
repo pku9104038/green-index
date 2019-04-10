@@ -21,7 +21,7 @@ dir:
 # log setting
 log:
   level: "DEBUG"  # "WARN", "INFO", "DEBUG"
-  out: "Console"  # "Console", "File"
+  out: "File"  # "Console", "File"
 
 # database config
 database:
@@ -34,16 +34,19 @@ jobs:
     - "anchor.yaml"          # definition anchor
     - "createtable.yaml"     # be careful, it will remove all statistics data
     - "loaddata.yaml"        # load data
-    - "dictionary.yaml"        # map dictionary value
+    - "dictionary.yaml"      # map dictionary value
     # - "checkdata.yaml"       # check and recovery data
     - "joindata.yaml"        # join attributes into observe data
     - "splitdata.yaml"       # split multiple choice into single columns
     # - "cleandata.yaml"       # clean dirty data
     - "assignment.yaml"      # assign point to survey response
     - "transform.yaml"       # transform data in survey response
+    - "dataready.yaml"       #
     - "statistics.yaml"      # statistics data
+    - "indexation.yaml"      #
+    - "convergetable.yaml"   #
 
 
 # auto reworkall switch
-reworkall: FALSE   # TRUE, igonre TODO: FALSE flags, rework all jobs
+reworkall: FALSE  # TRUE, igonre TODO: FALSE flags, rework all jobs
 ...

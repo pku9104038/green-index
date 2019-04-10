@@ -1,0 +1,56 @@
+
+# join attribute info and make data ready for statistics
+dataready:
+  TODO: FALSE
+  table:
+    -
+      TODO: FALSE
+      left:
+        table: *kRespondentST
+        suffix: *kTableTransform
+        by: *kColumnStudentCode
+      right:
+        table: *kTableStudent
+        suffix: *kTableJoin
+        select:
+        by: *kColumnStudentCode
+        <<: *kStatisticsAdd
+      join.type: "left" # "inner", left", "right", "full"
+      out:
+        table: *kRespondentST
+        suffix: *kTableReady
+
+    -
+      TODO: FALSE
+      left:
+        table: *kRespondentPA
+        suffix: *kTableTransform
+        by: *kColumnParentCode
+      right:
+        table: *kTableStudent
+        suffix: *kTableJoin
+        select:
+        by: *kColumnParentCode
+        <<: *kStatisticsAdd
+      join.type: "left" # "inner", left", "right", "full"
+      out:
+        table: *kRespondentPA
+        suffix: *kTableReady
+
+
+    -
+      TODO: FALSE
+      left:
+        table: *kRespondentTE
+        suffix: *kTableTransform
+        by: *kColumnTeacherCode
+      right:
+        table: *kTableTeacher
+        suffix: *kTableJoin
+        select:
+        by: *kColumnTeacherCode
+        <<: *kStatisticsAdd
+      join.type: "left" # "inner", left", "right", "full"
+      out:
+        table: *kRespondentTE
+        suffix: *kTableReady

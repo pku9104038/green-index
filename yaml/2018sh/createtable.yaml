@@ -9,9 +9,11 @@ createtable:
       <<: *kDLLStatisticsTable
       <<: *kTableSubjectRespondent
       suffix: *kTableStatistics
+      drop: TRUE
 
     -
       TODO: FALSE
       <<: *kDLLStatisticsTable
       <<: *kTableSubjectRespondent
       suffix: *kTableIndex
+      drop: TRUE

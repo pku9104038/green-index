@@ -54,7 +54,13 @@ GreenIndexScheduler <- setRefClass(
       
       gio.transform$TransformData()
       
+      gio.dataready$DataReady()
+      
       gio.statistics$StatisticsData()
+      
+      gio.indexation$IndexationData()
+      
+      gio.converge$ConvergeTable()
     },
     
     Run = function(){

@@ -68,6 +68,7 @@ kColumnStatisticsPerspective <- "统计视角"
 kColumnStatisticsSample <- "统计样本"
 kColumnStatisticsVariable <- "统计变量"
 kColumnStatisticsAlgorithm <- "统计算法"
+kColumnStatisticsOutcome <- "指标类型"
 kColumnValueType <- "数值类型"
 kColumnKey <- "键"
 kColumnValue <- "值"
@@ -108,6 +109,7 @@ kAlgorithmSigmaBinary <- "求和阈值比较"
 kAlgorithmSingleChoicePercent <- "单选百分比"
 kAlgorithmMultipleChoicePercent <- "多选百分比"
 kAlgorithmValueSpacePercent <- "值域百分比"
+kAlgorithmTenLevelIndex <- "十级指数化"
 
 ## basicConfig of logger for every modules
 library(logging)
@@ -185,9 +187,24 @@ if (!exists("transform.loaded", mode = "variable")){
   source(paste0(gi.dir.script,"transform.R"))
 }
 
+# source dataready.R
+if (!exists("dataready.loaded", mode = "variable")){
+  source(paste0(gi.dir.script,"dataready.R"))
+}
+
 # source statistics.R
 if (!exists("statistics.loaded", mode = "variable")){
   source(paste0(gi.dir.script,"statistics.R"))
+}
+
+# source indexation.R
+if (!exists("indexation.loaded", mode = "variable")){
+  source(paste0(gi.dir.script,"indexation.R"))
+}
+
+# source convergetable.R
+if (!exists("convergetable.loaded", mode = "variable")){
+  source(paste0(gi.dir.script,"convergetable.R"))
 }
 
 ####################################
@@ -207,7 +224,10 @@ gio.checkdata <- GreenIndexCheckData$new()
 gio.cleandata <- GreenIndexCleanData$new()
 gio.assignpoint <- GreenIndexAssignPoint$new()
 gio.transform <- GreenIndexTransformData$new()
+gio.dataready <- GreenIndexDataReady$new()
 gio.statistics <- GreenIndexStatisticsData$new()
+gio.indexation <- GreenIndexIndexationData$new()
+gio.converge <- GreenIndexConvergeTable$new()
 
 ## Init global objects
 gio.config$Init("Config", gi.config.yaml)
@@ -223,4 +243,9 @@ gio.checkdata$Init("CheckData", gio.config, gio.database)
 gio.cleandata$Init("CleanData", gio.config, gio.database)
 gio.assignpoint$Init("AssignPoint", gio.config, gio.database)
 gio.transform$Init("TransformData", gio.config, gio.database)
+gio.dataready$Init("DataReady", gio.config, gio.database)
 gio.statistics$Init("StatisticsData", gio.config, gio.database)
+gio.indexation$Init("IndexationData", gio.config, gio.database)
+gio.converge$Init("ConvergeTable", gio.config, gio.database)
+
+

@@ -123,6 +123,18 @@ GreenIndexTransformData <- setRefClass(
           if (length(job$dummy) > 0) {
             # clone a dummy transform table
             LogInfo(paste("Clone", input.table, "into", output.table))
+            # merge join data for more attributes
+            # if (!is.na(job$join$table)) {
+            #  join.table.name <- job$join$table
+            #  join.table.suffix <- job$join$suffix
+            #  join.table <- paste0(join.table.name, join.table.suffix)
+            #  join.df <- database$ReadTable(join.table)
+            #  join.df <- ColumnProcessDataFrame(join.df, job$join)
+            #  join.by <- job$join$by
+              
+            #  df <<- merge(df, join.df, by.x = join.by, by.y = join.by,
+            #               all = FALSE, all.x = TRUE, all.y = FALSE)
+            # }
             database$WriteTable(df, output.table)
           } else {
             
@@ -146,19 +158,6 @@ GreenIndexTransformData <- setRefClass(
               k <- k + 1
             }
             
-            # merge join data for more attributes
-            if (!is.na(job$join$table)) {
-              join.table.name <- job$join$table
-              join.table.suffix <- job$join$suffix
-              join.table <- paste0(join.table.name, join.table.suffix)
-              join.df <- database$ReadTable(join.table)
-              join.df <- ColumnProcessDataFrame(join.df, job$join)
-              join.by <- job$join$by
-              
-              df <<- merge(df, join.df, by.x = join.by, by.y = join.by,
-                           all = FALSE, all.x = TRUE, all.y = FALSE)
-            }
-         
             database$WriteTable(df, output.table)            
           }
          

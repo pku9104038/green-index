@@ -1,0 +1,43 @@
+
+# indexation coefficents
+indexation:
+  TODO: TRUE
+
+  table:
+    -
+      TODO: TRUE
+      input:
+        table: *kRespondentST
+        suffix: *kTableStatistics
+      output:
+        table: *kRespondentST
+        suffix: *kTableIndex
+      process:
+        table: *kTableIndexRegion
+        suffix: ""
+
+
+    -
+      TODO: TRUE
+      input:
+        table: *kRespondentPA
+        suffix: *kTableStatistics
+      output:
+        table: *kRespondentPA
+        suffix: *kTableIndex
+      process:
+        table: *kTableIndexRegion
+        suffix: ""
+
+
+    -
+      TODO: TRUE
+      input:
+        table: *kRespondentTE
+        suffix: *kTableStatistics
+      output:
+        table: *kRespondentTE
+        suffix: *kTableIndex
+      process:
+        table: *kTableIndexRegion
+        suffix: ""
