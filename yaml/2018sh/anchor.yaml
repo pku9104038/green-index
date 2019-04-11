@@ -202,13 +202,11 @@ kPilotRunProfile: &kPilotRunProfile
   pilot:
     perspective:
       - "总体"
+    tier:
+      - "市"
     sample:
-      city:
-        - "本市"
       district:
-      #  - "浦东新区"
-      school:
-        - "上海市进才中学北校"
+        - "静安区"
 
 
 kTableStatisticsIndex: &kTableStatisticsIndex

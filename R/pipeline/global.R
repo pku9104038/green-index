@@ -43,14 +43,27 @@ kColumnMultipleChoice <- "_多选_"    # 多选项答题结果拆分
 kSeparator <- "┋"
 kColumnSuffixPoint <- "_分值"
 
+# constants for data type
+kDataTypeCharacter <- "character"
+kDataTypeNumeric <- "numeric"
+kDataTypeBoolean <- "boolean"
+
+# constsants for tier
+kTierCity <- "市"
+kTierDistrict <- "区"
+kTierSchool <- "学校"
+
+# constants for perspective
+kPerspectiveTotal <- "总体"
 
 kTRUE <- "是"
 kFALSE <- "否"
 kNumericNA <- -1
 kHashDigestDefault <- "27f4468f070e6f28b58e39fda7293bf8c3fa6fb7"
 kFilterALL <- "ALL"
-kPilotRun <- "PILOT"
-kAutoRun <- "AUTO"
+kPilotRun <- "PILOT"        # city, total only
+kMileStone <- "MILESTONE"   # city, district all  and school total
+kAutoRun <- "AUTO"          # all tier, all perspective 
 
 # column name of the output data table
 kColumnHashDigest <- "哈希值"
@@ -90,18 +103,7 @@ kColumnFilterName <- "过滤变量"
 kColumnFilterType <- "过滤类型"
 kColumnFilterValue <- "过滤值"
 
-# constants for data type
-kDataTypeCharacter <- "character"
-kDataTypeNumeric <- "numeric"
-kDataTypeBoolean <- "boolean"
 
-# constsants for tier
-kTierCity <- "市"
-kTierDistrict <- "区"
-kTierSchool <- "学校"
-
-# constants for perspective
-kPerspectiveTotal <- "总体"
 
 # constants for algorithm
 kAlgorithmConstant <- "常量赋值"

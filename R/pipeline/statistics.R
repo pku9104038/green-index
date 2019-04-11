@@ -37,7 +37,7 @@ GreenIndexStatisticsData <- setRefClass(
     choice.name = "character",
     statistics.value = "numeric",
     
-    pilotrun = "character",
+    RUN = "character",
     pilot = "list"
     
   ),
@@ -333,15 +333,15 @@ GreenIndexStatisticsData <- setRefClass(
         
         algorithm <<- process[1, kColumnStatisticsAlgorithm]
         
+        
+        
         tiers <- process[1, kColumnStatisticsTier]
         tiers <- unlist(strsplit(tiers, kSeparator))
-        
-        # limit perspective for pilot run
+          
         perspectives <- process[1, kColumnStatisticsPerspective]
         perspectives <- unlist(strsplit(perspectives, kSeparator))
-        if (pilotrun == kPilotRun && length(pilot$perspective) > 0) {
-          perspectives <- pilot$perspective
-        } 
+        
+        
         
         
         variables <- process[1, kColumnVariableName]
@@ -356,28 +356,33 @@ GreenIndexStatisticsData <- setRefClass(
           for (j in 1:length(tiers)) {
             tier.name <<- tiers[j]
             
+            # limit tier for pilot run
+            if (RUN == kPilotRun && tier.name != pilot$tier) {
+              break
+            }
+            
             # loop for pespective
             for (k in 1:length(perspectives)) {
               perspective.name <<- perspectives[k]
+              # limit perspective for pilot run
+              if (RUN == kPilotRun && perspective.name != pilot$perspective) {
+                break
+              }
+              
               LogDebug(paste(algorithm, variable.name, 
                              kColumnStatisticsTier, tier.name, 
                              kColumnStatisticsPerspective, perspective.name))
-              perspective.df <- filter.df[, c(variable.name, tier.name, 
-                                              perspective.name)]
+              perspective.df <- filter.df
               
               
-              # limit scope for pilot run
-              scopes <- unique(perspective.df[!is.na(perspective.df[, tier.name]), tier.name])
-              if (pilotrun == kPilotRun && length(pilot$sample) > 0 && 
-                  perspective.name == kPerspectiveTotal) {
-                if (tier.name == kTierCity){
-                  scopes <- pilot$sample$city
-                } else if (tier.name == kTierDistrict && length(pilot$sample$district) > 0){
-                  scopes <- pilot$sample$district
-                } else if (tier.name == kTierSchool && length(pilot$sample$school) > 0){
-                  scopes <- pilot$sample$school
-                }
-              } 
+              # limit scope for milestone run
+              if (RUN == kMileStone && tier.name == kTierSchool) {
+                perspective.df <- 
+                  perspective.df[perspective.df[, TierDistrict] == 
+                                                   pilot$sample$district, ]
+              }
+              scopes <- unique(perspective.df[!is.na(perspective.df[, tier.name]), 
+                                              tier.name])
              
               # loop for scope
               for (l in 1:length(scopes)) {
@@ -386,13 +391,16 @@ GreenIndexStatisticsData <- setRefClass(
                                              scope.name, ]
                 
                 # loop for sample
-                samples <- unique(scope.df[!is.na(scope.df[, perspective.name]), perspective.name])
+                samples <- unique(scope.df[!is.na(scope.df[, perspective.name]), 
+                                           perspective.name])
                 for (m in 1:length(samples)) {
                   sample.name <<- samples[m]
                   if (is.na(sample.name))
                     break
                   sample.df <<- scope.df[scope.df[, perspective.name] == 
                                            sample.name, ]
+                  sample.df <<- sample.df[, c(variable.name, 
+                                              tier.name, perspective.name)]
                   
                   if (algorithm == kAlgorithmSingleChoicePercent) {
                     SingleChoicePercent()
@@ -420,7 +428,7 @@ GreenIndexStatisticsData <- setRefClass(
       jobs <- config$GetConfigJob()$statistics
       reworkall <- config$IsReworkAll()
       reworkjobs <- jobs$TODO
-      pilotrun <<- jobs$RUN
+      RUN <<- jobs$RUN
       pilot <<- jobs$pilot
       
       for (i in 1:length(jobs$table)){

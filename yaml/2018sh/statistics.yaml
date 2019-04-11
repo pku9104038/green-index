@@ -2,7 +2,7 @@
 # statistics of variables, coefficents, scores
 statistics:
   TODO: TRUE
-  RUN: "PILOT"  # "AUTO", "PILOT"
+  RUN: "PILOT"  # "AUTO", "PILOT", "MILESTONE"
   <<: *kPilotRunProfile
 
   table:
