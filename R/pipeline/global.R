@@ -65,6 +65,10 @@ kPilotRun <- "PILOT"        # city, total only
 kMileStone <- "MILESTONE"   # city, district all  and school total
 kAutoRun <- "AUTO"          # all tier, all perspective 
 
+# table names
+kTableDataQuery <- "属性表数据查询"
+kColumnDataQueryGroup <- "数据查询组合"
+
 # column name of the output data table
 kColumnHashDigest <- "哈希值"
 kColumnAssessment <- "评测项目"
@@ -106,6 +110,7 @@ kColumnCount <- "计数"
 kColumnFilterName <- "过滤变量"
 kColumnFilterType <- "过滤类型"
 kColumnFilterValue <- "过滤值"
+kColumnRegion <- "区域"
 
 
 

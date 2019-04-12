@@ -123,7 +123,7 @@ GreenIndexStatisticsData <- setRefClass(
                                               kColumnCity]
         stat.list[kColumnDistrict] <<- stat.list[kColumnStatisticsScope]
         stat.list[kColumnSchool] <<- kColumnSchool
-      } else if (stat.list[kColumnStatisticsTier] == kColumnSchool) {
+      } else if (stat.list[kColumnStatisticsTier] == kColumnSchool ) {
         stat.list[kColumnCity] <<- school.df[school.df[, kColumnSchool] ==
                                                 stat.list[kColumnStatisticsScope],
                                               kColumnCity]
@@ -131,7 +131,15 @@ GreenIndexStatisticsData <- setRefClass(
                                               stat.list[kColumnStatisticsScope],
                                             kColumnDistrict]
         stat.list[kColumnSchool] <<- stat.list[kColumnStatisticsScope]
+        
+      } else if (stat.list[kColumnStatisticsTier] == kColumnRegion) {
+        stat.list[kColumnCity] <<- stat.list[kColumnStatisticsScope]
+        stat.list[kColumnDistrict] <<- stat.list[kColumnStatisticsScope]
+        stat.list[kColumnSchool] <<- stat.list[kColumnStatisticsScope]
       }
+      
+      LogDebug(paste( stat.list[kColumnCity], stat.list[kColumnDistrict], 
+                      stat.list[kColumnSchool] ))
       
       if (is.na(stat.list[kColumnKey]) || is.na(stat.list[kColumnValue][[1]])) {
         msg <- paste("AddStat",
@@ -414,7 +422,7 @@ GreenIndexStatisticsData <- setRefClass(
               # limit scope for milestone run
               if (RUN == kMileStone && tier.name == kTierSchool) {
                 perspective.df <- 
-                  perspective.df[perspective.df[, TierDistrict] == 
+                  perspective.df[perspective.df[, kTierDistrict] == 
                                                    pilot$sample$district, ]
               }
               scopes <- unique(perspective.df[!is.na(perspective.df[, tier.name]), 
@@ -465,15 +473,13 @@ GreenIndexStatisticsData <- setRefClass(
       reworkjobs <- jobs$TODO
       RUN <<- jobs$RUN
       pilot <<- jobs$pilot
-      if (reworkall || reworkjobs) {
         
-        district.table <- paste0(jobs$info$district$table, 
-                                 jobs$info$district$suffix)
-        district.df <<- database$ReadTable(district.table)
-        school.table <- paste0(jobs$info$school$table, 
-                                 jobs$info$school$suffix)
-        school.df <<- database$ReadTable(school.table)
-      }
+      district.table <- paste0(jobs$info$district$table, 
+                               jobs$info$district$suffix)
+      district.df <<- database$ReadTable(district.table)
+      school.table <- paste0(jobs$info$school$table, 
+                               jobs$info$school$suffix)
+      school.df <<- database$ReadTable(school.table)
       
       for (i in 1:length(jobs$table)){
         job <- jobs$table[[i]]
