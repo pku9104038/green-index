@@ -70,7 +70,7 @@ kTableAttribute:
 
 
 kTableInfomation:
-  - &kTableCity
+  - &kTableDistrict
     信息表区
   - &kTableSchool
     信息表学校
@@ -163,11 +163,15 @@ kStatisticsPespective:
   - &kStatisticsPerspectiveTotal
     总体
 
-kStatiticsAdd: &kStatisticsAdd
+kInfoAdd: &kInfoAdd
   add:
     -
       name: "市"
-      value: "本市"
+      value: "上海市"
+
+
+kStatiticsAdd: &kStatisticsAdd
+  add:
     -
       name: "总体"
       value: "总体"
@@ -188,6 +192,9 @@ kDLLStatisticsTable: &kDLLStatisticsTable
           主题 text,
           统计层级 text,
           统计范围 text,
+          市 text,
+          区 text,
+          学校 text,
           统计视角 text,
           统计样本 text,
           统计变量 text,
@@ -195,18 +202,23 @@ kDLLStatisticsTable: &kDLLStatisticsTable
           指标类型 text,
           数值类型 text,
           键 text,
-          值 double precision
+          值 double precision,
+          时间戳 text
         );"
 
-kPilotRunProfile: &kPilotRunProfile
+kPilotRun: &kPilotRun
   pilot:
     perspective:
       - "总体"
     tier:
       - "市"
     sample:
+      city:
+        - "上海市"
       district:
-        - "静安区"
+        - "长宁区"
+      shcool:
+        - "上海市延安初级中学"
 
 
 kTableStatisticsIndex: &kTableStatisticsIndex

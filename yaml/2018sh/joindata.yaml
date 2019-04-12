@@ -10,7 +10,7 @@ joindata:
         suffix: *kTableDict
         by: *kColumnDistrictCode
       right:
-        table: *kTableCity
+        table: *kTableDistrict
         suffix: *kTableRaw
         select:
         by: *kColumnDistrictCode

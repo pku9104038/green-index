@@ -81,7 +81,9 @@ GreenIndexAssignPoint <- setRefClass(
                 df <- merge(df, option, by.x = code, by.y = choice.key,
                             all.x = TRUE)
                 
-                LogDebug(mean(df[, column.assignment], na.rm = TRUE))
+                LogDebug(paste(column.assignment, 
+                               as.character(mean(df[, column.assignment], 
+                                                 na.rm = TRUE))))
                 
               }
              

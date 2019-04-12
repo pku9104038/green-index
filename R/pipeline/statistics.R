@@ -27,6 +27,9 @@ GreenIndexStatisticsData <- setRefClass(
     stat.df = "data.frame",
     stat.list = "list",
     
+    district.df = "data.frame",
+    school.df = "data.frame",
+    
     process = "data.frame",
     algorithm = "character",
     tier.name = "character",
@@ -70,6 +73,7 @@ GreenIndexStatisticsData <- setRefClass(
       stat.list[kColumnValueType] <<- process[1, kColumnValueType]
       stat.list[kColumnKey] <<- ""
       stat.list[kColumnValue] <<- NA
+      stat.list[kColumnTimeStamp] <<- as.character(Sys.time())
       
     },
     
@@ -84,6 +88,9 @@ GreenIndexStatisticsData <- setRefClass(
                    stat.list[kColumnTopic],
                    stat.list[kColumnStatisticsTier],
                    stat.list[kColumnStatisticsScope],
+                   stat.list[kColumnCity],
+                   stat.list[kColumnDistrict],
+                   stat.list[kColumnSchool],
                    stat.list[kColumnStatisticsPerspective],
                    stat.list[kColumnStatisticsSample],
                    stat.list[kColumnStatisticsVariable],
@@ -104,6 +111,27 @@ GreenIndexStatisticsData <- setRefClass(
       stat.list[kColumnStatisticsVariable] <<- variable.name
       stat.list[kColumnKey] <<- choice.name
       stat.list[kColumnValue] <<- statistics.value
+      stat.list[kColumnTimeStamp] <<- as.character(Sys.time())
+    
+      if (stat.list[kColumnStatisticsTier] == kColumnCity) {
+        stat.list[kColumnCity] <<- stat.list[kColumnStatisticsScope]
+        stat.list[kColumnDistrict] <<- kColumnDistrict
+        stat.list[kColumnSchool] <<- kColumnSchool
+      } else if (stat.list[kColumnStatisticsTier] == kColumnDistrict) {
+        stat.list[kColumnCity] <<- district.df[district.df[, kColumnDistrict] ==
+                                                stat.list[kColumnStatisticsScope],
+                                              kColumnCity]
+        stat.list[kColumnDistrict] <<- stat.list[kColumnStatisticsScope]
+        stat.list[kColumnSchool] <<- kColumnSchool
+      } else if (stat.list[kColumnStatisticsTier] == kColumnSchool) {
+        stat.list[kColumnCity] <<- school.df[school.df[, kColumnSchool] ==
+                                                stat.list[kColumnStatisticsScope],
+                                              kColumnCity]
+        stat.list[kColumnDistrict] <<- school.df[school.df[, kColumnSchool] ==
+                                              stat.list[kColumnStatisticsScope],
+                                            kColumnDistrict]
+        stat.list[kColumnSchool] <<- stat.list[kColumnStatisticsScope]
+      }
       
       if (is.na(stat.list[kColumnKey]) || is.na(stat.list[kColumnValue][[1]])) {
         msg <- paste("AddStat",
@@ -164,6 +192,9 @@ GreenIndexStatisticsData <- setRefClass(
                         kColumnTopic, ",",
                         kColumnStatisticsTier, ",",
                         kColumnStatisticsScope, ",",
+                        kColumnCity, ",",
+                        kColumnDistrict, ",",
+                        kColumnSchool, ",",
                         kColumnStatisticsPerspective, ",",
                         kColumnStatisticsSample, ",",
                         kColumnStatisticsVariable, ",",
@@ -171,7 +202,8 @@ GreenIndexStatisticsData <- setRefClass(
                         kColumnStatisticsOutcome, ",",
                         kColumnValueType, ",",
                         kColumnKey, ",",
-                        kColumnValue, " ) ",
+                        kColumnValue, ",",
+                        kColumnTimeStamp, " ) ",
                         " VALUES ", " ( ", 
                         "'", stat.df[i, kColumnHashDigest], "',",
                         "'", stat.df[i, kColumnAssessment], "',",
@@ -184,6 +216,9 @@ GreenIndexStatisticsData <- setRefClass(
                         "'", stat.df[i, kColumnTopic], "',",
                         "'", stat.df[i, kColumnStatisticsTier], "',",
                         "'", stat.df[i, kColumnStatisticsScope], "',",
+                        "'", stat.df[i, kColumnCity], "',",
+                        "'", stat.df[i, kColumnDistrict], "',",
+                        "'", stat.df[i, kColumnSchool], "',",
                         "'", stat.df[i, kColumnStatisticsPerspective], "',",
                         "'", stat.df[i, kColumnStatisticsSample], "',",
                         "'", stat.df[i, kColumnStatisticsVariable], "',",
@@ -191,7 +226,9 @@ GreenIndexStatisticsData <- setRefClass(
                         "'", stat.df[i, kColumnStatisticsOutcome], "',",
                         "'", stat.df[i, kColumnValueType], "',",
                         "'", stat.df[i, kColumnKey], "',",
-                        stat.df[i, kColumnValue], ");")
+                        stat.df[i, kColumnValue], ",",
+                        "'", stat.df[i, kColumnTimeStamp], "');")
+          
           df <- database$GetQuery(SQL)
         } else {
           
@@ -206,6 +243,9 @@ GreenIndexStatisticsData <- setRefClass(
                         kColumnTopic, " = ", "'", stat.df[i, kColumnTopic], "', ",
                         kColumnStatisticsTier, " = ", "'", stat.df[i, kColumnStatisticsTier], "', ",
                         kColumnStatisticsScope, " = ", "'", stat.df[i, kColumnStatisticsScope], "', ",
+                        kColumnCity, " = ", "'", stat.df[i, kColumnCity], "', ",
+                        kColumnDistrict, " = ", "'", stat.df[i, kColumnDistrict], "', ",
+                        kColumnSchool, " = ", "'", stat.df[i, kColumnSchool], "', ",
                         kColumnStatisticsPerspective, " = ", "'", stat.df[i, kColumnStatisticsPerspective], "', ",
                         kColumnStatisticsSample, " = ", "'", stat.df[i, kColumnStatisticsSample], "', ",
                         kColumnStatisticsVariable, " = ", "'", stat.df[i, kColumnStatisticsVariable], "', ",
@@ -213,7 +253,8 @@ GreenIndexStatisticsData <- setRefClass(
                         kColumnStatisticsOutcome, " = ", "'", stat.df[i, kColumnStatisticsOutcome], "', ",
                         kColumnValueType, " = ", "'", stat.df[i, kColumnValueType], "', ",
                         kColumnKey, " = ", "'", stat.df[i, kColumnKey], "', ",
-                        kColumnValue, " = ", as.character(stat.df[i, kColumnValue]),
+                        kColumnValue, " = ", as.character(stat.df[i, kColumnValue]), ", ",
+                        kColumnTimeStamp, " = ", "'", stat.df[i, kColumnTimeStamp], "'",
                         " WHERE ", kColumnHashDigest, " = ", 
                         "'", stat.df[i, kColumnHashDigest], "';")
           df <- database$GetQuery(SQL)
@@ -307,7 +348,7 @@ GreenIndexStatisticsData <- setRefClass(
     
     ProcessJob = function(){
       
-      if (process[1, kColumnTODO] == "FALSE"){
+      if (process[1, kColumnTODO] == "FALSE" && RUN == kPilotRun ){
         return(NA)
         
       } else if (process[1, kColumnTODO] == "TRUE"){
@@ -333,16 +374,11 @@ GreenIndexStatisticsData <- setRefClass(
         
         algorithm <<- process[1, kColumnStatisticsAlgorithm]
         
-        
-        
         tiers <- process[1, kColumnStatisticsTier]
         tiers <- unlist(strsplit(tiers, kSeparator))
           
         perspectives <- process[1, kColumnStatisticsPerspective]
         perspectives <- unlist(strsplit(perspectives, kSeparator))
-        
-        
-        
         
         variables <- process[1, kColumnVariableName]
         variables <- unlist(strsplit(variables, kSeparator))
@@ -389,7 +425,6 @@ GreenIndexStatisticsData <- setRefClass(
                 scope.name <<- scopes[l] 
                 scope.df <- perspective.df[perspective.df[, tier.name] == 
                                              scope.name, ]
-                
                 # loop for sample
                 samples <- unique(scope.df[!is.na(scope.df[, perspective.name]), 
                                            perspective.name])
@@ -430,6 +465,15 @@ GreenIndexStatisticsData <- setRefClass(
       reworkjobs <- jobs$TODO
       RUN <<- jobs$RUN
       pilot <<- jobs$pilot
+      if (reworkall || reworkjobs) {
+        
+        district.table <- paste0(jobs$info$district$table, 
+                                 jobs$info$district$suffix)
+        district.df <<- database$ReadTable(district.table)
+        school.table <- paste0(jobs$info$school$table, 
+                                 jobs$info$school$suffix)
+        school.df <<- database$ReadTable(school.table)
+      }
       
       for (i in 1:length(jobs$table)){
         job <- jobs$table[[i]]
@@ -444,7 +488,6 @@ GreenIndexStatisticsData <- setRefClass(
           in.df <<- database$ReadTable(input.table)
           in.df <<- ColumnProcessDataFrame(in.df, job$input)
           
-          
           process.table <- paste0(job$process$table, job$process$suffix)
           process.df <- database$ReadTable(process.table)
           process.df <- process.df[
@@ -457,7 +500,6 @@ GreenIndexStatisticsData <- setRefClass(
           choice.code <<- job$choice$column$code
           choice.key <<- job$choice$column$key
           choice.df <<- choice.df[, c(choice.code, choice.key)]
-          
           
           output.table <<- paste0(job$output$table, job$output$suffix)
           

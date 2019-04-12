@@ -18,7 +18,9 @@ GreenIndexTransformData <- setRefClass(
     algorithm = "character",
     parameter = "character",
     variable.name = "character",
-    variable.type = "character"
+    variable.type = "character",
+    
+    RUN = 'character'
   ),
   
   methods = list(
@@ -75,7 +77,7 @@ GreenIndexTransformData <- setRefClass(
     
     
     TransformJob = function(){
-      if (transform[kColumnTODO][[1]] == "FALSE"){
+      if (transform[kColumnTODO][[1]] == "FALSE" &&  RUN == kPilotRun){
         return(NA)
       } else if (transform[kColumnTODO][[1]] == "TRUE"){
         
@@ -104,7 +106,7 @@ GreenIndexTransformData <- setRefClass(
       jobs <- config$GetTransformJob()
       reworkall <- config$IsReworkAll()
       reworkjobs <- jobs$TODO
-      
+      RUN <<- jobs$RUN
       for (i in 1:length(jobs$table)){
         job <- jobs$table[[i]]
         TODO <- job$TODO

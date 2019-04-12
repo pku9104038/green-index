@@ -2,6 +2,7 @@
 # transform to new variable for statistics
 transform:
   TODO: FALSE
+  RUN: "AUTO"   # "PILOT", "AUTO"
   table:
 
     # dummy transform table from assignment

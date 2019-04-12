@@ -77,6 +77,9 @@ kColumnAttribute <- "属性"
 kColumnTopic <- "主题"
 kColumnStatisticsTier <- "统计层级"
 kColumnStatisticsScope <- "统计范围"
+kColumnCity <- "市"
+kColumnDistrict <- "区"
+kColumnSchool <- "学校"
 kColumnStatisticsPerspective <- "统计视角"
 kColumnStatisticsSample <- "统计样本"
 kColumnStatisticsVariable <- "统计变量"
@@ -85,6 +88,7 @@ kColumnStatisticsOutcome <- "指标类型"
 kColumnValueType <- "数值类型"
 kColumnKey <- "键"
 kColumnValue <- "值"
+kColumnTimeStamp <- "时间戳"
 
 
 # constants for transform

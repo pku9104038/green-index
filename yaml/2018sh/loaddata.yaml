@@ -8,7 +8,7 @@ loaddata:
       TODO: FALSE
       xlsx: "绿色指标属性表.xlsx"
       sheet: "区信息表"
-      table: *kTableCity
+      table: *kTableDistrict
       suffix: *kTableRaw
       # select: # select columns
       #   - column.name
@@ -107,10 +107,10 @@ loaddata:
       suffix: ""
 
     -
-      TODO: FALSE
+      TODO: TRUE
       xlsx: "绿色指标属性表.xlsx"
-      sheet: "学校指数表"
-      table: *kTableIndexSchool
+      sheet: "数据查询表"
+      table: *kTableDataQuery
       suffix: ""
 
     -
@@ -121,12 +121,7 @@ loaddata:
       suffix: ""
 
 
-    -
-      TODO: FALSE
-      xlsx: "绿色指标属性表.xlsx"
-      sheet: "数据查询表"
-      table: *kTableDataQuery
-      suffix: ""
+
 
     -
       TODO: FALSE

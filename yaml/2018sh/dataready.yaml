@@ -14,7 +14,7 @@ dataready:
         suffix: *kTableJoin
         select:
         by: *kColumnStudentCode
-        <<: *kStatisticsAdd
+        # <<: *kStatisticsAdd
       join.type: "left" # "inner", left", "right", "full"
       out:
         table: *kRespondentST
@@ -31,7 +31,7 @@ dataready:
         suffix: *kTableJoin
         select:
         by: *kColumnParentCode
-        <<: *kStatisticsAdd
+        # <<: *kStatisticsAdd
       join.type: "left" # "inner", left", "right", "full"
       out:
         table: *kRespondentPA
@@ -49,7 +49,7 @@ dataready:
         suffix: *kTableJoin
         select:
         by: *kColumnTeacherCode
-        <<: *kStatisticsAdd
+        # <<: *kStatisticsAdd
       join.type: "left" # "inner", left", "right", "full"
       out:
         table: *kRespondentTE
