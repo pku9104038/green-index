@@ -13,9 +13,13 @@ GreenIndexQueryData <- setRefClass(
   
   fields = list(
     
-    database = "GreenIndexDatabase"
+    database = "GreenIndexDatabase",
+    data.scope = "list",
     
-    
+    alias.df = "data.frame",
+    dataset.df = "data.frame",
+
+    statistics.table = "character"
   ),
   
   methods = list(
@@ -23,137 +27,231 @@ GreenIndexQueryData <- setRefClass(
     Init = function(module.name, config.obj, database.obj){
       callSuper(module.name, config.obj)
       database <<- database.obj
+      
+      
+      
     },
     
-    TenLevelIndex = function() {
+    PrepareDataframe = function(){
+      jobs <- config$GetConfigJob()$dataquery
       
-      stat.df[, kColumnValue] <<- floor(stat.df[, kColumnValue]/10)
-      stat.df[stat.df[, kColumnValue] == 0, kColumnValue] <<-1
-      stat.df[, "msg"] <<- paste(stat.df[, kColumnAssessment],
-                                 stat.df[, kColumnGrade],
-                                 stat.df[, kColumnSubject],
-                                 stat.df[, kColumnDomain],
-                                 stat.df[, kColumnDimention],
-                                 stat.df[, kColumnGroup],
-                                 stat.df[, kColumnAttribute],
-                                 stat.df[, kColumnTopic],
-                                 stat.df[, kColumnStatisticsTier],
-                                 stat.df[, kColumnStatisticsScope],
-                                 stat.df[, kColumnStatisticsPerspective],
-                                 stat.df[, kColumnStatisticsSample],
-                                 stat.df[, kColumnStatisticsVariable],
-                                 stat.df[, kColumnStatisticsAlgorithm],
-                                 stat.df[, kColumnStatisticsOutcome],
-                                 stat.df[, kColumnValueType],
-                                 stat.df[, kColumnKey])
+      data.scope <<- jobs$pilot$scope
       
-      for (i in 1: nrow(stat.df)) {
-        stat.df[i, kColumnHashDigest] <<- digest(stat.df[i, "msg"], "sha256")
+      dataframe <- jobs$dataframe
+      alias.table <- paste0(dataframe$alias$table, 
+                            dataframe$alias$suffix)
+      alias.df <<- database$ReadTable(alias.table)
+      
+      dataset.table <- paste0(dataframe$dataset$table, 
+                              dataframe$dataset$suffix)
+      dataset.df <<- database$ReadTable(dataset.table)
+      
+      statistics.table <<- paste0(dataframe$statistics$table, 
+                                  dataframe$statistics$suffix)
+    },
+    
+    SetDataScope = function(scope) {
+      data.scope <<- scope
+    }, 
+    
+    
+    GetData = function(process) {
+      
+      LogDebug(paste("Query Data:", process[1, kColumnDataset]))
+      if (process[1, kColumnCity] == kColumnCity) {
+        process[1, kColumnCity] <- data.scope$city
       }
-      #stat.df[, kColumnHashDigest] <<- digest(stat.df[, "msg"], "sha256")
-      stat.df[, "msg"] <<- NULL
+      if (process[1, kColumnDistrict] == kColumnDistrict) {
+        process[1, kColumnDistrict] <- data.scope$district
+      }
+      if (process[1, kColumnSchool] == kColumnSchool) {
+        process[1, kColumnSchool] <- data.scope$school
+      }
       
+      clause.number <- 0
+      SQL <- paste0("SELECT * FROM ", statistics.table, " WHERE ")
       
-      # out.df <<- rbind(out.df, stat.df)
+      if (process[1, kColumnSubject] != kStringAll) {
+        SQL <- paste0(SQL, kColumnSubject, " = ", 
+                      "'", process[1, kColumnSubject], "'")
+        clause.number <- clause.number + 1
+      }
       
-    },
-    
-    ProcessJob = function(){
-      
-      if (process[1, kColumnTODO] == "FALSE"){
-        return(NA)
-        
-      } else if (process[1, kColumnTODO] == "TRUE"){
-        LogInfo(paste("Process",
-                      process[1, kColumnDomain], 
-                      process[1, kColumnDimention],
-                      process[1, kColumnGroup],
-                      process[1, kColumnAttribute],
-                      process[1, kColumnTopic],
-                      process[1, kColumnStatisticsTier],
-                      process[1, kColumnStatisticsPerspective],
-                      process[1, kColumnStatisticsAlgorithm],
-                      process[1, kColumnKey]))
-        
-        stat.df <<- in.df[in.df[, kColumnGrade] == process[1, kColumnGrade] &
-                            in.df[, kColumnSubject] == process[1, kColumnSubject] &
-                            in.df[, kColumnDomain] == process[1, kColumnDomain] &
-                            in.df[, kColumnDimention] == process[1, kColumnDimention] &
-                            in.df[, kColumnGroup] == process[1, kColumnGroup] &
-                            in.df[, kColumnAttribute] == process[1, kColumnAttribute] &
-                            in.df[, kColumnGroup] == process[1, kColumnGroup] &
-                            in.df[, kColumnTopic] == process[1, kColumnTopic],  ]
-        if (process[1, kColumnKey] != "ALL" && nrow(stat.df) > 0) {
-          stat.df <<- stat.df[stat.df[, kColumnKey] == process[1, kColumnKey], ]
+      if (process[1, kColumnDomain] != kStringAll) {
+        if (clause.number > 0) {
+          SQL <- paste0(SQL, " AND ")
         }
+        SQL <- paste0(SQL, kColumnDomain, " = ", 
+                      "'", process[1, kColumnDomain], "'")
+        clause.number <- clause.number + 1
+      }
+      
+      if (process[1, kColumnDimention] != kStringAll) {
+        if (clause.number > 0) {
+          SQL <- paste0(SQL, " AND ")
+        }
+        SQL <- paste0(SQL, kColumnDimention, " = ", 
+                      "'", process[1, kColumnDimention], "'")
+        clause.number <- clause.number + 1
+      }
+      
+      if (process[1, kColumnGroup] != kStringAll) {
+        if (clause.number > 0) {
+          SQL <- paste0(SQL, " AND ")
+        }
+        SQL <- paste0(SQL, kColumnGroup, " = ", 
+                      "'", process[1, kColumnGroup], "'")
+        clause.number <- clause.number + 1
+      }
+      
+      if (process[1, kColumnAttribute] != kStringAll) {
+        if (clause.number > 0) {
+          SQL <- paste0(SQL, " AND ")
+        }
+        SQL <- paste0(SQL, kColumnAttribute, " = ", 
+                      "'", process[1, kColumnAttribute], "'")
+        clause.number <- clause.number + 1
+      }
+      
+      if (process[1, kColumnTopic] != kStringAll) {
+        if (clause.number > 0) {
+          SQL <- paste0(SQL, " AND ")
+        }
+        SQL <- paste0(SQL, kColumnTopic, " = ", 
+                      "'", process[1, kColumnTopic], "'")
+        clause.number <- clause.number + 1
+      }
+      
+      if (process[1, kColumnStatisticsTier] != kStringAll) {
+        if (clause.number > 0) {
+          SQL <- paste0(SQL, " AND ")
+        }
+        SQL <- paste0(SQL, kColumnStatisticsTier, " = ", 
+                      "'", process[1, kColumnStatisticsTier], "'")
+        clause.number <- clause.number + 1
+      }
+      
+      if (process[1, kColumnCity] != kStringAll) {
+        if (clause.number > 0) {
+          SQL <- paste0(SQL, " AND ")
+        }
+        SQL <- paste0(SQL, kColumnCity, " = ", 
+                      "'", process[1, kColumnCity], "'")
+        clause.number <- clause.number + 1
+      }
+      
+      if (process[1, kColumnDistrict] != kStringAll) {
+        if (clause.number > 0) {
+          SQL <- paste0(SQL, " AND ")
+        }
+        SQL <- paste0(SQL, kColumnDistrict, " = ", 
+                      "'", process[1, kColumnDistrict], "'")
+        clause.number <- clause.number + 1
+      }
+      
+      if (process[1, kColumnSchool] != kStringAll) {
+        if (clause.number > 0) {
+          SQL <- paste0(SQL, " AND ")
+        }
+        SQL <- paste0(SQL, kColumnSchool, " = ", 
+                      "'", process[1, kColumnSchool], "'")
+        clause.number <- clause.number + 1
+      }
+      
+      if (process[1, kColumnStatisticsSample] != kStringAll) {
+        if (clause.number > 0) {
+          SQL <- paste0(SQL, " AND ")
+        }
+        SQL <- paste0(SQL, kColumnStatisticsSample, " = ", 
+                      "'", process[1, kColumnStatisticsSample], "'")
+        clause.number <- clause.number + 1
+      }
+      
+      if (process[1, kColumnStatisticsIndexType] != kStringAll) {
+        if (clause.number > 0) {
+          SQL <- paste0(SQL, " AND ")
+        }
+        SQL <- paste0(SQL, kColumnStatisticsIndexType, " = ", 
+                      "'", process[1, kColumnStatisticsIndexType], "'")
+        clause.number <- clause.number + 1
+      }
+      
+      if (process[1, kColumnKey] != kStringAll) {
+        if (clause.number > 0) {
+          SQL <- paste0(SQL, " AND ")
+        }
+        SQL <- paste0(SQL, kColumnKey, " = ", 
+                      "'", process[1, kColumnKey], "'")
+        clause.number <- clause.number + 1
+      }
+      
+      SQL <- paste0(SQL, ";")
+      
+      LogDebug(SQL)
+      
+      database$Connect()
+      df <- database$GetQuery(SQL)
+      database$Disconnect()
+      
+      if (nrow(df) > 0) {
         
-        if (nrow(stat.df) > 0){
-          stat.df[, kColumnStatisticsAlgorithm] <<- process[1, kColumnStatisticsAlgorithm]
-          stat.df[, kColumnStatisticsOutcome] <<- process[1, kColumnStatisticsOutcome]
-          stat.df[, kColumnValueType] <<- process[1, kColumnValueType]
-          
-          if (process[1, kColumnStatisticsAlgorithm] == kAlgorithmTenLevelIndex) {
-            TenLevelIndex()
+        df[, kColumnName] <- df[, process[1, kColumnName]]
+        if (process[1, kColumnDrop] != kStringNone) {
+          drop <- unlist(strsplit(process[1, kColumnDrop],kSeparator))
+          for (j in 1:length(drop)) {
+            df <- df[df[, kColumnName] != drop[j], ]
           }
-          
-          InsertStatDataframe()
-          
         }
         
+        if (process[1, kColumnKeep] != kStringAll) {
+          tmp.df <- data.frame()
+          keep <- unlist(strsplit(process[1, kColumnKeep], kSeparator))
+          for (j in 1:length(keep)) {
+            tmp.df <- rbind(tmp.df, df[df[, kColumnName] == keep[j], ])
+          }
+          df <- tmp.df
+        }
+        
+        df <- merge(df, alias.df, by = kColumnName, all.x = TRUE)
+        if (process[1, kColumnAliasType] == kAliasTypeTotal) {
+          df[, kColumnAlias] <- df[, kAliasTypeTotal]
+        } else if  (process[1, kColumnAliasType] == kAliasTypeAnonymous) {
+          df[, kColumnAlias] <- df[, kAliasTypeAnonymous]
+        } else {
+          df[, kColumnAlias] <- df[, kColumnName]
+        }
+        
+        df[, c(kAliasTypeTotal, kAliasTypeAnonymous)] <- NULL
+        
+        
+        if (df[1, kColumnValueType] == kValueTypeInteger) {
+          df[, kColumnLabel] <- as.character(floor(df[, kColumnValue]))
+        } else if (df[1, kColumnValueType] == kValueTypePercent) {
+          df[, kColumnLabel] <- as.character(round(df[, kColumnValue], 
+                                                   kPercentDigits))
+        }
       }
+      
+      
+    
+      return(df)
+                   
     },
     
-    IndexationData = function(){
-      LogInfo("Indexation Data!")
+    QueryData = function(dataset.code) {
       
-      # get job configuration
-      jobs <- config$GetConfigJob()$indexation
-      reworkall <- config$IsReworkAll()
-      reworkjobs <- jobs$TODO
-      
-      for (i in 1:length(jobs$table)){
-        job <- jobs$table[[i]]
-        TODO <- job$TODO
-        
-        if (TODO || reworkjobs || reworkall) {
-          
-          # read input, process data table
-          input.table.name <- job$input$table
-          input.table.suffix <- job$input$suffix
-          input.table <- paste0(job$input$table, job$input$suffix)
-          in.df <<- database$ReadTable(input.table)
-          in.df <<- ColumnProcessDataFrame(in.df, job$input)
-          
-          
-          process.table <- paste0(job$process$table, job$process$suffix)
-          process.df <- database$ReadTable(process.table)
-          process.df <- process.df[
-            process.df[, kColumnTableName] == input.table.name, 
-            ]
-          process.df <- process.df[
-            process.df[, kColumnTableSuffix] == input.table.suffix,
-            ]
-          
-          
-          output.table <<- paste0(job$output$table, job$output$suffix)
-          # out.df <<- data.frame()
-          
-          LogInfo(paste("Indexation", input.table, "through", process.table,
-                        "into", output.table))
-          
-          k <- 1
-          while (k <= nrow(process.df)) {
-            process <<- process.df[k, ]
-            stat.df <<- data.frame()
-            ProcessJob()
-            k <- k + 1
-          }
-          
-          # database$WriteTable(out.df, output.table)
-        }
-        
+      process <- dataset.df[dataset.df[, kColumnDataset] == dataset.code, ]
+      data.df <- data.frame()
+      i <- 1
+      while (i <= nrow(process)) {
+        df <- GetData(data.frame(process[i, ]))
+        data.df <- rbind(data.df, df)
+        i <- i + 1
       }
+      return(data.df)
       
     }
+    
+
   )
 )

@@ -69,7 +69,7 @@ GreenIndexStatisticsData <- setRefClass(
       stat.list[kColumnStatisticsSample] <<- ""
       stat.list[kColumnStatisticsVariable] <<- ""
       stat.list[kColumnStatisticsAlgorithm] <<- process[1, kColumnStatisticsAlgorithm]
-      stat.list[kColumnStatisticsOutcome] <<- process[1, kColumnStatisticsOutcome]
+      stat.list[kColumnStatisticsIndexType] <<- process[1, kColumnStatisticsIndexType]
       stat.list[kColumnValueType] <<- process[1, kColumnValueType]
       stat.list[kColumnKey] <<- ""
       stat.list[kColumnValue] <<- NA
@@ -95,7 +95,7 @@ GreenIndexStatisticsData <- setRefClass(
                    stat.list[kColumnStatisticsSample],
                    stat.list[kColumnStatisticsVariable],
                    stat.list[kColumnStatisticsAlgorithm],
-                   stat.list[kColumnStatisticsOutcome],
+                   stat.list[kColumnStatisticsIndexType],
                    stat.list[kColumnValueType],
                    stat.list[kColumnKey])
       stat.list[kColumnHashDigest] <<- digest(msg, algo = "sha256")
@@ -207,7 +207,7 @@ GreenIndexStatisticsData <- setRefClass(
                         kColumnStatisticsSample, ",",
                         kColumnStatisticsVariable, ",",
                         kColumnStatisticsAlgorithm, ",",
-                        kColumnStatisticsOutcome, ",",
+                        kColumnStatisticsIndexType, ",",
                         kColumnValueType, ",",
                         kColumnKey, ",",
                         kColumnValue, ",",
@@ -231,7 +231,7 @@ GreenIndexStatisticsData <- setRefClass(
                         "'", stat.df[i, kColumnStatisticsSample], "',",
                         "'", stat.df[i, kColumnStatisticsVariable], "',",
                         "'", stat.df[i, kColumnStatisticsAlgorithm], "',",
-                        "'", stat.df[i, kColumnStatisticsOutcome], "',",
+                        "'", stat.df[i, kColumnStatisticsIndexType], "',",
                         "'", stat.df[i, kColumnValueType], "',",
                         "'", stat.df[i, kColumnKey], "',",
                         stat.df[i, kColumnValue], ",",
@@ -258,7 +258,7 @@ GreenIndexStatisticsData <- setRefClass(
                         kColumnStatisticsSample, " = ", "'", stat.df[i, kColumnStatisticsSample], "', ",
                         kColumnStatisticsVariable, " = ", "'", stat.df[i, kColumnStatisticsVariable], "', ",
                         kColumnStatisticsAlgorithm, " = ", "'", stat.df[i, kColumnStatisticsAlgorithm], "', ",
-                        kColumnStatisticsOutcome, " = ", "'", stat.df[i, kColumnStatisticsOutcome], "', ",
+                        kColumnStatisticsIndexType, " = ", "'", stat.df[i, kColumnStatisticsIndexType], "', ",
                         kColumnValueType, " = ", "'", stat.df[i, kColumnValueType], "', ",
                         kColumnKey, " = ", "'", stat.df[i, kColumnKey], "', ",
                         kColumnValue, " = ", as.character(stat.df[i, kColumnValue]), ", ",
@@ -423,7 +423,7 @@ GreenIndexStatisticsData <- setRefClass(
               if (RUN == kMileStone && tier.name == kTierSchool) {
                 perspective.df <- 
                   perspective.df[perspective.df[, kTierDistrict] == 
-                                                   pilot$sample$district, ]
+                                                   pilot$scope$district, ]
               }
               scopes <- unique(perspective.df[!is.na(perspective.df[, tier.name]), 
                                               tier.name])

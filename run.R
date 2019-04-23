@@ -2,6 +2,7 @@
 
 options(java.parameters = "-Xmx8g")  # set java heap size before run.R
 
+# options(tinytex.verbose = TRUE)
 
 ## set instance config for global.R
 gi.dir.script <- "R/pipeline/"
@@ -23,10 +24,16 @@ gi.dir.schedule <- "R/schedule/"
 if(!exists("scheduler.loaded", mode = "variable")) {
   source(paste0(gi.dir.schedule,"scheduler.R"))
 }
+
 ## init scheduler
 gio.scheduler <- GreenIndexScheduler$new()
 gio.scheduler$Init("Scheduler", gio.config)
 
-
 ## Running
 gio.scheduler$Run()
+
+# gio.scheduler$TestQueryData()
+
+# gio.scheduler$TestPlotFigure()
+
+

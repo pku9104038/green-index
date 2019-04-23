@@ -1,13 +1,13 @@
 
 # converge tables
 convergetable:
-  TODO: TRUE
+  TODO: FALSE
   # TRUE, igonre TODO: FALSE flags, rework jobs
   table:
     -
-      TODO: TRUE
+      TODO: FALSE
       input:
         <<: *kTableStatisticsIndex
       output:
-        table: "指标系数"
+        table: *kStatisticsIndex
         suffix: *kTableConverge

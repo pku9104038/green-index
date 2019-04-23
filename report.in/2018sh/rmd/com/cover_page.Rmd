@@ -1,0 +1,25 @@
+
+<!-- cover page -->
+
+\pagenumbering{gobble}
+&nbsp;
+\vspace{25mm}
+
+\mytitle{`r gio.R$GetReportYear()``r gio.R$GetReportProject()`}
+\mytitle{`r gio.R$GetReportName()`}
+
+\mysubtitle{`r paste(gio.R$GetReportUnitScope(), gio.R$GetReportSubject())`}
+
+\vfill
+\myproducer{`r gio.R$GetReportCopyRight()$producer[[1]]`}
+\myproducer{`r gio.R$GetReportCopyRight()$producer[[2]]`}
+\myproducer{`r gio.R$GetReportCopyRight()$date`}
+
+\vspace{8mm}
+\mycopyright{`r gio.R$GetReportCopyRight()$copyright`}
+
+\clearpage
+&nbsp;
+\clearpage
+
+<!-- end of cover page -->

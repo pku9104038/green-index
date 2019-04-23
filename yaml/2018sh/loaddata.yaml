@@ -35,6 +35,14 @@ loaddata:
       sheet: "学校信息表"
       table: *kTableSchool
       suffix: *kTableRaw
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "别名表"
+      table: *kTableAlias
+      suffix: ""
+
     -
       TODO: FALSE
       xlsx: "绿色指标属性表.xlsx"
@@ -114,14 +122,11 @@ loaddata:
       suffix: ""
 
     -
-      TODO: FALSE
+      TODO: TRUE
       xlsx: "绿色指标属性表.xlsx"
       sheet: "绘图参数表"
       table: *kTablePlotParameter
       suffix: ""
-
-
-
 
     -
       TODO: FALSE

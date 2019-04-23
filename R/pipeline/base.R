@@ -124,7 +124,7 @@ GreenIndexBase <- setRefClass(
                                   filter.type, filter.value){
       n1 <- nrow(df)
       filter.df <- data.frame()
-      if (filter.name == kFilterALL) {
+      if (filter.name == kStringAll) {
         filter.df <- df
       } else {
         filter.value <- unlist(strsplit(filter.value, kSeparator))

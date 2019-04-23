@@ -1,0 +1,10 @@
+
+<!-- header footer -->
+
+\pagenumbering{arabic}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[LE,RO]{\footnotesize `r gio.R$GetReportHeader()`}
+\fancyfoot[C]{\footnotesize \thepage}
+
+<!-- end of header footer -->
+

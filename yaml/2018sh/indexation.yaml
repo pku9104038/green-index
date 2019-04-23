@@ -1,11 +1,11 @@
 
 # indexation coefficents
 indexation:
-  TODO: TRUE
+  TODO: FALSE
 
   table:
     -
-      TODO: TRUE
+      TODO: FALSE
       input:
         table: *kRespondentST
         suffix: *kTableStatistics
@@ -18,7 +18,7 @@ indexation:
 
 
     -
-      TODO: TRUE
+      TODO: FALSE
       input:
         table: *kRespondentPA
         suffix: *kTableStatistics
@@ -31,7 +31,7 @@ indexation:
 
 
     -
-      TODO: TRUE
+      TODO: FALSE
       input:
         table: *kRespondentTE
         suffix: *kTableStatistics

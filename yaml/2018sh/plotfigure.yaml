@@ -1,0 +1,7 @@
+
+# plot figure setting
+plotfigure:
+  <<: *kPilotRun
+  <<: *kPrepareDataframe
+  test:
+    - "plot.bar.onechild.city.perspective"

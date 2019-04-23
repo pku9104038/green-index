@@ -1,0 +1,9 @@
+
+<!-- global setting -->
+
+<!-- \graphicspath{ {`r gio.R$GetReportOutFigDirAbs()`} } -->
+
+<!-- \graphicspath{ {/Users/wangpeifeng/OneDrive/zuoyue/project/2018绿色指标分析/green-index/report.in/2018sh/fig/} } -->
+
+
+<!-- end of global setting -->

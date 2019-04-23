@@ -60,14 +60,76 @@ kTRUE <- "是"
 kFALSE <- "否"
 kNumericNA <- -1
 kHashDigestDefault <- "27f4468f070e6f28b58e39fda7293bf8c3fa6fb7"
-kFilterALL <- "ALL"
+kStringAll <- "ALL"
+kStringNone <- "NONE"
+kStringNull<- "NULL"
 kPilotRun <- "PILOT"        # city, total only
 kMileStone <- "MILESTONE"   # city, district all  and school total
 kAutoRun <- "AUTO"          # all tier, all perspective 
+kValueTypeInteger <- "整数"
+kValueTypePercent <- "百分数"
+kPercentDigits <- 0
+kSortAsc <- "ASC"
+kSortAscAll <- "ASC_ALL"
+kSortDesc <- "DESC"
+kSortDescAll <- "DESC_ALL"
+kPositionDodge <- "dodge"
+kPositionStack <- "stack"
+kCoordFlip <- "flip"
+kCoordPolar <- "polar"
 
-# table names
+kPlotGeomBarDodge <- "并列条形图"
+kPlotGeomBarStack <- "堆叠条形图"
+kPlotGeomScatter <- "散点图"
+kPlotGeomBox <- "盒须图"
+
+# table for plot
+kTablePlotParameter <- "属性表绘图参数"
+kColumnPlotCode <- "plot_code"
+kColumnPlotTitle <- "plot_title"
+kColumnPlotWidth <- "plot_width"
+kColumnPlotHeight <- "plot_height"
+kColumnPlotCoord <- "plot_coord"
+kColumnPlotGeom <- "plot_geom"
+kColumnPlotBarPosition <- "plot_bar_position"
+kColumnPlotBarWidth <- "plot_bar_width"
+kColumnAxisX <- "plot_x"
+kColumnSortX <- "plot_sort_x"
+kColumnOrderX <- "plot_order_x"
+kColumnLabelX <- "plot_label_x"
+kColumnTextAngleX <- "plot_text_angle_x"
+kColumnTextSizeX <- "plot_text_size_x"
+kColumnAxisY <- "plot_y"
+kColumnLabelY <- "plot_label_y"
+kColumnDiscreteY <- "plot_discrete_y"
+kColumnLimitY <- "plot_limit_y"
+kColumnLabel <- "plot_label"
+kColumnLabelPosition <- "plot_label_position"
+kColumnLabelColour <- "plot_label_colour"
+kColumnLabelSize <- "plot_label_size"
+kColumnLabelVjust <- "plot_label_vjust"
+kColumnLabelHjust <- "plot_label_hjust"
+kColumnFill <- "plot_fill" 
+kColumnFillOrder <- "plot_fill_order"
+kColumnLegendWidth <- "plot_legend_width"
+kColumnLegendHeight <- "plot_legend_height"
+kColumnLegendPosition <- "plot_legend_position"
+kColumnLegendDirection <- "plot_legend_direction"
+kColumnLegendFontSize <- "plot_legend_font_size"
+
+
+# table for data query
 kTableDataQuery <- "属性表数据查询"
-kColumnDataQueryGroup <- "数据查询组合"
+kColumnDataset <- "数据集"
+kColumnAliasType <- "别名类型"
+kColumnAlias <- "别名"
+kColumnName <- "名称"
+kColumnDrop <- "忽略值"
+kColumnKeep <- "保留值"
+
+kAliasTypeTotal <- "统称"
+kAliasTypeName <- "名称"
+kAliasTypeAnonymous <- "匿名"
 
 # column name of the output data table
 kColumnHashDigest <- "哈希值"
@@ -88,7 +150,7 @@ kColumnStatisticsPerspective <- "统计视角"
 kColumnStatisticsSample <- "统计样本"
 kColumnStatisticsVariable <- "统计变量"
 kColumnStatisticsAlgorithm <- "统计算法"
-kColumnStatisticsOutcome <- "指标类型"
+kColumnStatisticsIndexType <- "指标类型"
 kColumnValueType <- "数值类型"
 kColumnKey <- "键"
 kColumnValue <- "值"
@@ -218,9 +280,24 @@ if (!exists("convergetable.loaded", mode = "variable")){
   source(paste0(gi.dir.script,"convergetable.R"))
 }
 
+# source querydata.R
+if (!exists("querydata.loaded", mode = "variable")){
+  source(paste0(gi.dir.script,"querydata.R"))
+}
+
+# source plotfigure.R
+if (!exists("plotfigure.loaded", mode = "variable")){
+  source(paste0(gi.dir.script,"plotfigure.R"))
+}
+
+# source report.R
+if (!exists("report.loaded", mode = "variable")){
+  source(paste0(gi.dir.script,"report.R"))
+}
+
 ####################################
 
-## create global objects
+## create global green index objects
 
 gio.config <- GreenIndexConfig$new()
 gio.yaml <- GreenIndexYaml$new()
@@ -239,6 +316,9 @@ gio.dataready <- GreenIndexDataReady$new()
 gio.statistics <- GreenIndexStatisticsData$new()
 gio.indexation <- GreenIndexIndexationData$new()
 gio.converge <- GreenIndexConvergeTable$new()
+# gio.querydata <- GreenIndexQueryData$new()
+gio.plotfigure <- GreenIndexPlotFigure$new()
+gio.R <- GreenIndexReport$new()
 
 ## Init global objects
 gio.config$Init("Config", gi.config.yaml)
@@ -258,5 +338,12 @@ gio.dataready$Init("DataReady", gio.config, gio.database)
 gio.statistics$Init("StatisticsData", gio.config, gio.database)
 gio.indexation$Init("IndexationData", gio.config, gio.database)
 gio.converge$Init("ConvergeTable", gio.config, gio.database)
+#gio.querydata$Init("QueryData", gio.config, gio.database)
+gio.plotfigure$Init("PlotFigure", gio.config, gio.database)
+gio.R$Init("Report", gio.config, gio.database)
 
-
+## Data prepare
+gio.loaddata$LoadData()
+#gio.querydata$PrepareDataframe()
+# gio.plotfigure$PrepareDataframe()
+gio.R$PrepareDataframe()

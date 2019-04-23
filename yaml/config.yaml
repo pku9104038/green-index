@@ -1,8 +1,11 @@
 ---
 # assessment name and job code
 asmt:
-  job: "2018sh"
-  name: "2018年上海中小学学业质量绿色指标"
+  job: &kAssessmentJob
+    - "2018sh"
+  name: &kAssessmentName
+    - "2018年上海中小学学业质量绿色指标"
+
 
 # work directories
 dir:
@@ -12,16 +15,15 @@ dir:
   data.out: "data.out/"
   report.in: "report.in/"
   report.out: "report.out/"
-  latex: "tex/"
   rmarkdown: "rmd/"
-  picture: "pic/"
-  plot: "plot/"
+  figure: "fig/"
+  common: "com/"
   log: "log/"
 
 # log setting
 log:
   level: "DEBUG"  # "WARN", "INFO", "DEBUG"
-  out: "File"  # "Console", "File"
+  out: "Console"  # "Console", "File"
 
 # database config
 database:
@@ -45,8 +47,10 @@ jobs:
     - "statistics.yaml"      # statistics data
     - "indexation.yaml"      #
     - "convergetable.yaml"   #
+    - "dataquery.yaml"
+    - "plotfigure.yaml"
+    - "report.yaml"
 
 
 # auto reworkall switch
-reworkall: TRUE  # TRUE, igonre TODO: FALSE flags, rework all jobs
-...
+reworkall: FALSE  # TRUE, igonre TODO: FALSE flags, rework all jobs

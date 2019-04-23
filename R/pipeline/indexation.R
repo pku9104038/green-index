@@ -43,7 +43,7 @@ GreenIndexIndexationData <- setRefClass(
                    stat.df[, kColumnStatisticsSample],
                    stat.df[, kColumnStatisticsVariable],
                    stat.df[, kColumnStatisticsAlgorithm],
-                   stat.df[, kColumnStatisticsOutcome],
+                   stat.df[, kColumnStatisticsIndexType],
                    stat.df[, kColumnValueType],
                    stat.df[, kColumnKey])
       
@@ -89,7 +89,7 @@ GreenIndexIndexationData <- setRefClass(
         
         if (nrow(stat.df) > 0){
           stat.df[, kColumnStatisticsAlgorithm] <<- process[1, kColumnStatisticsAlgorithm]
-          stat.df[, kColumnStatisticsOutcome] <<- process[1, kColumnStatisticsOutcome]
+          stat.df[, kColumnStatisticsIndexType] <<- process[1, kColumnStatisticsIndexType]
           stat.df[, kColumnValueType] <<- process[1, kColumnValueType]
           
           if (process[1, kColumnStatisticsAlgorithm] == kAlgorithmTenLevelIndex) {

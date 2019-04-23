@@ -1,0 +1,72 @@
+
+# report setting
+report:
+  TODO: FALSE
+  RUN: "PILOT"  # "AUTO", "PILOT"
+  output:
+    format: "pdf_document"
+    ext: ".pdf"
+    plot: "pdf"
+    splice: "splice.rmd"
+    prerender: "prerender.rmd"
+    render: "render.rmd"
+        #-
+        #  format: "word_document"
+        #  ext: ".docx"
+        #  plot: "png"
+  <<: *kCopyRight
+  <<: *kPilotRun
+  <<: *kPrepareDataframe
+
+  report:
+    -
+      TODO: TRUE
+      name: "绿色指标基础数据报告"
+      tier: *kStatisticsTierCity
+      subdir: "base"
+      subject: ""
+      rmarkdown:
+        - "base.rmd"
+        - "global_setting.rmd"
+        - "cover_page.rmd"
+        - "head_foot.rmd"
+        - "report_preface.rmd"
+        - "table_of_contents.rmd"
+        - "project_summary.rmd"
+        - "city_base_chapter4.rmd"
+      plot:
+        - plot.bar.onechild.city.perspective
+      plot.multiple:
+        - plot.bar.onechild.city.perspective
+      query.data:
+        - query.data.sleep.hours.city.perspective
+
+    -
+      TODO: FALSE
+      name: "绿色指标学科测试分析报告"
+      tier: *kStatisticsTierDistrict
+      subdir: "base"
+      subject: "数学"
+      rmarkdown:
+        - "base.rmd"
+        - "global_setting.rmd"
+        - "cover_page.rmd"
+        - "head_foot.rmd"
+        - "report_preface.rmd"
+        - "table_of_contents.rmd"
+        - "project_summary.rmd"
+
+    -
+      TODO: FALSE
+      name: "绿色指标基础数据报告"
+      tier: *kStatisticsTierSchool
+      subdir: "base"
+      subject: ""
+      rmarkdown:
+        - "base.rmd"
+        - "global_setting.rmd"
+        - "cover_page.rmd"
+        - "head_foot.rmd"
+        - "report_preface.rmd"
+        - "table_of_contents.rmd"
+        - "project_summary.rmd"

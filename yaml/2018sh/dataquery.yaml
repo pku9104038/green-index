@@ -1,0 +1,7 @@
+
+# data query setting
+dataquery:
+  <<: *kPilotRun
+  <<: *kPrepareDataframe
+  test:
+    - "plot.bar.learning.motivation.confidence.city.perspective"

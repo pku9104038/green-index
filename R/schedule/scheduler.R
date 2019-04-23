@@ -17,7 +17,7 @@ GreenIndexScheduler <- setRefClass(
   #  module = "character"
   #),
   
-  
+
   methods = list(
     
     test = function(){
@@ -34,9 +34,11 @@ GreenIndexScheduler <- setRefClass(
     
     DataPrep = function(){
       
+      # gio.loaddata$LoadData()
+      
       gio.createtable$CreateTable()
       
-      gio.loaddata$LoadData()
+      
       
       gio.dictionary$Dictionary()
       
@@ -63,15 +65,41 @@ GreenIndexScheduler <- setRefClass(
       gio.converge$ConvergeTable()
     },
     
+    Report = function() {
+      gio.R$Report()
+    },
+    
     Run = function(){
       
       LogInfo("Start running!")
-      gio.config$InitJobs()
+      #gio.config$InitJobs()
       
       DataPrep()
       
       DataTransform()
       
+      Report()
+      
+    },
+    
+    TestQueryData = function(){
+      
+      jobs <- config$GetConfigJob()$dataquery
+      test <- jobs$test
+      for (i in 1:length(test)) {
+        df <- gio.querydata$QueryData(test[i])
+        print(df)
+      }
+    },
+    
+    TestPlotFigure = function(){
+      
+      jobs <- config$GetConfigJob()$plotfigure
+      test <- jobs$test
+      for (i in 1:length(test)) {
+        figure <- gio.plotfigure$PlotFigure("report.out/2018sh/fig/", test[[i]])
+        
+      }
     }
     
   )

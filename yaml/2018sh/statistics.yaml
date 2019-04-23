@@ -1,7 +1,7 @@
 
 # statistics of variables, coefficents, scores
 statistics:
-  TODO: TRUE
+  TODO: FALSE
   RUN: "MILESTONE"  # "AUTO", "PILOT", "MILESTONE"
   <<: *kPilotRun
   info:
@@ -16,7 +16,7 @@ statistics:
 
     # transform
     -
-      TODO: TRUE
+      TODO: FALSE
       input:
         table: *kRespondentST
         suffix: *kTableReady
@@ -34,7 +34,7 @@ statistics:
           key: *kColumnQuestionChoice
 
     -
-      TODO: TRUE
+      TODO: FALSE
       input:
         table: *kRespondentST
         suffix: *kTableReady
@@ -53,7 +53,7 @@ statistics:
 
 
     -
-      TODO: TRUE
+      TODO: FALSE
       input:
         table: *kRespondentPA
         suffix: *kTableReady
@@ -71,7 +71,7 @@ statistics:
           key: *kColumnQuestionChoice
 
     -
-      TODO: TRUE
+      TODO: FALSE
       input:
         table: *kRespondentPA
         suffix: *kTableReady
@@ -89,7 +89,7 @@ statistics:
           key: *kColumnQuestionChoice
 
     -
-      TODO: TRUE
+      TODO: FALSE
       input:
         table: *kRespondentTE
         suffix: *kTableReady
@@ -107,7 +107,7 @@ statistics:
           key: *kColumnQuestionChoice
 
     -
-      TODO: TRUE
+      TODO: FALSE
       input:
         table: *kRespondentTE
         suffix: *kTableReady

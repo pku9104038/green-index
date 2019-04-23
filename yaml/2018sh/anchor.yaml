@@ -27,6 +27,13 @@ kRespondent:
   - &kRespondentPR
     "校长"
 
+kStatistics:
+  - &kStatisticsIndex
+    "指标系数"
+  - &kStatisticsScore
+    "学业成绩"
+
+
 kTableSubjectRespondent: &kTableSubjectRespondent
   table:
     - *kRespondentST
@@ -61,12 +68,10 @@ kTableAttribute:
     属性表学校系数
   - &kTableIndexRegion
     属性表区域指数
-  - &kTableIndexSchool
-    属性表学校指数
-  - &kTablePlotParameter
-    属性表绘图参数
   - &kTableDataQuery
     属性表数据查询
+  - &kTablePlotParameter
+    属性表绘图参数
 
 
 kTableInfomation:
@@ -74,6 +79,8 @@ kTableInfomation:
     信息表区
   - &kTableSchool
     信息表学校
+  - &kTableAlias
+    信息表别名
   - &kTableStudent
     信息表学生
   - &kTableParent
@@ -212,12 +219,12 @@ kPilotRun: &kPilotRun
       - "总体"
     tier:
       - "市"
-    sample:
+    scope:
       city:
         - "上海市"
       district:
         - "长宁区"
-      shcool:
+      school:
         - "上海市延安初级中学"
 
 
@@ -277,3 +284,35 @@ kTableStatisticsIndex: &kTableStatisticsIndex
     -
       name: *kSubjectAR
       suffix: *kTableIndex
+
+
+kCopyRight: &kCopyRight
+  copyright:
+    year: "2018年度"
+    project: "上海市中小学学业质量"
+    producer:
+      - "上海市教育委员会教学研究室"
+      - "上海市教育委员会基础教育质量监测中心"
+    date: "二〇一九年七月"
+    statment: "版权声明：本报告版权属于上海市教育委员会教学研究室，未得到上海市教育委员会教学研究室同意，不得使用或公开报告的任何内容"
+
+kPrepareDataframe: &kPrepareDataframe
+  dataframe:
+    plot:
+      table: *kTablePlotParameter
+      suffix: ""
+    dataset:
+      table: *kTableDataQuery
+      suffix: ""
+    alias:
+      table: *kTableAlias
+      suffix: ""
+    statistics:
+      table: *kStatisticsIndex
+      suffix: *kTableConverge
+    district:
+      table: *kTableDistrict
+      suffix: *kTableRaw
+    school:
+      table: *kTableSchool
+      suffix: *kTableJoin

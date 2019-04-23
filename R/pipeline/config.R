@@ -11,6 +11,7 @@ GreenIndexConfig <- setRefClass(
   "GreenIndexConfig",
   fields = list(
     module = "character",
+    config.yaml = "character",
     config = "list",
     job = "list"
   ),
@@ -58,6 +59,24 @@ GreenIndexConfig <- setRefClass(
     GetDirDataIn = function(){
       return(paste0(config$dir$data.in, GetAssessmentJob(),"/"))
     },
+    GetDirDataOut = function(){
+      return(paste0(config$dir$data.out, GetAssessmentJob(),"/"))
+    },
+    GetDirReportIn = function(){
+      return(paste0(config$dir$report.in, GetAssessmentJob(),"/"))
+    },
+    GetDirReportOut = function(){
+      return(paste0(config$dir$report.out, GetAssessmentJob(),"/"))
+    },
+    GetDirFigure = function(){
+      return(config$dir$figure)
+    },
+    GetDirRmarkdown = function(){
+      return(config$dir$rmarkdown)
+    },
+    GetDirCommon = function(){
+      return(config$dir$common)
+    },
     
     # Get logger config
     GetLogLevel = function(){
@@ -101,7 +120,9 @@ GreenIndexConfig <- setRefClass(
     },
     
     # Init 
-    Init = function(module.name, config.yaml){
+    Init = function(module.name, config.file){
+      config.yaml <<- config.file
+      
       LoadConfig(config.yaml)
       
       module <<- module.name
@@ -119,6 +140,8 @@ GreenIndexConfig <- setRefClass(
       
       setLevel(loglevel, module)
       LogInfo(paste0("Init ", module,", log writeTo", logout, " ", logfile))
+      
+      InitJobs()
     },
     
     #InitJobs = function(yaml.file){
@@ -132,6 +155,11 @@ GreenIndexConfig <- setRefClass(
       yaml.out <- paste0(dir, GetAssessmentJob(), ".yaml")
       
       outputfile <- file(yaml.out, 'w+')
+      inputfile <- file(config.yaml, 'rt')
+      text <- readLines(inputfile)
+      LogDebug(paste("Consolidate", config.yaml))
+      writeLines(text, outputfile)
+      close(inputfile)
       for (i in 1:length(yaml.list)) {
         inputfile <- file(paste0(dir,yaml.list[[i]]), 'rt')
         text <- readLines(inputfile)
