@@ -45,6 +45,7 @@ kTableSubjectRespondent: &kTableSubjectRespondent
     - *kSubjectEN
     - *kSubjectSC
     - *kSubjectAR
+    - *kStatisticsScore
 
 
 kTableAttribute:
@@ -66,6 +67,8 @@ kTableAttribute:
     属性表区域系数
   - &kTableCoefficentSchool
     属性表学校系数
+  - &kTableScoreConverge
+    属性表成绩综合
   - &kTableIndexRegion
     属性表区域指数
   - &kTableDataQuery
@@ -228,6 +231,25 @@ kPilotRun: &kPilotRun
         - "上海市延安初级中学"
 
 
+kTableStatisticsScore: &kTableStatisticsScore
+  table:
+    -
+      name: *kSubjectCN
+      suffix: *kTableStatistics
+    -
+      name: *kSubjectMA
+      suffix: *kTableStatistics
+    -
+      name: *kSubjectEN
+      suffix: *kTableStatistics
+    -
+      name: *kSubjectSC
+      suffix: *kTableStatistics
+    -
+      name: *kSubjectAR
+      suffix: *kTableStatistics
+
+
 kTableStatisticsIndex: &kTableStatisticsIndex
   table:
     -
@@ -256,6 +278,9 @@ kTableStatisticsIndex: &kTableStatisticsIndex
       suffix: *kTableStatistics
     -
       name: *kSubjectAR
+      suffix: *kTableStatistics
+    -
+      name: *kStatisticsScore
       suffix: *kTableStatistics
     -
       name: *kRespondentST

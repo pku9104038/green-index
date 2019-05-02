@@ -1,8 +1,8 @@
 
 # statistics of variables, coefficents, scores
 statistics:
-  TODO: FALSE
-  RUN: "MILESTONE"  # "AUTO", "PILOT", "MILESTONE"
+  TODO: TRUE
+  RUN: "PILOT"  # "AUTO", "PILOT", "MILESTONE"
   <<: *kPilotRun
   info:
     district:
@@ -16,7 +16,7 @@ statistics:
 
     # transform
     -
-      TODO: FALSE
+      TODO: TRUE
       input:
         table: *kRespondentST
         suffix: *kTableReady
@@ -34,7 +34,7 @@ statistics:
           key: *kColumnQuestionChoice
 
     -
-      TODO: FALSE
+      TODO: TRUE
       input:
         table: *kRespondentST
         suffix: *kTableReady
@@ -53,7 +53,7 @@ statistics:
 
 
     -
-      TODO: FALSE
+      TODO: TRUE
       input:
         table: *kRespondentPA
         suffix: *kTableReady
@@ -71,7 +71,7 @@ statistics:
           key: *kColumnQuestionChoice
 
     -
-      TODO: FALSE
+      TODO: TRUE
       input:
         table: *kRespondentPA
         suffix: *kTableReady
@@ -89,7 +89,7 @@ statistics:
           key: *kColumnQuestionChoice
 
     -
-      TODO: FALSE
+      TODO: TRUE
       input:
         table: *kRespondentTE
         suffix: *kTableReady
@@ -107,12 +107,192 @@ statistics:
           key: *kColumnQuestionChoice
 
     -
-      TODO: FALSE
+      TODO: TRUE
       input:
         table: *kRespondentTE
         suffix: *kTableReady
       output:
         table: *kRespondentTE
+        suffix: *kTableStatistics
+      process:
+        table: *kTableCoefficentSchool
+        suffix: ""
+      choice:
+        table: *kTableSurveyResponsePoint
+        suffix: ""
+        column:
+          code: *kColumnQuestionCode
+          key: *kColumnQuestionChoice
+
+    -
+      TODO: FALSE
+      input:
+        table: *kSubjectCN
+        suffix: *kTableReady
+      output:
+        table: *kSubjectCN
+        suffix: *kTableStatistics
+      process:
+        table: *kTableCoefficentRegion
+        suffix: ""
+      choice:
+        table: *kTableSurveyResponsePoint
+        suffix: ""
+        column:
+          code: *kColumnQuestionCode
+          key: *kColumnQuestionChoice
+
+    -
+      TODO: FALSE
+      input:
+        table: *kSubjectCN
+        suffix: *kTableReady
+      output:
+        table: *kSubjectCN
+        suffix: *kTableStatistics
+      process:
+        table: *kTableCoefficentSchool
+        suffix: ""
+      choice:
+        table: *kTableSurveyResponsePoint
+        suffix: ""
+        column:
+          code: *kColumnQuestionCode
+          key: *kColumnQuestionChoice
+
+    -
+      TODO: FALSE
+      input:
+        table: *kSubjectMA
+        suffix: *kTableReady
+      output:
+        table: *kSubjectMA
+        suffix: *kTableStatistics
+      process:
+        table: *kTableCoefficentRegion
+        suffix: ""
+      choice:
+        table: *kTableSurveyResponsePoint
+        suffix: ""
+        column:
+          code: *kColumnQuestionCode
+          key: *kColumnQuestionChoice
+
+    -
+      TODO: FALSE
+      input:
+        table: *kSubjectMA
+        suffix: *kTableReady
+      output:
+        table: *kSubjectMA
+        suffix: *kTableStatistics
+      process:
+        table: *kTableCoefficentSchool
+        suffix: ""
+      choice:
+        table: *kTableSurveyResponsePoint
+        suffix: ""
+        column:
+          code: *kColumnQuestionCode
+          key: *kColumnQuestionChoice
+
+    -
+      TODO: FALSE
+      input:
+        table: *kSubjectEN
+        suffix: *kTableReady
+      output:
+        table: *kSubjectEN
+        suffix: *kTableStatistics
+      process:
+        table: *kTableCoefficentRegion
+        suffix: ""
+      choice:
+        table: *kTableSurveyResponsePoint
+        suffix: ""
+        column:
+          code: *kColumnQuestionCode
+          key: *kColumnQuestionChoice
+
+    -
+      TODO: FALSE
+      input:
+        table: *kSubjectEN
+        suffix: *kTableReady
+      output:
+        table: *kSubjectEN
+        suffix: *kTableStatistics
+      process:
+        table: *kTableCoefficentSchool
+        suffix: ""
+      choice:
+        table: *kTableSurveyResponsePoint
+        suffix: ""
+        column:
+          code: *kColumnQuestionCode
+          key: *kColumnQuestionChoice
+
+    -
+      TODO: FALSE
+      input:
+        table: *kSubjectSC
+        suffix: *kTableReady
+      output:
+        table: *kSubjectSC
+        suffix: *kTableStatistics
+      process:
+        table: *kTableCoefficentRegion
+        suffix: ""
+      choice:
+        table: *kTableSurveyResponsePoint
+        suffix: ""
+        column:
+          code: *kColumnQuestionCode
+          key: *kColumnQuestionChoice
+
+    -
+      TODO: FALSE
+      input:
+        table: *kSubjectSC
+        suffix: *kTableReady
+      output:
+        table: *kSubjectSC
+        suffix: *kTableStatistics
+      process:
+        table: *kTableCoefficentSchool
+        suffix: ""
+      choice:
+        table: *kTableSurveyResponsePoint
+        suffix: ""
+        column:
+          code: *kColumnQuestionCode
+          key: *kColumnQuestionChoice
+
+    -
+      TODO: FALSE
+      input:
+        table: *kSubjectAR
+        suffix: *kTableReady
+      output:
+        table: *kSubjectAR
+        suffix: *kTableStatistics
+      process:
+        table: *kTableCoefficentRegion
+        suffix: ""
+      choice:
+        table: *kTableSurveyResponsePoint
+        suffix: ""
+        column:
+          code: *kColumnQuestionCode
+          key: *kColumnQuestionChoice
+
+    -
+      TODO: FALSE
+      input:
+        table: *kSubjectAR
+        suffix: *kTableReady
+      output:
+        table: *kSubjectAR
         suffix: *kTableStatistics
       process:
         table: *kTableCoefficentSchool

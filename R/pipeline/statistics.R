@@ -353,6 +353,45 @@ GreenIndexStatisticsData <- setRefClass(
       AddStatDataframe()    
 
     },
+ 
+    Quantile = function() {
+      
+      quantile.set <- quantile(sample.df[, variable.name], probs = seq(0, 1, 0.05))
+      print(quantile.set)
+      choice.name <<- kMin
+      statistics.value <<- quantile.set[kMinPercent]
+      AddStatDataframe()  
+      
+      choice.name <<- kLower
+      statistics.value <<- quantile.set[kLowerPercent]
+      AddStatDataframe()
+      
+      choice.name <<- kMedian
+      statistics.value <<- quantile.set[kMedianPercent]
+      AddStatDataframe() 
+      
+      choice.name <<- kUpper
+      statistics.value <<- quantile.set[kUpperPercent]
+      AddStatDataframe() 
+      
+      choice.name <<- kMax
+      statistics.value <<- quantile.set[kMaxPercent]
+      AddStatDataframe() 
+      
+      choice.name <<- kMean
+      statistics.value <<- mean(sample.df[, variable.name])
+      msg <- paste(algorithm, variable.name, 
+                   kColumnStatisticsTier, tier.name, 
+                   kColumnStatisticsPerspective, perspective.name,
+                   kColumnStatisticsScope, scope.name, 
+                   kColumnStatisticsSample, sample.name, 
+                   choice.name, statistics.value)
+      
+      AddStatDataframe() 
+ 
+      LogDebug(gsub("%*", "", msg))
+      
+    },
     
     ProcessJob = function(){
       
@@ -451,6 +490,9 @@ GreenIndexStatisticsData <- setRefClass(
                     ValueSpacePercent()
                   } else if (algorithm == kAlgorithmMultipleChoicePercent) {
                     MultipleChoicePercent()
+                  } else if (algorithm == kAlgorithmQuantile) {
+                    print(summary(sample.df))
+                    Quantile()
                   } 
                   
                 }

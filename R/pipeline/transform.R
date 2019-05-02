@@ -64,6 +64,147 @@ GreenIndexTransformData <- setRefClass(
             
     },
     
+    SigmaValue = function(){
+      
+      columns <- unlist(strsplit(transform[kColumnColumnName][[1]], kSeparator))
+      suffix <- transform[kColumnColumnSuffix] 
+      df[, variable.name] <<- 0
+      
+      i <- 1
+      while (i <= length(columns)){
+        column.name <- paste0(columns[i], suffix)
+        LogDebug(column.name)
+        df[, variable.name] <<- df[, variable.name] + 
+          as.numeric(df[, column.name])
+        i <- i + 1
+      }
+      
+      if (max(df[, variable.name]) > as.numeric(parameter)) {
+        LogError(paste(variable.name, algorithm))
+      }
+      
+      SetVariableType()
+      
+    },
+    
+    SigmaTotalValue = function(){
+      
+      columns <- names(df)
+      suffix <- transform[kColumnColumnSuffix] 
+      # variable.name2 <- paste0(variable.name, "2")
+      df[, variable.name] <<- 0
+      
+      i <- 1
+      while (i <= length(columns)){
+        column.name <- columns[i]
+        if (substr(column.name, nchar(column.name)-1,
+                   nchar(column.name)) == suffix) {
+          df[, variable.name] <<- df[, variable.name] + 
+            as.numeric(df[, column.name])
+        }
+        LogDebug(column.name)
+        
+        i <- i + 1
+      }
+      if (max(df[, variable.name]) > as.numeric(parameter)) {
+        LogError(paste(variable.name, algorithm))
+      }
+      
+      SetVariableType()
+      
+    },
+    
+    Standardization = function(){
+    
+      parameters <- unlist(strsplit(parameter, kSeparator))
+      average.point <- as.numeric(parameters[1])
+      z.point <- as.numeric(parameters[2])
+      
+      average.value <- mean(df[, transform[kColumnColumnName][[1]]], na.rm = TRUE)
+      stdev.value <- sd(df[, transform[kColumnColumnName][[1]]], na.rm = TRUE)
+      df[, variable.name] <<- average.point + 
+        (df[, transform[kColumnColumnName][[1]]] - average.value) / stdev.value * z.point
+      df[df[, variable.name] < 0, variable.name] <<- 0
+      
+      SetVariableType()
+      
+    },
+    
+    ScoreSegment = function(){
+      
+      columns <- unlist(strsplit(transform[kColumnColumnName][[1]], kSeparator))
+      suffix <- transform[kColumnColumnSuffix] 
+      df[, variable.name] <<- ""
+      
+      score.segments <- unlist(strsplit(parameter, kSeparator))
+      i <- 1
+      while (i <= length(columns)){
+        column.name <- paste0(columns[i], suffix)
+        kSegmentConnector
+        for (j in 1:length(score.segments)) {
+          score.segment <- unlist(strsplit(score.segments[j], kSegmentConnector))
+          min <- as.numeric(score.segment[1])
+          max <- as.numeric(score.segment[2])
+          df[df[, column.name] >= min & df[, column.name] < max, 
+             variable.name] <<- score.segments[j]
+        }
+        i <- i + 1
+      }
+      
+      SetVariableType()
+      
+    },
+    
+    ScoreRank = function(){
+      columns <- unlist(strsplit(transform[kColumnColumnName][[1]], kSeparator))
+      suffix <- transform[kColumnColumnSuffix] 
+      df[, variable.name] <<- ""
+      
+      score.segments <- unlist(strsplit(parameter, kSeparator))
+      i <- 1
+      while (i <= length(columns)){
+        column.name <- paste0(columns[i], suffix)
+        for (j in 1:length(score.segments)) {
+          score.segment <- unlist(strsplit(score.segments[j], kSegmentConnector))
+          rank <- score.segment[1]
+          min <- as.numeric(score.segment[2])
+          max <- as.numeric(score.segment[3])
+          df[df[, column.name] >= min & df[, column.name] < max, 
+             variable.name] <<- rank
+        }
+        i <- i + 1
+      }
+      
+      SetVariableType()
+      
+    },
+    
+    ValueMapping = function(){
+      
+      columns <- unlist(strsplit(transform[kColumnColumnName][[1]], kSeparator))
+      suffix <- transform[kColumnColumnSuffix] 
+      df[, variable.name] <<- ""
+      
+      value.maps <- unlist(strsplit(parameter, kSeparator))
+      i <- 1
+      while (i <= length(columns)){
+        column.name <- paste0(columns[i], suffix)
+        for (j in 1:length(value.maps)) {
+          value.map <- unlist(strsplit(value.maps[j], kSegmentConnector))
+          map <- value.map[1]
+          for (k in 2:length(value.map)) {
+            value <- value.map[k]
+            df[df[, column.name] == value, variable.name] <<- map
+          }
+          
+        }
+        i <- i + 1
+      }
+      
+      SetVariableType()
+      
+    },
+    
     Constant = function(){
       
       if (parameter == "TRUE"){
@@ -93,6 +234,18 @@ GreenIndexTransformData <- setRefClass(
           SigmaBinary()
         } else if (algorithm == kAlgorithmConstant) {
           Constant()
+        } else if (algorithm == kAlgorithmSigmaTotalScore) {
+          SigmaTotalValue()
+        } else if (algorithm == kAlgorithmSigmaValue) {
+          SigmaValue()
+        } else if (algorithm == kAlgorithmStandardization) {
+          Standardization()
+        } else if (algorithm == kAlgorithmScoreSegment) {
+          ScoreSegment()
+        } else if (algorithm == kAlgorithmScoreRank) {
+          ScoreRank()
+        } else if (algorithm == kAlgorithmValueMapping) {
+          ValueMapping()
         } 
       }
 
@@ -125,18 +278,6 @@ GreenIndexTransformData <- setRefClass(
           if (length(job$dummy) > 0) {
             # clone a dummy transform table
             LogInfo(paste("Clone", input.table, "into", output.table))
-            # merge join data for more attributes
-            # if (!is.na(job$join$table)) {
-            #  join.table.name <- job$join$table
-            #  join.table.suffix <- job$join$suffix
-            #  join.table <- paste0(join.table.name, join.table.suffix)
-            #  join.df <- database$ReadTable(join.table)
-            #  join.df <- ColumnProcessDataFrame(join.df, job$join)
-            #  join.by <- job$join$by
-              
-            #  df <<- merge(df, join.df, by.x = join.by, by.y = join.by,
-            #               all = FALSE, all.x = TRUE, all.y = FALSE)
-            # }
             database$WriteTable(df, output.table)
           } else {
             

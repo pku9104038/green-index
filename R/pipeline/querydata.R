@@ -194,8 +194,9 @@ GreenIndexQueryData <- setRefClass(
       database$Disconnect()
       
       if (nrow(df) > 0) {
-        
+       
         df[, kColumnName] <- df[, process[1, kColumnName]]
+
         if (process[1, kColumnDrop] != kStringNone) {
           drop <- unlist(strsplit(process[1, kColumnDrop],kSeparator))
           for (j in 1:length(drop)) {
@@ -211,7 +212,7 @@ GreenIndexQueryData <- setRefClass(
           }
           df <- tmp.df
         }
-        
+       
         df <- merge(df, alias.df, by = kColumnName, all.x = TRUE)
         if (process[1, kColumnAliasType] == kAliasTypeTotal) {
           df[, kColumnAlias] <- df[, kAliasTypeTotal]
@@ -250,8 +251,78 @@ GreenIndexQueryData <- setRefClass(
       }
       return(data.df)
       
-    }
+    },
+    
+    SubScoSam = function(df, subject, scope, sample, digits) {
+      value <- df[df[, kColumnSubject] == subject & 
+                    df[, kColumnStatisticsScope] == scope & 
+                    df[, kColumnStatisticsSample] == sample, 
+                  kColumnValue]
+      return(round(value, digits = digits))
+    },
+    
+    SubSco = function(df, subject, scope, digits) {
+      value <- df[df[, kColumnSubject] == subject & 
+                    df[, kColumnStatisticsScope] == scope, 
+                  kColumnValue]
+      return(round(value, digits = digits))
+    },
     
 
+    SubAttSamKey = function(df, subject, attribute, sample, keys, digits) {
+      value <- 0
+      for (i in 1:length(keys)) {
+        key <- keys[i]
+        value <- value + df[df[, kColumnSubject] == subject & 
+                              df[, kColumnAttribute] == attribute & 
+                              df[, kColumnStatisticsSample] == sample &
+                              df[, kColumnKey] == key, kColumnValue] 
+      }
+      return(round(value, digits = digits))
+    },
+    
+    SubDomSamKey = function(df, subject, domain, sample, keys, digits) {
+      value <- 0
+      for (i in 1:length(keys)) {
+        key <- keys[i]
+        value <- value + df[df[, kColumnSubject] == subject & 
+                              df[, kColumnDomain] == domain & 
+                              df[, kColumnStatisticsSample] == sample &
+                              df[, kColumnKey] == key, kColumnValue] 
+      }
+      return(round(value, digits = digits))
+    },
+    
+    SamTopKey = function(df, sample, topic, keys, digits) {
+      value <- 0
+      for (i in 1:length(keys)) {
+        key <- keys[i]
+        value <- value + df[df[, kColumnStatisticsSample] == sample & 
+                              df[, kColumnTopic] == topic & 
+                              df[, kColumnKey] == key, kColumnValue] 
+      }
+      return(round(value, digits = digits))
+    },
+    
+    CoefSamDimTop = function(df, sample, dimention, topic, digits) {
+      value <- df[df[, kColumnStatisticsIndexType] == kCoefficient & 
+                    df[, kColumnKey] == kTRUE & 
+                    df[, kColumnStatisticsSample] == sample &
+                    df[, kColumnDimention] == dimention &
+                    df[, kColumnTopic] == topic, 
+                  kColumnValue]
+      return(round(value, digits = digits))
+    },
+    
+    CoefSamDomTop = function(df, sample, domain, topic, digits) {
+      value <- df[df[, kColumnStatisticsIndexType] == kCoefficient & 
+                    df[, kColumnKey] == kTRUE & 
+                    df[, kColumnStatisticsSample] == sample &
+                    df[, kColumnDomain] == domain &
+                    df[, kColumnTopic] == topic, 
+                  kColumnValue]
+      return(round(value, digits = digits))
+    }
+    
   )
 )

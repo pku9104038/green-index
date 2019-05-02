@@ -1,0 +1,107 @@
+
+<!-- chapter 3 student survey -->
+
+\mytext
+
+# 学生背景问卷调查结果分析
+
+query.data.city.base.student.survey
+
+学生问卷包括学生基本情况、师生关系、学习压力、学校认同度、学习动机、自信心和学习方法等。本章对学生问卷调查结果进行分析，以下是分析得到的主要结果：
+
+- 八年级学生是独生子女的占`r gio.R$SubAttSamKey(query.data, "学生", "独生子女", "总体", c("是"), 1)`%。
+- 八年级学生家庭图书量超过100本的占`r gio.R$SubAttSamKey(query.data, "家长", "藏书", "总体", c("200本以上", "101-200本之间"), 1)`%，不超过50本的占`r gio.R$SubAttSamKey(query.data, "家长", "藏书", "总体", c("20本以下", "21-50本之间"), 1)`%。
+- 八年级学生家庭汽车拥有量为零的占`r gio.R$SubAttSamKey(query.data, "家长", "汽车", "总体", c("暂时没有购买汽车"), 1)`%，两辆及以上的占`r gio.R$SubAttSamKey(query.data, "家长", "汽车", "总体", c("有，2辆", "有，2辆以上"), 1)`%。
+- 八年级学生没有出境旅游的比例为`r gio.R$SubAttSamKey(query.data, "家长", "旅游", "总体", c("目前还没有去过"), 1)`%，出境旅游过两次及以上的占`r gio.R$SubAttSamKey(query.data, "家长", "旅游", "总体", c("2次", "3次", "4次及以上"), 1)`%。
+- 八年级学生的父亲受教育程度为大学及以上的占`r gio.R$SamTopKey(query.data, "总体", "孩子父亲受教育程度大概是", c("本科", "硕士", "博士"), 1)`%，初中及以下的占`r gio.R$SamTopKey(query.data, "总体", "孩子父亲受教育程度大概是", c("初中及以下"), 1)`%。八年级学生的母亲受教育程度为大学及以上的占`r gio.R$SubDomSamKey(query.data, "家长", "母亲教育程度", "总体", c("本科", "硕士", "博士"), 1)`%，初中及以下的占`r gio.R$SubDomSamKey(query.data, "家长", "母亲教育程度", "总体", c("初中及以下"), 1)`%。
+- 八年级学生每天做学校老师布置的书面作业时间超过2小时的占`r gio.R$SamTopKey(query.data, "总体", "你每天做学校老师布置的书面作业时间是", c("2-3小时（含2小时）", "3-4小时（含3小时）", "4小时及以上"), 1)`%，其中3小时以上的占`r gio.R$SamTopKey(query.data, "总体", "你每天做学校老师布置的书面作业时间是", c("3-4小时（含3小时）", "4小时及以上"), 1)`%，1小时以下的占`r gio.R$SamTopKey(query.data, "总体", "你每天做学校老师布置的书面作业时间是", c("1小时以内"), 1)`%。
+- 八年级学生认为学校作业难易适中的占`r gio.R$SamTopKey(query.data, "总体", "你觉得学校老师布置的书面作业难度是：", c("难易适中"), 1)`%，认为非常难和非常容易的共占`r gio.R$SamTopKey(query.data, "总体", "你觉得学校老师布置的书面作业难度是：", c("非常容易", "非常难"), 1)`%。
+- 八年级学生每周参加与考试科目相关的家教补习或课外辅导的时间在6小时以上的占`r gio.R$SamTopKey(query.data, "总体", "您孩子每周参加上述学科的家教补习或课外辅导的总时间是", c("6-8小时（含6小时）", "8小时及以上"), 1)`％。
+- 八年级学生每周参加校外兴趣班的时间在2小时及以上的占`r gio.R$SamTopKey(query.data, "总体", "您孩子每周参加上述校外兴趣班的时间是", c("2-4小时（含2小时）", "4-6小时（含4小时）", "6-8小时（含6小时）", "8小时及以上"), 1)`%，没有参加校外兴趣班的学生占`r gio.R$SamTopKey(query.data, "总体", "您孩子每周参加上述校外兴趣班的时间是", c("(跳过)"), 1)`%。
+- 八年级学生每个月参加考试和测验的频率在4次及以上的占`r gio.R$SamTopKey(query.data, "总体", "你每个月参加学校里书面考试及测验的次数是", c("4次", "5次", "6次", "7次", "8次及以上"), 1)`%，频率在3次及以下的占`r gio.R$SamTopKey(query.data, "总体", "你每个月参加学校里书面考试及测验的次数是", c("3次及以下"), 1)`%。
+- 八年级学生一年阅读课外读物量达到9本及以上的比例为`r gio.R$SamTopKey(query.data, "总体", "在过去的一年里，你大约读了多少本课外读物：", c("9-12本", "13本及以上"), 1)`%，有`r gio.R$SamTopKey(query.data, "总体", "在过去的一年里，你大约读了多少本课外读物：", c("1-4本", "没有"), 1)`%的学生年阅读量不足5本，有`r gio.R$SamTopKey(query.data, "总体", "在过去的一年里，你大约读了多少本课外读物：", c("没有"), 1)`%的学生几乎不进行课外阅读。
+- 八年级学生每天放学回家后运动时间在40分钟以内的占%，在60分钟及以上的占%。
+- 八年级学生，`r gio.R$CoefSamDimTop(query.data, "总体", "师生关系", "二级指标", 1)`%对师生关系评价较高，具体表现在教师是否公平、平等的对待学生、是否信任学生这三个方面。
+- 八年级学生`r gio.R$CoefSamDimTop(query.data, "总体", "学业压力", "二级指标", 1)`%感到学习压力较轻。
+- 八年级学生中有`r gio.R$CoefSamDimTop(query.data, "总体", "学习动机", "二级指标", 1)`%的学生有比较强的学习动机。
+- `r gio.R$CoefSamDomTop(query.data, "总体", "学生对学校认同度", "一级指标", 1)`%学生对学校认同度高，具体表现为喜欢自己的学校、老师，同学关系和睦。
+- 八年级学生中学习自信心较强的学生所占比例为`r gio.R$CoefSamDimTop(query.data, "总体", "学习自信心", "二级指标", 1)`%，自信心水平比较高，对自己的能力有比较恰当的评估。
+- 八年级学生对教师教学方式中的因材施教、互动教学、鼓励学生探究与发展这三个方面评价比较高。
+- 八年级学生总体心理健康水平比较高，但还有进一步培养的空间。
+
+## 学生基本情况
+
+### 家庭背景
+
+#### 学生为独生子女的情况
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.onechild.perspective")`}给出了八年级学生为独生子女的总体情况及各群体之间的比较。
+
+plot.bar.city.base.onechild.perspective
+
+
+#### 学生家庭的藏书量
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.book.perspective")`}给出了八年级学生家庭藏书量的总体情况及各群体之间的比较。
+
+plot.bar.city.base.book.perspective
+
+#### 学生家庭汽车拥有量
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.car.perspective")`}给出了八年级学生家庭拥有汽车的总体情况及各群体之间的比较。
+
+plot.bar.city.base.car.perspective
+
+#### 学生家庭出境旅游情况
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.trip.perspective")`}给出了八年级学生家庭出境旅游的总体情况及各群体之间的比较。
+
+plot.bar.city.base.trip.perspective
+
+#### 学生父亲受教育情况
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.father.perspective")`}给出了八年级学生父亲受教育的总体情况及各群体之间的比较。
+
+plot.bar.city.base.father.perspective
+
+#### 学生母亲受教育情况
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.mother.perspective")`}给出了八年级学生母亲受教育的总体情况及各群体之间的比较。
+
+plot.bar.city.base.mother.perspective
+
+
+### 学生日常生活与学习
+
+#### 学生睡眠时间
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.sleep.hours.perspective")`}给出了八年级学生每天睡眠时间的总体情况及各群体之间的比较。
+
+plot.bar.city.base.sleep.hours.perspective
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.sleep.feel.perspective")`}给出了八年级学生对自己每天睡眠时间是否充足的看法。
+
+plot.bar.city.base.sleep.feel.perspective
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.sleep.lack.reason")`}给出了八年级学生睡眠不足的原因。
+
+plot.bar.city.base.sleep.lack.reason
+
+ 
+#### 学生作业时间
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.homework.hours.perspective")`}给出了八年级学生每天做学校老师布置的作业时间的总体情况及各群体之间的比较。
+
+plot.bar.city.base.homework.hours.perspective
+
+
+#### 学校作业难易程度
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.homework.difficulty.perspective")`}给出了八年级学生学校作业的难易程度的总体情况及各群体之间的比较。
+
+plot.bar.city.base.homework.difficulty.perspective
+
+
+\clearpage
+
+<!-- end of chapter 3 student survey -->

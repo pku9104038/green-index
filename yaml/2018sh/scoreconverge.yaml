@@ -1,0 +1,30 @@
+
+# score converge
+scoreconverge:
+  TODO: FALSE
+  # TRUE,  FALSE ,rework jobs flag
+  input:
+    <<: *kTableStatisticsScore
+  output:
+    table: *kStatisticsScore
+    suffix: *kTableConverge
+  info:
+    district:
+      table: *kTableDistrict
+      suffix: *kTableRaw
+    school:
+      table: *kTableSchool
+      suffix: *kTableJoin
+
+  table:
+    -
+      TODO: FALSE
+      input:
+        table: *kStatisticsScore
+        suffix: *kTableConverge
+      output:
+        table: *kStatisticsScore
+        suffix: *kTableStatistics
+      process:
+        table: *kTableScoreConverge
+        suffix: ""

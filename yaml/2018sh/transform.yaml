@@ -8,7 +8,6 @@ transform:
     # dummy transform table from assignment
     -
       TODO: FALSE
-      suffix: *kColumnSuffixBinary
       input:
         table: *kRespondentST
         suffix: *kTableAssign
@@ -22,7 +21,6 @@ transform:
 
     -
       TODO: FALSE
-      suffix: *kColumnSuffixBinary
       input:
         table: *kRespondentPA
         suffix: *kTableAssign
@@ -34,7 +32,6 @@ transform:
 
     -
       TODO: FALSE
-      suffix: *kColumnSuffixBinary
       input:
         table: *kRespondentTE
         suffix: *kTableAssign
@@ -43,6 +40,62 @@ transform:
         suffix: *kTableTransform
       dummy:
         - TRUE
+
+    -
+      TODO: FALSE
+      input:
+        table: *kSubjectCN
+        suffix: *kTableRaw
+      output:
+        table: *kSubjectCN
+        suffix: *kTableTransform
+      dummy:
+        - TRUE
+
+    -
+      TODO: FALSE
+      input:
+        table: *kSubjectMA
+        suffix: *kTableRaw
+      output:
+        table: *kSubjectMA
+        suffix: *kTableTransform
+      dummy:
+        - TRUE
+
+    -
+      TODO: FALSE
+      input:
+        table: *kSubjectEN
+        suffix: *kTableRaw
+      output:
+        table: *kSubjectEN
+        suffix: *kTableTransform
+      dummy:
+        - TRUE
+
+    -
+      TODO: FALSE
+      input:
+        table: *kSubjectSC
+        suffix: *kTableRaw
+      output:
+        table: *kSubjectSC
+        suffix: *kTableTransform
+      dummy:
+        - TRUE
+
+    -
+      TODO: FALSE
+      input:
+        table: *kSubjectAR
+        suffix: *kTableRaw
+      output:
+        table: *kSubjectAR
+        suffix: *kTableTransform
+      dummy:
+        - TRUE
+
 
     # transform
     -
@@ -77,6 +130,66 @@ transform:
         suffix: *kTableTransform
       output:
         table: *kRespondentTE
+        suffix: *kTableTransform
+      transform:
+        table: *kTableVariableTransform
+        suffix: ""
+
+    -
+      TODO: FALSE
+      input:
+        table: *kSubjectCN
+        suffix: *kTableTransform
+      output:
+        table: *kSubjectCN
+        suffix: *kTableTransform
+      transform:
+        table: *kTableVariableTransform
+        suffix: ""
+
+    -
+      TODO: FALSE
+      input:
+        table: *kSubjectMA
+        suffix: *kTableTransform
+      output:
+        table: *kSubjectMA
+        suffix: *kTableTransform
+      transform:
+        table: *kTableVariableTransform
+        suffix: ""
+
+    -
+      TODO: FALSE
+      input:
+        table: *kSubjectEN
+        suffix: *kTableTransform
+      output:
+        table: *kSubjectEN
+        suffix: *kTableTransform
+      transform:
+        table: *kTableVariableTransform
+        suffix: ""
+
+    -
+      TODO: FALSE
+      input:
+        table: *kSubjectSC
+        suffix: *kTableTransform
+      output:
+        table: *kSubjectSC
+        suffix: *kTableTransform
+      transform:
+        table: *kTableVariableTransform
+        suffix: ""
+
+    -
+      TODO: FALSE
+      input:
+        table: *kSubjectAR
+        suffix: *kTableTransform
+      output:
+        table: *kSubjectAR
         suffix: *kTableTransform
       transform:
         table: *kTableVariableTransform

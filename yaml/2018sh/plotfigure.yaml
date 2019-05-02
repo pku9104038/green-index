@@ -4,4 +4,4 @@ plotfigure:
   <<: *kPilotRun
   <<: *kPrepareDataframe
   test:
-    - "plot.bar.onechild.city.perspective"
+    - plot.bar.city.base.homework.difficulty.perspective

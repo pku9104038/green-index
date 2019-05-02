@@ -29,6 +29,7 @@ GreenIndexPlotFigure <- setRefClass(
   ),
   
   methods = list(
+    
     PrepareDataframe = function() {
       callSuper()
       jobs <- config$GetConfigJob()$plotfigure
@@ -38,24 +39,6 @@ GreenIndexPlotFigure <- setRefClass(
       plot.df <<- database$ReadTable(plot.table)
       
       
-    },
-    
-    OrderData = function(in.df, order.column, order.string) {
-      plot.data <<- in.df
-      plot.data[, order.column] <<- 
-        factor(plot.data[, order.column],
-               levels = unlist(strsplit(order.string, kSeparator)))
-    },
-    
-    SortPlotData = function() {
-      if (plot.param[1, kColumnSortX] == kStringNone) {
-        print(plot.data)
-        OrderData(plot.data, plot.param[1, kColumnAxisX],
-                  plot.param[1, kColumnOrderX])
-        print(plot.data)
-      } else if(plot.param[1, kColumnSortX] == kSortAsc) {
-        
-      }
     },
     
     PreparePlotData = function(plot.code) {
@@ -88,7 +71,23 @@ GreenIndexPlotFigure <- setRefClass(
                                               plot.data[, fill[i]])
       }
       
-      # write.csv2(plot.data, "plot.data.csv")
+      if (plot.param[1, kColumnLegendPosition] != kStringNone && 
+          plot.param[1, kColumnLegendOrder] != kStringNone ) {
+        plot.data[, kColumnFill] <<-  
+          factor(plot.data[, kColumnFill],
+                 levels = unlist(strsplit(plot.param[1, kColumnLegendOrder], 
+                                          kSeparator)))
+      }
+      
+      if (plot.param[1, kColumnFacet] != kStringNone) {
+        plot.data[, kColumnFacet] <<- plot.data[, plot.param[1, kColumnFacet]] 
+        plot.data[, kColumnFacet] <<- 
+          factor(plot.data[, kColumnFacet],
+                 levels = unlist(strsplit(plot.param[1, kColumnFacetOrder], 
+                                          kSeparator)))
+      }
+      
+      write.csv2(plot.data, "plot.data.csv")
       return(plot.data)
     },
     
@@ -112,18 +111,44 @@ GreenIndexPlotFigure <- setRefClass(
       return(figure)
     },
     
+    FigureFacet = function(figure) {
+      if (plot.param[1, kColumnFacet] != kStringNone) {
+        
+        figure <- figure + 
+          facet_wrap(facets = ~plot_facet, nrow = 1,
+                     strip.position = plot.param[1, kColumnFacetPosition],
+                     scales = plot.param[1, kColumnFacetScale])
+      }
+      return(figure)
+    },
+    
     FigureTheme = function(figure, theme.name) {
+      
+      
       if (theme.name == "economist") {
         figure <- figure + theme_economist() + scale_fill_economist()
       } else if (theme.name == "npg") {
-        figure <- figure + scale_color_npg() + scale_fill_npg()
+        figure <- figure + theme_economist() + scale_color_npg() + scale_fill_npg()
+      } else if (theme.name == "d3") {
+        figure <- figure + theme_economist() + scale_color_d3() + scale_fill_d3()
+      } else if (theme.name == "jco") {
+        figure <- figure + theme_economist() + scale_color_jco() + scale_fill_jco()
+      } else if (theme.name == "ucscgb") {
+        figure <- figure + theme_economist() + scale_color_ucscgb() + scale_fill_ucscgb()
       }
       
-      figure <- figure + theme(plot.background = element_blank()) +
+      figure <- figure + 
+        # theme(plot.background = element_blank()) +
+        theme(plot.background = 
+                element_rect(fill = "white", colour = "grey90", size = 1)) +
+        theme(plot.margin = unit(c(0.6, 1, 0.6, 1), "cm")) +
         theme(panel.background = element_blank()) +
-        theme(panel.grid.major = element_line(colour="grey", size=0.2, linetype = "dashed") ) +
-        theme(panel.grid.major.y  = element_line(colour="grey", size=0.2, linetype = "dashed") ) +
-        theme(panel.grid.major.x  = element_line(colour="grey", size=0.2, linetype = "dashed") ) +
+        theme(panel.grid.major = 
+                element_line(colour="grey", size=0.2, linetype = "dashed") ) +
+        theme(panel.grid.major.y  = 
+                element_line(colour="grey", size=0.2, linetype = "dashed") ) +
+        theme(panel.grid.major.x  = 
+                element_line(colour="grey", size=0.2, linetype = "dashed") ) +
         theme(legend.background = element_blank()) +
         theme(text = element_text(family = "wqy-microhei"))
       
@@ -178,11 +203,38 @@ GreenIndexPlotFigure <- setRefClass(
       return(figure)
     },
     
+    FigureLabelXY = function(figure) {
+      
+      plot.label.x <- plot.param[1, kColumnLabelX]
+      plot.label.y <- plot.param[1, kColumnLabelY]
+      
+      if (plot.label.x == kStringNull) {
+        plot.label.x <- ""
+      }
+      
+      if (plot.label.y == kStringNull) {
+        plot.label.y <- ""
+      }
+      
+      figure <- figure + labs(title = plot.param[1, kColumnPlotTitle],
+                              x = plot.label.x, y = plot.label.y)
+      figure <- figure + 
+        theme(axis.text.x = element_text(
+          angle = as.numeric(plot.param[1, kColumnTextAngleX]), 
+          vjust = 1, hjust = 1))
+      figure <- figure + geom_text_repel()
+      return(figure)
+    },
+    
     FigureSortX = function(figure) {
       
       if (plot.param[1, kColumnSortX] == kStringNone) {
+        if (plot.param[1, kColumnOrderX] == kStringNone) {
+          return(figure)
+        } else {
+          plot.order.x <<- unlist(strsplit(plot.param[1, kColumnOrderX], kSeparator))
+        }
         
-        plot.order.x <<- unlist(strsplit(plot.param[1, kColumnOrderX], kSeparator))
       } else if(plot.param[1, kColumnSortX] == kSortAscAll) {
         
         df <- arrange(plot.data, desc(plot.data[, kColumnValue]))
@@ -226,9 +278,10 @@ GreenIndexPlotFigure <- setRefClass(
         limit.y <- as.numeric(unlist(strsplit(plot.param[1, kColumnLimitY],
                                    kSeparator)))
         figure <- figure + 
-          scale_y_continuous(limits = limit.y,
+          scale_y_continuous(limits = limit.y[1:2],
                              breaks=seq(limit.y[1], limit.y[2],
-                                        round((limit.y[2]-limit.y[1])/10)))
+                                       # round((limit.y[2]-limit.y[1])/10)))
+                                       limit.y[3]))
       } else {
         
       }
@@ -272,10 +325,11 @@ GreenIndexPlotFigure <- setRefClass(
       
       figure <- figure + 
         geom_bar( stat="identity", 
+                  alpha = as.numeric(plot.param[1, kColumnFillAlpha]),
                   width = as.numeric(plot.param[1, kColumnPlotBarWidth]),
                   position = plot.param[1, kColumnPlotBarPosition] ) 
       
-      #figure <- FigureTheme(figure, "economist")  #npg
+      figure <- FigureTheme(figure, plot.param[1, kColumnPlotTheme])
       
       figure <- FigureLabel(figure)
       
@@ -286,6 +340,150 @@ GreenIndexPlotFigure <- setRefClass(
       figure <- FigureLimitY(figure)
       
       figure <- FigureCoord(figure)
+      
+      figure <- FigureFacet(figure)
+      
+      
+      return(figure)
+      
+    },
+    
+    PlotGeomBoxWhisker = function() {
+      
+      if (plot.param[1, kColumnFillOrder] == kStringNone){
+        
+      } else {
+        fill.order <- unlist(strsplit(plot.param[1, kColumnFillOrder], 
+                                      kSeparator))
+        plot.data[, kColumnFill] <<- factor(plot.data[, kColumnFill],
+                                            levels = fill.order)
+        
+      }
+      
+      plot.merge <- plot.data[plot.data[, kColumnKey] == kMean, ]
+      names(plot.merge) <- sub(paste0("^", kColumnAxisY, "$"), 
+                            kMean, names(plot.merge))
+      
+      plot.min <- plot.data[plot.data[, kColumnKey] == kMin, 
+                            c(kColumnAxisX, kColumnValue)]
+      names(plot.min) <- sub(paste0("^", kColumnValue, "$"), 
+                            kMin, names(plot.min))
+      plot.merge <- merge(plot.merge, plot.min, by = kColumnAxisX, all.x = TRUE)
+      
+      plot.max <- plot.data[plot.data[, kColumnKey] == kMax, 
+                            c(kColumnAxisX, kColumnValue)]
+      names(plot.max) <- sub(paste0("^", kColumnValue, "$"), 
+                             kMax, names(plot.max))
+      plot.merge <- merge(plot.merge, plot.max, by = kColumnAxisX, all.x = TRUE)
+      
+      plot.median <- plot.data[plot.data[, kColumnKey] == kMedian, 
+                            c(kColumnAxisX, kColumnValue)]
+      names(plot.median) <- sub(paste0("^", kColumnValue, "$"), 
+                             kMedian, names(plot.median))
+      plot.merge <- merge(plot.merge, plot.median, by = kColumnAxisX, all.x = TRUE)
+      
+      plot.upper <- plot.data[plot.data[, kColumnKey] == kUpper, 
+                            c(kColumnAxisX, kColumnValue)]
+      names(plot.upper) <- sub(paste0("^", kColumnValue, "$"), 
+                             kUpper, names(plot.upper))
+      plot.merge <- merge(plot.merge, plot.upper, by = kColumnAxisX, all.x = TRUE)
+      
+      plot.lower <- plot.data[plot.data[, kColumnKey] == kLower, 
+                              c(kColumnAxisX, kColumnValue)]
+      names(plot.lower) <- sub(paste0("^", kColumnValue, "$"), 
+                               kLower, names(plot.lower))
+      plot.merge <- merge(plot.merge, plot.lower, by = kColumnAxisX, all.x = TRUE)
+      
+      plot.merge[, kColumnValue] <- plot.merge[, kMedian]
+      plot.data <<- plot.merge
+      
+      figure <- ggplot(
+        data = plot.data, 
+        aes(x = plot_x, y = mean, 
+            alpha = as.numeric(plot.param[1, kColumnFillAlpha])))
+      
+      figure <- figure + geom_errorbar(aes(x = plot_x, ymin = min, ymax = max),
+                                       size = 0.5, width = 0.3)
+      figure <- figure + 
+        geom_boxplot(stat="identity",
+                     width = as.numeric(plot.param[1, kColumnPlotBarWidth]),
+                       aes(x = plot_x, 
+                           # y = mean, 
+                           ymin = min, 
+                           ymax = max,
+                           upper = upper,
+                           lower = lower,
+                           middle = median,
+                           fill = plot_fill
+                           # label = plot_label,
+                           
+                           # position = plot.param[1, kColumnPlotBarPosition]
+                           ))
+      
+      figure <- figure + geom_point(shape = 20, size = 2, colour = "red")
+      
+      figure <- FigureTheme(figure, plot.param[1, kColumnPlotTheme])
+      
+      figure <- FigureLabel(figure)
+      
+      figure <- FigureLegend(figure)
+      
+      figure <- FigureSortX(figure)
+      
+      figure <- FigureLimitY(figure)
+      
+      figure <- FigureCoord(figure)
+      
+      return(figure)
+      
+    },
+    
+    PlotGeomScatter = function() {
+      
+      if (plot.param[1, kColumnFillOrder] == kStringNone){
+        
+      } else {
+        fill.order <- unlist(strsplit(plot.param[1, kColumnFillOrder], 
+                                      kSeparator))
+        plot.data[, kColumnFill] <<- factor(plot.data[, kColumnFill],
+                                            levels = fill.order)
+        
+      }
+      
+      plot.xy <- unlist(strsplit(plot.param[1, kColumnOrderX], kSeparator))
+      
+      plot.x <- plot.data[plot.data[, kColumnAxisX] == plot.xy[1], ]
+      plot.x[, kColumnAxisX] <- plot.x[, kColumnAxisY]
+      plot.x[, kColumnAxisY] <- NULL
+      plot.y <- plot.data[plot.data[, kColumnAxisX] == plot.xy[2], 
+                          c(kColumnAlias, kColumnAxisY)]
+      
+      plot.merge <- merge(plot.x, plot.y, by = kColumnAlias, all.x = TRUE)
+      plot.data <<- plot.merge
+      
+      figure <- ggplot(data = plot.data, 
+                       aes(x = plot_x, y = plot_y, label = plot_label))
+      
+      figure <- figure + 
+        geom_point(stat="identity", 
+                   colour="white", 
+                   shape=21, size = 4,
+                   aes(alpha = as.numeric(plot.param[1, kColumnFillAlpha]), 
+                       fill = factor(plot_fill)))
+      
+      figure <- FigureTheme(figure, plot.param[1, kColumnPlotTheme])
+      
+      figure <- FigureLabelXY(figure)
+      
+      figure <- FigureLegend(figure)
+      
+      #figure <- FigureSortX(figure)
+      
+      figure <- FigureLimitY(figure)
+      
+      figure <- FigureCoord(figure)
+      
+      # figure <- figure + geom_text_repel()
       
       return(figure)
       
@@ -303,6 +501,8 @@ GreenIndexPlotFigure <- setRefClass(
       
       showtext_begin()
       
+      LogInfo(paste(plot.param[1, kColumnPlotGeom], plot.code))
+      print(plot.data)
       if (plot.param[1, kColumnPlotGeom] == kPlotGeomBarDodge) {
         figure <- PlotGeomBarDodge()
       } else if (plot.param[1, kColumnPlotGeom] == kPlotGeomBarStack) {
@@ -310,9 +510,8 @@ GreenIndexPlotFigure <- setRefClass(
       } else if (plot.param[1, kColumnPlotGeom] == kPlotGeomScatter) {
         figure <- PlotGeomScatter()
       } else if (plot.param[1, kColumnPlotGeom] == kPlotGeomBox) {
-        figure <- PlotGeomBox()
-      }
-      
+        figure <- PlotGeomBoxWhisker()
+      } 
       
       print(figure)
       

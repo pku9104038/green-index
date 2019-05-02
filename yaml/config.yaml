@@ -45,6 +45,7 @@ jobs:
     - "transform.yaml"       # transform data in survey response
     - "dataready.yaml"       #
     - "statistics.yaml"      # statistics data
+    - "scoreconverge.yaml"
     - "indexation.yaml"      #
     - "convergetable.yaml"   #
     - "dataquery.yaml"
@@ -53,4 +54,4 @@ jobs:
 
 
 # auto reworkall switch
-reworkall: FALSE  # TRUE, igonre TODO: FALSE flags, rework all jobs
+reworkall: TRUE  # TRUE, igonre TODO: FALSE flags, rework all jobs

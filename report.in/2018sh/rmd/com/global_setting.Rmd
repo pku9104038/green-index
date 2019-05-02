@@ -6,4 +6,214 @@
 <!-- \graphicspath{ {/Users/wangpeifeng/OneDrive/zuoyue/project/2018绿色指标分析/green-index/report.in/2018sh/fig/} } -->
 
 
+```{r global.setting, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+## define global constants
+
+# constants for subject
+kSubjectCN <- "语文"
+kSubjectMA <- "数学"
+kSubjectEN <- "英语"
+kSubjectSC <- "科学"
+kSubjectAR <- "艺术"
+kRespondentST <- "学生"
+kRespondentPA <- "家长"
+kRespondentTE <- "教师"
+kRespondentPR <- "校长"
+
+kSubjectSet <- c(
+  kSubjectCN,
+  kSubjectMA,
+  kSubjectEN,
+  kSubjectSC,
+  kSubjectAR,
+  kRespondentST,
+  kRespondentPA,
+  kRespondentTE,
+  kRespondentPR
+)
+
+# constants for table suffix
+# kTableRaw <- "原始数据"
+
+# constants for choice
+kInvalidSet <- list("", "(跳过)")    # 无效选项
+kSkipSet <- list("(跳过)")           # 忽略选项
+kNullStr <- ""                       # 未作答选项
+kColumnMultipleChoice <- "_多选_"    # 多选项答题结果拆分
+kSeparator <- "┋"
+kSegmentConnector <- "-"
+kColumnSuffixPoint <- "_分值"
+
+# constants for data type
+kDataTypeCharacter <- "character"
+kDataTypeNumeric <- "numeric"
+kDataTypeBoolean <- "boolean"
+
+# constsants for tier
+kTierCity <- "市"
+kTierDistrict <- "区"
+kTierSchool <- "学校"
+
+# constants for perspective
+kPerspectiveTotal <- "总体"
+
+kTRUE <- "是"
+kFALSE <- "否"
+kNumericNA <- -1
+kHashDigestDefault <- "27f4468f070e6f28b58e39fda7293bf8c3fa6fb7"
+kStringAll <- "ALL"
+kStringNone <- "NONE"
+kStringNull<- "NULL"
+kPilotRun <- "PILOT"        # city, total only
+kMileStone <- "MILESTONE"   # city, district all  and school total
+kAutoRun <- "AUTO"          # all tier, all perspective 
+kValueTypeInteger <- "整数"
+kValueTypePercent <- "百分数"
+kPercentDigits <- 0
+kSortAsc <- "ASC"
+kSortAscAll <- "ASC_ALL"
+kSortDesc <- "DESC"
+kSortDescAll <- "DESC_ALL"
+kPositionDodge <- "dodge"
+kPositionStack <- "stack"
+kCoordFlip <- "flip"
+kCoordPolar <- "polar"
+kMinPercent <- "5%"
+kMin <- "min"
+kLowerPercent <- "25%"
+kLower <- "lower"
+kMedianPercent <- "50%"
+kMedian<- "median"
+kUpperPercent <- "75%"
+kUpper  <- "upper"
+kMaxPercent <- "95%"
+kMax <- "max"
+kMean <- "mean"
+
+# constants for algorithm
+kAlgorithmConstant <- "常量赋值"
+kAlgorithmSigmaBinary <- "求和阈值比较"
+kAlgorithmSigmaValue <- "求和"
+kAlgorithmSigmaTotalScore <- "计算总分"
+kAlgorithmStandardization <- "标准化"
+kAlgorithmScoreSegment <- "分数段切分"
+kAlgorithmScoreRank <- "分数等级"
+kAlgorithmValueMapping <- "值映射"
+kAlgorithmSingleChoicePercent <- "单选百分比"
+kAlgorithmMultipleChoicePercent <- "多选百分比"
+kAlgorithmValueSpacePercent <- "值域百分比"
+kAlgorithmQuantile <- "四分位"
+kAlgorithmMean <- "平均值"
+kAlgorithmTenLevelIndex <- "十级指数化"
+
+# constants for plot
+kPlotGeomBarDodge <- "并列条形图"
+kPlotGeomBarStack <- "堆叠条形图"
+kPlotGeomScatter <- "散点图"
+kPlotGeomBox <- "盒须图"
+
+# table for plot
+kTablePlotParameter <- "属性表绘图参数"
+kColumnPlotCode <- "plot_code"
+kColumnPlotTitle <- "plot_title"
+kColumnPlotWidth <- "plot_width"
+kColumnPlotHeight <- "plot_height"
+kColumnPlotCoord <- "plot_coord"
+kColumnPlotTheme <- "plot_theme"
+kColumnPlotGeom <- "plot_geom"
+kColumnPlotBarPosition <- "plot_bar_position"
+kColumnPlotBarWidth <- "plot_bar_width"
+kColumnAxisX <- "plot_x"
+kColumnSortX <- "plot_sort_x"
+kColumnOrderX <- "plot_order_x"
+kColumnLabelX <- "plot_label_x"
+kColumnTextAngleX <- "plot_text_angle_x"
+kColumnTextSizeX <- "plot_text_size_x"
+kColumnAxisY <- "plot_y"
+kColumnLabelY <- "plot_label_y"
+kColumnDiscreteY <- "plot_discrete_y"
+kColumnLimitY <- "plot_limit_y"
+kColumnLabel <- "plot_label"
+kColumnLabelPosition <- "plot_label_position"
+kColumnLabelColour <- "plot_label_colour"
+kColumnLabelSize <- "plot_label_size"
+kColumnLabelVjust <- "plot_label_vjust"
+kColumnLabelHjust <- "plot_label_hjust"
+kColumnFill <- "plot_fill" 
+kColumnFillOrder <- "plot_fill_order"
+kColumnLegendWidth <- "plot_legend_width"
+kColumnLegendHeight <- "plot_legend_height"
+kColumnLegendPosition <- "plot_legend_position"
+kColumnLegendDirection <- "plot_legend_direction"
+kColumnLegendFontSize <- "plot_legend_font_size"
+kColumnFacet <- "plot_facet"
+kColumnFacetPosition <- "plot_facet_position"
+kColumnFacetScale <- "plot_facet_scale"
+kColumnFacetOrder <- "plot_facet_order"
+
+
+
+# table for data query
+kTableDataQuery <- "属性表数据查询"
+kColumnDataset <- "数据集编码"
+kColumnAliasType <- "别名类型"
+kColumnAlias <- "别名"
+kColumnName <- "名称"
+kColumnDrop <- "忽略值"
+kColumnKeep <- "保留值"
+
+kAliasTypeTotal <- "统称"
+kAliasTypeName <- "名称"
+kAliasTypeAnonymous <- "匿名"
+
+# column name of the output data table
+kColumnHashDigest <- "哈希值"
+kColumnAssessment <- "评测项目"
+kColumnGrade <- "年级"
+kColumnSubject <- "学科"
+kColumnDomain <- "领域"
+kColumnDimention <- "维度"
+kColumnGroup <- "群组"
+kColumnAttribute <- "属性"
+kColumnTopic <- "主题"
+kColumnStatisticsTier <- "统计层级"
+kColumnStatisticsScope <- "统计范围"
+kColumnCity <- "市"
+kColumnDistrict <- "区"
+kColumnSchool <- "学校"
+kColumnStatisticsPerspective <- "统计视角"
+kColumnStatisticsSample <- "统计样本"
+kColumnStatisticsVariable <- "统计变量"
+kColumnStatisticsAlgorithm <- "统计算法"
+kColumnStatisticsIndexType <- "指标类型"
+kColumnValueType <- "数值类型"
+kColumnKey <- "键"
+kColumnValue <- "值"
+kColumnTimeStamp <- "时间戳"
+kColumnSubjectConverge <- "学科综合"
+
+
+# constants for transform
+kColumnTableName <- "表名称"
+kColumnTableSuffix <- "表后缀"
+kColumnColumnName <- "列名称"
+kColumnColumnSuffix <- "列后缀"
+kColumnVariableName <- "变量名称"
+kColumnVariableSuffix <- "变量后缀"
+kColumnVariableType <- "变量类型"
+kColumnAlgorithm <- "算法"
+kColumnParameter <- "参数"
+kColumnTODO <- "TODO"
+kColumnCount <- "计数"
+kColumnFilterName <- "过滤变量"
+kColumnFilterType <- "过滤类型"
+kColumnFilterValue <- "过滤值"
+kColumnRegion <- "区域"
+
+
+
+
+```
+
+
 <!-- end of global setting -->

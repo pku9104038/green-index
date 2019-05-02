@@ -54,3 +54,88 @@ dataready:
       out:
         table: *kRespondentTE
         suffix: *kTableReady
+
+    -
+      TODO: FALSE
+      left:
+        table: *kSubjectCN
+        suffix: *kTableTransform
+        by: *kColumnStudentCode
+      right:
+        table: *kTableStudent
+        suffix: *kTableJoin
+        select:
+        by: *kColumnStudentCode
+        # <<: *kStatisticsAdd
+      join.type: "left" # "inner", left", "right", "full"
+      out:
+        table: *kSubjectCN
+        suffix: *kTableReady
+
+    -
+      TODO: FALSE
+      left:
+        table: *kSubjectMA
+        suffix: *kTableTransform
+        by: *kColumnStudentCode
+      right:
+        table: *kTableStudent
+        suffix: *kTableJoin
+        select:
+        by: *kColumnStudentCode
+        # <<: *kStatisticsAdd
+      join.type: "left" # "inner", left", "right", "full"
+      out:
+        table: *kSubjectMA
+        suffix: *kTableReady
+
+    -
+      TODO: FALSE
+      left:
+        table: *kSubjectEN
+        suffix: *kTableTransform
+        by: *kColumnStudentCode
+      right:
+        table: *kTableStudent
+        suffix: *kTableJoin
+        select:
+        by: *kColumnStudentCode
+        # <<: *kStatisticsAdd
+      join.type: "left" # "inner", left", "right", "full"
+      out:
+        table: *kSubjectEN
+        suffix: *kTableReady
+
+    -
+      TODO: FALSE
+      left:
+        table: *kSubjectSC
+        suffix: *kTableTransform
+        by: *kColumnStudentCode
+      right:
+        table: *kTableStudent
+        suffix: *kTableJoin
+        select:
+        by: *kColumnStudentCode
+        # <<: *kStatisticsAdd
+      join.type: "left" # "inner", left", "right", "full"
+      out:
+        table: *kSubjectSC
+        suffix: *kTableReady
+
+    -
+      TODO: FALSE
+      left:
+        table: *kSubjectAR
+        suffix: *kTableTransform
+        by: *kColumnStudentCode
+      right:
+        table: *kTableStudent
+        suffix: *kTableJoin
+        select:
+        by: *kColumnStudentCode
+        # <<: *kStatisticsAdd
+      join.type: "left" # "inner", left", "right", "full"
+      out:
+        table: *kSubjectAR
+        suffix: *kTableReady

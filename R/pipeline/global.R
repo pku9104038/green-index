@@ -41,6 +41,7 @@ kSkipSet <- list("(跳过)")           # 忽略选项
 kNullStr <- ""                       # 未作答选项
 kColumnMultipleChoice <- "_多选_"    # 多选项答题结果拆分
 kSeparator <- "┋"
+kSegmentConnector <- "-"
 kColumnSuffixPoint <- "_分值"
 
 # constants for data type
@@ -58,6 +59,9 @@ kPerspectiveTotal <- "总体"
 
 kTRUE <- "是"
 kFALSE <- "否"
+kCoefficient <- "系数"
+kIndex <- "指数"
+kStatistics <- "统计"
 kNumericNA <- -1
 kHashDigestDefault <- "27f4468f070e6f28b58e39fda7293bf8c3fa6fb7"
 kStringAll <- "ALL"
@@ -68,7 +72,7 @@ kMileStone <- "MILESTONE"   # city, district all  and school total
 kAutoRun <- "AUTO"          # all tier, all perspective 
 kValueTypeInteger <- "整数"
 kValueTypePercent <- "百分数"
-kPercentDigits <- 0
+kPercentDigits <- 1
 kSortAsc <- "ASC"
 kSortAscAll <- "ASC_ALL"
 kSortDesc <- "DESC"
@@ -77,7 +81,40 @@ kPositionDodge <- "dodge"
 kPositionStack <- "stack"
 kCoordFlip <- "flip"
 kCoordPolar <- "polar"
+kMinPercent <- "5%"
+kMin <- "min"
+kLowerPercent <- "25%"
+kLower <- "lower"
+kMedianPercent <- "50%"
+kMedian<- "median"
+kUpperPercent <- "75%"
+kUpper  <- "upper"
+kMaxPercent <- "95%"
+kMax <- "max"
+kMean <- "mean"
 
+kPrefixPlot <- "plot"
+kPrefixMultiPlot <- "multiplot"
+kPrefixQueryData <- "query"
+kPrefixConnector <- "\\."
+
+# constants for algorithm
+kAlgorithmConstant <- "常量赋值"
+kAlgorithmSigmaBinary <- "求和阈值比较"
+kAlgorithmSigmaValue <- "求和"
+kAlgorithmSigmaTotalScore <- "计算总分"
+kAlgorithmStandardization <- "标准化"
+kAlgorithmScoreSegment <- "分数段切分"
+kAlgorithmScoreRank <- "分数等级"
+kAlgorithmValueMapping <- "值映射"
+kAlgorithmSingleChoicePercent <- "单选百分比"
+kAlgorithmMultipleChoicePercent <- "多选百分比"
+kAlgorithmValueSpacePercent <- "值域百分比"
+kAlgorithmQuantile <- "四分位"
+kAlgorithmMean <- "平均值"
+kAlgorithmTenLevelIndex <- "十级指数化"
+
+# constants for plot
 kPlotGeomBarDodge <- "并列条形图"
 kPlotGeomBarStack <- "堆叠条形图"
 kPlotGeomScatter <- "散点图"
@@ -90,6 +127,7 @@ kColumnPlotTitle <- "plot_title"
 kColumnPlotWidth <- "plot_width"
 kColumnPlotHeight <- "plot_height"
 kColumnPlotCoord <- "plot_coord"
+kColumnPlotTheme <- "plot_theme"
 kColumnPlotGeom <- "plot_geom"
 kColumnPlotBarPosition <- "plot_bar_position"
 kColumnPlotBarWidth <- "plot_bar_width"
@@ -111,16 +149,23 @@ kColumnLabelVjust <- "plot_label_vjust"
 kColumnLabelHjust <- "plot_label_hjust"
 kColumnFill <- "plot_fill" 
 kColumnFillOrder <- "plot_fill_order"
+kColumnFillAlpha <- "plot_fill_alpha"
 kColumnLegendWidth <- "plot_legend_width"
 kColumnLegendHeight <- "plot_legend_height"
 kColumnLegendPosition <- "plot_legend_position"
 kColumnLegendDirection <- "plot_legend_direction"
 kColumnLegendFontSize <- "plot_legend_font_size"
+kColumnLegendOrder <- "plot_legend_order"
+kColumnFacet <- "plot_facet"
+kColumnFacetPosition <- "plot_facet_position"
+kColumnFacetScale <- "plot_facet_scale"
+kColumnFacetOrder <- "plot_facet_order"
+
 
 
 # table for data query
 kTableDataQuery <- "属性表数据查询"
-kColumnDataset <- "数据集"
+kColumnDataset <- "数据集编码"
 kColumnAliasType <- "别名类型"
 kColumnAlias <- "别名"
 kColumnName <- "名称"
@@ -155,6 +200,7 @@ kColumnValueType <- "数值类型"
 kColumnKey <- "键"
 kColumnValue <- "值"
 kColumnTimeStamp <- "时间戳"
+kColumnSubjectConverge <- "学科综合"
 
 
 # constants for transform
@@ -174,15 +220,10 @@ kColumnFilterType <- "过滤类型"
 kColumnFilterValue <- "过滤值"
 kColumnRegion <- "区域"
 
+# constants for report
+kColumnReport <- "报告"
+kColumnTier <- "层级"
 
-
-# constants for algorithm
-kAlgorithmConstant <- "常量赋值"
-kAlgorithmSigmaBinary <- "求和阈值比较"
-kAlgorithmSingleChoicePercent <- "单选百分比"
-kAlgorithmMultipleChoicePercent <- "多选百分比"
-kAlgorithmValueSpacePercent <- "值域百分比"
-kAlgorithmTenLevelIndex <- "十级指数化"
 
 ## basicConfig of logger for every modules
 library(logging)
@@ -270,6 +311,11 @@ if (!exists("statistics.loaded", mode = "variable")){
   source(paste0(gi.dir.script,"statistics.R"))
 }
 
+# source scoreconverge
+if (!exists("scoreconverge.loaded", mode = "variable")){
+  source(paste0(gi.dir.script,"scoreconverge.R"))
+}
+
 # source indexation.R
 if (!exists("indexation.loaded", mode = "variable")){
   source(paste0(gi.dir.script,"indexation.R"))
@@ -314,9 +360,10 @@ gio.assignpoint <- GreenIndexAssignPoint$new()
 gio.transform <- GreenIndexTransformData$new()
 gio.dataready <- GreenIndexDataReady$new()
 gio.statistics <- GreenIndexStatisticsData$new()
+gio.scoreconverge <- GreenIndexScoreConverge$new()
 gio.indexation <- GreenIndexIndexationData$new()
 gio.converge <- GreenIndexConvergeTable$new()
-# gio.querydata <- GreenIndexQueryData$new()
+gio.querydata <- GreenIndexQueryData$new()
 gio.plotfigure <- GreenIndexPlotFigure$new()
 gio.R <- GreenIndexReport$new()
 
@@ -336,14 +383,15 @@ gio.assignpoint$Init("AssignPoint", gio.config, gio.database)
 gio.transform$Init("TransformData", gio.config, gio.database)
 gio.dataready$Init("DataReady", gio.config, gio.database)
 gio.statistics$Init("StatisticsData", gio.config, gio.database)
+gio.scoreconverge$Init("ScoreConverge", gio.config, gio.database)
 gio.indexation$Init("IndexationData", gio.config, gio.database)
 gio.converge$Init("ConvergeTable", gio.config, gio.database)
-#gio.querydata$Init("QueryData", gio.config, gio.database)
+gio.querydata$Init("QueryData", gio.config, gio.database)
 gio.plotfigure$Init("PlotFigure", gio.config, gio.database)
 gio.R$Init("Report", gio.config, gio.database)
 
 ## Data prepare
 gio.loaddata$LoadData()
-#gio.querydata$PrepareDataframe()
-# gio.plotfigure$PrepareDataframe()
+gio.querydata$PrepareDataframe()
+gio.plotfigure$PrepareDataframe()
 gio.R$PrepareDataframe()

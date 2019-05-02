@@ -58,7 +58,7 @@ loaddata:
       suffix: ""
 
     -
-      TODO: FALSE
+      TODO: TRUE
       xlsx: "绿色指标属性表.xlsx"
       sheet: "试题问卷属性表"
       table: *kTableQuestionAttribute
@@ -87,7 +87,7 @@ loaddata:
       suffix: ""
 
     -
-      TODO: TRUE
+      TODO: FALSE
       xlsx: "绿色指标属性表.xlsx"
       sheet: "变量转换表"
       table: *kTableVariableTransform
@@ -105,6 +105,13 @@ loaddata:
       xlsx: "绿色指标属性表.xlsx"
       sheet: "学校系数表"
       table: *kTableCoefficentSchool
+      suffix: ""
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "成绩综合表"
+      table: *kTableScoreConverge
       suffix: ""
 
     -

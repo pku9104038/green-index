@@ -15,7 +15,7 @@ params:
   report: 2015
   dummy.fig: "dummy.jpg"
   conf: "conf"
-  
+
 ---
 <!-- global setting -->
 
@@ -48,7 +48,7 @@ pre.render.project.summary
 <!--  chapter 2 score  -->
 
 `r var.dimention <- "维度"
-var.variable <- "变量" 
+var.variable <- "变量"
 var.key <- "键"
 var.param <- "标注值"
 var.sample <- "统计样本"
@@ -304,7 +304,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure} #### 每天做学校老师布置的书面作业所需要的时间
+\end{figure}#### 每天做学校老师布置的书面作业所需要的时间
 
 `r fig_name <- "四年级学生每天书面作业的时间" `
 图\ref{fig:`r fig_name`}给出了四年级学生每天做学校老师布置的书面作业时间的总体情况及各群体之间的比较。
@@ -993,7 +993,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
 \end{figure}
-## 教师的职业感受 ### 教师职业喜爱程度`r fig_name <- "四年级教师对教师职业喜爱程度的情况" `
+## 教师的职业感受### 教师职业喜爱程度`r fig_name <- "四年级教师对教师职业喜爱程度的情况" `
 图\ref{fig:`r fig_name`}给出了四年级教师对教师职业喜爱程度的总体情况及不同群体的比较。
 ```{r teacher_job_favorite.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- report$plot$teacher_job_favorite.bar
@@ -1533,4 +1533,4 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \includegraphics[width=\textwidth]{`r fig_file`}
 \caption{`r fig_name`}
 \label{fig:`r fig_name`}
-\end{figure}
+\end{figure}

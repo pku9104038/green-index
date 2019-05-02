@@ -40,6 +40,7 @@ GreenIndexReport <- setRefClass(
   methods = list(
     PrepareDataframe = function() {
       callSuper()
+      
       jobs <- config$GetConfigJob()$report
       dataframe <- jobs$dataframe
       
@@ -54,6 +55,7 @@ GreenIndexReport <- setRefClass(
       report.copyright <<- jobs$copyright
         
       report.pilot <<- jobs$pilot
+      
     },
     
     CopyFigureDir = function(subdir) {
@@ -116,13 +118,16 @@ GreenIndexReport <- setRefClass(
       LogDebug(splice.out)
       
     },
+    
     GetReportOutFigDir = function() {
       return(paste0(config$GetDirReportOut(), config$GetDirFigure()))
     },
+    
     GetReportOutFigDirAbs = function() {
       return(paste0(getwd(), "/", config$GetDirReportIn(), 
                     config$GetDirFigure()))
     },
+    
     GetReportOutRmdDir = function() {
       return(paste0(config$GetDirReportOut(), config$GetDirRmarkdown()))
     },
@@ -157,15 +162,16 @@ GreenIndexReport <- setRefClass(
                     report.output$ext))
     },
     
-    
     ReportPlotFigure = function(plot.code) {
       plot.dir <- GetReportOutFigDir()
       return(Plotfigure(plot.dir, plot.code))
     },
-    GetReportPlotFigure = function(plot.code) {
+    
+    GetPlotTitle = function(plot.code) {
       plot.dir <- GetReportOutFigDir()
-      return(GetPlotfigure(plot.dir, plot.code))
+      return(GetPlotFigure(plot.dir, plot.code)$name)
     },
+    
     OpenChunk = function(chunk.code, input.data) {
       output.data <- input.data
       output.data[length(output.data) + 1] <- 
@@ -173,11 +179,13 @@ GreenIndexReport <- setRefClass(
               ", echo=FALSE, message=FALSE, include = FALSE, result=\"hide\"}")
       return(output.data)
     },
+    
     CloseChunk = function(input.data) {
       output.data <- input.data
       output.data[length(output.data) + 1] <- "```"
       return(output.data)
     },
+    
     AddChunk = function(chunk.code, input.data) {
       output.data <- OpenChunk(chunk.code, input.data)
       return(CloseChunk(output.data))
@@ -188,41 +196,49 @@ GreenIndexReport <- setRefClass(
       input.data <- readLines(input.file)
       
       output.data <- "" 
+      prerender.set <- unlist(unique(dataset.df[, kColumnDataset]))
       for (i in 1:length(input.data)) {
         
         input.line <- input.data[i]
-        if (is.element(input.line, unlist(report.plot))) {
-          
-          report.fig <- PlotFigure (GetReportOutFigDir(), input.line)
-          
-          output.data <- OpenChunk(input.line, output.data)
-          # output.data[length(output.data) + 1] <- 
-          #  paste0("plot.fig <- gio.R$GetPlotFigure(gio.R$GetReportOutFigDir(), \"",
-          #        input.line, "\")")
-          output.data <- CloseChunk(output.data)
-          
-          output.data[length(output.data) + 1] <-  " "
-          output.data[length(output.data) + 1] <- "\\begin{figure}[H]"
-          output.data[length(output.data) + 1] <-
-            paste0("\\includegraphics[width=\\textwidth]{", report.fig$path, "}") 
+        if (is.element(input.line, prerender.set)){
+          prefix <- unlist(strsplit(input.line, kPrefixConnector))[1]
+          if (prefix == kPrefixPlot) {
+            
+            report.fig <- PlotFigure (GetReportOutFigDir(), input.line)
+            
+            # output.data <- OpenChunk(input.line, output.data)
+            # output.data[length(output.data) + 1] <- 
+            #  paste0("plot.fig <- gio.R$GetPlotFigure(gio.R$GetReportOutFigDir(), \"",
+            #        input.line, "\")")
+            # output.data <- CloseChunk(output.data)
+            
+            output.data[length(output.data) + 1] <-  " "
+            output.data[length(output.data) + 1] <- "\\begin{figure}[H]"
+            output.data[length(output.data) + 1] <-
+              paste0("\\includegraphics[width=\\textwidth]{", report.fig$path, "}") 
             # paste0("\\includegraphics[width=\\textwidth]{","`r plot.fig$path`","}") 
-          output.data[length(output.data) + 1] <- 
-            paste0("\\caption{", report.fig$name, "}") 
-          output.data[length(output.data) + 1] <- 
-            paste0("\\label{fig: ", report.fig$name, "}") 
-          output.data[length(output.data) + 1] <- "\\end{figure}"
-          output.data[length(output.data) + 1] <-  " "
-          
-        } else if (is.element(input.line, unlist(report.query.data))) {
-          output.data <- OpenChunk(input.line, output.data)
-          output.data[length(output.data) + 1] <-
-            paste0("query.data <- gio.R$QueryData(\"", 
-                   input.line, "\")") 
-          output.data <- CloseChunk(output.data)
+            output.data[length(output.data) + 1] <- 
+              paste0("\\caption{", report.fig$name, "}") 
+            output.data[length(output.data) + 1] <- 
+              paste0("\\label{fig: ", report.fig$name, "}") 
+            output.data[length(output.data) + 1] <- "\\end{figure}"
+            output.data[length(output.data) + 1] <-  " "
+            
+          } else if (prefix == kPrefixQueryData) {
+            output.data <- OpenChunk(input.line, output.data)
+            output.data[length(output.data) + 1] <-
+              paste0("query.data <- gio.R$QueryData(\"", 
+                     input.line, "\")") 
+            output.data <- CloseChunk(output.data)
+            
+          } else {
+            output.data[length(output.data) + 1] <- input.line 
+          }
           
         } else {
           output.data[length(output.data) + 1] <- input.line 
         }
+        
       }
       
       fo <- file(output.file)
@@ -286,9 +302,9 @@ GreenIndexReport <- setRefClass(
           report.subdir <<- job$subdir
           report.subject <<- job$subject
           report.rmarkdown <<- job$rmarkdown
-          report.plot <<- job$plot
-          report.plot.multiple <<- job$plot.multiple
-          report.query.data <<- job$query.data
+          # report.plot <<- job$plot
+          # report.plot.multiple <<- job$plot.multiple
+          # report.query.data <<- job$query.data
 
           if (report.tier == kTierCity) {
             
