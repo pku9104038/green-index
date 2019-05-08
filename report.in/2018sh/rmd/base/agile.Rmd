@@ -1,0 +1,524 @@
+\mytext
+
+
+修订版的《上海市中小学学业质量绿色指标》（简称“绿色指标2.0”），其中包含十个指数，分别为学生学业水平指数、学生身心健康指数、学生品德和社会化行为指数、学生学习动力指数、学生对学校认同度指数、学业负担与压力指数、教师课程领导力指数、校长课程领导力指数、教育公平指数、跨时间发展变化指数。
+
+
+# 学生学业水平指数
+
+学生学业水平指学生对各学科课程标准所要求内容的掌握情况，是学生终身学习和发展的基础，包含学生学业水平的标准达成度、学生高层次思维能力、学生艺术素养三个二级指数。
+
+## 学生学业水平的标准达成度指数
+
+学生学业水平标准是依据课程标准，学生在某一学科某一阶段应该掌握的基本内容与核心能力的标准等级。学业水平的标准达成度指各学科达到合格水平以上学生人数的比例。
+
+## 学生高层次思维能力指数
+
+高层次思维能力指在没有既定解决路径的复杂情境中，个体为找到可能的解决方案，将新的信息和记忆中储存的信息进行相互关联、重新组合和拓展的能力，是区别于记忆、信息检索等较低认知水平层次的心智活动和认知能力。创造性思维、批判性思维等都属于高层次思维，在具体生活中的问题解决、决策制定都需要高层次思维能力。
+
+## 学生艺术素养指数
+
+艺术素养是指学生在解决与艺术相关的现实问题中所表现出来的正确价值观念、必备品格和关键能力。艺术素养的测评主要从感受与鉴赏、合作与分享、创作与表现三个维度进行。“感受与鉴赏”主要指的是对艺术作品和艺术现象的感受、分析、理解、判断与评价；“合作与分享”指的是在艺术学习中与他人的协作、交流、分享。“创作与表现”指的是以视、听、画、演、创进行表达与表现。
+
+query.data.survey.summary
+
+# 学生身心健康指数
+
+身心健康是学生成长与发展的前提基础。学生身心健康指数包括了对学生体质健康和心理健康两个二级指数。
+
+## 学生体质健康指数
+
+学生体质健康指的是学生的人体形态结构、生理功能、身体素质等方面处于良好的状态。这种良好的状态主要通过身体形态（如身高体重）、身体机能（如肺活量）和身体素质（如力量、耐力、爆发力、柔韧性）等方面进行调查。
+
+
+## 学生心理健康指数
+
+心理健康是指个体能够适应发展变化的环境，具有完善的个性特征，其认知、情绪、意志行为处于积极状态，并能保持正常的调控能力。本指数重点对情绪进行测评，主要包含情绪状态、情绪稳定性和情绪管理能力三个方面。其中，情绪状态指学生情感方面的心理状态（如高兴、难过）。情绪稳定性指学生在周遭事物的影响下，情绪波动的程度。情绪管理能力指学生对自身的情绪反应进行监控、评估、修正的能力。
+
+`r tab_name <- "学生心理健康指数-不同群体分析" `
+\begin{table}[H]
+\centering
+\caption{`r tab_name`} \label{tab: `r tab_name`}
+\itshape
+\mytable
+\begin{tabularx}{\textwidth}{|r|X|c|c|c|}
+\hline
+一级指标 & 二级指标  & 三级指标 & 统计样本 & 百分比（\%） \\
+\hline
+
+\multirow{4}{*}{学生身心健康指数} & \multirow{4}{*}{学生心理健康指数}   & \multirow{4}{*}{} & 总体 &  `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "群组", "上海市", "总体", 1)` \\
+\cline{4-5}
+ & &  & 城区 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "群组", "城区", "总体", 1)` \\
+\cline{4-5}
+ & &  & 郊区 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "群组", "郊区", "总体", 1)` \\
+\cline{4-5}
+ & &  & 公办 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "群组", "上海市", "公办", 1)` \\
+\cline{4-5}
+ & &  & 民办 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "群组", "上海市", "民办", 1)` \\
+\cline{4-5}
+ & &  & 新优质 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "群组", "上海市", "新优质", 1)` \\
+\cline{4-5}
+ & &  & 强校工程 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "群组", "上海市", "强校工程", 1)` \\
+\cline{4-5}
+ & &  & 男 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "群组", "上海市", "男", 1)` \\
+\cline{4-5}
+ & &  & 女 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "群组", "上海市", "女", 1)` \\
+\cline{4-5}
+ & &  & 沪籍 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "群组", "上海市", "沪籍", 1)` \\
+\cline{4-5}
+ & &  & 非沪籍 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "群组", "上海市", "非沪籍", 1)` \\
+\hline
+
+\end{tabularx}
+\end{table}
+
+### 情绪状态
+
+`r tab_name <- "情绪状态-不同群体分析" `
+\begin{table}[H]
+\centering
+\caption{`r tab_name`} \label{tab: `r tab_name`}
+\itshape
+\mytable
+\begin{tabularx}{\textwidth}{|r|X|c|c|c|}
+\hline
+一级指标 & 二级指标  & 三级指标 & 统计样本 & 百分比（\%） \\
+\hline
+
+\multirow{4}{*}{学生身心健康指数} & \multirow{4}{*}{学生心理健康指数}   & \multirow{4}{*}{情绪状态} & 总体 &  `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪状态", "上海市", "总体", 1)` \\
+\cline{4-5}
+ & &  & 城区 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪状态", "城区", "总体", 1)` \\
+\cline{4-5}
+ & &  & 郊区 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪状态", "郊区", "总体", 1)` \\
+\cline{4-5}
+ & &  & 公办 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪状态", "上海市", "公办", 1)` \\
+\cline{4-5}
+ & &  & 民办 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪状态", "上海市", "民办", 1)` \\
+\cline{4-5}
+ & &  & 新优质 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪状态", "上海市", "新优质", 1)` \\
+\cline{4-5}
+ & &  & 强校工程 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪状态", "上海市", "强校工程", 1)` \\
+\cline{4-5}
+ & &  & 男 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪状态", "上海市", "男", 1)` \\
+\cline{4-5}
+ & &  & 女 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪状态", "上海市", "女", 1)` \\
+\cline{4-5}
+ & &  & 沪籍 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪状态", "上海市", "沪籍", 1)` \\
+\cline{4-5}
+ & &  & 非沪籍 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪状态", "上海市", "非沪籍", 1)` \\
+\hline
+
+\end{tabularx}
+\end{table}
+
+
+`r tab_name <- "情绪状态-总体选项分析" `
+\begin{table}[H]
+\centering
+\caption{`r tab_name`} \label{tab: `r tab_name`}
+\itshape
+\mytable
+\begin{tabularx}{\textwidth}{|r|X|c|c|c|}
+\hline
+题号 & 题干  & 选项 & 赋分 & 百分比（\%） \\
+\hline
+
+\multirow{4}{*}{Stu17\_X} & \multirow{4}{*}{最近两周，我高兴的状况是：}   & 我总是很高兴 & 1 &  `r gio.R$SubTopScoSamKey(query.data, "学生", "最近两周，我高兴的状况是：", "上海市", "总体", c("我总是很高兴"), 1)` \\
+\cline{3-5}
+ & & 我经常高兴 & 1 & `r gio.R$SubTopScoSamKey(query.data, "学生", "最近两周，我高兴的状况是：", "上海市", "总体", c("我经常高兴"), 1)` \\
+\cline{3-5}
+ & & 我偶尔高兴 & 0 & `r gio.R$SubTopScoSamKey(query.data, "学生", "最近两周，我高兴的状况是：", "上海市", "总体", c("我偶尔高兴"), 1)` \\
+\cline{3-5}
+ & & 我总是不高兴 & 0 & `r gio.R$SubTopScoSamKey(query.data, "学生", "最近两周，我高兴的状况是：", "上海市", "总体", c("我总是不高兴"), 1)` \\
+\hline
+
+\multirow{4}{*}{Stu18\_X} & \multirow{4}{*}{最近两周，我喜欢自己的状况是}   & 我喜欢自己 & 1 &  `r gio.R$SubTopScoSamKey(query.data, "学生", "最近两周，我喜欢自己的状况是", "上海市", "总体", c("我喜欢自己"), 1)` \\
+\cline{3-5}
+ & & 我比较喜欢自己 & 1 & `r gio.R$SubTopScoSamKey(query.data, "学生", "最近两周，我喜欢自己的状况是", "上海市", "总体", c("我比较喜欢自己"), 1)` \\
+\cline{3-5}
+ & & 我不太喜欢自己 & 0 & `r gio.R$SubTopScoSamKey(query.data, "学生", "最近两周，我喜欢自己的状况是", "上海市", "总体", c("我不太喜欢自己"), 1)` \\
+\cline{3-5}
+ & & 我讨厌自己 & 0 & `r gio.R$SubTopScoSamKey(query.data, "学生", "最近两周，我喜欢自己的状况是", "上海市", "总体", c("我讨厌自己"), 1)` \\
+\hline
+
+\multirow{4}{*}{Stu19\_X} & \multirow{4}{*}{最近两周，我想哭的状况是}   & 我每天都想哭 & 0 &  `r gio.R$SubTopScoSamKey(query.data, "学生", "最近两周，我想哭的状况是", "上海市", "总体", c("我每天都想哭"), 1)` \\
+\cline{3-5}
+ & & 我隔几天就想哭 & 0 & `r gio.R$SubTopScoSamKey(query.data, "学生", "最近两周，我想哭的状况是", "上海市", "总体", c("我隔几天就想哭"), 1)` \\
+\cline{3-5}
+ & & 我偶尔想哭 & 1 & `r gio.R$SubTopScoSamKey(query.data, "学生", "最近两周，我想哭的状况是", "上海市", "总体", c("我偶尔想哭"), 1)` \\
+\cline{3-5}
+ & & 我不想哭 & 1 & `r gio.R$SubTopScoSamKey(query.data, "学生", "最近两周，我想哭的状况是", "上海市", "总体", c("我不想哭"), 1)` \\
+\hline
+
+\multirow{4}{*}{Stu20\_X} & \multirow{4}{*}{最近两周，我有心烦事的状况是}   & 我总是有心烦的事 & 0 &  `r gio.R$SubTopScoSamKey(query.data, "学生", "最近两周，我有心烦事的状况是", "上海市", "总体", c("我总是有心烦的事"), 1)` \\
+\cline{3-5}
+ & & 我经常有心烦的事 & 0 & `r gio.R$SubTopScoSamKey(query.data, "学生", "最近两周，我有心烦事的状况是", "上海市", "总体", c("我经常有心烦的事"), 1)` \\
+\cline{3-5}
+ & & 我偶尔有心烦的事 & 1 & `r gio.R$SubTopScoSamKey(query.data, "学生", "最近两周，我有心烦事的状况是", "上海市", "总体", c("我偶尔有心烦的事"), 1)` \\
+\cline{3-5}
+ & & 我没有心烦的事 & 1 & `r gio.R$SubTopScoSamKey(query.data, "学生", "最近两周，我有心烦事的状况是", "上海市", "总体", c("我没有心烦的事"), 1)` \\
+\hline
+
+\end{tabularx}
+\end{table}
+
+
+### 情绪稳定性
+
+`r tab_name <- "情绪稳定性-不同群体分析" `
+\begin{table}[H]
+\centering
+\caption{`r tab_name`} \label{tab: `r tab_name`}
+\itshape
+\mytable
+\begin{tabularx}{\textwidth}{|r|X|c|c|c|}
+\hline
+一级指标 & 二级指标  & 三级指标 & 统计样本 & 百分比（\%） \\
+\hline
+
+\multirow{4}{*}{学生身心健康指数} & \multirow{4}{*}{学生心理健康指数}   & \multirow{4}{*}{情绪稳定性} & 总体 &  `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪稳定性", "上海市", "总体", 1)` \\
+\cline{4-5}
+ & &  & 城区 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪稳定性", "城区", "总体", 1)` \\
+\cline{4-5}
+ & &  & 郊区 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪稳定性", "郊区", "总体", 1)` \\
+\cline{4-5}
+ & &  & 公办 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪稳定性", "上海市", "公办", 1)` \\
+\cline{4-5}
+ & &  & 民办 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪稳定性", "上海市", "民办", 1)` \\
+\cline{4-5}
+ & &  & 新优质 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪稳定性", "上海市", "新优质", 1)` \\
+\cline{4-5}
+ & &  & 强校工程 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪稳定性", "上海市", "强校工程", 1)` \\
+\cline{4-5}
+ & &  & 男 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪稳定性", "上海市", "男", 1)` \\
+\cline{4-5}
+ & &  & 女 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪稳定性", "上海市", "女", 1)` \\
+\cline{4-5}
+ & &  & 沪籍 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪稳定性", "上海市", "沪籍", 1)` \\
+\cline{4-5}
+ & &  & 非沪籍 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪稳定性", "上海市", "非沪籍", 1)` \\
+\hline
+
+\end{tabularx}
+\end{table}
+
+
+`r tab_name <- "情绪稳定性-总体选项分析" `
+\begin{table}[H]
+\centering
+\caption{`r tab_name`} \label{tab: `r tab_name`}
+\itshape
+\mytable
+\begin{tabularx}{\textwidth}{|r|X|c|c|c|}
+\hline
+题号 & 题干  & 选项 & 赋分 & 百分比（\%） \\
+\hline
+
+\multirow{4}{*}{Stu2101\_X} & \multirow{4}{*}{当我生气的时候，我有办法让自己平静下来}   & 非常像我 & 1 &  `r gio.R$SubTopScoSamKey(query.data, "学生", "当我生气的时候，我有办法让自己平静下来", "上海市", "总体", c("非常像我"), 1)` \\
+\cline{3-5}
+ & & 很像我 & 1 & `r gio.R$SubTopScoSamKey(query.data, "学生", "当我生气的时候，我有办法让自己平静下来", "上海市", "总体", c("很像我"), 1)` \\
+\cline{3-5}
+ & & 有点像我 & 0 & `r gio.R$SubTopScoSamKey(query.data, "学生", "当我生气的时候，我有办法让自己平静下来", "上海市", "总体", c("有点像我"), 1)` \\
+\cline{3-5}
+ & & 不太像我 & 0 & `r gio.R$SubTopScoSamKey(query.data, "学生", "当我生气的时候，我有办法让自己平静下来", "上海市", "总体", c("不太像我"), 1)` \\
+\cline{3-5}
+ & & 完全不像我 & 0 & `r gio.R$SubTopScoSamKey(query.data, "学生", "当我生气的时候，我有办法让自己平静下来", "上海市", "总体", c("完全不像我"), 1)` \\
+\hline
+
+\multirow{4}{*}{Stu2102\_X} & \multirow{4}{*}{当我失落的时候，我能让自己振作起来}   & 非常像我 & 1 &  `r gio.R$SubTopScoSamKey(query.data, "学生", "当我失落的时候，我能让自己振作起来", "上海市", "总体", c("非常像我"), 1)` \\
+\cline{3-5}
+ & & 很像我 & 1 & `r gio.R$SubTopScoSamKey(query.data, "学生", "当我失落的时候，我能让自己振作起来", "上海市", "总体", c("很像我"), 1)` \\
+\cline{3-5}
+ & & 有点像我 & 0 & `r gio.R$SubTopScoSamKey(query.data, "学生", "当我失落的时候，我能让自己振作起来", "上海市", "总体", c("有点像我"), 1)` \\
+\cline{3-5}
+ & & 不太像我 & 0 & `r gio.R$SubTopScoSamKey(query.data, "学生", "当我失落的时候，我能让自己振作起来", "上海市", "总体", c("不太像我"), 1)` \\
+\cline{3-5}
+ & & 完全不像我 & 0 & `r gio.R$SubTopScoSamKey(query.data, "学生", "当我失落的时候，我能让自己振作起来", "上海市", "总体", c("完全不像我"), 1)` \\
+\hline
+
+\multirow{4}{*}{Stu2103\_X} & \multirow{4}{*}{生气的时候，我会朝别人大声喊叫}   & 非常像我 & 0 &  `r gio.R$SubTopScoSamKey(query.data, "学生", "生气的时候，我会朝别人大声喊叫", "上海市", "总体", c("非常像我"), 1)` \\
+\cline{3-5}
+ & & 很像我 & 0 & `r gio.R$SubTopScoSamKey(query.data, "学生", "生气的时候，我会朝别人大声喊叫", "上海市", "总体", c("很像我"), 1)` \\
+\cline{3-5}
+ & & 有点像我 & 0 & `r gio.R$SubTopScoSamKey(query.data, "学生", "生气的时候，我会朝别人大声喊叫", "上海市", "总体", c("有点像我"), 1)` \\
+\cline{3-5}
+ & & 不太像我 & 1 & `r gio.R$SubTopScoSamKey(query.data, "学生", "生气的时候，我会朝别人大声喊叫", "上海市", "总体", c("不太像我"), 1)` \\
+\cline{3-5}
+ & & 完全不像我 & 1 & `r gio.R$SubTopScoSamKey(query.data, "学生", "生气的时候，我会朝别人大声喊叫", "上海市", "总体", c("完全不像我"), 1)` \\
+\hline
+
+\multirow{4}{*}{Stu2104\_X} & \multirow{4}{*}{我会控制自己的情绪，不轻易地表现出来}   & 非常像我 & 1 &  `r gio.R$SubTopScoSamKey(query.data, "学生", "我会控制自己的情绪，不轻易地表现出来", "上海市", "总体", c("非常像我"), 1)` \\
+\cline{3-5}
+ & & 很像我 & 1 & `r gio.R$SubTopScoSamKey(query.data, "学生", "我会控制自己的情绪，不轻易地表现出来", "上海市", "总体", c("很像我"), 1)` \\
+\cline{3-5}
+ & & 有点像我 & 0 & `r gio.R$SubTopScoSamKey(query.data, "学生", "我会控制自己的情绪，不轻易地表现出来", "上海市", "总体", c("有点像我"), 1)` \\
+\cline{3-5}
+ & & 不太像我 & 0 & `r gio.R$SubTopScoSamKey(query.data, "学生", "我会控制自己的情绪，不轻易地表现出来", "上海市", "总体", c("不太像我"), 1)` \\
+\cline{3-5}
+ & & 完全不像我 & 0 & `r gio.R$SubTopScoSamKey(query.data, "学生", "我会控制自己的情绪，不轻易地表现出来", "上海市", "总体", c("完全不像我"), 1)` \\
+\hline
+
+\end{tabularx}
+\end{table}
+
+
+### 情绪管理能力
+
+`r tab_name <- "情绪管理能力-不同群体分析" `
+\begin{table}[H]
+\centering
+\caption{`r tab_name`} \label{tab: `r tab_name`}
+\itshape
+\mytable
+\begin{tabularx}{\textwidth}{|r|X|c|c|c|}
+\hline
+一级指标 & 二级指标  & 三级指标 & 统计样本 & 百分比（\%） \\
+\hline
+
+\multirow{4}{*}{学生身心健康指数} & \multirow{4}{*}{学生心理健康指数}   & \multirow{4}{*}{情绪管理能力} & 总体 &  `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪管理能力", "上海市", "总体", 1)` \\
+\cline{4-5}
+ & &  & 城区 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪管理能力", "城区", "总体", 1)` \\
+\cline{4-5}
+ & &  & 郊区 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪管理能力", "郊区", "总体", 1)` \\
+\cline{4-5}
+ & &  & 公办 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪管理能力", "上海市", "公办", 1)` \\
+\cline{4-5}
+ & &  & 民办 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪管理能力", "上海市", "民办", 1)` \\
+\cline{4-5}
+ & &  & 新优质 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪管理能力", "上海市", "新优质", 1)` \\
+\cline{4-5}
+ & &  & 强校工程 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪管理能力", "上海市", "强校工程", 1)` \\
+\cline{4-5}
+ & &  & 男 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪管理能力", "上海市", "男", 1)` \\
+\cline{4-5}
+ & &  & 女 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪管理能力", "上海市", "女", 1)` \\
+\cline{4-5}
+ & &  & 沪籍 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪管理能力", "上海市", "沪籍", 1)` \\
+\cline{4-5}
+ & &  & 非沪籍 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "情绪管理能力", "上海市", "非沪籍", 1)` \\
+\hline
+
+\end{tabularx}
+\end{table}
+
+
+`r tab_name <- "情绪管理能力-总体选项分析" `
+\begin{table}[H]
+\centering
+\caption{`r tab_name`} \label{tab: `r tab_name`}
+\itshape
+\mytable
+\begin{tabularx}{\textwidth}{|r|X|c|c|c|}
+\hline
+题号 & 题干  & 选项 & 赋分 & 百分比（\%） \\
+\hline
+
+\multirow{4}{*}{Stu2201\_X} & \multirow{4}{*}{我容易心情低落、无精打采}   & 非常像我 & 0 &  `r gio.R$SubTopScoSamKey(query.data, "学生", "我容易心情低落、无精打采", "上海市", "总体", c("非常像我"), 1)` \\
+\cline{3-5}
+ & & 很像我 & 0 & `r gio.R$SubTopScoSamKey(query.data, "学生", "我容易心情低落、无精打采", "上海市", "总体", c("很像我"), 1)` \\
+\cline{3-5}
+ & & 有点像我 & 0 & `r gio.R$SubTopScoSamKey(query.data, "学生", "我容易心情低落、无精打采", "上海市", "总体", c("有点像我"), 1)` \\
+\cline{3-5}
+ & & 不太像我 & 1 & `r gio.R$SubTopScoSamKey(query.data, "学生", "我容易心情低落、无精打采", "上海市", "总体", c("不太像我"), 1)` \\
+\cline{3-5}
+ & & 完全不像我 & 1 & `r gio.R$SubTopScoSamKey(query.data, "学生", "我容易心情低落、无精打采", "上海市", "总体", c("完全不像我"), 1)` \\
+\hline
+
+\multirow{4}{*}{Stu2202\_X} & \multirow{4}{*}{我的心情容易受影响}   & 非常像我 & 0 &  `r gio.R$SubTopScoSamKey(query.data, "学生", "我的心情容易受影响", "上海市", "总体", c("非常像我"), 1)` \\
+\cline{3-5}
+ & & 很像我 & 0 & `r gio.R$SubTopScoSamKey(query.data, "学生", "我的心情容易受影响", "上海市", "总体", c("很像我"), 1)` \\
+\cline{3-5}
+ & & 有点像我 & 0 & `r gio.R$SubTopScoSamKey(query.data, "学生", "我的心情容易受影响", "上海市", "总体", c("有点像我"), 1)` \\
+\cline{3-5}
+ & & 不太像我 & 1 & `r gio.R$SubTopScoSamKey(query.data, "学生", "我的心情容易受影响", "上海市", "总体", c("不太像我"), 1)` \\
+\cline{3-5}
+ & & 完全不像我 & 1 & `r gio.R$SubTopScoSamKey(query.data, "学生", "我的心情容易受影响", "上海市", "总体", c("完全不像我"), 1)` \\
+\hline
+
+\multirow{4}{*}{Stu2203\_X} & \multirow{4}{*}{我容易感到紧张}   & 非常像我 & 0 &  `r gio.R$SubTopScoSamKey(query.data, "学生", "我容易感到紧张", "上海市", "总体", c("非常像我"), 1)` \\
+\cline{3-5}
+ & & 很像我 & 0 & `r gio.R$SubTopScoSamKey(query.data, "学生", "我容易感到紧张", "上海市", "总体", c("很像我"), 1)` \\
+\cline{3-5}
+ & & 有点像我 & 0 & `r gio.R$SubTopScoSamKey(query.data, "学生", "我容易感到紧张", "上海市", "总体", c("有点像我"), 1)` \\
+\cline{3-5}
+ & & 不太像我 & 1 & `r gio.R$SubTopScoSamKey(query.data, "学生", "我容易感到紧张", "上海市", "总体", c("不太像我"), 1)` \\
+\cline{3-5}
+ & & 完全不像我 & 1 & `r gio.R$SubTopScoSamKey(query.data, "学生", "我容易感到紧张", "上海市", "总体", c("完全不像我"), 1)` \\
+\hline
+
+\multirow{4}{*}{Stu2204\_X} & \multirow{4}{*}{我容易发脾气}   & 非常像我 & 0 &  `r gio.R$SubTopScoSamKey(query.data, "学生", "我容易发脾气", "上海市", "总体", c("非常像我"), 1)` \\
+\cline{3-5}
+ & & 很像我 & 0 & `r gio.R$SubTopScoSamKey(query.data, "学生", "我容易发脾气", "上海市", "总体", c("很像我"), 1)` \\
+\cline{3-5}
+ & & 有点像我 & 0 & `r gio.R$SubTopScoSamKey(query.data, "学生", "我容易发脾气", "上海市", "总体", c("有点像我"), 1)` \\
+\cline{3-5}
+ & & 不太像我 & 1 & `r gio.R$SubTopScoSamKey(query.data, "学生", "我容易发脾气", "上海市", "总体", c("不太像我"), 1)` \\
+\cline{3-5}
+ & & 完全不像我 & 1 & `r gio.R$SubTopScoSamKey(query.data, "学生", "我容易发脾气", "上海市", "总体", c("完全不像我"), 1)` \\
+\hline
+
+\end{tabularx}
+\end{table}
+
+
+
+
+
+
+
+
+
+
+# 学生品德和社会化行为指数
+
+良好的品德是个人成长、终生发展的基础，更是学生成为社会有用之才的重要条件。社会化则反映了学生对社会规则和价值的内化程度，具体表现为学生按照社会规范妥善行事。学生品德和社会化行为指数主要包括行为规范、亲社会行为、国家认同、国际视野四个二级指数。
+
+`r tab_name <- "学生品德和社会化行为指数-不同群体分析" `
+\begin{table}[H]
+\centering
+\caption{`r tab_name`} \label{tab: `r tab_name`}
+\itshape
+\mytable
+\begin{tabularx}{\textwidth}{|r|X|c|c|c|}
+\hline
+一级指标 & 二级指标  & 三级指标 & 统计样本 & 百分比（\%） \\
+\hline
+
+\multirow{4}{*}{学生身心健康指数} & \multirow{4}{*}{学生心理健康指数}   & \multirow{4}{*}{} & 总体 &  `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "群组", "上海市", "总体", 1)` \\
+\cline{4-5}
+ & &  & 城区 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "群组", "城区", "总体", 1)` \\
+\cline{4-5}
+ & &  & 郊区 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "群组", "郊区", "总体", 1)` \\
+\cline{4-5}
+ & &  & 公办 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "群组", "上海市", "公办", 1)` \\
+\cline{4-5}
+ & &  & 民办 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "群组", "上海市", "民办", 1)` \\
+\cline{4-5}
+ & &  & 新优质 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "群组", "上海市", "新优质", 1)` \\
+\cline{4-5}
+ & &  & 强校工程 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "群组", "上海市", "强校工程", 1)` \\
+\cline{4-5}
+ & &  & 男 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "群组", "上海市", "男", 1)` \\
+\cline{4-5}
+ & &  & 女 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "群组", "上海市", "女", 1)` \\
+\cline{4-5}
+ & &  & 沪籍 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "群组", "上海市", "沪籍", 1)` \\
+\cline{4-5}
+ & &  & 非沪籍 & `r gio.R$CoefDomDimSGrpScoSam(query.data, "学生身心健康", "心理健康", "群组", "上海市", "非沪籍", 1)` \\
+\hline
+
+\end{tabularx}
+\end{table}
+
+## 行为规范指数
+
+行为规范指学生遵纪守法、遵守中小学生行为规范，能够维持正常适宜的学校和社会生活。主要包含学生法律法规的遵守情况、学生学校行为规范的遵守情况、学生社会公共礼仪行为等方面。
+
+
+## 亲社会行为指数
+
+亲社会行为指学生在社会交往的情境中有意识地做出帮助他人的行为或做有益于他人的事的倾向，主要体现在友爱宽容、乐于助人、善于合作、尊重他人等行为上。
+
+
+## 国家认同指数
+
+国家认同指学生对自己国家的归属感、责任感和使命感。主要调查学生在热爱祖国、认可中华优秀传统文化、民族平等与团结、勇于承担责任等社会主义核心价值观方面的表现。
+
+
+## 国际视野指数
+
+国际视野指学生能将世界看成一个自然、社会、历史的综合体，立足于人类命运共同体的建设，理解不同国家与民族的文化差异，认识、分析和思考世界历史和社会问题，并在互相尊重的基础上，能与不同文化背景的人开放、合适、有效地沟通。本指数主要调查学生的全球意识（如自觉且敏锐地了解世界、尊重文化差异）、国际知识（对全球议题、国际规则、文化礼俗等的了解程度）、国际行为能力（如多国语言技能，分析、判断、解释国际问题和社会问题的能力）等。
+
+
+# 学生学习动力指数
+
+学习动力是学生对学习行为价值判断基础上的心理驱动总和，是引导、推动和维持学生参与学习活动的力量，主要包括学习自信心和学习动机两个二级指数。
+
+## 学习自信心指数
+
+学习自信心是指学生对自己能否完成学习任务或达到学习目标的信念。主要体现在学生对个人学习能力的评估、对取得优异学习成绩和完成学习目标的预期等方面。
+
+
+## 学习动机指数
+
+学习动机是指引发与维持学生学习行为，并使之指向一定学业目标的一种动力倾向。学习动机主要体现在学生对学习任务的倾向，采取的学习行为，对学习结果的期待和解释等方面。
+
+
+# 学生对学校认同度指数
+
+学生对学校认同指的是学生对学校的认可与接纳，是学生对所在学校的价值观、学校精神及文化传统的承认和接受，主要包括师生关系、同伴关系、学校归属感三个二级指数。
+
+## 师生关系指数
+
+师生关系是教师和学生在教育教学过程中结成的相互关系，包括彼此所处的地位、作用和相互对待的态度。师生关系主要体现在教师对于学生的尊重，能公正、平等地对待学生，信任学生等方面。
+
+
+## 同伴关系指数
+
+同伴关系是指年龄相同或相近的儿童或青少年之间的一种共同活动并相互协作的关系。学校中的同伴关系主要体现在一个班集体中的学生之间是否彼此接纳与包容，是否协作与交流，是否相互理解与尊重。
+
+
+## 学校归属感指数
+
+学校归属感是指学生对自己所就读的学校在思想上、感情上和心理上的认可和投入、愿意承担作为学校一员的各项责任和义务以及乐于参与学校集体活动。主要体现在学生是否认同学校的理念、是否积极参加学校集体活动等方面。
+
+
+# 学业负担与压力指数
+
+学业负担和压力指数从主观和客观两个方面对学生学业压力进行评估，包括学业负担和学业压力两个二级指数。
+
+## 学业负担指数
+
+学业负担是指学生为完成课内和课外学习任务所付出的代价。该指数主要通过调查学生睡眠时间、做作业时和补课时间等方面来反映学生所承受的学业负担的状况和程度。
+
+## 学业压力指数
+
+学业压力是当环境要求超出学生自身应对能力时学生的主观感受。主要调查学生在学习过程中产生的心理负担、焦虑等消极的体验，通过询问学生在做作业、考试、课堂提问、成果反馈等情境中的心理状态进行考察。
+
+
+# 教师课程领导力指数
+
+教师课程领导力指教师将课程意识与教学实践相融合，有效开展课堂教学活动的素质，主要包括教师教学理念、教师教学方式和教师学业评价能力三个二级指数。
+
+## 教师教学理念指数
+
+教师教学理念指教师对教学的观点和看法，以及在此基础上形成的相对稳定的思想和观念体系，反映了教师对教学实践的价值追求，是影响教师从事课程相关行为的直接因素。教师教学理念主要包括知识观、教学观、学生观等方面。
+
+
+## 教师教学方式指数
+
+教师教学方式是教师为达到课程教学目标，在课堂教学过程中采取的途径、步骤、手段。主要考察教师在课堂上运用自主、合作、探究等方式进行教学的频率与程度。
+
+
+## 教师学业评价能力指数
+
+教师学业评价能力是教师为了了解课程与教学实施效果，对学生学业情况进行诊断的能力。主要考察教师确定评价目标、设计评价工具、分析评价结果等方面的表现。
+
+
+# 校长课程领导力指数
+
+校长课程领导力是学校为实现办学目标、提升教育质量，在课程设计、开发、实施和评价等课程事务过程中，对课程活动相关人员进行引领和指导的能力，主要包含课程规划、课程实施和课程评价三个二级指数。
+
+## 课程规划指数
+
+课程规划指学校整体的课程规划与安排，主要考察学校课程理念与定位，课程体系结构，开设的课程类别与数量，社会实践性学习、社团活动、科技节艺术节的安排等方面。
+
+
+## 课程实施指数
+
+课程实施指学校根据课程计划，对整体课程进行有效落实的程度，主要包括学校课程的实际实施情况、课程实施的配套保障举措两个方面。其中，学校的课程实际实施情况包括三类课程的师资配置、校本材料的编制和使用、教研组和备课组活动的计划与开展、课堂教学对课程标准的落实程度、音体美等专用教室与场地器材的配置、校外资源的应用等。课程实施的配套保障举措包括教学常规等规章制度的建立与实施、对教师专业发展的支持、家校沟通与家校关系协调等。
+
+
+## 课程评价指数
+
+课程评价指学校为了解课程实施效果、对课程进行完善更新，对整体课程进行的监控。主要考察学校的整体课程评价框架、评价手段和方法、评价结果的分析与应用等。
+
+
+# 教育公平指数
+
+教育公平指为所有学生提供从教育中获益的机会，不论学生的性别、家庭社会经济背景如何。本指数主要通过学生学习结果的均衡程度和学校教育对学生学习结果的影响程度来进行考察。其中，学生学习结果的均衡程度包括全市总体均衡度、区域间均衡度和学校间均衡度三个方面。学校教育对学生学习结果的影响程度侧重于考察学校教育抵消学生不利的家庭社会经济背景对其学习成就的影响的程度。
+
+
+# 跨时间发展指数
+
+跨时间发展指的是在绿色指标诸多评价指数上，从时间跨度上考察市、区、校的变化情况，以激励和督促相关教育主体不断提高教育质量。

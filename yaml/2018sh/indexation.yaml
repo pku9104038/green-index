@@ -41,3 +41,15 @@ indexation:
       process:
         table: *kTableIndexRegion
         suffix: ""
+
+    -
+      TODO: FALSE
+      input:
+        table: *kStatisticsScore
+        suffix: *kTableStatistics
+      output:
+        table: *kStatisticsScore
+        suffix: *kTableIndex
+      process:
+        table: *kTableIndexRegion
+        suffix: ""

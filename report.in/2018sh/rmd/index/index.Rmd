@@ -1,0 +1,14 @@
+---
+documentclass: book
+fontsize: 12pt
+geometry: margin=1in
+output:
+  pdf_document:
+    fig_caption: yes
+    template: pdf_template.tex
+    includes:
+      in_header: header_green.tex
+    latex_engine: xelatex
+    number_sections: yes
+    keep_tex: no
+---

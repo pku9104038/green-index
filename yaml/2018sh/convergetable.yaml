@@ -5,7 +5,7 @@ convergetable:
   # TRUE, igonre TODO: FALSE flags, rework jobs
   table:
     -
-      TODO: FALSE
+      TODO: TRUE
       input:
         <<: *kTableStatisticsIndex
       output:

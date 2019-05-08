@@ -63,10 +63,10 @@ kTableAttribute:
     属性表问卷赋分
   - &kTableVariableTransform
     属性表变量转换
-  - &kTableCoefficentRegion
-    属性表区域系数
-  - &kTableCoefficentSchool
-    属性表学校系数
+  - &kTableSurveyStatistics
+    属性表问卷统计
+  - &kTableScoreStatistics
+    属性表成绩统计
   - &kTableScoreConverge
     属性表成绩综合
   - &kTableIndexRegion

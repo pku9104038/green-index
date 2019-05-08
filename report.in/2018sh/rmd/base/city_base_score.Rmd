@@ -1,4 +1,4 @@
-<!--  chapter 2 score  -->
+<!--  chapter -->
 
 \mytext
 
@@ -31,7 +31,7 @@ query.data.city.base.score.passrate.allsubject.total.region
 
 ## 八年级学生学业水平总体情况　
 
-上海市八年级学生总体在语文、数学、英语、科学与艺术学科上的得分分布见图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.score.segment.cn.total")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.score.segment.ma.total")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.score.segment.en.total")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.score.segment.sc.total")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.score.segment.ar.total")`}。
+八年级学生总体在语文、数学、英语、科学与艺术学科上的标准分分布情况见图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.score.segment.cn.total")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.score.segment.ma.total")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.score.segment.en.total")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.score.segment.sc.total")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.score.segment.ar.total")`}。
 
 plot.bar.city.base.score.segment.cn.total
 
@@ -43,7 +43,7 @@ plot.bar.city.base.score.segment.sc.total
 
 plot.bar.city.base.score.segment.ar.total
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.facet.score.rank.allsubject.total.region")`}给出了上海市不同区域在各学科各水平上的人数比例。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.facet.score.rank.allsubject.total.region")`}给出了不同区域在各学科各水平上的人数比例。
 
 plot.bar.city.base.facet.score.rank.allsubject.total.region
 
@@ -74,13 +74,13 @@ plot.bar.city.base.score.rank.en.total.district
 
 plot.box.city.base.score.quantile.en.total.district
 
-#### 各区学生科学学业水平
+#### 各区学生科学素养
 
 plot.bar.city.base.score.rank.sc.total.district
 
 plot.box.city.base.score.quantile.sc.total.district
 
-#### 各区学生艺术学业水
+#### 各区学生艺术素养
 
 plot.bar.city.base.score.rank.ar.total.district
 
@@ -108,4 +108,4 @@ plot.bar.city.base.facet.score.rank.allsubject.huji
 
 \clearpage
 
-<!--  end of chapter 2 score  -->
+<!--  end of chapter  -->

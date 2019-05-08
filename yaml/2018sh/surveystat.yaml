@@ -27,7 +27,7 @@ statistics:
         table: *kRespondentST
         suffix: *kTableStatistics
       process:
-        table: *kTableCoefficentRegion
+        table: *kTableSurveyStatistics
         suffix: ""
       choice:
         table: *kTableSurveyResponsePoint
@@ -64,7 +64,7 @@ statistics:
         table: *kRespondentPA
         suffix: *kTableStatistics
       process:
-        table: *kTableCoefficentRegion
+        table: *kTableSurveyStatistics
         suffix: ""
       choice:
         table: *kTableSurveyResponsePoint
@@ -100,7 +100,7 @@ statistics:
         table: *kRespondentTE
         suffix: *kTableStatistics
       process:
-        table: *kTableCoefficentRegion
+        table: *kTableSurveyStatistics
         suffix: ""
       choice:
         table: *kTableSurveyResponsePoint
@@ -136,7 +136,7 @@ statistics:
         table: *kSubjectCN
         suffix: *kTableStatistics
       process:
-        table: *kTableCoefficentRegion
+        table: *kTableSurveyStatistics
         suffix: ""
       choice:
         table: *kTableSurveyResponsePoint
@@ -172,7 +172,7 @@ statistics:
         table: *kSubjectMA
         suffix: *kTableStatistics
       process:
-        table: *kTableCoefficentRegion
+        table: *kTableSurveyStatistics
         suffix: ""
       choice:
         table: *kTableSurveyResponsePoint
@@ -208,7 +208,7 @@ statistics:
         table: *kSubjectEN
         suffix: *kTableStatistics
       process:
-        table: *kTableCoefficentRegion
+        table: *kTableSurveyStatistics
         suffix: ""
       choice:
         table: *kTableSurveyResponsePoint
@@ -244,7 +244,7 @@ statistics:
         table: *kSubjectSC
         suffix: *kTableStatistics
       process:
-        table: *kTableCoefficentRegion
+        table: *kTableSurveyStatistics
         suffix: ""
       choice:
         table: *kTableSurveyResponsePoint
@@ -280,7 +280,7 @@ statistics:
         table: *kSubjectAR
         suffix: *kTableStatistics
       process:
-        table: *kTableCoefficentRegion
+        table: *kTableSurveyStatistics
         suffix: ""
       choice:
         table: *kTableSurveyResponsePoint

@@ -1,7 +1,7 @@
 
 # score converge
 scoreconverge:
-  TODO: FALSE
+  TODO: TRUE
   # TRUE,  FALSE ,rework jobs flag
   input:
     <<: *kTableStatisticsScore

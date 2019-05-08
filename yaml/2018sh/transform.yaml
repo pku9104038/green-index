@@ -17,8 +17,6 @@ transform:
       dummy:
         - TRUE
 
-
-
     -
       TODO: FALSE
       input:
@@ -145,6 +143,9 @@ transform:
         suffix: *kTableTransform
       transform:
         table: *kTableVariableTransform
+        suffix: ""
+      attribute:
+        table: *kTableSubjectSolutionPoint
         suffix: ""
 
     -

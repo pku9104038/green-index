@@ -19,8 +19,22 @@ report:
   <<: *kPrepareDataframe
 
   report:
+
     -
-      TODO: TRUE
+      TODO: FALSE
+      name: "绿色指标基础数据统计汇总"
+      tier: *kStatisticsTierCity
+      subdir: "base"
+      subject: ""
+      rmarkdown:
+        - "base.rmd"
+        - "global_setting.rmd"
+        - "head_foot.rmd"
+        - "table_of_contents.rmd"
+        - "agile.rmd"
+
+    -
+      TODO: FALSE
       name: "绿色指标基础数据报告"
       tier: *kStatisticsTierCity
       subdir: "base"
@@ -33,8 +47,27 @@ report:
         - "report_preface.rmd"
         - "table_of_contents.rmd"
         - "project_summary.rmd"
-        - "base_chapter_2_city.rmd"
-        - "base_chapter_3_city.rmd"
+        - "city_base_score.rmd"
+        - "city_base_student.rmd"
+        - "city_base_teacher.rmd"
+        - "city_base_principal.rmd"
+        - "city_base_parent.rmd"
+
+    -
+      TODO: FALSE
+      name: "绿色指标指数报告"
+      tier: *kStatisticsTierCity
+      subdir: "index"
+      subject: ""
+      rmarkdown:
+        - "index.rmd"
+        - "global_setting.rmd"
+        - "cover_page.rmd"
+        - "head_foot.rmd"
+        - "report_preface.rmd"
+        - "table_of_contents.rmd"
+        # - "city_index_score.rmd"
+
 
     -
       TODO: FALSE
@@ -50,6 +83,7 @@ report:
         - "report_preface.rmd"
         - "table_of_contents.rmd"
         - "project_summary.rmd"
+
 
     -
       TODO: FALSE

@@ -1,0 +1,195 @@
+
+# load original data from xlsx sheet into database table
+loadattribute:
+  TODO: FALSE
+  # TRUE, igonre TODO: FALSE flags, rework load data jobs
+  table:
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "区信息表"
+      table: *kTableDistrict
+      suffix: *kTableRaw
+      # select: # select columns
+      #   - column.name
+      # drop:  # drop columns
+      #   - "column.name"
+      # rename: # rename columns
+      #   -
+      #     name: column.name
+      #     rename: column.rename
+      # keep: # keep columns
+      #   - "column.name"
+      # add: # add constant value
+      #   -
+      #     name: column.name
+      #     value: column.value   # numeric, character, boolean
+      # type:  # set column data type
+      #   -
+      #     name: column.name
+      #     type: data.type
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "学校信息表"
+      table: *kTableSchool
+      suffix: *kTableRaw
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "别名表"
+      table: *kTableAlias
+      suffix: ""
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "指标体系表"
+      table: *kTableIndexSystem
+      suffix: ""
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "指标映射表"
+      table: *kTableDimentionMapping
+      suffix: ""
+
+    -
+      TODO: TRUE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "试题问卷属性表"
+      table: *kTableQuestionAttribute
+      suffix: ""
+
+    -
+      TODO: TRUE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "试题分值表"
+      table: *kTableSubjectSolutionPoint
+      suffix: ""
+
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "标准代码表"
+      table: *kTableDictionary
+      suffix: ""
+
+    -
+      TODO: TRUE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "问卷赋分表"
+      table: *kTableSurveyResponsePoint
+      suffix: ""
+
+    -
+      TODO: TRUE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "变量转换表"
+      table: *kTableVariableTransform
+      suffix: ""
+
+    -
+      TODO: TRUE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "问卷统计表"
+      table: *kTableSurveyStatistics
+      suffix: ""
+
+    -
+      TODO: TRUE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "成绩统计表"
+      table: *kTableScoreStatistics
+      suffix: ""
+
+    -
+      TODO: TRUE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "学校系数表"
+      table: *kTableCoefficentSchool
+      suffix: ""
+
+    -
+      TODO: TRUE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "成绩综合表"
+      table: *kTableScoreConverge
+      suffix: ""
+
+    -
+      TODO: TRUE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "区域指数表"
+      table: *kTableIndexRegion
+      suffix: ""
+
+    -
+      TODO: TRUE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "数据查询表"
+      table: *kTableDataQuery
+      suffix: ""
+
+    -
+      TODO: TRUE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "绘图参数表"
+      table: *kTablePlotParameter
+      suffix: ""
+
+    -
+      TODO: FALSE
+      xlsx: "学生信息.xlsx"
+      sheet: "学生"    # this is a csv file
+      table: *kTableStudent
+      suffix: *kTableRaw
+      rename:
+        -
+          name: "家长问卷密码"
+          rename: "家长密码"
+      keep:
+        - "学校编码"
+        - "准考证号"
+        - "户籍"
+        - "性别"
+        - "考试组合"
+        - "家长密码"
+
+    -
+      TODO: FALSE
+      xlsx: "教师校长密码.xlsx"
+      sheet: "教师"
+      table: *kTableTeacher
+      suffix: *kTableRaw
+      rename:
+        -
+          name: "校代码"
+          rename: "学校编码"
+        -
+          name: "密码"
+          rename: "教师密码"
+      keep:
+        - "学校编码"
+        - "教师密码"
+
+    -
+      TODO: FALSE
+      xlsx: "教师校长密码.xlsx"
+      sheet: "校长"
+      table: *kTablePrincipal
+      suffix: *kTableRaw
+      rename:
+        -
+          name: "校代码"
+          rename: "学校编码"
+        -
+          name: "密码"
+          rename: "校长密码"
+      keep:
+        - "学校编码"
+        - "校长密码"

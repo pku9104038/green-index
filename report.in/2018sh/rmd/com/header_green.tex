@@ -22,8 +22,8 @@
 %\CTEXsetup[beforeskip={0pt},afterskip={20pt}]{chapter}
 
 \usepackage{mytitlesec}
-
-\titleformat{\chapter}{\centering\Huge\bfseries}{第\,\thechapter\,章}{1em}{} %not for green report
+\titleformat{\chapter}{\centering\Huge\bfseries}{~\,\thechapter\,~.}{1em}{} 
+\titlespacing{\chapter}{0pt}{0pt}{0pt} 
 
 \usepackage[fntef]{ctexcap}
 \CTEXsetup[number={\chinese{chapter}}]{chapter}
@@ -127,10 +127,7 @@
 }
 
 \newcommand{\mysubtitle}[1]{
-    \begin{center}\fontsize{24pt}{36pt}\selectfont\textbf{\textit{#1}}\end{center} 
-}
-\newcommand{\myschool}[1]{
-    \begin{center}\fontsize{24pt}{28pt}\selectfont\textbf{\textit{#1}}\end{center} 
+    \begin{center}\fontsize{24pt}{48pt}\selectfont\textbf{\textit{#1}}\end{center} 
 }
 
 \newcommand{\myproducer}[1]{
