@@ -24,7 +24,7 @@ GreenIndexLoadData <- setRefClass(
       xlsx <<- xlsx.obj
     },
     
-    LoadData = function(){
+    LoadExcel = function(jobs){
       LogInfo("Loading Data!")
       
       jobs <- config$GetLoadDataJob()
@@ -66,8 +66,19 @@ GreenIndexLoadData <- setRefClass(
         
       }
       
-    }
+    },
     
+    LoadData = function() {
+      LogInfo("Loading Data!")
+      jobs <- config$GetConfigJob()$loaddata
+      LoadExcel(jobs)
+    },
+    
+    LoadAttribute = function() {
+      LogInfo("Loading Attribute!")
+      jobs <- config$GetConfigJob()$loadattribute
+      LoadExcel(jobs)
+    }
   )
 )
 

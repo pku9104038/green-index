@@ -29,6 +29,7 @@ GreenIndexStatisticsData <- setRefClass(
     
     district.df = "data.frame",
     school.df = "data.frame",
+    attribute.df = "data.frame",
     
     process = "data.frame",
     algorithm = "character",
@@ -94,9 +95,9 @@ GreenIndexStatisticsData <- setRefClass(
                    stat.list[kColumnStatisticsPerspective],
                    stat.list[kColumnStatisticsSample],
                    stat.list[kColumnStatisticsVariable],
-                   stat.list[kColumnStatisticsAlgorithm],
+                   # stat.list[kColumnStatisticsAlgorithm],
                    stat.list[kColumnStatisticsIndexType],
-                   stat.list[kColumnValueType],
+                   # stat.list[kColumnValueType],
                    stat.list[kColumnKey])
       stat.list[kColumnHashDigest] <<- digest(msg, algo = "sha256")
       
@@ -305,6 +306,7 @@ GreenIndexStatisticsData <- setRefClass(
       sample.size <- nrow(sample.df)
       
       choice.set <- unique(sample.df[, variable.name])
+      choice.set <- choice.set[!is.na(choice.set)]
       
       for (n in 1:length(choice.set)) {
         choice.name <<- choice.set[n]
@@ -380,6 +382,8 @@ GreenIndexStatisticsData <- setRefClass(
       
       choice.name <<- kMean
       statistics.value <<- mean(sample.df[, variable.name])
+      AddStatDataframe() 
+      
       msg <- paste(algorithm, variable.name, 
                    kColumnStatisticsTier, tier.name, 
                    kColumnStatisticsPerspective, perspective.name,
@@ -387,8 +391,6 @@ GreenIndexStatisticsData <- setRefClass(
                    kColumnStatisticsSample, sample.name, 
                    choice.name, statistics.value)
       
-      AddStatDataframe() 
- 
       LogDebug(gsub("%*", "", msg))
       
     },
@@ -427,8 +429,20 @@ GreenIndexStatisticsData <- setRefClass(
         perspectives <- process[1, kColumnStatisticsPerspective]
         perspectives <- unlist(strsplit(perspectives, kSeparator))
         
-        variables <- process[1, kColumnVariableName]
-        variables <- unlist(strsplit(variables, kSeparator))
+        if (process[1, kColumnVariableName] == kColumnQuestionGroup) {
+          attr.df <- attribute.df[attribute.df[, kColumnSubject] == 
+                                    process[1, kColumnSubject],]
+          
+          attr <- process[1, kColumnQuestionGroup]
+          var <- process[1, kColumnQuestionCode]
+          attr.df <- attr.df[attr.df[, attr ] == var, ]
+          variables <- attr.df[, kColumnQuestionCode]
+          variables <- unlist(variables)
+          
+        } else {
+          variables <- process[1, kColumnVariableName]
+          variables <- unlist(strsplit(variables, kSeparator))
+        }
         
         # loop of variable
         for (i in 1:length(variables)) {
@@ -449,6 +463,13 @@ GreenIndexStatisticsData <- setRefClass(
               perspective.name <<- perspectives[k]
               # limit perspective for pilot run
               if (RUN == kPilotRun && perspective.name != pilot$perspective) {
+                break
+              }
+              
+              if (RUN == kAgileRun && tier.name == kTierDistrict && 
+                  perspective.name != kPerspectiveTotal) {
+                break
+              } else if (RUN == kAgileRun && tier.name == kTierSchool) {
                 break
               }
               
@@ -522,6 +543,10 @@ GreenIndexStatisticsData <- setRefClass(
       school.table <- paste0(jobs$info$school$table, 
                                jobs$info$school$suffix)
       school.df <<- database$ReadTable(school.table)
+      
+      attribute.table <- paste0(jobs$info$attribute$table, jobs$info$attribute$suffix)
+      attribute.df <<- database$ReadTable(attribute.table)  
+      
       
       for (i in 1:length(jobs$table)){
         job <- jobs$table[[i]]

@@ -68,6 +68,7 @@ kStringAll <- "ALL"
 kStringNone <- "NONE"
 kStringNull<- "NULL"
 kPilotRun <- "PILOT"        # city, total only
+kAgileRun <- "AGILE"      # city, district all without school
 kMileStone <- "MILESTONE"   # city, district all  and school total
 kAutoRun <- "AUTO"          # all tier, all perspective 
 kValueTypeInteger <- "整数"
@@ -102,6 +103,9 @@ kPrefixConnector <- "\\."
 kAlgorithmConstant <- "常量赋值"
 kAlgorithmSigmaBinary <- "求和阈值比较"
 kAlgorithmSigmaValue <- "求和"
+kAlgorithmCleanChoice <- "单选题清洗"
+kAlgorithmGreatThanMean <- "大于平均值"
+kAlgorithmGroupSigma <- "属性组求和"
 kAlgorithmSigmaTotalScore <- "计算总分"
 kAlgorithmStandardization <- "标准化"
 kAlgorithmScoreSegment <- "分数段切分"
@@ -150,6 +154,7 @@ kColumnLabelHjust <- "plot_label_hjust"
 kColumnFill <- "plot_fill" 
 kColumnFillOrder <- "plot_fill_order"
 kColumnFillAlpha <- "plot_fill_alpha"
+kColumnFillSkip <- "plot_fill_skip"
 kColumnLegendWidth <- "plot_legend_width"
 kColumnLegendHeight <- "plot_legend_height"
 kColumnLegendPosition <- "plot_legend_position"
@@ -201,7 +206,7 @@ kColumnKey <- "键"
 kColumnValue <- "值"
 kColumnTimeStamp <- "时间戳"
 kColumnSubjectConverge <- "学科综合"
-
+kColumnQuestionGroup <- "题组"
 
 # constants for transform
 kColumnTableName <- "表名称"
@@ -223,6 +228,13 @@ kColumnRegion <- "区域"
 # constants for report
 kColumnReport <- "报告"
 kColumnTier <- "层级"
+
+# constants for transform
+kColumnSN <- "序号"
+kColumnQuestionCode <- "题号"
+kColumnPointValue <- "分值"
+kColumnQuestionType <- "题型"
+kQuestionTypeSingleChoice <- "单选"
 
 
 ## basicConfig of logger for every modules
@@ -391,7 +403,7 @@ gio.plotfigure$Init("PlotFigure", gio.config, gio.database)
 gio.R$Init("Report", gio.config, gio.database)
 
 ## Data prepare
-gio.loaddata$LoadData()
+# gio.loaddata$LoadData()
 gio.querydata$PrepareDataframe()
 gio.plotfigure$PrepareDataframe()
 gio.R$PrepareDataframe()

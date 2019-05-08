@@ -196,11 +196,14 @@ GreenIndexReport <- setRefClass(
       input.data <- readLines(input.file)
       
       output.data <- "" 
-      prerender.set <- unlist(unique(dataset.df[, kColumnDataset]))
+      # prerender.set <- unlist(unique(plot.df[, kColumnPlotCode]))
+      preplot.set <- unlist(unique(plot.df[, kColumnPlotCode]))
+      prequery.set <- unlist(unique(dataset.df[, kColumnDataset]))
       for (i in 1:length(input.data)) {
         
         input.line <- input.data[i]
-        if (is.element(input.line, prerender.set)){
+        if (is.element(input.line, preplot.set) || 
+            is.element(input.line, prequery.set) ){
           prefix <- unlist(strsplit(input.line, kPrefixConnector))[1]
           if (prefix == kPrefixPlot) {
             

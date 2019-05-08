@@ -281,6 +281,43 @@ GreenIndexQueryData <- setRefClass(
       return(round(value, digits = digits))
     },
     
+    SubTopScoSamKey = function(df, subject, topic, 
+                               scope, sample, keys, digits) {
+      value <- 0
+      for (i in 1:length(keys)) {
+        key <- keys[i]
+        value <- value + df[df[, kColumnSubject] == subject & 
+                              df[, kColumnTopic] == topic & 
+                              df[, kColumnStatisticsScope] == scope &
+                              df[, kColumnStatisticsSample] == sample &
+                              df[, kColumnKey] == key, kColumnValue] 
+      }
+      return(round(value, digits = digits))
+    },
+    
+    SubTopSamKey = function(df, subject, topic, sample, keys, digits) {
+      value <- 0
+      for (i in 1:length(keys)) {
+        key <- keys[i]
+        value <- value + df[df[, kColumnSubject] == subject & 
+                              df[, kColumnTopic] == topic & 
+                              df[, kColumnStatisticsSample] == sample &
+                              df[, kColumnKey] == key, kColumnValue] 
+      }
+      return(round(value, digits = digits))
+    },
+    
+    AttSamKey = function(df, attribute, sample, keys, digits) {
+      value <- 0
+      for (i in 1:length(keys)) {
+        key <- keys[i]
+        value <- value + df[df[, kColumnAttribute] == attribute & 
+                              df[, kColumnStatisticsSample] == sample &
+                              df[, kColumnKey] == key, kColumnValue] 
+      }
+      return(round(value, digits = digits))
+    },
+    
     SubDomSamKey = function(df, subject, domain, sample, keys, digits) {
       value <- 0
       for (i in 1:length(keys)) {
@@ -320,6 +357,19 @@ GreenIndexQueryData <- setRefClass(
                     df[, kColumnStatisticsSample] == sample &
                     df[, kColumnDomain] == domain &
                     df[, kColumnTopic] == topic, 
+                  kColumnValue]
+      return(round(value, digits = digits))
+    },
+    
+    CoefDomDimSGrpScoSam = function(df, domain, dimention, group, 
+                                    scope, sample, digits) {
+      value <- df[df[, kColumnStatisticsIndexType] == kCoefficient & 
+                    df[, kColumnKey] == kTRUE & 
+                    df[, kColumnDomain] == domain &
+                    df[, kColumnDimention] == dimention &
+                    df[, kColumnGroup] == group & 
+                    df[, kColumnStatisticsScope] == scope &
+                    df[, kColumnStatisticsSample] == sample, 
                   kColumnValue]
       return(round(value, digits = digits))
     }

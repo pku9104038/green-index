@@ -46,13 +46,13 @@ GreenIndexPlotFigure <- setRefClass(
       plot.param <<- plot.df[plot.df[, kColumnPlotCode] == plot.code, ]
       
       if (nrow(plot.param) != 1) {
-        LogError(paste("plot_code", plot.code, "error!"))  
+        LogError(paste("plot_code", plot.code, "not available!"))  
         return(NULL)
       }
       
       plot.data <<- QueryData(plot.code)
       if (nrow(plot.data) < 1) {
-        LogError(paste("plot.data", plot.code, "error!"))
+        LogError(paste("plot.data", plot.code, "query error!"))
         return(NULL)
       }
       
@@ -61,14 +61,23 @@ GreenIndexPlotFigure <- setRefClass(
         plot.data[, plot.param[1, kColumnAxisX] ]
       plot.data[, kColumnAxisY] <<- 
         plot.data[, plot.param[1, kColumnAxisY] ]
-      plot.data[, kColumnLabel] <<- 
-        plot.data[, plot.param[1, kColumnLabel] ]
+      #label.df <- as.numeric(plot.data[, plot.param[1, kColumnLabel]])
+      #label.df <- round(label.df, as.numeric(plot.param[1, kColumnLabelDigits]))
+      if (plot.param[1, kColumnLabel] != kColumnLabel) {
+        plot.data[, kColumnLabel] <<- plot.data[, plot.param[1, kColumnLabel]]
+      }
+      
       
       fill <- unlist(strsplit(plot.param[1, kColumnFill], kSeparator))
       plot.data[, kColumnFill] <<- ""
       for (i in 1:length(fill)) {
         plot.data[, kColumnFill] <<- paste0(plot.data[, kColumnFill], 
                                               plot.data[, fill[i]])
+      }
+      
+      if (plot.param[1, kColumnFillSkip] != kStringNone) {
+        plot.data <<- plot.data[plot.data[,kColumnFill] != 
+                                     plot.param[1, kColumnFillSkip],]
       }
       
       if (plot.param[1, kColumnLegendPosition] != kStringNone && 
@@ -451,13 +460,13 @@ GreenIndexPlotFigure <- setRefClass(
       }
       
       plot.xy <- unlist(strsplit(plot.param[1, kColumnOrderX], kSeparator))
+      LogDebug(paste("plot_x = ", plot.xy[1], ", plot_y = ", plot.xy[2]))
       
       plot.x <- plot.data[plot.data[, kColumnAxisX] == plot.xy[1], ]
       plot.x[, kColumnAxisX] <- plot.x[, kColumnAxisY]
       plot.x[, kColumnAxisY] <- NULL
       plot.y <- plot.data[plot.data[, kColumnAxisX] == plot.xy[2], 
                           c(kColumnAlias, kColumnAxisY)]
-      
       plot.merge <- merge(plot.x, plot.y, by = kColumnAlias, all.x = TRUE)
       plot.data <<- plot.merge
       
@@ -489,38 +498,88 @@ GreenIndexPlotFigure <- setRefClass(
       
     },
     
+    PlotDummy = function(errorinfo) {
+      
+      plot.data <<- data.frame()
+      plot.data[1, c(kColumnAxisX, kColumnAxisY, kColumnLabel, kColumnFill)] <<-
+        list(kColumnAxisX = c(100), 
+             kColumnAxisY = c(100), 
+             kColumnLabel = c("Dummy"), 
+             kColumnFill = c("Dummy"))
+      figure <- ggplot(data = plot.data, 
+                       aes(x = plot_x, y = plot_y, label = plot_label))
+      
+      figure <- figure + 
+        geom_point(stat="identity", 
+                   colour="white", 
+                   shape=21, size = 5,
+                   aes(alpha = 1, 
+                       fill = factor(plot_fill)))
+      
+      figure <- figure + 
+        labs(title = paste(errorinfo, 
+                           "ERROR! Print dummy figure as placeholder!"))
+      
+      figure <- FigureTheme(figure, "npg")
+      
+      
+      return(figure)
+      
+    },
+    
     PlotFigure = function(plot.dir, plot.code) {
       PreparePlotData(plot.code)
       
-      plot.code.name <- gsub("\\.+", "_", plot.param[1, kColumnPlotCode])
+      plot.code.name <- gsub("\\.+", "_", plot.code)
+      # plot.code.name <- gsub("\\.+", "_", plot.param[1, kColumnPlotCode])
       # plot.code.name <- plot.param[1, kColumnPlotCode]
       plot.file <- paste0(plot.dir, plot.code.name,".pdf")
-      
-      pdf(plot.file, width = as.numeric(plot.param[1, kColumnPlotWidth]) , 
-          height = as.numeric(plot.param[1, kColumnPlotHeight]) )
-      
-      showtext_begin()
-      
-      LogInfo(paste(plot.param[1, kColumnPlotGeom], plot.code))
-      print(plot.data)
-      if (plot.param[1, kColumnPlotGeom] == kPlotGeomBarDodge) {
-        figure <- PlotGeomBarDodge()
-      } else if (plot.param[1, kColumnPlotGeom] == kPlotGeomBarStack) {
-        figure <- PlotGeomBarDodge()
-      } else if (plot.param[1, kColumnPlotGeom] == kPlotGeomScatter) {
-        figure <- PlotGeomScatter()
-      } else if (plot.param[1, kColumnPlotGeom] == kPlotGeomBox) {
-        figure <- PlotGeomBoxWhisker()
-      } 
-      
-      print(figure)
-      
-      showtext_end()
-      dev.off()
-      
       plot.fig <- list()
-      plot.fig$name <- plot.param[1, kColumnPlotTitle]
       plot.fig$path <- paste0(getwd(), "/", plot.file)
+      
+      if (is.na(plot.param[1, kColumnPlotGeom])) {
+        LogError(paste(plot.code, "canvas not available!"))
+        #plot.fig$name <- plot.code.name
+        plot.fig$name <- paste("绘图参数缺失", plot.code)
+        command <- paste0("cp ", config$GetDirReportOut(),
+                          config$GetDirFigure(),
+                          "plot_point_dummy.pdf ", 
+                          plot.fig$path)
+        system(command = command)
+      } else if (nrow(plot.data) == 0) {
+        LogError(paste(plot.code, "data not available!"))
+        plot.fig$name <- plot.param[1, kColumnPlotTitle]
+        command <- paste0("cp ", config$GetDirReportOut(),
+                          config$GetDirFigure(),
+                          "plot_point_dummy.pdf ", 
+                          plot.fig$path)
+        system(command = command)
+      } else {
+        LogInfo(paste(plot.param[1, kColumnPlotGeom], plot.code))
+        plot.fig$name <- plot.param[1, kColumnPlotTitle]
+        pdf(plot.file, width = as.numeric(plot.param[1, kColumnPlotWidth]) , 
+            height = as.numeric(plot.param[1, kColumnPlotHeight]) ) 
+        
+        showtext_begin()
+        
+        if (plot.param[1, kColumnPlotGeom] == kPlotGeomBarDodge) {
+          figure <- PlotGeomBarDodge()
+        } else if (plot.param[1, kColumnPlotGeom] == kPlotGeomBarStack) {
+          figure <- PlotGeomBarDodge()
+        } else if (plot.param[1, kColumnPlotGeom] == kPlotGeomScatter) {
+          figure <- PlotGeomScatter()
+        } else if (plot.param[1, kColumnPlotGeom] == kPlotGeomBox) {
+          figure <- PlotGeomBoxWhisker()
+        } 
+        print(figure)
+        
+        showtext_end()
+        dev.off()
+        
+        
+      }
+      
+      
       
       return(plot.fig)
       

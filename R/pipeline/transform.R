@@ -13,6 +13,8 @@ GreenIndexTransformData <- setRefClass(
   
   fields = list(
     database = "GreenIndexDatabase",
+    
+    attribute.df = "data.frame",
     df = "data.frame",
     transform = "data.frame",
     algorithm = "character",
@@ -57,8 +59,18 @@ GreenIndexTransformData <- setRefClass(
         i <- i + 1
       }
       df[is.na(df[, variable.value.name]), variable.value.name] <<- kNumericNA
-      df[, variable.name] <<- kFALSE
-      df[df[, variable.value.name] > as.numeric(parameter), variable.name] <<- kTRUE
+      
+      param <- unlist(strsplit(parameter, kSeparator))
+      threshold <- as.numeric(param[1])
+      if (length(param) == 1){
+        df[, variable.name] <<- kFALSE
+        df[df[, variable.value.name] > threshold, variable.name] <<- kTRUE
+      } else if (length(param) == 2) {
+        value <- as.numeric(param[2])
+        df[, variable.name] <<- 0
+        df[df[, variable.value.name] > threshold, variable.name] <<- value
+      }
+      
       # df[, variable.value.name] <<- NULL
       SetVariableType()
             
@@ -87,6 +99,89 @@ GreenIndexTransformData <- setRefClass(
       
     },
     
+    CleanChoice = function() {
+      
+      attr.df <- attribute.df[attribute.df[, kColumnSubject] == 
+                                transform[kColumnTableName][[1]],]
+      columns <- attr.df[attr.df[, kColumnQuestionType] == 
+                           kQuestionTypeSingleChoice, kColumnQuestionCode]
+      columns <- unlist(columns)
+      
+      parameter.vector <- unlist(strsplit(parameter, kSeparator))
+      space.char <- parameter.vector[1]
+      value.set <- unlist(strsplit(
+        parameter.vector[length(parameter.vector)], kSegmentConnector))
+      parameter.set <- parameter.vector[2:length(parameter.vector)-1]
+      print(parameter.set)
+      print(parameter.vector)
+      print(value.set)
+      column.suffix <- transform[kColumnColumnSuffix] 
+      variable.suffix <- transform[kColumnVariableSuffix]
+      i <- 1
+      while (i <= length(columns)){
+        column.name <- paste0(columns[i], column.suffix)
+        variable.name <<- paste0(columns[i], variable.suffix)
+        
+        df[,"tmp"] <<-  df[, column.name] %in% parameter.set
+        df[df[, "tmp"] == FALSE, variable.name] <<- value.set[2]
+        
+        for (j in 1:length(parameter.set)) {
+          df[df[, column.name] == parameter.set[j], variable.name] <<- 
+            parameter.set[j]
+        }
+        df[df[, column.name] == space.char, variable.name] <<- value.set[1]
+        i <- i + 1
+      }
+      
+      SetVariableType()      
+    },
+    
+    GreatThanMean = function() {
+      
+      column.name <- paste0(transform[kColumnColumnName][[1]], 
+                            transform[kColumnColumnSuffix][[1]])
+      print(column.name)
+      threshold <- mean(as.numeric(df[, column.name]))
+      print(threshold)
+      value.set <- unlist(strsplit(parameter, kSeparator))
+      print(value.set)
+      df[df[, column.name] > threshold, variable.name] <<- value.set[1] 
+      df[df[, column.name] <= threshold, variable.name] <<- value.set[2] 
+      
+    },
+    
+    GroupSigma = function() {
+      
+      attr.df <- attribute.df[attribute.df[, kColumnSubject] == 
+                                transform[kColumnTableName][[1]],]
+      
+      attr <- transform[kColumnParameter][[1]]
+      var <- transform[kColumnVariableName][[1]]
+      attr.df <- attr.df[attr.df[, attr ] == var, ]
+      columns <- attr.df[, kColumnQuestionCode]
+      columns <- unlist(columns)
+      
+      value.max <- sum(as.numeric(attr.df[, kColumnPointValue]))
+      # columns <- unlist(strsplit(transform[kColumnColumnName][[1]], kSeparator))
+      suffix <- transform[kColumnColumnSuffix] 
+      df[, variable.name] <<- 0
+      
+      i <- 1
+      while (i <= length(columns)){
+        column.name <- paste0(columns[i], suffix)
+        LogDebug(column.name)
+        df[, variable.name] <<- df[, variable.name] + 
+          as.numeric(df[, column.name])
+        i <- i + 1
+      }
+      
+      if (max(df[, variable.name]) > value.max) {
+        LogError(paste(variable.name, algorithm))
+      }
+      
+      SetVariableType()      
+    },
+    
     SigmaTotalValue = function(){
       
       columns <- names(df)
@@ -101,8 +196,9 @@ GreenIndexTransformData <- setRefClass(
                    nchar(column.name)) == suffix) {
           df[, variable.name] <<- df[, variable.name] + 
             as.numeric(df[, column.name])
+          LogDebug(column.name)
         }
-        LogDebug(column.name)
+        
         
         i <- i + 1
       }
@@ -119,11 +215,12 @@ GreenIndexTransformData <- setRefClass(
       parameters <- unlist(strsplit(parameter, kSeparator))
       average.point <- as.numeric(parameters[1])
       z.point <- as.numeric(parameters[2])
-      
-      average.value <- mean(df[, transform[kColumnColumnName][[1]]], na.rm = TRUE)
-      stdev.value <- sd(df[, transform[kColumnColumnName][[1]]], na.rm = TRUE)
+      column.name <- paste0(transform[kColumnColumnName], transform[kColumnColumnSuffix])
+      print(column.name)
+      average.value <- mean(df[, column.name], na.rm = TRUE)
+      stdev.value <- sd(df[, column.name], na.rm = TRUE)
       df[, variable.name] <<- average.point + 
-        (df[, transform[kColumnColumnName][[1]]] - average.value) / stdev.value * z.point
+        (df[, column.name] - average.value) / stdev.value * z.point
       df[df[, variable.name] < 0, variable.name] <<- 0
       
       SetVariableType()
@@ -238,6 +335,12 @@ GreenIndexTransformData <- setRefClass(
           SigmaTotalValue()
         } else if (algorithm == kAlgorithmSigmaValue) {
           SigmaValue()
+        } else if (algorithm == kAlgorithmCleanChoice) {
+          CleanChoice()
+        } else if (algorithm == kAlgorithmGreatThanMean) {
+          GreatThanMean()
+        } else if (algorithm == kAlgorithmGroupSigma) {
+          GroupSigma()
         } else if (algorithm == kAlgorithmStandardization) {
           Standardization()
         } else if (algorithm == kAlgorithmScoreSegment) {
@@ -272,6 +375,11 @@ GreenIndexTransformData <- setRefClass(
           input.table <- paste0(job$input$table, job$input$suffix)
           df <<- database$ReadTable(input.table)
           
+          if (!is.null(job$attribute)) {
+            attribute.table <- paste0(job$attribute$table, job$attribute$suffix)
+            attribute.df <<- database$ReadTable(attribute.table)  
+          }
+          
           output.table <- paste0(job$output$table, job$output$suffix)
           
           
@@ -290,6 +398,7 @@ GreenIndexTransformData <- setRefClass(
               transform.df[, kColumnTableSuffix] == input.table.suffix,
               ]
             
+            transform.df <- arrange(transform.df, as.numeric(transform.df[, kColumnSN]))
             LogInfo(paste("Transform", input.table, "by", transform.table,
                           "into", output.table))
             
