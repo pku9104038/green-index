@@ -52,6 +52,14 @@ GreenIndexDatabase <- setRefClass(
       Disconnect()
     },
     
+    ExistsTable = function(table.name){
+      Connect()
+      LogDebug(paste("Remove database table", table.name))
+      result <- dbExistsTable(conn, table.name)
+      Disconnect()
+      return(result)
+    },
+    
     CreateTable = function(table.name, DDL) {
       Connect()
       LogDebug(paste("create table", table.name))

@@ -298,7 +298,7 @@ GreenIndexReport <- setRefClass(
       for (i in 1:length(jobs$report)){
         job <- jobs$report[[i]]
         TODO <- job$TODO
-        if (TODO || reworkjobs || reworkall) {
+        if (TODO || reworkjobs ) {
           
           report.tier <<- job$tier
           report.name <<- job$name

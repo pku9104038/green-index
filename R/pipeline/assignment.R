@@ -28,6 +28,7 @@ GreenIndexAssignPoint <- setRefClass(
       # get job configuration
       jobs <- config$GetAssignPointJob()
       reworkall <- config$IsReworkAll()
+      dropdata <- config$IsDropData()
       reworkjobs <- jobs$TODO
       
       for (i in 1:length(jobs$table)){
@@ -39,19 +40,24 @@ GreenIndexAssignPoint <- setRefClass(
           
           # read input, choice data table
           input.table <- paste0(job$input$table, job$input$suffix)
-          df <- database$ReadTable(input.table)
+          output.table <- paste0(job$output$table, job$output$suffix)
+          if (dropdata) {
+            df <- database$ReadTable(input.table)
+            
+          } else {
+            df <- database$ReadTable(output.table)
+          }
           
           choice.table <- paste0(job$choice$table, job$choice$suffix)
           choice.df <- database$ReadTable(choice.table)
           choice.code <- job$choice$column$code
           choice.key <- job$choice$column$key
           choice.value <- job$choice$column$value
-          choice.df <- choice.df[, c(choice.code, choice.key, choice.value)]
+          choice.df <- choice.df[, c(choice.code, choice.key, 
+                                     choice.value, kColumnTODO)]
           choice.df[, choice.value] <- as.numeric(choice.df[, choice.value])
           code.set <- unique(choice.df[, choice.code])
           
-          
-          output.table <- paste0(job$output$table, job$output$suffix)
           LogInfo(paste("Assignment", input.table, "by", choice.table,
                         "into", output.table))
           
@@ -63,9 +69,12 @@ GreenIndexAssignPoint <- setRefClass(
             if (is.element(code, code.set)) {
               
               option <- choice.df[choice.df[, choice.code] == code, ]
+              # skip FALSE row
+              if (option[1, kColumnTODO] == kFALSE) {
+                break
+              }
+              
               option <- option[c(choice.key, choice.value)]
-              
-              
               # make sure the option should be assign a point
               if (!is.na(option[1, choice.value])){
                 

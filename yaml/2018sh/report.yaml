@@ -23,7 +23,7 @@ report:
     -
       TODO: FALSE
       name: "绿色指标基础数据统计汇总"
-      tier: *kStatisticsTierCity
+      tier: *kStatTierCity
       subdir: "base"
       subject: ""
       rmarkdown:
@@ -34,9 +34,9 @@ report:
         - "agile.rmd"
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标基础数据报告"
-      tier: *kStatisticsTierCity
+      tier: *kStatTierCity
       subdir: "base"
       subject: ""
       rmarkdown:
@@ -56,7 +56,7 @@ report:
     -
       TODO: FALSE
       name: "绿色指标指数报告"
-      tier: *kStatisticsTierCity
+      tier: *kStatTierCity
       subdir: "index"
       subject: ""
       rmarkdown:
@@ -72,7 +72,7 @@ report:
     -
       TODO: FALSE
       name: "绿色指标学科测试分析报告"
-      tier: *kStatisticsTierDistrict
+      tier: *kStatTierDistrict
       subdir: "base"
       subject: "数学"
       rmarkdown:
@@ -88,7 +88,7 @@ report:
     -
       TODO: FALSE
       name: "绿色指标基础数据报告"
-      tier: *kStatisticsTierSchool
+      tier: *kStatTierSchool
       subdir: "base"
       subject: ""
       rmarkdown:

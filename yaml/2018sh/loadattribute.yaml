@@ -1,7 +1,7 @@
 
 # load original data from xlsx sheet into database table
 loadattribute:
-  TODO: FALSE
+  TODO: TRUE
   # TRUE, igonre TODO: FALSE flags, rework load data jobs
   table:
     -
@@ -9,7 +9,7 @@ loadattribute:
       xlsx: "绿色指标属性表.xlsx"
       sheet: "区信息表"
       table: *kTableDistrict
-      suffix: *kTableRaw
+      suffix: *kSuffixRaw
       # select: # select columns
       #   - column.name
       # drop:  # drop columns
@@ -34,7 +34,7 @@ loadattribute:
       xlsx: "绿色指标属性表.xlsx"
       sheet: "学校信息表"
       table: *kTableSchool
-      suffix: *kTableRaw
+      suffix: *kSuffixRaw
 
     -
       TODO: FALSE
@@ -47,28 +47,28 @@ loadattribute:
       TODO: FALSE
       xlsx: "绿色指标属性表.xlsx"
       sheet: "指标体系表"
-      table: *kTableIndexSystem
+      table: *kTableAttrIndex
       suffix: ""
 
     -
       TODO: FALSE
       xlsx: "绿色指标属性表.xlsx"
       sheet: "指标映射表"
-      table: *kTableDimentionMapping
+      table: *kTableAttrIdxDim
       suffix: ""
 
     -
-      TODO: TRUE
+      TODO: FALSE
       xlsx: "绿色指标属性表.xlsx"
       sheet: "试题问卷属性表"
-      table: *kTableQuestionAttribute
+      table: *kTableAttrQuestionAttr
       suffix: ""
 
     -
-      TODO: TRUE
+      TODO: FALSE
       xlsx: "绿色指标属性表.xlsx"
       sheet: "试题分值表"
-      table: *kTableSubjectSolutionPoint
+      table: *kTableAttrSubjectPoint
       suffix: ""
 
 
@@ -76,70 +76,87 @@ loadattribute:
       TODO: FALSE
       xlsx: "绿色指标属性表.xlsx"
       sheet: "标准代码表"
-      table: *kTableDictionary
+      table: *kTableAttrDict
       suffix: ""
 
     -
-      TODO: TRUE
+      TODO: FALSE
       xlsx: "绿色指标属性表.xlsx"
       sheet: "问卷赋分表"
-      table: *kTableSurveyResponsePoint
+      table: *kTableAttrSurveyPoint
       suffix: ""
 
     -
-      TODO: TRUE
+      TODO: FALSE
       xlsx: "绿色指标属性表.xlsx"
-      sheet: "变量转换表"
-      table: *kTableVariableTransform
+      sheet: "问卷转换表"
+      table: *kTableAttrSurveyTrans
       suffix: ""
 
     -
-      TODO: TRUE
+      TODO: FALSE
       xlsx: "绿色指标属性表.xlsx"
       sheet: "问卷统计表"
-      table: *kTableSurveyStatistics
+      table: *kTableAttrSurveyStat
+      suffix: ""
+
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "成绩转换表"
+      table: *kTableAttrScoreTrans
       suffix: ""
 
     -
-      TODO: TRUE
+      TODO: FALSE
       xlsx: "绿色指标属性表.xlsx"
       sheet: "成绩统计表"
-      table: *kTableScoreStatistics
+      table: *kTableAttrScoreStat
       suffix: ""
 
+
     -
-      TODO: TRUE
+      TODO: FALSE
       xlsx: "绿色指标属性表.xlsx"
-      sheet: "学校系数表"
-      table: *kTableCoefficentSchool
+      sheet: "合并转换表"
+      table: *kTableAttrMergedTrans
       suffix: ""
 
     -
-      TODO: TRUE
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "合并统计表"
+      table: *kTableAttrMergedStat
+      suffix: ""
+
+    -
+      TODO: FALSE
       xlsx: "绿色指标属性表.xlsx"
       sheet: "成绩综合表"
-      table: *kTableScoreConverge
+      table: *kTableAttrConvergeStat
       suffix: ""
 
+
     -
-      TODO: TRUE
+      TODO: FALSE
       xlsx: "绿色指标属性表.xlsx"
-      sheet: "区域指数表"
-      table: *kTableIndexRegion
+      sheet: "指数计算表"
+      table: *kTableAttrIndexAlgo
       suffix: ""
 
     -
       TODO: TRUE
       xlsx: "绿色指标属性表.xlsx"
       sheet: "数据查询表"
-      table: *kTableDataQuery
+      table: *kTableAttrDataQuery
       suffix: ""
 
     -
-      TODO: TRUE
+      TODO: FALSE
       xlsx: "绿色指标属性表.xlsx"
       sheet: "绘图参数表"
-      table: *kTablePlotParameter
+      table: *kTableAttrPlotParam
       suffix: ""
 
     -
@@ -147,7 +164,7 @@ loadattribute:
       xlsx: "学生信息.xlsx"
       sheet: "学生"    # this is a csv file
       table: *kTableStudent
-      suffix: *kTableRaw
+      suffix: *kSuffixRaw
       rename:
         -
           name: "家长问卷密码"
@@ -165,7 +182,7 @@ loadattribute:
       xlsx: "教师校长密码.xlsx"
       sheet: "教师"
       table: *kTableTeacher
-      suffix: *kTableRaw
+      suffix: *kSuffixRaw
       rename:
         -
           name: "校代码"
@@ -182,7 +199,7 @@ loadattribute:
       xlsx: "教师校长密码.xlsx"
       sheet: "校长"
       table: *kTablePrincipal
-      suffix: *kTableRaw
+      suffix: *kSuffixRaw
       rename:
         -
           name: "校代码"

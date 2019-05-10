@@ -109,6 +109,8 @@ GreenIndexIndexationData <- setRefClass(
       # get job configuration
       jobs <- config$GetConfigJob()$indexation
       reworkall <- config$IsReworkAll()
+      dropdata <- config$IsDropData()
+      DDL <- jobs$DDL
       reworkjobs <- jobs$TODO
       
       for (i in 1:length(jobs$table)){
@@ -136,7 +138,12 @@ GreenIndexIndexationData <- setRefClass(
           
           
           output.table <<- paste0(job$output$table, job$output$suffix)
-          # out.df <<- data.frame()
+          if (dropdata) {
+            database$RemoveTable(output.table)
+          }
+          SQL <- paste("CREATE TABLE IF NOT EXISTS", output.table, DDL)
+          print(SQL)
+          database$CreateTable(output.table, SQL)
           
           LogInfo(paste("Indexation", input.table, "through", process.table,
                         "into", output.table))

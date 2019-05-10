@@ -6,12 +6,12 @@ dictionary:
       TODO: FALSE
       input:
         table: *kTableStudent
-        suffix: *kTableRaw
+        suffix: *kSuffixRaw
       output:
         table: *kTableStudent
-        suffix: *kTableDict
+        suffix: *kSuffixDict
       choice:
-        table: *kTableDictionary
+        table: *kTableAttrDict
         suffix: ""
         column:
           code: *kColumnKey
@@ -22,12 +22,12 @@ dictionary:
       TODO: FALSE
       input:
         table: *kTableSchool
-        suffix: *kTableRaw
+        suffix: *kSuffixRaw
       output:
         table: *kTableSchool
-        suffix: *kTableDict
+        suffix: *kSuffixDict
       choice:
-        table: *kTableDictionary
+        table: *kTableAttrDict
         suffix: ""
         column:
           code: *kColumnKey

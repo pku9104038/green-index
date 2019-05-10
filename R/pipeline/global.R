@@ -53,6 +53,7 @@ kDataTypeBoolean <- "boolean"
 kTierCity <- "市"
 kTierDistrict <- "区"
 kTierSchool <- "学校"
+kTierRegion <- "区域"
 
 # constants for perspective
 kPerspectiveTotal <- "总体"
@@ -63,13 +64,14 @@ kCoefficient <- "系数"
 kIndex <- "指数"
 kStatistics <- "统计"
 kNumericNA <- -1
+kAxisXTextLimit <- 25
 kHashDigestDefault <- "27f4468f070e6f28b58e39fda7293bf8c3fa6fb7"
 kStringAll <- "ALL"
 kStringNone <- "NONE"
 kStringNull<- "NULL"
-kPilotRun <- "PILOT"        # city, total only
-kAgileRun <- "AGILE"      # city, district all without school
-kMileStone <- "MILESTONE"   # city, district all  and school total
+kPilotRun <- "PILOT"        # city total only
+kAgileRun <- "AGILE"        # city all, district total
+kMileStone <- "MILESTONE"   # city, district all  and one district school total
 kAutoRun <- "AUTO"          # all tier, all perspective 
 kValueTypeInteger <- "整数"
 kValueTypePercent <- "百分数"
@@ -93,6 +95,10 @@ kUpper  <- "upper"
 kMaxPercent <- "95%"
 kMax <- "max"
 kMean <- "mean"
+kSigma <- "标准差"
+kCoefVar <- "离散系数"
+kCoefBalanceIndivadual <- "个体均衡系数"
+kIndexBalanceIndividual <- "个体均衡指数"
 
 kPrefixPlot <- "plot"
 kPrefixMultiPlot <- "multiplot"
@@ -102,6 +108,7 @@ kPrefixConnector <- "\\."
 # constants for algorithm
 kAlgorithmConstant <- "常量赋值"
 kAlgorithmSigmaBinary <- "求和阈值比较"
+kAlgorithmSigmaMean <- "求和平均值"
 kAlgorithmSigmaValue <- "求和"
 kAlgorithmCleanChoice <- "单选题清洗"
 kAlgorithmGreatThanMean <- "大于平均值"
@@ -402,8 +409,3 @@ gio.querydata$Init("QueryData", gio.config, gio.database)
 gio.plotfigure$Init("PlotFigure", gio.config, gio.database)
 gio.R$Init("Report", gio.config, gio.database)
 
-## Data prepare
-# gio.loaddata$LoadData()
-gio.querydata$PrepareDataframe()
-gio.plotfigure$PrepareDataframe()
-gio.R$PrepareDataframe()

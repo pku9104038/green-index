@@ -1,0 +1,39 @@
+
+# statistics of variables, coefficents, scores
+mergedstat:
+  TODO: FALSE
+  RUN: "PILOT"  # "AUTO", "PILOT", "MILESTONE", "AGILE"
+  <<: *kPilotRun
+  <<: *kDDLStatisticsTable
+  info:
+    district:
+      table: *kTableDistrict
+      suffix: *kSuffixRaw
+    school:
+      table: *kTableSchool
+      suffix: *kSuffixJoin
+    attribute:
+      table: *kTableAttrQuestionAttr
+      suffix: ""
+
+  table:
+
+    # statistics
+
+    -
+      TODO: TRUE
+      input:
+        table: *kTableSubjectScore
+        suffix: *kSuffixTransform
+      output:
+        table: *kTableSubjectScore
+        suffix: *kSuffixStat
+      process:
+        table: *kTableAttrMergedStat
+        suffix: ""
+      choice:
+        table: *kTableAttrSurveyPoint
+        suffix: ""
+        column:
+          code: *kColumnQuestionCode
+          key: *kColumnQuestionChoice

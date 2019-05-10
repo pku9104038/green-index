@@ -7,14 +7,14 @@ splitdata:
       TODO: FALSE
       input:
         table: *kRespondentST
-        suffix: *kTableJoin
+        suffix: *kSuffixJoin
         column:
           id: "准考证号"
       output:
         table: *kRespondentST
-        suffix: *kTableSplit
+        suffix: *kSuffixSplit
       choice:
-        table: *kTableSurveyResponsePoint
+        table: *kTableAttrSurveyPoint
         suffix: ""
         column:
           key: *kColumnQuestionCode
@@ -50,14 +50,14 @@ splitdata:
       TODO: FALSE
       input:
         table: *kRespondentPA
-        suffix: *kTableRaw
+        suffix: *kSuffixJoin
         column:
           id: "家长密码"
       output:
         table: *kRespondentPA
-        suffix: *kTableSplit
+        suffix: *kSuffixSplit
       choice:
-        table: *kTableSurveyResponsePoint
+        table: *kTableAttrSurveyPoint
         suffix: ""
         column:
           key: *kColumnQuestionCode
@@ -79,14 +79,14 @@ splitdata:
       TODO: FALSE
       input:
         table: *kRespondentTE
-        suffix: *kTableRaw
+        suffix: *kSuffixJoin
         column:
           id: "教师密码"
       output:
         table: *kRespondentTE
-        suffix: *kTableSplit
+        suffix: *kSuffixSplit
       choice:
-        table: *kTableSurveyResponsePoint
+        table: *kTableAttrSurveyPoint
         suffix: ""
         column:
           key: *kColumnQuestionCode

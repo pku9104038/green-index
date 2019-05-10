@@ -1,0 +1,140 @@
+
+# join data, rename column, drop/keep column
+scoremerge:
+  TODO: TRUE
+  # <<: *kDDLStatisticsTable
+  table:
+
+    # join student participate
+    -
+      TODO: FALSE
+      left:
+        table: *kTableStudent
+        suffix: *kSuffixJoin
+        by: *kColumnStudentCode
+      right:
+        table: *kSubjectCN
+        suffix: *kSuffixTransform
+        select:
+          - *kColumnStudentCode
+          - "标准分"
+          - "高层次思维能力_标准分"
+        rename:
+          -
+            name: "标准分"
+            rename: "语文标准分"
+          -
+            name: "高层次思维能力_标准分"
+            rename: "语文思维能力"
+        by: *kColumnStudentCode
+      join.type: "left"
+      out:
+        table: *kTableSubjectScore
+        suffix: *kSuffixJoin
+
+    -
+      TODO: FALSE
+      left:
+        table: *kTableSubjectScore
+        suffix: *kSuffixJoin
+        by: *kColumnStudentCode
+      right:
+        table: *kSubjectMA
+        suffix: *kSuffixTransform
+        select:
+          - *kColumnStudentCode
+          - "标准分"
+          - "高层次思维能力_标准分"
+        rename:
+          -
+            name: "标准分"
+            rename: "数学标准分"
+          -
+            name: "高层次思维能力_标准分"
+            rename: "数学思维能力"
+        by: *kColumnStudentCode
+      join.type: "left"
+      out:
+        table: *kTableSubjectScore
+        suffix: *kSuffixJoin
+
+
+    -
+      TODO: FALSE
+      left:
+        table: *kTableSubjectScore
+        suffix: *kSuffixJoin
+        by: *kColumnStudentCode
+      right:
+        table: *kSubjectEN
+        suffix: *kSuffixTransform
+        select:
+          - *kColumnStudentCode
+          - "标准分"
+          - "高层次思维能力_标准分"
+        rename:
+          -
+            name: "标准分"
+            rename: "英语标准分"
+          -
+            name: "高层次思维能力_标准分"
+            rename: "英语思维能力"
+        by: *kColumnStudentCode
+      join.type: "left"
+      out:
+        table: *kTableSubjectScore
+        suffix: *kSuffixJoin
+
+
+    -
+      TODO: FALSE
+      left:
+        table: *kTableSubjectScore
+        suffix: *kSuffixJoin
+        by: *kColumnStudentCode
+      right:
+        table: *kSubjectSC
+        suffix: *kSuffixTransform
+        select:
+          - *kColumnStudentCode
+          - "标准分"
+          - "高层次思维能力_标准分"
+        rename:
+          -
+            name: "标准分"
+            rename: "科学标准分"
+          -
+            name: "高层次思维能力_标准分"
+            rename: "科学思维能力"
+        by: *kColumnStudentCode
+      join.type: "left"
+      out:
+        table: *kTableSubjectScore
+        suffix: *kSuffixJoin
+
+
+    -
+      TODO: FALSE
+      left:
+        table: *kTableSubjectScore
+        suffix: *kSuffixJoin
+        by: *kColumnStudentCode
+      right:
+        table: *kSubjectAR
+        suffix: *kSuffixTransform
+        select:
+          - *kColumnStudentCode
+          - "标准分"
+          - "高层次思维能力_标准分"
+        rename:
+          -
+            name: "标准分"
+            rename: "艺术标准分"
+          -
+            name: "高层次思维能力_标准分"
+            rename: "艺术思维能力"
+        by: *kColumnStudentCode
+      join.type: "left"
+      out:
+        table: *kTableSubjectScore
+        suffix: *kSuffixJoin

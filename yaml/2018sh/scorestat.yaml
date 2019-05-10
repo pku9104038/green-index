@@ -1,6 +1,6 @@
 
 # statistics of variables, coefficents, scores
-surveystat:
+scorestat:
   TODO: FALSE
   RUN: "PILOT"  # "AUTO", "PILOT", "MILESTONE", "AGILE"
   <<: *kPilotRun
@@ -19,34 +19,17 @@ surveystat:
   table:
 
     # statistics
-    -
-      TODO: FALSE
-      input:
-        table: *kRespondentST
-        suffix: *kSuffixTransform
-      output:
-        table: *kRespondentST
-        suffix: *kSuffixStat
-      process:
-        table: *kTableAttrSurveyStat
-        suffix: ""
-      choice:
-        table: *kTableAttrSurveyPoint
-        suffix: ""
-        column:
-          code: *kColumnQuestionCode
-          key: *kColumnQuestionChoice
 
     -
       TODO: FALSE
       input:
-        table: *kRespondentPA
+        table: *kSubjectCN
         suffix: *kSuffixTransform
       output:
-        table: *kRespondentPA
+        table: *kSubjectCN
         suffix: *kSuffixStat
       process:
-        table: *kTableAttrSurveyStat
+        table: *kTableAttrScoreStat
         suffix: ""
       choice:
         table: *kTableAttrSurveyPoint
@@ -56,17 +39,73 @@ surveystat:
           key: *kColumnQuestionChoice
 
 
+    -
+      TODO: FALSE
+      input:
+        table: *kSubjectMA
+        suffix: *kSuffixTransform
+      output:
+        table: *kSubjectMA
+        suffix: *kSuffixStat
+      process:
+        table: *kTableAttrScoreStat
+        suffix: ""
+      choice:
+        table: *kTableAttrSurveyPoint
+        suffix: ""
+        column:
+          code: *kColumnQuestionCode
+          key: *kColumnQuestionChoice
+
 
     -
       TODO: FALSE
       input:
-        table: *kRespondentTE
+        table: *kSubjectEN
         suffix: *kSuffixTransform
       output:
-        table: *kRespondentTE
+        table: *kSubjectEN
         suffix: *kSuffixStat
       process:
-        table: *kTableAttrSurveyStat
+        table: *kTableAttrScoreStat
+        suffix: ""
+      choice:
+        table: *kTableAttrSurveyPoint
+        suffix: ""
+        column:
+          code: *kColumnQuestionCode
+          key: *kColumnQuestionChoice
+
+
+    -
+      TODO: FALSE
+      input:
+        table: *kSubjectSC
+        suffix: *kSuffixTransform
+      output:
+        table: *kSubjectSC
+        suffix: *kSuffixStat
+      process:
+        table: *kTableAttrScoreStat
+        suffix: ""
+      choice:
+        table: *kTableAttrSurveyPoint
+        suffix: ""
+        column:
+          code: *kColumnQuestionCode
+          key: *kColumnQuestionChoice
+
+
+    -
+      TODO: FALSE
+      input:
+        table: *kSubjectAR
+        suffix: *kSuffixTransform
+      output:
+        table: *kSubjectAR
+        suffix: *kSuffixStat
+      process:
+        table: *kTableAttrScoreStat
         suffix: ""
       choice:
         table: *kTableAttrSurveyPoint

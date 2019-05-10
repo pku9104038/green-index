@@ -1,0 +1,22 @@
+
+# transform to new variable for statistics
+mergedtrans:
+  TODO: FALSE
+  RUN: "PILOT"   # "PILOT", "AUTO"
+  info:
+    attribute:
+      table: *kTableAttrSubjectPoint
+      suffix: ""
+
+  table:
+    -
+      TODO: TRUE
+      input:
+        table: *kTableSubjectScore
+        suffix: *kSuffixJoin
+      output:
+        table: *kTableSubjectScore
+        suffix: *kSuffixTransform
+      transform:
+        table: *kTableAttrMergedTrans
+        suffix: ""

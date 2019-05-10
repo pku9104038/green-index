@@ -34,7 +34,7 @@ database:
 jobs:
   yaml:
     - "anchor.yaml"          # definition anchor
-    - "createtable.yaml"     # be careful, it will remove all statistics data
+    # - "createtable.yaml"     # be careful, it will remove all statistics data
     - "loadattribute.yaml"   # spin out load attribute from load data
     - "loaddata.yaml"        # load data
     - "dictionary.yaml"      # map dictionary value
@@ -43,11 +43,16 @@ jobs:
     - "splitdata.yaml"       # split multiple choice into single columns
     # - "cleandata.yaml"       # clean dirty data
     - "assignment.yaml"      # assign point to survey response
-    - "transform.yaml"       # transform data in survey response
+    #- "transform.yaml"       # transform data in survey response
+    - "surveytrans.yaml"
+    - "scoretrans.yaml"
+    - "scoremerge.yaml"
+    - "mergedtrans.yaml"
     # - "dataready.yaml"       #
     # - "statistics.yaml"      # statistics data
     - "surveystat.yaml"
     - "scorestat.yaml"
+    - "mergedstat.yaml"
     - "scoreconverge.yaml"
     - "indexation.yaml"      #
     - "convergetable.yaml"   #
@@ -58,4 +63,5 @@ jobs:
 
 # auto reworkall switch
 reworkall: TRUE
+dropdata: FALSE
 # TRUE, igonre TODO: FALSE flags, rework all jobs

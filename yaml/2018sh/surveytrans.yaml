@@ -1,0 +1,48 @@
+
+# transform to new variable for statistics
+surveytrans:
+  TODO: FALSE
+  RUN: "PILOT"   # "PILOT", "AUTO", "MILESTONE"
+  info:
+    attribute:
+      table: *kTableAttrSurveyPoint
+      suffix: ""
+  table:
+
+    # transform
+    -
+      TODO: FALSE
+      input:
+        table: *kRespondentST
+        suffix: *kSuffixAssign
+      output:
+        table: *kRespondentST
+        suffix: *kSuffixTransform
+      transform:
+        table: *kTableAttrSurveyTrans
+        suffix: ""
+
+    -
+      TODO: FALSE
+      input:
+        table: *kRespondentPA
+        suffix: *kSuffixAssign
+      output:
+        table: *kRespondentPA
+        suffix: *kSuffixTransform
+      transform:
+        table: *kTableAttrSurveyTrans
+        suffix: ""
+
+
+    -
+      TODO: FALSE
+      input:
+        table: *kRespondentTE
+        suffix: *kSuffixAssign
+      output:
+        table: *kRespondentTE
+        suffix: *kSuffixTransform
+      transform:
+        table: *kTableAttrSurveyTrans
+        suffix: ""

@@ -1,0 +1,73 @@
+
+# transform to new variable for statistics
+scoretrans:
+  TODO: FALSE
+  RUN: "PILOT"   # "PILOT", "AUTO"
+  info:
+    attribute:
+      table: *kTableAttrSubjectPoint
+      suffix: ""
+
+  table:
+    -
+      TODO: FALSE
+      input:
+        table: *kSubjectCN
+        suffix: *kSuffixJoin
+      output:
+        table: *kSubjectCN
+        suffix: *kSuffixTransform
+      transform:
+        table: *kTableAttrScoreTrans
+        suffix: ""
+      #attribute:
+      #  table: *kTableAttrSubjectPoint
+      #  suffix: ""
+
+    -
+      TODO: FALSE
+      input:
+        table: *kSubjectMA
+        suffix: *kSuffixJoin
+      output:
+        table: *kSubjectMA
+        suffix: *kSuffixTransform
+      transform:
+        table: *kTableAttrScoreTrans
+        suffix: ""
+
+    -
+      TODO: FALSE
+      input:
+        table: *kSubjectEN
+        suffix: *kSuffixJoin
+      output:
+        table: *kSubjectEN
+        suffix: *kSuffixTransform
+      transform:
+        table: *kTableAttrScoreTrans
+        suffix: ""
+
+    -
+      TODO: FALSE
+      input:
+        table: *kSubjectSC
+        suffix: *kSuffixJoin
+      output:
+        table: *kSubjectSC
+        suffix: *kSuffixTransform
+      transform:
+        table: *kTableAttrScoreTrans
+        suffix: ""
+
+    -
+      TODO: FALSE
+      input:
+        table: *kSubjectAR
+        suffix: *kSuffixJoin
+      output:
+        table: *kSubjectAR
+        suffix: *kSuffixTransform
+      transform:
+        table: *kTableAttrScoreTrans
+        suffix: ""

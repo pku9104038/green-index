@@ -34,9 +34,11 @@ GreenIndexScheduler <- setRefClass(
     
     DataPrep = function(){
       
+      gio.loaddata$LoadAttribute()
+      
       gio.loaddata$LoadData()
       
-      gio.createtable$CreateTable()
+      # gio.createtable$CreateTable()
       
       gio.dictionary$Dictionary()
       
@@ -47,25 +49,60 @@ GreenIndexScheduler <- setRefClass(
       gio.splitdata$SplitData()
       
       #gio.cleandata$CleanData()
+      
+      
     },
     
-    DataTransform = function(){
+    
+    ProcessSurvey = function(reload) {
+      
+      if (reload)
+        gio.loaddata$LoadAttribute()
+      
       gio.assignpoint$AssignPoint()
       
-      gio.transform$TransformData()
+      gio.transform$TransformSurvey()
       
-      gio.dataready$DataReady()
+      # gio.dataready$DataReady()
       
-      gio.statistics$StatisticsData()
+      gio.statistics$StatisticsSurvey()
+      
+    },
+    
+    ProcessScore = function(reload) {
+      
+      if (reload)
+        gio.loaddata$LoadAttribute()
+      
+      gio.transform$TransformScore()
+      
+      gio.joindata$ScoreMerge()
+      
+      gio.transform$TransformMerged()
+      
+      gio.statistics$StatisticsMerged()
+      # gio.dataready$DataReady()
+      
+      gio.statistics$StatisticsScore()
       
       gio.scoreconverge$ScoreConverge()
       
-      gio.indexation$IndexationData()
       
+    },
+    
+    Indexation = function(reload) {
+      if (reload)
+        gio.loaddata$LoadAttribute()
+      gio.indexation$IndexationData()
       gio.converge$ConvergeTable()
     },
     
-    Report = function() {
+    
+    Report = function(reload) {
+      if (reload)
+        gio.loaddata$LoadAttribute()
+      gio.R$PrepareDataframe()
+      
       gio.R$Report()
     },
     
@@ -76,14 +113,44 @@ GreenIndexScheduler <- setRefClass(
       
       DataPrep()
       
-      DataTransform()
+      ProcessSurvey(FALSE)
       
-      Report()
+      ProcessScore(FALSE)
+      
+      Indexation(FALSE)
+      
+      Report(FALSE)
+      
+    },
+    
+    Survey = function(){
+      
+      LogInfo("Start running survey!")
+      #gio.config$InitJobs()
+      
+      DataPrep()
+      
+      ProcessSurvey()
+      
+      indexation()
+      
+    },
+    
+    Score = function(){
+      
+      LogInfo("Start running survey!")
+      #gio.config$InitJobs()
+      
+      DataPrep()
+      
+      ProcessScore()
+      
+      indexation()
       
     },
     
     TestQueryData = function(){
-      
+      gio.querydata$PrepareDataframe()
       jobs <- config$GetConfigJob()$dataquery
       test <- jobs$test
       for (i in 1:length(test)) {
@@ -94,6 +161,7 @@ GreenIndexScheduler <- setRefClass(
     
     TestPlotFigure = function(){
       
+      gio.plotfigure$PrepareDataframe()
       jobs <- config$GetConfigJob()$plotfigure
       test <- jobs$test
       for (i in 1:length(test)) {

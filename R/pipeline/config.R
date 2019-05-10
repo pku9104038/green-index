@@ -119,6 +119,10 @@ GreenIndexConfig <- setRefClass(
       return(config$reworkall)
     },
     
+    IsDropData = function(){
+      return(config$dropdata)
+    },
+    
     # Init 
     Init = function(module.name, config.file){
       config.yaml <<- config.file

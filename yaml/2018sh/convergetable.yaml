@@ -7,7 +7,7 @@ convergetable:
     -
       TODO: TRUE
       input:
-        <<: *kTableStatisticsIndex
+        <<: *kTableRefStatIndex
       output:
-        table: *kStatisticsIndex
-        suffix: *kTableConverge
+        table: *kSuffixIndexCoef
+        suffix: *kSuffixConverge

@@ -141,12 +141,14 @@ GreenIndexTransformData <- setRefClass(
       column.name <- paste0(transform[kColumnColumnName][[1]], 
                             transform[kColumnColumnSuffix][[1]])
       print(column.name)
-      threshold <- mean(as.numeric(df[, column.name]))
+      threshold <- mean(as.numeric(df[, column.name]), na.rm = TRUE)
       print(threshold)
       value.set <- unlist(strsplit(parameter, kSeparator))
       print(value.set)
-      df[df[, column.name] > threshold, variable.name] <<- value.set[1] 
-      df[df[, column.name] <= threshold, variable.name] <<- value.set[2] 
+      df[!is.na(df[, column.name]) & 
+           df[, column.name] > threshold, variable.name] <<- value.set[1] 
+      df[!is.na(df[, column.name]) & 
+           df[, column.name] <= threshold, variable.name] <<- value.set[2] 
       
     },
     
@@ -242,7 +244,7 @@ GreenIndexTransformData <- setRefClass(
           score.segment <- unlist(strsplit(score.segments[j], kSegmentConnector))
           min <- as.numeric(score.segment[1])
           max <- as.numeric(score.segment[2])
-          df[df[, column.name] >= min & df[, column.name] < max, 
+          df[!is.na(df[, column.name]) & df[, column.name] >= min & df[, column.name] < max, 
              variable.name] <<- score.segments[j]
         }
         i <- i + 1
@@ -266,7 +268,7 @@ GreenIndexTransformData <- setRefClass(
           rank <- score.segment[1]
           min <- as.numeric(score.segment[2])
           max <- as.numeric(score.segment[3])
-          df[df[, column.name] >= min & df[, column.name] < max, 
+          df[!is.na(df[, column.name]) & df[, column.name] >= min & df[, column.name] < max, 
              variable.name] <<- rank
         }
         i <- i + 1
@@ -313,6 +315,54 @@ GreenIndexTransformData <- setRefClass(
       
     },
     
+    SigmaMean = function() {
+      
+      columns <- unlist(strsplit(transform[kColumnColumnName][[1]], kSeparator))
+      suffix <- transform[kColumnColumnSuffix] 
+      df[, variable.name] <<- NA
+      
+      variable.count <- paste0(variable.name, "_数")
+      variable.value <- paste0(variable.name, "_值")
+      df[, variable.count] <<- 0 
+      df[, variable.value] <<- 0 
+      
+      i <- 1
+      while (i <= length(columns)){
+        column.name <- paste0(columns[i], suffix)
+        LogDebug(column.name)
+        count.name <- paste0(column.name, "_数")
+        value.name <- paste0(column.name, "_值")
+        
+        df[, count.name] <<- 0
+        df[, value.name] <<- 0
+        
+        df[!is.na(df[, column.name]), count.name] <<- 1
+        df[!is.na(df[, column.name]), value.name] <<- 
+          as.numeric(df[!is.na(df[, column.name]), column.name])
+        
+        df[, variable.count] <<- df[, variable.count] +  df[, count.name]
+        df[, variable.value] <<- df[, variable.value] +  df[, value.name]
+        i <- i + 1
+      }
+      df[df[, variable.count] > 0, variable.name] <<- 
+        df[df[, variable.count] > 0, variable.value] / 
+        df[df[, variable.count] > 0, variable.count]
+      df[, variable.count] <<-  NULL
+      df[, variable.value] <<- NULL
+      i <- 1
+      while (i <= length(columns)){
+        column.name <- paste0(columns[i], suffix)
+        count.name <- paste0(column.name, "_数")
+        value.name <- paste0(column.name, "_值")
+        
+        df[, count.name] <<- NULL
+        df[, value.name] <<- NULL
+        i <- i + 1
+      }
+      
+      SetVariableType()
+      
+    },
     
     TransformJob = function(){
       if (transform[kColumnTODO][[1]] == "FALSE" &&  RUN == kPilotRun){
@@ -349,74 +399,101 @@ GreenIndexTransformData <- setRefClass(
           ScoreRank()
         } else if (algorithm == kAlgorithmValueMapping) {
           ValueMapping()
-        } 
+        } else if (algorithm == kAlgorithmSigmaMean) {
+          SigmaMean()
+        }
       }
 
     },
     
     
-    TransformData = function(){
-      LogInfo("Transform Data!")
+    TransformData = function(jobs){
       
-      # get job configuration
-      jobs <- config$GetTransformJob()
       reworkall <- config$IsReworkAll()
+      dropdata <- config$IsDropData()
       reworkjobs <- jobs$TODO
       RUN <<- jobs$RUN
+      attribute.table <- paste0(jobs$info$attribute$table, 
+                                jobs$info$attribute$suffix)
+      attribute.df <<- database$ReadTable(attribute.table)  
+        
       for (i in 1:length(jobs$table)){
         job <- jobs$table[[i]]
         TODO <- job$TODO
         
         if (TODO || reworkjobs || reworkall) {
           
+          output.table <- paste0(job$output$table, job$output$suffix)
           # read input, choice data table
-          input.table.name <- job$input$table
-          input.table.suffix <- job$input$suffix
-          input.table <- paste0(job$input$table, job$input$suffix)
+          if (dropdata || !database$ExistsTable(output.table)) {
+            input.table.name <- job$input$table
+            input.table.suffix <- job$input$suffix
+            input.table <- paste0(job$input$table, job$input$suffix)
+            
+          } else {
+            input.table.name <- job$output$table
+            input.table.suffix <- job$output$suffix
+            input.table <- paste0(job$output$table, job$output$suffix)
+          }
           df <<- database$ReadTable(input.table)
           
-          if (!is.null(job$attribute)) {
-            attribute.table <- paste0(job$attribute$table, job$attribute$suffix)
-            attribute.df <<- database$ReadTable(attribute.table)  
-          }
-          
-          output.table <- paste0(job$output$table, job$output$suffix)
           
           
-          if (length(job$dummy) > 0) {
-            # clone a dummy transform table
-            LogInfo(paste("Clone", input.table, "into", output.table))
-            database$WriteTable(df, output.table)
-          } else {
+          transform.table <- paste0(job$transform$table, job$transform$suffix)
+          transform.df <- database$ReadTable(transform.table)
+          transform.df <- transform.df[
+            transform.df[, kColumnTableName] == input.table.name, ]
+          # transform.df <- transform.df[
+          #  transform.df[, kColumnTableSuffix] == input.table.suffix, ]
             
-            transform.table <- paste0(job$transform$table, job$transform$suffix)
-            transform.df <- database$ReadTable(transform.table)
-            transform.df <- transform.df[
-              transform.df[, kColumnTableName] == input.table.name, 
-              ]
-            transform.df <- transform.df[
-              transform.df[, kColumnTableSuffix] == input.table.suffix,
-              ]
-            
-            transform.df <- arrange(transform.df, as.numeric(transform.df[, kColumnSN]))
-            LogInfo(paste("Transform", input.table, "by", transform.table,
+          transform.df <- arrange(transform.df, 
+                                  as.numeric(transform.df[, kColumnSN]))
+          LogInfo(paste("Transform", input.table, "by", transform.table,
                           "into", output.table))
-            
-            k <- 1
-            while (k <= nrow(transform.df)) {
-              transform <<- transform.df[k, ]
-              TransformJob()
+          # print(transform.df)
+          k <- 1
+          while (k <= nrow(transform.df)) {
+            transform <<- transform.df[k, ]
+            TransformJob()
               
-              k <- k + 1
-            }
-            
-            database$WriteTable(df, output.table)            
+            k <- k + 1
           }
+            
+          database$WriteTable(df, output.table)            
+          
          
         }
         
       }
       
+    },
+    
+    TransformSurvey = function() {
+      LogInfo("Transform Survey!")
+      
+      # get job configuration
+      jobs <- config$GetConfigJob()$surveytrans
+      
+      TransformData(jobs)
+    },
+    
+    TransformScore = function() {
+      LogInfo("Transform Score!")
+      
+      # get job configuration
+      jobs <- config$GetConfigJob()$scoretrans
+      
+      TransformData(jobs)
+    },
+    
+    TransformMerged = function() {
+      LogInfo("Transform MergedScore!")
+      
+      # get job configuration
+      jobs <- config$GetConfigJob()$mergedtrans
+      
+      TransformData(jobs)
     }
+    
   )
 )

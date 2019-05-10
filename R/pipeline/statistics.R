@@ -358,8 +358,10 @@ GreenIndexStatisticsData <- setRefClass(
  
     Quantile = function() {
       
-      quantile.set <- quantile(sample.df[, variable.name], probs = seq(0, 1, 0.05))
-      print(quantile.set)
+      quantile.df <- sample.df[!is.na(sample.df[, variable.name]), ]
+      quantile.set <- quantile(quantile.df[, variable.name], 
+                               probs = seq(0, 1, 0.05))
+      
       choice.name <<- kMin
       statistics.value <<- quantile.set[kMinPercent]
       AddStatDataframe()  
@@ -381,7 +383,30 @@ GreenIndexStatisticsData <- setRefClass(
       AddStatDataframe() 
       
       choice.name <<- kMean
-      statistics.value <<- mean(sample.df[, variable.name])
+      statistics.value <<- mean(sample.df[, variable.name], na.rm = TRUE)
+      AddStatDataframe() 
+      
+      miu <- statistics.value
+      choice.name <<- kSigma
+      statistics.value <<- sd(sample.df[, variable.name], na.rm = TRUE)
+      AddStatDataframe() 
+      sigma <- statistics.value
+      
+      choice.name <<- kCoefVar
+      statistics.value <<- sigma/miu
+      AddStatDataframe() 
+      coefvar <- statistics.value
+      
+      choice.name <<- kCoefBalanceIndivadual # <- "个体均衡系数"
+      stat.list[kColumnStatisticsIndexType] <<- kCoefficient
+      stat.list[kColumnValueType] <<- kValueTypePercent
+      statistics.value <<- (1-2.5*(coefvar))*100
+      AddStatDataframe() 
+      
+      choice.name <<- kIndexBalanceIndividual # <- "个体均衡指数"
+      stat.list[kColumnStatisticsIndexType] <<- kIndex
+      stat.list[kColumnValueType] <<- kValueTypeInteger
+      statistics.value <<- min(9,max(1, floor((1-2.5*(coefvar))*10)))
       AddStatDataframe() 
       
       msg <- paste(algorithm, variable.name, 
@@ -429,6 +454,7 @@ GreenIndexStatisticsData <- setRefClass(
         perspectives <- process[1, kColumnStatisticsPerspective]
         perspectives <- unlist(strsplit(perspectives, kSeparator))
         
+        
         if (process[1, kColumnVariableName] == kColumnQuestionGroup) {
           attr.df <- attribute.df[attribute.df[, kColumnSubject] == 
                                     process[1, kColumnSubject],]
@@ -454,24 +480,34 @@ GreenIndexStatisticsData <- setRefClass(
             tier.name <<- tiers[j]
             
             # limit tier for pilot run
-            if (RUN == kPilotRun && tier.name != pilot$tier) {
+            if (RUN == kPilotRun && tier.name != kTierCity) {
+              break
+            }
+            # limit tier for agile run
+            if (RUN == kAgileRun && tier.name == kTierSchool) {
               break
             }
             
             # loop for pespective
             for (k in 1:length(perspectives)) {
               perspective.name <<- perspectives[k]
-              # limit perspective for pilot run
-              if (RUN == kPilotRun && perspective.name != pilot$perspective) {
+              
+              # limit perspective for tier region and school
+              if ( (tier.name == kTierSchool || tier.name == kTierRegion) && 
+                   perspective.name != kPerspectiveTotal ) {
                 break
               }
               
+              # limit perspective for pilot run
+              if (RUN == kPilotRun && perspective.name != kPerspectiveTotal) {
+                break
+              }
+              
+              # limit perspective for agile run
               if (RUN == kAgileRun && tier.name == kTierDistrict && 
                   perspective.name != kPerspectiveTotal) {
                 break
-              } else if (RUN == kAgileRun && tier.name == kTierSchool) {
-                break
-              }
+              } 
               
               LogDebug(paste(algorithm, variable.name, 
                              kColumnStatisticsTier, tier.name, 
@@ -527,16 +563,16 @@ GreenIndexStatisticsData <- setRefClass(
       }
     },
     
-    StatisticsData = function(){
-      LogInfo("Statistics Data!")
+    StatisticsData = function(jobs){
       
       # get job configuration
-      jobs <- config$GetConfigJob()$statistics
       reworkall <- config$IsReworkAll()
+      dropdata <- config$IsDropData()
       reworkjobs <- jobs$TODO
       RUN <<- jobs$RUN
       pilot <<- jobs$pilot
-        
+      DDL <- jobs$DDL
+      
       district.table <- paste0(jobs$info$district$table, 
                                jobs$info$district$suffix)
       district.df <<- database$ReadTable(district.table)
@@ -565,8 +601,8 @@ GreenIndexStatisticsData <- setRefClass(
           process.df <- database$ReadTable(process.table)
           process.df <- process.df[
             process.df[, kColumnTableName] == input.table.name, ]
-          process.df <- process.df[
-            process.df[, kColumnTableSuffix] == input.table.suffix, ]
+          # process.df <- process.df[
+          #   process.df[, kColumnTableSuffix] == input.table.suffix, ]
           
           choice.table <- paste0(job$choice$table, job$choice$suffix)
           choice.df <<- database$ReadTable(choice.table)
@@ -575,6 +611,13 @@ GreenIndexStatisticsData <- setRefClass(
           choice.df <<- choice.df[, c(choice.code, choice.key)]
           
           output.table <<- paste0(job$output$table, job$output$suffix)
+          if (dropdata || !database$ExistsTable(output.table)) {
+            database$RemoveTable(output.table)
+          }
+          SQL <- paste("CREATE TABLE IF NOT EXISTS", output.table, DDL)
+          print(SQL)
+          database$CreateTable(output.table, SQL)
+          
           
           LogInfo(paste("Statistics", input.table, "through", process.table,
                         "into", output.table))
@@ -592,6 +635,35 @@ GreenIndexStatisticsData <- setRefClass(
         
       }
       
+      
+      
+    },
+    
+    StatisticsSurvey = function() {
+      LogInfo("Statistics Survey!")
+      
+      # get job configuration
+      jobs <- config$GetConfigJob()$surveystat
+      
+      StatisticsData(jobs)
+    },
+    
+    StatisticsScore = function() {
+      LogInfo("Statistics Score!")
+      
+      # get job configuration
+      jobs <- config$GetConfigJob()$scorestat
+      
+      StatisticsData(jobs)
+    },
+    
+    StatisticsMerged = function() {
+      LogInfo("Statistics Merged!")
+      
+      # get job configuration
+      jobs <- config$GetConfigJob()$mergedstat
+      
+      StatisticsData(jobs)
     }
   )
 )

@@ -96,6 +96,16 @@ GreenIndexPlotFigure <- setRefClass(
                                           kSeparator)))
       }
       
+      # limit plot_x length
+      if (nrow(plot.data) > 0){
+        for (i in 1:nrow(plot.data)) {
+          if ((plot.data[i, kColumnAxisX]) > kAxisXTextLimit){
+            plot.data[i, kColumnAxisX] <<- 
+              substr(plot.data[i, kColumnAxisX], 1, kAxisXTextLimit)
+          }
+        }
+      }
+      
       write.csv2(plot.data, "plot.data.csv")
       return(plot.data)
     },

@@ -22,11 +22,7 @@ GreenIndexJoinData <- setRefClass(
       database <<- database.obj
     },
     
-    JoinData = function(){
-      LogInfo("Join Data!")
-      
-      # get job configuration
-      jobs <- config$GetJoinDataJob()
+    JoinTable = function(jobs){
       reworkall <- config$IsReworkAll()
       reworkjobs <- jobs$TODO
       for (i in 1:length(jobs$table)){
@@ -91,6 +87,18 @@ GreenIndexJoinData <- setRefClass(
         
       }
       
+    },
+    
+    JoinData = function() {
+      LogInfo("Join Data!")
+      jobs <- config$GetConfigJob()$joindata
+      JoinTable(jobs)
+    },
+    
+    ScoreMerge = function() {
+      LogInfo("Score Merge!")
+      jobs <- config$GetConfigJob()$scoremerge
+      JoinTable(jobs)
     }
   )
 )

@@ -7,12 +7,12 @@ checkdata:
       TODO: FALSE
       input:
         table: *kRespondentST
-        suffix: *kTableRaw
+        suffix: *kSuffixRaw
       output:
         table: *kRespondentST
-        suffix: *kTableCheck
+        suffix: *kSuffixCheck
       choice:
-        table: *kTableDictionary
+        table: *kTableAttrDict
         suffix: ""
         column:
           key: *kColumnKey
@@ -55,12 +55,12 @@ checkdata:
       TODO: FALSE
       input:
         table: *kRespondentPA
-        suffix: *kTableRaw
+        suffix: *kSuffixRaw
       output:
         table: *kRespondentPA
-        suffix: *kTableCheck
+        suffix: *kSuffixCheck
       choice:
-        table: *kTableDictionary
+        table: *kTableAttrDict
         suffix: ""
         column:
           key: *kColumnKey
@@ -71,12 +71,12 @@ checkdata:
       TODO: FALSE
       input:
         table: *kRespondentTE
-        suffix: *kTableRaw
+        suffix: *kSuffixRaw
       output:
         table: *kRespondentTE
-        suffix: *kTableCheck
+        suffix: *kSuffixCheck
       choice:
-        table: *kTableDictionary
+        table: *kTableAttrDict
         suffix: ""
         column:
           key: *kColumnKey

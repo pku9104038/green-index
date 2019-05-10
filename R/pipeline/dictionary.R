@@ -52,7 +52,7 @@ GreenIndexDictionary <- setRefClass(
           
           
           output.table <- paste0(job$output$table, job$output$suffix)
-          LogInfo(paste("Assignment", input.table, "by", choice.table,
+          LogInfo(paste("Dictionary", input.table, "by", choice.table,
                         "into", output.table))
           
           codes <- colnames(df)

@@ -1,82 +1,83 @@
 
 # join data, rename column, drop/keep column
 joindata:
-  TODO: FALSE
+  TODO: TRUE
+  # <<: *kDDLStatisticsTable
   table:
     -
       TODO: FALSE
       left:
         table: *kTableSchool
-        suffix: *kTableDict
+        suffix: *kSuffixDict
         by: *kColumnDistrictCode
       right:
         table: *kTableDistrict
-        suffix: *kTableRaw
+        suffix: *kSuffixRaw
         select:
         by: *kColumnDistrictCode
       join.type: "left" # "inner", left", "right", "full"
       out:
         table: *kTableSchool
-        suffix: *kTableJoin
+        suffix: *kSuffixJoin
 
     -
       TODO: FALSE
       left:
         table: *kTableStudent
-        suffix: *kTableDict
+        suffix: *kSuffixDict
         by: *kColumnSchoolCode
       right:
         table: *kTableSchool
-        suffix: *kTableJoin
+        suffix: *kSuffixJoin
         select: # if no selected column, will keep all column
         by: *kColumnSchoolCode
       join.type: "left" # "inner", left", "right", "full"
       out:
         table: *kTableStudent
-        suffix: *kTableJoin
+        suffix: *kSuffixJoin
 
     -
       TODO: FALSE
       left:
         table: *kTableTeacher
-        suffix: *kTableRaw
+        suffix: *kSuffixRaw
         by: *kColumnSchoolCode
       right:
         table: *kTableSchool
-        suffix: *kTableJoin
+        suffix: *kSuffixJoin
         select: # if no selected column, will keep all column
         by: *kColumnSchoolCode
       join.type: "left" # "inner", left", "right", "full"
       out:
         table: *kTableTeacher
-        suffix: *kTableJoin
+        suffix: *kSuffixJoin
 
     -
       TODO: FALSE
       left:
         table: *kTablePrincipal
-        suffix: *kTableRaw
+        suffix: *kSuffixRaw
         by: *kColumnSchoolCode
       right:
         table: *kTableSchool
-        suffix: *kTableJoin
+        suffix: *kSuffixJoin
         select: # if no selected column, will keep all column
         by: *kColumnSchoolCode
       join.type: "left" # "inner", left", "right", "full"
       out:
         table: *kTablePrincipal
-        suffix: *kTableJoin
+        suffix: *kSuffixJoin
 
     # join student participate
     -
       TODO: FALSE
       left:
         table: *kTableStudent
-        suffix: *kTableJoin
+        suffix: *kSuffixJoin
         by: *kColumnStudentCode
       right:
         table: *kSubjectCN
-        suffix: *kTableRaw
+        suffix: *kSuffixRaw
         select:
           - *kColumnStudentCode
         add:
@@ -87,17 +88,17 @@ joindata:
       join.type: "left"
       out:
         table: *kTableStudent
-        suffix: *kTableParticipate
+        suffix: *kSuffixExamination
 
     -
       TODO: FALSE
       left:
         table: *kTableStudent
-        suffix: *kTableParticipate
+        suffix: *kSuffixExamination
         by: *kColumnStudentCode
       right:
         table: *kSubjectMA
-        suffix: *kTableRaw
+        suffix: *kSuffixRaw
         select:
           - *kColumnStudentCode
         add:
@@ -108,17 +109,17 @@ joindata:
       join.type: "left"
       out:
         table: *kTableStudent
-        suffix: *kTableParticipate
+        suffix: *kSuffixExamination
 
     -
       TODO: FALSE
       left:
         table: *kTableStudent
-        suffix: *kTableParticipate
+        suffix: *kSuffixExamination
         by: *kColumnStudentCode
       right:
         table: *kSubjectEN
-        suffix: *kTableRaw
+        suffix: *kSuffixRaw
         select:
           - *kColumnStudentCode
         add:
@@ -129,17 +130,17 @@ joindata:
       join.type: "left"
       out:
         table: *kTableStudent
-        suffix: *kTableParticipate
+        suffix: *kSuffixExamination
 
     -
       TODO: FALSE
       left:
         table: *kTableStudent
-        suffix: *kTableParticipate
+        suffix: *kSuffixExamination
         by: *kColumnStudentCode
       right:
         table: *kSubjectSC
-        suffix: *kTableRaw
+        suffix: *kSuffixRaw
         select:
           - *kColumnStudentCode
         add:
@@ -150,17 +151,17 @@ joindata:
       join.type: "left"
       out:
         table: *kTableStudent
-        suffix: *kTableParticipate
+        suffix: *kSuffixExamination
 
     -
       TODO: FALSE
       left:
         table: *kTableStudent
-        suffix: *kTableParticipate
+        suffix: *kSuffixExamination
         by: *kColumnStudentCode
       right:
         table: *kSubjectAR
-        suffix: *kTableRaw
+        suffix: *kSuffixRaw
         select:
           - *kColumnStudentCode
         add:
@@ -171,17 +172,17 @@ joindata:
       join.type: "left"
       out:
         table: *kTableStudent
-        suffix: *kTableParticipate
+        suffix: *kSuffixExamination
 
     -
       TODO: FALSE
       left:
         table: *kTableStudent
-        suffix: *kTableParticipate
+        suffix: *kSuffixExamination
         by: *kColumnStudentCode
       right:
         table: *kRespondentST
-        suffix: *kTableRaw
+        suffix: *kSuffixRaw
         select:
           - *kColumnStudentCode
         add:
@@ -192,17 +193,17 @@ joindata:
       join.type: "left"
       out:
         table: *kTableStudent
-        suffix: *kTableParticipate
+        suffix: *kSuffixParticipate
 
     -
       TODO: FALSE
       left:
         table: *kTableStudent
-        suffix: *kTableParticipate
+        suffix: *kSuffixParticipate
         by: *kColumnParentCode
       right:
         table: *kRespondentPA
-        suffix: *kTableRaw
+        suffix: *kSuffixRaw
         select:
           - *kColumnParentCode
         add:
@@ -215,18 +216,18 @@ joindata:
       join.type: "left"
       out:
         table: *kTableStudent
-        suffix: *kTableParticipate
+        suffix: *kSuffixParticipate
 
     # join Fam12 from parent survey into student survey
     -
       TODO: FALSE
       left:
         table: *kRespondentST
-        suffix: *kTableRaw
+        suffix: *kSuffixRaw
         by: *kColumnParentCode
       right:
         table: *kRespondentPA
-        suffix: *kTableRaw
+        suffix: *kSuffixRaw
         select:
           - *kColumnParentCode
           - "Fam12"
@@ -238,4 +239,142 @@ joindata:
         - *kColumnParentCode
       out:
         table: *kRespondentST
-        suffix: *kTableJoin
+        suffix: *kSuffixJoin
+
+    # join student, school  into info
+    -
+      TODO: FALSE
+      left:
+        table: *kRespondentST
+        suffix: *kSuffixJoin
+        by: *kColumnStudentCode
+      right:
+        table: *kTableStudent
+        suffix: *kSuffixJoin
+        select:
+        by: *kColumnStudentCode
+        # <<: *kStatisticsAdd
+      join.type: "left" # "inner", left", "right", "full"
+      out:
+        table: *kRespondentST
+        suffix: *kSuffixJoin
+
+    -
+      TODO: FALSE
+      left:
+        table: *kRespondentPA
+        suffix: *kSuffixRaw
+        by: *kColumnParentCode
+      right:
+        table: *kTableStudent
+        suffix: *kSuffixJoin
+        select:
+        by: *kColumnParentCode
+        # <<: *kStatisticsAdd
+      join.type: "left" # "inner", left", "right", "full"
+      out:
+        table: *kRespondentPA
+        suffix: *kSuffixJoin
+
+
+    -
+      TODO: FALSE
+      left:
+        table: *kRespondentTE
+        suffix: *kSuffixRaw
+        by: *kColumnTeacherCode
+      right:
+        table: *kTableTeacher
+        suffix: *kSuffixJoin
+        select:
+        by: *kColumnTeacherCode
+        # <<: *kStatisticsAdd
+      join.type: "left" # "inner", left", "right", "full"
+      out:
+        table: *kRespondentTE
+        suffix: *kSuffixJoin
+
+    -
+      TODO: FALSE
+      left:
+        table: *kSubjectCN
+        suffix: *kSuffixRaw
+        by: *kColumnStudentCode
+      right:
+        table: *kTableStudent
+        suffix: *kSuffixJoin
+        select:
+        by: *kColumnStudentCode
+        # <<: *kStatisticsAdd
+      join.type: "left" # "inner", left", "right", "full"
+      out:
+        table: *kSubjectCN
+        suffix: *kSuffixJoin
+
+    -
+      TODO: FALSE
+      left:
+        table: *kSubjectMA
+        suffix: *kSuffixRaw
+        by: *kColumnStudentCode
+      right:
+        table: *kTableStudent
+        suffix: *kSuffixJoin
+        select:
+        by: *kColumnStudentCode
+        # <<: *kStatisticsAdd
+      join.type: "left" # "inner", left", "right", "full"
+      out:
+        table: *kSubjectMA
+        suffix: *kSuffixJoin
+
+    -
+      TODO: FALSE
+      left:
+        table: *kSubjectEN
+        suffix: *kSuffixRaw
+        by: *kColumnStudentCode
+      right:
+        table: *kTableStudent
+        suffix: *kSuffixJoin
+        select:
+        by: *kColumnStudentCode
+        # <<: *kStatisticsAdd
+      join.type: "left" # "inner", left", "right", "full"
+      out:
+        table: *kSubjectEN
+        suffix: *kSuffixJoin
+
+    -
+      TODO: FALSE
+      left:
+        table: *kSubjectSC
+        suffix: *kSuffixRaw
+        by: *kColumnStudentCode
+      right:
+        table: *kTableStudent
+        suffix: *kSuffixJoin
+        select:
+        by: *kColumnStudentCode
+        # <<: *kStatisticsAdd
+      join.type: "left" # "inner", left", "right", "full"
+      out:
+        table: *kSubjectSC
+        suffix: *kSuffixJoin
+
+    -
+      TODO: FALSE
+      left:
+        table: *kSubjectAR
+        suffix: *kSuffixRaw
+        by: *kColumnStudentCode
+      right:
+        table: *kTableStudent
+        suffix: *kSuffixJoin
+        select:
+        by: *kColumnStudentCode
+        # <<: *kStatisticsAdd
+      join.type: "left" # "inner", left", "right", "full"
+      out:
+        table: *kSubjectAR
+        suffix: *kSuffixJoin

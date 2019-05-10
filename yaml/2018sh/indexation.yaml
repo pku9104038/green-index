@@ -2,18 +2,19 @@
 # indexation coefficents
 indexation:
   TODO: FALSE
-
+  <<: *kDDLStatisticsTable
+  
   table:
     -
       TODO: FALSE
       input:
         table: *kRespondentST
-        suffix: *kTableStatistics
+        suffix: *kSuffixStat
       output:
         table: *kRespondentST
-        suffix: *kTableIndex
+        suffix: *kSuffixIndex
       process:
-        table: *kTableIndexRegion
+        table: *kTableAttrIndexAlgo
         suffix: ""
 
 
@@ -21,12 +22,12 @@ indexation:
       TODO: FALSE
       input:
         table: *kRespondentPA
-        suffix: *kTableStatistics
+        suffix: *kSuffixStat
       output:
         table: *kRespondentPA
-        suffix: *kTableIndex
+        suffix: *kSuffixIndex
       process:
-        table: *kTableIndexRegion
+        table: *kTableAttrIndexAlgo
         suffix: ""
 
 
@@ -34,22 +35,22 @@ indexation:
       TODO: FALSE
       input:
         table: *kRespondentTE
-        suffix: *kTableStatistics
+        suffix: *kSuffixStat
       output:
         table: *kRespondentTE
-        suffix: *kTableIndex
+        suffix: *kSuffixIndex
       process:
-        table: *kTableIndexRegion
+        table: *kTableAttrIndexAlgo
         suffix: ""
 
     -
       TODO: FALSE
       input:
-        table: *kStatisticsScore
-        suffix: *kTableStatistics
+        table: *kTableSubjectScore
+        suffix: *kSuffixStat
       output:
-        table: *kStatisticsScore
-        suffix: *kTableIndex
+        table: *kTableSubjectScore
+        suffix: *kSuffixIndex
       process:
-        table: *kTableIndexRegion
+        table: *kTableAttrIndexAlgo
         suffix: ""

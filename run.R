@@ -32,6 +32,20 @@ gio.scheduler$Init("Scheduler", gio.config)
 ## Running
 gio.scheduler$Run()
 
+# gio.scheduler$DataPrep()
+
+# gio.scheduler$ProcessSurvey(TRUE)
+
+# gio.loaddata$LoadAttribute()
+# gio.transform$TransformMerged()
+# gio.statistics$StatisticsMerged()
+
+# gio.scheduler$ProcessScore(TRUE)
+
+# gio.scheduler$Indexation(TRUE)
+
+# gio.scheduler$Report(TRUE)
+
 # gio.scheduler$TestQueryData()
 
 # gio.scheduler$TestPlotFigure()

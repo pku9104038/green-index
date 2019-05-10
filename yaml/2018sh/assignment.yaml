@@ -10,12 +10,12 @@ assignment:
       suffix: *kColumnSuffixBinary
       input:
         table: *kRespondentST
-        suffix: *kTableSplit
+        suffix: *kSuffixSplit
       output:
         table: *kRespondentST
-        suffix: *kTableAssign
+        suffix: *kSuffixAssign
       choice:
-        table: *kTableSurveyResponsePoint
+        table: *kTableAttrSurveyPoint
         suffix: ""
         column:
           code: *kColumnQuestionCode
@@ -27,12 +27,12 @@ assignment:
       suffix: *kColumnSuffixBinary
       input:
         table: *kRespondentPA
-        suffix: *kTableSplit
+        suffix: *kSuffixSplit
       output:
         table: *kRespondentPA
-        suffix: *kTableAssign
+        suffix: *kSuffixAssign
       choice:
-        table: *kTableSurveyResponsePoint
+        table: *kTableAttrSurveyPoint
         suffix: ""
         column:
           code: *kColumnQuestionCode
@@ -44,12 +44,12 @@ assignment:
       suffix: *kColumnSuffixBinary
       input:
         table: *kRespondentTE
-        suffix: *kTableSplit
+        suffix: *kSuffixSplit
       output:
         table: *kRespondentTE
-        suffix: *kTableAssign
+        suffix: *kSuffixAssign
       choice:
-        table: *kTableSurveyResponsePoint
+        table: *kTableAttrSurveyPoint
         suffix: ""
         column:
           code: *kColumnQuestionCode

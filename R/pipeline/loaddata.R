@@ -25,9 +25,7 @@ GreenIndexLoadData <- setRefClass(
     },
     
     LoadExcel = function(jobs){
-      LogInfo("Loading Data!")
       
-      jobs <- config$GetLoadDataJob()
       reworkall <- config$IsReworkAll()
       reworkjobs <- jobs$TODO
       for (i in 1:length(jobs$table)){

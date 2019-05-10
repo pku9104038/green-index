@@ -2,29 +2,30 @@
 # score converge
 scoreconverge:
   TODO: TRUE
-  # TRUE,  FALSE ,rework jobs flag
+  RUN: "PILOT" # TRUE,  FALSE ,rework jobs flag
+  <<: *kDDLStatisticsTable
   input:
-    <<: *kTableStatisticsScore
+    <<: *kTableRefStatScore
   output:
-    table: *kStatisticsScore
-    suffix: *kTableConverge
+    table: *kTableSubjectScore
+    suffix: *kSuffixConverge
   info:
     district:
       table: *kTableDistrict
-      suffix: *kTableRaw
+      suffix: *kSuffixRaw
     school:
       table: *kTableSchool
-      suffix: *kTableJoin
+      suffix: *kSuffixJoin
 
   table:
     -
       TODO: FALSE
       input:
-        table: *kStatisticsScore
-        suffix: *kTableConverge
+        table: *kTableSubjectScore
+        suffix: *kSuffixConverge
       output:
-        table: *kStatisticsScore
-        suffix: *kTableStatistics
+        table: *kTableSubjectScore
+        suffix: *kSuffixConvergeStat
       process:
-        table: *kTableScoreConverge
+        table: *kTableAttrConvergeStat
         suffix: ""

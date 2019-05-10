@@ -2,7 +2,7 @@
 # transform to new variable for statistics
 transform:
   TODO: FALSE
-  RUN: "AUTO"   # "PILOT", "AUTO"
+  RUN: "PILOT"   # "PILOT", "AUTO"
   table:
 
     # dummy transform table from assignment
@@ -10,10 +10,10 @@ transform:
       TODO: FALSE
       input:
         table: *kRespondentST
-        suffix: *kTableAssign
+        suffix: *kSuffixAssign
       output:
         table: *kRespondentST
-        suffix: *kTableTransform
+        suffix: *kSuffixTransform
       dummy:
         - TRUE
 
@@ -21,10 +21,10 @@ transform:
       TODO: FALSE
       input:
         table: *kRespondentPA
-        suffix: *kTableAssign
+        suffix: *kSuffixAssign
       output:
         table: *kRespondentPA
-        suffix: *kTableTransform
+        suffix: *kSuffixTransform
       dummy:
         - TRUE
 
@@ -32,10 +32,10 @@ transform:
       TODO: FALSE
       input:
         table: *kRespondentTE
-        suffix: *kTableAssign
+        suffix: *kSuffixAssign
       output:
         table: *kRespondentTE
-        suffix: *kTableTransform
+        suffix: *kSuffixTransform
       dummy:
         - TRUE
 
@@ -43,10 +43,10 @@ transform:
       TODO: FALSE
       input:
         table: *kSubjectCN
-        suffix: *kTableRaw
+        suffix: *kSuffixRaw
       output:
         table: *kSubjectCN
-        suffix: *kTableTransform
+        suffix: *kSuffixTransform
       dummy:
         - TRUE
 
@@ -54,10 +54,10 @@ transform:
       TODO: FALSE
       input:
         table: *kSubjectMA
-        suffix: *kTableRaw
+        suffix: *kSuffixRaw
       output:
         table: *kSubjectMA
-        suffix: *kTableTransform
+        suffix: *kSuffixTransform
       dummy:
         - TRUE
 
@@ -65,10 +65,10 @@ transform:
       TODO: FALSE
       input:
         table: *kSubjectEN
-        suffix: *kTableRaw
+        suffix: *kSuffixRaw
       output:
         table: *kSubjectEN
-        suffix: *kTableTransform
+        suffix: *kSuffixTransform
       dummy:
         - TRUE
 
@@ -76,10 +76,10 @@ transform:
       TODO: FALSE
       input:
         table: *kSubjectSC
-        suffix: *kTableRaw
+        suffix: *kSuffixRaw
       output:
         table: *kSubjectSC
-        suffix: *kTableTransform
+        suffix: *kSuffixTransform
       dummy:
         - TRUE
 
@@ -87,10 +87,10 @@ transform:
       TODO: FALSE
       input:
         table: *kSubjectAR
-        suffix: *kTableRaw
+        suffix: *kSuffixRaw
       output:
         table: *kSubjectAR
-        suffix: *kTableTransform
+        suffix: *kSuffixTransform
       dummy:
         - TRUE
 
@@ -100,24 +100,24 @@ transform:
       TODO: FALSE
       input:
         table: *kRespondentST
-        suffix: *kTableTransform
+        suffix: *kSuffixTransform
       output:
         table: *kRespondentST
-        suffix: *kTableTransform
+        suffix: *kSuffixTransform
       transform:
-        table: *kTableVariableTransform
+        table: *kTableAttrVarTransform
         suffix: ""
 
     -
       TODO: FALSE
       input:
         table: *kRespondentPA
-        suffix: *kTableTransform
+        suffix: *kSuffixTransform
       output:
         table: *kRespondentPA
-        suffix: *kTableTransform
+        suffix: *kSuffixTransform
       transform:
-        table: *kTableVariableTransform
+        table: *kTableAttrVarTransform
         suffix: ""
 
 
@@ -125,73 +125,73 @@ transform:
       TODO: FALSE
       input:
         table: *kRespondentTE
-        suffix: *kTableTransform
+        suffix: *kSuffixTransform
       output:
         table: *kRespondentTE
-        suffix: *kTableTransform
+        suffix: *kSuffixTransform
       transform:
-        table: *kTableVariableTransform
+        table: *kTableAttrVarTransform
         suffix: ""
 
     -
       TODO: FALSE
       input:
         table: *kSubjectCN
-        suffix: *kTableTransform
+        suffix: *kSuffixTransform
       output:
         table: *kSubjectCN
-        suffix: *kTableTransform
+        suffix: *kSuffixTransform
       transform:
-        table: *kTableVariableTransform
+        table: *kTableAttrVarTransform
         suffix: ""
       attribute:
-        table: *kTableSubjectSolutionPoint
+        table: *kTableAttrSubjectPoint
         suffix: ""
 
     -
       TODO: FALSE
       input:
         table: *kSubjectMA
-        suffix: *kTableTransform
+        suffix: *kSuffixTransform
       output:
         table: *kSubjectMA
-        suffix: *kTableTransform
+        suffix: *kSuffixTransform
       transform:
-        table: *kTableVariableTransform
+        table: *kTableAttrVarTransform
         suffix: ""
 
     -
       TODO: FALSE
       input:
         table: *kSubjectEN
-        suffix: *kTableTransform
+        suffix: *kSuffixTransform
       output:
         table: *kSubjectEN
-        suffix: *kTableTransform
+        suffix: *kSuffixTransform
       transform:
-        table: *kTableVariableTransform
+        table: *kTableAttrVarTransform
         suffix: ""
 
     -
       TODO: FALSE
       input:
         table: *kSubjectSC
-        suffix: *kTableTransform
+        suffix: *kSuffixTransform
       output:
         table: *kSubjectSC
-        suffix: *kTableTransform
+        suffix: *kSuffixTransform
       transform:
-        table: *kTableVariableTransform
+        table: *kTableAttrVarTransform
         suffix: ""
 
     -
       TODO: FALSE
       input:
         table: *kSubjectAR
-        suffix: *kTableTransform
+        suffix: *kSuffixTransform
       output:
         table: *kSubjectAR
-        suffix: *kTableTransform
+        suffix: *kSuffixTransform
       transform:
-        table: *kTableVariableTransform
+        table: *kTableAttrVarTransform
         suffix: ""

@@ -239,6 +239,8 @@ GreenIndexScoreConverge <- setRefClass(
       
       jobs <- config$GetConfigJob()$scoreconverge
       reworkall <- config$IsReworkAll()
+      dropdata <- config$IsDropData()
+      DDL <- jobs$DDL
       reworkjobs <- jobs$TODO
       
       district.table <- paste0(jobs$info$district$table, 
@@ -267,10 +269,16 @@ GreenIndexScoreConverge <- setRefClass(
             process.df[, kColumnTableSuffix] == input.table.suffix, ]
           
           output.table <<- paste0(job$output$table, job$output$suffix)
+          if (dropdata) {
+            database$RemoveTable(output.table)
+          }
+          SQL <- paste("CREATE TABLE IF NOT EXISTS", output.table, DDL)
+          
+          database$CreateTable(output.table, SQL)
           
           LogInfo(paste("Score Converge", input.table, "through", process.table,
                         "into", output.table))
-          
+          print(process.df)
           k <- 1
           while (k <= nrow(process.df)) {
             process <<- process.df[k, ]

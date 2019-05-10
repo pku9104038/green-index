@@ -40,15 +40,19 @@ GreenIndexConvergeTable <- setRefClass(
           
           for (j in 1:length(input.table)) {
             table <- paste0(input.table[[j]]$name, input.table[[j]]$suffix)
-            
-            df <- database$ReadTable(table)
-            if (nrow(df) > 0){
-              if (j == 1){
-                database$WriteTable(df, output.table)
-              } else {
-                database$AppendTable(df, output.table)
+            if (database$ExistsTable(table)) {
+              df <- database$ReadTable(table)
+              if (nrow(df) > 0){
+                if (j == 1){
+                  database$WriteTable(df, output.table)
+                } else {
+                  database$AppendTable(df, output.table)
+                }
               }
+            } else {
+              LogError(paste(table, "NOT EXISTS!"))
             }
+            
             
             
           }

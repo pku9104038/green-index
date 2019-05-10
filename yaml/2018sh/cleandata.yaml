@@ -7,12 +7,12 @@ cleandata:
       TODO: FALSE
       input:
         table: *kRespondentST
-        suffix: *kTableSplit
+        suffix: *kSuffixSplit
       output:
         table: *kRespondentST
-        suffix: *kTableClean
+        suffix: *kSuffixClean
       choice:
-        table: *kTableSurveyResponsePoint
+        table: *kTableAttrSurveyPoint
         suffix: ""
         column:
           key: *kColumnQuestionCode
@@ -27,12 +27,12 @@ cleandata:
       TODO: FALSE
       input:
         table: *kRespondentPA
-        suffix: *kTableSplit
+        suffix: *kSuffixSplit
       output:
         table: *kRespondentPA
-        suffix: *kTableClean
+        suffix: *kSuffixClean
       choice:
-        table: *kTableSurveyResponsePoint
+        table: *kTableAttrSurveyPoint
         suffix: ""
         column:
           key: *kColumnQuestionCode
@@ -42,12 +42,12 @@ cleandata:
       TODO: FALSE
       input:
         table: *kRespondentTE
-        suffix: *kTableSplit
+        suffix: *kSuffixSplit
       output:
         table: *kRespondentTE
-        suffix: *kTableClean
+        suffix: *kSuffixClean
       choice:
-        table: *kTableSurveyResponsePoint
+        table: *kTableAttrSurveyPoint
         suffix: ""
         column:
           key: *kColumnQuestionCode

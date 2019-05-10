@@ -6,14 +6,14 @@ createtable:
   table:
     -
       TODO: FALSE
-      <<: *kDLLStatisticsTable
-      <<: *kTableSubjectRespondent
-      suffix: *kTableStatistics
+      <<: *kDDLStatisticsTable
+      <<: *kTableRefSubjectRespondent
+      suffix: *kSuffixStat
       drop: TRUE
 
     -
       TODO: FALSE
       <<: *kDLLStatisticsTable
-      <<: *kTableSubjectRespondent
-      suffix: *kTableIndex
+      <<: *kTableRefSubjectRespondent
+      suffix: *kSuffixIndex
       drop: TRUE
