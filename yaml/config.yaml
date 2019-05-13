@@ -63,5 +63,5 @@ jobs:
 
 # auto reworkall switch
 reworkall: TRUE
-dropdata: FALSE
+dropdata: TRUE
 # TRUE, igonre TODO: FALSE flags, rework all jobs

@@ -124,6 +124,7 @@ kAlgorithmValueSpacePercent <- "值域百分比"
 kAlgorithmQuantile <- "四分位"
 kAlgorithmMean <- "平均值"
 kAlgorithmTenLevelIndex <- "十级指数化"
+kAlgorithmPassRateIndex <- "合格率指数化"
 
 # constants for plot
 kPlotGeomBarDodge <- "并列条形图"

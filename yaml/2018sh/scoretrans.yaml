@@ -2,7 +2,6 @@
 # transform to new variable for statistics
 scoretrans:
   TODO: FALSE
-  RUN: "PILOT"   # "PILOT", "AUTO"
   info:
     attribute:
       table: *kTableAttrSubjectPoint

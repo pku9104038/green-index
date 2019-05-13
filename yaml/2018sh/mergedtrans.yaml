@@ -2,7 +2,6 @@
 # transform to new variable for statistics
 mergedtrans:
   TODO: FALSE
-  RUN: "PILOT"   # "PILOT", "AUTO"
   info:
     attribute:
       table: *kTableAttrSubjectPoint
@@ -12,10 +11,10 @@ mergedtrans:
     -
       TODO: TRUE
       input:
-        table: *kTableSubjectScore
+        table: *kTableSubjectALL
         suffix: *kSuffixJoin
       output:
-        table: *kTableSubjectScore
+        table: *kTableSubjectALL
         suffix: *kSuffixTransform
       transform:
         table: *kTableAttrMergedTrans

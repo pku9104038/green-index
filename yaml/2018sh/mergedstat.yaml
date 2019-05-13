@@ -23,10 +23,10 @@ mergedstat:
     -
       TODO: TRUE
       input:
-        table: *kTableSubjectScore
+        table: *kTableSubjectALL
         suffix: *kSuffixTransform
       output:
-        table: *kTableSubjectScore
+        table: *kTableSubjectALL
         suffix: *kSuffixStat
       process:
         table: *kTableAttrMergedStat

@@ -84,12 +84,11 @@ GreenIndexAssignPoint <- setRefClass(
                 column.assignment <- paste0(code, suffix)
                 names(option) <- sub(paste0("^", choice.value, "$"), 
                                      column.assignment, names(option))
-                
-                LogDebug(column.assignment)
-                
+                option <- option[!is.na(option[column.assignment]), ]
+                df[, column.assignment] <- NULL
                 df <- merge(df, option, by.x = code, by.y = choice.key,
                             all.x = TRUE)
-                
+         
                 LogDebug(paste(column.assignment, 
                                as.character(mean(df[, column.assignment], 
                                                  na.rm = TRUE))))

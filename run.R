@@ -29,18 +29,27 @@ if(!exists("scheduler.loaded", mode = "variable")) {
 gio.scheduler <- GreenIndexScheduler$new()
 gio.scheduler$Init("Scheduler", gio.config)
 
+
+#######################################
+
 ## Running
+
 gio.scheduler$Run()
 
 # gio.scheduler$DataPrep()
 
 # gio.scheduler$ProcessSurvey(TRUE)
 
+# gio.assignpoint$AssignPoint()
+# gio.transform$TransformSurvey()
+# gio.statistics$StatisticsSurvey()
+
+
+# gio.scheduler$ProcessScore(TRUE)
+
 # gio.loaddata$LoadAttribute()
 # gio.transform$TransformMerged()
 # gio.statistics$StatisticsMerged()
-
-# gio.scheduler$ProcessScore(TRUE)
 
 # gio.scheduler$Indexation(TRUE)
 

@@ -63,8 +63,6 @@ GreenIndexScheduler <- setRefClass(
       
       gio.transform$TransformSurvey()
       
-      # gio.dataready$DataReady()
-      
       gio.statistics$StatisticsSurvey()
       
     },
@@ -74,18 +72,17 @@ GreenIndexScheduler <- setRefClass(
       if (reload)
         gio.loaddata$LoadAttribute()
       
-      gio.transform$TransformScore()
+      gio.transform$TransformScore()    # 成绩转化
       
-      gio.joindata$ScoreMerge()
+      gio.joindata$ScoreMerge()         # 转换成绩合并（多学科合并计算）
       
-      gio.transform$TransformMerged()
+      gio.transform$TransformMerged()   # 合并转换 （多学科合并计算）
       
-      gio.statistics$StatisticsMerged()
-      # gio.dataready$DataReady()
+      gio.statistics$StatisticsMerged() # 合并统计
       
-      gio.statistics$StatisticsScore()
+      gio.statistics$StatisticsScore()  # 成绩统计
       
-      gio.scoreconverge$ScoreConverge()
+      gio.scoreconverge$ScoreConverge() # 成绩综合（在统计的基础上再次合并统计）
       
       
     },
@@ -119,7 +116,7 @@ GreenIndexScheduler <- setRefClass(
       
       Indexation(FALSE)
       
-      Report(FALSE)
+      # Report(FALSE)
       
     },
     

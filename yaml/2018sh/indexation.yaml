@@ -3,7 +3,7 @@
 indexation:
   TODO: FALSE
   <<: *kDDLStatisticsTable
-  
+
   table:
     -
       TODO: FALSE
@@ -44,12 +44,24 @@ indexation:
         suffix: ""
 
     -
-      TODO: FALSE
+      TODO: TRUE
       input:
-        table: *kTableSubjectScore
+        table: *kSubjectALL
         suffix: *kSuffixStat
       output:
-        table: *kTableSubjectScore
+        table: *kSubjectALL
+        suffix: *kSuffixIndex
+      process:
+        table: *kTableAttrIndexAlgo
+        suffix: ""
+
+    -
+      TODO: TRUE
+      input:
+        table: *kTableStatScore
+        suffix: *kSuffixStat
+      output:
+        table: *kTableStatScore
         suffix: *kSuffixIndex
       process:
         table: *kTableAttrIndexAlgo

@@ -119,21 +119,21 @@ loadattribute:
     -
       TODO: FALSE
       xlsx: "绿色指标属性表.xlsx"
-      sheet: "合并转换表"
+      sheet: "全科转换表"
       table: *kTableAttrMergedTrans
       suffix: ""
 
     -
       TODO: FALSE
       xlsx: "绿色指标属性表.xlsx"
-      sheet: "合并统计表"
+      sheet: "全科统计表"
       table: *kTableAttrMergedStat
       suffix: ""
 
     -
       TODO: FALSE
       xlsx: "绿色指标属性表.xlsx"
-      sheet: "成绩综合表"
+      sheet: "综合统计表"
       table: *kTableAttrConvergeStat
       suffix: ""
 

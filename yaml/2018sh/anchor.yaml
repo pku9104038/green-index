@@ -14,12 +14,8 @@ kDefinition:
       "科学"
     - &kSubjectAR
       "艺术"
-    - &kSubjectQB
-      "全部学科"
-    - &kSubjectKS
-      "考试学科"
-    - &kSubjectSY
-      "素养学科"
+    - &kSubjectALL
+      "全科"
 
   kRespondent:  # 受访者定义
     - &kRespondent
@@ -55,13 +51,13 @@ kDefinition:
       - &kTableAttrScoreTrans
         属性表成绩转换
       - &kTableAttrMergedTrans
-        属性表合并转换
+        属性表全科转换
       - &kTableAttrSurveyStat
         属性表问卷统计
       - &kTableAttrScoreStat
         属性表成绩统计
       - &kTableAttrMergedStat
-        属性表合并统计
+        属性表全科统计
       - &kTableAttrConvergeStat
         属性表综合统计
       - &kTableAttrIndexAlgo
@@ -92,7 +88,7 @@ kDefinition:
       kTableStatPrefix: # 统计表名称前缀
         - &kSuffixIndexCoef
           "指标系数"
-        - &kTableSubjectScore
+        - &kTableStatScore
           "学业成绩"
 
     kTableSuffix:  # 表名称后缀
@@ -282,7 +278,7 @@ kSetting:
           - *kSubjectEN
           - *kSubjectSC
           - *kSubjectAR
-          - *kTableSubjectScore
+          - *kTableSubjecALL
 
       kTableRefStatIndex: &kTableRefStatIndex  # 指标系数汇聚数据 引用表
         table:
@@ -314,11 +310,11 @@ kSetting:
             name: *kSubjectAR
             suffix: *kSuffixStat
           -
-            name: *kTableSubjectScore
+            name: *kTableSubjectALL
             suffix: *kSuffixStat
           -
-            name: *kTableSubjectScore
-            suffix: *kSuffixConvergeStat
+            name: *kTableStatScore
+            suffix: *kSuffixStat
 
           -
             name: *kRespondentST
@@ -349,11 +345,11 @@ kSetting:
             suffix: *kSuffixIndex
 
           -
-            name: *kTableSubjectScore
+            name: *kTableSubjectALL
             suffix: *kSuffixIndex
           -
-            name: *kTableSubjectScore
-            suffix: *kSuffixConvergeIndex
+            name: *kTableStatScore
+            suffix: *kSuffixIndex
 
   kReport:  # 报告设置
 

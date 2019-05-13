@@ -12,6 +12,8 @@ library(ggthemes)
 library(ggsci)
 library(dplyr)
 library(ggrepel)
+# library(Cairo)
+# library(animation)
 
 GreenIndexPlotFigure <- setRefClass(
   "GreenIndexPlotFigure",
@@ -569,6 +571,9 @@ GreenIndexPlotFigure <- setRefClass(
         plot.fig$name <- plot.param[1, kColumnPlotTitle]
         pdf(plot.file, width = as.numeric(plot.param[1, kColumnPlotWidth]) , 
             height = as.numeric(plot.param[1, kColumnPlotHeight]) ) 
+        # CairoPNG("aaaa.png", width = as.numeric(plot.param[1, kColumnPlotWidth]), 
+        #    height = as.numeric(plot.param[1, kColumnPlotHeight]), units = "in", res = 150) 
+        # CairoPNG("aaaa.png", 1000, 550, res = 300);
         
         showtext_begin()
         
@@ -582,9 +587,11 @@ GreenIndexPlotFigure <- setRefClass(
           figure <- PlotGeomBoxWhisker()
         } 
         print(figure)
-        
+        # ggsave(figure,filename = "p.png",width = 12,height = 9)
         showtext_end()
         dev.off()
+        
+        # im.convert(plot.file, output = "bm.png", extra.opts="-density 720")
         
         
       }

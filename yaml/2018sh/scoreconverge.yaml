@@ -7,7 +7,7 @@ scoreconverge:
   input:
     <<: *kTableRefStatScore
   output:
-    table: *kTableSubjectScore
+    table: *kTableStatScore
     suffix: *kSuffixConverge
   info:
     district:
@@ -21,11 +21,11 @@ scoreconverge:
     -
       TODO: FALSE
       input:
-        table: *kTableSubjectScore
+        table: *kTableStatScore
         suffix: *kSuffixConverge
       output:
-        table: *kTableSubjectScore
-        suffix: *kSuffixConvergeStat
+        table: *kTableStatScore
+        suffix: *kSuffixStat
       process:
         table: *kTableAttrConvergeStat
         suffix: ""

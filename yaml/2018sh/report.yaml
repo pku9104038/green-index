@@ -34,7 +34,7 @@ report:
         - "agile.rmd"
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标基础数据报告"
       tier: *kStatTierCity
       subdir: "base"
@@ -54,7 +54,7 @@ report:
         - "city_base_parent.rmd"
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标指数报告"
       tier: *kStatTierCity
       subdir: "index"
@@ -66,7 +66,7 @@ report:
         - "head_foot.rmd"
         - "report_preface.rmd"
         - "table_of_contents.rmd"
-        # - "city_index_score.rmd"
+        - "city_index_score.rmd"
 
 
     -

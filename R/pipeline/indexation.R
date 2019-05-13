@@ -58,6 +58,39 @@ GreenIndexIndexationData <- setRefClass(
       
     },
     
+    
+    PassRateIndex = function() {
+      
+      stat.df[, kColumnValue] <<- floor(stat.df[, kColumnValue]/10)
+      stat.df[stat.df[, kColumnValue] == 0, kColumnValue] <<-1
+      stat.df[, "msg"] <<- paste(stat.df[, kColumnAssessment],
+                                 stat.df[, kColumnGrade],
+                                 stat.df[, kColumnSubject],
+                                 stat.df[, kColumnDomain],
+                                 stat.df[, kColumnDimention],
+                                 stat.df[, kColumnGroup],
+                                 stat.df[, kColumnAttribute],
+                                 stat.df[, kColumnTopic],
+                                 stat.df[, kColumnStatisticsTier],
+                                 stat.df[, kColumnStatisticsScope],
+                                 stat.df[, kColumnStatisticsPerspective],
+                                 stat.df[, kColumnStatisticsSample],
+                                 stat.df[, kColumnStatisticsVariable],
+                                 # stat.df[, kColumnStatisticsAlgorithm],
+                                 stat.df[, kColumnStatisticsIndexType],
+                                 # stat.df[, kColumnValueType],
+                                 stat.df[, kColumnKey])
+      
+      for (i in 1: nrow(stat.df)) {
+        stat.df[i, kColumnHashDigest] <<- digest(stat.df[i, "msg"], "sha256")
+      }
+      #stat.df[, kColumnHashDigest] <<- digest(stat.df[, "msg"], "sha256")
+      stat.df[, "msg"] <<- NULL
+      
+      out.df <<- rbind(out.df, stat.df)
+      
+    }, 
+    
     ProcessJob = function(){
       
       if (process[1, kColumnTODO] == "FALSE"){
@@ -70,10 +103,9 @@ GreenIndexIndexationData <- setRefClass(
                       process[1, kColumnGroup],
                       process[1, kColumnAttribute],
                       process[1, kColumnTopic],
-                      process[1, kColumnStatisticsTier],
-                      process[1, kColumnStatisticsPerspective],
                       process[1, kColumnStatisticsAlgorithm],
                       process[1, kColumnKey]))
+        print(in.df)
         
         stat.df <<- in.df[in.df[, kColumnGrade] == process[1, kColumnGrade] &
                            in.df[, kColumnSubject] == process[1, kColumnSubject] &
@@ -81,11 +113,12 @@ GreenIndexIndexationData <- setRefClass(
                            in.df[, kColumnDimention] == process[1, kColumnDimention] &
                            in.df[, kColumnGroup] == process[1, kColumnGroup] &
                            in.df[, kColumnAttribute] == process[1, kColumnAttribute] &
-                           in.df[, kColumnGroup] == process[1, kColumnGroup] &
-                           in.df[, kColumnTopic] == process[1, kColumnTopic],  ]
+                            in.df[, kColumnTopic] == process[1, kColumnTopic],  ]
+        print(stat.df)
         if (process[1, kColumnKey] != "ALL" && nrow(stat.df) > 0) {
           stat.df <<- stat.df[stat.df[, kColumnKey] == process[1, kColumnKey], ]
         }
+        print(stat.df)
         
         if (nrow(stat.df) > 0){
           stat.df[, kColumnStatisticsAlgorithm] <<- process[1, kColumnStatisticsAlgorithm]
@@ -94,9 +127,9 @@ GreenIndexIndexationData <- setRefClass(
           
           if (process[1, kColumnStatisticsAlgorithm] == kAlgorithmTenLevelIndex) {
             TenLevelIndex()
+          } else if (process[1, kColumnStatisticsAlgorithm] == kAlgorithmPassRateIndex) {
+            PassRateIndex()
           }
-          
-          InsertStatDataframe()
           
         }
 
@@ -138,12 +171,19 @@ GreenIndexIndexationData <- setRefClass(
           
           
           output.table <<- paste0(job$output$table, job$output$suffix)
-          if (dropdata) {
-            database$RemoveTable(output.table)
-          }
+          # if (dropdata && database$ExistsTable(output.table)) {
+            # database$RemoveTable(output.table)
+          # }
+          
+          # if (database$ExistsTable(output.table)) {
+          #  database$RemoveTable(output.table)
+          # }
+          
           SQL <- paste("CREATE TABLE IF NOT EXISTS", output.table, DDL)
           print(SQL)
           database$CreateTable(output.table, SQL)
+          
+          out.df <<- database$ReadTable(output.table)
           
           LogInfo(paste("Indexation", input.table, "through", process.table,
                         "into", output.table))
@@ -156,7 +196,10 @@ GreenIndexIndexationData <- setRefClass(
             k <- k + 1
           }
           
-          # database$WriteTable(out.df, output.table)
+          if (nrow(out.df) > 0) {
+            database$WriteTable(out.df, output.table)
+          }
+          
         }
         
       }

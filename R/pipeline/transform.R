@@ -365,7 +365,7 @@ GreenIndexTransformData <- setRefClass(
     },
     
     TransformJob = function(){
-      if (transform[kColumnTODO][[1]] == "FALSE" &&  RUN == kPilotRun){
+      if (transform[kColumnTODO][[1]] == "FALSE" &&  !config$IsReworkAll()){
         return(NA)
       } else if (transform[kColumnTODO][[1]] == "TRUE"){
         
@@ -412,7 +412,7 @@ GreenIndexTransformData <- setRefClass(
       reworkall <- config$IsReworkAll()
       dropdata <- config$IsDropData()
       reworkjobs <- jobs$TODO
-      RUN <<- jobs$RUN
+      # RUN <<- jobs$RUN
       attribute.table <- paste0(jobs$info$attribute$table, 
                                 jobs$info$attribute$suffix)
       attribute.df <<- database$ReadTable(attribute.table)  

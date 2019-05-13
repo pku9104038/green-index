@@ -158,7 +158,7 @@ GreenIndexReport <- setRefClass(
     },
     
     GetReportOutFile = function() {
-      return(paste0(report.title, as.character(Sys.time()), 
+      return(paste0(report.title, gsub("\\:+", "_", as.character(Sys.time())), 
                     report.output$ext))
     },
     

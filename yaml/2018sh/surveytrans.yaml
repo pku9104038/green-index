@@ -2,7 +2,6 @@
 # transform to new variable for statistics
 surveytrans:
   TODO: FALSE
-  RUN: "PILOT"   # "PILOT", "AUTO", "MILESTONE"
   info:
     attribute:
       table: *kTableAttrSurveyPoint

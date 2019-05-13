@@ -611,7 +611,7 @@ GreenIndexStatisticsData <- setRefClass(
           choice.df <<- choice.df[, c(choice.code, choice.key)]
           
           output.table <<- paste0(job$output$table, job$output$suffix)
-          if (dropdata || !database$ExistsTable(output.table)) {
+          if (dropdata && database$ExistsTable(output.table)) {
             database$RemoveTable(output.table)
           }
           SQL <- paste("CREATE TABLE IF NOT EXISTS", output.table, DDL)
