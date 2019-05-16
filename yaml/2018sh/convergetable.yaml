@@ -9,5 +9,5 @@ convergetable:
       input:
         <<: *kTableRefStatIndex
       output:
-        table: *kSuffixIndexCoef
+        table: *kTableIndexCoef
         suffix: *kSuffixConverge

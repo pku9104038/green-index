@@ -11,10 +11,10 @@ mergedtrans:
     -
       TODO: TRUE
       input:
-        table: *kTableSubjectALL
+        table: *kSubjectALL
         suffix: *kSuffixJoin
       output:
-        table: *kTableSubjectALL
+        table: *kSubjectALL
         suffix: *kSuffixTransform
       transform:
         table: *kTableAttrMergedTrans

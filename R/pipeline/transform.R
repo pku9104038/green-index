@@ -304,6 +304,16 @@ GreenIndexTransformData <- setRefClass(
       
     },
     
+    ValuePercent = function(){
+      
+      denominator <- as.numeric(parameter)
+      column.name <- paste0(transform[kColumnColumnName][[1]], 
+                            transform[kColumnColumnSuffix])
+      df[, variable.name] <<- (as.numeric(df[, column.name]) / denominator) * 100
+      SetVariableType()
+      
+    },
+    
     Constant = function(){
       
       if (parameter == "TRUE"){
@@ -401,6 +411,8 @@ GreenIndexTransformData <- setRefClass(
           ValueMapping()
         } else if (algorithm == kAlgorithmSigmaMean) {
           SigmaMean()
+        } else if (algorithm == kAlgorithmValuePercent) {
+          ValuePercent()
         }
       }
 

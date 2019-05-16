@@ -17,6 +17,7 @@ scoremerge:
         suffix: *kSuffixTransform
         select:
           - *kColumnStudentCode
+          - "总分"
           - "标准分"
           - "高层次思维能力_标准分"
         rename:
@@ -32,13 +33,13 @@ scoremerge:
         by: *kColumnStudentCode
       join.type: "left"
       out:
-        table: *kTableSubjectALL
+        table: *kSubjectALL
         suffix: *kSuffixJoin
 
     -
       TODO: FALSE
       left:
-        table: *kTableSubjectALL
+        table: *kSubjectALL
         suffix: *kSuffixJoin
         by: *kColumnStudentCode
       right:
@@ -46,6 +47,7 @@ scoremerge:
         suffix: *kSuffixTransform
         select:
           - *kColumnStudentCode
+          - "总分"
           - "标准分"
           - "高层次思维能力_标准分"
         rename:
@@ -61,14 +63,14 @@ scoremerge:
         by: *kColumnStudentCode
       join.type: "left"
       out:
-        table: *kTableSubjectALL
+        table: *kSubjectALL
         suffix: *kSuffixJoin
 
 
     -
       TODO: FALSE
       left:
-        table: *kTableSubjectALL
+        table: *kSubjectALL
         suffix: *kSuffixJoin
         by: *kColumnStudentCode
       right:
@@ -76,6 +78,7 @@ scoremerge:
         suffix: *kSuffixTransform
         select:
           - *kColumnStudentCode
+          - "总分"
           - "标准分"
           - "高层次思维能力_标准分"
         rename:
@@ -91,14 +94,14 @@ scoremerge:
         by: *kColumnStudentCode
       join.type: "left"
       out:
-        table: *kTableSubjectALL
+        table: *kSubjectALL
         suffix: *kSuffixJoin
 
 
     -
       TODO: FALSE
       left:
-        table: *kTableSubjectALL
+        table: *kSubjectALL
         suffix: *kSuffixJoin
         by: *kColumnStudentCode
       right:
@@ -106,6 +109,7 @@ scoremerge:
         suffix: *kSuffixTransform
         select:
           - *kColumnStudentCode
+          - "总分"
           - "标准分"
           - "高层次思维能力_标准分"
         rename:
@@ -121,14 +125,14 @@ scoremerge:
         by: *kColumnStudentCode
       join.type: "left"
       out:
-        table: *kTableSubjectALL
+        table: *kSubjectALL
         suffix: *kSuffixJoin
 
 
     -
       TODO: FALSE
       left:
-        table: *kTableSubjectALL
+        table: *kSubjectALL
         suffix: *kSuffixJoin
         by: *kColumnStudentCode
       right:
@@ -136,6 +140,7 @@ scoremerge:
         suffix: *kSuffixTransform
         select:
           - *kColumnStudentCode
+          - "总分"
           - "标准分"
           - "高层次思维能力_标准分"
         rename:
@@ -151,5 +156,5 @@ scoremerge:
         by: *kColumnStudentCode
       join.type: "left"
       out:
-        table: *kTableSubjectALL
+        table: *kSubjectALL
         suffix: *kSuffixJoin

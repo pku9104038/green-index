@@ -30,33 +30,35 @@ gio.scheduler <- GreenIndexScheduler$new()
 gio.scheduler$Init("Scheduler", gio.config)
 
 
+gio.scheduler$EchoInfo("Start!")
 #######################################
 
 ## Running
 
-gio.scheduler$Run()
-
 # gio.scheduler$DataPrep()
+# gio.assignpoint$AssignPoint()
+
+# gio.scheduler$Run()
+
+# gio.loaddata$LoadAttribute()
 
 # gio.scheduler$ProcessSurvey(TRUE)
 
-# gio.assignpoint$AssignPoint()
 # gio.transform$TransformSurvey()
 # gio.statistics$StatisticsSurvey()
 
-
 # gio.scheduler$ProcessScore(TRUE)
 
-# gio.loaddata$LoadAttribute()
-# gio.transform$TransformMerged()
-# gio.statistics$StatisticsMerged()
+# gio.transform$TransformScore()    # 成绩转化
+# gio.statistics$StatisticsScore()  # 成绩统计
+# gio.scoreconverge$ScoreConverge() # 成绩综合（在统计的基础上再次合并统计）
 
 # gio.scheduler$Indexation(TRUE)
 
-# gio.scheduler$Report(TRUE)
+gio.scheduler$Report(TRUE)
 
 # gio.scheduler$TestQueryData()
 
 # gio.scheduler$TestPlotFigure()
 
-
+gio.scheduler$EchoInfo("Stop!")

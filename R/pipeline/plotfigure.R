@@ -48,11 +48,12 @@ GreenIndexPlotFigure <- setRefClass(
       plot.param <<- plot.df[plot.df[, kColumnPlotCode] == plot.code, ]
       
       if (nrow(plot.param) != 1) {
-        LogError(paste("plot_code", plot.code, "not available!"))  
+        LogError(paste("plot_code", plot.code, "param not available!"))  
         return(NULL)
       }
       
       plot.data <<- QueryData(plot.code)
+      
       if (nrow(plot.data) < 1) {
         LogError(paste("plot.data", plot.code, "query error!"))
         return(NULL)
@@ -101,13 +102,13 @@ GreenIndexPlotFigure <- setRefClass(
       # limit plot_x length
       if (nrow(plot.data) > 0){
         for (i in 1:nrow(plot.data)) {
-          if ((plot.data[i, kColumnAxisX]) > kAxisXTextLimit){
+          
+          if (nchar(plot.data[i, kColumnAxisX]) > kAxisXTextLimit){
             plot.data[i, kColumnAxisX] <<- 
               substr(plot.data[i, kColumnAxisX], 1, kAxisXTextLimit)
           }
         }
       }
-      
       write.csv2(plot.data, "plot.data.csv")
       return(plot.data)
     },
@@ -162,7 +163,7 @@ GreenIndexPlotFigure <- setRefClass(
         # theme(plot.background = element_blank()) +
         theme(plot.background = 
                 element_rect(fill = "white", colour = "grey90", size = 1)) +
-        theme(plot.margin = unit(c(0.6, 1, 0.6, 1), "cm")) +
+        # theme(plot.margin = unit(c(0.6, 1, 0.6, 1), "cm")) +
         theme(panel.background = element_blank()) +
         theme(panel.grid.major = 
                 element_line(colour="grey", size=0.2, linetype = "dashed") ) +
@@ -194,7 +195,8 @@ GreenIndexPlotFigure <- setRefClass(
                               x = plot.label.x, y = plot.label.y)
       figure <- figure + 
        theme(axis.text.x = element_text(
-         angle = as.numeric(plot.param[1, kColumnTextAngleX]), 
+         angle = as.numeric(plot.param[1, kColumnTextAngleX]),
+         size = as.numeric(plot.param[1, kColumnTextSizeX]),
          vjust = 1, hjust = 1))
       
       if (plot.param[1, kColumnLabelPosition] == kStringNone) {
@@ -209,6 +211,48 @@ GreenIndexPlotFigure <- setRefClass(
                         as.numeric(plot.param[1, kColumnPlotBarWidth])),
                     vjust = as.numeric(plot.param[1, kColumnLabelVjust])) #,
                     #hjust = as.numeric(plot.param[1, kColumnLabelHjust]))
+        
+      } else if (plot.param[1, kColumnLabelPosition] == kPositionStack) {
+        figure <- figure + 
+          geom_text(aes(label = plot_label), 
+                    colour = plot.param[1, kColumnLabelColour], #
+                    size = as.numeric(plot.param[1, kColumnLabelSize]),
+                    position = 
+                      position_stack(vjust = 
+                                       as.numeric(
+                                         plot.param[1, kColumnLabelVjust])))  
+      } 
+      # figure <- figure + geom_text_repel()
+      return(figure)
+    },
+    
+    FigureLabelTitleX = function(figure) {
+      
+      plot.label.x <- plot.param[1, kColumnLabelX]
+      
+      if (plot.label.x == kStringNull) {
+        plot.label.x <- ""
+      }
+      
+      figure <- figure + labs(title = plot.param[1, kColumnPlotTitle],
+                              x = plot.label.x)
+      figure <- figure + 
+        theme(axis.text.x = element_text(
+          angle = as.numeric(plot.param[1, kColumnTextAngleX]), 
+          vjust = 1, hjust = 1))
+      
+      if (plot.param[1, kColumnLabelPosition] == kStringNone) {
+        
+      } else if (plot.param[1, kColumnLabelPosition] == kPositionDodge) {
+        figure <- figure + 
+          geom_text(aes(label = plot_label), # , y = plot_y/2 ), 
+                    colour = plot.param[1, kColumnLabelColour], #
+                    size = as.numeric(plot.param[1, kColumnLabelSize]),
+                    position = 
+                      position_dodge(
+                        as.numeric(plot.param[1, kColumnPlotBarWidth])),
+                    vjust = as.numeric(plot.param[1, kColumnLabelVjust])) #,
+        #hjust = as.numeric(plot.param[1, kColumnLabelHjust]))
         
       } else if (plot.param[1, kColumnLabelPosition] == kPositionStack) {
         figure <- figure + 
@@ -242,6 +286,7 @@ GreenIndexPlotFigure <- setRefClass(
       figure <- figure + 
         theme(axis.text.x = element_text(
           angle = as.numeric(plot.param[1, kColumnTextAngleX]), 
+          size = as.numeric(plot.param[1, kColumnTextSizeX]),
           vjust = 1, hjust = 1))
       figure <- figure + geom_text_repel()
       return(figure)
@@ -510,6 +555,67 @@ GreenIndexPlotFigure <- setRefClass(
       
     },
     
+    
+    PlotGeomWindRose = function() {
+      
+      figure <- FigurePlot()
+      
+      figure <- figure + 
+        geom_bar( stat="identity", 
+                  alpha = as.numeric(plot.param[1, kColumnFillAlpha]),
+                  width = as.numeric(plot.param[1, kColumnPlotBarWidth]),
+                  position = plot.param[1, kColumnPlotBarPosition] ) 
+      
+      
+      if (plot.param[1, kColumnPlotTheme] == "economist") {
+        figure <- figure + scale_fill_economist()
+      } else if (plot.param[1, kColumnPlotTheme] == "npg") {
+        figure <- figure + scale_color_npg() + scale_fill_npg()
+      } else if (plot.param[1, kColumnPlotTheme] == "d3") {
+        figure <- figure + scale_color_d3() + scale_fill_d3()
+      } else if (plot.param[1, kColumnPlotTheme] == "jco") {
+        figure <- figure + scale_color_jco() + scale_fill_jco()
+      } else if (plot.param[1, kColumnPlotTheme] == "ucscgb") {
+        figure <- figure + scale_color_ucscgb() + scale_fill_ucscgb()
+      }
+      
+      
+      
+      
+      figure <- FigureLabel(figure)
+      
+      figure <- FigureLegend(figure)
+      
+      figure <- FigureSortX(figure)
+      
+      figure <- FigureLimitY(figure)
+      
+      figure <- FigureCoord(figure)
+      
+      figure <- FigureFacet(figure)
+      
+      figure <- figure + 
+        theme(plot.background = 
+                element_rect(fill = "white", colour = "grey90", size = 1)) +
+        # theme(plot.margin = unit(c(0.6, 1, 0.6, 1), "cm")) +
+        theme(panel.background = element_blank()) +
+        theme(panel.grid.major = 
+                element_line(colour="grey", size=0.2, linetype = "dashed") ) +
+        theme(panel.grid.major.y  = 
+                element_line(colour="grey", size=0.2, linetype = "dashed") ) +
+        theme(panel.grid.major.x  = 
+                element_line(colour="grey", size=0.2, linetype = "dashed") ) +
+        theme(legend.background = element_blank()) +
+        # theme(axis.text.y = element_blank(), axis.ticks.y = element_blank()) + 
+        theme(text = element_text(family = "wqy-microhei"))
+      
+      # figure <- figure + geom_text_repel()
+      
+      return(figure)
+      
+    },
+    
+        
     PlotDummy = function(errorinfo) {
       
       plot.data <<- data.frame()
@@ -585,7 +691,10 @@ GreenIndexPlotFigure <- setRefClass(
           figure <- PlotGeomScatter()
         } else if (plot.param[1, kColumnPlotGeom] == kPlotGeomBox) {
           figure <- PlotGeomBoxWhisker()
-        } 
+        } else if (plot.param[1, kColumnPlotGeom] == kPlotGeomWindRose) {
+          figure <- PlotGeomWindRose()
+        }
+        
         print(figure)
         # ggsave(figure,filename = "p.png",width = 12,height = 9)
         showtext_end()

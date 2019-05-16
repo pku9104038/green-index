@@ -1,0 +1,34 @@
+<!-- chapter morality  -->
+
+
+# 学生品德行为指数
+
+
+
+良好的品德是个人成长、终生发展的基础，更是其成为社会有用之才的重要条件。良好的品德行为包括热爱祖国、自尊自爱、尊重他人、有诚信和责任心、遵守公德以及拥有关怀之心和公正之心。品德行为指数是通过采集学生问卷数据，进行数据分析得到的结果。
+
+
+学生品德行为指数分为9级，指数越高，表示学生具有较好的品德行为素养。
+
+\mylist
+
+- 9级：表示90%以上的学生品德行为素养较高\footnote{我们将得分超过本维度总分50\%界定为品德行为素养较高。
+}（含90%）
+- 8级：表示80%-90%的学生品德行为素养较高（含80%）
+- 7级：表示70%-80%的学生品德行为素养较高（含70%）
+- 6级：表示60%-70%的学生品德行为素养较高（含60%）
+- 5级：表示50%-60%的学生品德行为素养较高（含50%）
+- 4级：表示40%-50%的学生品德行为素养较高（含40%）
+- 3级：表示30%-40%的学生品德行为素养较高（含30%）
+- 2级：表示20%-30%的学生品德行为素养较高（含20%）
+- 1级：表示20%以下的学生品德行为素养较高
+
+\mytext
+
+plot.bar.city.index.morality.perspective.district
+plot.bar.city.index.conduct.perspective.district
+plot.bar.city.index.prosocial.perspective.district
+plot.bar.city.index.country.identity.perspective.district
+plot.bar.city.index.global.view.perspective.district
+
+<!-- end of chapter morality  -->

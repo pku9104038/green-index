@@ -4,4 +4,4 @@ plotfigure:
   <<: *kPilotRun
   <<: *kPrepareDataframe
   test:
-    - plot.point.city.base.score.sleep.allsubject.district
+    - plot.rose.city.index.tier.two.compare.10

@@ -86,10 +86,12 @@ kDefinition:
           信息表校长
 
       kTableStatPrefix: # 统计表名称前缀
-        - &kSuffixIndexCoef
+        - &kTableIndexCoef
           "指标系数"
         - &kTableStatScore
           "学业成绩"
+        - &kTableStatSubject
+          "学科成绩"
 
     kTableSuffix:  # 表名称后缀
       - &kTableSuffix
@@ -228,6 +230,7 @@ kSetting:
       kScoreMergeSelect: &kScoreMergeSelect  # 标准分合并选择列
         select:
           - *kColumnStudentCode
+          - "总分"
           - "标准分"
           - "高层次思维能力_标准分"
 
@@ -278,7 +281,7 @@ kSetting:
           - *kSubjectEN
           - *kSubjectSC
           - *kSubjectAR
-          - *kTableSubjecALL
+          - *kSubjectALL
 
       kTableRefStatIndex: &kTableRefStatIndex  # 指标系数汇聚数据 引用表
         table:
@@ -310,7 +313,7 @@ kSetting:
             name: *kSubjectAR
             suffix: *kSuffixStat
           -
-            name: *kTableSubjectALL
+            name: *kSubjectALL
             suffix: *kSuffixStat
           -
             name: *kTableStatScore
@@ -345,8 +348,12 @@ kSetting:
             suffix: *kSuffixIndex
 
           -
-            name: *kTableSubjectALL
+            name: *kSubjectALL
             suffix: *kSuffixIndex
+          -
+            name: *kTableStatSubject
+            suffix: *kSuffixIndex
+
           -
             name: *kTableStatScore
             suffix: *kSuffixIndex
@@ -375,7 +382,7 @@ kSetting:
           table: *kTableAlias
           suffix: ""
         statistics:
-          table: *kSuffixIndexCoef
+          table: *kTableIndexCoef
           suffix: *kSuffixConverge
         district:
           table: *kTableDistrict

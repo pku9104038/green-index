@@ -59,6 +59,18 @@ indexation:
       TODO: TRUE
       input:
         table: *kTableStatScore
+        suffix: *kSuffixConverge
+      output:
+        table: *kTableStatSubject
+        suffix: *kSuffixIndex
+      process:
+        table: *kTableAttrIndexAlgo
+        suffix: ""
+
+    -
+      TODO: TRUE
+      input:
+        table: *kTableStatScore
         suffix: *kSuffixStat
       output:
         table: *kTableStatScore

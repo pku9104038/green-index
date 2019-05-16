@@ -48,6 +48,8 @@ GreenIndexQueryData <- setRefClass(
       
       statistics.table <<- paste0(dataframe$statistics$table, 
                                   dataframe$statistics$suffix)
+      
+      
     },
     
     SetDataScope = function(scope) {
@@ -242,6 +244,7 @@ GreenIndexQueryData <- setRefClass(
     QueryData = function(dataset.code) {
       
       process <- dataset.df[dataset.df[, kColumnDataset] == dataset.code, ]
+      
       data.df <- data.frame()
       i <- 1
       while (i <= nrow(process)) {

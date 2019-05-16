@@ -25,9 +25,15 @@ GreenIndexIndexationData <- setRefClass(
     #  database <<- database.obj
     # },
 
-    TenLevelIndex = function() {
+    PercentIndex = function() {
       
-      stat.df[, kColumnValue] <<- floor(stat.df[, kColumnValue]/10)
+      if (process[1, kColumnStatisticsAlgorithm] == kAlgorithmPercentIndex) {
+        stat.df[, kColumnValue] <<- stat.df[, kColumnValue] / 10
+      } else {
+        stat.df[, kColumnValue] <<- stat.df[, kColumnValue]
+      }
+      
+      
       stat.df[stat.df[, kColumnValue] == 0, kColumnValue] <<-1
       stat.df[, "msg"] <<- paste(stat.df[, kColumnAssessment],
                    stat.df[, kColumnGrade],
@@ -42,26 +48,26 @@ GreenIndexIndexationData <- setRefClass(
                    stat.df[, kColumnStatisticsPerspective],
                    stat.df[, kColumnStatisticsSample],
                    stat.df[, kColumnStatisticsVariable],
-                   stat.df[, kColumnStatisticsAlgorithm],
+                   # stat.df[, kColumnStatisticsAlgorithm],
                    stat.df[, kColumnStatisticsIndexType],
-                   stat.df[, kColumnValueType],
+                   # stat.df[, kColumnValueType],
                    stat.df[, kColumnKey])
       
       for (i in 1: nrow(stat.df)) {
         stat.df[i, kColumnHashDigest] <<- digest(stat.df[i, "msg"], "sha256")
+        stat.df[i, kColumnValue] <<- max(1, min(9, floor(stat.df[i, kColumnValue])))
       }
-      #stat.df[, kColumnHashDigest] <<- digest(stat.df[, "msg"], "sha256")
       stat.df[, "msg"] <<- NULL
         
-        
-      # out.df <<- rbind(out.df, stat.df)
+      out.df <<- rbind(out.df, stat.df)
       
     },
     
     
     PassRateIndex = function() {
       
-      stat.df[, kColumnValue] <<- floor(stat.df[, kColumnValue]/10)
+      stat.df[, kColumnValue] <<- (1 - 2.5 * (100 - stat.df[, kColumnValue]) / 100.0) * 10
+      
       stat.df[stat.df[, kColumnValue] == 0, kColumnValue] <<-1
       stat.df[, "msg"] <<- paste(stat.df[, kColumnAssessment],
                                  stat.df[, kColumnGrade],
@@ -83,8 +89,8 @@ GreenIndexIndexationData <- setRefClass(
       
       for (i in 1: nrow(stat.df)) {
         stat.df[i, kColumnHashDigest] <<- digest(stat.df[i, "msg"], "sha256")
+        stat.df[i, kColumnValue] <<- max(1, min(9, floor(stat.df[i, kColumnValue])))
       }
-      #stat.df[, kColumnHashDigest] <<- digest(stat.df[, "msg"], "sha256")
       stat.df[, "msg"] <<- NULL
       
       out.df <<- rbind(out.df, stat.df)
@@ -97,15 +103,7 @@ GreenIndexIndexationData <- setRefClass(
         return(NA)
         
       } else if (process[1, kColumnTODO] == "TRUE"){
-        LogInfo(paste("Process",
-                      process[1, kColumnDomain], 
-                      process[1, kColumnDimention],
-                      process[1, kColumnGroup],
-                      process[1, kColumnAttribute],
-                      process[1, kColumnTopic],
-                      process[1, kColumnStatisticsAlgorithm],
-                      process[1, kColumnKey]))
-        print(in.df)
+        
         
         stat.df <<- in.df[in.df[, kColumnGrade] == process[1, kColumnGrade] &
                            in.df[, kColumnSubject] == process[1, kColumnSubject] &
@@ -114,21 +112,31 @@ GreenIndexIndexationData <- setRefClass(
                            in.df[, kColumnGroup] == process[1, kColumnGroup] &
                            in.df[, kColumnAttribute] == process[1, kColumnAttribute] &
                             in.df[, kColumnTopic] == process[1, kColumnTopic],  ]
-        print(stat.df)
         if (process[1, kColumnKey] != "ALL" && nrow(stat.df) > 0) {
           stat.df <<- stat.df[stat.df[, kColumnKey] == process[1, kColumnKey], ]
         }
-        print(stat.df)
         
         if (nrow(stat.df) > 0){
+          LogInfo(paste("Process",
+                        process[1, kColumnSubject], 
+                        process[1, kColumnDomain], 
+                        process[1, kColumnDimention],
+                        process[1, kColumnGroup],
+                        process[1, kColumnAttribute],
+                        process[1, kColumnTopic],
+                        process[1, kColumnStatisticsAlgorithm],
+                        process[1, kColumnKey]))
+          
           stat.df[, kColumnStatisticsAlgorithm] <<- process[1, kColumnStatisticsAlgorithm]
           stat.df[, kColumnStatisticsIndexType] <<- process[1, kColumnStatisticsIndexType]
           stat.df[, kColumnValueType] <<- process[1, kColumnValueType]
           
-          if (process[1, kColumnStatisticsAlgorithm] == kAlgorithmTenLevelIndex) {
-            TenLevelIndex()
+          if (process[1, kColumnStatisticsAlgorithm] == kAlgorithmPercentIndex) {
+            PercentIndex()
           } else if (process[1, kColumnStatisticsAlgorithm] == kAlgorithmPassRateIndex) {
             PassRateIndex()
+          } else if (process[1, kColumnStatisticsAlgorithm] == kAlgorithmBalanceIndex) {
+            PercentIndex()
           }
           
         }
@@ -171,9 +179,9 @@ GreenIndexIndexationData <- setRefClass(
           
           
           output.table <<- paste0(job$output$table, job$output$suffix)
-          # if (dropdata && database$ExistsTable(output.table)) {
-            # database$RemoveTable(output.table)
-          # }
+          if (dropdata && database$ExistsTable(output.table)) {
+            database$RemoveTable(output.table)
+          }
           
           # if (database$ExistsTable(output.table)) {
           #  database$RemoveTable(output.table)

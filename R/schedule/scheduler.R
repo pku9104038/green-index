@@ -34,9 +34,8 @@ GreenIndexScheduler <- setRefClass(
     
     DataPrep = function(){
       
-      gio.loaddata$LoadAttribute()
-      
       gio.loaddata$LoadData()
+      
       
       # gio.createtable$CreateTable()
       
@@ -50,6 +49,9 @@ GreenIndexScheduler <- setRefClass(
       
       #gio.cleandata$CleanData()
       
+      # gio.loaddata$LoadAttribute()
+      
+      gio.assignpoint$AssignPoint()
       
     },
     
@@ -59,7 +61,6 @@ GreenIndexScheduler <- setRefClass(
       if (reload)
         gio.loaddata$LoadAttribute()
       
-      gio.assignpoint$AssignPoint()
       
       gio.transform$TransformSurvey()
       
@@ -74,11 +75,11 @@ GreenIndexScheduler <- setRefClass(
       
       gio.transform$TransformScore()    # 成绩转化
       
-      gio.joindata$ScoreMerge()         # 转换成绩合并（多学科合并计算）
+      # gio.joindata$ScoreMerge()         # 转换成绩合并（多学科合并计算）
       
-      gio.transform$TransformMerged()   # 合并转换 （多学科合并计算）
+      # gio.transform$TransformMerged()   # 合并转换 （多学科合并计算）
       
-      gio.statistics$StatisticsMerged() # 合并统计
+      # gio.statistics$StatisticsMerged() # 合并统计
       
       gio.statistics$StatisticsScore()  # 成绩统计
       
@@ -106,11 +107,11 @@ GreenIndexScheduler <- setRefClass(
     Run = function(){
       
       LogInfo("Start running!")
-      #gio.config$InitJobs()
+      # gio.config$InitJobs()
       
-      DataPrep()
+      # DataPrep()
       
-      ProcessSurvey(FALSE)
+      ProcessSurvey(TRUE)
       
       ProcessScore(FALSE)
       
@@ -129,7 +130,7 @@ GreenIndexScheduler <- setRefClass(
       
       ProcessSurvey()
       
-      indexation()
+      Indexation()
       
     },
     
@@ -142,11 +143,12 @@ GreenIndexScheduler <- setRefClass(
       
       ProcessScore()
       
-      indexation()
+      Indexation()
       
     },
     
     TestQueryData = function(){
+      gio.loaddata$LoadAttribute()
       gio.querydata$PrepareDataframe()
       jobs <- config$GetConfigJob()$dataquery
       test <- jobs$test
@@ -157,7 +159,7 @@ GreenIndexScheduler <- setRefClass(
     },
     
     TestPlotFigure = function(){
-      
+      gio.loaddata$LoadAttribute()
       gio.plotfigure$PrepareDataframe()
       jobs <- config$GetConfigJob()$plotfigure
       test <- jobs$test
@@ -165,6 +167,14 @@ GreenIndexScheduler <- setRefClass(
         figure <- gio.plotfigure$PlotFigure("report.out/2018sh/fig/", test[[i]])
         
       }
+    },
+    
+    EchoInfo = function(info) {
+      
+      command <- paste("echo", info, ">> time.txt")
+      system(command = command)
+      command <- "date >> time.txt"
+      system(command = command)
     }
     
   )

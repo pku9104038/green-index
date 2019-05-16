@@ -303,6 +303,7 @@ GreenIndexStatisticsData <- setRefClass(
     
     ValueSpacePercent = function() {
       
+      sample.df <<- sample.df[!is.na(sample.df[, variable.name]), ]
       sample.size <- nrow(sample.df)
       
       choice.set <- unique(sample.df[, variable.name])
@@ -360,8 +361,9 @@ GreenIndexStatisticsData <- setRefClass(
       
       quantile.df <- sample.df[!is.na(sample.df[, variable.name]), ]
       quantile.set <- quantile(quantile.df[, variable.name], 
-                               probs = seq(0, 1, 0.05))
+                               probs = seq(0, 1, 0.05), na.rm = TRUE)
       
+      stat.list[kColumnStatisticsIndexType] <<- kStatistics
       choice.name <<- kMin
       statistics.value <<- quantile.set[kMinPercent]
       AddStatDataframe()  
@@ -400,7 +402,7 @@ GreenIndexStatisticsData <- setRefClass(
       choice.name <<- kCoefBalanceIndivadual # <- "个体均衡系数"
       stat.list[kColumnStatisticsIndexType] <<- kCoefficient
       stat.list[kColumnValueType] <<- kValueTypePercent
-      statistics.value <<- (1-2.5*(coefvar))*100
+      statistics.value <<- (1-2.5*(coefvar))*10
       AddStatDataframe() 
       
       choice.name <<- kIndexBalanceIndividual # <- "个体均衡指数"
@@ -548,7 +550,6 @@ GreenIndexStatisticsData <- setRefClass(
                   } else if (algorithm == kAlgorithmMultipleChoicePercent) {
                     MultipleChoicePercent()
                   } else if (algorithm == kAlgorithmQuantile) {
-                    print(summary(sample.df))
                     Quantile()
                   } 
                   
@@ -615,7 +616,7 @@ GreenIndexStatisticsData <- setRefClass(
             database$RemoveTable(output.table)
           }
           SQL <- paste("CREATE TABLE IF NOT EXISTS", output.table, DDL)
-          print(SQL)
+          LogDebug(SQL)
           database$CreateTable(output.table, SQL)
           
           

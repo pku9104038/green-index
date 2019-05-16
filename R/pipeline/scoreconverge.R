@@ -137,7 +137,7 @@ GreenIndexScoreConverge <- setRefClass(
     
     ProcessJob = function(){
       
-      if (process[1, kColumnTODO] == "FALSE"){
+      if (process[1, kColumnTODO] == "FALSE" &&  !config$IsReworkAll()){
         return(NA)
         
       } else if (process[1, kColumnTODO] == "TRUE"){

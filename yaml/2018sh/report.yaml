@@ -2,7 +2,7 @@
 # report setting
 report:
   TODO: FALSE
-  RUN: "PILOT"  # "AUTO", "PILOT"
+  RUN: "PILOT"  # "AUTO", "PILOT", "MILESTONE"
   output:
     format: "pdf_document"
     ext: ".pdf"
@@ -34,7 +34,7 @@ report:
         - "agile.rmd"
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标基础数据报告"
       tier: *kStatTierCity
       subdir: "base"
@@ -54,7 +54,7 @@ report:
         - "city_base_parent.rmd"
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标指数报告"
       tier: *kStatTierCity
       subdir: "index"
@@ -67,6 +67,16 @@ report:
         - "report_preface.rmd"
         - "table_of_contents.rmd"
         - "city_index_score.rmd"
+        - "city_index_health.rmd"
+        - "city_index_morality.rmd"
+        - "city_index_motivation.rmd"
+        - "city_index_identity.rmd"
+        - "city_index_pressure.rmd"
+        - "city_index_teacher.rmd"
+        - "city_index_principal.rmd"
+        - "city_index_equity.rmd"
+        - "city_index_timespan.rmd"
+        - "city_index_radar.rmd"
 
 
     -

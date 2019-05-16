@@ -46,13 +46,13 @@ jobs:
     #- "transform.yaml"       # transform data in survey response
     - "surveytrans.yaml"
     - "scoretrans.yaml"
-    - "scoremerge.yaml"
-    - "mergedtrans.yaml"
+    # - "scoremerge.yaml"
+    # - "mergedtrans.yaml"
     # - "dataready.yaml"       #
     # - "statistics.yaml"      # statistics data
     - "surveystat.yaml"
     - "scorestat.yaml"
-    - "mergedstat.yaml"
+    # - "mergedstat.yaml"
     - "scoreconverge.yaml"
     - "indexation.yaml"      #
     - "convergetable.yaml"   #
