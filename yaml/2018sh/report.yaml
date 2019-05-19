@@ -25,7 +25,9 @@ report:
       name: "绿色指标基础数据统计汇总"
       tier: *kStatTierCity
       subdir: "base"
-      subject: ""
+      subject:
+        name: ""
+        suffix: ""
       rmarkdown:
         - "base.rmd"
         - "global_setting.rmd"
@@ -38,7 +40,9 @@ report:
       name: "绿色指标基础数据报告"
       tier: *kStatTierCity
       subdir: "base"
-      subject: ""
+      subject:
+        name: ""
+        suffix: ""
       rmarkdown:
         - "base.rmd"
         - "global_setting.rmd"
@@ -54,11 +58,13 @@ report:
         - "city_base_parent.rmd"
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标指数报告"
       tier: *kStatTierCity
       subdir: "index"
-      subject: ""
+      subject:
+        name: ""
+        suffix: ""
       rmarkdown:
         - "index.rmd"
         - "global_setting.rmd"
@@ -80,11 +86,34 @@ report:
 
 
     -
+      TODO: TRUE
+      name: "绿色指标学科测试分析报告"
+      tier: *kStatTierCity
+      subdir: "cn"
+      subject:
+        name: "语文"
+        suffix: "学科"
+      rmarkdown:
+        - "subject.rmd"
+        - "global_setting.rmd"
+        - "cover_page.rmd"
+        - "head_foot.rmd"
+        - "report_preface.rmd"
+        - "table_of_contents.rmd"
+        - "project_summary.rmd"
+        - "city_cn_description.rmd"
+        - "city_cn_total.rmd"
+        - "city_cn_dimention.rmd"
+        - "city_cn_topic.rmd"
+
+    -
       TODO: FALSE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierDistrict
-      subdir: "base"
-      subject: "数学"
+      subdir: "ma"
+      subject:
+        name: "数学"
+        suffix: "学科"
       rmarkdown:
         - "base.rmd"
         - "global_setting.rmd"
@@ -97,10 +126,12 @@ report:
 
     -
       TODO: FALSE
-      name: "绿色指标基础数据报告"
+      name: "绿色指标综合评价"
       tier: *kStatTierSchool
-      subdir: "base"
-      subject: ""
+      subdir: "sch"
+      subject:
+        name: ""
+        suffix: ""
       rmarkdown:
         - "base.rmd"
         - "global_setting.rmd"

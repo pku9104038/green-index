@@ -303,7 +303,7 @@ GreenIndexReport <- setRefClass(
           report.tier <<- job$tier
           report.name <<- job$name
           report.subdir <<- job$subdir
-          report.subject <<- job$subject
+          report.subject <<- paste0(job$subject$name, job$subject$suffix)
           report.rmarkdown <<- job$rmarkdown
           # report.plot <<- job$plot
           # report.plot.multiple <<- job$plot.multiple

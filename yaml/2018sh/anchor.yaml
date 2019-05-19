@@ -139,6 +139,8 @@ kDefinition:
         赋分
       - &kColumnQuestionBinary
         二值化
+      - &kColumnQuestionType
+        题型
       - &kColumnKey
         键
       - &kColumnValue
@@ -246,9 +248,9 @@ kSetting:
             city:
               - "上海市"
             district:
-              - "长宁区"
+              - "浦东新区"
             school:
-              - "上海市延安初级中学"
+              - "上海市进才中学北校"
 
     kTableReference: # 引用表设置
 
@@ -312,9 +314,9 @@ kSetting:
           -
             name: *kSubjectAR
             suffix: *kSuffixStat
-          -
-            name: *kSubjectALL
-            suffix: *kSuffixStat
+          # -
+          #   name: *kSubjectALL
+          #   suffix: *kSuffixStat
           -
             name: *kTableStatScore
             suffix: *kSuffixStat
@@ -347,9 +349,9 @@ kSetting:
             name: *kSubjectAR
             suffix: *kSuffixIndex
 
-          -
-            name: *kSubjectALL
-            suffix: *kSuffixIndex
+          # -
+          #   name: *kSubjectALL
+          #   suffix: *kSuffixIndex
           -
             name: *kTableStatSubject
             suffix: *kSuffixIndex
@@ -362,13 +364,13 @@ kSetting:
 
     kCopyRight: &kCopyRight  # 版权声明
       copyright:
-        year: "2018年度"
-        project: "上海市中小学学业质量"
+        year: "2018年"
+        project: "上海市初中学业质量"
         producer:
-          - "上海市教育委员会教学研究室"
+          - ""
           - "上海市教育委员会基础教育质量监测中心"
-        date: "二〇一九年七月"
-        statment: "版权声明：本报告版权属于上海市教育委员会教学研究室，未得到上海市教育委员会教学研究室同意，不得使用或公开报告的任何内容"
+        date: "二〇一九年六月"
+        statment: "版权声明：本报告版权属于上海市教育委员会，未得到上海市教育委员会同意，不得使用或公开报告的任何内容"
 
     kPrepareDataframe: &kPrepareDataframe  # 数据准备引用表
       dataframe:

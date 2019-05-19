@@ -9,7 +9,7 @@ mergedtrans:
 
   table:
     -
-      TODO: TRUE
+      TODO: FALSE
       input:
         table: *kSubjectALL
         suffix: *kSuffixJoin

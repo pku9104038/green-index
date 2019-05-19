@@ -228,8 +228,11 @@ GreenIndexQueryData <- setRefClass(
         
         
         if (df[1, kColumnValueType] == kValueTypeInteger) {
-          df[, kColumnLabel] <- as.character(floor(df[, kColumnValue]))
+          df[, kColumnLabel] <- as.character(round(df[, kColumnValue], 0))
         } else if (df[1, kColumnValueType] == kValueTypePercent) {
+          df[, kColumnLabel] <- as.character(round(df[, kColumnValue], 
+                                                   kPercentDigits))
+        } else if (df[1, kColumnValueType] == kValueTypeFloat) {
           df[, kColumnLabel] <- as.character(round(df[, kColumnValue], 
                                                    kPercentDigits))
         }

@@ -53,19 +53,18 @@ GreenIndexPlotFigure <- setRefClass(
       }
       
       plot.data <<- QueryData(plot.code)
-      
+      #print(plot.data)
       if (nrow(plot.data) < 1) {
         LogError(paste("plot.data", plot.code, "query error!"))
         return(NULL)
       }
+      
       
       # prepare x, y, label, fill column
       plot.data[, kColumnAxisX] <<- 
         plot.data[, plot.param[1, kColumnAxisX] ]
       plot.data[, kColumnAxisY] <<- 
         plot.data[, plot.param[1, kColumnAxisY] ]
-      #label.df <- as.numeric(plot.data[, plot.param[1, kColumnLabel]])
-      #label.df <- round(label.df, as.numeric(plot.param[1, kColumnLabelDigits]))
       if (plot.param[1, kColumnLabel] != kColumnLabel) {
         plot.data[, kColumnLabel] <<- plot.data[, plot.param[1, kColumnLabel]]
       }

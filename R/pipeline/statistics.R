@@ -23,6 +23,9 @@ GreenIndexStatisticsData <- setRefClass(
     choice.df = "data.frame",
     choice.code = "character",
     choice.key = "character",
+    point.df = "data.frame",
+    point.code = "character",
+    point.value = "character",
     sample.df = "data.frame",
     stat.df = "data.frame",
     stat.list = "list",
@@ -422,6 +425,42 @@ GreenIndexStatisticsData <- setRefClass(
       
     },
     
+    PointRate = function() {
+      
+      code.name <- unlist(strsplit(variable.name, kSuffixSeparator))[1]
+      point.row <- point.df[point.df[, point.code] == code.name, ]
+      point <- as.numeric(point.row[1, point.value])      
+      stat.list[kColumnStatisticsVariable] <<- code.name
+      
+      choice.name <<- kPerspectiveTotal
+      statistics.value <<- mean(as.numeric(sample.df[, variable.name]), 
+                                na.rm = TRUE) / point * 100.0
+      AddStatDataframe()  
+      
+      ranks <- unlist(unique(sample.df[, kVariableTotalRank]))
+      for (i in 1:length(ranks)) {
+        choice.name <<- ranks[i]
+        statistics.value <<- 
+          mean(as.numeric(sample.df[sample.df[, kVariableTotalRank] == 
+                                      choice.name, variable.name]),
+               na.rm = TRUE) / point * 100.0
+        AddStatDataframe() 
+      }
+      
+      
+      msg <- paste(algorithm, variable.name, 
+                   kColumnStatisticsTier, tier.name,
+                   kColumnStatisticsPerspective, perspective.name,
+                   kColumnStatisticsScope, scope.name,
+                   kColumnStatisticsSample, sample.name,
+                   choice.name, statistics.value)
+      LogDebug(gsub("%*", "", msg))
+        
+          
+      
+      
+    },
+
     ProcessJob = function(){
       
       if (process[1, kColumnTODO] == "FALSE" && RUN == kPilotRun ){
@@ -467,6 +506,17 @@ GreenIndexStatisticsData <- setRefClass(
           variables <- attr.df[, kColumnQuestionCode]
           variables <- unlist(variables)
           
+        } else if (process[1, kColumnVariableName] == kAlgorithmPointRate) {
+          point.set <- point.df[point.df[, kColumnSubject] == 
+                                  process[1, kColumnSubject], ]
+          variables <- unlist(unique(point.set[, point.code]))
+        } else if (process[1, kColumnVariableName] == 
+                   kAlgorithmSingleChoicePercent) {
+          point.set <- point.df[point.df[, kColumnSubject] == 
+                                  process[1, kColumnSubject], ]
+          point.set <- point.set[point.set[, kColumnQuestionType] == 
+                                   kQuestionTypeSingleChoice, ]
+          variables <- unlist(unique(point.set[, point.code]))
         } else {
           variables <- process[1, kColumnVariableName]
           variables <- unlist(strsplit(variables, kSeparator))
@@ -540,8 +590,17 @@ GreenIndexStatisticsData <- setRefClass(
                     break
                   sample.df <<- scope.df[scope.df[, perspective.name] == 
                                            sample.name, ]
-                  sample.df <<- sample.df[, c(variable.name, 
-                                              tier.name, perspective.name)]
+                  
+                  if (is.element(kVariableTotalRank, names(sample.df))) {
+                    sample.df <<- sample.df[, c(variable.name, 
+                                                kVariableTotalRank,
+                                                tier.name, perspective.name)]
+                  } else {
+                    sample.df <<- sample.df[, c(variable.name, 
+                                                tier.name, perspective.name)]
+                  }
+                
+                 
                   
                   if (algorithm == kAlgorithmSingleChoicePercent) {
                     SingleChoicePercent()
@@ -551,6 +610,8 @@ GreenIndexStatisticsData <- setRefClass(
                     MultipleChoicePercent()
                   } else if (algorithm == kAlgorithmQuantile) {
                     Quantile()
+                  } else if (algorithm == kAlgorithmPointRate) {
+                    PointRate()
                   } 
                   
                 }
@@ -610,6 +671,14 @@ GreenIndexStatisticsData <- setRefClass(
           choice.code <<- job$choice$column$code
           choice.key <<- job$choice$column$key
           choice.df <<- choice.df[, c(choice.code, choice.key)]
+          
+          
+          point.table <- paste0(job$point$table, job$point$suffix)
+          point.df <<- database$ReadTable(point.table)
+          point.code <<- job$point$column$code
+          point.value <<- job$point$column$value
+          point.df <<- point.df[, c(kColumnSubject, point.code,
+                                    kColumnQuestionType, point.value)]
           
           output.table <<- paste0(job$output$table, job$output$suffix)
           if (dropdata && database$ExistsTable(output.table)) {

@@ -35,10 +35,10 @@ gio.scheduler$EchoInfo("Start!")
 
 ## Running
 
-# gio.scheduler$DataPrep()
-# gio.assignpoint$AssignPoint()
+gio.scheduler$DataPrep()
+gio.assignpoint$AssignPoint()
 
-# gio.scheduler$Run()
+gio.scheduler$Run()
 
 # gio.loaddata$LoadAttribute()
 
@@ -55,7 +55,9 @@ gio.scheduler$EchoInfo("Start!")
 
 # gio.scheduler$Indexation(TRUE)
 
-gio.scheduler$Report(TRUE)
+# gio.converge$ConvergeTable()
+
+# gio.scheduler$Report(TRUE)
 
 # gio.scheduler$TestQueryData()
 

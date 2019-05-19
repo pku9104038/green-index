@@ -1,0 +1,279 @@
+<!-- chapter topic -->
+
+\begin{landscape}
+
+\mytext
+
+\chapter{典型题目分析}
+
+\section{积累}
+
+
+`r tab_name <- "学生在语文学科“积累”上的平均得分率（％）" `
+\begin{itshape}
+\mytable
+\begin{longtable}{|c|c|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|c|c|}
+\caption{`r tab_name`} \label{tab: `r tab_name`} \\
+
+\hline
+\multicolumn{2}{|c|}{测试能力} & 题目代码 & \makecell[c]{能力描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{一贯\\制\\学校} & \makecell[c]{完全\\中学} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\
+\hline
+
+\multirow{11}{*}{\makecell[c]{积\\累}} & \multirow{3}{*}{\makecell[c]{识记常用字的\\字音}} & C8AO01111 & 辨析形近字的字音 &
+`r `
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r ` \\ \cline{3-16}
+
+
+ & & C8AO02111 & 读准常用字的字音 &
+ `r `
+ `r ` &
+ `r ` &
+ `r ` &
+ `r ` &
+ `r ` &
+ `r ` &
+ `r ` &
+ `r ` &
+ `r ` &
+ `r ` &
+ `r ` &
+ `r ` \\ \cline{3-16}
+
+
+  & & C8AO03111 & 辨析多音字的字音 &
+  `r `
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` \\ \cline{2-16}
+
+  & \multirow{2}{*}{\makecell[c]{识记常用字的\\字形}} & C8AO04111 & 辨析形近字的字形 &
+  `r `
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r `  \\  \cline{3-16}
+
+  & & C8AO05111 & 辨析同音字的字形 &
+  `r `
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` \\ \cline{2-16}
+
+
+
+  & \multirow{6}{*}{\makecell[c]{理解常用字词\\的意思}} & C8AO06111 & 在具体语境中恰当运用常见词语 &
+  `r `
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` \\ \cline{3-16}
+
+  & & C8AO07111 & 在具体语境中恰当运用常见词语 &
+  `r `
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` \\ \cline{3-16}
+
+  & & C8AO08111 & 在具体语境中恰当运用常见词语 &
+  `r `
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` \\ \cline{3-16}
+
+  & & C8AO09111 & 在具体语境中恰当运用常见成语 &
+  `r `
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` \\ \cline{3-16}
+
+  & & C8AO10111 & 在具体语境中恰当运用常见成语 &
+  `r `
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` \\ \cline{3-16}
+
+  & & C8AO11111 & 在具体语境中恰当运用关联词 &
+  `r `
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` \\  \cline{2-16}
+
+& \multirow{2}{*}{\makecell[c]{积累教材中的\\文言诗文}} & C8AO12111 & 默写教材中要求背诵的文言诗文 &
+`r `
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r `  \\  \cline{3-16}
+
+
+  & & C8AO13111 & 理解教材中文言诗文的意思 &
+  `r `
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` &
+  `r ` \\   \cline{2-16}
+
+
+& \multirow{2}{*}{\makecell[c]{积累常见的文学\\、文化常识}} & C8AO14111 & 了解课程标准规定阅读的经典名著的文学、文化常识及基本信息 &
+`r `
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r `  \\  \cline{3-16}
+
+
+& & C8AO13111 & 理解教材中文言诗文的意思 &
+`r `
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r ` &
+`r `  \\ 
+\hline
+
+\end{longtable}
+
+\end{itshape}
+
+\end{landscape}
+
+\clearpage
+
+
+\section{阅读}
+
+
+
+\end{landscape}
+\clearpage
+
+
+\section{写作}
+
+
+\end{landscape}
+\clearpage
+
+
+<!-- end of chapter topic -->

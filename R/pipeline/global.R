@@ -42,6 +42,7 @@ kNullStr <- ""                       # 未作答选项
 kColumnMultipleChoice <- "_多选_"    # 多选项答题结果拆分
 kSeparator <- "┋"
 kSegmentConnector <- "-"
+kSuffixSeparator <- "_"
 kColumnSuffixPoint <- "_分值"
 
 # constants for data type
@@ -57,6 +58,9 @@ kTierRegion <- "区域"
 
 # constants for perspective
 kPerspectiveTotal <- "总体"
+
+# constants for variable
+kVariableTotalRank <- "总分_等级"
 
 kTRUE <- "是"
 kFALSE <- "否"
@@ -75,6 +79,8 @@ kMileStone <- "MILESTONE"   # city, district all  and one district school total
 kAutoRun <- "AUTO"          # all tier, all perspective 
 kValueTypeInteger <- "整数"
 kValueTypePercent <- "百分数"
+kValueTypeFloat <- "浮点数"
+
 kPercentDigits <- 1
 kSortAsc <- "ASC"
 kSortAscAll <- "ASC_ALL"
@@ -115,6 +121,7 @@ kAlgorithmGreatThanMean <- "大于平均值"
 kAlgorithmGroupSigma <- "属性组求和"
 kAlgorithmSigmaTotalScore <- "计算总分"
 kAlgorithmValuePercent <- "百分率"
+kAlgorithmPointRate <- "得分率"
 kAlgorithmStandardization <- "标准化"
 kAlgorithmScoreSegment <- "分数段切分"
 kAlgorithmScoreRank <- "分数等级"

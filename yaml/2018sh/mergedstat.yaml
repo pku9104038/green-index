@@ -2,7 +2,7 @@
 # statistics of variables, coefficents, scores
 mergedstat:
   TODO: FALSE
-  RUN: "AGILE"  # "AUTO", "PILOT", "MILESTONE", "AGILE"
+  RUN: "MILESTONE"  # "AUTO", "PILOT", "MILESTONE", "AGILE"
   <<: *kPilotRun
   <<: *kDDLStatisticsTable
   info:
@@ -21,7 +21,7 @@ mergedstat:
     # statistics
 
     -
-      TODO: TRUE
+      TODO: FALSE
       input:
         table: *kSubjectALL
         suffix: *kSuffixTransform

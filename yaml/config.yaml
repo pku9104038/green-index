@@ -4,7 +4,7 @@ asmt:
   job: &kAssessmentJob
     - "2018sh"
   name: &kAssessmentName
-    - "2018年上海中小学学业质量绿色指标"
+    - "2018年上海市初中学业质量绿色指标"
 
 
 # work directories
@@ -52,7 +52,7 @@ jobs:
     # - "statistics.yaml"      # statistics data
     - "surveystat.yaml"
     - "scorestat.yaml"
-    # - "mergedstat.yaml"
+    #- "mergedstat.yaml"
     - "scoreconverge.yaml"
     - "indexation.yaml"      #
     - "convergetable.yaml"   #
