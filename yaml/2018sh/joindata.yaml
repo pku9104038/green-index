@@ -1,7 +1,7 @@
 
 # join data, rename column, drop/keep column
 joindata:
-  TODO: TRUE
+  TODO: FALSE
   # <<: *kDDLStatisticsTable
   table:
     -

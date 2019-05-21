@@ -75,6 +75,44 @@ splitdata:
         -
           name: Fam16      # 兴趣班原因
 
+
+    -
+      TODO: FALSE
+      input:
+        table: "学生及家长多选"
+        suffix: *kSuffixRaw
+        column:
+          id: "zkzh"
+      output:
+        table: "学生及家长多选"
+        suffix: *kSuffixSplit
+      choice:
+        table: *kTableAttrSurveyPoint
+        suffix: ""
+        column:
+          key: *kColumnQuestionCode
+          value: *kColumnQuestionChoice
+      separator: "┋"
+      column:
+        -
+          name: Stu04
+        -
+          name: Stu23_X
+        -
+          name: Stu24_X
+        -
+          name: Fam03      # 家庭结构
+        -
+          name: Fam11      # 学科补课
+        -
+          name: Fam13      # 补课原因
+        -
+          name: Fam14      # 兴趣班
+        -
+          name: Fam15
+        -
+          name: Fam16      # 兴趣班原因
+
     -
       TODO: FALSE
       input:

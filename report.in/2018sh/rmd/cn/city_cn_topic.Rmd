@@ -9,7 +9,7 @@
 \section{积累}
 
 
-`r tab_name <- "学生在语文学科“积累”上的平均得分率（％）" `
+`r tab_name <- "学生在语文学科“积累与”上的平均得分率（％）" `
 \begin{itshape}
 \mytable
 \begin{longtable}{|c|c|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|c|c|}
@@ -19,7 +19,7 @@
 \multicolumn{2}{|c|}{测试能力} & 题目代码 & \makecell[c]{能力描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{一贯\\制\\学校} & \makecell[c]{完全\\中学} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\
 \hline
 
-\multirow{11}{*}{\makecell[c]{积\\累}} & \multirow{3}{*}{\makecell[c]{识记常用字的\\字音}} & C8AO01111 & 辨析形近字的字音 &
+\multirow{11}{*}{\makecell[c]{积累与运用}} & \multirow{3}{*}{\makecell[c]{识记常用字的\\字音}} & C8AO01111 & 辨析形近字的字音 &
 `r `
 `r ` &
 `r ` &
@@ -249,17 +249,36 @@
 `r ` &
 `r ` &
 `r ` &
-`r `  \\ 
+`r `  \\
 \hline
 
 \end{longtable}
 
 \end{itshape}
 
+\mytext
+“积累与运用”部分着重考查学生“读准字音”、“认清字形”、“理解词义、句义”、“积累和运用常见古诗文”和“名著阅读”五方面的能力。
+下面将结合“积累”部分的典型题目做具体分析。
+
 \end{landscape}
+
+\questiontitle{典型题目1：C8AO01111}
+
+下列词语中加点字读音完全相同的一项是（     ）。
+\begin{table}[H]
+\begin{tabularx}{\textwidth}{XX}
+
+  \makecell[c]{A．掺杂     渗透     悲惨 }	&
+  \makecell[c]{B．检查     节俭     捡拾} \\
+  \makecell[c]{C．增加     僧人     憎恶} &
+  \makecell[c]{D．翻译     沼泽     选择} \\								
+\end{tabularx}
+\end{table}
+
 
 \clearpage
 
+\begin{landscape}
 
 \section{阅读}
 
@@ -269,6 +288,7 @@
 \clearpage
 
 
+\begin{landscape}
 \section{写作}
 
 

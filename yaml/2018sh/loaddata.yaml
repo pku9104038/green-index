@@ -82,6 +82,13 @@ loaddata:
           name: "家长问卷密码"
           rename: "家长密码"
 
+    -
+      TODO: FALSE
+      xlsx: "20190507学生及家长多选.xlsx"
+      sheet: "学生及家长多选"
+      table: "学生及家长多选"
+      suffix: *kSuffixRaw
+
 
     -
       TODO: FALSE

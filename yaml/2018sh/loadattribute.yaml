@@ -109,7 +109,7 @@ loadattribute:
       suffix: ""
 
     -
-      TODO: TRUE
+      TODO: FALSE
       xlsx: "绿色指标属性表.xlsx"
       sheet: "成绩统计表"
       table: *kTableAttrScoreStat
@@ -146,7 +146,7 @@ loadattribute:
       suffix: ""
 
     -
-      TODO: TRUE
+      TODO: FALSE
       xlsx: "绿色指标属性表.xlsx"
       sheet: "数据查询表"
       table: *kTableAttrDataQuery
