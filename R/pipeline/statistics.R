@@ -142,11 +142,12 @@ GreenIndexStatisticsData <- setRefClass(
         stat.list[kColumnSchool] <<- stat.list[kColumnStatisticsScope]
       }
       
-      LogDebug(paste( stat.list[kColumnCity], stat.list[kColumnDistrict], 
-                      stat.list[kColumnSchool] ))
+      # LogDebug(paste( stat.list[kColumnCity], stat.list[kColumnDistrict], 
+      #                stat.list[kColumnSchool] ))
       
       if (is.na(stat.list[kColumnKey]) || is.na(stat.list[kColumnValue][[1]])) {
         msg <- paste("AddStat",
+                     stat.list[kColumnSubject], 
                        stat.list[kColumnStatisticsAlgorithm], 
                        stat.list[kColumnStatisticsVariable], 
                        stat.list[kColumnDomain],
@@ -164,6 +165,15 @@ GreenIndexStatisticsData <- setRefClass(
                  
       } else {
         HashStatList()
+        
+        msg <- paste(stat.list[kColumnSubject],
+                     algorithm, variable.name, 
+                     tier.name, perspective.name,
+                     scope.name, sample.name, 
+                     choice.name, statistics.value)
+        
+        LogDebug(gsub("%*", "", msg))
+        
         stat.df <<- rbind(stat.df, data.frame(stat.list))
       }
       
@@ -176,6 +186,7 @@ GreenIndexStatisticsData <- setRefClass(
       while (i <= nrow(stat.df)) {
         
         msg <- paste("Insert",
+                       stat.df[i, kColumnSubject],
                        stat.df[i, kColumnStatisticsTier], 
                        stat.df[i, kColumnStatisticsPerspective],
                        stat.df[i, kColumnStatisticsScope], 
@@ -292,13 +303,13 @@ GreenIndexStatisticsData <- setRefClass(
         choice.size <- nrow(sample.df[sample.df[, variable.name] == choice.name, ])
         statistics.value <<- choice.size / sample.size * 100.0
         
-        msg <- paste(algorithm, variable.name, 
-                       kColumnStatisticsTier, tier.name, 
-                       kColumnStatisticsPerspective, perspective.name,
-                       kColumnStatisticsScope, scope.name, 
-                       kColumnStatisticsSample, sample.name, 
-                       choice.name, statistics.value)
-        LogDebug(gsub("%*", "", msg))
+        # msg <- paste(algorithm, variable.name, 
+        #               kColumnStatisticsTier, tier.name, 
+        #               kColumnStatisticsPerspective, perspective.name,
+        #                kColumnStatisticsScope, scope.name, 
+        #                kColumnStatisticsSample, sample.name, 
+        #                choice.name, statistics.value)
+        # LogDebug(gsub("%*", "", msg))
         
         AddStatDataframe()    
       }
@@ -318,15 +329,15 @@ GreenIndexStatisticsData <- setRefClass(
         choice.size <- nrow(sample.df[sample.df[, variable.name] == choice.name, ])
         statistics.value <<- choice.size / sample.size * 100.0
         
-        msg <- paste(algorithm, variable.name, 
-                       kColumnStatisticsTier, tier.name, 
-                       kColumnStatisticsPerspective, perspective.name,
-                       kColumnStatisticsScope, scope.name, 
-                       kColumnStatisticsSample, sample.name, 
-                       choice.name, statistics.value, 
-                     as.character(choice.size), as.character(sample.size))
+        # msg <- paste(algorithm, variable.name, 
+        #                kColumnStatisticsTier, tier.name, 
+        #                kColumnStatisticsPerspective, perspective.name,
+        #                kColumnStatisticsScope, scope.name, 
+        #                kColumnStatisticsSample, sample.name, 
+        #                choice.name, statistics.value, 
+        #              as.character(choice.size), as.character(sample.size))
   
-        LogDebug(gsub("%*", "", msg))
+        # LogDebug(gsub("%*", "", msg))
 
         AddStatDataframe()    
       }
@@ -346,15 +357,7 @@ GreenIndexStatisticsData <- setRefClass(
         
       choice.size <- nrow(sample.df[sample.df[, variable.name] == 1, ])
       statistics.value <<- choice.size / sample.size * 100.0
-      
-      msg <- paste(algorithm, variable.name, 
-                     kColumnStatisticsTier, tier.name, 
-                     kColumnStatisticsPerspective, perspective.name,
-                     kColumnStatisticsScope, scope.name, 
-                     kColumnStatisticsSample, sample.name, 
-                     choice.name, statistics.value)
-  
-      LogDebug(gsub("%*", "", msg))
+
       
       AddStatDataframe()    
 
@@ -414,14 +417,14 @@ GreenIndexStatisticsData <- setRefClass(
       statistics.value <<- min(9,max(1, floor((1-2.5*(coefvar))*10)))
       AddStatDataframe() 
       
-      msg <- paste(algorithm, variable.name, 
-                   kColumnStatisticsTier, tier.name, 
-                   kColumnStatisticsPerspective, perspective.name,
-                   kColumnStatisticsScope, scope.name, 
-                   kColumnStatisticsSample, sample.name, 
-                   choice.name, statistics.value)
+      # msg <- paste(algorithm, variable.name, 
+      #              kColumnStatisticsTier, tier.name, 
+      #              kColumnStatisticsPerspective, perspective.name,
+      #              kColumnStatisticsScope, scope.name, 
+      #              kColumnStatisticsSample, sample.name, 
+      #              choice.name, statistics.value)
       
-      LogDebug(gsub("%*", "", msg))
+      # LogDebug(gsub("%*", "", msg))
       
     },
     
@@ -448,13 +451,13 @@ GreenIndexStatisticsData <- setRefClass(
       }
       
       
-      msg <- paste(algorithm, variable.name, 
-                   kColumnStatisticsTier, tier.name,
-                   kColumnStatisticsPerspective, perspective.name,
-                   kColumnStatisticsScope, scope.name,
-                   kColumnStatisticsSample, sample.name,
-                   choice.name, statistics.value)
-      LogDebug(gsub("%*", "", msg))
+      # msg <- paste(algorithm, variable.name, 
+      #              kColumnStatisticsTier, tier.name,
+      #              kColumnStatisticsPerspective, perspective.name,
+      #              kColumnStatisticsScope, scope.name,
+      #              kColumnStatisticsSample, sample.name,
+      #              choice.name, statistics.value)
+      # LogDebug(gsub("%*", "", msg))
         
           
       
@@ -469,6 +472,7 @@ GreenIndexStatisticsData <- setRefClass(
       } else if (process[1, kColumnTODO] == "TRUE"){
         
         LogInfo(paste("Process",
+                      process[1, kColumnSubject], 
                       process[1, kColumnDomain], 
                       process[1, kColumnDimention],
                       process[1, kColumnGroup],
@@ -560,10 +564,7 @@ GreenIndexStatisticsData <- setRefClass(
                   perspective.name != kPerspectiveTotal) {
                 break
               } 
-              
-              LogDebug(paste(algorithm, variable.name, 
-                             kColumnStatisticsTier, tier.name, 
-                             kColumnStatisticsPerspective, perspective.name))
+
               perspective.df <- filter.df
               
               
@@ -592,6 +593,8 @@ GreenIndexStatisticsData <- setRefClass(
                                            sample.name, ]
                   
                   if (is.element(kVariableTotalRank, names(sample.df))) {
+                    LogDebug(paste(variable.name, kVariableTotalRank, 
+                                   tier.name, perspective.name))
                     sample.df <<- sample.df[, c(variable.name, 
                                                 kVariableTotalRank,
                                                 tier.name, perspective.name)]
@@ -600,7 +603,9 @@ GreenIndexStatisticsData <- setRefClass(
                                                 tier.name, perspective.name)]
                   }
                 
-                 
+                  
+                  #LogDebug(paste(algorithm, variable.name, tier.name, 
+                  #               perspective.name))                 
                   
                   if (algorithm == kAlgorithmSingleChoicePercent) {
                     SingleChoicePercent()
@@ -672,13 +677,15 @@ GreenIndexStatisticsData <- setRefClass(
           choice.key <<- job$choice$column$key
           choice.df <<- choice.df[, c(choice.code, choice.key)]
           
+          if(!is.null(job$point)){
+            point.table <- paste0(job$point$table, job$point$suffix)
+            point.df <<- database$ReadTable(point.table)
+            point.code <<- job$point$column$code
+            point.value <<- job$point$column$value
+            point.df <<- point.df[, c(kColumnSubject, point.code,
+                                      kColumnQuestionType, point.value)]
+          }
           
-          point.table <- paste0(job$point$table, job$point$suffix)
-          point.df <<- database$ReadTable(point.table)
-          point.code <<- job$point$column$code
-          point.value <<- job$point$column$value
-          point.df <<- point.df[, c(kColumnSubject, point.code,
-                                    kColumnQuestionType, point.value)]
           
           output.table <<- paste0(job$output$table, job$output$suffix)
           if (dropdata && database$ExistsTable(output.table)) {

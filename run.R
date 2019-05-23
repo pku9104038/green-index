@@ -35,10 +35,12 @@ gio.scheduler$EchoInfo("Start!")
 
 ## Running
 
-gio.scheduler$DataPrep()
-gio.assignpoint$AssignPoint()
+# gio.scheduler$DataPrep()
+# gio.loaddata$LoadData()
+# gio.splitdata$SplitData()
+# gio.assignpoint$AssignPoint()
 
-gio.scheduler$Run()
+# gio.scheduler$Run()
 
 # gio.loaddata$LoadAttribute()
 

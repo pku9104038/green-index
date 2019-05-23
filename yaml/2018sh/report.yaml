@@ -58,7 +58,7 @@ report:
         - "city_base_parent.rmd"
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标指数报告"
       tier: *kStatTierCity
       subdir: "index"
@@ -86,7 +86,7 @@ report:
 
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierCity
       subdir: "cn"

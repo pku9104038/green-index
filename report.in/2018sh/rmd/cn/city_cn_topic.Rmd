@@ -264,16 +264,17 @@
 
 \questiontitle{典型题目1：C8AO01111}
 
-下列词语中加点字读音完全相同的一项是（     ）。
+下列词语中加点字读音完全相同的一项是（  ～   ）。
 \begin{table}[H]
-\begin{tabularx}{\textwidth}{XX}
+\begin{tabularx}{\textwidth}{XXXXXXXX}
 
-  \makecell[c]{A．掺杂     渗透     悲惨 }	&
-  \makecell[c]{B．检查     节俭     捡拾} \\
-  \makecell[c]{C．增加     僧人     憎恶} &
-  \makecell[c]{D．翻译     沼泽     选择} \\								
+  A. & 掺杂 &  渗透 & 悲惨 & B．& 检查 & 节俭 & 捡拾 \\
+  C. & 增加 &  僧人 & 憎恶 & D．& 翻译 & 沼泽 & 选择} \\								
 \end{tabularx}
 \end{table}
+
+\triangle{ABC}
+\angle{C} = 90\degree
 
 
 \clearpage

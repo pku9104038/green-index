@@ -301,6 +301,20 @@ GreenIndexQueryData <- setRefClass(
       return(round(value, digits = digits))
     },
     
+    SubAttrScoSamKey = function(df, subject, attribute, 
+                               scope, sample, keys, digits) {
+      value <- 0
+      for (i in 1:length(keys)) {
+        key <- keys[i]
+        value <- value + df[df[, kColumnSubject] == subject & 
+                              df[, kColumnAttribute] == attribute & 
+                              df[, kColumnStatisticsScope] == scope &
+                              df[, kColumnStatisticsSample] == sample &
+                              df[, kColumnKey] == key, kColumnValue] 
+      }
+      return(round(value, digits = digits))
+    },
+    
     SubTopSamKey = function(df, subject, topic, sample, keys, digits) {
       value <- 0
       for (i in 1:length(keys)) {

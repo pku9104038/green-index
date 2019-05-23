@@ -239,13 +239,43 @@ GreenIndexTransformData <- setRefClass(
       i <- 1
       while (i <= length(columns)){
         column.name <- paste0(columns[i], suffix)
-        kSegmentConnector
+      
         for (j in 1:length(score.segments)) {
           score.segment <- unlist(strsplit(score.segments[j], kSegmentConnector))
           min <- as.numeric(score.segment[1])
           max <- as.numeric(score.segment[2])
           df[!is.na(df[, column.name]) & df[, column.name] >= min & df[, column.name] < max, 
              variable.name] <<- score.segments[j]
+        }
+        i <- i + 1
+      }
+      
+      SetVariableType()
+      
+    },
+    
+    ScoreInterval = function(){
+      
+      columns <- unlist(strsplit(transform[kColumnColumnName][[1]], kSeparator))
+      suffix <- transform[kColumnColumnSuffix] 
+      df[, variable.name] <<- ""
+      
+      score.segments <- unlist(strsplit(parameter, kSeparator))
+      i <- 1
+      while (i <= length(columns)){
+        column.name <- paste0(columns[i], suffix)
+        
+        for (j in 1:length(score.segments)) {
+          score.segment <- unlist(strsplit(score.segments[j], kSegmentConnector))
+          min <- as.numeric(score.segment[1])
+          max <- as.numeric(score.segment[2])
+          if (min == max) {
+            segment.name <- score.segment[1]
+          } else {
+            segment.name <- score.segments[j]
+          }
+          df[!is.na(df[, column.name]) & df[, column.name] >= min & df[, column.name] <= max, 
+             variable.name] <<- segment.name
         }
         i <- i + 1
       }
@@ -405,6 +435,8 @@ GreenIndexTransformData <- setRefClass(
           Standardization()
         } else if (algorithm == kAlgorithmScoreSegment) {
           ScoreSegment()
+        } else if (algorithm == kAlgorithmScoreInterval) {
+          ScoreInterval()
         } else if (algorithm == kAlgorithmScoreRank) {
           ScoreRank()
         } else if (algorithm == kAlgorithmValueMapping) {

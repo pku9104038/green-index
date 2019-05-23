@@ -63,6 +63,10 @@ GreenIndexSplitData <- setRefClass(
               column.name <- paste0(column, kColumnMultipleChoice, 
                                     as.character(j))
               df[column.name] <- 0
+              
+              # column.var <- paste0(column, "_", choice.set[[j]])
+              # df[column.var] <- 0
+              # df[df[, column] == "", column.var] <- NA
             }
             
             response.group  <- levels(factor(df[, column]))
@@ -106,6 +110,8 @@ GreenIndexSplitData <- setRefClass(
                     
                     df[df[, column] == group, column.name] <- 1  # choice.set[[k]]
                     
+                    # column.var <- paste0(column, "_", choice.set[[k]])
+                    # df[df[, column] == group, column.var] <- 1
                   }
                 }
               }
@@ -117,7 +123,6 @@ GreenIndexSplitData <- setRefClass(
             #                 names(df))
             
           }
-          
           database$WriteTable(df, output.table)
           
         }
