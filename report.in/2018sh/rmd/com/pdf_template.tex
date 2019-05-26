@@ -8,7 +8,12 @@ $if(linestretch)$
 \usepackage{setspace}
 \setstretch{$linestretch$}
 $endif$
-\usepackage{amssymb,amsmath,gensymb}
+
+\usepackage{amssymb, amsmath, gensymb}
+\usepackage{latexsym, accents}
+\newcommand*\underdot[1]{\underaccent{\dot}{#1}}
+
+
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex

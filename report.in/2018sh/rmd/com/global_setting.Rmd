@@ -3,7 +3,7 @@
 
 <!-- \graphicspath{ {`r gio.R$GetReportOutFigDirAbs()`} } -->
 
-<!-- \graphicspath{ {/Users/wangpeifeng/OneDrive/zuoyue/project/2018绿色指标分析/green-index/report.in/2018sh/fig/} } -->
+\graphicspath{ {/Users/wangpeifeng/OneDrive/zuoyue/project/2018绿色指标分析/green-index/report.out/2018sh/fig/} }
 
 
 ```{r global.setting, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
@@ -66,7 +66,7 @@ kStringNone <- "NONE"
 kStringNull<- "NULL"
 kPilotRun <- "PILOT"        # city, total only
 kMileStone <- "MILESTONE"   # city, district all  and school total
-kAutoRun <- "AUTO"          # all tier, all perspective 
+kAutoRun <- "AUTO"          # all tier, all perspective
 kValueTypeInteger <- "整数"
 kValueTypePercent <- "百分数"
 kPercentDigits <- 0
@@ -139,7 +139,7 @@ kColumnLabelColour <- "plot_label_colour"
 kColumnLabelSize <- "plot_label_size"
 kColumnLabelVjust <- "plot_label_vjust"
 kColumnLabelHjust <- "plot_label_hjust"
-kColumnFill <- "plot_fill" 
+kColumnFill <- "plot_fill"
 kColumnFillOrder <- "plot_fill_order"
 kColumnLegendWidth <- "plot_legend_width"
 kColumnLegendHeight <- "plot_legend_height"

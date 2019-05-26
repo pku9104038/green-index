@@ -61,8 +61,8 @@ gio.scheduler$EchoInfo("Start!")
 
 # gio.scheduler$Report(TRUE)
 
-# gio.scheduler$TestQueryData()
+# gio.scheduler$TestQueryData(TRUE)
 
-# gio.scheduler$TestPlotFigure()
+gio.scheduler$TestPlotFigure(TRUE)
 
 gio.scheduler$EchoInfo("Stop!")

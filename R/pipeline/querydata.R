@@ -392,6 +392,21 @@ GreenIndexQueryData <- setRefClass(
                     df[, kColumnStatisticsSample] == sample, 
                   kColumnValue]
       return(round(value, digits = digits))
+    },
+    
+    VarScoSamKey = function(df, variable, scope, sample, key, digits = 1){
+      value <- df[df[, kColumnKey] == key & 
+                    df[, kColumnStatisticsVariable] == variable &
+                    df[, kColumnStatisticsScope] == scope &
+                    df[, kColumnStatisticsSample] == sample, 
+                  kColumnValue]
+      return(round(value, digits = digits))
+    },
+    
+    KeyValue = function(df, key, digits = 1){
+      value <- df[df[, kColumnKey] == key , 
+                  kColumnValue]
+      return(round(value, digits = digits))
     }
     
   )

@@ -9,7 +9,7 @@ scoretrans:
 
   table:
     -
-      TODO: FALSE
+      TODO: TRUE
       input:
         table: *kSubjectCN
         suffix: *kSuffixJoin

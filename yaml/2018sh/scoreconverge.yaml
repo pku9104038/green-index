@@ -2,7 +2,7 @@
 # score converge
 scoreconverge:
   TODO: TRUE
-  RUN: "MILESTONE" # TRUE,  FALSE ,rework jobs flag
+  RUN: "AGILE" # TRUE,  FALSE ,rework jobs flag
   <<: *kDDLStatisticsTable
   input:
     <<: *kTableRefStatScore

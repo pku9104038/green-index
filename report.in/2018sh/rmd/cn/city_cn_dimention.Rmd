@@ -6,26 +6,25 @@
 
 ## 全体学生在各能力维度上的表现
 
-图3-1和图3-2分别给出了上海市学生在语文学科各能力维度各水平上的人数比例和得分分布。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.cn.dimention.rank")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.city.cn.dimention.quantile")`}分别给出了上海市学生在语文学科各能力维度各水平上的人数比例和得分分布。
 
-图3-1 学生在语文学科各能力维度各水平上的人数比例
+plot.bar.city.cn.dimention.rank
 
+plot.box.city.cn.dimention.quantile
 
-
-图3-2 学生在语文学科各能力维度上的得分分布
+\mylist
+注：盒须图——5\%学生标准分小于等于须下限分数；25\%学生标准分小于等于盒底分数；50\%学生标准分大于等于盒中横线分数；25\%学生标准分大于等于盒顶分数；5\%学生标准分大于等于须上限分数；盒高度一定程度上反映了标准分分布的离散程度；红点为平均标准分。
+\mytext
 
 ## 学生在各能力维度上的表现
 
-### 积累
+### 积累与运用
 
 #### 不同群体学生的表现
 
+plot.bar.city.cn.jilei.rank.perspective
 
-图3-3 不同群体学生在“积累”各水平上的人数比例
-
-
-
-图3-4 不同群体学生在“积累”上的得分分布
+plot.box.city.cn.jilei.quantile.perspective
 
 #### 不同区学生的表现
 

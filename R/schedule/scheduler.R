@@ -147,19 +147,24 @@ GreenIndexScheduler <- setRefClass(
       
     },
     
-    TestQueryData = function(){
-      gio.loaddata$LoadAttribute()
+    TestQueryData = function(reload = FALSE){
+      if (reload)
+        gio.loaddata$LoadAttribute()
       gio.querydata$PrepareDataframe()
       jobs <- config$GetConfigJob()$dataquery
       test <- jobs$test
+      df <- data.frame()
       for (i in 1:length(test)) {
         df <- gio.querydata$QueryData(test[i])
         print(df)
       }
+      print(gio.querydata$VarScoSamKey(df, "C8AO01111_X", "上海市","非沪籍","总体"))
+      return(df)
     },
     
-    TestPlotFigure = function(){
-      gio.loaddata$LoadAttribute()
+    TestPlotFigure = function(reload = FALSE){
+      if (reload) 
+        gio.loaddata$LoadAttribute()
       gio.plotfigure$PrepareDataframe()
       jobs <- config$GetConfigJob()$plotfigure
       test <- jobs$test

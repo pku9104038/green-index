@@ -343,6 +343,36 @@ GreenIndexStatisticsData <- setRefClass(
       }
     },
     
+    ValueOptionPercent = function() {
+      
+      stat.list[kColumnTopic] <<- variable.name
+      
+      sample.df <<- sample.df[!is.na(sample.df[, variable.name]), ]
+      sample.size <- nrow(sample.df)
+      
+      choice.set <- unique(sample.df[, variable.name])
+      choice.set <- choice.set[!is.na(choice.set)]
+      
+      for (n in 1:length(choice.set)) {
+        choice.name <<- choice.set[n]
+        
+        choice.size <- nrow(sample.df[sample.df[, variable.name] == choice.name, ])
+        statistics.value <<- choice.size / sample.size * 100.0
+        
+        # msg <- paste(algorithm, variable.name, 
+        #                kColumnStatisticsTier, tier.name, 
+        #                kColumnStatisticsPerspective, perspective.name,
+        #                kColumnStatisticsScope, scope.name, 
+        #                kColumnStatisticsSample, sample.name, 
+        #                choice.name, statistics.value, 
+        #              as.character(choice.size), as.character(sample.size))
+        
+        # LogDebug(gsub("%*", "", msg))
+        
+        AddStatDataframe()    
+      }
+    },
+    
     MultipleChoicePercent = function() {
       
       sample.size <- nrow(sample.df)
@@ -434,6 +464,7 @@ GreenIndexStatisticsData <- setRefClass(
       point.row <- point.df[point.df[, point.code] == code.name, ]
       point <- as.numeric(point.row[1, point.value])      
       stat.list[kColumnStatisticsVariable] <<- code.name
+      stat.list[kColumnTopic] <<- code.name
       
       choice.name <<- kPerspectiveTotal
       statistics.value <<- mean(as.numeric(sample.df[, variable.name]), 
@@ -464,6 +495,27 @@ GreenIndexStatisticsData <- setRefClass(
       
     },
 
+    PointRateMean = function() {
+      
+      stat.list[kColumnTopic] <<- variable.name
+      
+      choice.name <<- kPerspectiveTotal
+      statistics.value <<- mean(as.numeric(sample.df[, variable.name]), 
+                                na.rm = TRUE) 
+      AddStatDataframe()  
+      
+      ranks <- unlist(unique(sample.df[, kVariableTotalRank]))
+      for (i in 1:length(ranks)) {
+        choice.name <<- ranks[i]
+        statistics.value <<- 
+          mean(as.numeric(sample.df[sample.df[, kVariableTotalRank] == 
+                                      choice.name, variable.name]),
+               na.rm = TRUE)
+        AddStatDataframe() 
+      }
+      
+    },
+    
     ProcessJob = function(){
       
       if (process[1, kColumnTODO] == "FALSE" && RUN == kPilotRun ){
@@ -510,7 +562,8 @@ GreenIndexStatisticsData <- setRefClass(
           variables <- attr.df[, kColumnQuestionCode]
           variables <- unlist(variables)
           
-        } else if (process[1, kColumnVariableName] == kAlgorithmPointRate) {
+        } else if (process[1, kColumnVariableName] == kAlgorithmPointRate && 
+                   process[1, kColumnVariableSuffix] == kColumnSuffixPointValue) {
           point.set <- point.df[point.df[, kColumnSubject] == 
                                   process[1, kColumnSubject], ]
           variables <- unlist(unique(point.set[, point.code]))
@@ -617,6 +670,10 @@ GreenIndexStatisticsData <- setRefClass(
                     Quantile()
                   } else if (algorithm == kAlgorithmPointRate) {
                     PointRate()
+                  } else if (algorithm == kAlgorithmPointRateMean) {
+                    PointRateMean()
+                  } else if (algorithm == kAlgorithmValueOptionPercent) {
+                    ValueOptionPercent()
                   } 
                   
                 }

@@ -36,7 +36,7 @@ report:
         - "agile.rmd"
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标基础数据报告"
       tier: *kStatTierCity
       subdir: "base"
@@ -86,7 +86,7 @@ report:
 
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierCity
       subdir: "cn"

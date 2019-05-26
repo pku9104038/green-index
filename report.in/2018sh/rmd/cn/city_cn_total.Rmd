@@ -6,38 +6,29 @@
 
 ## 全体学生的总体表现
 
-图 2-1 和图 2-2 分别给出了上海市全体学生及不同区域学生在语文学科各水平上的人数比例和得分分布。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.cn.rank.total.region")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.score.segment.cn.total")`}分别给出了上海市全体学生及不同区域学生在语文学科各水平上的人数比例和得分分布。
 
+plot.bar.city.cn.rank.total.region
 
-
-图2-1 全体学生在语文学科各水平上的人数比例
-
-
-图2-2全体学生在语文学科上的得分分布
+plot.bar.city.base.score.segment.cn.total
 
 
 ## 不同群体学生的总体表现
 
-图2-3和图2-4分别给出了上海市不同群体学生在语文学科各水平上的人数比例和得分分布。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.cn.rank.total.perspective")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.city.cn.quantile.perspective")`}分别给出了上海市不同群体学生在语文学科各水平上的人数比例和得分分布。
 
+plot.bar.city.cn.rank.total.perspective
 
-图2-3 不同群体学生在语文学科各水平上的人数比例
-
-
-
-图2-4 不同群体学生在语文学科上的得分分布
+plot.box.city.cn.quantile.perspective
 
 
 ## 不同区学生的总体表现
 
-图2-5和图2-6分别给出了上海市不同区学生在语文学科各水平上的人数比例和得分分布。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.score.rank.cn.total.district")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.city.base.score.quantile.cn.total.district")`}分别给出了上海市不同区学生在语文学科各水平上的人数比例和得分分布。
 
+plot.bar.city.base.score.rank.cn.total.district
 
-图2-5 不同区学生在语文学科各水平上的人数比例
-
-
-
-图2-6 不同区学生在语文学科上的得分分布
+plot.box.city.base.score.quantile.cn.total.district
 
 
 

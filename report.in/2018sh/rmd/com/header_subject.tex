@@ -1,5 +1,5 @@
 
-\usepackage{xeCJK} 
+\usepackage{xeCJK}
 \usepackage{fontspec}
 %\setCJKmainfont[AutoFakeBold = false, ItalicFont={Kaiti SC},BoldItalicFont={Songti SC}]{STFangsong}
 \setCJKmainfont[BoldFont={Songti SC},ItalicFont={STKaiti},BoldItalicFont={Songti SC}]{STFangsong}
@@ -7,6 +7,9 @@
 \setCJKmonofont{Yuanti SC}
 %\setmainfont{Yuanti SC}
 \setmainfont{Times New Roman}
+
+
+\usepackage{CJKfntef}
 
 \usepackage{fancyhdr}
 \usepackage{ragged2e}
@@ -88,7 +91,7 @@
             \ifodd\c@page%
                 \gdef\LS@rot{\setbox\@outputbox\vbox{%
                     \pdf@landscape@rotate{+90}%
-                    \hbox{\rotatebox{90}{\hbox{\rotatebox{0}{\box\@outputbox}}}}}%               
+                    \hbox{\rotatebox{90}{\hbox{\rotatebox{0}{\box\@outputbox}}}}}%
                     %\pdf@landscape@rotate{-90}%
                     %\hbox{\rotatebox{90}{\hbox{\rotatebox{180}{\box\@outputbox}}}}}%
                 }%
@@ -122,37 +125,37 @@
 
 
 \newcommand{\mytitle}[1]{
-    \begin{center}\fontsize{27.5pt}{41.25pt}\selectfont#1\end{center} 
+    \begin{center}\fontsize{27.5pt}{41.25pt}\selectfont#1\end{center}
 }
 
 \newcommand{\mysubtitle}[1]{
-    \begin{center}\fontsize{24pt}{48pt}\selectfont\textbf{\textit{#1}}\end{center} 
+    \begin{center}\fontsize{24pt}{48pt}\selectfont\textbf{\textit{#1}}\end{center}
 }
 
 \newcommand{\myproducer}[1]{
-    \begin{center}\fontsize{14pt}{21pt}\selectfont\textbf{#1}\end{center} 
+    \begin{center}\fontsize{14pt}{21pt}\selectfont\textbf{#1}\end{center}
 }
 
 \newcommand{\mynote}[1]{
-    \begin{center}\fontsize{16pt}{24pt}\selectfont\textbf{#1}\end{center} 
+    \begin{center}\fontsize{16pt}{24pt}\selectfont\textbf{#1}\end{center}
 }
 
 \newcommand{\mycopyright}[1]{
-    \begin{center}\begin{bf}\fontsize{10.5pt}{15.75pt}\selectfont#1\end{bf}\end{center} 
+    \begin{center}\begin{bf}\fontsize{10.5pt}{15.75pt}\selectfont#1\end{bf}\end{center}
 }
 
 \newcommand{\myprefacetitle}[1]{
-    \begin{center}\begin{bf}\fontsize{24pt}{72pt}\selectfont#1\end{bf}\end{center} 
+    \begin{center}\begin{bf}\fontsize{24pt}{72pt}\selectfont#1\end{bf}\end{center}
 }
 
 \newcommand{\myprefacetext}{
     \raggedright\fontsize{13.75pt}{20.625pt}\selectfont\setlength{\parindent}{2em}
-    \setlength{\parskip}{0.75ex} 
+    \setlength{\parskip}{0.75ex}
 }
 
 \newcommand{\mytext}{
     \raggedright\fontsize{12pt}{18pt}\selectfont\setlength{\parindent}{2em}
-    \setlength{\parskip}{0.5ex} 
+    \setlength{\parskip}{0.5ex}
 }
 
 \newcommand{\questiontitle}[1]{
@@ -181,9 +184,9 @@
 \setlength{\abovecaptionskip}{0pt}
 \setlength{\belowcaptionskip}{0pt}
 
-%\usepackage{caption2} 
-%\renewcommand{\captionfont}{\textit \large } 
-%\renewcommand{\captionlabelfont}{\emph \large \centering} 
+%\usepackage{caption2}
+%\renewcommand{\captionfont}{\textit \large }
+%\renewcommand{\captionlabelfont}{\emph \large \centering}
 
 \usepackage[font=normalsize]{caption}
 \captionsetup[figure]{labelfont=normalfont,textfont=it,labelsep=space}
