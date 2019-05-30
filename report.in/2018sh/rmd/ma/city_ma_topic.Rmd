@@ -1,0 +1,813 @@
+<!-- chapter topic -->
+
+\mytext
+
+# 典型题目分析
+
+数学学业质量的内涵不仅包括学生在基础知识、基本技能、基本思想方法、基本活动经验等方面所达到的水平，而且还包括学生适应社会发展和自身未来发展需要的核心素养。基于《上海市中小学数学课程标准》的要求，中学数学学科测试的命题框架主要由“内容维度”和“能力维度（及其水平层次）”共同组成。
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=7cm]{ma_001.png}
+  \end{center}
+\end{figure}
+
+中学数学测试的内容维度按照《课程标准》分为“数与代数”、“图形与几何”和“函数与概率统计初步”三个知识领域。能力维度依据《课程标准》中的“过程与方法”目标维度，结合初中数学课程实施的现状，并参考国际相关类型数学测试的框架构建，以体现“过程”与“方法”的矩阵结构呈现，它对学生数学能力的测评也将以“过程”与“方法”的共同作用下学生的表现来评估。其中，“过程”是能力维度评价的“主分量”，共分“辨识”、“调用”、“反思”和“聚合”四类（在试题属性表中依次用F、E、R、P标识）；“方法”（亦可称为“方法群”）主要将各种数学基本方法分成“运算求解”、“推理论证”、“空间想象”、“数学表达”、“数据处理”、“数学建模”等六种类型。一般来说，在解决数学问题不同阶段的“过程”中，需要综合运用若干不同类型的“方法”。能力维度主要评估学生在解决数学问题的不同局部或整体的“过程”中对不同类型“方法”的合理、灵活的运用。
+
+典型例题评析将以不同的“过程”分量归类详细分析说明。
+
+query.data.city.ma.pointrate.perspective
+
+\begin{landscape}
+
+\section{辨识（Formulating）}
+
+`r tab_name <- "学生在数学学科“辨识”过程分量上的平均得分率（％）" `
+
+\begin{itshape}
+\mytable
+\begin{longtable}{|c|c|p{7.5cm}|c|c|c|c|c|c|c|c|c|c|c|c|}
+\caption{`r tab_name`} \label{tab: `r tab_name`} \\ \hline
+
+\makecell[c]{内容\\维度} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
+
+\multirow{4}{*}{\makecell[c]{数\\与\\代数}} & M8AO01111 & 懂得倒数的概念，在求一个数倒数的过程中检测运算求解能力的表现 &
+`r gio.R$VarScoSamKey(query.data, "M8AO01111_X", "上海市","总体","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO01111_X", "上海市","公办","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO01111_X", "上海市","民办","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO01111_X", "上海市","初中","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO01111_X", "上海市","九年一贯","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO01111_X", "上海市","完中","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO01111_X", "上海市","新优质","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO01111_X", "上海市","强校工程","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO01111_X", "上海市","男","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO01111_X", "上海市","女","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO01111_X", "上海市","沪籍","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO01111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+ & M8AO02111 & 掌握有关整数指数幂乘方运算法则，在求一个代数式乘方的过程中，检测运算求解能力的表现 &
+ `r gio.R$VarScoSamKey(query.data, "M8AO02111_X", "上海市","总体","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AO02111_X", "上海市","公办","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AO02111_X", "上海市","民办","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AO02111_X", "上海市","初中","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AO02111_X", "上海市","九年一贯","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AO02111_X", "上海市","完中","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AO02111_X", "上海市","新优质","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AO02111_X", "上海市","强校工程","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AO02111_X", "上海市","男","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AO02111_X", "上海市","女","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AO02111_X", "上海市","沪籍","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AO02111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & M8AO03111 & 懂得将文字语言与作为符号语言的代数式相互转化，在列代数式的过程中检测运算求解、数学表达能力的表现 &
+  `r gio.R$VarScoSamKey(query.data, "M8AO03111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO03111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO03111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO03111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO03111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO03111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO03111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO03111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO03111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO03111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO03111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO03111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+ & M8AO06111 & 掌握简单无理方程的解法，在对一个无理方程求解的过程中检测运算求解能力的表现 &
+  `r gio.R$VarScoSamKey(query.data, "M8AO06111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO06111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO06111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO06111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO06111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO06111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO06111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO06111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO06111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO06111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO06111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO06111_X", "上海市","非沪籍","总体")` \\ \cline{1-15}
+
+\multirow{2}{*}{\makecell[c]{图形\\与\\几何}} & M8AO07111 & 说明两个关于原点对称的点的坐标的关系，在求一个点关于原点的对称点的过程中检测空间想象和数学表达能力的表现 &
+  `r gio.R$VarScoSamKey(query.data, "M8AO07111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO07111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO07111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO07111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO07111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO07111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO07111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO07111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO07111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO07111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO07111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO07111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & M8AO13111 & 懂得多边形外角和定理，在利用外角判断正多边形边数的求解过程中检测运算求解、推理论证、空间想象能力的表现 &
+  `r gio.R$VarScoSamKey(query.data, "M8AO13111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO13111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO13111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO13111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO13111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO13111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO13111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO13111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO13111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO13111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO13111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO13111_X", "上海市","非沪籍","总体")` \\ \cline{1-15}
+
+\multirow{2}{*}{\makecell[c]{函数\\与\\概率\\统计\\初步}} & M8AO08111 & 懂得函数的定义域的求法，在求一个函数定义域的过程中检测运算求解与数学表达能力的表现 &
+  `r gio.R$VarScoSamKey(query.data, "M8AO08111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO08111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO08111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO08111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO08111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO08111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO08111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO08111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO08111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO08111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO08111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO08111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & M8AO11111 & 懂得随机事件的概念，在判断一个事件是否是随机事件的过程中检测推理论证、空间想象和数学表达能力的表现 &
+  `r gio.R$VarScoSamKey(query.data, "M8AO11111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO11111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO11111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO11111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO11111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO11111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO11111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO11111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO11111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO11111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO11111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO11111_X", "上海市","非沪籍","总体")` \\ \hline
+
+\end{longtable}
+\end{itshape}
+
+\mytext
+下面将结合“辨识”部分的典型题目做具体分析。
+
+\end{landscape}
+
+\questiontitle{典型题目1：M8AO02111}
+计算 $(m^3)^2$ 的结果是：
+\begin{table}[H]
+\begin{tabularx}{\textwidth}{p{0.5cm}XXXX}							
+ & A．$m^5$ & B．$m^6$ & 	C．$m^8$ & D．$m^9$ \\
+\end{tabularx}
+\end{table}
+
+\mytext
+- 考查内容：数与代数
+- 思维层次：知识建构
+- 能力维度：本题考查的过程为“辨识”，该过程中运用的主要方法为“运算求解”．
+- 试题描述：掌握有关整数指数幂乘方运算法则，在求一个代数式乘方的过
+程中，检测运算求解能力的表现
+- 正确答案：B
+- 本题满分：3分
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "M8AO02111_X", "上海市","总体","总体")`%
+
+plot.bar.city.ma.question.m8ao02111
+
+- 错因分析与教学建议：
+
+本题是关于幂的乘方的选择题，学生需要掌握幂的乘方的运算性质，幂的乘方的运算性质是单项式乘除运算的基础。从学生作答情况来看，正确率比较高，有少部分错误的学生选了D，是把指数相乘和指数乘方搞混淆了，说明这部分学生没有真正理解乘方的运算性质，甚至也没有掌握其它关于幂的一些运算性质。
+在幂的乘方的教学中，要让学生经历探索幂的乘方这一性质的过程，帮助学生正确识别幂的“底数”、幂的“指数”、乘方的“指数”，从本质上理解乘方的意义和幂的乘方的运算性质。在练习中需要适当增加与其它幂的运算性质的比较，要鼓励学生不仅会套用公式，还要能正确说明每一步计算的理由。
+
+\questiontitle{典型题目2：M8AO06111}
+方程 $\sqrt{x-2}=2$的解是：
+\begin{table}[H]
+\begin{tabularx}{\textwidth}{p{0.5cm}XXXX}		
+& A．${x=-2}$； & B．$x=2$； & C．$x=4$；& D．$x=6$ \\
+\end{tabularx}
+\end{table}
+\mytext
+- 考查内容：数与代数
+- 思维层次：知识建构
+- 能力维度：本题考查的过程为“辨识”，该过程中运用的主要方法为“运算求解”．
+- 试题描述：掌握简单无理方程的解法，在对一个无理方程求解的过程中检测运算求解能力的表现
+- 正确答案：D
+- 本题满分：3分
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "M8AO06111_X", "上海市","总体","总体")`%
+
+plot.bar.city.ma.question.m8ao06111
+
+- 错因分析与教学建议：
+
+本题错误的原因主要有两个，一是解无理方程过程中将方程两边平方时，仅仅将带有根号的一边平方，另一边数字未平方；二是解无理方程过程中，一个必不可少的步骤——验根没有进行。本题的错误反映出部分学生没有掌握基本运算技能。
+
+在无理方程解法的教学中，应让学生体会解简单的无理方程，基本思想是通过“方程两边平方”将它转化为解有理方程（整式方程）来实施。解无理方程的基本思路体现了化归的数学思想，教学中要让学生认真体会化归思想，特别地要重点关注学困生基本运算技能的学习状况，以免对其后继学习产生阻碍。
+
+\questiontitle{典型题目3：M8AO11111}
+
+下列事件中，随机事件是
+\begin{table}[H]
+\begin{tabularx}{\textwidth}{p{0.5cm}XX}
+& A．两个正实数的和大于零； &	B．方程 在实数范围内有解；\\
+& C．任何一个三角形的三个内角和都是 ； &	D．同一平面内任意两条直线都相交．\\
+\end{tabularx}
+\end{table}
+\mytext
+- 考查内容：函数与概率统计初步
+- 思维层次：知识建构
+- 能力维度：本题考查的过程为“辨识”，该过程中运用的主要方法为“推理
+论证”“数学表达”“空间想象”和“数据处理”．
+- 试题描述：懂得随机事件的概念，在判断一个事件是否是随机事件的过程
+中检测推理论证、数学表达和空间想象能力的表现．
+- 本题满分：满分3分
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "M8AO11111_X", "上海市","总体","总体")`%
+
+plot.bar.city.ma.question.m8ao11111
+
+- 错因分析与教学建议：
+
+本题主要考查的是判断一个事件是否是随机事件，先要懂得随机事件的概念，再根据具体的事件判断是否是随机事件。随机事件的可能性大小有大有小，可以用概率来度量随机事件可能性的大小。本题选B选项的同学比较多，从侧面反映对于一元二次方程判定是否有实数解这一知识点的掌握还需要进一步加强。本题要求学生用学过的数学知识来判断随机事件，选项A、B为代数背景下随机事件的判定，选项C、D为几何背景下的随机事件的判定，学生需要真正懂得随机事件概念为在一定条件下可能出现也可能不出现的现象，它发生的概率在0-1之间。
+
+在概率统计的教学中，对于抽象的概念学习过程中，让学生可以结合概率与现实生活的密切联系，获得事件发生概率的感性认识，以此懂得随机事件的概念；同时学生对于学习概率知识，面临着认知对象、数学观念、思考方法等改变，有一个逐步适应于了解的过程，必须适当降低认知起点，严格控制内容难度。
+
+
+\begin{landscape}
+
+\section{调用（Employing）}
+
+`r tab_name <- "学生在数学学科“调用”过程分量上的平均得分率（％）" `
+
+\begin{itshape}
+\mytable
+\begin{longtable}{|c|c|p{7.5cm}|c|c|c|c|c|c|c|c|c|c|c|c|}
+\caption{`r tab_name`} \label{tab: `r tab_name`} \\ \hline
+
+\makecell[c]{内容\\维度} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
+
+\multirow{2}{*}{\makecell[c]{数\\与\\代数}} & M8AO05111 & 懂得用科学记数法表示一个数，在实际问题中将一个数表示为科学记数法形式的过程中检测运算求解和数学表达能力的表现 &
+`r gio.R$VarScoSamKey(query.data, "M8AO05111_X", "上海市","总体","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO05111_X", "上海市","公办","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO05111_X", "上海市","民办","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO05111_X", "上海市","初中","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO05111_X", "上海市","九年一贯","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO05111_X", "上海市","完中","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO05111_X", "上海市","新优质","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO05111_X", "上海市","强校工程","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO05111_X", "上海市","男","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO05111_X", "上海市","女","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO05111_X", "上海市","沪籍","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO05111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+ & M8AS192111 & 掌握简单分式方程的解法分式方程，在一个分式方程的求解过程中检测运算求解和数学表达能力的表现 &
+ `r gio.R$VarScoSamKey(query.data, "M8AS19211_X", "上海市","总体","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AS19211_X", "上海市","公办","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AS19211_X", "上海市","民办","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AS19211_X", "上海市","初中","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AS19211_X", "上海市","九年一贯","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AS19211_X", "上海市","完中","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AS19211_X", "上海市","新优质","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AS19211_X", "上海市","强校工程","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AS19211_X", "上海市","男","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AS19211_X", "上海市","女","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AS19211_X", "上海市","沪籍","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AS19211_X", "上海市","非沪籍","总体")` \\ \cline{1-15}
+
+\multirow{5}{*}{\makecell[c]{图形\\与\\几何}} & M8AO14111 & 掌握平行四边形性质，在平行四边形内角度数的求解过程中检测运算求解、推理论证、空间想象能力的表现 &
+  `r gio.R$VarScoSamKey(query.data, "M8AO14111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO14111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO14111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO14111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO14111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO14111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO14111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO14111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO14111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO14111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO14111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO14111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+ & M8AO15111 & 掌握等腰三角形的判定，在判断一个三角形是否是等腰三角形的过程中检测推理论证、空间想象和数学表达能力的表现 &
+  `r gio.R$VarScoSamKey(query.data, "M8AO15111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO15111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO15111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO15111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO15111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO15111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO15111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO15111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO15111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO15111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO15111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO15111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+ & M8AO16111 & 掌握平行线的性质，在实际问题中求平行线形成角的度数的过程中检测推理论证和空间想象能力的表现 &
+  `r gio.R$VarScoSamKey(query.data, "M8AO16111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO16111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO16111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO16111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO16111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO16111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO16111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO16111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO16111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO16111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO16111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO16111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & M8AO17111 & 懂得向量的加减法的三角形法则，在三角形中用两个向量表示第三个向量的过程中检测运算求解、推理论证、空间想象和数学表达能力的表现 &
+  `r gio.R$VarScoSamKey(query.data, "M8AO17111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO17111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO17111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO17111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO17111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO17111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO17111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO17111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO17111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO17111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO17111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO17111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+ & M8AS22111 & 掌握角平分线的作法，在用尺规作一个角的角平分线的过程中检测推理论证和空间想象能力的表现 &
+  `r gio.R$VarScoSamKey(query.data, "M8AS22111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS22111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS22111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS22111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS22111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS22111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS22111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS22111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS22111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS22111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS22111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS22111_X", "上海市","非沪籍","总体")` \\ \cline{1-15}
+
+\multirow{6}{*}{\makecell[c]{函数\\与\\概率\\统计\\初步}}  & M8AO09111 & 掌握正比例函数中求点的坐标，在求正比例函数图像上点的过程中检测运算求解和数学表达能力的表现 &
+  `r gio.R$VarScoSamKey(query.data, "M8AO09111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO09111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO09111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO09111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO09111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO09111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO09111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO09111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO09111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO09111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO09111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO09111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+ & M8AO10111 & 掌握反比例函数图像的性质（增减性），在求反比例函数图像的位置的过程中检测运算求解和数学表达能力的表现 &
+  `r gio.R$VarScoSamKey(query.data, "M8AO10111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO10111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO10111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO10111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO10111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO10111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO10111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO10111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO10111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO10111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO10111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO10111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+ & M8AO12111 & 懂得简单的等可能事件的概率的求法，在摸球事件“摸到白球”概率的求解过程中检测推理论、空间想象、数学表达、数据处理能力的表现 &
+  `r gio.R$VarScoSamKey(query.data, "M8AO12111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO12111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO12111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO12111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO12111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO12111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO12111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO12111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO12111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO12111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO12111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO12111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+ & M8AO18111 & 分析统计图表（扇形图）中数据分布或变化趋势的信息，在与社会热点相联系的实际问题中获取信息的过程中检测运算求解、推理论证和数据处理能力的表现 &
+  `r gio.R$VarScoSamKey(query.data, "M8AO18111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO18111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO18111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO18111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO18111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO18111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO18111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO18111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO18111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO18111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO18111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AO18111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+ & M8AS20111 & 会用待定系数法确定求一次函数、反比例函数解析式，在一次函数与反比例函数相结合的简单综合题求解的过程中检测运算求解、空间想象和数学表达能力的表现 &
+  `r gio.R$VarScoSamKey(query.data, "M8AS20111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS20111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS20111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS20111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS20111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS20111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS20111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS20111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS20111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS20111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS20111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS20111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+ & M8AS20211 & 掌握坐标平面内一次函数${y=kx+b}$中的截距b之间的关系，在求一次函数图像与x、y轴组成的面积的过程中检测运算求解和数学表达能力的检测 &
+  `r gio.R$VarScoSamKey(query.data, "M8AS20211_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS20211_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS20211_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS20211_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS20211_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS20211_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS20211_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS20211_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS20211_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS20211_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS20211_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS20211_X", "上海市","非沪籍","总体")` \\ \cline{1-15}
+
+\end{longtable}
+\end{itshape}
+
+\mytext
+下面将结合“调用”部分的典型题目做具体分析。
+
+\end{landscape}
+
+\questiontitle{典型题目4：M8AO10111}
+
+已知反比例函数 ${\displaystyle y=\frac{m}{x}}$（m是常数），如果$m>0$，那么它的图像位于
+
+\begin{table}[H]
+\begin{tabularx}{\textwidth}{p{0.5cm}XXXX}		
+& A．第一、二象限； & B．第一、三象限； & C．第二、三象限；& D．第二、四象限． \\
+\end{tabularx}
+\end{table}
+
+
+- 考查内容：函数与概率统计初步
+- 思维层次：知识建构
+- 能力维度：本题考查的过程为“调用”；该过程中运用到的主要方法为 “运算求解”和“数学表达”
+- 试题描述：掌握反比例函数图像的性质（增减性），在求反比例函数图像的位置的过程中检测运算求解和数学表达能力的表现
+- 正确答案：B
+- 本题满分：3分
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "M8AO10111_X", "上海市","总体","总体")`%
+
+plot.bar.city.ma.question.m8ao10111
+
+- 答错原因分析及教学建议：
+
+本题考查的是反比例函数的基本性质，即知道当反比例函数的比例系数大于0时，反比例函数图像的两支分支在第一、三象限内 。本题的错误反映出部分学生（尤其是选择选项A与选项C的学生）对反比例函数图像特征缺乏的基本认识。建议在教学中可通过让学生自己动手用“描点法”画函数图像与用计算机进行动画演示相结合的方法，让学生体会反比例函数的比例系数的取值对反比例函数图像的影响，加深学生对反比例函数图像性质的理解。
+
+\questiontitle{典型题目5：M8AO15111}
+
+\begin{wrapfigure}{r}{0.28\textwidth}
+  \begin{center}
+    \includegraphics[width=0.25\textwidth]{ma_M8AO15111.png}
+  \end{center}
+\end{wrapfigure}
+
+如图，已知AH是$\triangle{ABC}$的边BC上的高，增加一个条件能判断$\triangle{ABC}$是等腰三角形。增加的这个条件是
+
+\begin{table}[H]
+\begin{tabularx}{0.7\textwidth}{XX}		
+A．$\angle{BAH}=\angle{CAH}$； & B．$\angle{ABC}=\angle{CAH}$ \\
+C．$\angle{BAC}=90\degree$；& D．$\angle{ABC}=45\degree$ \\
+\end{tabularx}
+\end{table}
+
+- 考查内容：图形与几何
+- 思维层次：知识建构
+- 能力维度：本题考查的过程为“调用”；该过程中运用到的主要方法为 “推理论证”和“空间想象”
+- 试题描述：掌握平行线的性质，在实际问题中求平行线形成角的度数的过程中检测推理论证和空间想象能力的表现
+- 正确答案：A
+- 本题满分：3分
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "M8AO15111_X", "上海市","总体","总体")`%
+
+plot.bar.city.ma.question.m8ao15111
+
+- 答错原因分析及教学建议：
+
+首先应该明确判定一个三角形是等腰三角形的方法，其次判断选项中哪个条件可以获得判定的条件，切忌因为是选择题就想当然，不经过逻辑分析和推理。平面几何的知识内容，逻辑联系紧密，演绎成一个严整的体系，三角形的基本内容具有奠定性意义，其中全等三角形的性质和判定，等腰三角形的性质和判定，是建立平面几何定理系统的基础性定理，占有重要地位。建议在教学中，应关注学生对基础知识的理解和运用，以及对逻辑推理方法的实践和体会。
+
+\questiontitle{典型题目6：M8AO16111}
+
+
+\begin{wrapfigure}{r}{0.38\textwidth}
+  \begin{center}
+    \includegraphics[width=0.35\textwidth]{ma_M8AO16111.png}
+  \end{center}
+\end{wrapfigure}
+
+如图，直线${a \varparallel b}$，如果把一块三角板的直角顶点放在直线a上，且${\angle{1}=40\degree}$，那么$\angle{2}$等于
+
+\begin{table}[H]
+\begin{tabularx}{0.6\textwidth}{XX}		
+ A．$40\degree$； & B．$45\degree$ \\
+ C．$50\degree$；& D．$60\degree$ \\
+\end{tabularx}
+\end{table}
+
+- 考查内容：图形与几何
+- 思维层次：知识建构
+- 能力维度：本题考查的过程为“调用”；该过程中运用到的主要方法为 “运算求解”、“推理论证”和“空间想象”
+- 试题描述：掌握平行线的性质，在实际问题中求平行线形成角的度数的过程中检测推理论证和空间想象能力的表现
+- 正确答案：C
+- 本题满分：3分
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "M8AO16111_X", "上海市","总体","总体")`%
+
+plot.bar.city.ma.question.m8ao16111
+
+- 答错原因分析及教学建议：
+
+首先应该明确未知角$\angle{2}$与已知角$\angle{1}$之间的位置关系，其次将位置关系转化为数量关系求出角的度数。而学生选择“A”最大的可能性是直观地从所给的示意图中错误地感觉这两个角是内错角关系，建议在教学中努力摒除“直观”造成的“错觉”，基于逻辑推理开展几何计算。在教学中对于一些比较常见的基本图形也需要进行准确辨析与合理应用。
+
+\questiontitle{典型题目7：M8AO18111}
+
+
+
+2018年，某机构对50个国家的信息化发展潜力进行测评，并将测评结果分为“高水平”、“较高水平”、“中等水平”、“较低水平”和“低水平”五种层次．这50个国家的信息化发展潜力层次分布如图所示，其中有3个国家处于“高水平”层次。
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{ma_M8AO18111.png}
+  \end{center}
+\end{wrapfigure}
+
+根据这个扇形统计图可知，信息化发展潜力为“中等水平”层次的国家个数为
+
+A．8个；
+
+B．18个；
+
+C．20个；
+
+D．24个．
+
+- 考查内容：函数与概率统计初步
+- 思维层次：知识建构
+- 能力维度：本题考查的过程为“调用”，该过程中运用的主要方法为“运算求解”“推理论证”和“数据处理”．
+- 试题描述：分析统计图表（扇形图）中数据分布或变化趋势的信息，在与社会热点相联系的实际问题中获取信息的过程中检测运算求解、推理论证和数据处理能力的表现
+- 正确答案：C
+- 本题满分：3分
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "M8AO18111_X", "上海市","总体","总体")`%
+
+plot.bar.city.ma.question.m8ao18111
+
+- 答错原因分析及教学建议：
+
+本题主要考查的是获取统计图表中数据分布或变化趋势等信息的过程中数据处理能力的表现，学生需要从扇形统计图获取数据进行计算过程中的数据处理、推理能力的表现。本题选D选项的同学比较多，学生求的国家个数为“高水平”和“中等水平”层次的国家个数，与题意混淆，说明学生对于图表与文字阅读相结合的能力还需要加强。
+
+在“统计”教学中应注意以下几点：
+
+1、重视培养学生的统计意识和信息处理能力。要关注学生对信息的获取、整理、分析、判断，从简单的条形图、折线图、扇形图到同时反映几组数据的条形图、折线图，逐步提高识图能力和从图表中获取信息的能力；要关注学生整理和分析数据、构造表格和画出相应统计图的能力；要关注学生对各种统计量的计算、解释和应用的能力。
+
+2、关注学生对统计的重要概念和基本方法的掌握。引导学生正确理解概念，学会统计的基本方法。在读取数据信息，挑选适当的数据分析工具，对统计结果的解释、交流的过程中，体会统计与现实生活的密切联系，增强学生统计分析意识。
+
+\questiontitle{典型题目8：M8AS19211(本题第二小题)}
+
+已知下列方程：<1> ${\displaystyle \frac{2x-5}{4}=2}$；    <2> ${\displaystyle \frac{4}{x-3}=\frac{1}{3-x}+1}$；
+
+（1）其中分式方程是_______（填序号）；
+
+（2）请解（1）中你所选择的方程．
+
+- 考查内容：数与代数
+- 思维层次：知识建构
+- 能力维度：本题考查的过程为“调用”，该过程中运用到的主要方法为“运算求解”、和“数学表达”
+- 试题描述：掌握简单分式方程的解法，在一个分式方程的求解过程中检测运算求解和数学表达能力的表现
+- 正确答案：
+
+解：去分母，得${4=x-3-1}$；
+
+\qquad 解得 ${x=8}$ ；
+
+\qquad 经检验，${x=8}$ 是原方程的解；
+
+\qquad $\therefore$ 原方程的解是 ${x=8}$ 。
+
+- 本题满分： 4分
+
+【说明】如果解方程<1>，解答正确得2分.
+
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "M8AO18111_X", "上海市","总体","总体")`%
+
+plot.bar.city.ma.question.m8as19211
+
+- 错因分析与教学建议：
+
+本题主要考查分式方程的解法，需要学生掌握解分式方程的基本方法，理解分式方程增根产生的原因，会检验根的合理性。得2分的学生中部分学生是因为错选了整式方程，但是正确求解了错选的方程，部分学生选对了分式方程，但是求解出错，但能正确去分母化简到整式方程，部分得3分的学生是没有进行检验或检验错误。
+
+建议在分式方程的解法的教学中，要让学生体会为什么要将分式方程转化为整式方程？如何将分式方程转化为整式方程？其每一步的依据是什么？解后为什么要检验？如何检验？有几种检验的方法？对于分式方程解法的教学需要有两个层次，第一层次是学会分式方程的解法步骤，第二层次是理解各运算步骤的依据。让学生达到第二层次是教学成功的关键。在探究分式方程解法时要强调分式方程与分式加减运算之间的区别与联系、分式方程与整式方程之间的区别与联系，这样可以降低学生学习的难度。学生在解分式方程时，最容易犯的错误之一是去分母时发生漏乘，这种现象的本质是学生没有正确理解运算原理——等式性质，所以强调运算依据就显得尤为重要。
+
+\questiontitle{典型题目9：M8AS20111和M8AS20211}
+
+在平面直角坐标系$xOy$中（如图），一次函数$y=ax+1$的图像与x轴、y轴分别相交于点A（2，0）、点B，这个一次函数图像与反比例函数$\displaystyle y=\frac{k}{x}$图像在第二象限内的交点为C（-2，m）。
+
+\begin{wrapfigure}{r}{0.4\textwidth}
+  \begin{center}
+    \includegraphics[width=0.35\textwidth]{ma_M8AS20111.png}
+  \end{center}
+\end{wrapfigure}
+
+（1）求这个一次函数与反比例函数的解析式；
+
+（2）求$\triangle{BOC}$的面积。
+
+- 考查内容：函数与概率统计初步
+- 思维层次：知识建构
+- 能力维度：本题考查的过程为“调用”，该过程中运用的主要方法为“运算求解”、“空间想象”和“数学表达”
+- 试题描述：会用待定系数法确定求一次函数、反比例函数解析式，在一次函数与反比例函数相结合的简单综合题求解的过程中检测运算求解、空间想象和数学表达能力的表现
+- 正确答案：
+
+解：把A（2，0）代入$y=ax+1$，
+
+\qquad 得${\displaystyle {a=-\frac{1}{2}}}$
+
+\qquad $\therefore$ 一次函数的解析式为${\displaystyle {y=-\frac{1}{2}x+1}}$
+
+\qquad 把点C（-2，m）代入${y=ax+1}$，
+
+\qquad 得$m=2$. $\therefore$ 点C（-2，2）
+
+\qquad 把点C（-2，2）代入${\displaystyle y=\frac{k}{x}}$，
+
+\qquad 得${k=-4}$
+
+\qquad $\therefore$ 反比例函数的解析式${\displaystyle y=-\frac{4}{x}}$
+
+- 本题满分：5分
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "M8AS20111_X", "上海市","总体","总体")`%
+
+plot.bar.city.ma.question.m8as20111
+
+- 答错原因分析及教学建议：
+
+本题主要考查用待定系数法确定求一次函数、反比例函数解析式，理解图像上的点与图像所表示的解析式之间的关系。学生主要存在问题是对待定系数法确定函数解析式还有一定困难，解决函数问题还缺少数形结合的意识。待定系数法是初中阶段求函数解析式中常用的一种方法，它在本质上是方程思想。在教学中要求学生明确确定一个一次函数需要两个条件，确定一个反比例函数需要一个条件，同时理解有点确定函数解析式是一个由形到数的过程。函数的三种表示方法：解析法、列表法、图像法本身就体现着函数的“数形结合”。数形结合的思想方法在初中函数教学中非常重要，它可以通过数与形之间的对应和转化来解决数学问题。
+
+部分学生把一次函数和反比例的函数的解析式写错，导致有代入意识也不能正确解答，部分学生能正确写出两个函数的解析式，且能代入计算，但代入计算有误，部分学生不理解题意，不知道点C既是一次函数图像上的点又是反比例函数图像上的点，导致求不出点C坐标，还有部分学生对于函数的综合题没有习惯画图，自主画图的意识不强。在今后的函数学习中，要养成画图的习惯，教师平时的教学中更需要强化学生自主画图的意识，真正意义上理解数形结合。
+
+（2）求$\triangle{BOC}$的面积。
+
+- 考查内容：函数与概率统计初步
+- 思维层次：知识建构
+- 能力维度：本题考查的过程为“调用”，该过程中运用的主要方法为“运算求解”和“数学表达”
+- 试题描述：掌握坐标平面内一次函数 中的截距 的意义，在求一次函数图像与 、 轴组成的面积的过程中检测运算求解和数学表达能力的检测
+- 正确答案：
+
+解：把$x=0$代入${\displaystyle {y=-\frac{1}{2}x+1}}$，
+
+\qquad 得$y=1$，
+
+\qquad $\therefore$ 点B（0，1）
+
+\qquad $\therefore {\displaystyle {S_{\triangle{BOC}}=\frac{1}{2}\times{1}\times{2}=1}}$
+
+- 本题满分： 2分
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "M8AS20211_X", "上海市","总体","总体")`%
+
+plot.bar.city.ma.question.m8as20211
+
+- 答错原因分析及教学建议：  
+
+本题零分率明显偏高，部分学生得0分是因为第一小题解析式计算错误导致第二小题不得分，部分学生是不理解点B在一次函数图像上，得1分的学生是计算错误三角形的面积或者对面积计算中三角形的底和高计算有误。
+
+本题是第2小题，零分率高是因为与第1小题之间有关联，由此反思命题时需要考虑两个问题之间的关联性，尽可能减少因为前面的错误导致后面学生掌握的知识也不得分。本题还属于函数与几何图形相结合的问题，函数与几何是初中阶段数学学习的重点，虽然本题只涉及的是计算三角形的面积，但也需要学生理解点的坐标与垂线段的长度之间的关系，经历从点到线到图形的过程。
+
+
+\questiontitle{典型题目10：M8AS22111}
+
+如图，在$\triangle{ABC}$中，$\angle{C}=90\degree$，$AC=BC$
+
+（1）作$\angle{ABC}$的平分线BD交边AC于点D；（用尺规作图，保留作图痕迹，不要求写作法）
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.35\textwidth]{ma_M8AS22111.png}
+  \end{center}
+\end{figure}
+
+- 考查内容：图形与几何
+- 能力维度：本题考查的过程为“调用”，该过程中运用的主要方法为“推理论证”和“空间想象”．
+- 试题描述：掌握角平分线的作法，在用尺规作一个角的角平分线的过程中检测推理论证和空间想象能力的表现
+- 本题满分：满分3分
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "M8AS22111_X", "上海市","总体","总体")`%
+- 学生作答情况：
+
+在本次阅卷中，对学生的作答类型进行了归类分析，具体代码含义如下：
+
+\begin{itshape}
+\mytable
+\begin{longtable}{|c|p{14cm}|}
+\hline
+代码 &	含义 \\ \hline
+0.00 & 作图有明显错误 \\ \hline
+0.90 & 空白，无作答痕迹 \\ \hline
+1.10 & 只作出角平分线（射线），无作图痕迹，未标注D点 \\ \hline
+1.20 & 将角平分线作成直线，无作图痕迹，标注D点或作$\angle{C}$、$\angle{A}$的角平分线，标注点D \\ \hline
+2.10 & 只作出角平分线（射线）。无作图痕迹，标注D点或有作图痕迹，未标注D点 \\ \hline
+2.20 & 将角平分线作成直线，有作图痕迹，标注D点 \\ \hline
+3.00 & 正确作出角平分线（射线），有作图痕迹，标注D点 \\ \hline
+\multicolumn{2}{|c|}{说明：能正确用语言表示结论等价于标注了点D} \\ \hline
+
+\end{longtable}
+\end{itshape}
+
+plot.bar.city.ma.question.m8as22111
+
+- 答错原因分析及教学建议：
+
+本题要求学生用直尺和圆规准确作出角平分线，保留作图过程中的痕迹，然后根据题意找到角平分线和边AC的交点D。在作图上学生主要存在以下缺陷：
+
+（1）审题不清，将∠ABC看作∠BAC或∠BCA；
+
+（2）没有使用圆规作图，无作图痕迹，凭借对角分线定义的理解，以直觉估计角的大小画出角平线；
+
+（3）尺规作图的能力较差，不能正确地使用圆规作图，所作图形偏差较大；（4）使用圆规作图，但是没有在图上准确标识点D的位置；
+
+（5）使用圆规作图，将角平分线化成了直线，且没有在结论中说明角平分线是射线。
+
+从学生的错误情况可以看出，学生的几何作图能力相当薄弱，要在今后的教学中引起足够的重视。
+
+（1）要正确认识作图的意义，会规范使用直尺和圆规等常用作图工具，知道作图基本原理，注重作图的严谨性。比如图中的线条要注意主辅有别，主线条用清晰的实线，辅线条要画轻淡些或用虚线；
+
+（2）重视学生作图能力的培养，夯实尺规作图。几何作图是学生读懂题意后把几何语句变换成直观图形的操作过程。在教学中，对教材中涉及的每项基本作图，可以先启发学生分析，探讨作图方案，然后从几何证明的角度验证尺规作图的正确性，从而进一步加深学生对作图过程的理解。
+
+
+\begin{landscape}
+
+\section{反思（Reflecting）}
+
+`r tab_name <- "学生在数学学科“反思”过程分量上的平均得分率（％）" `
+
+\begin{itshape}
+\mytable
+\begin{longtable}{|c|c|p{7.5cm}|c|c|c|c|c|c|c|c|c|c|c|c|}
+\caption{`r tab_name`} \label{tab: `r tab_name`} \\ \hline
+
+\makecell[c]{内容\\维度} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
+
+\multirow{2}{*}{\makecell[c]{数\\与\\代数}} & M8AO04111 & 掌握用估算方法对实数的运算结果进行，在对一个二次根式估算的过程中检测运算求解和推理论证能力的表现 &
+`r gio.R$VarScoSamKey(query.data, "M8AO04111_X", "上海市","总体","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO04111_X", "上海市","公办","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO04111_X", "上海市","民办","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO04111_X", "上海市","初中","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO04111_X", "上海市","九年一贯","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO04111_X", "上海市","完中","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO04111_X", "上海市","新优质","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO04111_X", "上海市","强校工程","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO04111_X", "上海市","男","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO04111_X", "上海市","女","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO04111_X", "上海市","沪籍","总体")` &
+`r gio.R$VarScoSamKey(query.data, "M8AO04111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+ & M8AS191111 & 懂得分式方程的概念，在判断两个方程哪个是分式方程的过程中检测运算求解和数学表达能力的表现 &
+ `r gio.R$VarScoSamKey(query.data, "M8AS19111_X", "上海市","总体","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AS19111_X", "上海市","公办","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AS19111_X", "上海市","民办","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AS19111_X", "上海市","初中","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AS19111_X", "上海市","九年一贯","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AS19111_X", "上海市","完中","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AS19111_X", "上海市","新优质","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AS19111_X", "上海市","强校工程","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AS19111_X", "上海市","男","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AS19111_X", "上海市","女","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AS19111_X", "上海市","沪籍","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "M8AS19111_X", "上海市","非沪籍","总体")` \\ \cline{1-15}
+
+\multirow{2}{*}{\makecell[c]{图形\\与\\几何}} & M8AS22211 & 会用勾股定理及其逆定理进行推理或计算、会用三角形全等的判定或性质解决简单的几何问题，在综合应用简单几何问题的过程中检测运算求解、推理论证、空间想象和数学表达能力的表现 &
+  `r gio.R$VarScoSamKey(query.data, "M8AS22211_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS22211_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS22211_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS22211_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS22211_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS22211_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS22211_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS22211_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS22211_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS22211_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS22211_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS22211_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+ & M8AS23111 & 会用菱形的判定定理以及三角形中位线定理解决简单的几何问题，在几何证明的过程中检测推理论证、空间想象和数学表达能力的表现 &
+  `r gio.R$VarScoSamKey(query.data, "M8AS23111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS23111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS23111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS23111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS23111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS23111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS23111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS23111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS23111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS23111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS23111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "M8AS23111_X", "上海市","非沪籍","总体")` \\ \cline{1-15}
+
+\end{longtable}
+\end{itshape}
+
+\mytext
+下面将结合“反思”部分的典型题目做具体分析。
+
+\end{landscape}
+
+
+
+<!-- end of chapter topic -->

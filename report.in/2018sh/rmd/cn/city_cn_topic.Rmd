@@ -17,7 +17,7 @@ query.data.city.cn.pointrate.perspective
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\
 
 \hline
-\multicolumn{2}{|c|}{测试能力} & 题目代码 & \makecell[c]{能力描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\
+\multicolumn{2}{|c|}{测试能力} & 题目编码 & \makecell[c]{能力描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\
 \hline
 
 \multirow{11}{*}{\makecell[c]{积\\累\\与\\运\\用}} & \multirow{3}{*}{\makecell[c]{识记常用字的\\字音}} & C8AO01111 & 辨析形近字的字音 &
@@ -269,7 +269,8 @@ plot.bar.city.cn.question.c8ao01111
 
 \end{itshape}
 
-答错原因分析及教学建议：
+- 答错原因分析及教学建议：
+
 这道题目考查的是学生读准形近字的字音的能力，正确选项为“B”。A和D选项属于声母和韵母都不相同的形近字，C选项属于声母不同的形近字。选择错误选项的主要原因在于未能充分利用形声字的知识来分辨形近字，与不明“字理”有关。
 
 \clearpage
@@ -297,7 +298,8 @@ plot.bar.city.cn.question.c8ao09111
 在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarScoSamKey(query.data, "C8AO09111_X", "上海市","总体","A")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO09111_X", "上海市","总体","B")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO09111_X", "上海市","总体","C")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO09111_X", "上海市","总体","D")`\%。
 \end{itshape}
 
-答错原因分析及教学建议：
+- 答错原因分析及教学建议：
+
 这道题目考查的是学生理解常用成语的基本意思，并在具体的语境中恰当运用的能力，正确选项为“A”。选择错误选项的原因主要是不能理解常用成语的基本意思，也不能在具体的语境中正确把握上下句之间的语义关联。
 
 \clearpage
@@ -323,7 +325,8 @@ plot.bar.city.cn.question.c8ao11111
 在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarScoSamKey(query.data, "C8AO11111_X", "上海市","总体","A")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO11111_X", "上海市","总体","B")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO11111_X", "上海市","总体","C")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO11111_X", "上海市","总体","D")`\%。
 \end{itshape}
 
-答错原因分析及教学建议：
+- 答错原因分析及教学建议：
+
 这道题目考查是学生根据具体语境恰当地使用关联词的能力，正确选项为“D”。选择错误项的主要原因是未能在具体语境中准确理解上下句的语义联系。
 
 \clearpage
@@ -339,7 +342,7 @@ plot.bar.city.cn.question.c8ao11111
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\
 
 \hline
-测试能力 & 题目代码 & \makecell[c]{能力描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\
+测试能力 & 题目编码 & \makecell[c]{能力描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\
 \hline
 
 
@@ -623,7 +626,8 @@ plot.bar.city.cn.question.c8ao16111
 在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarScoSamKey(query.data, "C8AO16111_X", "上海市","总体","A")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO16111_X", "上海市","总体","B")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO16111_X", "上海市","总体","C")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO16111_X", "上海市","总体","D")`\%。
 \end{itshape}
 
-答错原因分析及教学建议：
+- 答错原因分析及教学建议：
+
 这道题目考查的是学生在具体语境中理解文言词语的能力， 正确选项为“D”。选择错误项的主要原因在于未能根据语境中前后文的语义，理解文言实词的真正含义和用法；或机械记忆；或胡乱解释。
 
 \questiontitle{典型题目5：C8AO18111}
@@ -649,7 +653,8 @@ plot.bar.city.cn.question.c8ao18111
 \end{itshape}
 
 \mytext
-答错原因分析及教学建议：
+- 答错原因分析及教学建议：
+
 这道题目考查的是学生在具体语境中理解文言句子的能力， 满分2分。正确选项为“B”。需要正确理解句中主要实词（如“径”“犬”）并要符合现代汉语的语法规范。选错的原因主要有二：对文言词语表意的细微之处理解不准确；能理解词语的本义，但是不能在语境中准确翻译使句子的语义准确、通顺。
 
 
@@ -732,7 +737,8 @@ plot.bar.city.cn.question.c8ao24111
 在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarScoSamKey(query.data, "C8AO24111_X", "上海市","总体","A")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO24111_X", "上海市","总体","B")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO24111_X", "上海市","总体","C")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO24111_X", "上海市","总体","D")`\%。
 \end{itshape}
 
-答错原因分析及教学建议 ：
+- 答错原因分析及教学建议 ：
+
 这道题目考查学生“推断文本中的隐含信息”的能力。本题为选择题，满分3分。需在整体把握文章内容的基础上，推断几个材料中叙述与描写的作用，并根据题干要求加以准确筛选。
 
 \questiontitle{典型题目7： C8AO25111}
@@ -757,7 +763,8 @@ plot.bar.city.cn.question.c8ao25111
 在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarScoSamKey(query.data, "C8AO25111_X", "上海市","总体","A")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO25111_X", "上海市","总体","B")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO25111_X", "上海市","总体","C")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO25111_X", "上海市","总体","D")`\%。
 \end{itshape}
 
-答错原因分析及教学建议 ：
+- 答错原因分析及教学建议 ：
+
 这道题目考查学生“分析词语的作用”的能力。本题为选择题，满分3分。需在语境中分析、思考词语的含义与表达作用，要将特定词语出现前后的材料加以整合思考，理解不同对象在同一事件中表现出的不同态度。
 
 
@@ -783,10 +790,9 @@ plot.bar.city.cn.question.c8ao26111
 在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarScoSamKey(query.data, "C8AO26111_X", "上海市","总体","A")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO26111_X", "上海市","总体","B")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO26111_X", "上海市","总体","C")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO26111_X", "上海市","总体","D")`\%。
 \end{itshape}
 
-答错原因分析及教学建议
+- 答错原因分析及教学建议
+
 这道题目考查学生“分析段落的作用”的能力。本题为选择题，满分3分。需在整体把握文章主旨的前提下，通过细读描写、议论的关键句，辨析不同材料在文章中表达侧重的差异。
-
-
 
 \questiontitle{典型题目9：C8AO27111}
 
@@ -810,7 +816,8 @@ plot.bar.city.cn.question.c8ao27111
 在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarScoSamKey(query.data, "C8AO27111_X", "上海市","总体","A")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO27111_X", "上海市","总体","B")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO27111_X", "上海市","总体","C")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO27111_X", "上海市","总体","D")`\%。
 \end{itshape}
 
-答错原因分析及教学建议 ：
+- 答错原因分析及教学建议 ：
+
 这道题目考查学生“梳理段落之间的关系，分析文章的思路”的能力。本题为选择题，满分4分。需完整阅读文章，梳理作者行文思路。细读甲乙丙丁四处，判断其所在段落与前后段落之间的关系。根据内容连贯、富有逻辑性的原则将该句填至恰当处。
 
 
@@ -836,7 +843,8 @@ plot.bar.city.cn.question.c8ao28111
 在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarScoSamKey(query.data, "C8AO28111_X", "上海市","总体","A")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO28111_X", "上海市","总体","B")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO28111_X", "上海市","总体","C")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO28111_X", "上海市","总体","D")`\%。
 \end{itshape}
 
-答错原因分析及教学建议 ：
+- 答错原因分析及教学建议 ：
+
 这道题目考查学生“概括文章的中心”的能力。本题为选择题，满分4分。需通过阅读文中几个材料、提取议论句中所包含的显性信息等路径，准确概括文章的主旨，再与选项中的名言逐一加以比较、辨析，选择其中最为接近的一项。
 
 
@@ -851,7 +859,7 @@ plot.bar.city.cn.question.c8ao28111
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\
 
 \hline
-测试能力 & 题目代码 & \makecell[c]{能力描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\
+测试能力 & 题目编码 & \makecell[c]{能力描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\
 \hline
 
 

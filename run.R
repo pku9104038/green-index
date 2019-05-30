@@ -55,14 +55,14 @@ gio.scheduler$EchoInfo("Start!")
 # gio.statistics$StatisticsScore()  # 成绩统计
 # gio.scoreconverge$ScoreConverge() # 成绩综合（在统计的基础上再次合并统计）
 
-# gio.scheduler$Indexation(TRUE)
+# gio.scheduler$Indexation(FALSE)
 
 # gio.converge$ConvergeTable()
 
-# gio.scheduler$Report(TRUE)
+gio.scheduler$Report(TRUE)
 
 # gio.scheduler$TestQueryData(TRUE)
 
-gio.scheduler$TestPlotFigure(TRUE)
+# gio.scheduler$TestPlotFigure(TRUE)
 
 gio.scheduler$EchoInfo("Stop!")

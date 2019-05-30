@@ -48,7 +48,7 @@ scorestat:
 
 
     -
-      TODO: FALSE
+      TODO: TRUE
       input:
         table: *kSubjectMA
         suffix: *kSuffixTransform

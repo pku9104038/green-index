@@ -1,0 +1,38 @@
+<!-- chapter total -->
+
+\mytext
+
+# 学生总体表现
+
+## 全体学生的总体表现
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.ma.rank.total.region")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.score.segment.ma.total")`}分别给出了上海市全体学生及不同区域学生在数学学科各水平上的人数比例和得分分布。
+
+plot.bar.city.ma.rank.total.region
+
+plot.bar.city.base.score.segment.ma.total
+
+
+## 不同群体学生的总体表现
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.ma.rank.total.perspective")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.city.ma.quantile.perspective")`}分别给出了上海市不同群体学生在数学学科各水平上的人数比例和得分分布。
+
+plot.bar.city.ma.rank.total.perspective
+
+plot.box.city.ma.quantile.perspective
+
+\mylist
+注：盒须图——5\%学生标准分小于等于须下限分数；25\%学生标准分小于等于盒底分数；50\%学生标准分大于等于盒中横线分数；25\%学生标准分大于等于盒顶分数；5\%学生标准分大于等于须上限分数；盒高度一定程度上反映了标准分分布的离散程度；红点为平均标准分。
+\mytext
+
+## 不同区学生的总体表现
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.score.rank.ma.total.district")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.city.base.score.quantile.ma.total.district")`}分别给出了上海市不同区学生在数学学科各水平上的人数比例和得分分布。
+
+plot.bar.city.base.score.rank.ma.total.district
+
+plot.box.city.base.score.quantile.ma.total.district
+
+
+
+<!-- end of chapter total -->

@@ -1,0 +1,120 @@
+<!-- chapter dimention -->
+
+\mytext
+
+# 学生在各内容维度和能力维度上的表现情况
+
+## 全体学生在各内容维度和能力维度上的表现
+
+### 全体学生在各内容维度上的表现
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.ma.content.dimention.rank")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.city.ma.content.dimention.quantile")`}分别给出了上海市学生在数学学科各内容维度各水平上的人数比例和得分分布。
+
+plot.bar.city.ma.content.dimention.rank
+plot.box.city.ma.content.dimention.quantile
+
+\mylist
+注：盒须图——5\%学生标准分小于等于须下限分数；25\%学生标准分小于等于盒底分数；50\%学生标准分大于等于盒中横线分数；25\%学生标准分大于等于盒顶分数；5\%学生标准分大于等于须上限分数；盒高度一定程度上反映了标准分分布的离散程度；红点为平均标准分。
+\mytext
+
+### 全体学生在各能力维度上的表现
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.ma.skill.dimention.rank")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.city.ma.skill.dimention.quantile")`}分别给出了上海市学生在数学学科各能力维度各水平上的人数比例和得分分布。
+
+plot.bar.city.ma.skill.dimention.rank
+plot.box.city.ma.skill.dimention.quantile
+
+
+## 不同群体学生在各内容维度的表现
+
+### 数与代数
+
+#### 不同群体学生的表现
+
+plot.bar.city.ma.algebra.rank.perspective
+plot.box.city.ma.algebra.quantile.perspective
+
+#### 不同区学生的表现
+
+plot.bar.city.ma.algebra.rank.district
+plot.box.city.ma.algebra.quantile.district
+
+### 图形与几何
+
+#### 不同群体学生的表现
+
+plot.bar.city.ma.geometric.rank.perspective
+plot.box.city.ma.geometric.quantile.perspective
+
+
+#### 不同区学生的表现
+
+plot.bar.city.ma.geometric.rank.district
+plot.box.city.ma.geometric.quantile.district
+
+## 函数与概率统计初步
+
+### 不同群体学生的表现
+
+plot.bar.city.ma.statistics.rank.perspective
+plot.box.city.ma.statistics.quantile.perspective
+
+### 不同区学生的表现
+
+plot.bar.city.ma.statistics.rank.district
+plot.box.city.ma.statistics.quantile.district
+
+
+## 不同群体学生在各能力维度的表现
+
+### 辨识
+
+#### 不同群体学生的表现
+
+plot.bar.city.ma.formulating.rank.perspective
+plot.box.city.ma.formulating.quantile.perspective
+
+
+#### 不同区学生的表现
+
+plot.bar.city.ma.formulating.rank.district
+plot.box.city.ma.formulating.quantile.district
+
+### 调用
+
+#### 不同群体学生的表现
+
+plot.bar.city.ma.employing.rank.perspective
+plot.box.city.ma.employing.quantile.perspective
+
+#### 不同区学生的表现
+
+plot.bar.city.ma.employing.rank.district
+plot.box.city.ma.employing.quantile.district
+
+## 反思
+
+### 不同群体学生的表现
+
+plot.bar.city.ma.reflecting.rank.perspective
+plot.box.city.ma.reflecting.quantile.perspective
+
+### 不同区学生的表现
+
+plot.bar.city.ma.reflecting.rank.district
+plot.box.city.ma.reflecting.quantile.district
+
+## 聚合
+
+### 不同群体学生的表现
+
+plot.bar.city.ma.polymerizing.rank.perspective
+plot.box.city.ma.polymerizing.quantile.perspective
+
+
+### 不同区学生的表现
+
+plot.bar.city.ma.polymerizing.rank.district
+plot.box.city.ma.polymerizing.quantile.district
+
+<!-- end of chapter dimention -->

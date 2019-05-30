@@ -9,12 +9,8 @@
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.cn.dimention.rank")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.city.cn.dimention.quantile")`}分别给出了上海市学生在语文学科各能力维度各水平上的人数比例和得分分布。
 
 plot.bar.city.cn.dimention.rank
-
 plot.box.city.cn.dimention.quantile
 
-\mylist
-注：盒须图——5\%学生标准分小于等于须下限分数；25\%学生标准分小于等于盒底分数；50\%学生标准分大于等于盒中横线分数；25\%学生标准分大于等于盒顶分数；5\%学生标准分大于等于须上限分数；盒高度一定程度上反映了标准分分布的离散程度；红点为平均标准分。
-\mytext
 
 ## 学生在各能力维度上的表现
 
@@ -23,66 +19,37 @@ plot.box.city.cn.dimention.quantile
 #### 不同群体学生的表现
 
 plot.bar.city.cn.jilei.rank.perspective
-
 plot.box.city.cn.jilei.quantile.perspective
 
 #### 不同区学生的表现
 
-
-图3-5 不同区（县）学生在“积累”各水平上的人数比例
-
-
-
-图3-6 不同学生在“积累”上的得分分布
-
-
+plot.bar.city.cn.jilei.rank.district
+plot.box.city.cn.jilei.quantile.district
 
 ### 阅读
 
 #### 不同群体学生的表现
 
-
-图3-7 不同群体学生在“阅读”各水平上的人数比例
-
-
-
-图3-8 不同群体学生在“阅读”上的得分分布
-
-
-
-
-
-
+plot.bar.city.cn.reading.rank.perspective
+plot.box.city.cn.reading.quantile.perspective
 
 
 #### 不同区学生的表现
 
 
-图3-9不同区学生在“阅读”各水平上的人数比例
-
-
-
-图3-10 不同区学生在“阅读”上的得分分布
-
-
-
+plot.bar.city.cn.reading.rank.district
+plot.box.city.cn.reading.quantile.district
 
 ## 写作
 
 ### 不同群体学生的表现
 
-图3-11 不同群体学生在“写作”各水平上的人数比例
-
-
-
-图3-12 不同群体学生在“写作”上的得分分布
+plot.bar.city.cn.writing.rank.perspective
+plot.box.city.cn.writing.quantile.perspective
 
 ### 不同区学生的表现
 
-图3-13 不同区学生在“写作”各水平上的人数比例
-
-
-
-图3-14不同区学生在“写作”上的得分分布
+plot.bar.city.cn.writing.rank.district
+plot.box.city.cn.writing.quantile.district
 
 <!-- end of chapter dimention -->

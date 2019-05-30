@@ -15,7 +15,7 @@ params:
   report: 2015
   dummy.fig: "dummy.jpg"
   conf: "conf"
-  
+
 ---
 <!-- global setting -->
 
@@ -76,7 +76,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \label{fig:`r fig_name1`}
 \end{figure}## 不同群体学生的总体表现`r fig_name <- "不同群体学生在数学学科各水平上的人数比例" `
 `r fig_name1 <- "不同群体学生在数学学科上的得分分布" `图\ref{fig:`r fig_name`}和图\ref{fig:`r fig_name1`}分别给出了上海市不同群体学生在数学学科各水平上的人数比例和得分分布。
- ```{r level.bar.province.perspective.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+```{r level.bar.province.perspective.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "level.bar.province.perspective.ma"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
@@ -95,7 +95,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \end{figure}\mylist注：盒须图——5\%学生得分小于等于须下限分数；25\%学生得分小于等于盒底分数；50\%学生得分大于等于盒中横线分数；25\%学生得分大于等于盒顶分数；5\%学生得分大于等于须上限分数；盒高度一定程度上反映了得分分布的离散程度；红点为平均分。
 \mytext
 ## 不同区学生的总体表现`r fig_name <- "不同区学生在数学学科各水平上的人数比例" `
-`r fig_name1 <- "不同区学生在数学学科上的得分分布" `图\ref{fig:`r fig_name`}和图\ref{fig:`r fig_name1`}分别给出了上海市不同区学生在数学学科各水平上的人数比例和得分分布。 
+`r fig_name1 <- "不同区学生在数学学科上的得分分布" `图\ref{fig:`r fig_name`}和图\ref{fig:`r fig_name1`}分别给出了上海市不同区学生在数学学科各水平上的人数比例和得分分布。
 ```{r level.bar.province.county.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "level.bar.province.county.ma"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
@@ -117,7 +117,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 
 ### 全体学生在各内容领域上的表现`r fig_name <- "学生在数学学科各内容领域各水平上的人数比例" `
 `r fig_name1 <- "学生在数学学科各内容领域上的得分分布" `图\ref{fig:`r fig_name`}和图\ref{fig:`r fig_name1`}分别给出了上海市学生在数学学科各内容领域各水平上的人数比例和得分分布。
- ```{r level.bar.province.domain.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+```{r level.bar.province.domain.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "level.bar.province.domain.ma"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
@@ -135,7 +135,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \label{fig:`r fig_name1`}
 \end{figure}### 全体学生在各能力维度上的表现`r fig_name <- "学生在数学学科各能力维度各水平上的人数比例" `
 `r fig_name1 <- "学生在数学学科各能力维度上的得分分布" `图\ref{fig:`r fig_name`}和图\ref{fig:`r fig_name1`}分别给出了上海市学生在数学学科各能力维度各水平上的人数比例和得分分布。
- ```{r level.bar.province.dimention.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
+```{r level.bar.province.dimention.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "level.bar.province.dimention.ma"
 fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
 ```
@@ -456,7 +456,7 @@ param.entry <- "dom.dim.answer.table.ma"
 answer.all <-  dataframe.table( report = report, param = report$param[[param.entry]])
 
 var.dimention <- "维度"
-var.variable <- "变量" 
+var.variable <- "变量"
 var.key <- "键"
 var.param <- "标注值"
 var.sample <- "统计样本"
@@ -474,115 +474,115 @@ answer <- answer.all[answer.all[,var.dimention]=="知识技能",]
 \hline
 \makecell[c]{内容\\领域} & \makecell[c]{具体内容} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{随迁\\子女\\民办} & \makecell[c]{普通\\小学} & \makecell[c]{一\\贯\\制} & \makecell[c]{市\\新\\优} & \makecell[c]{区\\新\\优} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
 
-\multirow{3}{*}{\makecell[c]{数与\\代数}} & \makecell[c]{常见的量} & M3AO031 & 能根据年、月、日的知识，区分大、小月 & 
+\multirow{3}{*}{\makecell[c]{数与\\代数}} & \makecell[c]{常见的量} & M3AO031 & 能根据年、月、日的知识，区分大、小月 &
 `r row <- point.rate[point.rate[,var.variable]=="M3AO031_X",]`
-`r row[row[,var.key]=="总体",var.param]`  & 
-`r row[row[,var.key]=="公办",var.param]` & 
-`r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
-`r row[row[,var.key]=="小学",var.param]` & 
-`r row[row[,var.key]=="一贯制",var.param]` & 
-`r row[row[,var.key]=="市新优",var.param]` & 
-`r row[row[,var.key]=="区新优",var.param]` & 
-`r row[row[,var.key]=="男",var.param]` & 
-`r row[row[,var.key]=="女",var.param]` & 
-`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="总体",var.param]`  &
+`r row[row[,var.key]=="公办",var.param]` &
+`r row[row[,var.key]=="民办",var.param]` &
+`r row[row[,var.key]=="随迁子女民办",var.param]` &
+`r row[row[,var.key]=="小学",var.param]` &
+`r row[row[,var.key]=="一贯制",var.param]` &
+`r row[row[,var.key]=="市新优",var.param]` &
+`r row[row[,var.key]=="区新优",var.param]` &
+`r row[row[,var.key]=="男",var.param]` &
+`r row[row[,var.key]=="女",var.param]` &
+`r row[row[,var.key]=="沪籍",var.param]` &
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-16}
 
 
- & \makecell[c]{数的认识} & M3AS141 & 能比较两个多位数的大小 & 
+ & \makecell[c]{数的认识} & M3AS141 & 能比较两个多位数的大小 &
 `r row <- point.rate[point.rate[,var.variable]=="M3AS141_X",]`
-`r row[row[,var.key]=="总体",var.param]`  & 
-`r row[row[,var.key]=="公办",var.param]` & 
-`r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
-`r row[row[,var.key]=="小学",var.param]` & 
-`r row[row[,var.key]=="一贯制",var.param]` & 
-`r row[row[,var.key]=="市新优",var.param]` & 
-`r row[row[,var.key]=="区新优",var.param]` & 
-`r row[row[,var.key]=="男",var.param]` & 
-`r row[row[,var.key]=="女",var.param]` & 
-`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="总体",var.param]`  &
+`r row[row[,var.key]=="公办",var.param]` &
+`r row[row[,var.key]=="民办",var.param]` &
+`r row[row[,var.key]=="随迁子女民办",var.param]` &
+`r row[row[,var.key]=="小学",var.param]` &
+`r row[row[,var.key]=="一贯制",var.param]` &
+`r row[row[,var.key]=="市新优",var.param]` &
+`r row[row[,var.key]=="区新优",var.param]` &
+`r row[row[,var.key]=="男",var.param]` &
+`r row[row[,var.key]=="女",var.param]` &
+`r row[row[,var.key]=="沪籍",var.param]` &
 `r row[row[,var.key]=="非沪籍",var.param]` \\  
  \cline{2-16}
- 
- 
-  & \makecell[c]{数的运算} & M3AS151 & 能根据法则，正确计算两位数乘三位数的乘法 & 
+
+
+  & \makecell[c]{数的运算} & M3AS151 & 能根据法则，正确计算两位数乘三位数的乘法 &
 `r row <- point.rate[point.rate[,var.variable]=="M3AS151_X",]`
-`r row[row[,var.key]=="总体",var.param]`  & 
-`r row[row[,var.key]=="公办",var.param]` & 
-`r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
-`r row[row[,var.key]=="小学",var.param]` & 
-`r row[row[,var.key]=="一贯制",var.param]` & 
-`r row[row[,var.key]=="市新优",var.param]` & 
-`r row[row[,var.key]=="区新优",var.param]` & 
-`r row[row[,var.key]=="男",var.param]` & 
-`r row[row[,var.key]=="女",var.param]` & 
-`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="总体",var.param]`  &
+`r row[row[,var.key]=="公办",var.param]` &
+`r row[row[,var.key]=="民办",var.param]` &
+`r row[row[,var.key]=="随迁子女民办",var.param]` &
+`r row[row[,var.key]=="小学",var.param]` &
+`r row[row[,var.key]=="一贯制",var.param]` &
+`r row[row[,var.key]=="市新优",var.param]` &
+`r row[row[,var.key]=="区新优",var.param]` &
+`r row[row[,var.key]=="男",var.param]` &
+`r row[row[,var.key]=="女",var.param]` &
+`r row[row[,var.key]=="沪籍",var.param]` &
 `r row[row[,var.key]=="非沪籍",var.param]` \\  \hline
- 
-  \multirow{2}{*}{\makecell[c]{图形与\\几何}} & \makecell[c]{图形的运动} & M3AO041 & 能找出图形中的轴对称图形 & 
+
+  \multirow{2}{*}{\makecell[c]{图形与\\几何}} & \makecell[c]{图形的运动} & M3AO041 & 能找出图形中的轴对称图形 &
 `r row <- point.rate[point.rate[,var.variable]=="M3AO041_X",]`
-`r row[row[,var.key]=="总体",var.param]`  & 
-`r row[row[,var.key]=="公办",var.param]` & 
-`r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
-`r row[row[,var.key]=="小学",var.param]` & 
-`r row[row[,var.key]=="一贯制",var.param]` & 
-`r row[row[,var.key]=="市新优",var.param]` & 
-`r row[row[,var.key]=="区新优",var.param]` & 
-`r row[row[,var.key]=="男",var.param]` & 
-`r row[row[,var.key]=="女",var.param]` & 
-`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="总体",var.param]`  &
+`r row[row[,var.key]=="公办",var.param]` &
+`r row[row[,var.key]=="民办",var.param]` &
+`r row[row[,var.key]=="随迁子女民办",var.param]` &
+`r row[row[,var.key]=="小学",var.param]` &
+`r row[row[,var.key]=="一贯制",var.param]` &
+`r row[row[,var.key]=="市新优",var.param]` &
+`r row[row[,var.key]=="区新优",var.param]` &
+`r row[row[,var.key]=="男",var.param]` &
+`r row[row[,var.key]=="女",var.param]` &
+`r row[row[,var.key]=="沪籍",var.param]` &
 `r row[row[,var.key]=="非沪籍",var.param]` \\  
 \cline{2-16}
 
- & \makecell[c]{测量} & M3AS131 & 能找出图形中的轴对称图形 & 
+ & \makecell[c]{测量} & M3AS131 & 能找出图形中的轴对称图形 &
 `r row <- point.rate[point.rate[,var.variable]=="M3AS131_X",]`
-`r row[row[,var.key]=="总体",var.param]`  & 
-`r row[row[,var.key]=="公办",var.param]` & 
-`r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
-`r row[row[,var.key]=="小学",var.param]` & 
-`r row[row[,var.key]=="一贯制",var.param]` & 
-`r row[row[,var.key]=="市新优",var.param]` & 
-`r row[row[,var.key]=="区新优",var.param]` & 
-`r row[row[,var.key]=="男",var.param]` & 
-`r row[row[,var.key]=="女",var.param]` & 
-`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="总体",var.param]`  &
+`r row[row[,var.key]=="公办",var.param]` &
+`r row[row[,var.key]=="民办",var.param]` &
+`r row[row[,var.key]=="随迁子女民办",var.param]` &
+`r row[row[,var.key]=="小学",var.param]` &
+`r row[row[,var.key]=="一贯制",var.param]` &
+`r row[row[,var.key]=="市新优",var.param]` &
+`r row[row[,var.key]=="区新优",var.param]` &
+`r row[row[,var.key]=="男",var.param]` &
+`r row[row[,var.key]=="女",var.param]` &
+`r row[row[,var.key]=="沪籍",var.param]` &
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \hline
   \hline
- & \makecell[c]{图形的认识} & M3AS201 & 能找出图形中所有的直角，并用直角符号标注出来 & 
+ & \makecell[c]{图形的认识} & M3AS201 & 能找出图形中所有的直角，并用直角符号标注出来 &
 `r row <- point.rate[point.rate[,var.variable]=="M3AS201_X",]`
-`r row[row[,var.key]=="总体",var.param]`  & 
-`r row[row[,var.key]=="公办",var.param]` & 
-`r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
-`r row[row[,var.key]=="小学",var.param]` & 
-`r row[row[,var.key]=="一贯制",var.param]` & 
-`r row[row[,var.key]=="市新优",var.param]` & 
-`r row[row[,var.key]=="区新优",var.param]` & 
-`r row[row[,var.key]=="男",var.param]` & 
-`r row[row[,var.key]=="女",var.param]` & 
-`r row[row[,var.key]=="沪籍",var.param]` & 
-`r row[row[,var.key]=="非沪籍",var.param]` \\ 
+`r row[row[,var.key]=="总体",var.param]`  &
+`r row[row[,var.key]=="公办",var.param]` &
+`r row[row[,var.key]=="民办",var.param]` &
+`r row[row[,var.key]=="随迁子女民办",var.param]` &
+`r row[row[,var.key]=="小学",var.param]` &
+`r row[row[,var.key]=="一贯制",var.param]` &
+`r row[row[,var.key]=="市新优",var.param]` &
+`r row[row[,var.key]=="区新优",var.param]` &
+`r row[row[,var.key]=="男",var.param]` &
+`r row[row[,var.key]=="女",var.param]` &
+`r row[row[,var.key]=="沪籍",var.param]` &
+`r row[row[,var.key]=="非沪籍",var.param]` \\
 \hline
 
- \makecell[c]{统计与\\概率} & \makecell[c]{数据统计} & M3AS221 & 能读出统计图中的数据并进行判断 & 
+ \makecell[c]{统计与\\概率} & \makecell[c]{数据统计} & M3AS221 & 能读出统计图中的数据并进行判断 &
 `r row <- point.rate[point.rate[,var.variable]=="M3AS221_X",]`
-`r row[row[,var.key]=="总体",var.param]`  & 
-`r row[row[,var.key]=="公办",var.param]` & 
-`r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
-`r row[row[,var.key]=="小学",var.param]` & 
-`r row[row[,var.key]=="一贯制",var.param]` & 
-`r row[row[,var.key]=="市新优",var.param]` & 
-`r row[row[,var.key]=="区新优",var.param]` & 
-`r row[row[,var.key]=="男",var.param]` & 
-`r row[row[,var.key]=="女",var.param]` & 
-`r row[row[,var.key]=="沪籍",var.param]` & 
-`r row[row[,var.key]=="非沪籍",var.param]` \\ 
+`r row[row[,var.key]=="总体",var.param]`  &
+`r row[row[,var.key]=="公办",var.param]` &
+`r row[row[,var.key]=="民办",var.param]` &
+`r row[row[,var.key]=="随迁子女民办",var.param]` &
+`r row[row[,var.key]=="小学",var.param]` &
+`r row[row[,var.key]=="一贯制",var.param]` &
+`r row[row[,var.key]=="市新优",var.param]` &
+`r row[row[,var.key]=="区新优",var.param]` &
+`r row[row[,var.key]=="男",var.param]` &
+`r row[row[,var.key]=="女",var.param]` &
+`r row[row[,var.key]=="沪籍",var.param]` &
+`r row[row[,var.key]=="非沪籍",var.param]` \\
 
 \hline
 \end{longtable}
@@ -680,131 +680,131 @@ answer <- answer.all[answer.all[,var.dimention]=="数学理解",]
 \hline
 \makecell[c]{内容\\领域} & \makecell[c]{具体内容} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{随迁\\子女\\民办} & \makecell[c]{普通\\小学} & \makecell[c]{一\\贯\\制} & \makecell[c]{市\\新\\优} & \makecell[c]{区\\新\\优} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
 
-\multirow{4}{*}{\makecell[c]{数与\\代数}} & \multirow{2}{*}{\makecell[c]{数的认识}} & M3AO021 & 结合给出的直观图形，能用分数表示部分与整体的关系 & 
+\multirow{4}{*}{\makecell[c]{数与\\代数}} & \multirow{2}{*}{\makecell[c]{数的认识}} & M3AO021 & 结合给出的直观图形，能用分数表示部分与整体的关系 &
 `r row <- point.rate[point.rate[,var.variable]=="M3AO021_X",]`
-`r row[row[,var.key]=="总体",var.param]`  & 
-`r row[row[,var.key]=="公办",var.param]` & 
-`r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
-`r row[row[,var.key]=="小学",var.param]` & 
-`r row[row[,var.key]=="一贯制",var.param]` & 
-`r row[row[,var.key]=="市新优",var.param]` & 
-`r row[row[,var.key]=="区新优",var.param]` & 
-`r row[row[,var.key]=="男",var.param]` & 
-`r row[row[,var.key]=="女",var.param]` & 
-`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="总体",var.param]`  &
+`r row[row[,var.key]=="公办",var.param]` &
+`r row[row[,var.key]=="民办",var.param]` &
+`r row[row[,var.key]=="随迁子女民办",var.param]` &
+`r row[row[,var.key]=="小学",var.param]` &
+`r row[row[,var.key]=="一贯制",var.param]` &
+`r row[row[,var.key]=="市新优",var.param]` &
+`r row[row[,var.key]=="区新优",var.param]` &
+`r row[row[,var.key]=="男",var.param]` &
+`r row[row[,var.key]=="女",var.param]` &
+`r row[row[,var.key]=="沪籍",var.param]` &
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{3-16}
 
-& & M3AO051 & 能根据数的组成认识多位数 & 
+& & M3AO051 & 能根据数的组成认识多位数 &
 `r row <- point.rate[point.rate[,var.variable]=="M3AO051_X",]`
-`r row[row[,var.key]=="总体",var.param]`  & 
-`r row[row[,var.key]=="公办",var.param]` & 
-`r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
-`r row[row[,var.key]=="小学",var.param]` & 
-`r row[row[,var.key]=="一贯制",var.param]` & 
-`r row[row[,var.key]=="市新优",var.param]` & 
-`r row[row[,var.key]=="区新优",var.param]` & 
-`r row[row[,var.key]=="男",var.param]` & 
-`r row[row[,var.key]=="女",var.param]` & 
-`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="总体",var.param]`  &
+`r row[row[,var.key]=="公办",var.param]` &
+`r row[row[,var.key]=="民办",var.param]` &
+`r row[row[,var.key]=="随迁子女民办",var.param]` &
+`r row[row[,var.key]=="小学",var.param]` &
+`r row[row[,var.key]=="一贯制",var.param]` &
+`r row[row[,var.key]=="市新优",var.param]` &
+`r row[row[,var.key]=="区新优",var.param]` &
+`r row[row[,var.key]=="男",var.param]` &
+`r row[row[,var.key]=="女",var.param]` &
+`r row[row[,var.key]=="沪籍",var.param]` &
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{2-16}
 
 
- & \multirow{2}{*}{\makecell[c]{数的运算}} & M3AO011 & 能根据混合运算的顺序（含带小括号的），判断需要先计算什么、后计算什么 & 
+ & \multirow{2}{*}{\makecell[c]{数的运算}} & M3AO011 & 能根据混合运算的顺序（含带小括号的），判断需要先计算什么、后计算什么 &
 `r row <- point.rate[point.rate[,var.variable]=="M3AO011_X",]`
-`r row[row[,var.key]=="总体",var.param]`  & 
-`r row[row[,var.key]=="公办",var.param]` & 
-`r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
-`r row[row[,var.key]=="小学",var.param]` & 
-`r row[row[,var.key]=="一贯制",var.param]` & 
-`r row[row[,var.key]=="市新优",var.param]` & 
-`r row[row[,var.key]=="区新优",var.param]` & 
-`r row[row[,var.key]=="男",var.param]` & 
-`r row[row[,var.key]=="女",var.param]` & 
-`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="总体",var.param]`  &
+`r row[row[,var.key]=="公办",var.param]` &
+`r row[row[,var.key]=="民办",var.param]` &
+`r row[row[,var.key]=="随迁子女民办",var.param]` &
+`r row[row[,var.key]=="小学",var.param]` &
+`r row[row[,var.key]=="一贯制",var.param]` &
+`r row[row[,var.key]=="市新优",var.param]` &
+`r row[row[,var.key]=="区新优",var.param]` &
+`r row[row[,var.key]=="男",var.param]` &
+`r row[row[,var.key]=="女",var.param]` &
+`r row[row[,var.key]=="沪籍",var.param]` &
 `r row[row[,var.key]=="非沪籍",var.param]` \\  
  \cline{3-16}
- 
-  &  & M3AO071 & 借助具体例子，能解释除法竖式每一步的含义 & 
+
+  &  & M3AO071 & 借助具体例子，能解释除法竖式每一步的含义 &
 `r row <- point.rate[point.rate[,var.variable]=="M3AO071_X",]`
-`r row[row[,var.key]=="总体",var.param]`  & 
-`r row[row[,var.key]=="公办",var.param]` & 
-`r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
-`r row[row[,var.key]=="小学",var.param]` & 
-`r row[row[,var.key]=="一贯制",var.param]` & 
-`r row[row[,var.key]=="市新优",var.param]` & 
-`r row[row[,var.key]=="区新优",var.param]` & 
-`r row[row[,var.key]=="男",var.param]` & 
-`r row[row[,var.key]=="女",var.param]` & 
-`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="总体",var.param]`  &
+`r row[row[,var.key]=="公办",var.param]` &
+`r row[row[,var.key]=="民办",var.param]` &
+`r row[row[,var.key]=="随迁子女民办",var.param]` &
+`r row[row[,var.key]=="小学",var.param]` &
+`r row[row[,var.key]=="一贯制",var.param]` &
+`r row[row[,var.key]=="市新优",var.param]` &
+`r row[row[,var.key]=="区新优",var.param]` &
+`r row[row[,var.key]=="男",var.param]` &
+`r row[row[,var.key]=="女",var.param]` &
+`r row[row[,var.key]=="沪籍",var.param]` &
 `r row[row[,var.key]=="非沪籍",var.param]` \\  
  \hline
-  
-  \multirow{4}{*}{\makecell[c]{图形与\\几何}} & \makecell[c]{图形与位置} & M3AO111 & 能在东、南、西、北中根据给定的一个方向，辨认其余三个方向。 & 
+
+  \multirow{4}{*}{\makecell[c]{图形与\\几何}} & \makecell[c]{图形与位置} & M3AO111 & 能在东、南、西、北中根据给定的一个方向，辨认其余三个方向。 &
 `r row <- point.rate[point.rate[,var.variable]=="M3AO111_X",]`
-`r row[row[,var.key]=="总体",var.param]`  & 
-`r row[row[,var.key]=="公办",var.param]` & 
-`r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
-`r row[row[,var.key]=="小学",var.param]` & 
-`r row[row[,var.key]=="一贯制",var.param]` & 
-`r row[row[,var.key]=="市新优",var.param]` & 
-`r row[row[,var.key]=="区新优",var.param]` & 
-`r row[row[,var.key]=="男",var.param]` & 
-`r row[row[,var.key]=="女",var.param]` & 
-`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="总体",var.param]`  &
+`r row[row[,var.key]=="公办",var.param]` &
+`r row[row[,var.key]=="民办",var.param]` &
+`r row[row[,var.key]=="随迁子女民办",var.param]` &
+`r row[row[,var.key]=="小学",var.param]` &
+`r row[row[,var.key]=="一贯制",var.param]` &
+`r row[row[,var.key]=="市新优",var.param]` &
+`r row[row[,var.key]=="区新优",var.param]` &
+`r row[row[,var.key]=="男",var.param]` &
+`r row[row[,var.key]=="女",var.param]` &
+`r row[row[,var.key]=="沪籍",var.param]` &
 `r row[row[,var.key]=="非沪籍",var.param]` \\  
 \cline{2-16}
 
-& \makecell[c]{图形的认识} & M3AO091 & 考查学生根据图形的特征进行判断，以及与其相关对象之间的区别和联系 & 
+& \makecell[c]{图形的认识} & M3AO091 & 考查学生根据图形的特征进行判断，以及与其相关对象之间的区别和联系 &
 `r row <- point.rate[point.rate[,var.variable]=="M3AO091_X",]`
-`r row[row[,var.key]=="总体",var.param]`  & 
-`r row[row[,var.key]=="公办",var.param]` & 
-`r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
-`r row[row[,var.key]=="小学",var.param]` & 
-`r row[row[,var.key]=="一贯制",var.param]` & 
-`r row[row[,var.key]=="市新优",var.param]` & 
-`r row[row[,var.key]=="区新优",var.param]` & 
-`r row[row[,var.key]=="男",var.param]` & 
-`r row[row[,var.key]=="女",var.param]` & 
-`r row[row[,var.key]=="沪籍",var.param]` & 
-`r row[row[,var.key]=="非沪籍",var.param]` \\ 
+`r row[row[,var.key]=="总体",var.param]`  &
+`r row[row[,var.key]=="公办",var.param]` &
+`r row[row[,var.key]=="民办",var.param]` &
+`r row[row[,var.key]=="随迁子女民办",var.param]` &
+`r row[row[,var.key]=="小学",var.param]` &
+`r row[row[,var.key]=="一贯制",var.param]` &
+`r row[row[,var.key]=="市新优",var.param]` &
+`r row[row[,var.key]=="区新优",var.param]` &
+`r row[row[,var.key]=="男",var.param]` &
+`r row[row[,var.key]=="女",var.param]` &
+`r row[row[,var.key]=="沪籍",var.param]` &
+`r row[row[,var.key]=="非沪籍",var.param]` \\
 \cline{2-16}
 
- & \multirow{2}{*}{\makecell[c]{测量}} & M3AS171 & 通过观察，借助对长度的理解，在具体情境中进行测量 & 
+ & \multirow{2}{*}{\makecell[c]{测量}} & M3AS171 & 通过观察，借助对长度的理解，在具体情境中进行测量 &
 `r row <- point.rate[point.rate[,var.variable]=="M3AS171_X",]`
-`r row[row[,var.key]=="总体",var.param]`  & 
-`r row[row[,var.key]=="公办",var.param]` & 
-`r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
-`r row[row[,var.key]=="小学",var.param]` & 
-`r row[row[,var.key]=="一贯制",var.param]` & 
-`r row[row[,var.key]=="市新优",var.param]` & 
-`r row[row[,var.key]=="区新优",var.param]` & 
-`r row[row[,var.key]=="男",var.param]` & 
-`r row[row[,var.key]=="女",var.param]` & 
-`r row[row[,var.key]=="沪籍",var.param]` & 
-`r row[row[,var.key]=="非沪籍",var.param]` \\ 
+`r row[row[,var.key]=="总体",var.param]`  &
+`r row[row[,var.key]=="公办",var.param]` &
+`r row[row[,var.key]=="民办",var.param]` &
+`r row[row[,var.key]=="随迁子女民办",var.param]` &
+`r row[row[,var.key]=="小学",var.param]` &
+`r row[row[,var.key]=="一贯制",var.param]` &
+`r row[row[,var.key]=="市新优",var.param]` &
+`r row[row[,var.key]=="区新优",var.param]` &
+`r row[row[,var.key]=="男",var.param]` &
+`r row[row[,var.key]=="女",var.param]` &
+`r row[row[,var.key]=="沪籍",var.param]` &
+`r row[row[,var.key]=="非沪籍",var.param]` \\
   \cline{3-16}
-  
- &  & M3AS191 & 借助对于周长含义的理解，运用观察与比较等方法，得到一些图形的周长 & 
+
+ &  & M3AS191 & 借助对于周长含义的理解，运用观察与比较等方法，得到一些图形的周长 &
 `r row <- point.rate[point.rate[,var.variable]=="M3AS191_X",]`
-`r row[row[,var.key]=="总体",var.param]`  & 
-`r row[row[,var.key]=="公办",var.param]` & 
-`r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
-`r row[row[,var.key]=="小学",var.param]` & 
-`r row[row[,var.key]=="一贯制",var.param]` & 
-`r row[row[,var.key]=="市新优",var.param]` & 
-`r row[row[,var.key]=="区新优",var.param]` & 
-`r row[row[,var.key]=="男",var.param]` & 
-`r row[row[,var.key]=="女",var.param]` & 
-`r row[row[,var.key]=="沪籍",var.param]` & 
-`r row[row[,var.key]=="非沪籍",var.param]` \\ 
+`r row[row[,var.key]=="总体",var.param]`  &
+`r row[row[,var.key]=="公办",var.param]` &
+`r row[row[,var.key]=="民办",var.param]` &
+`r row[row[,var.key]=="随迁子女民办",var.param]` &
+`r row[row[,var.key]=="小学",var.param]` &
+`r row[row[,var.key]=="一贯制",var.param]` &
+`r row[row[,var.key]=="市新优",var.param]` &
+`r row[row[,var.key]=="区新优",var.param]` &
+`r row[row[,var.key]=="男",var.param]` &
+`r row[row[,var.key]=="女",var.param]` &
+`r row[row[,var.key]=="沪籍",var.param]` &
+`r row[row[,var.key]=="非沪籍",var.param]` \\
 
 \hline
 \end{longtable}
@@ -823,15 +823,15 @@ answer <- answer.all[answer.all[,var.dimention]=="数学理解",]
 \end{figure}
 \begin{table}[H]
 \begin{tabularx}{\textwidth}{cXcX}
-A. & 
-\includegraphics[width=0.3\textwidth]{ma_M3AO071_A} 
-& B. & 
+A. &
+\includegraphics[width=0.3\textwidth]{ma_M3AO071_A}
+& B. &
 \includegraphics[width=0.3\textwidth]{ma_M3AO071_B}
 \\
-C. & 
-\includegraphics[width=0.3\textwidth]{ma_M3AO071_C} 
-& D. & 
-\includegraphics[width=0.3\textwidth]{ma_M3AO071_D} 
+C. &
+\includegraphics[width=0.3\textwidth]{ma_M3AO071_C}
+& D. &
+\includegraphics[width=0.3\textwidth]{ma_M3AO071_D}
 \\
 \end{tabularx}
 \end{table}
@@ -855,14 +855,14 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \begin{table}[H]
 \begin{tabularx}{\textwidth}{XXXX}
 
-  \makecell[c]{A．东}	& 
+  \makecell[c]{A．东}	&
   \makecell[c]{B．南} &
   \makecell[c]{C．西} &
   \makecell[c]{D．北} \\
-  							
+
 \end{tabularx}
-\end{table}`r row <- point.rate[point.rate[,var.variable]=="M3AO111_X",]` 
-                           - 内容维度：图形与几何- 能力维度：数学理解- 正确答案：D- 本题满分：4分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目M3AO111上的作答情况" `
+\end{table}`r row <- point.rate[point.rate[,var.variable]=="M3AO111_X",]`
+- 内容维度：图形与几何- 能力维度：数学理解- 正确答案：D- 本题满分：4分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目M3AO111上的作答情况" `
 ```{r answer.M3AO1111.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "answer.segment.bar.ma"
 report$plot$answer.segment.bar.ma$data$keep <- list(list(var = "变量", value=list("M3AO111")))
@@ -887,99 +887,99 @@ answer <- answer.all[answer.all[,var.dimention]=="规则运用",]
 \hline
 \makecell[c]{内容\\领域} & \makecell[c]{具体内容} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{随迁\\子女\\民办} & \makecell[c]{普通\\小学} & \makecell[c]{一\\贯\\制} & \makecell[c]{市\\新\\优} & \makecell[c]{区\\新\\优} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
 
-\multirow{4}{*}{\makecell[c]{数与\\代数}} & \multirow{3}{*}{\makecell[c]{数的运算}} & M3AS161 & 能根据多位数除以两位数的算法来判断商是几位数 & 
+\multirow{4}{*}{\makecell[c]{数与\\代数}} & \multirow{3}{*}{\makecell[c]{数的运算}} & M3AS161 & 能根据多位数除以两位数的算法来判断商是几位数 &
 `r row <- point.rate[point.rate[,var.variable]=="M3AS161_X",]`
-`r row[row[,var.key]=="总体",var.param]`  & 
-`r row[row[,var.key]=="公办",var.param]` & 
-`r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
-`r row[row[,var.key]=="小学",var.param]` & 
-`r row[row[,var.key]=="一贯制",var.param]` & 
-`r row[row[,var.key]=="市新优",var.param]` & 
-`r row[row[,var.key]=="区新优",var.param]` & 
-`r row[row[,var.key]=="男",var.param]` & 
-`r row[row[,var.key]=="女",var.param]` & 
-`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="总体",var.param]`  &
+`r row[row[,var.key]=="公办",var.param]` &
+`r row[row[,var.key]=="民办",var.param]` &
+`r row[row[,var.key]=="随迁子女民办",var.param]` &
+`r row[row[,var.key]=="小学",var.param]` &
+`r row[row[,var.key]=="一贯制",var.param]` &
+`r row[row[,var.key]=="市新优",var.param]` &
+`r row[row[,var.key]=="区新优",var.param]` &
+`r row[row[,var.key]=="男",var.param]` &
+`r row[row[,var.key]=="女",var.param]` &
+`r row[row[,var.key]=="沪籍",var.param]` &
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{3-16}
 
-& & M3AO061 & 能借助已经给出的标准，对于较大数量进行估计 & 
+& & M3AO061 & 能借助已经给出的标准，对于较大数量进行估计 &
 `r row <- point.rate[point.rate[,var.variable]=="M3AO061_X",]`
-`r row[row[,var.key]=="总体",var.param]`  & 
-`r row[row[,var.key]=="公办",var.param]` & 
-`r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
-`r row[row[,var.key]=="小学",var.param]` & 
-`r row[row[,var.key]=="一贯制",var.param]` & 
-`r row[row[,var.key]=="市新优",var.param]` & 
-`r row[row[,var.key]=="区新优",var.param]` & 
-`r row[row[,var.key]=="男",var.param]` & 
-`r row[row[,var.key]=="女",var.param]` & 
-`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="总体",var.param]`  &
+`r row[row[,var.key]=="公办",var.param]` &
+`r row[row[,var.key]=="民办",var.param]` &
+`r row[row[,var.key]=="随迁子女民办",var.param]` &
+`r row[row[,var.key]=="小学",var.param]` &
+`r row[row[,var.key]=="一贯制",var.param]` &
+`r row[row[,var.key]=="市新优",var.param]` &
+`r row[row[,var.key]=="区新优",var.param]` &
+`r row[row[,var.key]=="男",var.param]` &
+`r row[row[,var.key]=="女",var.param]` &
+`r row[row[,var.key]=="沪籍",var.param]` &
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{3-16}
 
 
- &  & M3AO081 & 能灵活运用不同的方法，解决生活中的问题 & 
+ &  & M3AO081 & 能灵活运用不同的方法，解决生活中的问题 &
 `r row <- point.rate[point.rate[,var.variable]=="M3AO081_X",]`
-`r row[row[,var.key]=="总体",var.param]`  & 
-`r row[row[,var.key]=="公办",var.param]` & 
-`r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
-`r row[row[,var.key]=="小学",var.param]` & 
-`r row[row[,var.key]=="一贯制",var.param]` & 
-`r row[row[,var.key]=="市新优",var.param]` & 
-`r row[row[,var.key]=="区新优",var.param]` & 
-`r row[row[,var.key]=="男",var.param]` & 
-`r row[row[,var.key]=="女",var.param]` & 
-`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="总体",var.param]`  &
+`r row[row[,var.key]=="公办",var.param]` &
+`r row[row[,var.key]=="民办",var.param]` &
+`r row[row[,var.key]=="随迁子女民办",var.param]` &
+`r row[row[,var.key]=="小学",var.param]` &
+`r row[row[,var.key]=="一贯制",var.param]` &
+`r row[row[,var.key]=="市新优",var.param]` &
+`r row[row[,var.key]=="区新优",var.param]` &
+`r row[row[,var.key]=="男",var.param]` &
+`r row[row[,var.key]=="女",var.param]` &
+`r row[row[,var.key]=="沪籍",var.param]` &
 `r row[row[,var.key]=="非沪籍",var.param]` \\  
  \cline{2-16}
- 
-  & 探索规律 & M3AS181 & 根据图形的排列的规律，描述出下一个图形 & 
+
+  & 探索规律 & M3AS181 & 根据图形的排列的规律，描述出下一个图形 &
 `r row <- point.rate[point.rate[,var.variable]=="M3AS181_X",]`
-`r row[row[,var.key]=="总体",var.param]`  & 
-`r row[row[,var.key]=="公办",var.param]` & 
-`r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
-`r row[row[,var.key]=="小学",var.param]` & 
-`r row[row[,var.key]=="一贯制",var.param]` & 
-`r row[row[,var.key]=="市新优",var.param]` & 
-`r row[row[,var.key]=="区新优",var.param]` & 
-`r row[row[,var.key]=="男",var.param]` & 
-`r row[row[,var.key]=="女",var.param]` & 
-`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="总体",var.param]`  &
+`r row[row[,var.key]=="公办",var.param]` &
+`r row[row[,var.key]=="民办",var.param]` &
+`r row[row[,var.key]=="随迁子女民办",var.param]` &
+`r row[row[,var.key]=="小学",var.param]` &
+`r row[row[,var.key]=="一贯制",var.param]` &
+`r row[row[,var.key]=="市新优",var.param]` &
+`r row[row[,var.key]=="区新优",var.param]` &
+`r row[row[,var.key]=="男",var.param]` &
+`r row[row[,var.key]=="女",var.param]` &
+`r row[row[,var.key]=="沪籍",var.param]` &
 `r row[row[,var.key]=="非沪籍",var.param]` \\  
  \hline
-  
-  \makecell[c]{图形与\\几何} & \makecell[c]{测量} & M3AO101 & 能根据数学对象的特征判断对象的属性，借助对于面积含义的理解，计算出图形的面积  & 
+
+  \makecell[c]{图形与\\几何} & \makecell[c]{测量} & M3AO101 & 能根据数学对象的特征判断对象的属性，借助对于面积含义的理解，计算出图形的面积  &
 `r row <- point.rate[point.rate[,var.variable]=="M3AO101_X",]`
-`r row[row[,var.key]=="总体",var.param]`  & 
-`r row[row[,var.key]=="公办",var.param]` & 
-`r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
-`r row[row[,var.key]=="小学",var.param]` & 
-`r row[row[,var.key]=="一贯制",var.param]` & 
-`r row[row[,var.key]=="市新优",var.param]` & 
-`r row[row[,var.key]=="区新优",var.param]` & 
-`r row[row[,var.key]=="男",var.param]` & 
-`r row[row[,var.key]=="女",var.param]` & 
-`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="总体",var.param]`  &
+`r row[row[,var.key]=="公办",var.param]` &
+`r row[row[,var.key]=="民办",var.param]` &
+`r row[row[,var.key]=="随迁子女民办",var.param]` &
+`r row[row[,var.key]=="小学",var.param]` &
+`r row[row[,var.key]=="一贯制",var.param]` &
+`r row[row[,var.key]=="市新优",var.param]` &
+`r row[row[,var.key]=="区新优",var.param]` &
+`r row[row[,var.key]=="男",var.param]` &
+`r row[row[,var.key]=="女",var.param]` &
+`r row[row[,var.key]=="沪籍",var.param]` &
 `r row[row[,var.key]=="非沪籍",var.param]` \\  
 \hline
 
-\makecell[c]{统计与\\概率} & \makecell[c]{数据统计} & M3AS222 & 能根据统计图中的数据进行判断 & 
+\makecell[c]{统计与\\概率} & \makecell[c]{数据统计} & M3AS222 & 能根据统计图中的数据进行判断 &
 `r row <- point.rate[point.rate[,var.variable]=="M3AS222_X",]`
-`r row[row[,var.key]=="总体",var.param]`  & 
-`r row[row[,var.key]=="公办",var.param]` & 
-`r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
-`r row[row[,var.key]=="小学",var.param]` & 
-`r row[row[,var.key]=="一贯制",var.param]` & 
-`r row[row[,var.key]=="市新优",var.param]` & 
-`r row[row[,var.key]=="区新优",var.param]` & 
-`r row[row[,var.key]=="男",var.param]` & 
-`r row[row[,var.key]=="女",var.param]` & 
-`r row[row[,var.key]=="沪籍",var.param]` & 
-`r row[row[,var.key]=="非沪籍",var.param]` \\ 
+`r row[row[,var.key]=="总体",var.param]`  &
+`r row[row[,var.key]=="公办",var.param]` &
+`r row[row[,var.key]=="民办",var.param]` &
+`r row[row[,var.key]=="随迁子女民办",var.param]` &
+`r row[row[,var.key]=="小学",var.param]` &
+`r row[row[,var.key]=="一贯制",var.param]` &
+`r row[row[,var.key]=="市新优",var.param]` &
+`r row[row[,var.key]=="区新优",var.param]` &
+`r row[row[,var.key]=="男",var.param]` &
+`r row[row[,var.key]=="女",var.param]` &
+`r row[row[,var.key]=="沪籍",var.param]` &
+`r row[row[,var.key]=="非沪籍",var.param]` \\
 
 \hline
 \end{longtable}
@@ -996,11 +996,11 @@ answer <- answer.all[answer.all[,var.dimention]=="规则运用",]
 \begin{table}[H]
 \begin{tabularx}{\textwidth}{XXXX}
 
-  \makecell[c]{A．200}	& 
+  \makecell[c]{A．200}	&
   \makecell[c]{B．1000} &
   \makecell[c]{C．1200} &
   \makecell[c]{D．1500} \\
-  							
+
 \end{tabularx}
 \end{table}
 
@@ -1093,11 +1093,11 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \begin{table}[H]
 \begin{tabularx}{\textwidth}{XXXX}
 
-  \makecell[c]{A．6}	& 
+  \makecell[c]{A．6}	&
   \makecell[c]{B．9} &
   \makecell[c]{C．12} &
   \makecell[c]{D．25} \\
-  							
+
 \end{tabularx}
 \end{table}
 `r row <- point.rate[point.rate[,var.variable]=="M3AO101_X",]`
@@ -1129,7 +1129,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \section{问题解决}
 
 ```{r problem.point.rate.table.ma, echo=TRUE, message=TRUE,include = FALSE, result="hide"}
- 
+
 point.rate <- point.rate.all[point.rate.all[,var.dimention]=="问题解决",]
 answer <- answer.all[answer.all[,var.dimention]=="问题解决",]
 ```
@@ -1142,81 +1142,81 @@ answer <- answer.all[answer.all[,var.dimention]=="问题解决",]
 \hline
 \makecell[c]{内容\\领域} & \makecell[c]{具体内容} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{随迁\\子女\\民办} & \makecell[c]{普通\\小学} & \makecell[c]{一\\贯\\制} & \makecell[c]{市\\新\\优} & \makecell[c]{区\\新\\优} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
 
-\multirow{2}{*}{\makecell[c]{数与\\代数}} & \multirow{2}{*}{\makecell[c]{数的运算}} & M3AO121 & 能灵活利用运算法则和方法，解决计算中的非常规问题 & 
+\multirow{2}{*}{\makecell[c]{数与\\代数}} & \multirow{2}{*}{\makecell[c]{数的运算}} & M3AO121 & 能灵活利用运算法则和方法，解决计算中的非常规问题 &
 `r row <- point.rate[point.rate[,var.variable]=="M3AO121_X",]`
-`r row[row[,var.key]=="总体",var.param]`  & 
-`r row[row[,var.key]=="公办",var.param]` & 
-`r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
-`r row[row[,var.key]=="小学",var.param]` & 
-`r row[row[,var.key]=="一贯制",var.param]` & 
-`r row[row[,var.key]=="市新优",var.param]` & 
-`r row[row[,var.key]=="区新优",var.param]` & 
-`r row[row[,var.key]=="男",var.param]` & 
-`r row[row[,var.key]=="女",var.param]` & 
-`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="总体",var.param]`  &
+`r row[row[,var.key]=="公办",var.param]` &
+`r row[row[,var.key]=="民办",var.param]` &
+`r row[row[,var.key]=="随迁子女民办",var.param]` &
+`r row[row[,var.key]=="小学",var.param]` &
+`r row[row[,var.key]=="一贯制",var.param]` &
+`r row[row[,var.key]=="市新优",var.param]` &
+`r row[row[,var.key]=="区新优",var.param]` &
+`r row[row[,var.key]=="男",var.param]` &
+`r row[row[,var.key]=="女",var.param]` &
+`r row[row[,var.key]=="沪籍",var.param]` &
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{3-16}
 
-& & M3AS211 & 能灵活运用不同的方法，解决生活中的非常规问题 & 
+& & M3AS211 & 能灵活运用不同的方法，解决生活中的非常规问题 &
 `r row <- point.rate[point.rate[,var.variable]=="M3AS211_X",]`
-`r row[row[,var.key]=="总体",var.param]`  & 
-`r row[row[,var.key]=="公办",var.param]` & 
-`r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
-`r row[row[,var.key]=="小学",var.param]` & 
-`r row[row[,var.key]=="一贯制",var.param]` & 
-`r row[row[,var.key]=="市新优",var.param]` & 
-`r row[row[,var.key]=="区新优",var.param]` & 
-`r row[row[,var.key]=="男",var.param]` & 
-`r row[row[,var.key]=="女",var.param]` & 
-`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="总体",var.param]`  &
+`r row[row[,var.key]=="公办",var.param]` &
+`r row[row[,var.key]=="民办",var.param]` &
+`r row[row[,var.key]=="随迁子女民办",var.param]` &
+`r row[row[,var.key]=="小学",var.param]` &
+`r row[row[,var.key]=="一贯制",var.param]` &
+`r row[row[,var.key]=="市新优",var.param]` &
+`r row[row[,var.key]=="区新优",var.param]` &
+`r row[row[,var.key]=="男",var.param]` &
+`r row[row[,var.key]=="女",var.param]` &
+`r row[row[,var.key]=="沪籍",var.param]` &
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \hline
-  
-  \multirow{2}{*}{\makecell[c]{图形与\\几何}} & \multirow{2}{*}{\makecell[c]{测量}} & M3AS231 & 通过观察，建立知识间的联系，借助对于周长含义到理解，解决实际问题  & 
+
+  \multirow{2}{*}{\makecell[c]{图形与\\几何}} & \multirow{2}{*}{\makecell[c]{测量}} & M3AS231 & 通过观察，建立知识间的联系，借助对于周长含义到理解，解决实际问题  &
 `r row <- point.rate[point.rate[,var.variable]=="M3AS231_X",]`
-`r row[row[,var.key]=="总体",var.param]`  & 
-`r row[row[,var.key]=="公办",var.param]` & 
-`r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
-`r row[row[,var.key]=="小学",var.param]` & 
-`r row[row[,var.key]=="一贯制",var.param]` & 
-`r row[row[,var.key]=="市新优",var.param]` & 
-`r row[row[,var.key]=="区新优",var.param]` & 
-`r row[row[,var.key]=="男",var.param]` & 
-`r row[row[,var.key]=="女",var.param]` & 
-`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="总体",var.param]`  &
+`r row[row[,var.key]=="公办",var.param]` &
+`r row[row[,var.key]=="民办",var.param]` &
+`r row[row[,var.key]=="随迁子女民办",var.param]` &
+`r row[row[,var.key]=="小学",var.param]` &
+`r row[row[,var.key]=="一贯制",var.param]` &
+`r row[row[,var.key]=="市新优",var.param]` &
+`r row[row[,var.key]=="区新优",var.param]` &
+`r row[row[,var.key]=="男",var.param]` &
+`r row[row[,var.key]=="女",var.param]` &
+`r row[row[,var.key]=="沪籍",var.param]` &
 `r row[row[,var.key]=="非沪籍",var.param]` \\ \cline{3-16}
 
-  & & M3AS232 & 能在观察、操作等活动中，建立知识间的联系，解决实际问题  & 
+  & & M3AS232 & 能在观察、操作等活动中，建立知识间的联系，解决实际问题  &
 `r row <- point.rate[point.rate[,var.variable]=="M3AS232_X",]`
-`r row[row[,var.key]=="总体",var.param]`  & 
-`r row[row[,var.key]=="公办",var.param]` & 
-`r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
-`r row[row[,var.key]=="小学",var.param]` & 
-`r row[row[,var.key]=="一贯制",var.param]` & 
-`r row[row[,var.key]=="市新优",var.param]` & 
-`r row[row[,var.key]=="区新优",var.param]` & 
-`r row[row[,var.key]=="男",var.param]` & 
-`r row[row[,var.key]=="女",var.param]` & 
-`r row[row[,var.key]=="沪籍",var.param]` & 
+`r row[row[,var.key]=="总体",var.param]`  &
+`r row[row[,var.key]=="公办",var.param]` &
+`r row[row[,var.key]=="民办",var.param]` &
+`r row[row[,var.key]=="随迁子女民办",var.param]` &
+`r row[row[,var.key]=="小学",var.param]` &
+`r row[row[,var.key]=="一贯制",var.param]` &
+`r row[row[,var.key]=="市新优",var.param]` &
+`r row[row[,var.key]=="区新优",var.param]` &
+`r row[row[,var.key]=="男",var.param]` &
+`r row[row[,var.key]=="女",var.param]` &
+`r row[row[,var.key]=="沪籍",var.param]` &
 `r row[row[,var.key]=="非沪籍",var.param]` \\  
 \hline
 
-\makecell[c]{统计与\\概率} & \makecell[c]{数据统计} & M3AS223 & 能根据统计图中的数据解决问题 & 
+\makecell[c]{统计与\\概率} & \makecell[c]{数据统计} & M3AS223 & 能根据统计图中的数据解决问题 &
 `r row <- point.rate[point.rate[,var.variable]=="M3AS223_X",]`
-`r row[row[,var.key]=="总体",var.param]`  & 
-`r row[row[,var.key]=="公办",var.param]` & 
-`r row[row[,var.key]=="民办",var.param]` & 
-`r row[row[,var.key]=="随迁子女民办",var.param]` & 
-`r row[row[,var.key]=="小学",var.param]` & 
-`r row[row[,var.key]=="一贯制",var.param]` & 
-`r row[row[,var.key]=="市新优",var.param]` & 
-`r row[row[,var.key]=="区新优",var.param]` & 
-`r row[row[,var.key]=="男",var.param]` & 
-`r row[row[,var.key]=="女",var.param]` & 
-`r row[row[,var.key]=="沪籍",var.param]` & 
-`r row[row[,var.key]=="非沪籍",var.param]` \\ 
+`r row[row[,var.key]=="总体",var.param]`  &
+`r row[row[,var.key]=="公办",var.param]` &
+`r row[row[,var.key]=="民办",var.param]` &
+`r row[row[,var.key]=="随迁子女民办",var.param]` &
+`r row[row[,var.key]=="小学",var.param]` &
+`r row[row[,var.key]=="一贯制",var.param]` &
+`r row[row[,var.key]=="市新优",var.param]` &
+`r row[row[,var.key]=="区新优",var.param]` &
+`r row[row[,var.key]=="男",var.param]` &
+`r row[row[,var.key]=="女",var.param]` &
+`r row[row[,var.key]=="沪籍",var.param]` &
+`r row[row[,var.key]=="非沪籍",var.param]` \\
 
 \hline
 \end{longtable}
@@ -1236,11 +1236,11 @@ answer <- answer.all[answer.all[,var.dimention]=="问题解决",]
 \begin{table}[H]
 \begin{tabularx}{\textwidth}{XXXX}
 
-  \makecell[c]{A．乘2}	& 
+  \makecell[c]{A．乘2}	&
   \makecell[c]{B．除以2} &
   \makecell[c]{C．乘3} &
   \makecell[c]{D．除以3} \\
-  							
+
 \end{tabularx}
 \end{table}
 `r row <- point.rate[point.rate[,var.variable]=="M3AO121_X",]`- 内容维度：数与运算- 能力维度：问题解决- 正确答案：A- 本题满分：4分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%
@@ -1261,7 +1261,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 
 建议：
 
-加强概念教学，注重让学生经历观察、比较、猜想、验证等数学活动，自我探索一些运算法则和方法，丰富数感，发展计算的灵活性。\questiontitle{典型题目9：M3AS211}商场对某玩具熊进行促销活动，单买1个是150元，如果购买1包（每包装3个玩具熊），则需要400元．某幼儿园需要购买14个这样的玩具熊，最少要花多少元？ 
+加强概念教学，注重让学生经历观察、比较、猜想、验证等数学活动，自我探索一些运算法则和方法，丰富数感，发展计算的灵活性。\questiontitle{典型题目9：M3AS211}商场对某玩具熊进行促销活动，单买1个是150元，如果购买1包（每包装3个玩具熊），则需要400元．某幼儿园需要购买14个这样的玩具熊，最少要花多少元？
 
 `r row <- point.rate[point.rate[,var.variable]=="M3AS211_X",]`
 - 内容维度：数与运算- 能力维度：问题解决- 正确答案：	- 解： 14÷3 = 4（包）……2（个）	- 400×4+150×2 = 1600+300 = 1900（元）	- 答：最少要花1900元。	- （解答方法不唯一）- 本题满分：6分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目M3AS211上的作答情况" `
@@ -1353,10 +1353,10 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 
 1. 计算错误。公式用对，但结果得到48、24、18等，主要对14×2两位数乘一位数计算方法掌握不够牢固。2. 混淆“面积”与“周长”概念。
 
-		如：12×2 =24（厘米），  4×2×3 = 24（厘米）， 		3×8=24（厘米），   4×2+4×2+4×2=24（厘米）学生求了拼成后长方形的面积，说明部分学生混淆了“周长”与“面积”概念。
+		如：12×2 =24（厘米），  4×2×3 = 24（厘米），		3×8=24（厘米），   4×2+4×2+4×2=24（厘米）学生求了拼成后长方形的面积，说明部分学生混淆了“周长”与“面积”概念。
 3. 对“周长”概念的理解不正确。
 
-		（4+2）×2×3   或（4×2+2×2）×3 部分学生算成3个小长方形的周长之和。说明部分学生不理解题意，有学生对周长是指封闭平面图形外围一周的长度之和这个概念还不够清晰。4. 混淆“长度单位”与“面积单位”。		（3×4+2）×2=28（平方厘米）部分学生虽然求了拼成后长方形的周长，但用了面积单位，说明这部分学生对长度单位和面积单位的适用范围还不是很清楚。5. 运用长方形周长公式有误。		
+		（4+2）×2×3   或（4×2+2×2）×3部分学生算成3个小长方形的周长之和。说明部分学生不理解题意，有学生对周长是指封闭平面图形外围一周的长度之和这个概念还不够清晰。4. 混淆“长度单位”与“面积单位”。		（3×4+2）×2=28（平方厘米）部分学生虽然求了拼成后长方形的周长，但用了面积单位，说明这部分学生对长度单位和面积单位的适用范围还不是很清楚。5. 运用长方形周长公式有误。		
 		如：a=2cm ，b=4+4+4=12（cm），C=(a+b)×2 =(2+14) ×2 =32（cm）		C=（a+b）×2 =(2×12) ×2 =48（cm）学生在运用长方形周长公式时，误将“12”写成“14”或将“2+12”写成“2×12”，说明部分学生的学习习惯不够好，计算过程中缺乏仔细审题。\begin{figure}[H]
   \begin{center}
     \includegraphics[width=0.6\textwidth]{ma_M3AS231_04}
@@ -1364,7 +1364,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \end{figure}建议：
 
 加强概念教学，注意概念之间的辨析，通过解决具体问题过程中沟通相关知识间的联系，提高显示解决实际问题的能力，同时也要注意学生良好学习习惯的培养！\questiontitle{典型题目10（2）：M3AS232}
-用3个长4厘米，宽2厘米的长方形拼图形，不能重叠。 
+用3个长4厘米，宽2厘米的长方形拼图形，不能重叠。
 
 \begin{figure}[H]
   \begin{center}
@@ -1381,7 +1381,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
   \end{center}
 \end{figure}
 
-`r row <- point.rate[point.rate[,var.variable]=="M3AS232_X",]` - 内容维度：图形与几何- 能力维度：问题解决- 正确答案：（4+2×3）×2= 20(厘米)或（4+2+4）×2= 20(厘米)- 本题满分：5分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目M3AS232上的作答情况" `
+`r row <- point.rate[point.rate[,var.variable]=="M3AS232_X",]`- 内容维度：图形与几何- 能力维度：问题解决- 正确答案：（4+2×3）×2= 20(厘米)或（4+2+4）×2= 20(厘米)- 本题满分：5分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "全体学生在题目M3AS232上的作答情况" `
 ```{r answer. M3AS232.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
 plot.entry <- "answer.segment.bar.ma"
 report$plot$answer.segment.bar.ma$data$keep <- list(list(var = "变量", value=list("M3AS232")))
@@ -1465,7 +1465,7 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 \caption*{错例-3}
 \includegraphics[width=0.8\textwidth]{ma_M3AS223_04}
 \end{figure}
- 
+
 \begin{figure}[H]
 \caption*{错例-4}
 \includegraphics[width=0.8\textwidth]{ma_M3AS223_05}
@@ -1473,5 +1473,4 @@ fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,
 
 建议:
 
-
-教师在教学时要根据教材内容的编排即时强化平年、闰年的判断方法，要重视对四年一闰以及2月在闰年增加1天的由来的教学，帮助学生正确理解、记忆平年和闰年2月的天数,同时要加强根据统计图中的数据进行分析作出合情推断和解决问题这方面的能力训练。
+教师在教学时要根据教材内容的编排即时强化平年、闰年的判断方法，要重视对四年一闰以及2月在闰年增加1天的由来的教学，帮助学生正确理解、记忆平年和闰年2月的天数,同时要加强根据统计图中的数据进行分析作出合情推断和解决问题这方面的能力训练。
