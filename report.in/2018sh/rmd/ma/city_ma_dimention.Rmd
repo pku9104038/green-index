@@ -13,9 +13,6 @@
 plot.bar.city.ma.content.dimention.rank
 plot.box.city.ma.content.dimention.quantile
 
-\mylist
-注：盒须图——5\%学生标准分小于等于须下限分数；25\%学生标准分小于等于盒底分数；50\%学生标准分大于等于盒中横线分数；25\%学生标准分大于等于盒顶分数；5\%学生标准分大于等于须上限分数；盒高度一定程度上反映了标准分分布的离散程度；红点为平均标准分。
-\mytext
 
 ### 全体学生在各能力维度上的表现
 

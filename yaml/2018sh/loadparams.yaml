@@ -1,0 +1,20 @@
+
+# load original data from xlsx sheet into database table
+loadparams:
+  TODO: TRUE
+  # TRUE, igonre TODO: FALSE flags, rework load data jobs
+  table:
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "数据查询表"
+      table: *kTableAttrDataQuery
+      suffix: ""
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "绘图参数表"
+      table: *kTableAttrPlotParam
+      suffix: ""

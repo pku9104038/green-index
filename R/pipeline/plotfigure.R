@@ -149,14 +149,61 @@ GreenIndexPlotFigure <- setRefClass(
       if (theme.name == "economist") {
         figure <- figure + theme_economist() + scale_fill_economist()
       } else if (theme.name == "npg") {
-        figure <- figure + theme_economist() + scale_color_npg() + scale_fill_npg()
-      } else if (theme.name == "d3") {
-        figure <- figure + theme_economist() + scale_color_d3() + scale_fill_d3()
+        figure <- figure + theme_economist() + 
+          scale_color_npg() + scale_fill_npg()
+      }  else if (theme.name == "aaas") {
+        figure <- figure + theme_economist() + 
+          scale_color_aaas() + scale_fill_aaas()
+      }  else if (theme.name == "nejm") {
+        figure <- figure + theme_economist() + 
+          scale_color_nejm() + scale_fill_nejm()
+      } else if (theme.name == "lancet") {
+        figure <- figure + theme_economist() + 
+          scale_color_lancet() + scale_fill_lancet()
+      } else if (theme.name == "jama") {
+        figure <- figure + theme_economist() + 
+          scale_color_jama() + scale_fill_jama()
       } else if (theme.name == "jco") {
-        figure <- figure + theme_economist() + scale_color_jco() + scale_fill_jco()
+        figure <- figure + theme_economist() + 
+          scale_color_jco() + scale_fill_jco()
       } else if (theme.name == "ucscgb") {
-        figure <- figure + theme_economist() + scale_color_ucscgb() + scale_fill_ucscgb()
-      }
+        figure <- figure + theme_economist() + 
+          scale_color_ucscgb() + scale_fill_ucscgb()
+      } else if (theme.name == "d3") {
+        figure <- figure + theme_economist() + 
+          scale_color_d3() + scale_fill_d3()
+      } else if (theme.name == "locuszoom") {
+        figure <- figure + theme_economist() + 
+          scale_color_locuszoom() + scale_fill_locuszoom()
+      } else if (theme.name == "igv") {
+        figure <- figure + theme_economist() + 
+          scale_color_igv() + scale_fill_igv()
+      } else if (theme.name == "cosmic") {
+        figure <- figure + theme_economist() + 
+          scale_color_cosmic("hallmarks_light") + 
+          scale_fill_cosmic("hallmarks_light")
+      } else if (theme.name == "uchicago") {
+        figure <- figure + theme_economist() + 
+          scale_color_uchicago() + scale_fill_uchicago()
+      } else if (theme.name == "startrek") {
+        figure <- figure + theme_economist() + 
+          scale_color_startrek() + scale_fill_startrek()
+      } else if (theme.name == "tron") {
+        figure <- figure + theme_economist() + 
+          scale_color_tron() + scale_fill_tron()
+      } else if (theme.name == "futurama") {
+        figure <- figure + theme_economist() + 
+          scale_color_futurama() + scale_fill_futurama()
+      } else if (theme.name == "rickandmorty") {
+        figure <- figure + theme_economist() + 
+          scale_color_rickandmorty() + scale_fill_rickandmorty()
+      } else if (theme.name == "simpsons") {
+        figure <- figure + theme_economist() + 
+          scale_color_simpsons() + scale_fill_simpsons()
+      } else if (theme.name == "gsea") {
+        figure <- figure + theme_economist() + 
+          scale_color_gsea() + scale_fill_gsea()
+      } 
       
       figure <- figure + 
         # theme(plot.background = element_blank()) +
@@ -547,14 +594,29 @@ GreenIndexPlotFigure <- setRefClass(
       }
       
       plot.xy <- unlist(strsplit(plot.param[1, kColumnOrderX], kSeparator))
-      LogDebug(paste("plot_x = ", plot.xy[1], ", plot_y = ", plot.xy[2]))
+      n <- length(plot.xy)
+      # LogDebug(paste("plot_x = ", plot.xy[1], ", plot_y = ", plot.xy[2]))
       
       plot.x <- plot.data[plot.data[, kColumnAxisX] == plot.xy[1], ]
       plot.x[, kColumnAxisX] <- plot.x[, kColumnAxisY]
+      i <- 2
+      while (i < n) {
+        plot.x[, kColumnAxisY] <- NULL
+        plot.y <- plot.data[plot.data[, kColumnAxisX] == plot.xy[i], 
+                            c(kColumnAlias, kColumnAxisY)]
+        plot.x <- merge(plot.x, plot.y, by = kColumnAlias, all.x = TRUE)
+        plot.x[, "tmp"] <- as.numeric(plot.x[, kColumnAxisY]) + 
+          as.numeric(plot.x[, kColumnAxisX])
+        plot.x[, kColumnAxisX] <- plot.x[, "tmp"]
+        plot.x[, "tmp"] <- NULL
+        i <- i + 1
+      }
+      
       plot.x[, kColumnAxisY] <- NULL
-      plot.y <- plot.data[plot.data[, kColumnAxisX] == plot.xy[2], 
+      plot.y <- plot.data[plot.data[, kColumnAxisX] == plot.xy[n], 
                           c(kColumnAlias, kColumnAxisY)]
       plot.merge <- merge(plot.x, plot.y, by = kColumnAlias, all.x = TRUE)
+      
       plot.data <<- plot.merge
       
       figure <- ggplot(data = plot.data, 

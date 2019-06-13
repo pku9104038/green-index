@@ -350,13 +350,13 @@ GreenIndexStatisticsData <- setRefClass(
       sample.df <<- sample.df[!is.na(sample.df[, variable.name]), ]
       sample.size <- nrow(sample.df)
       
-      choice.set <- unique(sample.df[, variable.name])
+      choice.set <- unique(as.character(sample.df[, variable.name]))
       choice.set <- choice.set[!is.na(choice.set)]
       
       for (n in 1:length(choice.set)) {
         choice.name <<- choice.set[n]
         
-        choice.size <- nrow(sample.df[sample.df[, variable.name] == choice.name, ])
+        choice.size <- nrow(sample.df[as.character(sample.df[, variable.name]) == choice.name, ])
         statistics.value <<- choice.size / sample.size * 100.0
         
         # msg <- paste(algorithm, variable.name, 
@@ -563,7 +563,7 @@ GreenIndexStatisticsData <- setRefClass(
           variables <- unlist(variables)
           
         } else if (process[1, kColumnVariableName] == kAlgorithmPointRate && 
-                   process[1, kColumnVariableSuffix] == kColumnSuffixPointValue) {
+                   process[1, kColumnVariableSuffix] == kColumnSuffixPointValue ){
           point.set <- point.df[point.df[, kColumnSubject] == 
                                   process[1, kColumnSubject], ]
           variables <- unlist(unique(point.set[, point.code]))
@@ -579,6 +579,9 @@ GreenIndexStatisticsData <- setRefClass(
           variables <- unlist(strsplit(variables, kSeparator))
         }
         
+        
+        
+        
         # loop of variable
         for (i in 1:length(variables)) {
           variable.name <<- paste0(variables[i], 
@@ -586,6 +589,13 @@ GreenIndexStatisticsData <- setRefClass(
           
           # loop for tier
           for (j in 1:length(tiers)) {
+            
+            data.colnames <- colnames(filter.df)
+            if (!is.element(variable.name, data.colnames)) {
+              LogWarn(paste("variable.name", variable.name, "undifined in data.frame !" ))
+              break   # if variable.name not in filter.df, break to next variable
+            }
+            
             tier.name <<- tiers[j]
             
             # limit tier for pilot run

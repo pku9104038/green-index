@@ -56,7 +56,10 @@ GreenIndexIndexationData <- setRefClass(
       for (i in 1: nrow(stat.df)) {
         stat.df[i, kColumnHashDigest] <<- digest(stat.df[i, "msg"], "sha256")
         stat.df[i, kColumnValue] <<- max(1, min(9, floor(stat.df[i, kColumnValue])))
-        out.df <<- out.df[out.df[, kColumnHashDigest] != stat.df[i, kColumnHashDigest],]
+        if (nrow(out.df) > 0) {
+          out.df <<- out.df[out.df[, kColumnHashDigest] != stat.df[i, kColumnHashDigest],]
+        }
+        
       }
       stat.df[, "msg"] <<- NULL
         
@@ -91,7 +94,10 @@ GreenIndexIndexationData <- setRefClass(
       for (i in 1: nrow(stat.df)) {
         stat.df[i, kColumnHashDigest] <<- digest(stat.df[i, "msg"], "sha256")
         stat.df[i, kColumnValue] <<- max(1, min(9, floor(stat.df[i, kColumnValue])))
-        out.df <<- out.df[out.df[, kColumnHashDigest] != stat.df[i, kColumnHashDigest],]
+        if (nrow(out.df) > 0) {
+          out.df <<- out.df[out.df[, kColumnHashDigest] != stat.df[i, kColumnHashDigest],]
+        }
+        
       }
       stat.df[, "msg"] <<- NULL
       

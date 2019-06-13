@@ -1,7 +1,7 @@
 
 # statistics of variables, coefficents, scores
 scorestat:
-  TODO: TRUE
+  TODO: FALSE
   RUN: "AGILE"  # "AUTO", "PILOT", "MILESTONE", "AGILE"
   <<: *kPilotRun
   <<: *kDDLStatisticsTable
@@ -48,85 +48,85 @@ scorestat:
 
 
     -
+      TODO: FALSE
+      input:
+        table: *kSubjectMA
+        suffix: *kSuffixTransform
+      output:
+        table: *kSubjectMA
+        suffix: *kSuffixStat
+      process:
+        table: *kTableAttrScoreStat
+        suffix: ""
+      choice:
+        table: *kTableAttrSurveyPoint
+        suffix: ""
+        column:
+          code: *kColumnQuestionCode
+          key: *kColumnQuestionChoice
+      point:
+        table: *kTableAttrSubjectPoint
+        suffix: ""
+        column:
+          code: *kColumnQuestionCode
+          type: *kColumnQuestionType
+          value: *kColumnValue
+          subject: *kSubject
+
+    -
+      TODO: FALSE
+      input:
+        table: *kSubjectEN
+        suffix: *kSuffixTransform
+      output:
+        table: *kSubjectEN
+        suffix: *kSuffixStat
+      process:
+        table: *kTableAttrScoreStat
+        suffix: ""
+      choice:
+        table: *kTableAttrSurveyPoint
+        suffix: ""
+        column:
+          code: *kColumnQuestionCode
+          key: *kColumnQuestionChoice
+      point:
+        table: *kTableAttrSubjectPoint
+        suffix: ""
+        column:
+          code: *kColumnQuestionCode
+          type: *kColumnQuestionType
+          value: *kColumnValue
+          subject: *kSubject
+
+    -
+      TODO: FALSE
+      input:
+        table: *kSubjectSC
+        suffix: *kSuffixTransform
+      output:
+        table: *kSubjectSC
+        suffix: *kSuffixStat
+      process:
+        table: *kTableAttrScoreStat
+        suffix: ""
+      choice:
+        table: *kTableAttrSurveyPoint
+        suffix: ""
+        column:
+          code: *kColumnQuestionCode
+          key: *kColumnQuestionChoice
+      point:
+        table: *kTableAttrSubjectPoint
+        suffix: ""
+        column:
+          code: *kColumnQuestionCode
+          type: *kColumnQuestionType
+          value: *kColumnValue
+          subject: *kSubject
+
+    -
       TODO: TRUE
-      input:
-        table: *kSubjectMA
-        suffix: *kSuffixTransform
-      output:
-        table: *kSubjectMA
-        suffix: *kSuffixStat
-      process:
-        table: *kTableAttrScoreStat
-        suffix: ""
-      choice:
-        table: *kTableAttrSurveyPoint
-        suffix: ""
-        column:
-          code: *kColumnQuestionCode
-          key: *kColumnQuestionChoice
-      point:
-        table: *kTableAttrSubjectPoint
-        suffix: ""
-        column:
-          code: *kColumnQuestionCode
-          type: *kColumnQuestionType
-          value: *kColumnValue
-          subject: *kSubject
-
-    -
-      TODO: FALSE
-      input:
-        table: *kSubjectEN
-        suffix: *kSuffixTransform
-      output:
-        table: *kSubjectEN
-        suffix: *kSuffixStat
-      process:
-        table: *kTableAttrScoreStat
-        suffix: ""
-      choice:
-        table: *kTableAttrSurveyPoint
-        suffix: ""
-        column:
-          code: *kColumnQuestionCode
-          key: *kColumnQuestionChoice
-      point:
-        table: *kTableAttrSubjectPoint
-        suffix: ""
-        column:
-          code: *kColumnQuestionCode
-          type: *kColumnQuestionType
-          value: *kColumnValue
-          subject: *kSubject
-
-    -
-      TODO: FALSE
-      input:
-        table: *kSubjectSC
-        suffix: *kSuffixTransform
-      output:
-        table: *kSubjectSC
-        suffix: *kSuffixStat
-      process:
-        table: *kTableAttrScoreStat
-        suffix: ""
-      choice:
-        table: *kTableAttrSurveyPoint
-        suffix: ""
-        column:
-          code: *kColumnQuestionCode
-          key: *kColumnQuestionChoice
-      point:
-        table: *kTableAttrSubjectPoint
-        suffix: ""
-        column:
-          code: *kColumnQuestionCode
-          type: *kColumnQuestionType
-          value: *kColumnValue
-          subject: *kSubject
-
-    -
-      TODO: FALSE
       input:
         table: *kSubjectAR
         suffix: *kSuffixTransform

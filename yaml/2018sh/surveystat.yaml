@@ -55,8 +55,6 @@ surveystat:
           code: *kColumnQuestionCode
           key: *kColumnQuestionChoice
 
-
-
     -
       TODO: FALSE
       input:
@@ -64,6 +62,25 @@ surveystat:
         suffix: *kSuffixTransform
       output:
         table: *kRespondentTE
+        suffix: *kSuffixStat
+      process:
+        table: *kTableAttrSurveyStat
+        suffix: ""
+      choice:
+        table: *kTableAttrSurveyPoint
+        suffix: ""
+        column:
+          code: *kColumnQuestionCode
+          key: *kColumnQuestionChoice
+
+
+    -
+      TODO: TRUE
+      input:
+        table: *kRespondentPR
+        suffix: *kSuffixJoin
+      output:
+        table: *kRespondentPR
         suffix: *kSuffixStat
       process:
         table: *kTableAttrSurveyStat

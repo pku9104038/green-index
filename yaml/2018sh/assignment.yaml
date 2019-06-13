@@ -55,3 +55,20 @@ assignment:
           code: *kColumnQuestionCode
           key: *kColumnQuestionChoice
           value: *kColumnQuestionBinary
+
+    -
+      TODO: TRUE
+      suffix: *kColumnSuffixBinary
+      input:
+        table: *kRespondentPR
+        suffix: *kSuffixJoin
+      output:
+        table: *kRespondentPR
+        suffix: *kSuffixAssign
+      choice:
+        table: *kTableAttrSurveyPoint
+        suffix: ""
+        column:
+          code: *kColumnQuestionCode
+          key: *kColumnQuestionChoice
+          value: *kColumnQuestionBinary

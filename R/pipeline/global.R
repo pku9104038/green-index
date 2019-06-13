@@ -45,6 +45,7 @@ kSegmentConnector <- "-"
 kSuffixSeparator <- "_"
 kColumnSuffixPoint <- "_分值"
 kColumnSuffixPointValue <- "_X"
+kColumnSuffixGroupPoint <- "_题组得分"
 # constants for data type
 kDataTypeCharacter <- "character"
 kDataTypeNumeric <- "numeric"
@@ -109,6 +110,7 @@ kIndexBalanceIndividual <- "个体均衡指数"
 kPrefixPlot <- "plot"
 kPrefixMultiPlot <- "multiplot"
 kPrefixQueryData <- "query"
+kPrefixQuery2Data <- "query2"
 kPrefixConnector <- "\\."
 
 # constants for algorithm

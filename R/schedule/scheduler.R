@@ -98,7 +98,7 @@ GreenIndexScheduler <- setRefClass(
     
     Report = function(reload) {
       if (reload)
-        gio.loaddata$LoadAttribute()
+        gio.loaddata$LoadParams()
       gio.R$PrepareDataframe()
       
       gio.R$Report()

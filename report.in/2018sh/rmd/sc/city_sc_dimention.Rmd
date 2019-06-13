@@ -1,0 +1,115 @@
+<!-- chapter dimention -->
+
+\mytext
+
+# 学生在各内容领域和考查维度上的表现情况
+
+## 全体学生在各内容领域和考查维度上的表现
+
+### 全体学生在各内容领域上的表现
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.sc.content.rank")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.city.sc.content.quantile")`}分别给出了上海市学生在科学学科各内容领域各水平上的人数比例和得分分布。
+
+plot.bar.city.sc.content.rank
+plot.box.city.sc.content.quantile
+
+
+### 全体学生在各考查维度上的表现
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.sc.dimention.rank")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.city.sc.dimention.quantile")`}分别给出了上海市学生在科学学科各考查维度各水平上的人数比例和得分分布。
+
+plot.bar.city.sc.dimention.rank
+plot.box.city.sc.dimention.quantile
+
+
+## 学生在各内容领域的表现
+
+### 地球宇宙
+
+#### 不同群体学生的表现
+
+plot.bar.city.sc.earth.rank.perspective
+plot.box.city.sc.earth.quantile.perspective
+
+#### 不同区学生的表现
+
+plot.bar.city.sc.earth.rank.district
+plot.box.city.sc.earth.quantile.district
+
+### 生命科学
+
+#### 不同群体学生的表现
+
+plot.bar.city.sc.life.rank.perspective
+plot.box.city.sc.life.quantile.perspective
+
+
+#### 不同区学生的表现
+
+plot.bar.city.sc.life.rank.district
+plot.box.city.sc.life.quantile.district
+
+## 物质科学
+
+### 不同群体学生的表现
+
+plot.bar.city.sc.physics.rank.perspective
+plot.box.city.sc.physics.quantile.perspective
+
+### 不同区学生的表现
+
+plot.bar.city.sc.physics.rank.district
+plot.box.city.sc.physics.quantile.district
+
+### 科学探究
+
+#### 不同群体学生的表现
+
+plot.bar.city.sc.explore.rank.perspective
+plot.box.city.sc.explore.quantile.perspective
+
+#### 不同区学生的表现
+
+plot.bar.city.sc.explore.rank.district
+plot.box.city.sc.explore.quantile.district
+
+## 学生在各考查维度的表现
+
+### 科学知识
+
+#### 不同群体学生的表现
+
+plot.bar.city.sc.knowledge.rank.perspective
+plot.box.city.sc.knowledge.quantile.perspective
+
+#### 不同区学生的表现
+
+plot.bar.city.sc.knowledge.rank.district
+plot.box.city.sc.knowledge.quantile.district
+
+## 科学能力
+
+### 不同群体学生的表现
+
+plot.bar.city.sc.skill.rank.perspective
+plot.box.city.sc.skill.quantile.perspective
+
+### 不同区学生的表现
+
+plot.bar.city.sc.skill.rank.district
+plot.box.city.sc.skill.quantile.district
+
+## 情感、态度与价值观
+
+### 不同群体学生的表现
+
+plot.bar.city.sc.attitude.rank.perspective
+plot.box.city.sc.attitude.quantile.perspective
+
+
+### 不同区学生的表现
+
+plot.bar.city.sc.attitude.rank.district
+plot.box.city.sc.attitude.quantile.district
+
+<!-- end of chapter dimention -->

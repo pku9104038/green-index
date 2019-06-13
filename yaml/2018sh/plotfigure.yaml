@@ -4,4 +4,4 @@ plotfigure:
   <<: *kPilotRun
   <<: *kPrepareDataframe
   test:
-    - plot.box.city.cn.jilei.quantile.district
+    - plot.box.city.en.dimention.quantile

@@ -76,6 +76,12 @@ GreenIndexLoadData <- setRefClass(
       LogInfo("Loading Attribute!")
       jobs <- config$GetConfigJob()$loadattribute
       LoadExcel(jobs)
+    },
+    
+    LoadParams = function() {
+      LogInfo("Loading Parameters!")
+      jobs <- config$GetConfigJob()$loadparams
+      LoadExcel(jobs)
     }
   )
 )

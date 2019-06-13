@@ -293,6 +293,22 @@ joindata:
       out:
         table: *kRespondentTE
         suffix: *kSuffixJoin
+    -
+      TODO: TRUE
+      left:
+        table: *kRespondentPR
+        suffix: *kSuffixRaw
+        by: *kColumnPrincipalCode
+      right:
+        table: *kTablePrincipal
+        suffix: *kSuffixJoin
+        select:
+        by: *kColumnPrincipalCode
+        # <<: *kStatisticsAdd
+      join.type: "left" # "inner", left", "right", "full"
+      out:
+        table: *kRespondentPR
+        suffix: *kSuffixJoin
 
     -
       TODO: FALSE

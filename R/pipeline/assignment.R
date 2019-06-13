@@ -44,8 +44,12 @@ GreenIndexAssignPoint <- setRefClass(
           if (dropdata) {
             df <- database$ReadTable(input.table)
             
+          } else if (!database$ExistsTable(output.table)){
+            df <- database$ReadTable(input.table)
+            
           } else {
             df <- database$ReadTable(output.table)
+            
           }
           
           choice.table <- paste0(job$choice$table, job$choice$suffix)

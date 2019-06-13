@@ -1,0 +1,2056 @@
+<!-- chapter topic -->
+
+\mytext
+
+# 典型题目分析
+
+本次绿色指标英语学科测试主要考查了学生“听力”、“语法词汇”、“阅读”和“写作”四个方面的状况。
+
+听的考查含有四个部分。Section A主要考查学生是否能听懂句子，识别相关话题语汇，选择相匹配的图片；Section B主要考查学生是否能听懂句子，根据语言功能，选择相应的应答；Section C主要考查学生是否能够听懂日常生活中的简短对话，选择相应的答案。Section D主要考查学生是否具有在听的过程中理解并抓住关键信息以及正确记录该信息的能力。
+
+语言知识的考查含有三个部分。Section A主要考查学生是否能够在简单语境中，根据语法和词汇知识选择相应的答案。Section B主要考查学生是否能够判断句子所缺词汇的词性，根据词义和词形变化选择恰当的单词或短语。Section C主要考查学生是否能够运用词形变化和简单的构词法知识，填入恰当的单词。
+
+阅读的考查含有三个部分。Section A主要考查学生在图片的帮助下，是否能读懂简单的句子，并选择相应的图片；Section B主要考查学生是否能够运用阅读技能，读懂连续性和非连续性文本，选择恰当的答案。Section C主要考查学生是否能够读懂文本，根据语境选择恰当的词汇，补全所缺内容。
+写作考查含有一个任务。主要考查学生在图片和文字提示下短文写作能力。
+
+以下选择4个考查维度中的若干道试题，分别对“听力”、“语法词汇”、“阅读”和“写作”四个维度进行典型题的分析。
+
+query.data.city.en.pointrate.perspective
+
+\begin{landscape}
+
+\section{听力}
+
+`r tab_name <- "学生在英语学科“听力”维度上的平均得分率（％）" `
+
+\begin{itshape}
+\mytable
+\begin{longtable}{|c|c|p{7.5cm}|c|c|c|c|c|c|c|c|c|c|c|c|}
+\caption{`r tab_name`} \label{tab: `r tab_name`} \\ \hline
+
+\makecell[c]{内容\\维度} & 题目编码 & \makecell[c]{能力描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
+
+\multirow{5}{*}{\makecell[c]{话题\\语汇}} & E8AO01111 & 能听懂与话题相关的词汇 &
+`r gio.R$VarScoSamKey(query.data, "E8AO01111_X", "上海市","总体","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO01111_X", "上海市","公办","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO01111_X", "上海市","民办","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO01111_X", "上海市","初中","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO01111_X", "上海市","九年一贯","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO01111_X", "上海市","完中","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO01111_X", "上海市","新优质","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO01111_X", "上海市","强校工程","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO01111_X", "上海市","男","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO01111_X", "上海市","女","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO01111_X", "上海市","沪籍","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO01111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+ & E8AO02111 & 能听懂与话题相关的词汇 &
+ `r gio.R$VarScoSamKey(query.data, "E8AO02111_X", "上海市","总体","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO02111_X", "上海市","公办","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO02111_X", "上海市","民办","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO02111_X", "上海市","初中","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO02111_X", "上海市","九年一贯","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO02111_X", "上海市","完中","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO02111_X", "上海市","新优质","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO02111_X", "上海市","强校工程","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO02111_X", "上海市","男","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO02111_X", "上海市","女","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO02111_X", "上海市","沪籍","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO02111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+ & E8AO03111 & 能听懂与话题相关的词汇 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO03111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO03111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO03111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO03111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO03111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO03111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO03111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO03111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO03111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO03111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO03111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO03111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+ & E8AO04111 & 能听懂与话题相关的词汇 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO04111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO04111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO04111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO04111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO04111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO04111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO04111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO04111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO04111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO04111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO04111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO04111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+ & E8AO05111 & 能听懂与话题相关的词汇 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO05111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO05111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO05111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO05111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO05111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO05111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO05111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO05111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO05111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO05111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO05111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO05111_X", "上海市","非沪籍","总体")` \\ \cline{1-15}
+
+\multirow{5}{*}{\makecell[c]{功能\\意念}} & E8AO06111 & 听懂表示祝愿功能的语言表达形式，并作出判断和选择 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO06111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO06111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO06111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO06111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO06111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO06111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO06111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO06111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO06111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO06111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO06111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO06111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & E8AO07111 & 听懂表示提议（offers）功能的语言表达形式，并作出判断和选择 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO07111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO07111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO07111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO07111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO07111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO07111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO07111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO07111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO07111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO07111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO07111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO07111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & E8AO08111 & 听懂表示道歉功能的语言表达形式，并作出判断和选择 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO08111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO08111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO08111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO08111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO08111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO08111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO08111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO08111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO08111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO08111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO08111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO08111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & E8AO09111 & 听懂表示建议（suggestion）功能的语言表达形式，并作出判断和选择 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO09111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO09111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO09111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO09111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO09111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO09111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO09111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO09111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO09111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO09111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO09111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO09111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & E8AO10111 & 听懂表示询问（价格）功能的语言表达形式，并作出判断和选择 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO10111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO10111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO10111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO10111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO10111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO10111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO10111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO10111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO10111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO10111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO10111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO10111_X", "上海市","非沪籍","总体")` \\ \cline{1-15}
+
+\multirow{10}{*}{\makecell[c]{话题\\\quad\\\quad\\\quad\\\quad}} & E8AO11111 & 听懂对话中有关天气的内容。选择相应答案 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO11111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO11111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO11111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO11111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO11111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO11111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO11111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO11111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO11111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO11111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO11111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO11111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & E8AO12111 & 听懂对话内容，推断人物关系并选择相应答案 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO12111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO12111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO12111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO12111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO12111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO12111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO12111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO12111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO12111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO12111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO12111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO12111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & E8AO13111 & 听懂对话中有关求职成功的内容，选择相应答案 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO13111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO13111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO13111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO13111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO13111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO13111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO13111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO13111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO13111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO13111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO13111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO13111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & E8AO14111 & 听懂对话中有关表演节目的内容，选择相应答案 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO14111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO14111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO14111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO14111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO14111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO14111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO14111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO14111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO14111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO14111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO14111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO14111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & E8AO15111 & 听懂对话内容，推断对话发生的地点并选择相应答案 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO15111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO15111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO15111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO15111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO15111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO15111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO15111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO15111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO15111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO15111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO15111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO15111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & E8AS16111 & 听懂听力材料，获取并记录相关信息以完成任务 &
+  `r gio.R$VarScoSamKey(query.data, "E8AS16111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS16111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS16111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS16111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS16111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS16111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS16111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS16111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS16111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS16111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS16111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS16111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & E8AS17111 & 听懂听力材料，获取并记录相关信息以完成任务 &
+  `r gio.R$VarScoSamKey(query.data, "E8AS17111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS17111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS17111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS17111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS17111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS17111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS17111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS17111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS17111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS17111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS17111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS17111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & E8AS18111 & 听懂听力材料，获取并记录相关信息以完成任务 &
+  `r gio.R$VarScoSamKey(query.data, "E8AS18111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS18111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS18111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS18111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS18111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS18111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS18111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS18111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS18111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS18111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS18111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS18111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & E8AS19111 & 听懂听力材料，获取并记录相关信息以完成任务，并作出判断和选择 &
+  `r gio.R$VarScoSamKey(query.data, "E8AS19111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS19111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS19111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS19111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS19111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS19111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS19111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS19111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS19111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS19111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS19111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS19111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & E8AS20111 & 听懂听力材料，获取并记录相关信息以完成任务 &
+  `r gio.R$VarScoSamKey(query.data, "E8AS20111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS20111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS20111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS20111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS20111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS20111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS20111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS20111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS20111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS20111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS20111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS20111_X", "上海市","非沪籍","总体")` \\ \cline{1-15}
+
+\end{longtable}
+\end{itshape}
+
+\mytext
+下面将结合“听力”部分的典型题目做具体分析。
+
+\end{landscape}
+
+\questiontitle{典型题目1：E8AO07111}
+
+\begin{itshape}
+\mytable
+\begin{longtable}{p{5cm}p{5cm}p{5cm}}
+\multicolumn{3}{l}{听力文本} \\ \hline
+\multicolumn{3}{|l|}{Would you like a cup of tea?} \\ \hline
+[A] Yes, I would.	 &  [B] Yes, please.	 & [C] I’m afraid I don’t. \\								
+\end{longtable}
+\end{itshape}
+
+- 考查能力：听懂表示提议（offers）功能的语言表达形式，并作出判断和选择
+
+- 正确答案：B
+
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "E8AO07111_X", "上海市","总体","总体")`％
+
+plot.bar.city.en.question.e8ao07111
+query2.plot.bar.city.en.question.e8ao07111
+
+\begin{itshape}
+学生作答这个题目需要听懂表示建议“你是否想要一杯茶？”，并做出应答。`r gio.R$VarScoSamKey(query2.data, "E8AO07111_单选项", "上海市","总体","B")`％的学生能够完成本题任务，作出应答。选择选项A和C的人数比例分别为`r gio.R$VarScoSamKey(query2.data, "E8AO07111_单选项", "上海市","总体","A")`％和`r gio.R$VarScoSamKey(query2.data, "E8AO07111_单选项", "上海市","总体","C")`％，主要原因可能是不熟悉如何恰当回应“建议”功能。
+\end{itshape}
+
+\questiontitle{典型题目2：E8A008111}
+
+\begin{itshape}
+\mytable
+\begin{longtable}{p{5cm}p{5cm}p{5cm}}
+\multicolumn{3}{l}{听力文本} \\ \hline
+\multicolumn{3}{|l|}{I’m sorry to keep you waiting.} \\ \hline
+[A] My pleasure.	 &  [B] I don’t care.	 & [C] That’s all right. \\								
+\end{longtable}
+\end{itshape}
+
+- 考查能力：听懂表示道歉功能的语言表达形式，并作出判断和选择
+
+- 正确答案：C
+
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "E8AO08111_X", "上海市","总体","总体")`％
+
+plot.bar.city.en.question.e8ao08111
+
+query2.plot.bar.city.en.question.e8ao08111
+
+\begin{itshape}
+学生作答这个题目需要对对方道歉而进行回复。`r gio.R$VarScoSamKey(query2.data, "E8AO08111_单选项", "上海市","总体","C")`％的学生能够完成本题任务，选择正确。选择选项A和B的人数比例分别为`r gio.R$VarScoSamKey(query2.data, "E8AO08111_单选项", "上海市","总体","A")`％和`r gio.R$VarScoSamKey(query2.data, "E8AO08111_单选项", "上海市","总体","B")`％，选择B项，可能是受到中文思维的干扰。选择A可能是学生混淆对“感激”功能的表达。
+\end{itshape}
+
+\questiontitle{典型题目3、4：E8AS18111、E8AS19111}
+
+\begin{itshape}
+听力文本
+\mytable
+\begin{longtable}{|p{14cm}|}
+\hline
+\questiontitle{Task 2 Look, listen and match} \\
+W: Good morning. John Locke Travel Service. Can I help you? \\ 	
+M: Yes. I’d like to go to Paris. \\
+W: Certainly. Could I have your name please, sir?  \\
+M: Mike Charles.  \\
+W: Thank you. Now when would you like to travel, Mike?  \\
+M: I have to be in Paris on the eleventh of March, so I’d like to leave on the ninth. Can you do that? \\
+W: Certainly, sir, and when do you want to return?  \\
+M: Three and a half months later, on the thirtieth of June. I must be back here in July.  \\
+W: OK. One moment, Mike. I can book for you now.  \\
+M: Good. How much will it cost?  \\
+W: Three hundred and sixty-five pounds—that’s special price for business travellers. \\
+M: That’s fine. \\
+W: Will you drive your car to the airport or go by taxi? \\
+M: I’ll take the train. Can you get me a ticket for that too? \\
+W: Yes, of course, sir. \\
+\hline
+\end{longtable}
+Listen and fill in the missing information.	 
+\end{itshape}
+
+\begin{itshape}
+\mytable
+\begin{longtable}{|p{6cm}p{6cm}|}
+\hline
+\multicolumn{2}{|c|}{\questiontitle{Travel information}} \\
+Travel agency:	& John Locke Travel Service \\
+16. 	Name:	  &		\uline{\qquad\qquad}Charles \\
+17.	Travel to:	&		\uline{\qquad\qquad}  \\
+18.	Leave on:		& 	\uline{\qquad\qquad} (date), March \\
+19.	Return on:	&		30th, \uline{\qquad\qquad} (month) \\
+20.	Travel to the airport:	  &		By \uline{\qquad\qquad} \\
+\hline
+\end{longtable}
+\end{itshape}
+
+
+\questiontitle{典型题目3：E8AS18111}
+
+- 考查能力：听懂听力材料，获取并记录相关信息以完成任务
+
+- 正确答案：9/9th
+
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "E8AS18111_X", "上海市","总体","总体")`％
+
+plot.bar.city.en.question.e8as18111
+
+query2.plot.bar.city.en.question.e8as18111
+
+\begin{itshape}
+学生作答这个题目需要根据文本
+
+\begin{longtable}{|p{14cm}|} \hline
+  … so I’d like to leave on the ninth. \\  \hline
+\end{longtable}
+
+直接获取信息，填入9/9th/ninth。只有`r gio.R$VarScoSamKey(query2.data, "E8AS18111_X", "上海市","总体","2")`％的学生能够完成本题任务，错误原因是ninth 拼写错误。更多的同学是提取了干扰信息
+
+\begin{longtable}{|p{14cm}|} \hline
+I have to be in Paris on the eleventh of March … \\ \hline
+\end{longtable}
+
+而填写了11/11th/eleventh。
+
+\end{itshape}
+
+\questiontitle{典型题目4：E8AS19111}
+
+- 考查能力：听懂听力材料，获取并记录相关信息以完成任务
+
+- 正确答案：June
+
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "E8AS18111_X", "上海市","总体","总体")`％
+
+plot.bar.city.en.question.e8as19111
+
+query2.plot.bar.city.en.question.e8as19111
+
+\begin{itshape}
+
+学生作答这个题目需要根据文本
+
+\begin{longtable}{|p{14cm}|}
+\hline
+…, on the thirtieth of June. I must be back here in July.  \\  \hline
+\end{longtable}
+
+直接获取信息，填写June。有`r gio.R$VarScoSamKey(query2.data, "E8AS19111_X", "上海市","总体","2")`％的学生能够完成本题任务。错误原因是June拼写错误，更多的同学是提取了干扰信息，填写了July/Jul。
+
+\end{itshape}
+
+
+\begin{landscape}
+
+\section{语法词汇}
+
+`r tab_name <- "学生在英语学科“语法词汇”维度上的平均得分率（％）" `
+
+\begin{itshape}
+\mytable
+\begin{longtable}{|c|p{9cm}|c|c|c|c|c|c|c|c|c|c|c|c|}
+\caption{`r tab_name`} \label{tab: `r tab_name`} \\ \hline
+
+题目编码 & \makecell[c]{能力描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
+
+E8AO21111 & 读懂单句，根据语境选择恰当的冠词 &
+`r gio.R$VarScoSamKey(query.data, "E8AO21111_X", "上海市","总体","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO21111_X", "上海市","公办","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO21111_X", "上海市","民办","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO21111_X", "上海市","初中","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO21111_X", "上海市","九年一贯","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO21111_X", "上海市","完中","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO21111_X", "上海市","新优质","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO21111_X", "上海市","强校工程","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO21111_X", "上海市","男","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO21111_X", "上海市","女","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO21111_X", "上海市","沪籍","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO21111_X", "上海市","非沪籍","总体")` \\ \cline{1-14}
+
+ E8AO22111 & 根据语境，选择与核心词汇搭配的介词 &
+ `r gio.R$VarScoSamKey(query.data, "E8AO22111_X", "上海市","总体","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO22111_X", "上海市","公办","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO22111_X", "上海市","民办","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO22111_X", "上海市","初中","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO22111_X", "上海市","九年一贯","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO22111_X", "上海市","完中","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO22111_X", "上海市","新优质","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO22111_X", "上海市","强校工程","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO22111_X", "上海市","男","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO22111_X", "上海市","女","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO22111_X", "上海市","沪籍","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO22111_X", "上海市","非沪籍","总体")` \\ \cline{1-14}
+
+ E8AO23111 & 读懂单句，识别系表结构，并根据语境选择恰当的形容词 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO23111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO23111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO23111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO23111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO23111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO23111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO23111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO23111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO23111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO23111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO23111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO23111_X", "上海市","非沪籍","总体")` \\ \cline{1-14}
+
+ E8AO24111 & 识别可数与不可数名词，根据语境选择恰当的答案 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO24111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO24111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO24111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO24111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO24111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO24111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO24111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO24111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO24111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO24111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO24111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO24111_X", "上海市","非沪籍","总体")` \\ \cline{1-14}
+
+ E8AO25111 & 读懂单句，根据语境选择恰当的表示方式的介词 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO25111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO25111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO25111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO25111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO25111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO25111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO25111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO25111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO25111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO25111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO25111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO25111_X", "上海市","非沪籍","总体")` \\ \cline{1-14}
+
+  E8AO26111 & 读懂单句，知道形容词比较等级的意思及用法，根据语境选择恰当的答案 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO26111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO26111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO26111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO26111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO26111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO26111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO26111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO26111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO26111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO26111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO26111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO26111_X", "上海市","非沪籍","总体")` \\ \cline{1-14}
+
+  E8AO27111 & 读懂单句，根据语境选择恰当的不定代词 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO27111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO27111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO27111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO27111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO27111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO27111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO27111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO27111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO27111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO27111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO27111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO27111_X", "上海市","非沪籍","总体")` \\ \cline{1-14}
+
+  E8AO28111 & 读懂单句，（知道enjoy这一核心词汇的搭配和用法，）并根据语境选择恰当的代词 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO28111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO28111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO28111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO28111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO28111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO28111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO28111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO28111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO28111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO28111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO28111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO28111_X", "上海市","非沪籍","总体")` \\ \cline{1-14}
+
+  E8AO29111 & 读懂单句，知道不定式作宾补的用法，根据语境选择恰当的答案 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO29111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO29111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO29111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO29111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO29111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO29111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO29111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO29111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO29111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO29111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO29111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO29111_X", "上海市","非沪籍","总体")` \\ \cline{1-14}
+
+  E8AO30111 & 读懂单句，根据语境选择恰当的动词时态 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO30111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO30111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO30111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO30111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO30111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO30111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO30111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO30111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO30111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO30111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO30111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO30111_X", "上海市","非沪籍","总体")` \\ \cline{1-14}
+
+  E8AO31111 & 读懂单句，根据语境选择恰当的从属连词 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO31111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO31111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO31111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO31111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO31111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO31111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO31111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO31111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO31111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO31111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO31111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO31111_X", "上海市","非沪籍","总体")` \\ \cline{1-14}
+
+  E8AO32111 & 读懂单句，根据语境选择恰当的动词时态 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO32111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO32111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO32111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO32111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO32111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO32111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO32111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO32111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO32111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO32111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO32111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO32111_X", "上海市","非沪籍","总体")` \\ \cline{1-14}
+
+  E8AO33111 & 读懂单句，知道动名词作宾语的用法，根据语境选择恰当的答案 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO33111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO33111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO33111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO33111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO33111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO33111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO33111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO33111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO33111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO33111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO33111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO33111_X", "上海市","非沪籍","总体")` \\ \cline{1-14}
+
+  E8AO34111 & 读懂单句，根据语境选择恰当的特殊疑问词 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO34111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO34111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO34111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO34111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO34111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO34111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO34111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO34111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO34111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO34111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO34111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO34111_X", "上海市","非沪籍","总体")` \\ \cline{1-14}
+
+  E8AO35111 & 读懂单句，知道反意疑问句的结构，并根据语境选择恰当的答案 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO35111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO35111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO35111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO35111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO35111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO35111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO35111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO35111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO35111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO35111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO35111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO35111_X", "上海市","非沪籍","总体")` \\ \cline{1-14}
+
+  E8AO36111 & 读懂单句，知道祈使句的结构，并根据语境选择恰当的答案 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO36111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO36111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO36111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO36111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO36111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO36111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO36111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO36111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO36111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO36111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO36111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO36111_X", "上海市","非沪籍","总体")` \\ \cline{1-14}
+
+  E8AO37111 & 读懂单句，根据语境选择恰当的情态动词 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO37111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO37111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO37111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO37111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO37111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO37111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO37111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO37111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO37111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO37111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO37111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO37111_X", "上海市","非沪籍","总体")` \\ \cline{1-14}
+
+  E8AO38111 & 读懂单句，根据语境选择恰当的并列连词 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO38111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO38111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO38111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO38111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO38111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO38111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO38111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO38111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO38111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO38111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO38111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO38111_X", "上海市","非沪籍","总体")` \\ \cline{1-14}
+
+  E8AO39111 & 读懂单句，根据语境选择恰当的单词释义 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO39111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO39111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO39111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO39111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO39111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO39111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO39111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO39111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO39111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO39111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO39111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO39111_X", "上海市","非沪籍","总体")` \\ \cline{1-14}
+
+  E8AO40111 & 读懂单句，根据语境选择恰当的单词释义 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO40111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO40111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO40111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO40111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO40111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO40111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO40111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO40111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO40111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO40111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO40111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO40111_X", "上海市","非沪籍","总体")` \\ \cline{1-14}
+
+  E8AO41111 & 读懂单句，根据词性、词义、词形变化选择恰当的单词 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO41111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO41111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO41111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO41111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO41111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO41111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO41111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO41111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO41111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO41111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO41111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO41111_X", "上海市","非沪籍","总体")` \\ \cline{1-14}
+
+  E8AO42111 & 读懂单句，根据词性、词义、词形变化选择恰当的单词 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO42111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO42111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO42111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO42111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO42111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO42111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO42111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO42111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO42111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO42111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO42111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO42111_X", "上海市","非沪籍","总体")` \\ \cline{1-14}
+
+  E8AO43111 & 读懂单句，根据词性、词义、词形变化选择恰当的单词 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO43111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO43111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO43111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO43111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO43111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO43111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO43111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO43111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO43111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO43111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO43111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO43111_X", "上海市","非沪籍","总体")` \\ \cline{1-14}
+
+  E8AO44111 & 读懂单句，根据词性、词义、词形变化选择恰当的单词 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO44111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO44111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO44111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO44111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO44111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO44111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO44111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO44111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO44111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO44111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO44111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO44111_X", "上海市","非沪籍","总体")` \\ \cline{1-14}
+
+  E8AO45111 & 读懂单句，根据词性、词义、词形变化选择恰当的单词 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO45111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO45111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO45111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO45111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO45111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO45111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO45111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO45111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO45111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO45111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO45111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO45111_X", "上海市","非沪籍","总体")` \\ \cline{1-14}
+
+  E8AS46111 & 读懂单句，根据词形变化构成新词完成句子 &
+  `r gio.R$VarScoSamKey(query.data, "E8AS46111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS46111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS46111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS46111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS46111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS46111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS46111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS46111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS46111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS46111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS46111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS46111_X", "上海市","非沪籍","总体")` \\ \cline{1-14}
+
+  E8AS47111 & 读懂单句，用常用后缀构成新词完成句子 &
+  `r gio.R$VarScoSamKey(query.data, "E8AS47111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS47111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS47111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS47111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS47111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS47111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS47111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS47111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS47111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS47111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS47111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS47111_X", "上海市","非沪籍","总体")` \\ \cline{1-14}
+
+  E8AS48111 & 读懂单句，用常用后缀构成新词完成句子 &
+  `r gio.R$VarScoSamKey(query.data, "E8AS48111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS48111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS48111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS48111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS48111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS48111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS48111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS48111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS48111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS48111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS48111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS48111_X", "上海市","非沪籍","总体")` \\ \cline{1-14}
+
+  E8AS49111 & 读懂单句，用常用前缀构成新词完成句子 &
+  `r gio.R$VarScoSamKey(query.data, "E8AS49111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS49111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS49111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS49111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS49111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS49111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS49111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS49111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS49111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS49111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS49111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS49111_X", "上海市","非沪籍","总体")` \\ \cline{1-14}
+
+  E8AS50111 & 读懂单句，用常用后缀构成新词完成句子 &
+  `r gio.R$VarScoSamKey(query.data, "E8AS50111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS50111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS50111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS50111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS50111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS50111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS50111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS50111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS50111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS50111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS50111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS50111_X", "上海市","非沪籍","总体")` \\ \cline{1-14}
+
+\end{longtable}
+\end{itshape}
+
+\mytext
+下面将结合“语法词汇”部分的典型题目做具体分析。
+
+\end{landscape}
+
+
+\questiontitle{典型题目5：E8AO21111}
+
+The new park covers \uline{\qquad\qquad} area of 60 square kilometres.
+
+[A] a		\qquad\qquad		[B] an		\qquad\qquad		[C] the		\qquad\qquad		[D] /
+
+- 考查能力：读懂单句，根据语境选择恰当的冠词。
+
+- 正确答案：B
+
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "E8AO21111_X", "上海市","总体","总体")`％
+
+plot.bar.city.en.question.e8ao21111
+
+query2.plot.bar.city.en.question.e8ao21111
+
+\begin{itshape}
+`r gio.R$KeyValue(query2.data, "B")`％的学生能够完成本题任务，选出正确选项B。选择选项A、C、D的人数比例分别为`r gio.R$KeyValue(query2.data, "A")`％、`r gio.R$KeyValue(query2.data, "C")`％，`r gio.R$KeyValue(query2.data, "D")`％。主要原因是不熟悉冠词an在习惯用语“cover an area of”中的使用。
+\end{itshape}
+
+\questiontitle{典型题目6：E8AO22111}
+
+Jon is fond \uline{\qquad\qquad} sports. He often skates and plays ball games.
+
+[A] on	\qquad\qquad			[B] of		\qquad\qquad		[C] at		\qquad\qquad		[D] for
+
+- 考查能力：根据语境，选择与核心词汇搭配的介词。
+- 正确答案：B
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "E8AO22111_X", "上海市","总体","总体")`％
+
+plot.bar.city.en.question.e8ao22111
+
+query2.plot.bar.city.en.question.e8ao22111
+
+\begin{itshape}
+
+`r gio.R$KeyValue(query2.data, "B")`％的学生能够完成本题任务，选出正确选项B。选择选项A、C、D的人数比例分别为`r gio.R$KeyValue(query2.data, "A")`％、`r gio.R$KeyValue(query2.data, "C")`％，`r gio.R$KeyValue(query2.data, "D")`％%。主要原因是不熟悉介词在短语“be fond of”中的使用。
+
+\end{itshape}
+
+\questiontitle{典型题目7：E8AO23111}
+
+\begin{itshape}
+
+The pictures in the menu look \uline{\qquad\qquad} and the taste must be great.
+
+[A] lovely	\qquad\qquad		[B] happily		\qquad\qquad	[C] angrily	 \qquad\qquad		[D] easily
+
+- 考查能力：读懂单句，识别系表结构，并根据语境选择恰当的形容词。
+
+- 正确答案：A
+
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "E8AO23111_X", "上海市","总体","总体")`％
+
+plot.bar.city.en.question.e8ao23111
+
+query2.plot.bar.city.en.question.e8ao23111
+
+\begin{itshape}
+`r gio.R$KeyValue(query2.data, "A")`％的学生能够完成本题任务，选出正确选项A。选择选项B、C、D的人数比例分别为`r gio.R$KeyValue(query2.data, "B")`％、`r gio.R$KeyValue(query2.data, "C")`％，`r gio.R$KeyValue(query2.data, "D")`％。主要原因是不熟悉look作为系动词，后接形容词的结构。其次是不熟悉lovely 是名词加ly而构成的形容词，而其他三个选项都是形容词加ly，构成副词。
+\end{itshape}
+
+\questiontitle{典型题目8：E8AO24111}
+
+\begin{itshape}
+
+Is there much \uline{\qquad\qquad} about saving water in this article?
+
+[A] tip	 \qquad\qquad 	[B] fact 	\qquad\qquad	[C] information	\qquad\qquad	[D] suggestion
+
+\end{itshape}
+
+- 考查能力：识别可数与不可数名词，根据语境选择恰当的答案。
+
+- 正确答案：C
+
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "E8AO24111_X", "上海市","总体","总体")`％
+
+plot.bar.city.en.question.e8ao24111
+
+query2.plot.bar.city.en.question.e8ao24111
+
+\begin{itshape}
+`r gio.R$KeyValue(query2.data, "C")`％的学生能够完成本题任务，选出正确选项C。选择选项A、B、D的人数比例分别为`r gio.R$KeyValue(query2.data, "A")`％、`r gio.R$KeyValue(query2.data, "B")`％，`r gio.R$KeyValue(query2.data, "D")`％。主要原因是不熟悉much表示数量时，与不可数名词连用，其次误认为tip, fact 或suggestion是不可数名词。
+\end{itshape}
+
+\questiontitle{典型题目9：E8AO29111}
+
+\begin{itshape}
+
+This pair of glasses can let you \uline{\qquad\qquad} both near and far things at the same time.
+
+[A] see	 \qquad\qquad		[B] to see	\qquad\qquad		[C] seeing	\qquad\qquad		[D] saw
+
+\end{itshape}
+
+- 考查能力：读懂单句，知道不定式作宾补的用法，根据语境选择恰当的答案。
+
+- 正确答案：A
+
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "E8AO29111_X", "上海市","总体","总体")`％
+
+plot.bar.city.en.question.e8ao29111
+
+query2.plot.bar.city.en.question.e8ao29111
+
+\begin{itshape}
+`r gio.R$KeyValue(query2.data, "A")`％的学生能够完成本题任务，选出正确选项A。选择选项B、C、D的人数比例分别为`r gio.R$KeyValue(query2.data, "B")`％、`r gio.R$KeyValue(query2.data, "C")`％，`r gio.R$KeyValue(query2.data, "D")`％。主要原因可能不熟悉省略to的不定式做宾语补足语的情况。
+\end{itshape}
+
+\questiontitle{典型题目10：E8AO33111}
+
+\begin{itshape}
+
+My brother practices \uline{\qquad\qquad} the violin for two hours every day.
+
+[A] playing		\qquad\qquad	[B] played	\qquad\qquad		[C] to play	 \qquad\qquad		[D] to playing
+
+\end{itshape}
+
+- 考查能力：读懂单句，知道动名词作宾语的用法，根据语境选择恰当的答案。
+
+- 正确答案：A
+
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "E8AO33111_X", "上海市","总体","总体")`％
+
+\begin{itshape}
+`r gio.R$KeyValue(query2.data, "A")`％的学生能够完成本题任务，选出正确选项A。选择选项B、C、D的人数比例分别为`r gio.R$KeyValue(query2.data, "B")`％、`r gio.R$KeyValue(query2.data, "C")`％，`r gio.R$KeyValue(query2.data, "D")`％。主要原因可能不熟悉practise后加动名词的用法。
+\end{itshape}
+
+\questiontitle{典型题目11：E8AS46111}
+
+\begin{itshape}
+Kitty took some \uline{\qquad\qquad} for the English Club on the Open Day. (photo)
+\end{itshape}
+
+- 考查能力：读懂单句，根据词性、词义、词形变化选择恰当的单词。
+
+- 正确答案：photos
+
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "E8AS46111_X", "上海市","总体","总体")`％
+
+plot.bar.city.en.question.e8as46111
+
+query2.plot.bar.city.en.question.e8as46111
+
+\begin{itshape}
+`r gio.R$KeyValue(query2.data, "1")`％的学生能够根据句意，some后跟可数名词的复数形式，正确填写出photos。`r gio.R$KeyValue(query2.data, "0")`％的学生没有得分。主要原因是受到其他以-o结尾可数名词的复数加-es的影响，填写了photoes，还有部分学生过度思考，填写了photographs。
+\end{itshape}
+
+\questiontitle{典型题目12：E8AS49111}
+
+\begin{itshape}
+It is \uline{\qquad\qquad} to succeed without working hard. (possible)
+\end{itshape}
+
+- 考查能力：读懂单句，根据词性、词义、词形变化选择恰当的单词。
+
+- 正确答案：impossible
+
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "E8AS49111_X", "上海市","总体","总体")`％
+
+plot.bar.city.en.question.e8as49111
+
+query2.plot.bar.city.en.question.e8as49111
+
+\begin{itshape}
+`r gio.R$KeyValue(query2.data, "1")`％的学生能够完成根据句意和结构，正确填写出所给形容词impossible的反义词impossible。`r gio.R$KeyValue(query2.data, "0")`％的学生没有得分。主要原因是没有理解句意和It is + adj. + to do sth.结构，填写了副词possibly，还有部分学生加了错误的前缀。
+\end{itshape}
+
+
+\begin{landscape}
+
+\section{阅读}
+
+`r tab_name <- "学生在英语学科“阅读”维度上的平均得分率（％）" `
+
+\begin{itshape}
+\mytable
+\begin{longtable}{|c|c|p{7.5cm}|c|c|c|c|c|c|c|c|c|c|c|c|}
+\caption{`r tab_name`} \label{tab: `r tab_name`} \\ \hline
+
+\makecell[c]{内容\\维度} & 题目编码 & \makecell[c]{能力描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
+
+\multirow{5}{*}{\makecell[c]{话题\\语汇}} & E8AO51111 & 根据释义读懂话题语汇，并选择相匹配的图片 &
+`r gio.R$VarScoSamKey(query.data, "E8AO51111_X", "上海市","总体","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO51111_X", "上海市","公办","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO51111_X", "上海市","民办","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO51111_X", "上海市","初中","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO51111_X", "上海市","九年一贯","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO51111_X", "上海市","完中","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO51111_X", "上海市","新优质","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO51111_X", "上海市","强校工程","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO51111_X", "上海市","男","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO51111_X", "上海市","女","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO51111_X", "上海市","沪籍","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AO51111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+ & E8AO52111 & 根据释义读懂话题语汇，并选择相匹配的图片 &
+ `r gio.R$VarScoSamKey(query.data, "E8AO52111_X", "上海市","总体","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO52111_X", "上海市","公办","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO52111_X", "上海市","民办","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO52111_X", "上海市","初中","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO52111_X", "上海市","九年一贯","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO52111_X", "上海市","完中","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO52111_X", "上海市","新优质","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO52111_X", "上海市","强校工程","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO52111_X", "上海市","男","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO52111_X", "上海市","女","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO52111_X", "上海市","沪籍","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AO52111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+ & E8AO53111 & 根据释义读懂话题语汇，并选择相匹配的图片 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO53111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO53111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO53111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO53111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO53111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO53111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO53111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO53111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO53111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO53111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO53111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO53111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+ & E8AO54111 & 根据释义读懂话题语汇，并选择相匹配的图片 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO54111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO54111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO54111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO54111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO54111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO54111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO54111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO54111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO54111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO54111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO54111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO54111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+ & E8AO55111 & 根据释义读懂话题语汇，并选择相匹配的图片 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO55111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO55111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO55111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO55111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO55111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO55111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO55111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO55111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO55111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO55111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO55111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO55111_X", "上海市","非沪籍","总体")` \\ \cline{1-15}
+
+\multirow{5}{*}{\makecell[c]{语篇}} & E8AO56111 & 读懂故事语篇，根据语境，选择恰当的副词，补全所缺内容 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO56111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO56111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO56111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO56111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO56111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO56111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO56111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO56111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO56111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO56111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO56111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO56111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & E8AO57111 & 读懂故事语篇，根据语境，选择恰当的动词短语，补全所缺内容 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO57111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO57111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO57111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO57111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO57111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO57111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO57111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO57111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO57111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO57111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO57111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO57111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & E8AO58111 & 读懂故事语篇，根据语境，选择恰当的名词，补全所缺内容 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO58111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO58111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO58111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO58111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO58111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO58111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO58111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO58111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO58111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO58111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO58111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO58111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & E8AO59111 & 读懂故事语篇，根据语境，选择恰当的动词，补全所缺内容 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO59111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO59111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO59111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO59111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO59111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO59111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO59111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO59111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO59111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO59111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO59111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO59111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & E8AO60111 & 读懂故事语篇，根据语境，选择恰当的形容词，补全所缺内容 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO60111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO60111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO60111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO60111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO60111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO60111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO60111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO60111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO60111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO60111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO60111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO60111_X", "上海市","非沪籍","总体")` \\ \cline{1-15}
+
+  & E8AO61111 & 读懂故事语篇，根据语境，选择恰当的名词，补全所缺内容 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO61111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO61111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO61111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO61111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO61111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO61111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO61111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO61111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO61111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO61111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO61111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO61111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & E8AO62111 & 读懂故事语篇，根据语境，选择恰当的形容词短语，补全所缺内容 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO62111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO62111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO62111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO62111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO62111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO62111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO62111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO62111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO62111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO62111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO62111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO62111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & E8AO63111 & 读懂故事语篇，根据语境，选择恰当的动词，补全所缺内容 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO63111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO63111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO63111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO63111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO63111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO63111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO63111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO63111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO63111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO63111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO63111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO63111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & E8AO64111 & 读懂非连续的说明文，根据短文内容，选择文章主旨大意 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO64111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO64111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO64111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO64111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO64111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO64111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO64111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO64111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO64111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO64111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO64111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO64111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & E8AO65111 & 读懂非连续的说明文，根据短文内容，获取事实信息 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO65111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO65111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO65111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO65111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO65111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO65111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO65111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO65111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO65111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO65111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO65111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO65111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & E8AO66111 & 读懂非连续的说明文，根据短文内容进行简单推断 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO66111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO66111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO66111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO66111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO66111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO66111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO66111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO66111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO66111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO66111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO66111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO66111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & E8AO67111 & 读懂记叙文语篇，根据短文内容获取基本信息 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO67111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO67111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO67111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO67111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO67111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO67111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO67111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO67111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO67111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO67111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO67111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO67111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & E8AO68111 & 读懂记叙文语篇，根据短文内容获取事实信息 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO18111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO18111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO18111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO18111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO18111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO18111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO18111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO18111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO18111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO18111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO18111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO18111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & E8AO69111 & 读懂记叙文语篇，根据短文内容获取事实信息 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO69111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO69111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO69111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO69111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO69111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO69111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO69111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO69111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO69111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO69111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO69111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO69111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & E8AO70111 & 读懂记叙文语篇，根据短文内容进行简单判断 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO70111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO70111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO70111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO70111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO70111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO70111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO70111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO70111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO70111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO70111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO70111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO70111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & E8AO71111 & 读懂记叙文语篇，根据短文内容进行简单推断 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO71111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO71111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO71111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO71111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO71111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO71111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO71111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO71111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO71111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO71111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO71111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO71111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & E8AO72111 & 读懂记叙文语篇，根据短文内容进行简单推断 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO72111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO72111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO72111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO72111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO72111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO72111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO72111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO72111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO72111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO72111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO72111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO72111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & E8AO73111 & 读懂记叙文语篇，根据短文内容获取事实信息 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO73111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO73111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO73111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO73111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO73111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO73111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO73111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO73111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO73111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO73111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO73111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO73111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+  & E8AO74111 & 读懂记叙文语篇，根据短文内容进行简单推断 &
+  `r gio.R$VarScoSamKey(query.data, "E8AO74111_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO74111_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO74111_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO74111_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO74111_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO74111_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO74111_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO74111_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO74111_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO74111_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO74111_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AO74111_X", "上海市","非沪籍","总体")` \\ \cline{1-15}
+
+\end{longtable}
+\end{itshape}
+
+\mytext
+下面将结合“阅读”部分的典型题目做具体分析。
+
+\end{landscape}
+
+\questiontitle{典型题目13、14、15、16、17：E8AO56111、E8AO59111、E8AO60111、E8AO62111、E8AO63111}
+
+\begin{itshape}
+
+Choose the words or expressions and complete the passage.
+
+Greg hates to be called a hero, but that is what people call him in the mountains of Pakistan. He has helped them to build more than sixty schools and this has changed the lives of many young people,   56   the girls. But what first brought a white American man to this faraway part of the world where tourists seldom go?
+
+Greg Mortenson was born in the United States, but   57   in Africa, where his parents were teachers. His   58   was mountain climbing. He climbed his first mountain when he was only eleven. Many years later when his younger sister died suddenly, he decided to climb Pakistan’s K2 in her memory. K2 is the second highest mountain in the world. He didn’t   59   the top of K2, because he was tired out. On his way back he got lost, and finally he moved into the tiny village of Korphe with great difficulty.
+
+The villagers looked after him and nursed him back to health. He soon realized how   60   these people were. When he asked to see the village school, they took him to the village square. But there was no school. Instead the children were sitting on the ground outside, without a   61  , writing in the sand with sticks. He could see that the children were   62   knowledge and were doing their best to learn, even in such difficult conditions. So he promised to return and build a school for them.
+
+Back in America he started a programme called Pennies for Pakistan. After three years of money raising, he went back to Korphe. The villagers were amazed when he   63   his promise and built Korphe School for girls. Most of the girls who attend the school will be the first educated women in their families. Greg Mortenson likes to quote (引用) an African proverb: “If you teach a boy, you teach a person. But if you teach a girl, you teach a community (社区).”
+\end{itshape}
+
+\questiontitle{E8AO56111}
+
+\begin{itshape}
+[A] only	\qquad\qquad	[B] simply 	\qquad\qquad	[C] especially  \qquad\qquad	[D] completely
+\end{itshape}
+
+\questiontitle{E8AO59111}
+
+\begin{itshape}
+[A] touch	\qquad\qquad	[B] reach	\qquad\qquad	[C] get		\qquad\qquad		[D] make
+\end{itshape}
+
+\questiontitle{E8AO60111}
+
+\begin{itshape}
+[A] poor \qquad\qquad		[B] happy	\qquad\qquad [C] tired	\qquad\qquad	[D] pleased
+\end{itshape}
+
+\questiontitle{E8AO62111}
+
+\begin{itshape}
+[A] full of	\qquad\qquad	[B] familiar with	\qquad\qquad [C] hungry for	 \qquad\qquad	[D] famous for
+\end{itshape}
+
+\questiontitle{E8AO63111}
+
+\begin{itshape}
+[A] broke	\qquad\qquad	[B] forgot	\qquad\qquad	[C] made	\qquad\qquad		[D] kept
+\end{itshape}
+
+\questiontitle{典型题目13：E8AO56111}
+
+- 考查能力：读懂故事语篇，根据语境，选择恰当的副词，补全所缺内容
+
+- 正确答案：C
+
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "E8AO56111_X", "上海市","总体","总体")`％
+
+plot.bar.city.en.question.e8ao56111
+
+query2.plot.bar.city.en.question.e8ao56111
+
+\begin{itshape}
+`r gio.R$KeyValue(query2.data, "C")`％的学生能够完成本题任务，能根据短文内容和句子结构，选择C项。`r gio.R$KeyValue(query2.data, "A")`％的学生选择了A项。`r gio.R$KeyValue(query2.data, "B")`％的学生选择了B项， `r gio.R$KeyValue(query2.data, "D")`％的学生选择了D项。主要原因是未能理解上下文，或没有读懂本句“强调”的句意。建议教师加强学生阅读时上下文理解能力。
+\end{itshape}
+
+\questiontitle{典型题目14：E8AO59111}
+
+- 考查能力：读懂故事语篇，根据语境，选择恰当的动词，补全所缺内容
+
+- 正确答案：B
+
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "E8AO59111_X", "上海市","总体","总体")`％
+
+plot.bar.city.en.question.e8ao59111
+
+query2.plot.bar.city.en.question.e8ao59111
+
+\begin{itshape}
+学生需要理解句意：“抵达K2的顶峰” 应选择及物动词reach直接加宾语the top of K2的结构。`r gio.R$KeyValue(query2.data, "B")`％的学生能够完成本题任务，选择B项。`r gio.R$KeyValue(query2.data, "A")`％的学生选择了A项，`r gio.R$KeyValue(query2.data, "D")`％的学生选择了D项，动宾搭配发生错误。`r gio.R$KeyValue(query2.data, "C")`％的学生选择了C项，混淆及物动词reach和不及物动词get的用法。建议教师要加强对及物动词和不及物动词的讲解，并加强学生对动词的辨析能力。
+\end{itshape}
+
+\questiontitle{典型题目15：E8AO60111}
+
+- 考查能力：读懂故事语篇，根据语境，选择恰当的形容词，补全所缺内容
+
+- 正确答案：A
+
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "E8AO60111_X", "上海市","总体","总体")`％
+
+plot.bar.city.en.question.e8ao60111
+
+query2.plot.bar.city.en.question.e8ao60111
+
+\begin{itshape}
+根据下文“虽然学生很渴望学习，但他们没有学校，没有教师，没有学习工具等”，`r gio.R$KeyValue(query2.data, "A")`％的学生能够完成本题任务，选择A项。`r gio.R$KeyValue(query2.data, "B")`％的学生选择了B项，`r gio.R$KeyValue(query2.data, "C")`％的学生选择了C项，`r gio.R$KeyValue(query2.data, "D")`％的学生选择了D项，这些学生可能没有理解上下文含义。建议教师要引导学生在语境中运用语法。
+\end{itshape}
+
+\questiontitle{典型题目16：E8AO62111}
+
+- 考查能力：读懂故事语篇，根据语境选择恰当的形容词短语，补全所缺内容
+
+- 正确答案：C
+
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "E8AO62111_X", "上海市","总体","总体")`％
+
+plot.bar.city.en.question.e8ao62111
+
+query2.plot.bar.city.en.question.e8ao62111
+
+\begin{itshape}
+学生选择形容词短语需要读懂上下文，理解 “hungry for”的含义。`r gio.R$KeyValue(query2.data, "C")`％的学生能够完成本题任务，根据短文内容和形容词短语的辨析，选择C项。`r gio.R$KeyValue(query2.data, "A")`％的学生选择了A项，`r gio.R$KeyValue(query2.data, "B")`％的学生选择了B项，`r gio.R$KeyValue(query2.data, "D")`％的学生选择了D项，说明没有读懂句意。建议教师帮助学生理解完形填空一定要基于上下文的语境。
+\end{itshape}
+
+\questiontitle{典型题目17：E8AO63111}
+
+- 考查能力：读懂故事语篇，根据语境，选择恰当的动词，补全所缺内容
+
+- 正确答案：D
+
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "E8AO63111_X", "上海市","总体","总体")`％
+
+plot.bar.city.en.question.e8ao63111
+
+query2.plot.bar.city.en.question.e8ao63111
+
+\begin{itshape}
+学生选择动词需要理解上下文，主人公遵循诺言（kept his promise），帮助山区女孩子建立了学校。`r gio.R$KeyValue(query2.data, "D")`％的学生能够完成本题任务，根据短文内容和动词的辨析，选择D项。`r gio.R$KeyValue(query2.data, "A")`％的学生选择了A项，`r gio.R$KeyValue(query2.data, "B")`％的学生选择了B项，`r gio.R$KeyValue(query2.data, "C")`％的学生选择了C项，说明没有读懂句意或未能辨析make、keep与promise搭配时的不同含义。建议教师帮助学生理解完形填空一定要基于上下文的语境。
+\end{itshape}
+
+\questiontitle{典型题目18、19：E8AO65111、E8AO66111}
+
+Read and choose the best answer.
+
+\begin{itshape}
+\mytable
+\begin{longtable}{|p{6cm}|p{0.5cm}|p{6cm}|}
+
+\multicolumn{3}{c}{\makecell[c]{A}} \\
+\hline
+
+\makecell[c]{\textbf{Joe, 16}} &  & \makecell[c]{\textbf{Kate, 16}} \\
+
+On weekends, my friends and I always have ball games together. I love ball games! On Saturday evenings, I usually go out with friends to the movies or to a party or both! We can do all these things together.		
+
+& &
+
+Music is great! I have a piano, and I can sing too. I’m in a band with friends. We all have smartphones and we can take photos and make videos of our music with our phones. I have all my music on my phone! \\
+\cline{1-1} \cline{3-3}
+\makecell[c]{\textbf{Jack, 16}}  & & \makecell[c]{\textbf{Tina, 17}} \\
+
+In my free time I go out with friends or listen to music. We go to the park and have a picnic or just go for a walk in good weather. In bad weather we go to the gym at the sports center or to the movies. Sometimes we play computer games or watch DVDs. I love spending time with my friends — we always have fun.		
+
+& &
+
+When I am not at school, I visit my friends or stay at home. I spend a lot of time in my room. I read books, magazines, or things on the Internet. I listen to music. I also play the guitar. I have a guitar lesson on Saturday morning. Sometimes my friends come over in the afternoon and we watch DVDs or play computer games. \\
+
+\hline
+\end{longtable}
+\end{itshape}
+
+
+\questiontitle{E8AO65111}
+
+\begin{itshape}
+Both Jack and Tina like to \uline{\qquad\qquad}.
+
+[A] go for a walk		\qquad\qquad				[B] play the guitar
+
+[C] visit friends		\qquad\qquad			[D] play computer games
+\end{itshape}
+
+\questiontitle{E8AO66111}
+
+\begin{itshape}
+If you are going to play soccer, who will you invite to join you?
+
+[A] Joe.	\qquad\qquad		[B] Kate.		\qquad\qquad	[C] Jack.	\qquad\qquad	[D] Tina.
+\end{itshape}
+
+\questiontitle{典型题目18：E8AO65111}
+
+- 考查能力：读懂非连续的说明文，根据短文内容，获取事实信息
+
+- 正确答案：D
+
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "E8AO65111_X", "上海市","总体","总体")`％
+
+plot.bar.city.en.question.e8ao65111
+
+query2.plot.bar.city.en.question.e8ao65111
+
+\begin{itshape}
+此题考查学生理解非连续性四则文本所讲述内容，并直接提取信息的能力。`r gio.R$KeyValue(query2.data, "D")`％的学生能够完成本题任务：根据文本Jack：Sometimes we play computer games, Tina: … play computer games.故推断出Jack 和Tina的共同喜好是打电脑游戏。D是正确选项。选择A项的学生比例为`r gio.R$KeyValue(query2.data, "A")`％，选择B项的学生比例为`r gio.R$KeyValue(query2.data, "B")`％，选择C项的学生比例为`r gio.R$KeyValue(query2.data, "C")`％。主要原因是部分学生将“go out with friends”和“visit friends”混为一谈。建议教师在平时阅读教学中，培养学生比较和对照（compare and contrast）的阅读技能。
+\end{itshape}
+
+\questiontitle{典型题目19：E8AO66111}
+
+- 考查能力：读懂非连续的说明文，根据短文内容进行简单推断。
+
+- 正确答案：A
+
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "E8AO66111_X", "上海市","总体","总体")`％
+
+plot.bar.city.en.question.e8ao66111
+
+query2.plot.bar.city.en.question.e8ao66111
+
+\begin{itshape}
+此题目考查学生理解非连续性文本所讲述内容的能力，并通过上下文，推断出如果你想要踢足球，你会邀请谁。`r gio.R$KeyValue(query2.data, "A")`％的学生能够完成本题任务：读懂文本内容，根据信息“Joe: On weekends, my friends and I always have ball games together. I love ball games!”故推断出Joe的喜好是球类活动。选择B项的学生比例为`r gio.R$KeyValue(query2.data, "B")`％，选择C项的学生比例为`r gio.R$KeyValue(query2.data, "C")`％,选择D项的学生比例为`r gio.R$KeyValue(query2.data, "D")`％。主要原因可能是部分学生因为英语语言能力有限，不能正确理解文本内容。建议教师在平时阅读教学中，创设情境，提高学生根据上下文推断能力。
+\end{itshape}
+
+\questiontitle{典型题目20：E8AO70111}
+
+\begin{itshape}
+It’s seven o’clock in the morning. Tom Martin’s wife gets ready for work. Tom stays at home with his children, Billy, aged two years, and Eve, aged two months.
+
+About 1.4 million fathers in the U.S. stay at home to take care of their children. Tom, 38, is one of them. His wife Carol works for a construction company. After two years at home with their babies, she’s happy to be back at work.
+
+Tom, Billy, and Eve have breakfast together. Then they look at picture books or Tom and Billy play ball games in the park. Every day at eleven, Tom takes Billy to preschool for two hours. Then he goes back home with Eve and works for an hour or two while the baby sleeps. Tom is a programmer, so it is easy to work at home.
+
+Sharon Rivers, a preschool teacher, says, “This situation is quite normal these days. In some families, the mum takes care of the children, but in many families, it’s the dad. Some fathers want to stay at home and take care of their children; some fathers stay at home because their wife makes more money. The important thing is that they all love their children.” When Carol comes home from work, Tom goes out for a game of tennis. In the evening, the family has dinner together. Billy and Eve go to bed at eight, and then Carol and Tom can relax together and talk about their day.
+
+So, what is Tom’s advice to young fathers? “We have about fifty years to work and make money, but only a few years to watch our babies grow. Don’t miss this important time.”
+
+Which of the following statements is right?
+
+[A] Both Billy and Eve are two years old.
+
+[B] Carol and Tom can relax together before 8 o’clock every day.
+
+[C] Carol stayed at home for two years before she went back to work.
+
+[D] Every day, when Billy and Eve sleep, Tom works for about two hours.
+
+\end{itshape}
+
+\questiontitle{典型题目20：E8AO70111}
+
+- 考查能力：读懂记叙文语篇，根据短文内容获取事实信息
+
+- 正确答案：C
+
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "E8AO70111_X", "上海市","总体","总体")`％
+
+plot.bar.city.en.question.e8ao70111
+
+query2.plot.bar.city.en.question.e8ao70111
+
+\begin{itshape}
+此题目考查学生获取事实信息，判断信息正误的能力。通过文本第二段After two years at home with their babies, she’s happy to be back at work.，`r gio.R$KeyValue(query2.data, "C")`％的学生能够读懂段落的内容，确定C项为正确项。选择A项的学生比例为`r gio.R$KeyValue(query2.data, "A")`％，通过第一段文本“Billy, aged two years, and Eve, aged two months.” 可以判断A项目是错误项。选择B项的学生比例为`r gio.R$KeyValue(query2.data, "B")`％，通过第四段文本最后一句“Billy and Eve go to bed at eight, and then Carol and Tom can relax together and talk about their day. ”可以判断B项目是错误项。选择D项的学生比例为`r gio.R$KeyValue(query2.data, "D")`％，通过第三段文本第三句“Then he goes back home with Eve and works for an hour or two while the baby sleeps.” 可以判断D项目是错误项。建议教师在平时的阅读教学中，加强学生对文本信息整合判断的能力。
+\end{itshape}
+
+\questiontitle{典型题目21、22、23：E8AO71111、E8AO72111、E8AO74111}
+
+\begin{itshape}
+
+My grandma picks me up after school. She takes care of me while my parents are at work. Grandma is always interested in my homework.
+
+Today, I had to use the computer to do my homework. First, I went on the Internet to find out about how bears live in the winter. Then I typed up a report. Grandma said, “Such progress!” I asked her what she had meant. She told me about how computers have changed everything. “Computers have even changed the way kids do homework,” she said.
+Grandma told me that when she was a girl, people did not have computers at home.
+
+“Well, how did you look up information?” I asked Grandma. She told me that she went to the library and read books about the information she needed to learn. If she needed help with homework, she asked her mother. Her mum was at home every day.
+
+When my parents come home, I will be excited to tell them what Grandma said. Things sure have changed since Grandma was a girl!
+\end{itshape}
+
+\questiontitle{E8AO71111}
+
+\begin{itshape}
+What was the writer’s homework in the story?
+
+[A] Having a quiz about seasonal changes.
+
+[B] Doing a survey about winter animals.
+
+[C] Writing a report about bears in winter.
+
+[D] Looking up information on the Internet.
+\end{itshape}
+
+\questiontitle{E8AO72111}
+
+\begin{itshape}
+What did Grandma mean by saying “such progress”?
+
+[A] The writer has made great progress.
+
+[B] Homework should be done with computer.
+
+[C] The writer types faster than before.
+
+[D] Technology is now in great progress.
+\end{itshape}
+
+\questiontitle{E8AO74111}
+
+\begin{itshape}
+
+According to the last paragraph, what will the writer probably say to her parents about her grandma?
+
+[A] Grandma never went to the library to read books.
+
+[B] Grandma asked me to teach her how to use the computer.
+
+[C] Grandma never used the computer to do her homework.
+
+[D] Grandma helped me with my school project about bears.
+\end{itshape}
+
+\questiontitle{典型题目21：E8AO71111}
+
+- 考查能力：读懂记叙文语篇，根据短文内容进行简单推断
+
+- 正确答案：C
+
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "E8AO71111_X", "上海市","总体","总体")`％
+
+plot.bar.city.en.question.e8ao71111
+
+query2.plot.bar.city.en.question.e8ao71111
+
+\begin{itshape}
+此题考查学生通过上下文，理解文段，推断“作者回家作业内容“。`r gio.R$KeyValue(query2.data, "C")`％的学生能够完成本题任务：读懂文段的内容，根据文本材料第二段提供的信息：I went on the Internet to find out about how bears live in the winter. Then I typed up a report.确定C项为正确项。选择A项的学生比例为`r gio.R$KeyValue(query2.data, "A")`％；选择B项的学生比例为`r gio.R$KeyValue(query2.data, "B")`％。选择D项的学生比例为`r gio.R$KeyValue(query2.data, "D")`％。这些学生都错误地提取了文本的信息。建议教师在平时的阅读教学中，加强提高学生对文本材料信息提取的能力。
+\end{itshape}
+
+\questiontitle{典型题目22：E8AO72111}
+
+- 考查能力：读懂记叙文语篇，根据短文内容进行推断
+
+- 正确答案：D
+
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "E8AO72111_X", "上海市","总体","总体")`％
+
+plot.bar.city.en.question.e8ao72111
+
+query2.plot.bar.city.en.question.e8ao72111
+
+\begin{itshape}
+此题考查学生通过读懂上下文推断“外婆说的进步指的是什么”。`r gio.R$KeyValue(query2.data, "D")`％的学生能够完成本题任务。根据文本材料第二段提供的信息： She told me about how computers have changed everything. “Computers have even changed the way kids do homework,” she said. Grandma told me that when she was a girl, people did not have computers at home.确定D项为正确项。选择A项的学生比例为`r gio.R$KeyValue(query2.data, "A")`％；选择B项的学生比例为`r gio.R$KeyValue(query2.data, "B")`％。选择C项的学生比例为`r gio.R$KeyValue(query2.data, "C")`％。选择B项的估计受到Computers have even changed the way kids do homework.这句话的干扰，提取了文本的信息。建议教师在平时的阅读教学中，加强提高学生对文本材料信息提取并进行甄别的能力。
+\end{itshape}
+
+\questiontitle{典型题目23：E8AO74111}
+
+- 考查能力：读懂记叙文语篇，根据短文内容进行简单推断
+
+- 正确答案：C
+
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "E8AO74111_X", "上海市","总体","总体")`％
+
+plot.bar.city.en.question.e8ao74111
+
+query2.plot.bar.city.en.question.e8ao74111
+
+\begin{itshape}
+此题考查学生通过读懂上下文，推断作者可能会对她父母所说的话。`r gio.R$KeyValue(query2.data, "C")`％的学生能够完成本题任务：根据信息“Grandma told me that when she was a girl, people did not have computers at home.”; “She told me that she went to the library and read books about the information she needed to learn. If she needed help with homework, she asked her mother.”推断出 C项为正确项。选择A项的学生比例为`r gio.R$KeyValue(query2.data, "A")`％，选择B项的学生比例为`r gio.R$KeyValue(query2.data, "B")`％。选择D项的学生比例为`r gio.R$KeyValue(query2.data, "D")`％。这些学生都片面理解了文本所传递的信息或提取了错误的信息。建议教师在平时的阅读教学中，加强提高学生对文本材料内涵推断的能力。
+\end{itshape}
+
+\begin{landscape}
+
+\section{写作}
+
+`r tab_name <- "学生在英语学科“写作”维度上的平均得分率（％）" `
+
+\begin{itshape}
+\mytable
+\begin{longtable}{|c|c|p{7.5cm}|c|c|c|c|c|c|c|c|c|c|c|c|}
+\caption{`r tab_name`} \label{tab: `r tab_name`} \\ \hline
+
+\makecell[c]{内容\\维度} & 题目编码 & \makecell[c]{能力描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
+
+\multirow{4}{*}{\makecell[c]{话题}} & E8AS75111 & 完成简单的叙事写作任务，内容充实，覆盖要点 &
+`r gio.R$VarScoSamKey(query.data, "E8AS75111_X", "上海市","总体","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AS75111_X", "上海市","公办","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AS75111_X", "上海市","民办","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AS75111_X", "上海市","初中","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AS75111_X", "上海市","九年一贯","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AS75111_X", "上海市","完中","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AS75111_X", "上海市","新优质","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AS75111_X", "上海市","强校工程","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AS75111_X", "上海市","男","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AS75111_X", "上海市","女","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AS75111_X", "上海市","沪籍","总体")` &
+`r gio.R$VarScoSamKey(query.data, "E8AS75111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+ & E8AS75211 & 完成简单的叙事写作任务，用词适切，语法正确，语言地道 &
+ `r gio.R$VarScoSamKey(query.data, "E8AS75211_X", "上海市","总体","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AS75211_X", "上海市","公办","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AS75211_X", "上海市","民办","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AS75211_X", "上海市","初中","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AS75211_X", "上海市","九年一贯","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AS75211_X", "上海市","完中","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AS75211_X", "上海市","新优质","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AS75211_X", "上海市","强校工程","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AS75211_X", "上海市","男","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AS75211_X", "上海市","女","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AS75211_X", "上海市","沪籍","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "E8AS75211_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+ & E8AS75311 & 完成简单的叙事写作任务，结构紧凑，意思连贯 &
+  `r gio.R$VarScoSamKey(query.data, "E8AS75311_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS75311_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS75311_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS75311_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS75311_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS75311_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS75311_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS75311_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS75311_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS75311_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS75311_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS75311_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+
+ & E8AS75411 & 完成简单的叙事写作任务，书写规范，字数适宜 &
+  `r gio.R$VarScoSamKey(query.data, "E8AS75411_X", "上海市","总体","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS75411_X", "上海市","公办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS75411_X", "上海市","民办","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS75411_X", "上海市","初中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS75411_X", "上海市","九年一贯","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS75411_X", "上海市","完中","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS75411_X", "上海市","新优质","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS75411_X", "上海市","强校工程","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS75411_X", "上海市","男","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS75411_X", "上海市","女","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS75411_X", "上海市","沪籍","总体")` &
+  `r gio.R$VarScoSamKey(query.data, "E8AS75411_X", "上海市","非沪籍","总体")` \\ \cline{1-15}
+
+\end{longtable}
+\end{itshape}
+
+\mytext
+下面将结合“写作”部分的典型题目做具体分析。
+
+\end{landscape}
+
+
+\questiontitle{典型题目24、25、26、27：E8AS75111、E8AS75211、E8AS75311、
+E8AS75411}
+
+\begin{center}
+【写作任务】Part Four  Writing (10分)
+\end{center}
+
+\begin{itshape}
+Write a passage about “New Year’s Eve Party” with the help of the pictures in 50—80 words. （根据所给图片，写一篇关于迎新年晚会的短文，词数50至80，标点符号不占格）（10分）
+\end{itshape}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{en_E8AS75111_0.png}
+\end{figure}
+
+
+【试题属性】
+\begin{center}
+Part Four Writing (10分)
+\end{center}
+
+题目序号：E8AS751_2018、E8AS752_2018、E8AS753_2018、E8AS754_2018
+
+\begin{itshape}
+\mytable
+\begin{longtable}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
+\hline
+试题编码	&  &	题型	& 书面开放题 \\ \hline
+
+内容维度	& 话题	& 内容标引 &	7.2.1 \\ \hline
+
+试题类型	& \multicolumn{3}{|l|}{$\square$内涵把握   \qquad\qquad    $\star$问题解决} \\ \hline
+
+水平	& C	& 分值	& 10 \\ \hline
+
+具体要求 & \multicolumn{3}{|l|}{能借助图片提示，完成简单的叙事写作任务} \\ \hline
+
+答案	& &	试题难度 &	0.78 \\ \hline
+\end{longtable}
+\end{itshape}
+
+
+
+【评分标准】
+
+\begin{itshape}
+\mytable
+\begin{longtable}{|p{5.3cm}|p{0.8cm}|p{8.8cm}|} \hline
+\makecell[c]{采分点} &	满分 &	\makecell[c]{可给分值} \\ \hline
+\makecell[l]{1. 内容充实，覆盖要点 \\（内容、信息全面）} & 4分	& \makecell[l]{ 4 \quad 描述3-4幅图片，且内容合理、丰富
+ \\ 3 \quad 描述1-3幅图片，内容较合理 \\ 1-2 \quad 描述1幅图片，内容不合理 \\ 0 \quad  没有作答，或描述内容与主题无关} \\ \hline
+
+\makecell[l]{2. 用词适切，语法正确，语言地道 \\（词汇、语法、句型）} &	4分	& \makecell[l]{4 \quad 用词适切，基本或完全没有语言错误，语言地道 \\ 3 \quad 用词基本适切，有少量语言错误，但不影响理解，\\ 语言较为地道 \\ 1-2 \quad 有部分语言错误，一定程度上影响理解 \\ 0 \quad 有大量语言错误，影响了理解} \\ \hline
+
+\makecell[l]{3. 结构紧凑，意思连贯 \\（语意、连词、指代）}	& 1分	& \makecell[l]{ 1 \quad  行文基本连贯，连接词使用恰当，指代清晰 \\ 0.5 \quad 行文部分连贯，看得出学生有使用连接词语的意 \\ 识，但不够恰当，指代不够清晰 \\ 0 \quad 没有连贯的意识} \\ \hline
+
+\makecell[l]{4. 书写规范，字数适宜 \\ （标点符号、大小写、字数）}	 & 1分	 & \makecell[l]{ 1 \quad  大小写、标点基本正确，词数达标 \\ 0.5 \quad 大小写、标点有部分错误，词数达标 \\ 0 \quad  大小写、标点错误较多，语言应用不规范，词数不足} \\ \hline
+\end{longtable}
+\end{itshape}
+
+0分作文情况：
+
+（1）作文部分空白，学生没有回答
+
+（2）学生所写作文与题目毫无相关
+
+（3）学生的作文为抄写作文，包括：抄写阅读部分的文字、抄写题目等
+每幅图片呈现的内容
+
+图一与a New Year’s Eve Party有关即可，可以是受邀参加，也可以是介绍这一活动。
+
+图二与arrange the party有关即可,可以提到准备食物，装饰教室，打扫卫生等。
+
+图三与sing a song, dance, play games等表演节目有关即可。
+
+图四与临近晚会结束的活动有关。
+
+
+\clearpage
+
+【试卷分析】
+
+样文一：
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{en_E8AS75111_1.png}
+\end{figure}
+点评：
+这篇短文属于A类作文。学生在理解图片信息的基础上，用简洁的语言描述了四幅图片呈现的内容，故事内容丰富完整，逻辑关系清晰。一般过去时态运用得当。短文句子结构多样，包括了并列句（and）、状语从句和who引导的非限制性定语从句等。全文几乎没有语言错误。文章以时间顺序为主线，其中最大的亮点是行文连贯，作者使用了不定代词（some, others），副词或短语等表示语篇的逻辑关系和层次。大小写、标点符号等语言规范；字数达到要求。总体而言，该学生能够运用所学语言描述图片、表达思想，完成了写作任务。
+
+\clearpage
+样文二：
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{en_E8AS75111_2.png}
+\end{figure}
+点评：
+这篇短文属于A类作文。学生在理解图片信息的基础上，用简洁的语言描述了四幅图片呈现的内容，故事内容完整，逻辑关系清晰。一般过去时态运用得当。短文句子结构多样，包括了并列句、状语从句等。全文几乎没有语言错误。文章以时间顺序为主线，其中最大的亮点是行文连贯，作者使用了不定代词（some, others），副词或副词短语(firstly, finally)、时间状语等词语表示语篇的逻辑关系和层次。大小写、标点符号等语言规范；字数达到要求。总体而言，该学生能够运用所学语言描述图片、表达思想，完成了写作任务。
+
+\clearpage
+样文三：
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{en_E8AS75111_3.png}
+\end{figure}
+点评：
+这篇短文属于A类作文。学生在理解图片信息的基础上，描述了四幅图片呈现的内容，故事内容完整，逻辑关系清晰。一般过去时态，被动语态（was invited, were encouraged）运用得当。短文句子结构丰富多样，包括了非限定动词，如：不定式短语和现在分词短语(after receiving)，以及各种从句，如：并列句（for）、连接副词（at last）、时间状语从句（after）等，但文章有个别语言错误，如：a large volumes of，应该是a large number of …。总体而言，该学生能够较熟练运用所学语言描述图片、表达思想，完成了写作任务。
+
+\clearpage
+样文四：
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{en_E8AS75111_4.png}
+\end{figure}
+点评：
+这是一篇A类作文。在理解图片信息的基础上，学生描述了四幅图片，内容基本完整，句子结构基本正确。句式较丰富，包括时间状语从句，感叹句等，动词过去时态使用基本正确。文章以时间为主线，逻辑关系较为清晰。学生能有序描述事件的发生发展，能恰当使用连接副词（first, finally）,思路清晰。大小写、标点符号等符合语言规则；字数达到要求。学生能够使用时间状语表达先后顺序，短文有一定的连贯意识。整体来说，文章简洁易懂，虽然没有华丽辞藻，但仍然是一篇较好的写作范本。
+
+\clearpage
+样文五：
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{en_E8AS75111_5.png}
+\end{figure}
+点评：
+这是一篇A类作文。学生在理解图片信息的基础上，描述了四幅图片呈现的内容，而且合理补充了故事内容，逻辑关系清晰，有想象空间。一般过去时态运用得当。短文句子结构丰富多样，包括了非限定动词，如：不定式短语和现在分词短语，以及各种从句，如：并列句（and）、时间状语从句等。但文章略显冗长，详略不够得当，可以对其中部分做删减。有个别语言错误，如：belong to。总体而言，该学生能够较熟练运用所学语言描述图片、语言能力较强，较好完成了写作任务。
+
+\clearpage
+样文六：
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{en_E8AS75111_6.png}
+\end{figure}
+点评：
+这篇短文属于B类作文。在理解图片信息的基础上，学生描述了四幅图片的内容，内容比较充实，意思连贯，且有一定的想象空间。句子结构比较完整有序，尤其时间状语使用比较熟练。时态意识不够强，文章中使用了现在进行式和一般将来式，时间概念不够清楚；定冠词的使用错误比较明显但不影响理解。能使用when引导的时间状语从句和时间副词（短语）来陈述时间的先后顺序。大小写、标点符号等符合语言规范；字数达到要求。总体而言，该学生能够运用所学语言完整地描述四幅图片，基本完成了写作任务。
+
+\clearpage
+样文七：
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{en_E8AS75111_7.png}
+\end{figure}
+点评：
+这是一篇B类作文。在理解图片信息的基础上，学生基本描述了四幅图片的内容，完成了写话任务。能使用时间状语从句。学生时间概念不够清晰，单句没有明确的时间状语，句间逻辑关系不是很清楚。上下文时态不够一致。文章句型句式比较单一，缺乏变化，但是句子结构基本正确，因此不影响读者理解意思。以时间顺序为主线，文章的逻辑关系也比较清晰。句首字母大写、标点符号使用基本准确；短文字数达到要求。整体来说，该学生能够基于图片，基本完成了预定的写作任务。
+
+\clearpage
+样文八：
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{en_E8AS75111_8.png}
+\end{figure}
+点评：
+这篇短文属于B类。在理解图片信息的基础上，学生描述了四幅图片的内容，内容比较充实。句子结构比较完整，但是句子之间缺乏必要的连接，逻辑关系不明显。时态意识和运用能力不够强，文中出现了一些的语法错误，如：were prepare, Took some photos. 文中人物指代不够明确，时间地点等要素也不清楚。能组织句子陈述事实，基本达意。大小写、标点符号等符合语言规范；字数达到要求。总体而言，该学生能够运用所学语言完整地描述四幅图片，基本完成了写作任务。
+
+\clearpage
+样文九：
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{en_E8AS75111_9.png}
+\end{figure}
+点评：
+这篇作文属于B类。在理解图片信息的基础上，学生基本描述了四幅图片的内容，完成了写话任务。学生时间概念不够清晰，文章句型句式比较单一，缺乏变化，但是句子结构基本正确，因此不影响读者理解意思。以时间顺序为主线，时间状语使用基本比较恰当，文章的逻辑关系也比较清晰。主要文体是第一人称叙述事件，没有具体的场景和事件意识，全文比较单薄。句首字母大写、标点符号使用基本准确；短文字数达到要求。整体来说，该学生能够基于图片，基本完成了预定的写作任务。
+
+\clearpage
+样文十：
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{en_E8AS75111_10.png}
+\end{figure}
+点评：
+这篇作文属于C类。在理解图片信息的基础上，学生基本描述了四幅图片的内容，完成了写话任务。学生时间概念不够清晰，文中出现了一般现在时，情态动词，和一般将来时，导致事件之间的逻辑关系不清楚。缺乏具体的场景和事件意识，导致文章关键要素的缺失。文中有搭配和语法的错误，如in this afternoon, the party extremely full等。句首字母大写、标点符号使用基本准确；短文字数达到要求。整体来说，该学生能够基于图片，基本完成了预定的写作任务。
+
+\clearpage
+样文十一：
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{en_E8AS75111_11.png}
+\end{figure}
+点评：
+这是一篇C类作文。学生能基本理解图片信息，大概描述了四幅图片的内容。学生能使用简单的句子结构，但是句子结构不够完整，缺少必要的时间、地点、方式等状语成分。学生没有把握写作要求，未能体现叙事特征。文章使用了一般现在时和情态动词，而不是一般过去式，导致文章整体时态的错误。文章的逻辑关系不够清晰，连贯不够明显，主要表现在1）缺少必要的时间状语；2）个别句子的意思含糊不清，影响了连贯。句首字母大写、标点符号使用基本准确；短文字数达到要求。学生能基本完成写话任务。
+
+\clearpage
+样文十二：
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{en_E8AS75111_12.png}
+\end{figure}
+点评：
+这是一篇C类作文。学生能读懂图片信息，并努力描述四幅图片，内容基本和图片相关，但是不够完整。缺乏叙事类文本的特征，没有具体的人物、动词、时间和情景等要素，导致文章缺乏必要的逻辑顺序。学生能使用了一些关键词汇表达内容，busy, sing and dance, prepare for等。主要存在以下问题，1)人称代词指代不清，如it。2）缺乏必要的连接词。3）时态意识欠缺。文章逻辑关系不够清晰，内容不全。没有时态意识，缺乏基本的时态规范。字母大写、标点符号使用基本准确；短文字数达到要求。
+
+\clearpage
+样文十三：
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{en_E8AS75111_13.png}
+\end{figure}
+点评：
+这篇文章D类作文。学生能理解图片信息，但几乎没有完成写作任务，缺乏必要的句型意识。有连接词意识，知道because, for example等，但是不能正确使用。没有时态意识、情景意识，导致文章不能成文。文中出现了破句和标点符合乱用的现象，说明该学生的句法知识掌握不够牢固。文章语言不够规范，不够连贯，影响了意思表达和读者的理解。句首字母大写、标点符号使用有误。
+
+
+<!-- end of chapter topic -->

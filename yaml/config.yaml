@@ -37,6 +37,7 @@ jobs:
     # - "createtable.yaml"     # be careful, it will remove all statistics data
     - "loadattribute.yaml"   # spin out load attribute from load data
     - "loaddata.yaml"        # load data
+    - "loadparams.yaml"      # spin loadparams from loadattribute
     - "dictionary.yaml"      # map dictionary value
     # - "checkdata.yaml"       # check and recovery data
     - "joindata.yaml"        # join attributes into observe data

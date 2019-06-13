@@ -227,6 +227,13 @@ GreenIndexReport <- setRefClass(
             output.data[length(output.data) + 1] <- "\\end{figure}"
             output.data[length(output.data) + 1] <-  " "
             
+          } else if (prefix == kPrefixQuery2Data) {
+            output.data <- OpenChunk(input.line, output.data)
+            output.data[length(output.data) + 1] <-
+              paste0("query2.data <- gio.R$QueryData(\"", 
+                     input.line, "\")") 
+            output.data <- CloseChunk(output.data)
+            
           } else if (prefix == kPrefixQueryData) {
             output.data <- OpenChunk(input.line, output.data)
             output.data[length(output.data) + 1] <-
@@ -234,7 +241,7 @@ GreenIndexReport <- setRefClass(
                      input.line, "\")") 
             output.data <- CloseChunk(output.data)
             
-          } else {
+          }  else {
             output.data[length(output.data) + 1] <- input.line 
           }
           

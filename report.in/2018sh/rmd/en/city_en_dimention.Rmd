@@ -1,0 +1,74 @@
+<!-- chapter dimention -->
+
+\mytext
+
+# 学生在各考查维度上的表现情况
+
+## 全体学生在各考查维度上的表现
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.en.dimention.rank")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.city.en.dimention.quantile")`}分别给出了上海市学生在英语学科各考查维度各水平上的人数比例和标准分分布。
+
+plot.bar.city.en.dimention.rank
+plot.box.city.en.dimention.quantile
+
+
+## 不同群体学生在各考查维度的表现
+
+### 听力
+
+#### 不同群体学生的表现
+
+plot.bar.city.en.listening.rank.perspective
+plot.box.city.en.listening.quantile.perspective
+
+
+#### 不同区学生的表现
+
+plot.bar.city.en.listening.rank.district
+plot.box.city.en.listening.quantile.district
+
+### 语法词汇
+
+#### 不同群体学生的表现
+
+plot.bar.city.en.grammar.rank.perspective
+plot.box.city.en.grammar.quantile.perspective
+
+
+
+#### 不同区学生的表现
+
+plot.bar.city.en.grammar.rank.district
+plot.box.city.en.grammar.quantile.district
+
+## 阅读
+
+### 不同群体学生的表现
+
+plot.bar.city.en.reading.rank.perspective
+plot.box.city.en.reading.quantile.perspective
+
+
+### 不同区学生的表现
+
+plot.bar.city.en.reading.rank.district
+plot.box.city.en.reading.quantile.district
+
+
+
+## 写作
+
+### 不同群体学生的表现
+
+plot.bar.city.en.writing.rank.perspective
+plot.box.city.en.writing.quantile.perspective
+
+
+
+### 不同区学生的表现
+
+plot.bar.city.en.writing.rank.district
+plot.box.city.en.writing.quantile.district
+
+
+<!-- end of chapter dimention -->
