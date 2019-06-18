@@ -1,0 +1,111 @@
+<!--  chapter -->
+
+\mytext
+
+# 上海市八年级学生学业水平总体情况
+
+query.data.city.base.score.passrate.allsubject.total.region
+
+本章分析了上海市八年级学生学业水平的总体情况及不同群体学生学业质量，主要结果如下：
+
+- 总体看来，上海市八年级学生总体达到语文课程标准的基本要求的比例为`r gio.R$SubScoSam(query.data, "语文", "上海市", "总体", 1)`%；达到数学课程标准的基本要求的人数比例为`r gio.R$SubScoSam(query.data, "数学", "上海市", "总体", 1)`%；达到英语课程标准的基本要求的人数比例为`r gio.R$SubScoSam(query.data, "英语", "上海市", "总体", 1)`%；达到科学课程标准的基本要求的人数比例为`r gio.R$SubScoSam(query.data, "科学", "上海市", "总体", 1)`%；达到艺术课程标准的基本要求的人数比例为`r gio.R$SubScoSam(query.data, "艺术", "上海市", "总体", 1)`%；
+
+- 中心城区\footnote{中心城区：包括黄浦区、徐汇区、长宁区、普陀区、虹口区、杨浦区、静安区。}、郊区\footnote{郊区：包括闵行区、宝山区、嘉定区、浦东新区、金山区、松江区、青浦区、奉贤区、崇明区。}八年级学生达到语文课程标准基本要求的比例分别为`r gio.R$SubScoSam(query.data, "语文", "城区", "总体", 1)`%和`r gio.R$SubScoSam(query.data, "语文", "郊区", "总体", 1)`%；达到数学课程标准的基本要求的人数比例分别为`r gio.R$SubScoSam(query.data, "数学", "城区", "总体", 1)`%和`r gio.R$SubScoSam(query.data, "数学", "郊区", "总体", 1)`%；达到英语课程标准的基本要求的人数比例分别为`r gio.R$SubScoSam(query.data, "英语", "城区", "总体", 1)`%和`r gio.R$SubScoSam(query.data, "英语", "郊区", "总体", 1)`%；达到科学课程标准的基本要求的人数比例分别为`r gio.R$SubScoSam(query.data, "科学", "城区", "总体", 1)`%和`r gio.R$SubScoSam(query.data, "科学", "郊区", "总体", 1)`%；达到艺术课程标准的基本要求的人数比例分别为`r gio.R$SubScoSam(query.data, "艺术", "城区", "总体", 1)`%和`r gio.R$SubScoSam(query.data, "艺术", "郊区", "总体", 1)`%；
+
+- 新优质学校\footnote{新优质学校为新优质建设学校项目简称。}学生达到语文课程标准的基本要求的比例为`r gio.R$SubScoSam(query.data, "语文", "上海市", "新优质", 1)`%；达到数学课程标准的基本要求的人数比例为`r gio.R$SubScoSam(query.data, "数学", "上海市", "新优质", 1)`%；达到英语课程标准的基本要求的比例为`r gio.R$SubScoSam(query.data, "英语", "上海市", "新优质", 1)`%；达到科学课程标准的基本要求的人数比例为`r gio.R$SubScoSam(query.data, "科学", "上海市", "新优质", 1)`%；达到艺术课程标准的基本要求的人数比例为`r gio.R$SubScoSam(query.data, "艺术", "上海市", "新优质", 1)`%；
+
+- 强校工程学校\footnote{强校工程学校为百所公办初中强校工程简称。}学生达到语文课程标准的基本要求的比例为`r gio.R$SubScoSam(query.data, "语文", "上海市", "强校工程", 1)`%；达到数学课程标准的基本要求的人数比例为`r gio.R$SubScoSam(query.data, "数学", "上海市", "强校工程", 1)`%；达到英语课程标准的基本要求的比例为`r gio.R$SubScoSam(query.data, "英语", "上海市", "强校工程", 1)`%；达到科学课程标准的基本要求的人数比例为`r gio.R$SubScoSam(query.data, "科学", "上海市", "强校工程", 1)`%；达到艺术课程标准的基本要求的人数比例为`r gio.R$SubScoSam(query.data, "艺术", "上海市", "强校工程", 1)`%；
+
+- 在语文学科上，除16区、51区、18区、15区和17区外，其他各区达到课程标准的人数比例在95.2%（含）以上；在数学学科上，除16区、51区、20区、13区、15区和17区外，其他各区达到课程标准的人数比例在93.3%（含）以上；在英语学科上，除16区、51区、14区、15区和17区外，其他各区达到课程标准的人数比例在90.4%（含）以上；在科学学科上，除51区、20区、13区和16区外，其他各区达到课程标准的人数比例在89.0%（含）以上；在艺术学科上，除51区、13区、17区、15区、16区和16区外，其他各区达到课程标准的人数比例在90.2%（含）以上；
+
+- 九年一贯制学校学生达到语文课程标准基本要求的人数比例为`r gio.R$SubScoSam(query.data, "语文", "上海市", "九年一贯", 1)`%；达到数学课程标准的基本要求的人数比例为`r gio.R$SubScoSam(query.data, "数学", "上海市", "九年一贯", 1)`%；达到英语课程标准的基本要求的比例为`r gio.R$SubScoSam(query.data, "英语", "上海市", "九年一贯", 1)`%；达到科学课程标准的基本要求的人数比例为`r gio.R$SubScoSam(query.data, "科学", "上海市", "九年一贯", 1)`%；达到艺术课程标准的基本要求的人数比例为`r gio.R$SubScoSam(query.data, "艺术", "上海市", "九年一贯", 1)`%；
+
+- 普通初中学校学生达到语文课程标准基本要求的人数比例为`r gio.R$SubScoSam(query.data, "语文", "上海市", "初中", 1)`%；达到数学课程标准的基本要求的人数比例为`r gio.R$SubScoSam(query.data, "数学", "上海市", "初中", 1)`%；达到英语课程标准的基本要求的比例为`r gio.R$SubScoSam(query.data, "英语", "上海市", "初中", 1)`%；达到科学课程标准的基本要求的人数比例为`r gio.R$SubScoSam(query.data, "科学", "上海市", "初中", 1)`%；达到艺术课程标准的基本要求的人数比例为`r gio.R$SubScoSam(query.data, "艺术", "上海市", "初中", 1)`%；
+
+- 八年级男生和女生达到语文课程标准基本要求的人数比例分别为`r gio.R$SubScoSam(query.data, "语文", "上海市", "男", 1)`%和`r gio.R$SubScoSam(query.data, "语文", "上海市", "女", 1)`%；达到数学课程标准基本要求的人数比例分别为`r gio.R$SubScoSam(query.data, "数学", "上海市", "男", 1)`%和`r gio.R$SubScoSam(query.data, "数学", "上海市", "女", 1)`%；达到英语课程标准基本要求的人数比例分别为`r gio.R$SubScoSam(query.data, "英语", "上海市", "男", 1)`%和`r gio.R$SubScoSam(query.data, "英语", "上海市", "女", 1)`%；达到科学课程标准基本要求的人数比例分别为`r gio.R$SubScoSam(query.data, "科学", "上海市", "男", 1)`%和`r gio.R$SubScoSam(query.data, "科学", "上海市", "女", 1)`%；达到艺术课程标准基本要求的人数比例分别为`r gio.R$SubScoSam(query.data, "艺术", "上海市", "男", 1)`%和`r gio.R$SubScoSam(query.data, "艺术", "上海市", "女", 1)`%；
+
+- 本市和非本市户籍八年级学生达到语文课程标准基本要求的人数比例分别为`r gio.R$SubScoSam(query.data, "语文", "上海市", "沪籍", 1)`%和`r gio.R$SubScoSam(query.data, "语文", "上海市", "非沪籍", 1)`%；达到数学课程标准基本要求的人数比例分别为`r gio.R$SubScoSam(query.data, "数学", "上海市", "沪籍", 1)`%和`r gio.R$SubScoSam(query.data, "数学", "上海市", "非沪籍", 1)`%；达到英语课程标准基本要求的人数比例分别为`r gio.R$SubScoSam(query.data, "英语", "上海市", "沪籍", 1)`%和`r gio.R$SubScoSam(query.data, "英语", "上海市", "非沪籍", 1)`%；达到科学课程标准基本要求的人数比例分别为`r gio.R$SubScoSam(query.data, "科学", "上海市", "沪籍", 1)`%和`r gio.R$SubScoSam(query.data, "科学", "上海市", "非沪籍", 1)`%；达到艺术课程标准基本要求的人数比例分别为`r gio.R$SubScoSam(query.data, "艺术", "上海市", "沪籍", 1)`%和`r gio.R$SubScoSam(query.data, "艺术", "上海市", "非沪籍", 1)`%；
+
+\clearpage
+
+
+## 八年级学生学业水平总体情况　
+
+八年级学生总体在语文、数学、英语、科学与艺术学科上的标准分分布情况见图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.score.segment.cn.total")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.score.segment.ma.total")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.score.segment.en.total")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.score.segment.sc.total")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.score.segment.ar.total")`}。
+
+plot.bar.city.base.score.segment.cn.total
+
+plot.bar.city.base.score.segment.ma.total
+
+plot.bar.city.base.score.segment.en.total
+
+plot.bar.city.base.score.segment.sc.total
+
+plot.bar.city.base.score.segment.ar.total
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.facet.score.rank.allsubject.total.region")`}给出了不同区域在各学科各水平上的人数比例。
+
+plot.bar.city.base.facet.score.rank.allsubject.total.region
+
+
+## 不同群体学生学业水平
+
+### 各区学生学业水平
+
+#### 各区学生语文学业水平
+
+plot.bar.city.base.score.rank.cn.total.district
+
+plot.box.city.base.score.quantile.cn.total.district
+
+\mylist
+注：盒须图——5\%学生标准分小于等于须下限分数；25\%学生标准分小于等于盒底分数；50\%学生标准分大于等于盒中横线分数；25\%学生标准分大于等于盒顶分数；5\%学生标准分大于等于须上限分数；盒高度一定程度上反映了标准分分布的离散程度；红点为平均标准分。
+\mytext
+
+#### 各区学生数学学业水平
+
+plot.bar.city.base.score.rank.ma.total.district
+
+plot.box.city.base.score.quantile.ma.total.district
+
+#### 各区学生英语学业水平
+
+plot.bar.city.base.score.rank.en.total.district
+
+plot.box.city.base.score.quantile.en.total.district
+
+#### 各区学生科学素养
+
+plot.bar.city.base.score.rank.sc.total.district
+
+plot.box.city.base.score.quantile.sc.total.district
+
+#### 各区学生艺术素养
+
+plot.bar.city.base.score.rank.ar.total.district
+
+plot.box.city.base.score.quantile.ar.total.district
+
+
+### 不同类型学校学生学业水平
+
+plot.bar.city.base.facet.score.rank.allsubject.xuezhi
+
+
+### 新优质学校和强校工程学校学生学业水平
+
+plot.bar.city.base.facet.score.rank.allsubject.youqiang
+
+
+### 不同性别学生学业水平
+
+plot.bar.city.base.facet.score.rank.allsubject.gender
+
+
+### 不同户籍学生学业水平
+
+plot.bar.city.base.facet.score.rank.allsubject.huji
+
+\clearpage
+
+<!--  end of chapter  -->

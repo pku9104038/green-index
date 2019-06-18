@@ -56,6 +56,7 @@ jobs:
     #- "mergedstat.yaml"
     - "scoreconverge.yaml"
     - "indexation.yaml"      #
+    - "loadindex.yaml"
     - "convergetable.yaml"   #
     - "dataquery.yaml"
     - "plotfigure.yaml"
@@ -63,6 +64,7 @@ jobs:
 
 
 # auto reworkall switch
+
 reworkall: FALSE
-dropdata: FALSE
+dropdata: TRUE
 # TRUE, igonre TODO: FALSE flags, rework all jobs

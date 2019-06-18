@@ -1,0 +1,19 @@
+
+# load external index from xlsx sheet into database table
+loadindex:
+  TODO: TRUE
+  # TRUE, igonre TODO: FALSE flags, rework load data jobs
+  table:
+
+    -
+      TODO: FALSE
+      xlsx: "2018年 学业质量均衡与公平数据.xlsx"
+      sheet:
+        - "学业成绩离散系数"
+        - "学业成绩均衡系数"
+        - "学业成绩均衡指数"
+        - "社会经济背景影响系数"
+        - "学校教育影响系数"
+        - "学校教育影响指数"
+      table: *kTableExternalIndex
+      suffix: *kSuffixConverge

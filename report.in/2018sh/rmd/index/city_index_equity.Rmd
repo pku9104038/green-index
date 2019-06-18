@@ -39,7 +39,6 @@ plot.bar.city.index.ar.balance.perspective.district
 
 学生学业成绩学校间均衡是通过各学校之间学业成绩差异的大小来反映的，是采用多层线性模型统计分析得到的结果。
 
-
 学业成绩学校间均衡指数分为9级，指数越高，表示学校间学业成绩差异越小，均衡度越高。
 
 \mylist
@@ -57,6 +56,12 @@ plot.bar.city.index.ar.balance.perspective.district
 \mytext
 
 
+plot.bar.city.index.score.balance.school.district
+plot.bar.city.index.cn.balance.school.district
+plot.bar.city.index.ma.balance.school.district
+plot.bar.city.index.en.balance.school.district
+plot.bar.city.index.sc.balance.school.district
+plot.bar.city.index.ar.balance.school.district
 
 
 ### 学生学业成绩各区之间均衡指数
@@ -80,17 +85,15 @@ plot.bar.city.index.ar.balance.perspective.district
 
 \mytext
 
+plot.bar.city.index.score.balance.district.subject
 
 
 <!--  end of chapter score  -->
 
-## 学生社会经济背景
-
-对学业成绩的影响指数
+## 学校教育消除学生社会经济背景对学业成绩的影响指数
 
 
 父母受教育程度、职业、家庭文化资源等因素合成为学生社会经济背景。将学生社会经济背景与学生学业成绩进行相关分析，描述家庭背景对学生学业成绩的影响。
-
 
 学生社会经济背景对学业成绩的影响指数分为9级，指数越高，表示学业成绩受家庭背景因素的影响越小，同时意味着学校在很大程度上弥补了家庭环境不利对学生学业的负面影响。
 
@@ -108,7 +111,11 @@ plot.bar.city.index.ar.balance.perspective.district
 
 \mytext
 
-
+plot.bar.city.index.score.school.effect.district
+plot.bar.city.index.cn.school.effect.district
+plot.bar.city.index.ma.school.effect.district
+plot.bar.city.index.en.school.effect.district
+plot.bar.city.index.sc.school.effect.district
 
 \clearpage
 

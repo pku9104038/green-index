@@ -382,7 +382,7 @@ GreenIndexPlotFigure <- setRefClass(
                     c(kColumnAxisX, plot.param[1, kColumnSortXValue])]
         sort.df <- 
           arrange(sort.df, desc(sort.df[, plot.param[1, kColumnSortXValue]]))
-        order.x <<- unlist(sort.df[, kColumnAxisX])
+        order.x <- unlist(sort.df[, kColumnAxisX])
         
         # df <- arrange(df, desc(df[, kColumnValue]))
         # order.x <- df[, kColumnAxisX]
@@ -399,7 +399,7 @@ GreenIndexPlotFigure <- setRefClass(
              c(kColumnAxisX, plot.param[1, kColumnSortXValue])]
         sort.df <- 
           arrange(sort.df, desc(sort.df[, plot.param[1, kColumnSortXValue]]))
-        order.x <<- unlist(sort.df[, kColumnAxisX])
+        order.x <- unlist(sort.df[, kColumnAxisX])
         
         # df <- arrange(df, desc(df[, kColumnValue]))
         # order.x <- df[, kColumnAxisX]

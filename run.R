@@ -39,24 +39,27 @@ gio.scheduler$EchoInfo("Start!")
 # gio.loaddata$LoadData()
 # gio.joindata$JoinData()
 # gio.splitdata$SplitData()
-gio.assignpoint$AssignPoint()
+# gio.assignpoint$AssignPoint()
 
 # gio.scheduler$Run()
-# gio.loaddata$LoadAttribute()
+gio.loaddata$LoadAttribute()
 
 # gio.scheduler$ProcessSurvey(TRUE)
 # gio.transform$TransformSurvey()
-# gio.statistics$StatisticsSurvey()
+gio.statistics$StatisticsSurvey()
+
 
 # gio.scheduler$ProcessScore(TRUE)
 # gio.transform$TransformScore()    # 成绩转化
 # gio.statistics$StatisticsScore()  # 成绩统计
 # gio.scoreconverge$ScoreConverge() # 成绩综合（在统计的基础上再次合并统计）
 
-# gio.scheduler$Indexation(FALSE)
+gio.scheduler$Indexation(FALSE)
+# gio.loadindex$LoadIndex()
 # gio.converge$ConvergeTable()
 
 # gio.scheduler$Report(TRUE)
+
 
 # gio.scheduler$TestQueryData(TRUE)
 

@@ -92,6 +92,8 @@ kDefinition:
           "学业成绩"
         - &kTableStatSubject
           "学科成绩"
+        - &kTableExternalIndex
+          "外部指标"
 
     kTableSuffix:  # 表名称后缀
       - &kTableSuffix
@@ -248,9 +250,9 @@ kSetting:
             city:
               - "上海市"
             district:
-              - "浦东新区"
+              - "长宁区"
             school:
-              - "上海市进才中学北校"
+              - "上海市延安初级中学"
 
     kTableReference: # 引用表设置
 
@@ -359,6 +361,11 @@ kSetting:
           -
             name: *kTableStatScore
             suffix: *kSuffixIndex
+
+          -
+            name: *kTableExternalIndex
+            suffix: *kSuffixConverge
+
 
   kReport:  # 报告设置
 

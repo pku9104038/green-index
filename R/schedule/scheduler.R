@@ -92,6 +92,7 @@ GreenIndexScheduler <- setRefClass(
       if (reload)
         gio.loaddata$LoadAttribute()
       gio.indexation$IndexationData()
+      gio.loadindecx$LoadIndex()
       gio.converge$ConvergeTable()
     },
     
@@ -149,7 +150,7 @@ GreenIndexScheduler <- setRefClass(
     
     TestQueryData = function(reload = FALSE){
       if (reload)
-        gio.loaddata$LoadAttribute()
+        gio.loaddata$LoadParams()
       gio.querydata$PrepareDataframe()
       jobs <- config$GetConfigJob()$dataquery
       test <- jobs$test
@@ -164,7 +165,7 @@ GreenIndexScheduler <- setRefClass(
     
     TestPlotFigure = function(reload = FALSE){
       if (reload) 
-        gio.loaddata$LoadAttribute()
+        gio.loaddata$LoadParams()
       gio.plotfigure$PrepareDataframe()
       jobs <- config$GetConfigJob()$plotfigure
       test <- jobs$test

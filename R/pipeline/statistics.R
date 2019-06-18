@@ -373,6 +373,17 @@ GreenIndexStatisticsData <- setRefClass(
       }
     },
     
+    ValueMean = function() {
+      
+      sample.df <<- sample.df[!is.na(sample.df[, variable.name]), ]
+      choice.name <<- kAlgorithmValueMean
+      statistics.value <<- mean(as.numeric(sample.df[, variable.name]), na.rm = TRUE)
+      # print(sample.df)
+      # print(statistics.value)
+      AddStatDataframe()    
+    },
+    
+    
     MultipleChoicePercent = function() {
       
       sample.size <- nrow(sample.df)
@@ -606,7 +617,11 @@ GreenIndexStatisticsData <- setRefClass(
             if (RUN == kAgileRun && tier.name == kTierSchool) {
               break
             }
-            
+            # skip city, region, district in school run
+            if (RUN == kSchoolRun && tier.name != kTierSchool) {
+              break
+            }
+             
             # loop for pespective
             for (k in 1:length(perspectives)) {
               perspective.name <<- perspectives[k]
@@ -684,6 +699,8 @@ GreenIndexStatisticsData <- setRefClass(
                     PointRateMean()
                   } else if (algorithm == kAlgorithmValueOptionPercent) {
                     ValueOptionPercent()
+                  } else if (algorithm == kAlgorithmValueMean) {
+                    ValueMean()
                   } 
                   
                 }

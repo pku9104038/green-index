@@ -78,6 +78,7 @@ kPilotRun <- "PILOT"        # city total only
 kAgileRun <- "AGILE"        # city all, district total
 kMileStone <- "MILESTONE"   # city, district all  and one district school total
 kAutoRun <- "AUTO"          # all tier, all perspective 
+kSchoolRun <- "SCHOOL"      # school tier only
 kValueTypeInteger <- "整数"
 kValueTypePercent <- "百分数"
 kValueTypeFloat <- "浮点数"
@@ -133,6 +134,7 @@ kAlgorithmValueMapping <- "值映射"
 kAlgorithmSingleChoicePercent <- "单选百分比"
 kAlgorithmMultipleChoicePercent <- "多选百分比"
 kAlgorithmValueSpacePercent <- "值域百分比"
+kAlgorithmValueMean <- "数值平均"
 kAlgorithmValueOptionPercent <- "选项分布"
 kAlgorithmQuantile <- "四分位"
 kAlgorithmMean <- "平均值"
@@ -359,6 +361,11 @@ if (!exists("indexation.loaded", mode = "variable")){
   source(paste0(gi.dir.script,"indexation.R"))
 }
 
+# source loadindex.R
+if (!exists("loadindex.loaded", mode = "variable")){
+  source(paste0(gi.dir.script,"loadindex.R"))
+}
+
 # source convergetable.R
 if (!exists("convergetable.loaded", mode = "variable")){
   source(paste0(gi.dir.script,"convergetable.R"))
@@ -400,6 +407,7 @@ gio.dataready <- GreenIndexDataReady$new()
 gio.statistics <- GreenIndexStatisticsData$new()
 gio.scoreconverge <- GreenIndexScoreConverge$new()
 gio.indexation <- GreenIndexIndexationData$new()
+gio.loadindex <- GreenIndexLoadIndex$new()
 gio.converge <- GreenIndexConvergeTable$new()
 gio.querydata <- GreenIndexQueryData$new()
 gio.plotfigure <- GreenIndexPlotFigure$new()
@@ -423,6 +431,7 @@ gio.dataready$Init("DataReady", gio.config, gio.database)
 gio.statistics$Init("StatisticsData", gio.config, gio.database)
 gio.scoreconverge$Init("ScoreConverge", gio.config, gio.database)
 gio.indexation$Init("IndexationData", gio.config, gio.database)
+gio.loadindex$Init("LoadIndex", gio.config, gio.database, gio.xlsx)
 gio.converge$Init("ConvergeTable", gio.config, gio.database)
 gio.querydata$Init("QueryData", gio.config, gio.database)
 gio.plotfigure$Init("PlotFigure", gio.config, gio.database)

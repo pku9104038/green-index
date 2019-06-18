@@ -1021,8 +1021,9 @@ query.data.city.cn.question.c8as31411
 4.错别字较多，字迹潦草，标点符号使用不规范。
 
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{cn_C8AS31111_D.png}
+\includegraphics[width=\textwidth]{cn_C8AS31111_D_0.png}
 \end{figure}
+
 
 \questiontitle{C水平(27—20分， 24分上下)}
 
@@ -1035,7 +1036,7 @@ query.data.city.cn.question.c8as31411
 4.有个别病句，但不影响阅读。有一些错别字，但不影响对内容的理解。标点符号使用中有一些不符规范的现象，但是不影响意思的表达。
 
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{cn_C8AS31111_C.png}
+\includegraphics[width=\textwidth]{cn_C8AS31111_C_0.png}
 \end{figure}
 
 \questiontitle{B水平(34—28分，31分上下)}
@@ -1049,7 +1050,9 @@ query.data.city.cn.question.c8as31411
 4.语言通顺，表达流畅清晰；书写工整，能正确使用标点符号。
 
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{cn_C8AS31111_B.png}
+\begin{center}
+\includegraphics[width=0.88\textwidth]{cn_C8AS31111_B_0.png}
+\end{center}
 \end{figure}
 
 \questiontitle{A水平(40—35分，38分上下)}
@@ -1063,7 +1066,9 @@ query.data.city.cn.question.c8as31411
 4.语言流畅，简洁得体，富有表现力。
 
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{cn_C8AS31111_A.png}
+\begin{center}
+\includegraphics[width=0.85\textwidth]{cn_C8AS31111_A_0.png}
+\end{center}
 \end{figure}
 
 \clearpage
