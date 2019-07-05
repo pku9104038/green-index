@@ -11,6 +11,7 @@ library(showtext)
 library(ggthemes)
 library(ggsci)
 library(dplyr)
+library(tibble)
 library(ggrepel)
 # library(Cairo)
 # library(animation)
@@ -134,11 +135,21 @@ GreenIndexPlotFigure <- setRefClass(
     
     FigureFacet = function(figure) {
       if (plot.param[1, kColumnFacet] != kStringNone) {
+        # print(plot.param[1, ])
+        if (as.integer(plot.param[1, kColumnFacetRow]) >= 1) {
+          figure <- figure + 
+            facet_wrap(facets = ~plot_facet, 
+                       nrow = as.integer(plot.param[1, kColumnFacetRow]),
+                       strip.position = plot.param[1, kColumnFacetPosition],
+                       scales = plot.param[1, kColumnFacetScale])
+        } else {
+          figure <- figure + 
+            facet_wrap(facets = ~plot_facet, 
+                       ncol = as.integer(plot.param[1, kColumnFacetCol]),
+                       strip.position = plot.param[1, kColumnFacetPosition],
+                       scales = plot.param[1, kColumnFacetScale])
+        }
         
-        figure <- figure + 
-          facet_wrap(facets = ~plot_facet, nrow = 1,
-                     strip.position = plot.param[1, kColumnFacetPosition],
-                     scales = plot.param[1, kColumnFacetScale])
       }
       return(figure)
     },
@@ -345,9 +356,10 @@ GreenIndexPlotFigure <- setRefClass(
           return(figure)
         } else {
           plot.order.x <<- unlist(strsplit(plot.param[1, kColumnOrderX], kSeparator))
+          
         }
         
-      } else if(plot.param[1, kColumnSortX] == kSortAscAll) {
+      } else if (plot.param[1, kColumnSortX] == kSortAscAll) {
         sort.df <- 
           plot.data[plot.data[, plot.param[1, kColumnSortXBy]] == 
                       plot.param[1, kColumnSortXSubset], 
@@ -409,6 +421,7 @@ GreenIndexPlotFigure <- setRefClass(
       figure <- figure + scale_x_discrete(limits = plot.order.x)
       
       return(figure)
+      
     },
     
     FigureLimitY = function(figure) {
@@ -647,7 +660,6 @@ GreenIndexPlotFigure <- setRefClass(
       
     },
     
-    
     PlotGeomWindRose = function() {
       
       figure <- FigurePlot()
@@ -707,7 +719,6 @@ GreenIndexPlotFigure <- setRefClass(
       
     },
     
-        
     PlotDummy = function(errorinfo) {
       
       plot.data <<- data.frame()
@@ -737,8 +748,85 @@ GreenIndexPlotFigure <- setRefClass(
       
     },
     
+    PlotSortX = function() {
+      
+      if (plot.param[1, kColumnSortX] == kStringNone) {
+        if (plot.param[1, kColumnOrderX] == kStringNone) {
+          plot.order.x <<- unlist(unique(plot.data[, kColumnAxisX]))
+        } else {
+          plot.order.x <<- unlist(strsplit(plot.param[1, kColumnOrderX], kSeparator))
+        }
+        
+      } else if(plot.param[1, kColumnSortX] == kSortAscAll) {
+        sort.df <- 
+          plot.data[plot.data[, plot.param[1, kColumnSortXBy]] == 
+                      plot.param[1, kColumnSortXSubset], 
+                    c(kColumnAxisX, plot.param[1, kColumnSortXValue])]
+        sort.df <- 
+          arrange(sort.df, desc(sort.df[, plot.param[1, kColumnSortXValue]]))
+        plot.order.x <<- unlist(sort.df[, kColumnAxisX])
+        
+        # df <- arrange(plot.data, desc(plot.data[, kColumnValue]))
+        # plot.order.x <<- unlist(df[, kColumnAxisX])
+        plot.order.x <<- rev(plot.order.x)
+      } else if(plot.param[1, kColumnSortX] == kSortDescAll) {
+        print(plot.param[1, kColumnSortXBy])
+        print(plot.param[1, kColumnSortXSubset])
+        print(plot.param[1, kColumnSortXValue])
+        print(kColumnAxisX)
+        print(colnames(plot.data))
+        sort.df <- 
+          plot.data[plot.data[, plot.param[1, kColumnSortXBy]] == 
+                      plot.param[1, kColumnSortXSubset], 
+                    c(kColumnAxisX, plot.param[1, kColumnSortXValue])]
+        sort.df <- 
+          arrange(sort.df, desc(sort.df[, plot.param[1, kColumnSortXValue]]))
+        plot.order.x <<- unlist(sort.df[, kColumnAxisX])
+        
+        # df <- arrange(plot.data, desc(plot.data[, kColumnValue]))
+        # plot.order.x <<- unlist(df[, kColumnAxisX])
+      } else if(plot.param[1, kColumnSortX] == kSortAsc) {
+        
+        order <- unlist(strsplit(plot.param[1, kColumnOrderX], kSeparator))
+        order <- order[1:length(order)-1]
+        df <- plot.data[!(plot.data[, kColumnAxisX] %in% order), ]
+        
+        sort.df <- 
+          df[df[, plot.param[1, kColumnSortXBy]] == 
+               plot.param[1, kColumnSortXSubset], 
+             c(kColumnAxisX, plot.param[1, kColumnSortXValue])]
+        sort.df <- 
+          arrange(sort.df, desc(sort.df[, plot.param[1, kColumnSortXValue]]))
+        order.x <- unlist(sort.df[, kColumnAxisX])
+        
+        # df <- arrange(df, desc(df[, kColumnValue]))
+        # order.x <- df[, kColumnAxisX]
+        order.x <- rev(order.x)
+        plot.order.x <<- unlist(append(order, order.x))
+      } else if(plot.param[1, kColumnSortX] == kSortDesc) {
+        
+        order <- unlist(strsplit(plot.param[1, kColumnOrderX], kSeparator))
+        order <- order[1:length(order)-1]
+        df <- plot.data[!(plot.data[, kColumnAxisX] %in% order), ]
+        sort.df <- 
+          df[df[, plot.param[1, kColumnSortXBy]] == 
+               plot.param[1, kColumnSortXSubset], 
+             c(kColumnAxisX, plot.param[1, kColumnSortXValue])]
+        sort.df <- 
+          arrange(sort.df, desc(sort.df[, plot.param[1, kColumnSortXValue]]))
+        order.x <- unlist(sort.df[, kColumnAxisX])
+        
+        # df <- arrange(df, desc(df[, kColumnValue]))
+        # order.x <- df[, kColumnAxisX]
+        plot.order.x <<- unlist(append(order, order.x))
+      } 
+      
+      return(plot.order.x)
+    },
+    
     PlotFigure = function(plot.dir, plot.code) {
       PreparePlotData(plot.code)
+      # PlotSortX()
       
       plot.code.name <- gsub("\\.+", "_", plot.code)
       # plot.code.name <- gsub("\\.+", "_", plot.param[1, kColumnPlotCode])
@@ -794,11 +882,7 @@ GreenIndexPlotFigure <- setRefClass(
         
         # im.convert(plot.file, output = "bm.png", extra.opts="-density 720")
         
-        
       }
-      
-      
-      
       return(plot.fig)
       
     },
@@ -816,6 +900,278 @@ GreenIndexPlotFigure <- setRefClass(
       
       return(plot.fig)
       
+    },
+    
+    AppendLostX = function(sorted.x, all.x) {
+      l <- length(sorted.x) + 1
+      out.x <- sorted.x
+      for (i in 1:length(all.x)) {
+        if(!(all.x[i] %in% sorted.x)) {
+          out.x[l] <- all.x[i]
+          l <- l + 1
+        }
+      }
+      return(out.x)
+    },
+    
+    MultiPlotSortX = function() {
+      
+      axisx.names <<- unlist(unique(plot.data[, kColumnAxisX]))
+      
+      if (plot.param[1, kColumnSortX] == kStringNone) {
+        if (plot.param[1, kColumnOrderX] == kStringNone) {
+          plot.order.x <<- axisx.names
+        } else {
+          plot.order.x <<- unlist(strsplit(plot.param[1, kColumnOrderX], kSeparator))
+        }
+        
+      } else if(plot.param[1, kColumnSortX] == kSortAscAll) {
+        
+        sort.x.subset <<- unlist(strsplit(plot.param[1, kColumnSortXSubset], 
+                                          kSeparator))
+        
+        for (i in 1:length(sort.x.subset)) {
+          subset <- sort.x.subset[i]
+          sort.df <- 
+            plot.data[plot.data[, plot.param[1, kColumnSortXBy]] == subset, 
+                      c(kColumnAxisX, plot.param[1, kColumnSortXValue])]
+          sort.df <- 
+            arrange(sort.df, desc(sort.df[, plot.param[1, kColumnSortXValue]]))
+          sorted.x <- unlist(sort.df[, kColumnAxisX])
+          if (i == 1) {
+            plot.order.x <<- sorted.x
+          } else {
+            plot.order.x <<- AppendLostX(plot.order.x, sorted.x)
+          }
+          
+          if (length(plot.order.x ) == length(axisx.names)) {
+            break
+          }
+        }
+
+        plot.order.x <<- rev(plot.order.x)
+        
+      } else if(plot.param[1, kColumnSortX] == kSortDescAll) {
+        
+        sort.x.subset <<- unlist(strsplit(plot.param[1, kColumnSortXSubset], 
+                                          kSeparator))
+        
+        for (i in 1:length(sort.x.subset)) {
+          subset <- sort.x.subset[i]
+          sort.df <- 
+            plot.data[plot.data[, plot.param[1, kColumnSortXBy]] == subset, 
+                      c(kColumnAxisX, plot.param[1, kColumnSortXValue])]
+          sort.df <- 
+            arrange(sort.df, desc(sort.df[, plot.param[1, kColumnSortXValue]]))
+          sorted.x <- unlist(sort.df[, kColumnAxisX])
+          if (i == 1) {
+            plot.order.x <<- sorted.x
+          } else {
+            plot.order.x <<- AppendLostX(plot.order.x, sorted.x)
+          }
+          
+          if (length(plot.order.x ) == length(axisx.names)) {
+            break
+          }
+        }
+
+      } else if(plot.param[1, kColumnSortX] == kSortAsc) {
+        
+        order <- unlist(strsplit(plot.param[1, kColumnOrderX], kSeparator))
+        order <- order[1:length(order)-1]
+        df <- plot.data[!(plot.data[, kColumnAxisX] %in% order), ]
+        
+        sort.x.subset <<- unlist(strsplit(plot.param[1, kColumnSortXSubset], 
+                                          kSeparator))
+        for (i in 1:length(sort.x.subset)) {
+          subset <- sort.x.subset[i]
+          sort.df <- 
+            df[df[, plot.param[1, kColumnSortXBy]] == subset, 
+                      c(kColumnAxisX, plot.param[1, kColumnSortXValue])]
+          sort.df <- 
+            arrange(sort.df, desc(sort.df[, plot.param[1, kColumnSortXValue]]))
+          sorted.x <- unlist(sort.df[, kColumnAxisX])
+          if (i == 1) {
+            plot.order.x <<- sorted.x
+          } else {
+            plot.order.x <<- AppendLostX(plot.order.x, sorted.x)
+          }
+          
+          if (length(plot.order.x ) == length(axisx.names)) {
+            break
+          }
+        }
+        
+        plot.order.x <<- rev(plot.order.x)
+        
+        plot.order.x <<- unlist(append(order, plot.order.x))
+        
+      } else if(plot.param[1, kColumnSortX] == kSortDesc) {
+        
+        order <- unlist(strsplit(plot.param[1, kColumnOrderX], kSeparator))
+        order <- order[1:length(order)-1]
+        df <- plot.data[!(plot.data[, kColumnAxisX] %in% order), ]
+        
+        sort.x.subset <<- unlist(strsplit(plot.param[1, kColumnSortXSubset], 
+                                          kSeparator))
+        for (i in 1:length(sort.x.subset)) {
+          subset <- sort.x.subset[i]
+          sort.df <- 
+            df[df[, plot.param[1, kColumnSortXBy]] == subset, 
+               c(kColumnAxisX, plot.param[1, kColumnSortXValue])]
+          sort.df <- 
+            arrange(sort.df, desc(sort.df[, plot.param[1, kColumnSortXValue]]))
+          sorted.x <- unlist(sort.df[, kColumnAxisX])
+          if (i == 1) {
+            plot.order.x <<- sorted.x
+          } else {
+            plot.order.x <<- AppendLostX(plot.order.x, sorted.x)
+          }
+          
+          if (length(plot.order.x ) == length(axisx.names)) {
+            break
+          }
+        }
+        
+        plot.order.x <<- unlist(append(order, plot.order.x))
+      } 
+      
+      return(plot.order.x)
+    },
+    
+    MultiPlotFigure = function(plot.dir, plot.code) {
+      PreparePlotData(plot.code)
+      write.csv(plot.data, "plot.data.csv")
+      plot.code.name <- gsub("\\.+", "_", plot.code)
+      # plot.code.name <- gsub("\\.+", "_", plot.param[1, kColumnPlotCode])
+      # plot.code.name <- plot.param[1, kColumnPlotCode]
+      plot.file <- paste0(plot.dir, plot.code.name,".pdf")
+      plot.fig <- list()
+      plot.fig$path[1] <- paste0(getwd(), "/", plot.file)
+      
+      if (is.na(plot.param[1, kColumnPlotGeom])) {
+        LogError(paste(plot.code, "canvas not available!"))
+        #plot.fig$name <- plot.code.name
+        plot.fig$name[1] <- paste("绘图参数缺失", plot.code)
+        command <- paste0("cp ", config$GetDirReportOut(),
+                          config$GetDirFigure(),
+                          "plot_point_dummy.pdf ", 
+                          plot.fig$path[1])
+        system(command = command)
+      } else if (nrow(plot.data) == 0) {
+        LogError(paste(plot.code, "data not available!"))
+        plot.fig$name[1] <- plot.param[1, kColumnPlotTitle]
+        command <- paste0("cp ", config$GetDirReportOut(),
+                          config$GetDirFigure(),
+                          "plot_point_dummy.pdf ", 
+                          plot.fig$path[1])
+        system(command = command)
+      } else {
+        
+        multiple.plot.data <- plot.data
+        multiple.order.x <- MultiPlotSortX()
+        plot.x.limit <- length(multiple.order.x)
+        plot.x.max <- as.numeric(plot.param[1, kColumnPlotMultipleMax])
+        plot.x.min <- as.numeric(plot.param[1, kColumnPlotMultipleMin])
+        plot.multiple <- ceiling(plot.x.limit / plot.x.max)
+        plot.x.size <- ceiling(plot.x.limit / plot.multiple)
+        if (plot.x.size < plot.x.min && plot.x.min < plot.x.limit) {
+          plot.x.size <- plot.x.min
+          plot.multiple <- ceiling(plot.x.limit / plot.x.size)
+        }
+        # LogWarn(paste(as.character(plot.x.limit), as.character(plot.multiple),
+        #               as.character(plot.x.size)))
+        
+        for (i in plot.x.limit:(plot.x.size * plot.multiple)) {
+          if (i > plot.x.limit) {
+            multiple.order.x[i] <- ""
+            for (j in 1:(i-plot.x.limit)) {
+              multiple.order.x[i] <- paste0(multiple.order.x[i], " ")
+            }
+            
+          }
+        }
+        
+        multiple.plot.title  <- plot.param[1, kColumnPlotTitle]
+        
+        for (i in 1:plot.multiple) {
+          plot.code.name <- gsub("\\.+", "_", plot.code)
+          if (i > 1) {
+            plot.file <- paste0(plot.dir, plot.code.name, "_", 
+                                as.character(i), ".pdf")
+          }
+          plot.fig$path[i] <- paste0(getwd(), "/", plot.file)
+          
+          start.x <- (i-1) * plot.x.size + 1
+          end.x <- i * plot.x.size
+          plot.param[1, kColumnSortX] <<- kStringNone
+          plot.param[1, kColumnOrderX] <<- ""
+          plot.data <<- data.frame()
+          for (j in start.x:end.x) {
+            if (j == start.x) {
+              plot.param[1, kColumnOrderX] <<- multiple.order.x[j]
+            } else {
+              plot.param[1, kColumnOrderX] <<- 
+                paste0(plot.param[1, kColumnOrderX], 
+                       kSeparator, multiple.order.x[j])
+            }
+            plot.data <<- 
+              rbind(plot.data, 
+                    multiple.plot.data[
+                      multiple.plot.data[, kColumnAxisX] == 
+                        multiple.order.x[j], ])
+          }
+          
+          if(i > 1){
+            plot.param[1, kColumnPlotTitle] <<- 
+              paste(multiple.plot.title, as.character(i))
+          }
+          plot.fig$name[i] <- plot.param[1, kColumnPlotTitle]
+          LogInfo(paste(plot.param[1, kColumnPlotGeom], plot.fig$name[i]))
+          
+          pdf(plot.file, width = as.numeric(plot.param[1, kColumnPlotWidth]) , 
+              height = as.numeric(plot.param[1, kColumnPlotHeight]) ) 
+          
+          showtext_begin()
+          
+          if (plot.param[1, kColumnPlotGeom] == kPlotGeomBarDodge) {
+            figure <- PlotGeomBarDodge()
+          } else if (plot.param[1, kColumnPlotGeom] == kPlotGeomBarStack) {
+            figure <- PlotGeomBarDodge()
+          } else if (plot.param[1, kColumnPlotGeom] == kPlotGeomScatter) {
+            figure <- PlotGeomScatter()
+          } else if (plot.param[1, kColumnPlotGeom] == kPlotGeomBox) {
+            figure <- PlotGeomBoxWhisker()
+          } else if (plot.param[1, kColumnPlotGeom] == kPlotGeomWindRose) {
+            figure <- PlotGeomWindRose()
+          }
+          
+          print(figure)
+          showtext_end()
+          dev.off()
+              
+        }
+
+      }
+      return(plot.fig)
+      
+    },
+    
+    GetMultiPlotFigure = function(plot.dir, plot.code) {
+      PreparePlotData(plot.code)
+      
+      plot.code.name <- gsub("\\.+", "_", plot.param[1, kColumnPlotCode])
+      # plot.code.name <- plot.param[1, kColumnPlotCode]
+      plot.file <- paste0(plot.dir, plot.code.name,".pdf")
+      
+      plot.fig <- list()
+      plot.fig$name <- plot.param[1, kColumnPlotTitle]
+      plot.fig$path <- paste0(getwd(), "/", plot.file)
+      
+      return(plot.fig)
+      
     }
+    
+    
   )
 )

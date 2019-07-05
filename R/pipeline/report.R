@@ -227,6 +227,25 @@ GreenIndexReport <- setRefClass(
             output.data[length(output.data) + 1] <- "\\end{figure}"
             output.data[length(output.data) + 1] <-  " "
             
+          } else if (prefix == kPrefixMultiPlot) {
+            
+            report.fig <- MultiPlotFigure (GetReportOutFigDir(), input.line)
+            
+            for (i in 1:length(report.fig$path)) {
+              
+              output.data[length(output.data) + 1] <-  " "
+              output.data[length(output.data) + 1] <- "\\begin{figure}[H]"
+              output.data[length(output.data) + 1] <-
+                paste0("\\includegraphics[width=\\textwidth]{", report.fig$path[i], "}") 
+              # paste0("\\includegraphics[width=\\textwidth]{","`r plot.fig$path`","}") 
+              output.data[length(output.data) + 1] <- 
+                paste0("\\caption{", report.fig$name[i], "}") 
+              output.data[length(output.data) + 1] <- 
+                paste0("\\label{fig: ", report.fig$name[i], "}") 
+              output.data[length(output.data) + 1] <- "\\end{figure}"
+              output.data[length(output.data) + 1] <-  " "
+            }
+            
           } else if (prefix == kPrefixQuery2Data) {
             output.data <- OpenChunk(input.line, output.data)
             output.data[length(output.data) + 1] <-
@@ -330,7 +349,6 @@ GreenIndexReport <- setRefClass(
               report.unit$scope <<- paste0("", #report.unit$city, 
                                            "", 
                                            "")
-              
               ScopeReport()
             }
           } else if (report.tier == kTierDistrict) {
@@ -347,7 +365,8 @@ GreenIndexReport <- setRefClass(
               report.unit$scope <<- paste0("", # report.unit$city, 
                                            report.unit$district, 
                                            "")
-              
+              LogInfo(paste(report.scope, report.unit$district))
+              SetDataScope(report.unit)
               ScopeReport()
             }
           } else if (report.tier == kTierSchool) {
@@ -363,7 +382,7 @@ GreenIndexReport <- setRefClass(
                 scopes <- list(report.pilot$scope$school)
               }
               for (j in 1:length(scopes)) {
-                report.scope <<- scopes[[i]]
+                report.scope <<- scopes[[j]]
                 report.unit$school <<- report.scope
                 report.unit$district <<- district
                 report.unit$city <<- district.df[
@@ -371,7 +390,8 @@ GreenIndexReport <- setRefClass(
                 report.unit$scope <<- paste0("", 
                                              "", 
                                              report.unit$school)
-                
+                SetDataScope(report.unit)
+                LogInfo(paste(report.scope, report.unit$school, report.unit$district, report.unit$city))
                 ScopeReport()
               }
             }

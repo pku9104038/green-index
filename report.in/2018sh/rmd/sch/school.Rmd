@@ -7,9 +7,8 @@ output:
     fig_caption: yes
     template: pdf_template.tex
     includes:
-      in_header: header_green.tex
+      in_header: header_base.tex
     latex_engine: xelatex
     number_sections: yes
     keep_tex: no
 ---
-

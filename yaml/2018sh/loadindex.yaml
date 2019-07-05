@@ -15,5 +15,7 @@ loadindex:
         - "社会经济背景影响系数"
         - "学校教育影响系数"
         - "学校教育影响指数"
+        - "当年系数"
+        - "历年系数"
       table: *kTableExternalIndex
       suffix: *kSuffixConverge

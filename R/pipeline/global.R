@@ -79,6 +79,9 @@ kAgileRun <- "AGILE"        # city all, district total
 kMileStone <- "MILESTONE"   # city, district all  and one district school total
 kAutoRun <- "AUTO"          # all tier, all perspective 
 kSchoolRun <- "SCHOOL"      # school tier only
+kCurrentCity <- "本市"
+kCurrentDistrict <- "本区"
+kCurrentSchool <- "本校"
 kValueTypeInteger <- "整数"
 kValueTypePercent <- "百分数"
 kValueTypeFloat <- "浮点数"
@@ -153,6 +156,8 @@ kPlotGeomWindRose <- "玫瑰图"
 kTablePlotParameter <- "属性表绘图参数"
 kColumnPlotCode <- "plot_code"
 kColumnPlotTitle <- "plot_title"
+kColumnPlotMultipleMin <- "plot_multiple_min"
+kColumnPlotMultipleMax <- "plot_multiple_max"
 kColumnPlotWidth <- "plot_width"
 kColumnPlotHeight <- "plot_height"
 kColumnPlotCoord <- "plot_coord"
@@ -193,6 +198,8 @@ kColumnFacet <- "plot_facet"
 kColumnFacetPosition <- "plot_facet_position"
 kColumnFacetScale <- "plot_facet_scale"
 kColumnFacetOrder <- "plot_facet_order"
+kColumnFacetRow <- "plot_facet_row"
+kColumnFacetCol <- "plot_facet_col"
 
 
 

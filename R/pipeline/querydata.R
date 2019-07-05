@@ -20,6 +20,7 @@ GreenIndexQueryData <- setRefClass(
     dataset.df = "data.frame",
 
     statistics.table = "character"
+    
   ),
   
   methods = list(
@@ -27,11 +28,9 @@ GreenIndexQueryData <- setRefClass(
     Init = function(module.name, config.obj, database.obj){
       callSuper(module.name, config.obj)
       database <<- database.obj
-      
-      
-      
+      data.scope <<- config$GetConfigJob()$report$pilot$scope
     },
-    
+
     PrepareDataframe = function(){
       jobs <- config$GetConfigJob()$dataquery
       
@@ -49,7 +48,6 @@ GreenIndexQueryData <- setRefClass(
       statistics.table <<- paste0(dataframe$statistics$table, 
                                   dataframe$statistics$suffix)
       
-      
     },
     
     SetDataScope = function(scope) {
@@ -58,132 +56,160 @@ GreenIndexQueryData <- setRefClass(
     
     
     GetData = function(process) {
+      param <- process
+      LogDebug(paste("Query Data:", param[1, kColumnDataset]))
+      if (param[1, kColumnCity] == kCurrentCity) {
+        param[1, kColumnCity] <- data.scope$city
+      }
+      if (param[1, kColumnDistrict] == kCurrentDistrict) {
+        param[1, kColumnDistrict] <- data.scope$district
+      }
       
-      LogDebug(paste("Query Data:", process[1, kColumnDataset]))
-      if (process[1, kColumnCity] == kColumnCity) {
-        process[1, kColumnCity] <- data.scope$city
-      }
-      if (process[1, kColumnDistrict] == kColumnDistrict) {
-        process[1, kColumnDistrict] <- data.scope$district
-      }
-      if (process[1, kColumnSchool] == kColumnSchool) {
-        process[1, kColumnSchool] <- data.scope$school
+      if (param[1, kColumnSchool] == kCurrentSchool) {
+        param[1, kColumnSchool] <- data.scope$school
       }
       
       clause.number <- 0
       SQL <- paste0("SELECT * FROM ", statistics.table, " WHERE ")
       
-      if (process[1, kColumnSubject] != kStringAll) {
+      if (param[1, kColumnSubject] != kStringAll) {
         SQL <- paste0(SQL, kColumnSubject, " = ", 
-                      "'", process[1, kColumnSubject], "'")
+                      "'", param[1, kColumnSubject], "'")
         clause.number <- clause.number + 1
       }
       
-      if (process[1, kColumnDomain] != kStringAll) {
+      if (param[1, kColumnDomain] != kStringAll) {
         if (clause.number > 0) {
           SQL <- paste0(SQL, " AND ")
         }
         SQL <- paste0(SQL, kColumnDomain, " = ", 
-                      "'", process[1, kColumnDomain], "'")
+                      "'", param[1, kColumnDomain], "'")
         clause.number <- clause.number + 1
       }
       
-      if (process[1, kColumnDimention] != kStringAll) {
+      if (param[1, kColumnDimention] != kStringAll) {
         if (clause.number > 0) {
           SQL <- paste0(SQL, " AND ")
         }
         SQL <- paste0(SQL, kColumnDimention, " = ", 
-                      "'", process[1, kColumnDimention], "'")
+                      "'", param[1, kColumnDimention], "'")
         clause.number <- clause.number + 1
       }
       
-      if (process[1, kColumnGroup] != kStringAll) {
+      if (param[1, kColumnGroup] != kStringAll) {
         if (clause.number > 0) {
           SQL <- paste0(SQL, " AND ")
         }
         SQL <- paste0(SQL, kColumnGroup, " = ", 
-                      "'", process[1, kColumnGroup], "'")
+                      "'", param[1, kColumnGroup], "'")
         clause.number <- clause.number + 1
       }
       
-      if (process[1, kColumnAttribute] != kStringAll) {
+      if (param[1, kColumnAttribute] != kStringAll) {
         if (clause.number > 0) {
           SQL <- paste0(SQL, " AND ")
         }
         SQL <- paste0(SQL, kColumnAttribute, " = ", 
-                      "'", process[1, kColumnAttribute], "'")
+                      "'", param[1, kColumnAttribute], "'")
         clause.number <- clause.number + 1
       }
       
-      if (process[1, kColumnTopic] != kStringAll) {
+      if (param[1, kColumnTopic] != kStringAll) {
         if (clause.number > 0) {
           SQL <- paste0(SQL, " AND ")
         }
         SQL <- paste0(SQL, kColumnTopic, " = ", 
-                      "'", process[1, kColumnTopic], "'")
+                      "'", param[1, kColumnTopic], "'")
         clause.number <- clause.number + 1
       }
       
-      if (process[1, kColumnStatisticsTier] != kStringAll) {
+      if (param[1, kColumnStatisticsTier] != kStringAll) {
         if (clause.number > 0) {
           SQL <- paste0(SQL, " AND ")
         }
         SQL <- paste0(SQL, kColumnStatisticsTier, " = ", 
-                      "'", process[1, kColumnStatisticsTier], "'")
+                      "'", param[1, kColumnStatisticsTier], "'")
         clause.number <- clause.number + 1
       }
       
-      if (process[1, kColumnCity] != kStringAll) {
+      if (param[1, kColumnCity] == kStringAll) {
+     
+      # } else if (param[1, kColumnCity] == kCurrentCity) {
+        # if (clause.number > 0) {
+        #   SQL <- paste0(SQL, " AND ")
+        # }
+        # SQL <- paste0(SQL, kColumnStatisticsScope, " = ", 
+        #              "'", data.scope$city, "'")
+        # clause.number <- clause.number + 1
+      } else {
         if (clause.number > 0) {
           SQL <- paste0(SQL, " AND ")
         }
         SQL <- paste0(SQL, kColumnCity, " = ", 
-                      "'", process[1, kColumnCity], "'")
+                      "'", param[1, kColumnCity], "'")
         clause.number <- clause.number + 1
       }
       
-      if (process[1, kColumnDistrict] != kStringAll) {
+      if (param[1, kColumnDistrict] == kStringAll) {
+        
+      # } else if (param[1, kColumnDistrict] == kCurrentDistrict) {
+      #   if (clause.number > 0) {
+      #    SQL <- paste0(SQL, " AND ")
+      #  }
+      #  SQL <- paste0(SQL, kColumnStatisticsScope, " = ", 
+      #                "'", data.scope$district, "'")
+      #  clause.number <- clause.number + 1
+      } else {
         if (clause.number > 0) {
           SQL <- paste0(SQL, " AND ")
         }
         SQL <- paste0(SQL, kColumnDistrict, " = ", 
-                      "'", process[1, kColumnDistrict], "'")
+                      "'", param[1, kColumnDistrict], "'")
         clause.number <- clause.number + 1
       }
       
-      if (process[1, kColumnSchool] != kStringAll) {
+      if (param[1, kColumnSchool] == kStringAll) {
+        
+      # } else if (param[1, kColumnSchool] == kCurrentSchool) {
+      #   if (clause.number > 0) {
+      #     SQL <- paste0(SQL, " AND ")
+      #   }
+      #   SQL <- paste0(SQL, kColumnStatisticsScope, " = ", 
+      #                 "'", data.scope$school, "'")
+      #   clause.number <- clause.number + 1
+      } else {
         if (clause.number > 0) {
           SQL <- paste0(SQL, " AND ")
         }
         SQL <- paste0(SQL, kColumnSchool, " = ", 
-                      "'", process[1, kColumnSchool], "'")
+                      "'", param[1, kColumnSchool], "'")
         clause.number <- clause.number + 1
       }
       
-      if (process[1, kColumnStatisticsSample] != kStringAll) {
+      if (param[1, kColumnStatisticsSample] != kStringAll) {
         if (clause.number > 0) {
           SQL <- paste0(SQL, " AND ")
         }
         SQL <- paste0(SQL, kColumnStatisticsSample, " = ", 
-                      "'", process[1, kColumnStatisticsSample], "'")
+                      "'", param[1, kColumnStatisticsSample], "'")
         clause.number <- clause.number + 1
       }
       
-      if (process[1, kColumnStatisticsIndexType] != kStringAll) {
+      if (param[1, kColumnStatisticsIndexType] != kStringAll) {
         if (clause.number > 0) {
           SQL <- paste0(SQL, " AND ")
         }
         SQL <- paste0(SQL, kColumnStatisticsIndexType, " = ", 
-                      "'", process[1, kColumnStatisticsIndexType], "'")
+                      "'", param[1, kColumnStatisticsIndexType], "'")
         clause.number <- clause.number + 1
       }
       
-      if (process[1, kColumnKey] != kStringAll) {
+      if (param[1, kColumnKey] != kStringAll) {
         if (clause.number > 0) {
           SQL <- paste0(SQL, " AND ")
         }
         SQL <- paste0(SQL, kColumnKey, " = ", 
-                      "'", process[1, kColumnKey], "'")
+                      "'", param[1, kColumnKey], "'")
         clause.number <- clause.number + 1
       }
       
@@ -199,16 +225,16 @@ GreenIndexQueryData <- setRefClass(
        
         df[, kColumnName] <- df[, process[1, kColumnName]]
 
-        if (process[1, kColumnDrop] != kStringNone) {
-          drop <- unlist(strsplit(process[1, kColumnDrop],kSeparator))
+        if (param[1, kColumnDrop] != kStringNone) {
+          drop <- unlist(strsplit(param[1, kColumnDrop],kSeparator))
           for (j in 1:length(drop)) {
             df <- df[df[, kColumnName] != drop[j], ]
           }
         }
         
-        if (process[1, kColumnKeep] != kStringAll) {
+        if (param[1, kColumnKeep] != kStringAll) {
           tmp.df <- data.frame()
-          keep <- unlist(strsplit(process[1, kColumnKeep], kSeparator))
+          keep <- unlist(strsplit(param[1, kColumnKeep], kSeparator))
           for (j in 1:length(keep)) {
             tmp.df <- rbind(tmp.df, df[df[, kColumnName] == keep[j], ])
           }
@@ -216,9 +242,9 @@ GreenIndexQueryData <- setRefClass(
         }
        
         df <- merge(df, alias.df, by = kColumnName, all.x = TRUE)
-        if (process[1, kColumnAliasType] == kAliasTypeTotal) {
+        if (param[1, kColumnAliasType] == kAliasTypeTotal) {
           df[, kColumnAlias] <- df[, kAliasTypeTotal]
-        } else if  (process[1, kColumnAliasType] == kAliasTypeAnonymous) {
+        } else if  (param[1, kColumnAliasType] == kAliasTypeAnonymous) {
           df[, kColumnAlias] <- df[, kAliasTypeAnonymous]
         } else {
           df[, kColumnAlias] <- df[, kColumnName]
@@ -237,9 +263,7 @@ GreenIndexQueryData <- setRefClass(
                                                    kPercentDigits))
         }
       }
-      
-      
-    
+
       return(df)
                    
     },

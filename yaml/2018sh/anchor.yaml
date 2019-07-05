@@ -250,9 +250,9 @@ kSetting:
             city:
               - "上海市"
             district:
-              - "长宁区"
+              - "嘉定区"
             school:
-              - "上海市延安初级中学"
+              - "上海市进才中学北校"
 
     kTableReference: # 引用表设置
 
@@ -371,12 +371,12 @@ kSetting:
 
     kCopyRight: &kCopyRight  # 版权声明
       copyright:
-        year: "2018年"
+        year: "2018年度"
         project: "上海市初中学业质量"
         producer:
-          - ""
+          - "上海市教育委员会教学研究室"
           - "上海市教育委员会基础教育质量监测中心"
-        date: "二〇一九年六月"
+        date: "二〇一九年七月"
         copyright: "版权声明：本报告版权属于上海市教育委员会，未得到上海市教育委员会同意，不得使用或公开报告的任何内容"
 
     kPrepareDataframe: &kPrepareDataframe  # 数据准备引用表

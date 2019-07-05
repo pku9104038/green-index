@@ -1,0 +1,86 @@
+<!--  chapter -->
+
+\mytext
+
+# 八年级学生学业水平总体情况
+
+## 八年级学生学业水平总体情况　
+
+八年级学生总体在语文、数学、英语、科学与艺术学科上的标准分分布情况见图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.score.segment.cn.total")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.score.segment.ma.total")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.score.segment.en.total")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.score.segment.sc.total")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.score.segment.ar.total")`}。
+
+plot.bar.school.score.segment.cn.total
+
+plot.bar.school.score.segment.ma.total
+
+plot.bar.school.score.segment.en.total
+
+plot.bar.school.score.segment.sc.total
+
+plot.bar.school.score.segment.ar.total
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.facet.score.rank.allsubject.total.region")`}给出了不同区域在各学科各水平上的人数比例。
+
+plot.bar.district.base.facet.score.rank.allsubject.total.region
+
+
+## 不同群体学生学业水平
+
+### 各学校学生学业水平
+
+#### 各学校学生语文学业水平
+
+plot.bar.city.base.score.rank.cn.total.district
+
+plot.box.city.base.score.quantile.cn.total.district
+
+\mylist
+注：盒须图——5\%学生标准分小于等于须下限分数；25\%学生标准分小于等于盒底分数；50\%学生标准分大于等于盒中横线分数；25\%学生标准分大于等于盒顶分数；5\%学生标准分大于等于须上限分数；盒高度一定程度上反映了标准分分布的离散程度；红点为平均标准分。
+\mytext
+
+#### 各学校学生数学学业水平
+
+plot.bar.city.base.score.rank.ma.total.district
+
+plot.box.city.base.score.quantile.ma.total.district
+
+#### 各学校学生英语学业水平
+
+plot.bar.city.base.score.rank.en.total.district
+
+plot.box.city.base.score.quantile.en.total.district
+
+#### 各学校学生科学素养
+
+plot.bar.city.base.score.rank.sc.total.district
+
+plot.box.city.base.score.quantile.sc.total.district
+
+#### 各学校学生艺术素养
+
+plot.bar.city.base.score.rank.ar.total.district
+
+plot.box.city.base.score.quantile.ar.total.district
+
+
+### 不同类型学校学生学业水平
+
+plot.bar.city.base.facet.score.rank.allsubject.xuezhi
+
+
+### 新优质学校和强校工程学校学生学业水平
+
+plot.bar.city.base.facet.score.rank.allsubject.youqiang
+
+
+### 不同性别学生学业水平
+
+plot.bar.city.base.facet.score.rank.allsubject.gender
+
+
+### 不同户籍学生学业水平
+
+plot.bar.city.base.facet.score.rank.allsubject.huji
+
+\clearpage
+
+<!--  end of chapter  -->

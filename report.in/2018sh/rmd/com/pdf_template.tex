@@ -12,6 +12,13 @@ $endif$
 \usepackage{amssymb, amsmath, gensymb}
 \usepackage{latexsym, accents}
 
+
+% continus footnote number
+\let\counterwithout\relax
+\let\counterwithin\relax
+\usepackage{chngcntr}
+\counterwithout{footnote}{chapter}
+
 \newcommand*\underdot[1]{\underaccent{\dot}{#1}}
 
 
@@ -293,6 +300,7 @@ $for(include-after)$
 $include-after$
 
 $endfor$
+
 
 
 \end{document}

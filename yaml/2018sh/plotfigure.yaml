@@ -4,4 +4,4 @@ plotfigure:
   <<: *kPilotRun
   <<: *kPrepareDataframe
   test:
-    - plot.bar.city.index.score.balance.district.subject
+    - plot.bar.city.index.facet.time.develop

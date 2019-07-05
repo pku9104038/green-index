@@ -123,6 +123,10 @@ GreenIndexConfig <- setRefClass(
       return(config$dropdata)
     },
     
+    IsSchoolOnly = function(){
+      return(config$schoolonly)
+    },
+    
     # Init 
     Init = function(module.name, config.file){
       config.yaml <<- config.file

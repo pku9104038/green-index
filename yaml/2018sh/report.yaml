@@ -2,7 +2,7 @@
 # report setting
 report:
   TODO: FALSE
-  RUN: "PILOT"  # "AUTO", "PILOT", "MILESTONE"
+  RUN: "PILOT"  # "AUTO", "PILOT",
   output:
     format: "pdf_document"
     ext: ".pdf"
@@ -43,7 +43,7 @@ report:
         - "city_base_parent.rmd"
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标指数报告"
       tier: *kStatTierCity
       subdir: "index"
@@ -68,10 +68,11 @@ report:
         - "city_index_equity.rmd"
         - "city_index_timespan.rmd"
         - "city_index_radar.rmd"
+        - "city_index_citation.Rmd"
 
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierCity
       subdir: "cn"
@@ -174,6 +175,29 @@ report:
         - "city_ar_total.rmd"
         - "city_ar_dimention.rmd"
         - "city_ar_topic.rmd"
+
+    -
+      TODO: FALSE
+      name: "绿色指标基础数据报告"
+      tier: *kStatTierDistrict
+      subdir: "base"
+      subject:
+        name: ""
+        suffix: ""
+      rmarkdown:
+        - "base.rmd"
+        - "global_setting.rmd"
+        - "cover_page.rmd"
+        - "head_foot.rmd"
+        - "report_preface.rmd"
+        - "table_of_contents.rmd"
+        - "project_summary.rmd"
+        - "district_base_score.rmd"
+        #- "district_base_student.rmd"
+        #- "district_base_teacher.rmd"
+        #- "district_base_principal.rmd"
+        #- "district_base_parent.rmd"
+
     -
       TODO: FALSE
       name: "绿色指标学科测试分析报告"
@@ -191,12 +215,29 @@ report:
         - "table_of_contents.rmd"
         - "project_summary.rmd"
 
-
     -
       TODO: FALSE
       name: "绿色指标综合评价"
       tier: *kStatTierSchool
       subdir: "sch"
+      subject:
+        name: ""
+        suffix: ""
+      rmarkdown:
+        - "school.rmd"
+        - "global_setting.rmd"
+        - "cover_page.rmd"
+        - "head_foot.rmd"
+        - "report_preface.rmd"
+        - "table_of_contents.rmd"
+        - "project_summary.rmd"
+        - "school_score.rmd"
+
+    -
+      TODO: FALSE
+      name: "绿色指标报告模版测试"
+      tier: *kStatTierCity
+      subdir: "base"
       subject:
         name: ""
         suffix: ""

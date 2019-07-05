@@ -529,6 +529,8 @@ GreenIndexStatisticsData <- setRefClass(
     
     ProcessJob = function(){
       
+      schoolonly <- config$IsSchoolOnly()
+      
       if (process[1, kColumnTODO] == "FALSE" && RUN == kPilotRun ){
         return(NA)
         
@@ -621,6 +623,7 @@ GreenIndexStatisticsData <- setRefClass(
             if (RUN == kSchoolRun && tier.name != kTierSchool) {
               break
             }
+            
              
             # loop for pespective
             for (k in 1:length(perspectives)) {
@@ -642,6 +645,11 @@ GreenIndexStatisticsData <- setRefClass(
                   perspective.name != kPerspectiveTotal) {
                 break
               } 
+              
+              # skip city, region, district in schoolonly
+              if (schoolonly && tier.name != kTierSchool) {
+                break
+              }
 
               perspective.df <- filter.df
               

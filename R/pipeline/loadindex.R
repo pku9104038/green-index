@@ -41,7 +41,7 @@ GreenIndexLoadIndex <- setRefClass(
         if (TODO || reworkjobs || reworkall) {
           
           table <- paste0(job$table, job$suffix)
-          if (dropdata && database$ExistsTable(table)) {
+          if (database$ExistsTable(table)) {
             database$RemoveTable(table)
           }
           
@@ -77,7 +77,7 @@ GreenIndexLoadIndex <- setRefClass(
                                  df[, kColumnKey])
             
             for (j in 1:nrow(df)) {
-              df[j, kColumnHashDigest] <- digest(df[i,"msg"], algo = "sha256")
+              df[j, kColumnHashDigest] <- digest(df[j,"msg"], algo = "sha256")
               df[j, kColumnTimeStamp] <- as.character(Sys.time())
               
             }

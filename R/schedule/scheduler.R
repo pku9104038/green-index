@@ -92,7 +92,7 @@ GreenIndexScheduler <- setRefClass(
       if (reload)
         gio.loaddata$LoadAttribute()
       gio.indexation$IndexationData()
-      gio.loadindecx$LoadIndex()
+      gio.loadindex$LoadIndex()
       gio.converge$ConvergeTable()
     },
     
@@ -171,6 +171,18 @@ GreenIndexScheduler <- setRefClass(
       test <- jobs$test
       for (i in 1:length(test)) {
         figure <- gio.plotfigure$PlotFigure("report.out/2018sh/fig/", test[[i]])
+        
+      }
+    },
+    
+    TestMultiPlotFigure = function(reload = FALSE){
+      if (reload) 
+        gio.loaddata$LoadParams()
+      gio.plotfigure$PrepareDataframe()
+      jobs <- config$GetConfigJob()$plotfigure
+      test <- jobs$test
+      for (i in 1:length(test)) {
+        figure <- gio.plotfigure$MultiPlotFigure("report.out/2018sh/fig/", test[[i]])
         
       }
     },
