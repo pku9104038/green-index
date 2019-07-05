@@ -2,5 +2,6 @@
 
 # 跨时间发展指数
 
+plot.bar.city.index.facet.time.develop
 
 <!-- end of chapter time span  -->
