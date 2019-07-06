@@ -18,7 +18,7 @@
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\ \hline
 测试内容 & 考查维度 & 具体描述 \\ \hline
 \multirow{2}{*}{视听部分} &	感知与判断	& 在试听感受中，考察对艺术形式和内容的了解、辨认和理解等简单鉴赏能力 \\ \cline{2-3}
-	& 理解与分析	& 在试听感受中，考察对艺术表现形式内容的分析、判断、释读等复杂鉴赏能力 \\ \cline{1-3}
+	& 理解与分析	& 在视听感受中，考察对艺术表现形式内容的分析、判断、释读等复杂鉴赏能力 \\ \cline{1-3}
 \multirow{2}{*}{纸笔部分} & 感知与判断	& 在图文信息中，考察对艺术作品的辨别和理解  \\ \cline{2-3}
 	& 运用与表现	& 在综合情境中考察艺术方法运用、设计构思、艺术创编的能力 \\ \cline{1-3}
 \end{longtable}
@@ -62,12 +62,12 @@ query.data.city.ar.pointrate.perspective
  `r gio.R$VarScoSamKey(query.data, "A8AO02111_X", "上海市","初中","总体")` &
  `r gio.R$VarScoSamKey(query.data, "A8AO02111_X", "上海市","九年一贯","总体")` &
  `r gio.R$VarScoSamKey(query.data, "A8AO02111_X", "上海市","完中","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO21111_X", "上海市","新优质","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO21111_X", "上海市","强校工程","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO21111_X", "上海市","男","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO21111_X", "上海市","女","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO21111_X", "上海市","沪籍","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO21111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+ `r gio.R$VarScoSamKey(query.data, "A8AO02111_X", "上海市","新优质","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "A8AO02111_X", "上海市","强校工程","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "A8AO02111_X", "上海市","男","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "A8AO02111_X", "上海市","女","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "A8AO02111_X", "上海市","沪籍","总体")` &
+ `r gio.R$VarScoSamKey(query.data, "A8AO02111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
 
  & A8AO03111 & 能通过听辨判断器乐音色的民族属性 &
   `r gio.R$VarScoSamKey(query.data, "A8AO03111_X", "上海市","总体","总体")` &
@@ -325,7 +325,7 @@ query.data.city.ar.pointrate.perspective
 \end{itshape}
 
 \mytext
-下面将结合“感觉与判断”部分的典型题目做具体分析。
+下面将结合“感知与判断”部分的典型题目做具体分析。
 
 \end{landscape}
 
@@ -361,7 +361,7 @@ A. 欢庆场面  \qquad    B. 日常休闲  \qquad   C. 劳动助力  \qquad   D
 
 - 本题满分：两题每题各2分
 
-- 平均得分率：A8AO01111为`r gio.R$VarScoSamKey(query.data, "A8AO01111_X", "上海市","总体","总体")`％（折合得分`r gio.R$VarScoSamKey(query.data, "A8AO01111_X", "上海市","总体","总体")*2/100`分）；A8AO01211为`r gio.R$VarScoSamKey(query.data, "A8AO01211_X", "上海市","总体","总体")`％（折合得分`r gio.R$VarScoSamKey(query.data, "A8AO01211_X", "上海市","总体","总体")*2/100`分）
+- 平均得分率：A8AO01111为`r gio.R$VarScoSamKey(query.data, "A8AO01111_X", "上海市","总体","总体")`％；A8AO01211为`r gio.R$VarScoSamKey(query.data, "A8AO01211_X", "上海市","总体","总体")`％
 
 plot.bar.city.ar.question.a8ao01111
 plot.bar.city.ar.question.a8ao01211
@@ -402,7 +402,7 @@ A8AO12211
 
 该绘画作品给你的感受是（ \qquad ）
 
-A．轻松 \qquad\qquad  B.愉悦 \\qquad\qquad  C.幽默 \qquad\qquad  D.沉重
+A．轻松 \qquad\qquad  B.愉悦 \qquad\qquad  C.幽默 \qquad\qquad  D.沉重
 \end{itshape}
 
 - 思维层次：内涵把握
@@ -415,7 +415,7 @@ A．轻松 \qquad\qquad  B.愉悦 \\qquad\qquad  C.幽默 \qquad\qquad  D.沉重
 
 - 本题满分：两题每题各2分
 
-- 平均得分率：A8AO12111为`r gio.R$VarScoSamKey(query.data, "A8AO12111_X", "上海市","总体","总体")`％（折合得分`r gio.R$VarScoSamKey(query.data, "A8AO12111_X", "上海市","总体","总体")*2/100`分）；A8AO12211为`r gio.R$VarScoSamKey(query.data, "A8AO12211_X", "上海市","总体","总体")`％（折合得分`r gio.R$VarScoSamKey(query.data, "A8AO12211_X", "上海市","总体","总体")*2/100`分）
+- 平均得分率：A8AO12111为`r gio.R$VarScoSamKey(query.data, "A8AO12111_X", "上海市","总体","总体")`％；A8AO12211为`r gio.R$VarScoSamKey(query.data, "A8AO12211_X", "上海市","总体","总体")`％
 
 plot.bar.city.ar.question.a8ao12111
 plot.bar.city.ar.question.a8ao12211
@@ -643,7 +643,7 @@ plot.bar.city.ar.question.a8ao12211
 
 - 本题满分：30分
 
-- 平均得分率：`r gio.R$VarScoSamKey(query.data, "A8AS14111_X", "上海市","总体","总体")`％（折合得分`r gio.R$VarScoSamKey(query.data, "A8AS14111_X", "上海市","总体","总体")*30/100`分）
+- 平均得分率：`r gio.R$VarScoSamKey(query.data, "A8AS14111_X", "上海市","总体","总体")`％
 
 plot.bar.city.ar.question.a8as14111
 
@@ -651,15 +651,6 @@ plot.bar.city.ar.question.a8as14111
 
 此题为学生的创作表现题，也是主观题，根据评分标准，学生总体得分情况还是比较好的。27分以上学生不多，主要是因为真正有绘画基础的学生在整体学生中不占多数。但在18分以下的学生也存在，分析原因主要是因为没有看清题目，对贺卡的形式要素不了解而造成。这也是命题过程中的尝试，今后的教学中会进一步有目的性的调整。
 
-## 思考与建议
-
-此次艺术素养的测试是第一次，这个第一次既是一种探索和尝试，同时也对学科而言是全新的开始。事实上，艺术素养的测试有一定难度，相对要制定客观的评价标准且又能体现素养呈现，有相当大的难度。但是有了开始就会有发展，我们也在此过程中，有如下思考和建议：
-
-1.基于课程标准，开齐开足课程。测试的目的不是分数，而是希望通过艺术课程的开足开齐，使学校更加重视美育教育的功能，并使学生从课程中得到素养的提升。
-
-2.完善测试工具，引入表现性测评。此次测试实现了从无到有的跨越，要对结果进行细致分析，并进一步修订完善测试框架和工具，使之更加趋于合理，并通过包括表现性评价在内的艺术素养测评有效提升学生能力。
-
-3.加强对艺术教师队伍的打造和培养。提升教师对课程、素养、能力的立体构建，并有效落实于课堂教学实践中。
 
 
 <!-- end of chapter topic -->

@@ -38,6 +38,16 @@
 & \multicolumn{2}{l|}{} & 方法分量 & \makecell[l]{运算求解
 推理论证\\空间想象\\数学表达\\数据处理\\提出问题\\工具运用\\数学建模} \\ \hline
 
+英语 & \multicolumn{2}{l|}{\makecell[l]{语音\\词汇\\语法\\话题\\语言功能}} & \multicolumn{2}{l|}{\makecell[l]{听力\\阅读\\写作\\综合运用}} \\ \hline
+
+
+科学 & \multicolumn{2}{l|}{\makecell[l]{地球宇宙\\物质科学\\生命科学\\科学探究}} & \multicolumn{2}{l|}{\makecell[l]{科学知识\\科学能力\\科学态度}} \\ \hline
+
+\multirow{3}{*}{\mytablehead{艺术}} & \multicolumn{2}{l|}{\makecell[l]{感受与鉴赏}} & \multicolumn{2}{l|}{\makecell[l]{艺术形式\\艺术内容\\艺术风格}} \\ \cline{2-5}
+ & \multicolumn{2}{l|}{\makecell[l]{合作与分享}} & \multicolumn{2}{l|}{\makecell[l]{鉴赏艺术作品\\联系艺术与其他领域\\分享艺术经验与感受}} \\  \cline{2-5}
+ & \multicolumn{2}{l|}{\makecell[l]{表现与创作}} & \multicolumn{2}{l|}{\makecell[l]{艺术体验\\艺术创作}}  \\ \hline
+
+
 \end{longtable}
 \end{itshape}
 

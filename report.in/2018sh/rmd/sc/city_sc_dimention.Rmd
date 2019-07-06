@@ -49,14 +49,14 @@ plot.box.city.sc.life.quantile.perspective
 plot.bar.city.sc.life.rank.district
 plot.box.city.sc.life.quantile.district
 
-## 物质科学
+### 物质科学
 
-### 不同群体学生的表现
+#### 不同群体学生的表现
 
 plot.bar.city.sc.physics.rank.perspective
 plot.box.city.sc.physics.quantile.perspective
 
-### 不同区学生的表现
+#### 不同区学生的表现
 
 plot.bar.city.sc.physics.rank.district
 plot.box.city.sc.physics.quantile.district
@@ -87,27 +87,27 @@ plot.box.city.sc.knowledge.quantile.perspective
 plot.bar.city.sc.knowledge.rank.district
 plot.box.city.sc.knowledge.quantile.district
 
-## 科学能力
+### 科学能力
 
-### 不同群体学生的表现
+#### 不同群体学生的表现
 
 plot.bar.city.sc.skill.rank.perspective
 plot.box.city.sc.skill.quantile.perspective
 
-### 不同区学生的表现
+#### 不同区学生的表现
 
 plot.bar.city.sc.skill.rank.district
 plot.box.city.sc.skill.quantile.district
 
-## 情感、态度与价值观
+### 科学态度
 
-### 不同群体学生的表现
+#### 不同群体学生的表现
 
 plot.bar.city.sc.attitude.rank.perspective
 plot.box.city.sc.attitude.quantile.perspective
 
 
-### 不同区学生的表现
+#### 不同区学生的表现
 
 plot.bar.city.sc.attitude.rank.district
 plot.box.city.sc.attitude.quantile.district

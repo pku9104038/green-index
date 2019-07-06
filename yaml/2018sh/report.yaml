@@ -21,7 +21,7 @@ report:
   report:
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标基础数据报告"
       tier: *kStatTierCity
       subdir: "base"
@@ -135,7 +135,7 @@ report:
         - "city_en_topic.rmd"
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierCity
       subdir: "sc"

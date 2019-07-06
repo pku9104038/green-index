@@ -315,7 +315,7 @@ query2.plot.bar.city.sc.question.s8ao23111
 - 教学建议：科学探索过程中不同阶段的证据具有的效力不同。教学中可适当渗透结合科技发展，将证据进行效力方面的区分。
 
 
-\questiontitle{典型题目4：S8AO50131/ S8AO50132}
+\questiontitle{典型题目4：S8AO50131、S8AO50132}
 
 \begin{center}
 50．人口问题
@@ -350,6 +350,9 @@ query2.plot.bar.city.sc.question.s8ao23111
 - 平均得分率：`r gio.R$VarScoSamKey(query.data, "S8AO50131_X", "上海市","总体","总体")`％
 
 plot.bar.city.sc.question.s8ao50131
+
+
+
 query2.plot.bar.city.sc.question.s8ao50131
 
 \begin{itshape}
@@ -360,6 +363,7 @@ query2.plot.bar.city.sc.question.s8ao50131
 
 50-1-3-1，本题对读图能力的要求较高。学生正确率只有`r gio.R$KeyValue(query2.data, "1")`％，远低于预期情况，而有55.3%的学生填写了相反的结果。反应了学生没有将图中信息与题中文字作很好地分析，只是看图中折线的变化趋势（下降）回答提问，而没有理解图的本质，尽管当前增长率正在下降，但是依然为“正”值，所以人口总数依然处于“上升”趋势；
 
+plot.bar.city.sc.question.s8ao50132
 query2.plot.bar.city.sc.question.s8ao50132
 
 50-1-3-2学生正确率高达`r gio.R$KeyValue(query2.data, "1")`％，高于预期情况，因为这一题没有设置任何陷阱，当前劳动人口增长率正在下降，同时劳动人口增长率已经表现为“负”值，即劳动人口总数的确处于下降趋势中，所以，本题哪怕学生没有理解此处增长率“正”、“负”的概念，也会得出正确的结果。
@@ -407,6 +411,7 @@ query2.plot.bar.city.sc.question.s8ao50221
 
 - 教学建议：折线图解读是科学数据分析的重要能力。在教学中，可以从图线的纵横坐标、起点、拐点、走势等角度进行分段解读，然后整体分析，让学生感受折线图表述的信息，从而得出正确判断。
 
+\clearpage
 
 ## 生命科学
 
@@ -1625,7 +1630,7 @@ query2.plot.bar.city.sc.question.s8as49211
 \end{itshape}
 
 \mytext
-关于“科学探究”部分典型题目的具体分析，详见前面的典型话题2问题2、3、5。
+关于“科学探究”部分典型题目的具体分析。
 
 \end{landscape}
 
