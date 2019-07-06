@@ -1372,12 +1372,13 @@ query2.plot.bar.city.sc.question.s8ao03111
 
 
 \questiontitle{典型题目2：S8AO41111}
+
 \begin{itshape}
  4．下列做法中，属于增大摩擦的是\uline{\qquad\qquad\qquad}（ \qquad ）
 
 A．溜冰场地做得较光滑		\qquad\qquad			B．给机器加润滑油
 
-C．鞋底有凹凸不平的花纹	\qquad\qquad				D．车身改用轻质材料
+C．鞋底有凹凸不平的花纹	  \qquad\qquad				D．车身改用轻质材料
 \end{itshape}
 
 - 试题考查点：科学知识（动能、势能、机械能）及其应用——知识与技能维度

@@ -1,0 +1,3 @@
+\begin{itshape}
+在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为`r gio.R$VarScoSamKey(query.data, "写作_百分率", "上海市","总体","A")`\%、`r gio.R$VarScoSamKey(query.data, "写作_百分率", "上海市","总体","B")`\%、`r gio.R$VarScoSamKey(query.data, "写作_百分率", "上海市","总体","C")`\%、`r gio.R$VarScoSamKey(query.data, "写作_百分率", "上海市","总体","D")`\%。
+\end{itshape}

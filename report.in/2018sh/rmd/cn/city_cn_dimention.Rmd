@@ -14,7 +14,7 @@ plot.box.city.cn.dimention.quantile
 
 ## 学生在各能力维度上的表现
 
-### 积累与运用
+### 积累
 
 #### 不同群体学生的表现
 
@@ -40,14 +40,14 @@ plot.box.city.cn.reading.quantile.perspective
 plot.bar.city.cn.reading.rank.district
 plot.box.city.cn.reading.quantile.district
 
-## 写作
+###  写作
 
-### 不同群体学生的表现
+#### 不同群体学生的表现
 
 plot.bar.city.cn.writing.rank.perspective
 plot.box.city.cn.writing.quantile.perspective
 
-### 不同区学生的表现
+#### 不同区学生的表现
 
 plot.bar.city.cn.writing.rank.district
 plot.box.city.cn.writing.quantile.district

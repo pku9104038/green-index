@@ -72,7 +72,7 @@ report:
 
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierCity
       subdir: "cn"
@@ -87,9 +87,9 @@ report:
         - "report_preface.rmd"
         - "table_of_contents.rmd"
         - "project_summary.rmd"
-        - "city_cn_description.rmd"
-        - "city_cn_total.rmd"
-        - "city_cn_dimention.rmd"
+        # - "city_cn_description.rmd"
+        # - "city_cn_total.rmd"
+        # - "city_cn_dimention.rmd"
         - "city_cn_topic.rmd"
 
     -
@@ -135,7 +135,7 @@ report:
         - "city_en_topic.rmd"
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierCity
       subdir: "sc"
