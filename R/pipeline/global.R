@@ -386,6 +386,7 @@ if (!exists("querydata.loaded", mode = "variable")){
 # source plotfigure.R
 if (!exists("plotfigure.loaded", mode = "variable")){
   source(paste0(gi.dir.script,"plotfigure.R"))
+  source(paste0(gi.dir.script,"scale_colour.R"))
 }
 
 # source report.R

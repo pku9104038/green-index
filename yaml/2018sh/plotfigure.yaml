@@ -4,4 +4,4 @@ plotfigure:
   <<: *kPilotRun
   <<: *kPrepareDataframe
   test:
-    - plot.bar.city.index.facet.time.develop
+    - plot.bar.city.base.score.segment.cn.total

@@ -21,7 +21,7 @@ report:
   report:
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标基础数据报告"
       tier: *kStatTierCity
       subdir: "base"
@@ -37,10 +37,10 @@ report:
         - "table_of_contents.rmd"
         - "project_summary.rmd"
         - "city_base_score.rmd"
-        - "city_base_student.rmd"
-        - "city_base_teacher.rmd"
-        - "city_base_principal.rmd"
-        - "city_base_parent.rmd"
+        # - "city_base_student.rmd"
+        # - "city_base_teacher.rmd"
+        # - "city_base_principal.rmd"
+        # - "city_base_parent.rmd"
 
     -
       TODO: FALSE
@@ -141,7 +141,7 @@ report:
       subdir: "sc"
       subject:
         name: "科学"
-        suffix: "素养"
+        suffix: "学科"
       rmarkdown:
         - "subject.rmd"
         - "global_setting.rmd"
@@ -162,7 +162,7 @@ report:
       subdir: "ar"
       subject:
         name: "艺术"
-        suffix: "素养"
+        suffix: "学科"
       rmarkdown:
         - "subject.rmd"
         - "global_setting.rmd"
@@ -234,7 +234,7 @@ report:
         - "school_score.rmd"
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标报告模版测试"
       tier: *kStatTierCity
       subdir: "base"

@@ -15,6 +15,7 @@ library(tibble)
 library(ggrepel)
 # library(Cairo)
 # library(animation)
+library("reshape2")
 
 GreenIndexPlotFigure <- setRefClass(
   "GreenIndexPlotFigure",
@@ -70,13 +71,18 @@ GreenIndexPlotFigure <- setRefClass(
         plot.data[, kColumnLabel] <<- plot.data[, plot.param[1, kColumnLabel]]
       }
       
-      
-      fill <- unlist(strsplit(plot.param[1, kColumnFill], kSeparator))
-      plot.data[, kColumnFill] <<- ""
-      for (i in 1:length(fill)) {
-        plot.data[, kColumnFill] <<- paste0(plot.data[, kColumnFill], 
+      if (plot.param[1, kColumnFill] == kColumnValue) {
+        plot.data[, kColumnFill] <<- ""
+        plot.data[, kColumnFill] <<- as.numeric(plot.data[, kColumnFill])
+      } else {
+        fill <- unlist(strsplit(plot.param[1, kColumnFill], kSeparator))
+        plot.data[, kColumnFill] <<- ""
+        for (i in 1:length(fill)) {
+          plot.data[, kColumnFill] <<- paste0(plot.data[, kColumnFill], 
                                               plot.data[, fill[i]])
+        }
       }
+      
       
       if (plot.param[1, kColumnFillSkip] != kStringNone) {
         plot.data <<- plot.data[plot.data[,kColumnFill] != 
@@ -214,7 +220,31 @@ GreenIndexPlotFigure <- setRefClass(
       } else if (theme.name == "gsea") {
         figure <- figure + theme_economist() + 
           scale_color_gsea() + scale_fill_gsea()
+      } else if (theme.name == "light-blue") {
+        figure <- figure + theme_economist() + scale_fill_material("light-blue")
+      } else if (theme.name == "gdocs") {
+        figure <- figure + theme_economist() + 
+          scale_color_gdocs() + scale_fill_gdocs()
+      } else if (theme.name == "ptol") {
+        figure <- figure + theme_economist() + 
+          scale_color_ptol() + scale_fill_ptol()
+      } else if (theme.name == "hc") {
+        figure <- figure + theme_economist() + 
+          scale_color_hc() + scale_fill_hc()
+      } else if (theme.name == "colorblind") {
+        figure <- figure + theme_economist() + 
+          scale_color_colorblind() + scale_fill_colorblind()
+      } else if (theme.name == "tableau") {
+        figure <- figure + theme_economist() + scale_shape_tableau()
+      } else if (theme.name == "calc") {
+        figure <- figure + theme_economist() + scale_color_calc() + scale_fill_calc()
+      } else if (theme.name == "excel") {
+        figure <- figure + theme_economist() + scale_color_excel_new() + scale_fill_excel_new()
+      } else if (theme.name == "myeconomist") {
+        figure <- figure + theme_economist() + scale_fill_myeconomist()
       } 
+      
+      
       
       figure <- figure + 
         # theme(plot.background = element_blank()) +
