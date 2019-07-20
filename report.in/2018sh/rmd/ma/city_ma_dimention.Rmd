@@ -22,7 +22,7 @@ plot.bar.city.ma.skill.dimention.rank
 plot.box.city.ma.skill.dimention.quantile
 
 
-## 不同群体学生在各内容维度的表现
+## 学生在各内容维度的表现
 
 ### 数与代数
 
@@ -49,20 +49,20 @@ plot.box.city.ma.geometric.quantile.perspective
 plot.bar.city.ma.geometric.rank.district
 plot.box.city.ma.geometric.quantile.district
 
-## 函数与概率统计初步
+### 函数与概率统计初步
 
-### 不同群体学生的表现
+#### 不同群体学生的表现
 
 plot.bar.city.ma.statistics.rank.perspective
 plot.box.city.ma.statistics.quantile.perspective
 
-### 不同区学生的表现
+#### 不同区学生的表现
 
 plot.bar.city.ma.statistics.rank.district
 plot.box.city.ma.statistics.quantile.district
 
 
-## 不同群体学生在各能力维度的表现
+## 学生在各能力维度的表现
 
 ### 辨识
 
@@ -89,27 +89,27 @@ plot.box.city.ma.employing.quantile.perspective
 plot.bar.city.ma.employing.rank.district
 plot.box.city.ma.employing.quantile.district
 
-## 反思
+### 反思
 
-### 不同群体学生的表现
+#### 不同群体学生的表现
 
 plot.bar.city.ma.reflecting.rank.perspective
 plot.box.city.ma.reflecting.quantile.perspective
 
-### 不同区学生的表现
+#### 不同区学生的表现
 
 plot.bar.city.ma.reflecting.rank.district
 plot.box.city.ma.reflecting.quantile.district
 
-## 聚合
+### 聚合
 
-### 不同群体学生的表现
+#### 不同群体学生的表现
 
 plot.bar.city.ma.polymerizing.rank.perspective
 plot.box.city.ma.polymerizing.quantile.perspective
 
 
-### 不同区学生的表现
+#### 不同区学生的表现
 
 plot.bar.city.ma.polymerizing.rank.district
 plot.box.city.ma.polymerizing.quantile.district

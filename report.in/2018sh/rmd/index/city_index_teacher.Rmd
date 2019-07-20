@@ -34,7 +34,8 @@ plot.bar.city.index.teacher.leadership.perspective.district
 \mytext
 
 
-plot.bar.city.index.teaching.method.perspective.district
+plot.bar.city.index.teaching.opinion.perspective.district
+
 
 
 ## 教师教学方式指数
@@ -64,8 +65,7 @@ plot.bar.city.index.teaching.method.perspective.district
 
 \mytext
 
-plot.bar.city.index.teaching.opinion.perspective.district
-
+plot.bar.city.index.teaching.method.perspective.district
 
 ## 教师学业评价能力指数
 

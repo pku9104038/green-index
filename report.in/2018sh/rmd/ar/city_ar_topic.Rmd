@@ -372,7 +372,7 @@ plot.bar.city.ar.question.a8ao01211
 
 query2.plot.bar.city.ar.question.a8ao01211
 
-在题目A8AO01211中，对音乐场景的运用就需要动用分析能力，就有学生会不确定，特别是因为八年级学生的生活经历不够丰富，因此出现不同选项的比例就比较高，正确率在`r gio.R$KeyValue(query2.data, "A")`％左右。
+在题目A8AO01211中，对音乐场景的运用就需要动用分析能力，就有学生会不确定，特别是因为九年级学生的生活经历不够丰富，因此出现不同选项的比例就比较高，正确率在`r gio.R$KeyValue(query2.data, "A")`％左右。
 
 \questiontitle{典型题目3、4：A8AO12111、A8AO12211}
 

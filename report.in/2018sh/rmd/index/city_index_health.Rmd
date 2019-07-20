@@ -27,6 +27,8 @@
 
 \mytext
 
+plot.bar.city.index.physical.health.perspective.district
+
 
 
 ## 学生心理健康指数

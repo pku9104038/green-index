@@ -1,0 +1,11 @@
+\questiontitle{典型题目}9：C8AO27111
+
+\begin{itshape}
+将以下句子填入文中画线处，正确的一项是（ \qquad ）。
+
+再嚼几个来回，便觉得养不家这个词真有点意思。
+
+\begin{longtable}{p{3.5cm}p{3.5cm}p{3.5cm}p{3.5cm}}							
+A.甲处 & B.乙处 & C.丙处 & D.丁处 \\
+\end{longtable}
+\end{itshpe}

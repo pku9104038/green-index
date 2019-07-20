@@ -4,44 +4,26 @@
 
 ## 市级绿色指标
 
-plot.rose.city.index.tier.one.total
-plot.rose.city.index.tier.two.total
+plot.radar.city.index.city.total
 
 ## 各区绿色指标
 
-plot.rose.city.index.tier.one.compare.10
-plot.rose.city.index.tier.two.compare.10
-plot.rose.city.index.tier.one.compare.12
-plot.rose.city.index.tier.two.compare.12
-plot.rose.city.index.tier.one.compare.13
-plot.rose.city.index.tier.two.compare.13
-plot.rose.city.index.tier.one.compare.14
-plot.rose.city.index.tier.two.compare.14
-plot.rose.city.index.tier.one.compare.15
-plot.rose.city.index.tier.two.compare.15
-plot.rose.city.index.tier.one.compare.16
-plot.rose.city.index.tier.two.compare.16
-plot.rose.city.index.tier.one.compare.17
-plot.rose.city.index.tier.two.compare.17
-plot.rose.city.index.tier.one.compare.18
-plot.rose.city.index.tier.two.compare.18
-plot.rose.city.index.tier.one.compare.20
-plot.rose.city.index.tier.two.compare.20
-plot.rose.city.index.tier.one.compare.31
-plot.rose.city.index.tier.two.compare.31
-plot.rose.city.index.tier.one.compare.34
-plot.rose.city.index.tier.two.compare.34
-plot.rose.city.index.tier.one.compare.35
-plot.rose.city.index.tier.two.compare.35
-plot.rose.city.index.tier.one.compare.36
-plot.rose.city.index.tier.two.compare.36
-plot.rose.city.index.tier.one.compare.37
-plot.rose.city.index.tier.two.compare.37
-plot.rose.city.index.tier.one.compare.39
-plot.rose.city.index.tier.two.compare.39
-plot.rose.city.index.tier.one.compare.51
-plot.rose.city.index.tier.two.compare.51
-
+plot.radar.city.index.city.district.compare.10
+plot.radar.city.index.city.district.compare.12
+plot.radar.city.index.city.district.compare.13
+plot.radar.city.index.city.district.compare.14
+plot.radar.city.index.city.district.compare.15
+plot.radar.city.index.city.district.compare.16
+plot.radar.city.index.city.district.compare.17
+plot.radar.city.index.city.district.compare.18
+plot.radar.city.index.city.district.compare.20
+plot.radar.city.index.city.district.compare.31
+plot.radar.city.index.city.district.compare.34
+plot.radar.city.index.city.district.compare.35
+plot.radar.city.index.city.district.compare.36
+plot.radar.city.index.city.district.compare.37
+plot.radar.city.index.city.district.compare.39
+plot.radar.city.index.city.district.compare.51
 
 
 <!-- end of chapter radar  -->

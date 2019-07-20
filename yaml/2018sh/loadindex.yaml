@@ -17,5 +17,7 @@ loadindex:
         - "学校教育影响指数"
         - "当年系数"
         - "历年系数"
+        - "体质健康系数"
+        - "体质健康指数"
       table: *kTableExternalIndex
       suffix: *kSuffixConverge

@@ -12,12 +12,12 @@ query.data.city.base.teacher.survey
 - 九年级教师教龄在5年及以下的占`r gio.R$AttSamKey(query.data, "教龄", "总体", c("5年及以下"), 1)`%，在20年以上的占`r gio.R$AttSamKey(query.data, "教龄", "总体", c("20年以上"), 1)`%，在6-20年的占`r gio.R$AttSamKey(query.data, "教龄", "总体", c("6-10年", "11-15年", "16-20年"), 1)`%。
 - 九年级教师中，有`r gio.R$AttSamKey(query.data, "职称", "总体", c("中学高级","中学一级"), 1)`%的教师具有中学一级或高级职称。
 - 九年级`r gio.R$AttSamKey(query.data, "学历", "总体", c("本科", "硕士", "博士"), 1)`%的教师是本科及以上学历，`r gio.R$AttSamKey(query.data, "学历", "总体", c("大专", "中师"), 1)`%的教师是大专及以下学历。
-- 九年级教师就职前接受过师范教育的比例为`r gio.R$AttSamKey(query.data, "师范教育", "总体", c("是"), 1)`%，所教学科与所学专业一致的比例为`r gio.R$AttSamKey(query.data, "学教一致", "总体", c("一致"), 1)`%。
-- 九年级教师每周上课节数在11-15节的占`r gio.R$AttSamKey(query.data, "周上课节数", "总体", c("11-15节"), 1)`%，在6节以下的占`r gio.R$AttSamKey(query.data, "周上课节数", "总体", c("6节以下"), 1)`%，在20节以上的占`r gio.R$AttSamKey(query.data, "周上课节数", "总体", c("20节以上"), 1)`%。
-- 九年级教师每天的工作时间在8-11小时的占`r gio.R$AttSamKey(query.data, "日工作时间", "总体", c("8-9小时(含9小时)", "9-11小时(含11小时)"), 1)`％，8小时及以下的占`r gio.R$AttSamKey(query.data, "日工作时间", "总体", c("8小时及以下"), 1)`%，11小时以上的占`r gio.R$AttSamKey(query.data, "日工作时间", "总体", c("11-13小时(含11小时)", "13小时以上"), 1)`%。
+- 九年级教师就职前接受过师范教育的比例为`r gio.R$AttSamKey(query.data, "师范教育", "总体", c("是"), 1)`%，所教学科与所学专业一致的比例为`r gio.R$AttSamKey(query.data, "专业对口", "总体", c("一致"), 1)`%。
+- 九年级教师每周上课节数在11-15节的占`r gio.R$AttSamKey(query.data, "周上课节数", "总体", c("11-15节"), 1)`%，在6节以下的占`r gio.R$AttSamKey(query.data, "周上课节数", "总体", c("6节以下"), 1)`%，在21节以上的占`r gio.R$AttSamKey(query.data, "周上课节数", "总体", c("21节以上"), 1)`%。
+- 九年级教师每天的工作时间在8-11小时的占`r gio.R$AttSamKey(query.data, "日工作时间", "总体", c("8-9小时(含9小时)", "9-11小时(含11小时)"), 1)`％，8小时及以下的占`r gio.R$AttSamKey(query.data, "日工作时间", "总体", c("8小时及以下"), 1)`%，11小时以上的占`r gio.R$AttSamKey(query.data, "日工作时间", "总体", c("11-13小时(含13小时)", "13小时以上"), 1)`%。
 - 九年级教师有`r gio.R$AttSamKey(query.data, "喜欢教师工作", "总体", c("比较喜欢", "非常喜欢"), 1)`％喜欢教师职业。
 
-- 九年级教师中有`r gio.R$SamTopKey(query.data, "总体", "作为教师,我的角色就是引导学生自行探究", c("比较同意", "非常同意"), 1)`%认同教师的角色是引导学生自行探究；有`r gio.R$SamTopKey(query.data, "总体", "在课堂上应尽可能多创造机会让学生向教师提问", c("比较同意", "非常同意"), 1)`%认同在课堂上应尽可能多创造机会让学生向教师提问；有%对学生最大的期望是通过教学使他们变得更爱学习。
+- 九年级教师中有`r gio.R$SamTopKey(query.data, "总体", "作为教师,我的角色就是引导学生自行探究", c("比较同意", "非常同意"), 1)`%认同教师的角色是引导学生自行探究；有`r gio.R$SamTopKey(query.data, "总体", "在课堂上应尽可能多创造机会让学生向教师提问", c("比较同意", "非常同意"), 1)`%认同在课堂上应尽可能多创造机会让学生向教师提问；`r gio.R$SamTopKey(query.data, "总体", "思考和推理过程比具体的课程内容更重要", c("比较同意", "非常同意"), 1)`%认为思考和推理过程比具体的课程内容更重要。
 
 - 九年级教师专业发展的途径主要是与同事分享经验、讨论问题，观摩他人的课并在课后进行研讨以及参加学校或教研部门组织的教研活动；教师专业发展的需求主要集中在对个性化教学的方法，教学技能，所教学科领域知识及学生评价和测量方法；教师专业发展遇到的困难主要是缺乏专业活动的资金，时间的冲突及缺乏参加相关活动的机会。
 
@@ -114,10 +114,6 @@ plot.bar.city.base.teacher.career.satisfaction
 
 plot.bar.city.base.teaching.opinion
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.teaching.metaphor")`}给出了九年级教师对教学比喻的总体情况。
-
-plot.bar.city.base.teaching.metaphor
-
 ### 教师学业评价能力
 
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.teaching.evaluation.firststep")`}给出了九年级教师对“命制一套学科测试卷时，最先做的一步”的反馈总体情况。
@@ -152,7 +148,7 @@ plot.bar.city.base.teaching.evaluation.principal
 ## 教师专业发展
 
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.teacher.develop.action")`}给出了九年级教师专业发展投入的总体情况。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.teacher.develop.action")`}给出了九年级教师参与专业发展相关活动的总体情况。
 
 plot.bar.city.base.teacher.develop.action
 

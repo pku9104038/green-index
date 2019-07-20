@@ -69,7 +69,7 @@ kCoefficient <- "系数"
 kIndex <- "指数"
 kStatistics <- "统计"
 kNumericNA <- -1
-kAxisXTextLimit <- 25
+kAxisXTextLimit <- 18
 kHashDigestDefault <- "27f4468f070e6f28b58e39fda7293bf8c3fa6fb7"
 kStringAll <- "ALL"
 kStringNone <- "NONE"
@@ -151,6 +151,7 @@ kPlotGeomBarStack <- "堆叠条形图"
 kPlotGeomScatter <- "散点图"
 kPlotGeomBox <- "盒须图"
 kPlotGeomWindRose <- "玫瑰图"
+kPlotGeomRadar <- "雷达图"
 
 # table for plot
 kTablePlotParameter <- "属性表绘图参数"

@@ -16,46 +16,46 @@ plot.bar.city.base.family.type
 
 ## 亲子关系
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.family.communication")`}给出了学生家庭亲子交流的总体情况及各群体之间的比较。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.family.communication")`}给出了亲子交流的总体情况及各群体之间的比较。
 
 plot.bar.city.base.family.communication
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.family.discuss")`}给出了学生家庭事务讨论的总体情况及各群体之间的比较。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.family.discuss")`}给出了学生参与家庭事务讨论的总体情况及各群体之间的比较。
 
 plot.bar.city.base.family.discuss
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.family.accompany")`}给出了学生家庭亲子陪伴的总体情况及各群体之间的比较。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.family.accompany")`}给出了亲子陪伴的总体情况及各群体之间的比较。
 
 plot.bar.city.base.family.accompany
 
 
-## 教育期望
+## 家长对子女教育期望
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.family.expection")`}给出了学生家长对子女教育期望的总体情况及各群体之间的比较。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.family.expection")`}给出了家长对子女教育期望的总体情况及各群体之间的比较。
 
 plot.bar.city.base.family.expection
 
 
-## 家庭辅导
+## 家长辅导子女学习
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.family.incharge")`}给出了学生家庭对子女教育分工的总体情况及各群体之间的比较。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.family.incharge")`}给出了家长辅导子女学习的责任分工的总体情况及各群体之间的比较。
 
 plot.bar.city.base.family.incharge
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.family.tutor")`}给出了学生家庭辅导的总体情况及各群体之间的比较。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.family.tutor")`}给出了家长辅导子女学习的总体情况及各群体之间的比较。
 
 plot.bar.city.base.family.tutor
 
 
 ## 家长教育观念
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.family.incharge")`}给出了学生家长教育观念的总体情况。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.family.incharge")`}给出了家长教育观念的总体情况。
 
 plot.bar.city.base.family.opinion
 
-## 家长对学校满意度
+## 家长对学校教育的满意度
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.family.satisfaction")`}给出了学生家长对学校满意度的总体情况。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.family.satisfaction")`}给出了家长对学校教育的满意度的总体情况。
 
 plot.bar.city.base.family.satisfaction
 

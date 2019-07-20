@@ -37,10 +37,10 @@ report:
         - "table_of_contents.rmd"
         - "project_summary.rmd"
         - "city_base_score.rmd"
-        # - "city_base_student.rmd"
-        # - "city_base_teacher.rmd"
-        # - "city_base_principal.rmd"
-        # - "city_base_parent.rmd"
+        - "city_base_student.rmd"
+        - "city_base_teacher.rmd"
+        - "city_base_principal.rmd"
+        - "city_base_parent.rmd"
 
     -
       TODO: FALSE
@@ -72,7 +72,7 @@ report:
 
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierCity
       subdir: "cn"
@@ -87,9 +87,9 @@ report:
         - "report_preface.rmd"
         - "table_of_contents.rmd"
         - "project_summary.rmd"
-        # - "city_cn_description.rmd"
-        # - "city_cn_total.rmd"
-        # - "city_cn_dimention.rmd"
+        - "city_cn_description.rmd"
+        - "city_cn_total.rmd"
+        - "city_cn_dimention.rmd"
         - "city_cn_topic.rmd"
 
     -
@@ -177,7 +177,7 @@ report:
         - "city_ar_topic.rmd"
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标基础数据报告"
       tier: *kStatTierDistrict
       subdir: "base"
@@ -249,3 +249,21 @@ report:
         - "report_preface.rmd"
         - "table_of_contents.rmd"
         - "project_summary.rmd"
+
+    -
+      TODO: FALSE
+      name: "绿色指标报告排版校对"
+      tier: *kStatTierCity
+      subdir: "base"
+      subject:
+        name: ""
+        suffix: ""
+      rmarkdown:
+        - "base.rmd"
+        - "global_setting.rmd"
+        - "cover_page.rmd"
+        - "head_foot.rmd"
+        - "report_preface.rmd"
+        - "table_of_contents.rmd"
+        - "project_summary.rmd"
+        - "collation.Rmd"

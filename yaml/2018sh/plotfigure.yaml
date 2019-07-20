@@ -4,4 +4,4 @@ plotfigure:
   <<: *kPilotRun
   <<: *kPrepareDataframe
   test:
-    - plot.bar.city.base.score.rank.cn.total.district
+    - plot.point.city.base.score.sleep.allsubject.district

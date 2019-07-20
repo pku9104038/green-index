@@ -251,13 +251,15 @@ query.data.city.cn.pointrate.perspective
 
 \begin{itshape}
 下列词语中加点字读音完全相同的一项是（ \qquad ）。
-\begin{table}[H]
-\begin{tabularx}{\textwidth}{rXXXrXXX}
-  A. & \CJKunderdot{掺}杂 &  \CJKunderdot{渗}透 & 悲\CJKunderdot{惨} & B．& \CJKunderdot{检}查 & 节\CJKunderdot{俭} & \CJKunderdot{捡}拾 \\
-  C. & \CJKunderdot{增}加 &  \CJKunderdot{僧}人 & \CJKunderdot{憎}恶 & D．& 翻\CJKunderdot{译} & 沼\CJKunderdot{泽} & 选\CJKunderdot{择} \\								
-\end{tabularx}
-\end{table}
+
+\begin{longtable}{p{7cm}p{7cm}}
+A. \quad \CJKunderdot{掺}杂 \qquad \CJKunderdot{渗}透 \qquad 悲\CJKunderdot{惨} & B. \quad \CJKunderdot{检}查 \qquad 节\CJKunderdot{俭} \qquad \CJKunderdot{捡}拾 \\
+
+C. \quad \CJKunderdot{增}加 \qquad \CJKunderdot{僧}人 \qquad \CJKunderdot{憎}恶 &  D. \quad 翻\CJKunderdot{译} \qquad 沼\CJKunderdot{泽} \qquad 选\CJKunderdot{择} \\
+\end{longtable}
+\setcounter{table}{\value{table}-1}
 \end{itshape}
+
 
 - 考查能力：积累•语文识记•在无语境条件下读准字音•能读准形近字的字音
 - 正确答案：B
@@ -280,14 +282,15 @@ plot.bar.city.cn.question.c8ao01111
 \questiontitle{典型题目}2：C8AO09111
 
 \begin{itshape}
+
 选择成语填空，恰当的一项是（ \qquad ）
 
-这两个故事，一个精彩，一个乏味，真是 __________ 。
-\begin{table}[H]
-\begin{tabularx}{\textwidth}{XXXX}
+这两个故事，一个精彩，一个乏味，真是 \uline{\qquad\qquad} 。
+
+\begin{longtable}{p{3cm}p{3cm}p{3cm}p{3cm}}
   A. 天壤之别 & B．异曲同工 & C. 各有千秋 & D．别具匠心 \\								
-\end{tabularx}
-\end{table}
+\end{longtable}
+\setcounter{table}{\value{table}-1}
 \end{itshape}
 
 - 考查能力：积累•理解应用•在有语境条件下理解词语的意思•能理解常用成语的基本意思，并在具体的语境中恰当运用
@@ -310,15 +313,15 @@ plot.bar.city.cn.question.c8ao09111
 \questiontitle{典型题目}3：C8AO11111
 
 \begin{itshape}
+
 选择关联词填空，恰当的一项是（ \qquad  ）
 
-“博观而约取，厚积而薄发”，苏轼在这十个字中，对朋友提出了四点告诫。他提出的这四点，构成了完整的学术精神，_______在这些方面加强修炼，_______有望成为大学问家。
+“博观而约取，厚积而薄发”，苏轼在这十个字中，对朋友提出了四点告诫。他提出的这四点，构成了完整的学术精神，\uline{\qquad\qquad}在这些方面加强修炼，\uline{\qquad\qquad}有望成为大学问家。
 
-\begin{table}[H]
-\begin{tabularx}{\textwidth}{XXXX}
+\begin{longtable}{p{4cm}p{4cm}p{4cm}p{4cm}}
   A. 因为 \qquad 所以 & B．既然 \qquad 就 & C. 不是 \qquad 而是 & D．只有 \qquad 才 \\								
-\end{tabularx}
-\end{table}
+\end{longtable}
+\setcounter{table}{\value{table}-1}
 \end{itshape}
 
 - 考查能力：积累•理解应用•在有语境条件下理解词语的意思•能根据具体语境恰当地使用关联词
@@ -614,13 +617,12 @@ plot.bar.city.cn.question.c8ao11111
 \begin{itshape}
 下列加点字解释有误的一项是（ \qquad ）。
 
-\begin{table}[H]
-\begin{tabularx}{\textwidth}{lXlXlXl}							
 
-A.\CJKunderdot{苫}蔽成丘 & & 苫：盖上 & & B.目似\CJKunderdot{瞑} & & 瞑：闭眼 \\
-C.屠\CJKunderdot{暴}起 & & 暴：突然 & & D.一狼\CJKunderdot{洞}其中 & & 洞：洞口 \\
-\end{tabularx}
-\end{table}
+\begin{longtable}{p{4cm}p{3cm}p{4cm}p{3cm}}							
+A.\CJKunderdot{苫}蔽成丘 & 苫：盖上 & B.目似\CJKunderdot{瞑} & 瞑：闭眼 \\
+C.屠\CJKunderdot{暴}起 & 暴：突然 & D.一狼\CJKunderdot{洞}其中 & 洞：洞口 \\
+\end{longtable}
+\setcounter{table}{\value{table}-1}
 \end{itshape}
 
 - 考查能力：文言文阅读•理解常用文言实词的意思
@@ -793,7 +795,7 @@ B. 即便是一个已经被驯服的种类，其中也总是会有到死也调�
 C. 养不家是大多数野生动物的一种天性和本能
 
 D. 养不家的那些家伙们，活得虽然很艰难，却自有一番与天地搏击的乐趣
-\begin{itshape}
+\end{itshape}
 
 - 考查能力：现代文阅读•为了获得文学体验的阅读•分析与解释文本内容与形式•分析段落的作用
 - 本题满分：3分
@@ -816,12 +818,11 @@ plot.bar.city.cn.question.c8ao26111
 
 再嚼几个来回，便觉得养不家这个词真有点意思。
 
-\begin{table}[H]
-\begin{tabularx}{\textwidth}{XXXX}							
+\begin{longtable}{p{3.5cm}p{3.5cm}p{3.5cm}p{3.5cm}}							
 A.甲处 & B.乙处 & C.丙处 & D.丁处 \\
-\end{tabularx}
-\end{table}
-\end{itshpe}
+\end{longtable}
+\setcounter{table}{\value{table}-1}
+\end{itshape}
 
 - 考查能力：现代文阅读•为了获得文学体验的阅读•分析与解释文本内容与形式•梳理段落之间的关系，分析文章的思路
 - 本题满分：4分

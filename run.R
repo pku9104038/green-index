@@ -1,6 +1,7 @@
 ## Entry script for green index data analyse
 
 options(java.parameters = "-Xmx8g")  # set java heap size before run.R
+setwd("~/OneDrive/zuoyue/project/2018绿色指标分析/green-index")
 
 # options(tinytex.verbose = TRUE)
 

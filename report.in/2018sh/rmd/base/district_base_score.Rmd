@@ -2,11 +2,11 @@
 
 \mytext
 
-# 八年级学生学业水平总体情况
+# 九年级学生学业水平总体情况
 
-## 八年级学生学业水平总体情况　
+## 九年级学生学业水平总体情况　
 
-八年级学生总体在语文、数学、英语、科学与艺术学科上的标准分分布情况见图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.score.segment.cn.total")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.score.segment.ma.total")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.score.segment.en.total")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.score.segment.sc.total")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.score.segment.ar.total")`}。
+九年级学生总体在语文、数学、英语、科学与艺术学科上的得分分布情况见图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.score.segment.cn.total")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.score.segment.ma.total")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.score.segment.en.total")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.score.segment.sc.total")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.score.segment.ar.total")`}。
 
 plot.bar.district.base.score.segment.cn.total
 
@@ -33,7 +33,7 @@ multiplot.bar.district.base.score.rank.cn.total.school
 multiplot.box.district.base.score.quantile.cn.total.school
 
 \mylist
-注：盒须图——5\%学生标准分小于等于须下限分数；25\%学生标准分小于等于盒底分数；50\%学生标准分大于等于盒中横线分数；25\%学生标准分大于等于盒顶分数；5\%学生标准分大于等于须上限分数；盒高度一定程度上反映了标准分分布的离散程度；红点为平均标准分。
+注：盒须图——5\%学生得分小于等于须下限分数；25\%学生得分小于等于盒底分数；50\%学生得分大于等于盒中横线分数；25\%学生得分大于等于盒顶分数；5\%学生得分大于等于须上限分数；盒高度一定程度上反映了得分分布的离散程度；红点为平均得分。
 \mytext
 
 

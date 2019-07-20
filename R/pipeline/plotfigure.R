@@ -8,7 +8,7 @@ plotfigure.loaded <- TRUE
 library(methods)
 library(ggplot2)
 library(showtext)
-library(ggthemes)
+library(ggthemes)  # have been fork and customized
 # library("ggthemes", lib="~/local/R_libs/"，) 
 library(ggsci)
 library(dplyr)
@@ -17,6 +17,8 @@ library(ggrepel)
 # library(Cairo)
 # library(animation)
 library("reshape2")
+
+source(paste0(gi.dir.script,"ggradar2.R"))
 
 GreenIndexPlotFigure <- setRefClass(
   "GreenIndexPlotFigure",
@@ -749,6 +751,260 @@ GreenIndexPlotFigure <- setRefClass(
       return(figure)
       
     },
+
+    
+    PlotGeomRadar = function() {
+      
+      CalculateGroupPath <- function(df) {
+        #Converts variable values into a set of radial x-y coordinates
+        #Code adapted from a solution posted by Tony M to
+        #http://stackoverflow.com/questions/9614433/creating-radar-chart-a-k-a-star-plot-spider-plot-using-ggplot2-in-r
+        #Args:
+        #  df: Col 1 -  group ('unique' cluster / group ID of entity)
+        #      Col 2-n:  v1.value to vn.value - values (e.g. group/cluser mean or median) of variables v1 to v.n
+        
+        path <- df[,1]
+        path <- factor(path,levels = as.vector(path))
+        
+        ##find increment
+        angles = seq(from=0, to=2*pi, by=(2*pi)/(ncol(df)-1))
+        ##create graph data frame
+        graphData= data.frame(seg="", x=0,y=0)
+        graphData=graphData[-1,]
+        
+        for(i in levels(path)){
+          pathData = subset(df, df[,1]==i)
+          for(j in c(2:ncol(df))){
+            #pathData[,j]= pathData[,j]
+            
+            
+            graphData=rbind(graphData, data.frame(group=i,
+                                                  x=pathData[,j]*sin(angles[j-1]),
+                                                  y=pathData[,j]*cos(angles[j-1])))
+          }
+          ##complete the path by repeating first pair of coords in the path
+          graphData=rbind(graphData, data.frame(group=i,
+                                                x=pathData[,2]*sin(angles[1]),
+                                                y=pathData[,2]*cos(angles[1])))
+        }
+        #Make sure that name of first column matches that of input data (in case !="group")
+        colnames(graphData)[1] <- colnames(df)[1]
+        graphData #data frame returned by function
+      }
+      
+      funcCircleCoords <- function(center = c(0,0), r.min = 1, r.max = 10, r.step = 1, npoints = 360){
+        #Adapted from Joran's response to http://stackoverflow.com/questions/6862742/draw-a-circle-with-ggplot2
+        
+        coord.data <- data.frame()
+        r <- r.min + r.step
+        while (r <= r.max){
+          tt <- seq(0,2*pi,length.out = npoints)
+          xx <- center[1] + (r-r.min) * cos(tt)
+          yy <- center[2] + (r-r.min) * sin(tt)
+          gg <- r + tt - tt
+          coord.data <- rbind(coord.data, data.frame(group = gg, x = xx, y = yy))
+          r <- r + r.step
+        }
+        
+        return(coord.data)
+      }
+      
+      CaclulateAxisPath = function(n.vars = 10, min = 0, max = 10) {
+        #Caculates x-y coordinates for a set of radial axes (one per variable being plotted in radar plot)
+        #Args:
+        #var.names - list of variables to be plotted on radar plot
+        #min - MININUM value required for the plotted axes (same value will be applied to all axes)
+        #max - MAXIMUM value required for the plotted axes (same value will be applied to all axes)
+        #var.names <- c("v1","v2","v3","v4","v5")
+        
+        # n.vars <- length(var.names) # number of vars (axes) required
+        
+        #Cacluate required number of angles (in radians)
+        angles <- seq(from=0, to=2*pi, by=(2*pi)/n.vars)
+        #calculate vectors of min and max x+y coords
+        min.x <- min*sin(angles)
+        min.y <- min*cos(angles)
+        max.x <- max*sin(angles)
+        max.y <- max*cos(angles)
+        #Combine into a set of uniquely numbered paths (one per variable)
+        axisData <- NULL
+        for (i in 1:n.vars) {
+          a <- c(i,min.x[i],min.y[i])
+          b <- c(i,max.x[i],max.y[i])
+          axisData <- rbind(axisData,a,b)
+        }
+        #Add column names + set row names = row no. to allow conversion into a data frame
+        colnames(axisData) <- c("axis.no","x","y")
+        rownames(axisData) <- seq(1:nrow(axisData))
+        #Return calculated axis paths
+        as.data.frame(axisData)
+      }
+      
+      CalculateAxisLabel = function(label.text, r.min, r.max, r.offset ) {
+        axis.label <- data.frame(
+          text=plot.x,
+          x=NA,
+          y=NA )
+        #print(axis$label)
+        #axis label coordinates
+        n.vars <- length(axis.label$text)
+        angles = seq(from=0, to=2*pi, by=(2*pi)/n.vars)
+        axis.label$x <- sapply(1:n.vars, function(i, x) {(r.max-r.min+r.offset)*sin(angles[i])})
+        axis.label$y <- sapply(1:n.vars, function(i, x) {(r.max-r.min+r.offset)*cos(angles[i])}) 
+        axis.label
+      }
+      
+      
+      if (plot.param[1, kColumnFillOrder] == kStringNone){
+        
+      } else {
+        fill.order <- unlist(strsplit(plot.param[1, kColumnFillOrder], 
+                                      kSeparator))
+        plot.data[, kColumnFill] <<- factor(plot.data[, kColumnFill],
+                                            levels = fill.order)
+        
+      }
+      
+      # figure <- FigurePlot()
+      
+      # figure <- figure + 
+      #   geom_point( shape = 20, size = 1, alpha = 0.5) 
+      
+      radar.data <- data.frame()
+      plot.group <- unlist(strsplit(plot.param[1, kColumnFillOrder], kSeparator))
+      group.column <- plot.param[1, kColumnFill]
+      plot.x <- unlist(strsplit(plot.param[1, kColumnOrderX], kSeparator))
+      
+      for (i in 1:length(plot.group)) {
+        group.name <- plot.group[i]
+        df <- plot.data[plot.data[, group.column] == group.name, ]
+        dl <- list()
+        dl["group"] <- group.name
+        for (j in 1:length(plot.x)) {
+          x.name <- plot.x[j]
+          dl[x.name] <- df[df[, kColumnAxisX] == x.name, kColumnAxisY]
+        }
+        radar.data <- rbind(radar.data, data.frame(dl))
+      }
+      
+      path.data <- CalculateGroupPath(radar.data)
+      # (path.data)
+      
+      scale.y <- unlist(strsplit(plot.param[1, kColumnLimitY], kSeparator))
+      scale.y.min <- as.numeric(scale.y[1])
+      scale.y.max <- as.numeric(scale.y[2])
+      scale.y.step <- as.numeric(scale.y[3])
+      scale.y.labeloffset <- as.numeric(scale.y[4])
+      scale.y.labelborder <- as.numeric(scale.y[5])
+    
+      coord.data <- funcCircleCoords(r.min = scale.y.min, 
+                                     r.max = scale.y.max, 
+                                     r.step = scale.y.step)
+      
+      axis.data <- CaclulateAxisPath(n.vars = length(plot.x), 
+                                     min = scale.y.min, 
+                                     max = scale.y.max + scale.y.labeloffset)
+      
+      axis.label <- data.frame(
+        text=plot.x,
+        x=NA,
+        y=NA )
+      #print(axis$label)
+      #axis label coordinates
+      n.vars <- length(plot.x)
+      angles = seq(from=0, to=2*pi, by=(2*pi)/n.vars)
+      axis.label$x <- sapply(1:n.vars, function(i, x) {((10+abs(1/9))*1.15)*sin(angles[i])})
+      axis.label$y <- sapply(1:n.vars, function(i, x) {((10+abs(1/9))*1.15)*cos(angles[i])})
+      
+      axis.label <- CalculateAxisLabel(label.text = plot.x, 
+                                       r.min = scale.y.min, 
+                                       r.max = scale.y.max, 
+                                       r.offset = scale.y.labeloffset )
+        
+      figure <- ggplot2::ggplot(path.data) + xlab(NULL) + ylab(NULL) + coord_equal()
+      
+     
+      # ... + group (grid) 'paths'
+      figure <- figure + geom_path(data=coord.data, aes(x=x,y=y, group=group),
+                                   lty="dashed", colour="grey",
+                                   size=0.5)
+      
+      # ... + group (grid) 'paths'
+      figure <- figure + geom_path(data=axis.data, aes(x=x,y=y, group=axis.no),
+                                   lty="solid", colour="grey",
+                                   size=0.5)
+      
+      
+      # + axis labels for any vertical axes [abs(x)<=x.centre.range]
+      figure <- figure + geom_text(data=subset(axis.label,axis.label$x <= 0),
+                               aes(x=x,y=y,label=text),size=4,hjust=0.5)
+      # + axis labels for any vertical axes [x>x.centre.range]
+      figure <- figure + geom_text(data=subset(axis.label,axis.label$x>0),
+                               aes(x=x,y=y,label=text),size=4,hjust=0.5)
+      
+      canvas.data <- data.frame(
+        group = c("left","left","right","right"),
+        x = c(-scale.y.labelborder, -scale.y.labelborder,
+            scale.y.labelborder, scale.y.labelborder),
+        y = c(scale.y.max, -scale.y.max, scale.y.max, -scale.y.max) )
+      figure <- figure + geom_path(data=canvas.data, aes(x=x,y=y, group=group),
+                                   lty="blank", colour="grey",
+                                   size=0.5)
+      
+      # ... + group (cluster) 'paths'
+      figure <- figure + geom_path(data=path.data,aes(x=x,y=y,group=group,colour=group),
+                                   size=1, alpha = 0.8)
+      
+      # ... + group points (cluster data)
+      figure <- figure + geom_point(data=path.data,aes(x=x,y=y,group=group,colour=group),size=2, alpha = 0.8)
+      
+      
+      figure <- figure + theme_bw() +
+        theme(axis.text.y=element_blank(),
+              axis.text.x=element_blank(),
+              axis.ticks=element_blank(),
+              panel.grid.major=element_blank(),
+              panel.grid.minor=element_blank(),
+              panel.border=element_blank(),
+              legend.key=element_rect(linetype="blank"))
+      
+      figure <- figure + labs(title = plot.param[1, kColumnPlotTitle])
+      
+      figure <- figure +  
+        theme(legend.position = plot.param[1, kColumnLegendPosition],
+              legend.direction =  plot.param[1, kColumnLegendDirection],
+              legend.text = 
+                element_text(size = plot.param[1, kColumnLegendFontSize]),
+              legend.title=element_blank())
+      
+      figure <- figure + 
+        # theme(plot.background = element_blank()) +
+        theme(plot.background = 
+                element_rect(fill = "white", colour = "grey90", size = 1))
+      
+      #figure <- ggradar2(plot.data = radar.data,
+      #                   webtype = "lux",
+      #                   grid.label.size = 10,
+      #                   gridline.label.offset = 0,
+      #                   gridline.label = c("0", "2", "4", "6", "8", "10"))
+      
+      # figure <- FigureTheme(figure, plot.param[1, kColumnPlotTheme])
+      
+      # figure <- FigureLabelXY(figure)
+      
+      # figure <- FigureLegend(figure)
+      
+      # figure <- FigureSortX(figure)
+      
+      # figure <- FigureLimitY(figure)
+      
+      # figure <- FigureCoord(figure)
+      
+      # figure <- figure + geom_text_repel()
+      
+      return(figure)
+      
+    },
     
     PlotDummy = function(errorinfo) {
       
@@ -904,6 +1160,8 @@ GreenIndexPlotFigure <- setRefClass(
           figure <- PlotGeomBoxWhisker()
         } else if (plot.param[1, kColumnPlotGeom] == kPlotGeomWindRose) {
           figure <- PlotGeomWindRose()
+        } else if (plot.param[1, kColumnPlotGeom] == kPlotGeomRadar) {
+          figure <- PlotGeomRadar()
         }
         
         print(figure)
@@ -947,7 +1205,7 @@ GreenIndexPlotFigure <- setRefClass(
     
     MultiPlotSortX = function() {
       
-      axisx.names <<- unlist(unique(plot.data[, kColumnAxisX]))
+      axisx.names <- unlist(unique(plot.data[, kColumnAxisX]))
       
       if (plot.param[1, kColumnSortX] == kStringNone) {
         if (plot.param[1, kColumnOrderX] == kStringNone) {
@@ -958,7 +1216,7 @@ GreenIndexPlotFigure <- setRefClass(
         
       } else if(plot.param[1, kColumnSortX] == kSortAscAll) {
         
-        sort.x.subset <<- unlist(strsplit(plot.param[1, kColumnSortXSubset], 
+        sort.x.subset <- unlist(strsplit(plot.param[1, kColumnSortXSubset], 
                                           kSeparator))
         
         for (i in 1:length(sort.x.subset)) {
@@ -984,7 +1242,7 @@ GreenIndexPlotFigure <- setRefClass(
         
       } else if(plot.param[1, kColumnSortX] == kSortDescAll) {
         
-        sort.x.subset <<- unlist(strsplit(plot.param[1, kColumnSortXSubset], 
+        sort.x.subset <- unlist(strsplit(plot.param[1, kColumnSortXSubset], 
                                           kSeparator))
         
         for (i in 1:length(sort.x.subset)) {
@@ -1012,7 +1270,7 @@ GreenIndexPlotFigure <- setRefClass(
         order <- order[1:length(order)-1]
         df <- plot.data[!(plot.data[, kColumnAxisX] %in% order), ]
         
-        sort.x.subset <<- unlist(strsplit(plot.param[1, kColumnSortXSubset], 
+        sort.x.subset <- unlist(strsplit(plot.param[1, kColumnSortXSubset], 
                                           kSeparator))
         for (i in 1:length(sort.x.subset)) {
           subset <- sort.x.subset[i]
@@ -1043,7 +1301,7 @@ GreenIndexPlotFigure <- setRefClass(
         order <- order[1:length(order)-1]
         df <- plot.data[!(plot.data[, kColumnAxisX] %in% order), ]
         
-        sort.x.subset <<- unlist(strsplit(plot.param[1, kColumnSortXSubset], 
+        sort.x.subset <- unlist(strsplit(plot.param[1, kColumnSortXSubset], 
                                           kSeparator))
         for (i in 1:length(sort.x.subset)) {
           subset <- sort.x.subset[i]

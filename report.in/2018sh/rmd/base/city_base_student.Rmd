@@ -22,7 +22,7 @@ query.data.city.base.student.survey
 - 九年级学生每周参加校外兴趣班的时间在2小时及以上的占`r gio.R$SubAttSamKey(query.data, "家长", "校外兴趣班时间", "总体", c("2-4小时（含2小时）", "4-6小时（含4小时）", "6-8小时（含6小时）", "8小时及以上"), 1)`%，没有参加校外兴趣班的学生占`r gio.R$SubAttSamKey(query.data, "家长", "校外兴趣班时间", "总体", c("(跳过)"), 1)`%。
 - 九年级学生每个月参加考试和测验的频率在4次及以上的占`r gio.R$SubAttSamKey(query.data, "学生", "考试次数", "总体", c("4次", "5次", "6次", "7次", "8次及以上"), 1)`%，频率在3次及以下的占`r gio.R$SubAttSamKey(query.data, "学生", "考试次数", "总体", c("3次及以下"), 1)`%。
 - 九年级学生一年阅读课外读物量达到9本及以上的比例为`r gio.R$SubAttSamKey(query.data, "学生", "课外阅读", "总体", c("9-12本", "13本及以上"), 1)`%，有`r gio.R$SubAttSamKey(query.data, "学生", "课外阅读", "总体", c("1-4本", "没有"), 1)`%的学生年阅读量不足5本，有`r gio.R$SubAttSamKey(query.data, "学生", "课外阅读", "总体", c("没有"), 1)`%的学生几乎不进行课外阅读。
-- 九年级学生每周校外运动时间在1小时以内的占`r gio.R$SubAttSamKey(query.data, "学生", "校外运动时间", "总体", c("1小时以内"), 1)`%，在2小时及以上的占`r gio.R$SubAttSamKey(query.data, "学生", "校外运动时间", "总体", c("2-3小时（含2小时）", "3-4小时（含3小时）", "4-5小时（含4小时）", "5小时及以上"), 1)`%。
+- 九年级学生每周校外运动时间在1小时以内的占`r gio.R$SubAttSamKey(query.data, "家长", "校外运动时间", "总体", c("1小时以内"), 1)`%，在2小时及以上的占`r gio.R$SubAttSamKey(query.data, "家长", "校外运动时间", "总体", c("2-3小时（含2小时）", "3-4小时（含3小时）", "4-5小时（含4小时）", "5小时及以上"), 1)`%。
 
 
 
@@ -240,8 +240,19 @@ plot.bar.city.base.study.method
 
 ## 品德和社会化行为有关问题的调查结果
 
-本问卷对学生品德和社会化行为的国家认同、国际视野、行为规范、亲社会行为几个方面进行了调查，现将调查到的学生品德和社会化行为相关问题进行如下分析。
+本问卷对学生品德和社会化行为的行为规范、亲社会行、国家认同、国际视野为几个方面进行了调查，现将调查到的学生品德和社会化行为相关问题进行如下分析。
 
+### 行为规范
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.behavior.morality")`}给出了九年级学生对行为规范相关问题的看法。
+
+plot.bar.city.base.behavior.morality
+
+### 亲社会行为
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.behavior.prosocial")`}给出了九年级学生对亲社会行为相关问题的看法。
+
+plot.bar.city.base.behavior.prosocial
 
 ### 国家认同
 
@@ -264,17 +275,6 @@ plot.bar.city.base.globalization.concern
 
 plot.bar.city.base.globalization.action
 
-### 行为规范
-
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.behavior.morality")`}给出了九年级学生对行为规范相关问题的看法。
-
-plot.bar.city.base.behavior.morality
-
-### 亲社会行为
-
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.behavior.prosocial")`}给出了九年级学生对亲社会行为相关问题的看法。
-
-plot.bar.city.base.behavior.prosocial
 
 
 ## 心理健康有关问题的调查结果

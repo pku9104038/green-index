@@ -125,9 +125,9 @@ plot.bar.city.base.school.community.perspective
 
 plot.bar.city.base.principal.feeling
 
-## 与校长的教学观相关问题的调查结果
+## 与校长的教学理念相关问题的调查结果
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.principal.thinking")`}给出了校长教学观的总体情况。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.principal.thinking")`}给出了校长教学理念的总体情况。
 
 plot.bar.city.base.principal.thinking
 
