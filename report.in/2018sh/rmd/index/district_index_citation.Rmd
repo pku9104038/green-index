@@ -1,0 +1,88 @@
+\mylist
+
+\begin{thebibliography}{99}
+
+\bibitem{cite_00} 
+
+杨莹，张梦圆，寇彧，
+\textit{青少年亲社会行为量表的编制与维度的再验证[J]}，
+中国社会心理学评论 第十辑，P135～150
+
+\bibitem{cite_01} 
+
+杜宵丰, 刘坚. 
+\textit{九年级学生"数学兴趣""数学自我效能感""学习坚持性"与"数学成就"的关系研究[J]}. 
+数学教育学报, 2017(2).
+ 
+\bibitem{cite_02} 
+李维,白颖颖. 
+\text\it{初二学生感知的教师支持如何影响学业成绩?——基于学业自我效能感与学习投入的多重中介效应分析[J]}. 
+教育与经济, 2018.
+ 
+\bibitem{cite_03} 
+何声清, 綦春霞. 
+\textit{师生关系和数学学习兴趣对数学学业成绩的影响——自我效能感及数学焦虑的链式中介作用[J]}. 
+教育科学研究, 2018(12).
+
+\bibitem{cite_04} 
+ 高欢, 陈克胜. 
+\textit{数学自我效能感的研究现状与展望[J]}. 
+数学教育学报, 2017, 26(1).
+
+\bibitem{cite_05} 
+Usher E L , Pajares F .
+\textit{Sources of Self-Efficacy in School: Critical Review of the Literature and Future Directions[J]}. 
+Review of Educational Research, 2008, 78(4):751-796.
+
+\bibitem{cite_06} 
+Oney E , Oksuzoglu-Guven G .
+\textit{Confidence：A critical review of the literature and an alternative perspective for general and specific self-confidence[J]}. 
+Psychological Reports, 2015, 116(1):149.
+
+\bibitem{cite_07} 
+Oney E, Oksuzoglu-Guven G.
+\textit{Confidence: A critical review of the literature and an alternative perspective for general and specific self-confidence[J]}. 
+Psychological reports, 2015, 116(1): 149-163.
+
+\bibitem{cite_08} 
+石绍华 等人. 
+\textit{中学生学习动机及其影响因素研究[J]}. 
+教育研究, 2002(1):65-70.
+
+\bibitem{cite_09} 
+范春林, 张大均. 
+\textit{学习动机研究的特点、问题及走向[J]}. 
+教育研究, 2007(7):71-77.
+
+\bibitem{cite_10} 
+Graham S., Weiner B.
+\textit{Motivation: Past, present, and future[M]}. 
+APA Educational Psychology Handbook: Vol. 1. Theories, Constructs, and Critical Issues, American Psychological Association, 2012.
+
+\bibitem{cite_11} 
+张雪莲, 高玲. 
+\textit{学习动机及其相关研究[J]}. 
+教育理论与实践, 2009(18):32-34.
+
+\bibitem{cite_12} 
+郭衎，曹一鸣. 
+\textit{学习动机对学习效果影响的深度解析——基于大规模学生调查的实证研究[J]}. 
+教育科学研究, 2019,3:62 – 67.
+
+\bibitem{cite_13} 
+贾小娟, 胡卫平, 武宝军. 
+\textit{小学生学习动机的培养:五年追踪研究[C]}. 
+中国心理学会成立90周年纪念大会暨全国心理学学术会议. 2011.
+
+\bibitem{cite_14} 
+Potvin P , Hasni A . 
+\textit{Interest, motivation and attitude towards science and technology at K-12 levels: a systematic review of 12 years of educational research[J]}. 
+Studies in Science Education, 2014, 50(1):85-129.
+
+\bibitem{cite_15} 
+Lazowski R.A. ,Hulleman C.S. 
+\textit{Motivation Interventions in Education: A Meta-Analytic Review.[J]}. 
+Review of Educational Research, 2016, 86.
+
+\end{thebibliography}
+

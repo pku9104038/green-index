@@ -4,4 +4,4 @@ dataquery:
   <<: *kPilotRun
   <<: *kPrepareDataframe
   test:
-    - multiplot.box.district.base.score.quantile.cn.total.school
+    - plot.box.district.cn.dimention.quantile

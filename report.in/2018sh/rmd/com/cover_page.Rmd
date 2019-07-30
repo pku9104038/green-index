@@ -8,7 +8,8 @@
 \mytitle{`r gio.R$GetReportYear()``r gio.R$GetReportProject()`}
 \mytitle{`r gio.R$GetReportName()`}
 
-\mysubtitle{`r paste(gio.R$GetReportUnitScope(), gio.R$GetReportSubject())`}
+\mysubtitle{`r gio.R$GetReportUnitScope()`} 
+\mysubtitle{`r gio.R$GetReportSubject()`}
 
 \vfill
 \myproducer{`r gio.R$GetReportCopyRight()$producer[[1]]`}

@@ -168,6 +168,7 @@ kColumnPlotBarPosition <- "plot_bar_position"
 kColumnPlotBarWidth <- "plot_bar_width"
 kColumnAxisX <- "plot_x"
 kColumnSortX <- "plot_sort_x"
+kColumnSortXFilter <- "plot_sort_x_filter"
 kColumnSortXValue <- "plot_sort_x_value"
 kColumnSortXBy <- "plot_sort_x_by"
 kColumnSortXSubset <- "plot_sort_x_subset"
@@ -201,6 +202,9 @@ kColumnFacetScale <- "plot_facet_scale"
 kColumnFacetOrder <- "plot_facet_order"
 kColumnFacetRow <- "plot_facet_row"
 kColumnFacetCol <- "plot_facet_col"
+kColumnFacetStripSize <- "plot_facet_strip_size"
+kColumnFacetStripColour <- "plot_facet_strip_colour"
+kColumnFacetStripAngle <- "plot_facet_strip_angle"
 
 
 

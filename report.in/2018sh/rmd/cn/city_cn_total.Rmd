@@ -6,9 +6,11 @@
 
 ## 全体学生的总体表现
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.cn.rank.total.region")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.score.segment.cn.total")`}分别给出了上海市全体学生及不同区域学生在语文学科各水平上的人数比例和得分分布。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.cn.rank.total.region")`}上海市全体学生及不同区域学生在语文学科各水平上的人数比例。
 
 plot.bar.city.cn.rank.total.region
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.score.segment.cn.total")`}上海市全体学生语文学科得分分布。
 
 plot.bar.city.base.score.segment.cn.total
 

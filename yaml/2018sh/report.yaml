@@ -87,7 +87,7 @@ report:
         - "report_preface.rmd"
         - "table_of_contents.rmd"
         - "project_summary.rmd"
-        - "city_cn_description.rmd"
+        - "cn_description.rmd"
         - "city_cn_total.rmd"
         - "city_cn_dimention.rmd"
         - "city_cn_topic.rmd"
@@ -177,7 +177,7 @@ report:
         - "city_ar_topic.rmd"
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标基础数据报告"
       tier: *kStatTierDistrict
       subdir: "base"
@@ -193,10 +193,60 @@ report:
         - "table_of_contents.rmd"
         - "project_summary.rmd"
         - "district_base_score.rmd"
-        #- "district_base_student.rmd"
-        #- "district_base_teacher.rmd"
-        #- "district_base_principal.rmd"
-        #- "district_base_parent.rmd"
+        - "district_base_student.rmd"
+        - "district_base_teacher.rmd"
+        - "district_base_principal.rmd"
+        - "district_base_parent.rmd"
+
+    -
+      TODO: FALSE
+      name: "绿色指标指数报告"
+      tier: *kStatTierDistrict
+      subdir: "index"
+      subject:
+        name: ""
+        suffix: ""
+      rmarkdown:
+        - "index.rmd"
+        - "global_setting.rmd"
+        - "cover_page.rmd"
+        - "head_foot.rmd"
+        - "report_preface.rmd"
+        - "table_of_contents.rmd"
+        - "district_index_score.rmd"
+        - "district_index_health.rmd"
+        - "district_index_morality.rmd"
+        - "district_index_motivation.rmd"
+        - "district_index_identity.rmd"
+        - "district_index_pressure.rmd"
+        - "district_index_teacher.rmd"
+        - "district_index_principal.rmd"
+        - "district_index_equity.rmd"
+        - "district_index_timespan.rmd"
+        - "district_index_radar.rmd"
+        - "district_index_citation.Rmd"
+
+
+    -
+      TODO: TRUE
+      name: "绿色指标学科测试分析报告"
+      tier: *kStatTierDistrict
+      subdir: "cn"
+      subject:
+        name: "语文"
+        suffix: "学科"
+      rmarkdown:
+        - "subject.rmd"
+        - "global_setting.rmd"
+        - "cover_page.rmd"
+        - "head_foot.rmd"
+        - "report_preface.rmd"
+        - "table_of_contents.rmd"
+        - "project_summary.rmd"
+        - "cn_description.rmd"
+        - "district_cn_total.rmd"
+        - "district_cn_dimention.rmd"
+        - "district_cn_topic.rmd"
 
     -
       TODO: FALSE

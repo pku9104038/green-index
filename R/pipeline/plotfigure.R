@@ -17,6 +17,7 @@ library(ggrepel)
 # library(Cairo)
 # library(animation)
 library("reshape2")
+library(digest)
 
 source(paste0(gi.dir.script,"ggradar2.R"))
 
@@ -144,7 +145,7 @@ GreenIndexPlotFigure <- setRefClass(
     
     FigureFacet = function(figure) {
       if (plot.param[1, kColumnFacet] != kStringNone) {
-        # print(plot.param[1, ])
+        
         if (as.integer(plot.param[1, kColumnFacetRow]) >= 1) {
           figure <- figure + 
             facet_wrap(facets = ~plot_facet, 
@@ -160,6 +161,13 @@ GreenIndexPlotFigure <- setRefClass(
         }
         
       }
+      
+      figure <- figure + 
+        theme(strip.text = 
+                element_text(size = as.numeric(plot.param[1, kColumnFacetStripSize]),
+                             colour = plot.param[1, kColumnFacetStripColour],
+                             # angle = 0))
+                             angle = as.numeric(plot.param[1, kColumnFacetStripAngle])))
       return(figure)
     },
     
@@ -389,66 +397,123 @@ GreenIndexPlotFigure <- setRefClass(
           return(figure)
         } else {
           plot.order.x <<- unlist(strsplit(plot.param[1, kColumnOrderX], kSeparator))
-          
+        }
+      } else {
+        sort.df <- plot.data
+        
+        if (plot.param[1, kColumnSortXFilter] != kStringNone) {
+          plot.order.x.filter <- 
+            unlist(strsplit(plot.param[1, kColumnSortXFilter], kSeparator))
+          sort.df <-
+            sort.df[sort.df[, plot.order.x.filter[1]]
+                    == plot.order.x.filter[2], ]
         }
         
-      } else if (plot.param[1, kColumnSortX] == kSortAscAll) {
-        sort.df <- 
-          plot.data[plot.data[, plot.param[1, kColumnSortXBy]] == 
-                      plot.param[1, kColumnSortXSubset], 
-                    c(kColumnAxisX, plot.param[1, kColumnSortXValue])]
-        sort.df <- 
-          arrange(sort.df, desc(sort.df[, plot.param[1, kColumnSortXValue]]))
-        plot.order.x <<- unlist(sort.df[, kColumnAxisX])
-        
-        # df <- arrange(plot.data, desc(plot.data[, kColumnValue]))
-        # plot.order.x <<- unlist(df[, kColumnAxisX])
-        plot.order.x <<- rev(plot.order.x)
-      } else if(plot.param[1, kColumnSortX] == kSortDescAll) {
-        sort.df <- 
-          plot.data[plot.data[, plot.param[1, kColumnSortXBy]] == 
-                      plot.param[1, kColumnSortXSubset], 
-                    c(kColumnAxisX, plot.param[1, kColumnSortXValue])]
-        sort.df <- 
-          arrange(sort.df, desc(sort.df[, plot.param[1, kColumnSortXValue]]))
-        plot.order.x <<- unlist(sort.df[, kColumnAxisX])
-        
-        # df <- arrange(plot.data, desc(plot.data[, kColumnValue]))
-        # plot.order.x <<- unlist(df[, kColumnAxisX])
-      } else if(plot.param[1, kColumnSortX] == kSortAsc) {
-        
-        order <- unlist(strsplit(plot.param[1, kColumnOrderX], kSeparator))
-        order <- order[1:length(order)-1]
-        df <- plot.data[!(plot.data[, kColumnAxisX] %in% order), ]
-        
-        sort.df <- 
-          df[df[, plot.param[1, kColumnSortXBy]] == 
-                      plot.param[1, kColumnSortXSubset], 
-                    c(kColumnAxisX, plot.param[1, kColumnSortXValue])]
-        sort.df <- 
-          arrange(sort.df, desc(sort.df[, plot.param[1, kColumnSortXValue]]))
-        order.x <- unlist(sort.df[, kColumnAxisX])
-        
-        # df <- arrange(df, desc(df[, kColumnValue]))
-        # order.x <- df[, kColumnAxisX]
-        order.x <- rev(order.x)
-        plot.order.x <<- unlist(append(order, order.x))
-      } else if(plot.param[1, kColumnSortX] == kSortDesc) {
-        
-        order <- unlist(strsplit(plot.param[1, kColumnOrderX], kSeparator))
-        order <- order[1:length(order)-1]
-        df <- plot.data[!(plot.data[, kColumnAxisX] %in% order), ]
-        sort.df <- 
-          df[df[, plot.param[1, kColumnSortXBy]] == 
-               plot.param[1, kColumnSortXSubset], 
-             c(kColumnAxisX, plot.param[1, kColumnSortXValue])]
-        sort.df <- 
-          arrange(sort.df, desc(sort.df[, plot.param[1, kColumnSortXValue]]))
-        order.x <- unlist(sort.df[, kColumnAxisX])
-        
-        # df <- arrange(df, desc(df[, kColumnValue]))
-        # order.x <- df[, kColumnAxisX]
-        plot.order.x <<- unlist(append(order, order.x))
+        if (plot.param[1, kColumnSortX] == kSortAscAll) {
+          
+          subsets <- unlist(strsplit(plot.param[1, kColumnSortXSubset], kSeparator))
+          xlist <- unlist(unique(sort.df[, kColumnAxisX]))
+          plot.order.x  <<- NULL
+          for (i in 1:length(subsets)) {
+            sort.df <- 
+              sort.df[sort.df[, plot.param[1, kColumnSortXBy]] == 
+                        subsets[i], 
+                      c(kColumnAxisX, plot.param[1, kColumnSortXValue])]
+            
+            sort.df <- 
+              arrange(sort.df, desc(sort.df[, plot.param[1, kColumnSortXValue]]))
+            
+            plot.order.x <<- c(plot.order.x ,unlist(sort.df[, kColumnAxisX]))
+            
+            if (length(plot.order.x) == length(xlist)) {
+              break
+            } else {
+              sort.df <- sort.df[!(sort.df[, kColumnAxisX] %in% plot.order.x), ]
+            }
+          }
+          
+          plot.order.x <<- rev(plot.order.x)
+        } else if(plot.param[1, kColumnSortX] == kSortDescAll) {
+          
+          subsets <- unlist(strsplit(plot.param[1, kColumnSortXSubset], kSeparator))
+          xlist <- unlist(unique(sort.df[, kColumnAxisX]))
+          plot.order.x  <<- NULL
+          for (i in 1:length(subsets)) {
+            sort.df <- 
+              sort.df[sort.df[, plot.param[1, kColumnSortXBy]] == 
+                        subsets[i], 
+                      c(kColumnAxisX, plot.param[1, kColumnSortXValue])]
+            
+            sort.df <- 
+              arrange(sort.df, desc(sort.df[, plot.param[1, kColumnSortXValue]]))
+            
+            plot.order.x <<- c(plot.order.x ,unlist(sort.df[, kColumnAxisX]))
+            
+            if (length(plot.order.x) == length(xlist)) {
+              break
+            } else {
+              sort.df <- sort.df[!(sort.df[, kColumnAxisX] %in% plot.order.x), ]
+            }
+          }
+          
+        } else if(plot.param[1, kColumnSortX] == kSortAsc) {
+          
+          order <- unlist(strsplit(plot.param[1, kColumnOrderX], kSeparator))
+          order <- order[1:length(order)-1]
+          sort.df <- sort.df[!(sort.df[, kColumnAxisX] %in% order), ]
+          
+          subsets <- unlist(strsplit(plot.param[1, kColumnSortXSubset], kSeparator))
+          xlist <- unlist(unique(sort.df[, kColumnAxisX]))
+          order.x  <<- NULL
+          for (i in 1:length(subsets)) {
+            sort.df <- 
+              sort.df[sort.df[, plot.param[1, kColumnSortXBy]] == 
+                        subsets[i], 
+                      c(kColumnAxisX, plot.param[1, kColumnSortXValue])]
+            
+            sort.df <- 
+              arrange(sort.df, desc(sort.df[, plot.param[1, kColumnSortXValue]]))
+            
+            order.x <<- c(order.x ,unlist(sort.df[, kColumnAxisX]))
+            
+            if (length(plot.order.x) == length(xlist)) {
+              break
+            } else {
+              sort.df <- sort.df[!(sort.df[, kColumnAxisX] %in% plot.order.x), ]
+            }
+          }
+          order.x <- rev(order.x)
+          plot.order.x <<- unlist(append(order, order.x))
+        } else if(plot.param[1, kColumnSortX] == kSortDesc) {
+          
+          order <- unlist(strsplit(plot.param[1, kColumnOrderX], kSeparator))
+          order <- order[1:length(order)-1]
+          sort.df <- sort.df[!(sort.df[, kColumnAxisX] %in% order), ]
+          
+          subsets <- unlist(strsplit(plot.param[1, kColumnSortXSubset], kSeparator))
+          xlist <- unlist(unique(sort.df[, kColumnAxisX]))
+          order.x  <<- NULL
+          for (i in 1:length(subsets)) {
+            sort.df <- 
+              sort.df[sort.df[, plot.param[1, kColumnSortXBy]] == 
+                        subsets[i], 
+                      c(kColumnAxisX, plot.param[1, kColumnSortXValue])]
+            
+            sort.df <- 
+              arrange(sort.df, desc(sort.df[, plot.param[1, kColumnSortXValue]]))
+            
+            order.x <<- c(order.x ,unlist(sort.df[, kColumnAxisX]))
+            
+            if (length(plot.order.x) == length(xlist)) {
+              break
+            } else {
+              sort.df <- sort.df[!(sort.df[, kColumnAxisX] %in% plot.order.x), ]
+            }
+          }
+          
+          
+          plot.order.x <<- unlist(append(order, order.x))
+        } 
       } 
       
       figure <- figure + scale_x_discrete(limits = plot.order.x)
@@ -549,45 +614,60 @@ GreenIndexPlotFigure <- setRefClass(
         
       }
       
+      plot.data["msg"] <<- paste(plot.data[, kColumnAssessment],
+        plot.data[, kColumnGrade], plot.data[, kColumnSubject],
+        plot.data[, kColumnDomain], plot.data[, kColumnDimention],
+        plot.data[, kColumnGroup], plot.data[, kColumnAttribute],
+        plot.data[, kColumnTopic], plot.data[, kColumnStatisticsTier],
+        plot.data[, kColumnStatisticsScope], plot.data[, kColumnCity],
+        plot.data[, kColumnDistrict], plot.data[, kColumnSchool],
+        plot.data[, kColumnStatisticsPerspective],
+        plot.data[, kColumnStatisticsSample],
+        plot.data[, kColumnAlias])
+      plot.data[, "hash"] <<- ""
+      for (i in 1:nrow(plot.data)) {
+        plot.data[i, "hash"] <<- digest(plot.data[i, "msg"], algo = "sha256")
+      }
+       
       plot.merge <- plot.data[plot.data[, kColumnKey] == kMean, ]
       names(plot.merge) <- sub(paste0("^", kColumnAxisY, "$"), 
                             kMean, names(plot.merge))
       
       plot.min <- plot.data[plot.data[, kColumnKey] == kMin, 
-                            c(kColumnAxisX, kColumnValue)]
+                            c("hash", kColumnValue)]
       names(plot.min) <- sub(paste0("^", kColumnValue, "$"), 
                             kMin, names(plot.min))
-      plot.merge <- merge(plot.merge, plot.min, by = kColumnAxisX, all.x = TRUE)
+      plot.merge <- merge(plot.merge, plot.min, by = "hash", all.x = TRUE)
       
       plot.max <- plot.data[plot.data[, kColumnKey] == kMax, 
-                            c(kColumnAxisX, kColumnValue)]
+                            c("hash", kColumnValue)]
       names(plot.max) <- sub(paste0("^", kColumnValue, "$"), 
                              kMax, names(plot.max))
-      plot.merge <- merge(plot.merge, plot.max, by = kColumnAxisX, all.x = TRUE)
+      plot.merge <- merge(plot.merge, plot.max, by = "hash", all.x = TRUE)
       
       plot.median <- plot.data[plot.data[, kColumnKey] == kMedian, 
-                            c(kColumnAxisX, kColumnValue)]
+                            c("hash", kColumnValue)]
       names(plot.median) <- sub(paste0("^", kColumnValue, "$"), 
                              kMedian, names(plot.median))
-      plot.merge <- merge(plot.merge, plot.median, by = kColumnAxisX, all.x = TRUE)
+      plot.merge <- merge(plot.merge, plot.median, by = "hash", all.x = TRUE)
       
       plot.upper <- plot.data[plot.data[, kColumnKey] == kUpper, 
-                            c(kColumnAxisX, kColumnValue)]
+                            c("hash", kColumnValue)]
       names(plot.upper) <- sub(paste0("^", kColumnValue, "$"), 
                              kUpper, names(plot.upper))
-      plot.merge <- merge(plot.merge, plot.upper, by = kColumnAxisX, all.x = TRUE)
+      plot.merge <- merge(plot.merge, plot.upper, by = "hash", all.x = TRUE)
       
       plot.lower <- plot.data[plot.data[, kColumnKey] == kLower, 
-                              c(kColumnAxisX, kColumnValue)]
+                              c("hash", kColumnValue)]
       names(plot.lower) <- sub(paste0("^", kColumnValue, "$"), 
                                kLower, names(plot.lower))
-      plot.merge <- merge(plot.merge, plot.lower, by = kColumnAxisX, all.x = TRUE)
+      plot.merge <- merge(plot.merge, plot.lower, by = "hash", all.x = TRUE)
       
       plot.merge[, kColumnValue] <- plot.merge[, kMedian]
-      plot.data <<- plot.merge
+      # plot.data <<- plot.merge
       
       figure <- ggplot(
-        data = plot.data, 
+        data = plot.merge, 
         aes(x = plot_x, y = mean, 
             alpha = as.numeric(plot.param[1, kColumnFillAlpha])))
       
@@ -622,6 +702,8 @@ GreenIndexPlotFigure <- setRefClass(
       figure <- FigureLimitY(figure)
       
       figure <- FigureCoord(figure)
+      
+      figure <- FigureFacet(figure)
       
       return(figure)
       
@@ -751,7 +833,6 @@ GreenIndexPlotFigure <- setRefClass(
       return(figure)
       
     },
-
     
     PlotGeomRadar = function() {
       

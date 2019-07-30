@@ -362,6 +362,13 @@ GreenIndexQueryData <- setRefClass(
       return(round(value, digits = digits))
     },
     
+    AttSamMaxKey = function(df, attribute, sample, digits) {
+      data <- df[df[, kColumnAttribute] == attribute & 
+                   df[, kColumnStatisticsSample] == sample, ]
+      keys <- data[data[,kColumnValue] == max(data[, kColumnValue]), kColumnKey]
+      return(keys[1])
+    },
+    
     SubDomSamKey = function(df, subject, domain, sample, keys, digits) {
       value <- 0
       for (i in 1:length(keys)) {
@@ -422,6 +429,15 @@ GreenIndexQueryData <- setRefClass(
       value <- df[df[, kColumnKey] == key & 
                     df[, kColumnStatisticsVariable] == variable &
                     df[, kColumnStatisticsScope] == scope &
+                    df[, kColumnStatisticsSample] == sample, 
+                  kColumnValue]
+      return(round(value, digits = digits))
+    },
+    
+    VarTierSamKey = function(df, variable, tier, sample, key, digits = 1){
+      value <- df[df[, kColumnKey] == key & 
+                    df[, kColumnStatisticsVariable] == variable &
+                    df[, kColumnStatisticsTier] == tier &
                     df[, kColumnStatisticsSample] == sample, 
                   kColumnValue]
       return(round(value, digits = digits))
