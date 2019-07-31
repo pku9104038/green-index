@@ -14,6 +14,7 @@ GreenIndexReport <- setRefClass(
   contains = "GreenIndexPlotFigure",
   
   fields = list(
+    table.df = "data.frame",
     district.df = "data.frame",
     school.df = "data.frame",
     
@@ -43,6 +44,12 @@ GreenIndexReport <- setRefClass(
       
       jobs <- config$GetConfigJob()$report
       dataframe <- jobs$dataframe
+      
+      # table row prerender data
+      table.table <- paste0(dataframe$table$table, 
+                             dataframe$table$suffix)
+      table.df <<- database$ReadTable(table.table)
+      print(table.df)
       
       school.table <- paste0(dataframe$school$table, 
                            dataframe$school$suffix)
@@ -199,15 +206,17 @@ GreenIndexReport <- setRefClass(
       # prerender.set <- unlist(unique(plot.df[, kColumnPlotCode]))
       preplot.set <- unlist(unique(plot.df[, kColumnPlotCode]))
       prequery.set <- unlist(unique(dataset.df[, kColumnDataset]))
+      pretable.set <- unlist(unique(table.df[, kColumnTableRowCode]))
       for (i in 1:length(input.data)) {
         
         input.line <- input.data[i]
-        if (is.element(input.line, preplot.set) || 
-            is.element(input.line, prequery.set) ){
-          prefix <- unlist(strsplit(input.line, kPrefixConnector))[1]
+        if (is.element(trimws(input.line), preplot.set) || 
+            is.element(trimws(input.line), prequery.set) || 
+            is.element(trimws(input.line), pretable.set) ){
+          prefix <- unlist(strsplit(trimws(input.line), kPrefixConnector))[1]
           if (prefix == kPrefixPlot) {
             
-            report.fig <- PlotFigure (GetReportOutFigDir(), input.line)
+            report.fig <- PlotFigure (GetReportOutFigDir(), trimws(input.line))
             
             # output.data <- OpenChunk(input.line, output.data)
             # output.data[length(output.data) + 1] <- 
@@ -229,19 +238,19 @@ GreenIndexReport <- setRefClass(
             
           } else if (prefix == kPrefixMultiPlot) {
             
-            report.fig <- MultiPlotFigure (GetReportOutFigDir(), input.line)
+            report.fig <- MultiPlotFigure (GetReportOutFigDir(), trimws(input.line))
             
-            for (i in 1:length(report.fig$path)) {
+            for (j in 1:length(report.fig$path)) {
               
               output.data[length(output.data) + 1] <-  " "
               output.data[length(output.data) + 1] <- "\\begin{figure}[H]"
               output.data[length(output.data) + 1] <-
-                paste0("\\includegraphics[width=\\textwidth]{", report.fig$path[i], "}") 
+                paste0("\\includegraphics[width=\\textwidth]{", report.fig$path[j], "}") 
               # paste0("\\includegraphics[width=\\textwidth]{","`r plot.fig$path`","}") 
               output.data[length(output.data) + 1] <- 
-                paste0("\\caption{", report.fig$name[i], "}") 
+                paste0("\\caption{", report.fig$name[j], "}") 
               output.data[length(output.data) + 1] <- 
-                paste0("\\label{fig: ", report.fig$name[i], "}") 
+                paste0("\\label{fig: ", report.fig$name[j], "}") 
               output.data[length(output.data) + 1] <- "\\end{figure}"
               output.data[length(output.data) + 1] <-  " "
             }
@@ -250,17 +259,40 @@ GreenIndexReport <- setRefClass(
             output.data <- OpenChunk(input.line, output.data)
             output.data[length(output.data) + 1] <-
               paste0("query2.data <- gio.R$QueryData(\"", 
-                     input.line, "\")") 
+                     trimws(input.line), "\")") 
             output.data <- CloseChunk(output.data)
             
           } else if (prefix == kPrefixQueryData) {
-            output.data <- OpenChunk(input.line, output.data)
+            output.data <- OpenChunk(trimws(input.line), output.data)
             output.data[length(output.data) + 1] <-
               paste0("query.data <- gio.R$QueryData(\"", 
                      input.line, "\")") 
             output.data <- CloseChunk(output.data)
             
-          }  else {
+          } else if (prefix == kPrefixTableRow) {
+            table.row <- table.df[table.df[, kColumnTableRowCode] == trimws(input.line), ]
+            if (nrow(table.row) > 0) {
+              table.cols.sample <- 
+                unlist(strsplit(table.row[1, kColumnTableDataSample], kSeparator))
+              table.cols.tier <- 
+                unlist(strsplit(table.row[1, kColumnTableDataTier], kSeparator))
+              for (j in 1:length(table.cols.sample)) {
+                row.line <-
+                  paste0(" & `r ",
+                         table.row[1, kColumnTableDataQuery], "(",
+                         table.row[1, kColumnTableDataFrame], ", ",
+                         "\"", table.row[1, kColumnTableDataVariable], "\", ",
+                         "\"", table.cols.tier[min(j,length(table.cols.tier))], "\", ",
+                         "\"", table.cols.sample[j], "\", ",
+                         "\"", table.row[1, kColumnTableDataKey], "\", ",
+                         table.row[1, kColumnTableDataDigit], ")", 
+                         "` "
+                  )
+                output.data[length(output.data) + 1] <- row.line
+              }
+            }
+            
+          } else {
             output.data[length(output.data) + 1] <- input.line 
           }
           

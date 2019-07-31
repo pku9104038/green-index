@@ -13,228 +13,243 @@ query.data.city.cn.pointrate.perspective
 `r tab_name <- "学生在语文学科“积累”上的平均得分率（％）" `
 \begin{itshape}
 \mytable
-\begin{longtable}{|c|c|c|p{5cm}|c|c|c|c|c|c|c|c|c|c|c|c|}
+\begin{longtable}{|c|c|p{5cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\
 
 \hline
-\multicolumn{2}{|c|}{测试能力} & 题目编码 & \makecell[c]{能力描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\
+测试能力 & 题目编码 & \makecell[c]{能力描述} & \makecell[c]{本\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{其\\他} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\
 \hline
 
-\multirow{11}{*}{\makecell[c]{积\\累}} & \multirow{3}{*}{\makecell[c]{识记常用字的\\字音}} & C8AO01111 & 辨析形近字的字音 &
-`r gio.R$VarScoSamKey(query.data, "C8AO01111_X", "上海市","总体","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO01111_X", "上海市","公办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO01111_X", "上海市","民办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO01111_X", "上海市","初中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO01111_X", "上海市","九年一贯","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO01111_X", "上海市","完中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO01111_X", "上海市","新优质","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO01111_X", "上海市","强校工程","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO01111_X", "上海市","男","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO01111_X", "上海市","女","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO01111_X", "上海市","沪籍","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO01111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+\multirow{3}{*}{\makecell[c]{识记常用字的\\字音}} & C8AO01111 & 辨析形近字的字音 &
+`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "市","总体","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "市","公办","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "市","民办","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "市","初中","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "市","九年一贯","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "市","完中","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "市","其他","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "市","新优质","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "市","强校工程","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "市","男","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "市","女","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "市","沪籍","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "市","非沪籍","总体")` \\ \cline{2-16}
 
 
- & & C8AO02111 & 读准常用字的字音 &
- `r gio.R$VarScoSamKey(query.data, "C8AO02111_X", "上海市","总体","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AO02111_X", "上海市","公办","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AO02111_X", "上海市","民办","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AO02111_X", "上海市","初中","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AO02111_X", "上海市","九年一贯","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AO02111_X", "上海市","完中","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AO02111_X", "上海市","新优质","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AO02111_X", "上海市","强校工程","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AO02111_X", "上海市","男","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AO02111_X", "上海市","女","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AO02111_X", "上海市","沪籍","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AO02111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+ & C8AO02111 & 读准常用字的字音 &
+ `r gio.R$VarTierSamKey(query.data, "C8AO02111_X", "市","总体","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AO02111_X", "市","公办","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AO02111_X", "市","民办","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AO02111_X", "市","初中","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AO02111_X", "市","九年一贯","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AO02111_X", "市","完中","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AO02111_X", "市","其他","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AO02111_X", "市","新优质","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AO02111_X", "市","强校工程","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AO02111_X", "市","男","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AO02111_X", "市","女","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AO02111_X", "市","沪籍","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AO02111_X", "市","非沪籍","总体")` \\ \cline{2-16}
 
 
-  & & C8AO03111 & 辨析多音字的字音 &
-  `r gio.R$VarScoSamKey(query.data, "C8AO03111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO03111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO03111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO03111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO03111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO03111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO03111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO03111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO03111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO03111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO03111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO03111_X", "上海市","非沪籍","总体")` \\ \cline{2-16}
+  & C8AO03111 & 辨析多音字的字音 &
+  `r gio.R$VarTierSamKey(query.data, "C8AO03111_X", "市","总体","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO03111_X", "市","公办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO03111_X", "市","民办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO03111_X", "市","初中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO03111_X", "市","九年一贯","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO03111_X", "市","完中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO03111_X", "市","其他","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO03111_X", "市","新优质","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO03111_X", "市","强校工程","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO03111_X", "市","男","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO03111_X", "市","女","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO03111_X", "市","沪籍","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO03111_X", "市","非沪籍","总体")` \\ \cline{1-16}
 
-  & \multirow{2}{*}{\makecell[c]{识记常用字的\\字形}} & C8AO04111 & 辨析形近字的字形 &
-  `r gio.R$VarScoSamKey(query.data, "C8AO04111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO04111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO04111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO04111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO04111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO04111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO04111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO04111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO04111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO04111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO04111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO04111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+  \multirow{2}{*}{\makecell[c]{识记常用字的\\字形}} & C8AO04111 & 辨析形近字的字形 &
+  `r gio.R$VarTierSamKey(query.data, "C8AO04111_X", "市","总体","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO04111_X", "市","公办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO04111_X", "市","民办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO04111_X", "市","初中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO04111_X", "市","九年一贯","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO04111_X", "市","完中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO04111_X", "市","其他","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO04111_X", "市","新优质","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO04111_X", "市","强校工程","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO04111_X", "市","男","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO04111_X", "市","女","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO04111_X", "市","沪籍","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO04111_X", "市","非沪籍","总体")` \\ \cline{2-16}
 
-  & & C8AO05111 & 辨析同音字的字形 &
-  `r gio.R$VarScoSamKey(query.data, "C8AO05111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO05111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO05111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO05111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO05111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO05111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO05111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO05111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO05111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO05111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO05111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO05111_X", "上海市","非沪籍","总体")` \\ \cline{2-16}
-
-
-  & \multirow{6}{*}{\makecell[c]{理解常用字词\\的意思}} & C8AO06111 & 在具体语境中恰当运用常见词语 &
-  `r gio.R$VarScoSamKey(query.data, "C8AO06111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO06111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO06111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO06111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO06111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO06111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO06111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO06111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO06111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO06111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO06111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO06111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
-
-  & & C8AO07111 & 在具体语境中恰当运用常见词语 &
-  `r gio.R$VarScoSamKey(query.data, "C8AO07111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO07111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO07111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO07111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO07111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO07111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO07111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO07111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO07111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO07111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO07111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO07111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
-
-  & & C8AO08111 & 在具体语境中恰当运用常见词语 &
-  `r gio.R$VarScoSamKey(query.data, "C8AO08111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO08111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO08111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO08111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO08111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO08111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO08111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO08111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO08111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO08111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO08111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO08111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
-
-  & & C8AO09111 & 在具体语境中恰当运用常见成语 &
-  `r gio.R$VarScoSamKey(query.data, "C8AO09111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO09111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO09111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO09111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO09111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO09111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO09111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO09111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO09111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO09111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO09111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO09111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
-
-  & & C8AO10111 & 在具体语境中恰当运用常见成语 &
-  `r gio.R$VarScoSamKey(query.data, "C8AO10111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO10111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO10111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO10111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO10111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO10111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO10111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO10111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO10111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO10111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO10111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO10111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
-
-  & & C8AO11111 & 在具体语境中恰当运用关联词 &
-  `r gio.R$VarScoSamKey(query.data, "C8AO11111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO11111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO11111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO11111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO11111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO11111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO11111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO11111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO11111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO11111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO11111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO11111_X", "上海市","非沪籍","总体")` \\ \cline{2-16}
-
-& \multirow{2}{*}{\makecell[c]{积累教材中的\\文言诗文}} & C8AO12111 & 默写教材中要求背诵的文言诗文 &
-`r gio.R$VarScoSamKey(query.data, "C8AO12111_X", "上海市","总体","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO12111_X", "上海市","公办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO12111_X", "上海市","民办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO12111_X", "上海市","初中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO12111_X", "上海市","九年一贯","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO12111_X", "上海市","完中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO12111_X", "上海市","新优质","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO12111_X", "上海市","强校工程","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO12111_X", "上海市","男","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO12111_X", "上海市","女","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO12111_X", "上海市","沪籍","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO12111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+  & C8AO05111 & 辨析同音字的字形 &
+  `r gio.R$VarTierSamKey(query.data, "C8AO05111_X", "市","总体","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO05111_X", "市","公办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO05111_X", "市","民办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO05111_X", "市","初中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO05111_X", "市","九年一贯","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO05111_X", "市","完中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO05111_X", "市","其他","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO05111_X", "市","新优质","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO05111_X", "市","强校工程","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO05111_X", "市","男","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO05111_X", "市","女","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO05111_X", "市","沪籍","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO05111_X", "市","非沪籍","总体")` \\ \cline{1-16}
 
 
-  & & C8AO13111 & 理解教材中文言诗文的意思 &
-  `r gio.R$VarScoSamKey(query.data, "C8AO13111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO13111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO13111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO13111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO13111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO13111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO13111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO13111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO13111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO13111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO13111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO13111_X", "上海市","非沪籍","总体")` \\ \cline{2-16}
+  \multirow{6}{*}{\makecell[c]{理解常用字词\\的意思}} & C8AO06111 & 在具体语境中恰当运用常见词语 &
+  `r gio.R$VarTierSamKey(query.data, "C8AO06111_X", "市","总体","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO06111_X", "市","公办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO06111_X", "市","民办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO06111_X", "市","初中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO06111_X", "市","九年一贯","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO06111_X", "市","完中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO06111_X", "市","其他","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO06111_X", "市","新优质","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO06111_X", "市","强校工程","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO06111_X", "市","男","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO06111_X", "市","女","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO06111_X", "市","沪籍","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO06111_X", "市","非沪籍","总体")` \\ \cline{2-16}
+
+  & C8AO07111 & 在具体语境中恰当运用常见词语 &
+  `r gio.R$VarTierSamKey(query.data, "C8AO07111_X", "市","总体","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO07111_X", "市","公办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO07111_X", "市","民办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO07111_X", "市","初中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO07111_X", "市","九年一贯","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO07111_X", "市","完中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO07111_X", "市","其他","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO07111_X", "市","新优质","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO07111_X", "市","强校工程","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO07111_X", "市","男","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO07111_X", "市","女","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO07111_X", "市","沪籍","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO07111_X", "市","非沪籍","总体")` \\ \cline{2-16}
+
+  & C8AO08111 & 在具体语境中恰当运用常见词语 &
+  `r gio.R$VarTierSamKey(query.data, "C8AO08111_X", "市","总体","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO08111_X", "市","公办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO08111_X", "市","民办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO08111_X", "市","初中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO08111_X", "市","九年一贯","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO08111_X", "市","完中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO08111_X", "市","其他","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO08111_X", "市","新优质","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO08111_X", "市","强校工程","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO08111_X", "市","男","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO08111_X", "市","女","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO08111_X", "市","沪籍","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO08111_X", "市","非沪籍","总体")` \\ \cline{2-16}
+
+  & C8AO09111 & 在具体语境中恰当运用常见成语 &
+  `r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "市","总体","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "市","公办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "市","民办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "市","初中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "市","九年一贯","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "市","完中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "市","其他","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "市","新优质","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "市","强校工程","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "市","男","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "市","女","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "市","沪籍","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "市","非沪籍","总体")` \\ \cline{2-16}
+
+  & C8AO10111 & 在具体语境中恰当运用常见成语 &
+  `r gio.R$VarTierSamKey(query.data, "C8AO10111_X", "市","总体","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO10111_X", "市","公办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO10111_X", "市","民办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO10111_X", "市","初中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO10111_X", "市","九年一贯","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO10111_X", "市","完中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO10111_X", "市","其他","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO10111_X", "市","新优质","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO10111_X", "市","强校工程","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO10111_X", "市","男","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO10111_X", "市","女","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO10111_X", "市","沪籍","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO10111_X", "市","非沪籍","总体")` \\ \cline{2-16}
+
+  & C8AO11111 & 在具体语境中恰当运用关联词 &
+  `r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "市","总体","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "市","公办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "市","民办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "市","初中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "市","九年一贯","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "市","完中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "市","其他","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "市","新优质","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "市","强校工程","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "市","男","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "市","女","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "市","沪籍","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "市","非沪籍","总体")` \\ \cline{1-16}
+
+\multirow{2}{*}{\makecell[c]{积累教材中的\\文言诗文}} & C8AO12111 & 默写教材中要求背诵的文言诗文 &
+`r gio.R$VarTierSamKey(query.data, "C8AO12111_X", "市","总体","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO12111_X", "市","公办","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO12111_X", "市","民办","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO12111_X", "市","初中","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO12111_X", "市","九年一贯","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO12111_X", "市","完中","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO12111_X", "市","其他","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO12111_X", "市","新优质","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO12111_X", "市","强校工程","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO12111_X", "市","男","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO12111_X", "市","女","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO12111_X", "市","沪籍","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO12111_X", "市","非沪籍","总体")` \\ \cline{2-16}
 
 
-& \multirow{2}{*}{\makecell[c]{积累常见的文学\\、文化常识}} & C8AO14111 & 了解课程标准规定阅读的经典名著的文学、文化常识及基本信息 &
-`r gio.R$VarScoSamKey(query.data, "C8AO14111_X", "上海市","总体","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO14111_X", "上海市","公办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO14111_X", "上海市","民办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO14111_X", "上海市","初中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO14111_X", "上海市","九年一贯","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO14111_X", "上海市","完中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO14111_X", "上海市","新优质","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO14111_X", "上海市","强校工程","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO14111_X", "上海市","男","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO14111_X", "上海市","女","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO14111_X", "上海市","沪籍","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO14111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+  & C8AO13111 & 理解教材中文言诗文的意思 &
+  `r gio.R$VarTierSamKey(query.data, "C8AO13111_X", "市","总体","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO13111_X", "市","公办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO13111_X", "市","民办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO13111_X", "市","初中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO13111_X", "市","九年一贯","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO13111_X", "市","完中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO13111_X", "市","其他","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO13111_X", "市","新优质","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO13111_X", "市","强校工程","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO13111_X", "市","男","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO13111_X", "市","女","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO13111_X", "市","沪籍","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO13111_X", "市","非沪籍","总体")` \\ \cline{1-16}
 
 
-& & C8AO15111 & 理解教材中文言诗文的意思 &
-`r gio.R$VarScoSamKey(query.data, "C8AO15111_X", "上海市","总体","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO15111_X", "上海市","公办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO15111_X", "上海市","民办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO15111_X", "上海市","初中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO15111_X", "上海市","九年一贯","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO15111_X", "上海市","完中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO15111_X", "上海市","新优质","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO15111_X", "上海市","强校工程","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO15111_X", "上海市","男","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO15111_X", "上海市","女","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO15111_X", "上海市","沪籍","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO15111_X", "上海市","非沪籍","总体")` \\
+\multirow{2}{*}{\makecell[c]{积累常见的文学\\、文化常识}} & C8AO14111 & 了解课程标准规定阅读的经典名著的文学、文化常识及基本信息 &
+`r gio.R$VarTierSamKey(query.data, "C8AO14111_X", "市","总体","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO14111_X", "市","公办","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO14111_X", "市","民办","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO14111_X", "市","初中","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO14111_X", "市","九年一贯","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO14111_X", "市","完中","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO14111_X", "市","其他","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO14111_X", "市","新优质","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO14111_X", "市","强校工程","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO14111_X", "市","男","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO14111_X", "市","女","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO14111_X", "市","沪籍","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO14111_X", "市","非沪籍","总体")` \\ \cline{2-16}
+
+
+& C8AO15111 & 理解教材中文言诗文的意思 &
+`r gio.R$VarTierSamKey(query.data, "C8AO15111_X", "市","总体","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO15111_X", "市","公办","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO15111_X", "市","民办","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO15111_X", "市","初中","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO15111_X", "市","九年一贯","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO15111_X", "市","完中","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO15111_X", "市","其他","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO15111_X", "市","新优质","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO15111_X", "市","强校工程","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO15111_X", "市","男","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO15111_X", "市","女","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO15111_X", "市","沪籍","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO15111_X", "市","非沪籍","总体")` \\
 \hline
 
 \end{longtable}
@@ -264,12 +279,12 @@ C. \quad \CJKunderdot{增}加 \qquad \CJKunderdot{僧}人 \qquad \CJKunderdot{�
 - 考查能力：积累•语文识记•在无语境条件下读准字音•能读准形近字的字音
 - 正确答案：B
 - 本题满分：1分
-- 平均得分率：`r gio.R$VarScoSamKey(query.data, "C8AO01111_X", "上海市","总体","总体")`\%
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "市","总体","总体")`\%
 
 plot.bar.city.cn.question.c8ao01111
 
 \begin{itshape}
-在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarScoSamKey(query.data, "C8AO01111_X", "上海市","总体","A")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO01111_X", "上海市","总体","B")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO01111_X", "上海市","总体","C")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO01111_X", "上海市","总体","D")`\%。
+在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "市","总体","D")`\%。
 \end{itshape}
 
 - 答错原因分析及教学建议：
@@ -296,12 +311,12 @@ plot.bar.city.cn.question.c8ao01111
 - 考查能力：积累•理解应用•在有语境条件下理解词语的意思•能理解常用成语的基本意思，并在具体的语境中恰当运用
 - 正确答案：A
 - 本题满分：2分
-- 平均得分率：`r gio.R$VarScoSamKey(query.data, "C8AO09111_X", "上海市","总体","总体")`\%
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "市","总体","总体")`\%
 
 plot.bar.city.cn.question.c8ao09111
 
 \begin{itshape}
-在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarScoSamKey(query.data, "C8AO09111_X", "上海市","总体","A")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO09111_X", "上海市","总体","B")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO09111_X", "上海市","总体","C")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO09111_X", "上海市","总体","D")`\%。
+在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "市","总体","D")`\%。
 \end{itshape}
 
 - 答错原因分析及教学建议：
@@ -327,12 +342,12 @@ plot.bar.city.cn.question.c8ao09111
 - 考查能力：积累•理解应用•在有语境条件下理解词语的意思•能根据具体语境恰当地使用关联词
 - 正确答案：D
 - 本题满分：2分
-- 平均得分率：`r gio.R$VarScoSamKey(query.data, "C8AO11111_X", "上海市","总体","总体")`\%
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "市","总体","总体")`\%
 
 plot.bar.city.cn.question.c8ao11111
 
 \begin{itshape}
-在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarScoSamKey(query.data, "C8AO11111_X", "上海市","总体","A")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO11111_X", "上海市","总体","B")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO11111_X", "上海市","总体","C")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO11111_X", "上海市","总体","D")`\%。
+在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "市","总体","D")`\%。
 \end{itshape}
 
 - 答错原因分析及教学建议：
@@ -348,243 +363,259 @@ plot.bar.city.cn.question.c8ao11111
 
 \begin{itshape}
 \mytable
-\begin{longtable}{|c|c|p{5cm}|c|c|c|c|c|c|c|c|c|c|c|c|}
+\begin{longtable}{|c|c|p{5cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\
 
 \hline
-测试能力 & 题目编码 & \makecell[c]{能力描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\
+测试能力 & 题目编码 & \makecell[c]{能力描述} & \makecell[c]{本\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{其\\他} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\
 \hline
 
 
  \multirow{5}{*}{\makecell[c]{理解文言词语和\\篇章的基本意思}}
  & C8AO16111 & 理解常用文言实词的意思 &
-`r gio.R$VarScoSamKey(query.data, "C8AO16111_X", "上海市","总体","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO16111_X", "上海市","公办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO16111_X", "上海市","民办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO16111_X", "上海市","初中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO16111_X", "上海市","九年一贯","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO16111_X", "上海市","完中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO16111_X", "上海市","新优质","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO16111_X", "上海市","强校工程","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO16111_X", "上海市","男","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO16111_X", "上海市","女","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO16111_X", "上海市","沪籍","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO16111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "市","总体","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "市","公办","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "市","民办","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "市","初中","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "市","九年一贯","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "市","完中","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "市","其他","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "市","新优质","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "市","强校工程","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "市","男","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "市","女","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "市","沪籍","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "市","非沪籍","总体")` \\ \cline{2-16}
 
 
  & C8AO17111 & 理解常用文言虚词的意思或用法 &
- `r gio.R$VarScoSamKey(query.data, "C8AO17111_X", "上海市","总体","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AO17111_X", "上海市","公办","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AO17111_X", "上海市","民办","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AO17111_X", "上海市","初中","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AO17111_X", "上海市","九年一贯","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AO17111_X", "上海市","完中","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AO17111_X", "上海市","新优质","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AO17111_X", "上海市","强校工程","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AO17111_X", "上海市","男","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AO17111_X", "上海市","女","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AO17111_X", "上海市","沪籍","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AO17111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+ `r gio.R$VarTierSamKey(query.data, "C8AO17111_X", "市","总体","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AO17111_X", "市","公办","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AO17111_X", "市","民办","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AO17111_X", "市","初中","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AO17111_X", "市","九年一贯","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AO17111_X", "市","完中","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AO17111_X", "市","其他","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AO17111_X", "市","新优质","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AO17111_X", "市","强校工程","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AO17111_X", "市","男","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AO17111_X", "市","女","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AO17111_X", "市","沪籍","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AO17111_X", "市","非沪籍","总体")` \\ \cline{2-16}
 
 
   & C8AO17211 & 理解常用文言虚词的意思或用法 &
-  `r gio.R$VarScoSamKey(query.data, "C8AO17211_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO17211_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO17211_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO17211_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO17211_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO17211_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO17211_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO17211_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO17211_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO17211_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO17211_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO17211_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+  `r gio.R$VarTierSamKey(query.data, "C8AO17211_X", "市","总体","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO17211_X", "市","公办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO17211_X", "市","民办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO17211_X", "市","初中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO17211_X", "市","九年一贯","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO17211_X", "市","完中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO17211_X", "市","其他","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO17211_X", "市","新优质","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO17211_X", "市","强校工程","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO17211_X", "市","男","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO17211_X", "市","女","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO17211_X", "市","沪籍","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO17211_X", "市","非沪籍","总体")` \\ \cline{2-16}
 
   & C8AO18111 & 用现代汉语翻译文言语句 &
-  `r gio.R$VarScoSamKey(query.data, "C8AO18111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO18111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO18111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO18111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO18111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO18111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO18111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO18111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO18111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO18111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO18111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO18111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+  `r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "市","总体","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "市","公办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "市","民办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "市","初中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "市","九年一贯","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "市","完中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "市","其他","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "市","新优质","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "市","强校工程","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "市","男","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "市","女","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "市","沪籍","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "市","非沪籍","总体")` \\ \cline{2-16}
 
   & C8AO19111 & 理解文言诗文的主要内容 &
-  `r gio.R$VarScoSamKey(query.data, "C8AO19111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO19111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO19111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO19111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO19111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO19111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO19111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO19111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO19111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO19111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO19111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO19111_X", "上海市","非沪籍","总体")` \\  \hline
+  `r gio.R$VarTierSamKey(query.data, "C8AO19111_X", "市","总体","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO19111_X", "市","公办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO19111_X", "市","民办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO19111_X", "市","初中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO19111_X", "市","九年一贯","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO19111_X", "市","完中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO19111_X", "市","其他","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO19111_X", "市","新优质","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO19111_X", "市","强校工程","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO19111_X", "市","男","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO19111_X", "市","女","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO19111_X", "市","沪籍","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO19111_X", "市","非沪籍","总体")` \\  \hline
 
 
   \multirow{9}{*}{\makecell[c]{现代文阅读}}
   & C8AO20111 & 提取文本信息·提取文本中的显性信息 &
-  `r gio.R$VarScoSamKey(query.data, "C8AO20111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO20111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO20111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO20111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO20111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO20111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO20111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO20111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO20111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO20111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO20111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO20111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+  `r gio.R$VarTierSamKey(query.data, "C8AO20111_X", "市","总体","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO20111_X", "市","公办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO20111_X", "市","民办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO20111_X", "市","初中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO20111_X", "市","九年一贯","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO20111_X", "市","完中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO20111_X", "市","其他","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO20111_X", "市","新优质","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO20111_X", "市","强校工程","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO20111_X", "市","男","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO20111_X", "市","女","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO20111_X", "市","沪籍","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO20111_X", "市","非沪籍","总体")` \\ \cline{2-16}
 
   & C8AO21111 & 提取文本信息·提取文本中的显性信息 &
-  `r gio.R$VarScoSamKey(query.data, "C8AO21111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO21111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO21111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO21111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO21111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO21111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO21111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO21111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO21111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO21111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO21111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO21111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+  `r gio.R$VarTierSamKey(query.data, "C8AO21111_X", "市","总体","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO21111_X", "市","公办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO21111_X", "市","民办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO21111_X", "市","初中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO21111_X", "市","九年一贯","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO21111_X", "市","完中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO21111_X", "市","其他","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO21111_X", "市","新优质","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO21111_X", "市","强校工程","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO21111_X", "市","男","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO21111_X", "市","女","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO21111_X", "市","沪籍","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO21111_X", "市","非沪籍","总体")` \\ \cline{2-16}
 
   & C8AO22111 & 分析与解释文本内容与形式·梳理段落之间的关系，分析文章的思路 &
-  `r gio.R$VarScoSamKey(query.data, "C8AO22111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO22111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO22111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO22111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO22111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO22111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO22111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO22111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO22111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO22111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO22111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO22111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+  `r gio.R$VarTierSamKey(query.data, "C8AO22111_X", "市","总体","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO22111_X", "市","公办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO22111_X", "市","民办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO22111_X", "市","初中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO22111_X", "市","九年一贯","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO22111_X", "市","完中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO22111_X", "市","其他","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO22111_X", "市","新优质","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO22111_X", "市","强校工程","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO22111_X", "市","男","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO22111_X", "市","女","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO22111_X", "市","沪籍","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO22111_X", "市","非沪籍","总体")` \\ \cline{2-16}
 
   & C8AO23111 & 分析与解释文本内容与形式·对文本中的形象、情感、观点、态度等作出解释，运用文本中的信息支持自己的观点 &
-  `r gio.R$VarScoSamKey(query.data, "C8AO23111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO23111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO23111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO23111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO23111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO23111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO23111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO23111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO23111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO23111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO23111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO23111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+  `r gio.R$VarTierSamKey(query.data, "C8AO23111_X", "市","总体","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO23111_X", "市","公办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO23111_X", "市","民办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO23111_X", "市","初中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO23111_X", "市","九年一贯","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO23111_X", "市","完中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO23111_X", "市","其他","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO23111_X", "市","新优质","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO23111_X", "市","强校工程","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO23111_X", "市","男","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO23111_X", "市","女","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO23111_X", "市","沪籍","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO23111_X", "市","非沪籍","总体")` \\ \cline{2-16}
 
   & C8AO24111 & 提取文本信息·推断文本中的隐含信息 &
-  `r gio.R$VarScoSamKey(query.data, "C8AO24111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO24111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO24111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO24111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO24111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO24111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO24111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO24111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO24111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO24111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO24111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO24111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+  `r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "市","总体","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "市","公办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "市","民办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "市","初中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "市","九年一贯","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "市","完中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "市","其他","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "市","新优质","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "市","强校工程","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "市","男","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "市","女","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "市","沪籍","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "市","非沪籍","总体")` \\ \cline{2-16}
 
   & C8AO25111 & 分析与解释文本内容与形式·分析词语的作用 &
-  `r gio.R$VarScoSamKey(query.data, "C8AO25111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO25111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO25111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO25111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO25111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO25111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO25111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO25111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO25111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO25111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO25111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO25111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+  `r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "市","总体","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "市","公办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "市","民办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "市","初中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "市","九年一贯","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "市","完中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "市","其他","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "市","新优质","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "市","强校工程","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "市","男","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "市","女","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "市","沪籍","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "市","非沪籍","总体")` \\ \cline{2-16}
 
 & C8AO26111 & 分析与解释文本内容与形式·分析段落的作用 &
-`r gio.R$VarScoSamKey(query.data, "C8AO26111_X", "上海市","总体","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO26111_X", "上海市","公办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO26111_X", "上海市","民办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO26111_X", "上海市","初中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO26111_X", "上海市","九年一贯","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO26111_X", "上海市","完中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO26111_X", "上海市","新优质","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO26111_X", "上海市","强校工程","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO26111_X", "上海市","男","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO26111_X", "上海市","女","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO26111_X", "上海市","沪籍","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO26111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "市","总体","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "市","公办","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "市","民办","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "市","初中","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "市","九年一贯","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "市","完中","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "市","其他","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "市","新优质","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "市","强校工程","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "市","男","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "市","女","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "市","沪籍","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "市","非沪籍","总体")` \\ \cline{2-16}
 
   & C8AO27111 & 分析与解释文本内容与形式·梳理段落之间的关系，分析文章的思路 &
-  `r gio.R$VarScoSamKey(query.data, "C8AO27111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO27111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO27111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO27111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO27111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO27111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO27111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO27111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO27111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO27111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO27111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AO27111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+  `r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "市","总体","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "市","公办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "市","民办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "市","初中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "市","九年一贯","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "市","完中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "市","其他","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "市","新优质","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "市","强校工程","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "市","男","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "市","女","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "市","沪籍","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "市","非沪籍","总体")` \\ \cline{2-16}
 
 & C8AO28111 & 感知文本内容·概括文章的中心 &
-`r gio.R$VarScoSamKey(query.data, "C8AO28111_X", "上海市","总体","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO28111_X", "上海市","公办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO28111_X", "上海市","民办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO28111_X", "上海市","初中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO28111_X", "上海市","九年一贯","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO28111_X", "上海市","完中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO28111_X", "上海市","新优质","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO28111_X", "上海市","强校工程","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO28111_X", "上海市","男","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO28111_X", "上海市","女","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO28111_X", "上海市","沪籍","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO28111_X", "上海市","非沪籍","总体")` \\ \hline
+`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "市","总体","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "市","公办","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "市","民办","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "市","初中","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "市","九年一贯","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "市","完中","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "市","其他","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "市","新优质","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "市","强校工程","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "市","男","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "市","女","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "市","沪籍","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "市","非沪籍","总体")` \\ \hline
 
 \multirow{2}{*}{\makecell[c]{利用语文知识和\\技能完成任务}}
 & C8AO29111 & 整合相关信息，完成简单任务 &
-`r gio.R$VarScoSamKey(query.data, "C8AO29111_X", "上海市","总体","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO29111_X", "上海市","公办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO29111_X", "上海市","民办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO29111_X", "上海市","初中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO29111_X", "上海市","九年一贯","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO29111_X", "上海市","完中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO29111_X", "上海市","新优质","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO29111_X", "上海市","强校工程","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO29111_X", "上海市","男","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO29111_X", "上海市","女","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO29111_X", "上海市","沪籍","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO29111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+`r gio.R$VarTierSamKey(query.data, "C8AO29111_X", "市","总体","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO29111_X", "市","公办","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO29111_X", "市","民办","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO29111_X", "市","初中","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO29111_X", "市","九年一贯","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO29111_X", "市","完中","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO29111_X", "市","其他","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO29111_X", "市","新优质","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO29111_X", "市","强校工程","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO29111_X", "市","男","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO29111_X", "市","女","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO29111_X", "市","沪籍","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO29111_X", "市","非沪籍","总体")` \\ \cline{2-16}
 
 & C8AO30111 & 整合相关信息，完成简单任务 &
-`r gio.R$VarScoSamKey(query.data, "C8AO30111_X", "上海市","总体","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO30111_X", "上海市","公办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO30111_X", "上海市","民办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO30111_X", "上海市","初中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO30111_X", "上海市","九年一贯","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO30111_X", "上海市","完中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO30111_X", "上海市","新优质","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO30111_X", "上海市","强校工程","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO30111_X", "上海市","男","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO30111_X", "上海市","女","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO30111_X", "上海市","沪籍","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AO30111_X", "上海市","非沪籍","总体")` \\
+`r gio.R$VarTierSamKey(query.data, "C8AO30111_X", "市","总体","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO30111_X", "市","公办","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO30111_X", "市","民办","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO30111_X", "市","初中","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO30111_X", "市","九年一贯","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO30111_X", "市","完中","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO30111_X", "市","其他","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO30111_X", "市","新优质","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO30111_X", "市","强校工程","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO30111_X", "市","男","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO30111_X", "市","女","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO30111_X", "市","沪籍","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AO30111_X", "市","非沪籍","总体")` \\
 \hline
 \end{longtable}
 
@@ -628,12 +659,12 @@ C.屠\CJKunderdot{暴}起 & 暴：突然 & D.一狼\CJKunderdot{洞}其中 & 洞
 - 考查能力：文言文阅读•理解常用文言实词的意思
 - 正确答案：D
 - 本题满分：2分
-- 平均得分率：`r gio.R$VarScoSamKey(query.data, "C8AO16111_X", "上海市","总体","总体")`\%
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "市","总体","总体")`\%
 
 plot.bar.city.cn.question.c8ao16111
 
 \begin{itshape}
-在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarScoSamKey(query.data, "C8AO16111_X", "上海市","总体","A")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO16111_X", "上海市","总体","B")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO16111_X", "上海市","总体","C")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO16111_X", "上海市","总体","D")`\%。
+在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "市","总体","D")`\%。
 \end{itshape}
 
 - 答错原因分析及教学建议：
@@ -657,12 +688,12 @@ D. 一只狼径直离开了，他的前面有一只狗蹲坐着
 - 考查能力：文言文阅读•用现代汉语翻译文言语句
 - 正确答案：B
 - 本题满分：2分
-- 平均得分率：`r gio.R$VarScoSamKey(query.data, "C8AO18111_X", "上海市","总体","总体")`\%
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "市","总体","总体")`\%
 
 plot.bar.city.cn.question.c8ao18111
 
 \begin{itshape}
-在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarScoSamKey(query.data, "C8AO18111_X", "上海市","总体","A")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO18111_X", "上海市","总体","B")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO18111_X", "上海市","总体","C")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO18111_X", "上海市","总体","D")`\%。
+在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "市","总体","D")`\%。
 \end{itshape}
 
 \mytext
@@ -742,12 +773,12 @@ D. 狼拔出木栓，拖着镣铐，回到草原
 
 - 考查能力：现代文阅读•为了获得文学体验的阅读·提取文本信息•推断文本中的隐含信息
 - 本题满分：3分
-- 平均得分率：`r gio.R$VarScoSamKey(query.data, "C8AO24111_X", "上海市","总体","总体")`\%
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "市","总体","总体")`\%
 
 plot.bar.city.cn.question.c8ao24111
 
 \begin{itshape}
-在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarScoSamKey(query.data, "C8AO24111_X", "上海市","总体","A")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO24111_X", "上海市","总体","B")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO24111_X", "上海市","总体","C")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO24111_X", "上海市","总体","D")`\%。
+在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "市","总体","D")`\%。
 \end{itshape}
 
 - 答错原因分析及教学建议 ：
@@ -770,12 +801,12 @@ D. “兴高采烈”是“我”对白头翁情绪的主观推测
 
 - 考查能力：现代文阅读•为了获得文学体验的阅读•分析与解释文本内容与形式•分析词语的作用
 - 本题满分：3分
-- 平均得分率：`r gio.R$VarScoSamKey(query.data, "C8AO25111_X", "上海市","总体","总体")`\%
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "市","总体","总体")`\%
 
 plot.bar.city.cn.question.c8ao25111
 
 \begin{itshape}
-在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarScoSamKey(query.data, "C8AO25111_X", "上海市","总体","A")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO25111_X", "上海市","总体","B")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO25111_X", "上海市","总体","C")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO25111_X", "上海市","总体","D")`\%。
+在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "市","总体","D")`\%。
 \end{itshape}
 
 - 答错原因分析及教学建议 ：
@@ -799,12 +830,12 @@ D. 养不家的那些家伙们，活得虽然很艰难，却自有一番与天�
 
 - 考查能力：现代文阅读•为了获得文学体验的阅读•分析与解释文本内容与形式•分析段落的作用
 - 本题满分：3分
-- 平均得分率：`r gio.R$VarScoSamKey(query.data, "C8AO26111_X", "上海市","总体","总体")`\%
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "市","总体","总体")`\%
 
 plot.bar.city.cn.question.c8ao26111
 
 \begin{itshape}
-在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarScoSamKey(query.data, "C8AO26111_X", "上海市","总体","A")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO26111_X", "上海市","总体","B")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO26111_X", "上海市","总体","C")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO26111_X", "上海市","总体","D")`\%。
+在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "市","总体","D")`\%。
 \end{itshape}
 
 - 答错原因分析及教学建议
@@ -826,12 +857,12 @@ A.甲处 & B.乙处 & C.丙处 & D.丁处 \\
 
 - 考查能力：现代文阅读•为了获得文学体验的阅读•分析与解释文本内容与形式•梳理段落之间的关系，分析文章的思路
 - 本题满分：4分
-- 平均得分率：`r gio.R$VarScoSamKey(query.data, "C8AO27111_X", "上海市","总体","总体")`\%
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "市","总体","总体")`\%
 
 plot.bar.city.cn.question.c8ao27111
 
 \begin{itshape}
-在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarScoSamKey(query.data, "C8AO27111_X", "上海市","总体","A")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO27111_X", "上海市","总体","B")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO27111_X", "上海市","总体","C")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO27111_X", "上海市","总体","D")`\%。
+在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "市","总体","D")`\%。
 \end{itshape}
 
 - 答错原因分析及教学建议 ：
@@ -855,12 +886,12 @@ D. 天下无纯粹之自由，亦无纯粹之不自由（章太炎）
 
 - 考查能力：现代文阅读•为了获得文学体验的阅读•感知文本内容•概括文章的中心
 - 本题满分：4分
-- 平均得分率：`r gio.R$VarScoSamKey(query.data, "C8AO28111_X", "上海市","总体","总体")`\%
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "市","总体","总体")`\%
 
 plot.bar.city.cn.question.c8ao28111
 
 \begin{itshape}
-在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarScoSamKey(query.data, "C8AO28111_X", "上海市","总体","A")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO28111_X", "上海市","总体","B")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO28111_X", "上海市","总体","C")`\%、`r gio.R$VarScoSamKey(query.data, "C8AO28111_X", "上海市","总体","D")`\%。
+在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "市","总体","D")`\%。
 \end{itshape}
 
 - 答错原因分析及教学建议 ：
@@ -875,72 +906,76 @@ plot.bar.city.cn.question.c8ao28111
 
 \begin{itshape}
 \mytable
-\begin{longtable}{|c|c|p{5cm}|c|c|c|c|c|c|c|c|c|c|c|c|}
+\begin{longtable}{|c|c|p{5cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\
 
 \hline
-测试能力 & 题目编码 & \makecell[c]{能力描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\
+测试能力 & 题目编码 & \makecell[c]{能力描述} & \makecell[c]{本\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{其\\他} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\
 \hline
 
 
  \multirow{4}{*}{\makecell[c]{写作}}
  & C8AS31111 & 切合题意、中心突出、感情真实、内容具体 &
-`r gio.R$VarScoSamKey(query.data, "C8AS31111_X", "上海市","总体","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AS31111_X", "上海市","公办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AS31111_X", "上海市","民办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AS31111_X", "上海市","初中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AS31111_X", "上海市","九年一贯","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AS31111_X", "上海市","完中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AS31111_X", "上海市","新优质","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AS31111_X", "上海市","强校工程","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AS31111_X", "上海市","男","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AS31111_X", "上海市","女","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AS31111_X", "上海市","沪籍","总体")` &
-`r gio.R$VarScoSamKey(query.data, "C8AS31111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+`r gio.R$VarTierSamKey(query.data, "C8AS31111_X", "市","总体","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AS31111_X", "市","公办","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AS31111_X", "市","民办","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AS31111_X", "市","初中","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AS31111_X", "市","九年一贯","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AS31111_X", "市","完中","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AS31111_X", "市","其他","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AS31111_X", "市","新优质","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AS31111_X", "市","强校工程","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AS31111_X", "市","男","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AS31111_X", "市","女","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AS31111_X", "市","沪籍","总体")` &
+`r gio.R$VarTierSamKey(query.data, "C8AS31111_X", "市","非沪籍","总体")` \\ \cline{2-16}
 
 
  & C8AS31211 & 语言通顺、简洁得体 &
- `r gio.R$VarScoSamKey(query.data, "C8AS31211_X", "上海市","总体","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AS31211_X", "上海市","公办","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AS31211_X", "上海市","民办","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AS31211_X", "上海市","初中","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AS31211_X", "上海市","九年一贯","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AS31211_X", "上海市","完中","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AS31211_X", "上海市","新优质","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AS31211_X", "上海市","强校工程","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AS31211_X", "上海市","男","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AS31211_X", "上海市","女","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AS31211_X", "上海市","沪籍","总体")` &
- `r gio.R$VarScoSamKey(query.data, "C8AS31211_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+ `r gio.R$VarTierSamKey(query.data, "C8AS31211_X", "市","总体","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AS31211_X", "市","公办","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AS31211_X", "市","民办","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AS31211_X", "市","初中","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AS31211_X", "市","九年一贯","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AS31211_X", "市","完中","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AS31211_X", "市","其他","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AS31211_X", "市","新优质","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AS31211_X", "市","强校工程","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AS31211_X", "市","男","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AS31211_X", "市","女","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AS31211_X", "市","沪籍","总体")` &
+ `r gio.R$VarTierSamKey(query.data, "C8AS31211_X", "市","非沪籍","总体")` \\ \cline{2-16}
 
 
   & C8AS31311 & 结构合理、层次清晰、详略得体 &
-  `r gio.R$VarScoSamKey(query.data, "C8AS31311_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AS31311_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AS31311_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AS31311_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AS31311_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AS31311_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AS31311_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AS31311_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AS31311_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AS31311_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AS31311_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AS31311_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+  `r gio.R$VarTierSamKey(query.data, "C8AS31311_X", "市","总体","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AS31311_X", "市","公办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AS31311_X", "市","民办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AS31311_X", "市","初中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AS31311_X", "市","九年一贯","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AS31311_X", "市","完中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AS31311_X", "市","其他","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AS31311_X", "市","新优质","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AS31311_X", "市","强校工程","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AS31311_X", "市","男","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AS31311_X", "市","女","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AS31311_X", "市","沪籍","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AS31311_X", "市","非沪籍","总体")` \\ \cline{2-16}
 
   & C8AS31411 & 书写清晰，标点符号使用正确，错别字较少 &
-  `r gio.R$VarScoSamKey(query.data, "C8AS31411_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AS31411_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AS31411_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AS31411_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AS31411_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AS31411_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AS31411_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AS31411_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AS31411_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AS31411_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AS31411_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "C8AS31411_X", "上海市","非沪籍","总体")` \\
+  `r gio.R$VarTierSamKey(query.data, "C8AS31411_X", "市","总体","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AS31411_X", "市","公办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AS31411_X", "市","民办","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AS31411_X", "市","初中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AS31411_X", "市","九年一贯","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AS31411_X", "市","完中","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AS31411_X", "市","其他","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AS31411_X", "市","新优质","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AS31411_X", "市","强校工程","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AS31411_X", "市","男","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AS31411_X", "市","女","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AS31411_X", "市","沪籍","总体")` &
+  `r gio.R$VarTierSamKey(query.data, "C8AS31411_X", "市","非沪籍","总体")` \\
 \hline
 \end{longtable}
 \end{itshape}

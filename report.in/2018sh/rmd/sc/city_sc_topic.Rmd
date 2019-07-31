@@ -4,9 +4,9 @@
 
 # 典型题目分析
 
-科学学科试题分为四个内容领域：地球宇宙、生命科学、物质科学和科学探究。四个内容领域都是以“话题”形式呈现试题。每个“话题”都有主要隶属的某一内容领域，但同时也都承载科学探究内容；每个“话题”都融合科学知识、科学能力和情感、态度与价值观的内容，学生阅读并完成答题的过程就是一个利用科学知识、方法去解决实际问题的过程。
+科学学科试题分为四个内容领域：地球宇宙、生命科学、物质科学和科学探究。四个内容领域都是以选择题和综合分析题两种题型进行测试，综合分析题是以“话题”的形式呈现。每个“话题”都有主要隶属的某一内容领域，但同时也都承载科学探究内容；每个“话题”都融合科学知识、科学能力和情感、态度与价值观的内容，学生阅读并完成答题的过程就是一个利用科学知识、方法去解决实际问题的过程。
 
-以下选择3个“话题”中的若干道试题，分别对地球宇宙、生命科学、物质科学及它们承载的科学探究内容进行分析。
+以下分别对地球宇宙、生命科学、物质科学及它们承载的科学探究内容进行分析。
 
 query.data.city.sc.pointrate.perspective
 
@@ -24,150 +24,87 @@ query.data.city.sc.pointrate.perspective
 
 \begin{itshape}
 \mytable
-\begin{longtable}{|c|c|c|p{5cm}|c|c|c|c|c|c|c|c|c|c|c|c|}
+\begin{longtable}{|c|c|c|p{4.2cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\ \hline
 
-\multicolumn{2}{|c|}{考查维度} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
+\multicolumn{2}{|c|}{考查维度} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{本\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{其\\他} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
 
-\multirow{10}{*}{科学知识} & \multirow{5}{*}{基本知识} & S8AO20111 & 不同土地资源利用类型 &
-`r gio.R$VarScoSamKey(query.data, "S8AO20111_X", "上海市","总体","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO20111_X", "上海市","公办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO20111_X", "上海市","民办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO20111_X", "上海市","初中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO20111_X", "上海市","九年一贯","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO20111_X", "上海市","完中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO20111_X", "上海市","新优质","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO20111_X", "上海市","强校工程","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO20111_X", "上海市","男","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO20111_X", "上海市","女","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO20111_X", "上海市","沪籍","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO20111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+\multirow{10}{*}{科学知识} & \multirow{5}{*}{基本知识} & S8AO20111 & 不同土地资源利用类型 
+table.city.sc.S8AO20111
+\\ \cline{3-17}
 
- & & S8AO21111 & 识记著名河流 &
- `r gio.R$VarScoSamKey(query.data, "S8AO21111_X", "上海市","总体","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO21111_X", "上海市","公办","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO21111_X", "上海市","民办","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO21111_X", "上海市","初中","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO21111_X", "上海市","九年一贯","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO21111_X", "上海市","完中","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO21111_X", "上海市","新优质","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO21111_X", "上海市","强校工程","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO21111_X", "上海市","男","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO21111_X", "上海市","女","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO21111_X", "上海市","沪籍","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO21111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AO21111 & 识记著名河流 
+table.city.sc.S8AO21111 
+\\ \cline{3-17}
 
- & & S8AO22111 & 知道海洋在地球表面所占比例 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO22111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO22111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO22111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO22111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO22111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO22111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO22111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO22111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO22111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO22111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO22111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO22111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AO22111 & 知道海洋在地球表面所占比例 
+table.city.sc.S8AO22111 
+\\ \cline{3-17}
 
- & & S8AO48122 & 知道太阳直射点影子特点，知道太阳二分二至太阳直射位置 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48122_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48122_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48122_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48122_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48122_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48122_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48122_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48122_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48122_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48122_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48122_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48122_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AO48122 & 知道太阳直射点影子特点，知道太阳二分二至太阳直射位置 
+table.city.sc.S8AO48122
+\\ \cline{3-17}
 
- & & S8AO48121 & 说知道太阳直射点影子特点，知道太阳二分二至太阳直射位置 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48121_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48121_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48121_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48121_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48121_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48121_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48121_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48121_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48121_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48121_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48121_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48121_X", "上海市","非沪籍","总体")` \\ \cline{2-16}
+& & S8AO48121 & 说知道太阳直射点影子特点，知道太阳二分二至太阳直射位置 
+table.city.sc.S8AO48121
+\\ \cline{2-17}
 
-  & \multirow{2}{*}{基本方法} & S8AO48132 & 读取地理特征做匹配 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48132_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48132_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48132_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48132_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48132_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48132_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48132_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48132_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48132_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48132_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48132_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48132_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& \multirow{2}{*}{基本方法} & S8AO48132 & 读取地理特征做匹配 
+table.city.sc.S8AO48132
+\\ \cline{3-17}
 
-  & & S8AO48131 & 读取地理特征做匹配 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48131_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48131_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48131_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48131_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48131_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48131_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48131_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48131_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48131_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48131_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48131_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48131_X", "上海市","非沪籍","总体")` \\ \cline{2-16}
+& & S8AO48131 & 读取地理特征做匹配 
+table.city.sc.S8AO48131
+\\ \cline{2-17}
 
-  & \multirow{3}{*}{简单应用} & S8AO48111 & 极昼和寒带 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO48111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& \multirow{3}{*}{简单应用} & S8AO48111 & 极昼和寒带 
+table.city.sc.S8AO48111
+\\ \cline{3-17}
 
-  & & S8AS48112 & 判断气候的依据 &
-  `r gio.R$VarScoSamKey(query.data, "S8AS48112_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS48112_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS48112_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS48112_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS48112_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS48112_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS48112_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS48112_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS48112_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS48112_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS48112_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS48112_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AS48112 & 判断气候的依据 
+table.city.sc.S8AS48112
+\\ \cline{3-17}
 
-  & & S8AS48211 & 运用地球南北季节相反解释 &
-  `r gio.R$VarScoSamKey(query.data, "S8AS48211_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS48211_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS48211_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS48211_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS48211_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS48211_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS48211_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS48211_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS48211_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS48211_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS48211_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS48211_X", "上海市","非沪籍","总体")` \\ \cline{1-16}
+& & S8AS48211 & 运用地球南北季节相反解释 
+table.city.sc.S8AS48211
+\\ \cline{1-17}
+
+\multirow{8}{*}{科学能力} & \multirow{6}{*}{\makecell[c]{获取和\\描述证据}} & S8AO24111 & 读取气温曲线图和降水量柱状图信息 
+table.city.sc.S8AO24111
+\\ \cline{3-17}
+
+& & S8AO50111 & 获取和描述证据 
+table.city.sc.S8AO50111
+\\ \cline{3-17}
+
+& & S8AO50121 & 获取和描述证据 
+table.city.sc.S8AO50121
+\\ \cline{3-17}
+
+& & S8AO50131 & 获取和描述证据 
+table.city.sc.S8AO50131
+\\ \cline{3-17}
+
+& & S8AO50132 & 获取和描述证据 
+table.city.sc.S8AO50132 
+\\ \cline{3-17}
+
+& & S8AO50211 & 获取和描述证据 
+table.city.sc.S8AO50211
+\\ \cline{2-17}
+
+& \multirow{2}{*}{使用证据} & S8AO48311 & 综合运用地理知识来解决具体问题 
+table.city.sc.S8AO48311
+\\ \cline{3-17}
+
+&  & S8AS48321 & 南北半球太阳光照特点 
+table.city.sc.S8AS48321
+\\ \cline{1-17}
+
+科学态度 & 关注 & S8AO50221 & 使用证据 
+table.city.sc.S8AO50221
+\\  \cline{1-17}
+
 
 \end{longtable}
 \end{itshape}
@@ -177,7 +114,7 @@ query.data.city.sc.pointrate.perspective
 
 \end{landscape}
 
-\questiontitle{典型题目1：S8AO48111}
+\questiontitle{典型题目}1：S8AO48111
 
 \begin{center}
 48．旅行者的话
@@ -195,7 +132,7 @@ query.data.city.sc.pointrate.perspective
 
 \end{itshape}
 
-\questiontitle{问题1:}
+\questiontitle{问题}1:
 
 \begin{itshape}
 请你运用学到的地理知识完成表6。
@@ -229,13 +166,13 @@ C地	& <1> 几天之内在该地经历了“从夏天到冬天”的变化。 \q
 
 - 正确答案：<2>
 
-- 平均得分率：`r gio.R$VarScoSamKey(query.data, "S8AO48110_题组得分", "上海市","总体","总体")`％
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "S8AO48110_题组得分", "市","总体","总体")`％
 
 plot.bar.city.sc.question.s8ao48111
 query2.plot.bar.city.sc.question.s8ao48111
 
 \begin{itshape}
-在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarScoSamKey(query.data, "S8AO48110_题组得分", "上海市","总体","A")`％、`r gio.R$VarScoSamKey(query.data, "S8AO48110_题组得分", "上海市","总体","B")`％、`r gio.R$VarScoSamKey(query.data, "S8AO48110_题组得分", "上海市","总体","C")`％、 `r gio.R$VarScoSamKey(query.data, "S8AO48110_题组得分", "上海市","总体","D")`％。
+在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarTierSamKey(query.data, "S8AO48110_题组得分", "市","总体","A")`％、`r gio.R$VarTierSamKey(query.data, "S8AO48110_题组得分", "市","总体","B")`％、`r gio.R$VarTierSamKey(query.data, "S8AO48110_题组得分", "市","总体","C")`％、 `r gio.R$VarTierSamKey(query.data, "S8AO48110_题组得分", "市","总体","D")`％。
 \end{itshape}
 
 - 学生作答分析：学生正确率为`r gio.R$KeyValue(query2.data, "2")`％，略低于预期。典型错误一是地理位置信息读取错误或描述信息过于笼统（如：A地位于两极地区，比较寒冷；离赤道越远，温度越低），二是用经验做判断，没有根据题目具体信息（如：极昼极夜出现的地方不可能全年热，有冰川的地方不可能很热）；三是科学表述错误（如：北极圈离太阳近，全年很热；北极照不到阳光，所以冷等）。
@@ -243,7 +180,7 @@ query2.plot.bar.city.sc.question.s8ao48111
 - 教学建议：加强日常学生的识图能力和加强科学表述规范。
 
 
-\questiontitle{典型题目2：S8AS48211}
+\questiontitle{典型题目}2：S8AS48211
 
 \begin{itshape}
 旅行者对D地进行了这样的描述：整个8月份天气很冷。
@@ -263,13 +200,13 @@ query2.plot.bar.city.sc.question.s8ao48111
 
 - 正确答案：D地在南半球
 
-- 平均得分率：`r gio.R$VarScoSamKey(query.data, "S8AS48211_X", "上海市","总体","总体")`％
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "S8AS48211_X", "市","总体","总体")`％
 
 plot.bar.city.sc.question.s8as48211
 query2.plot.bar.city.sc.question.s8as48211
 
 \begin{itshape}
-在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarScoSamKey(query.data, "S8AS48211_X", "上海市","总体","A")`％、`r gio.R$VarScoSamKey(query.data, "S8AS48211_X", "上海市","总体","B")`％、`r gio.R$VarScoSamKey(query.data, "S8AS48211_X", "上海市","总体","C")`％、`r gio.R$VarScoSamKey(query.data, "S8AS48211_X", "上海市","总体","D")`％。
+在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarTierSamKey(query.data, "S8AS48211_X", "市","总体","A")`％、`r gio.R$VarTierSamKey(query.data, "S8AS48211_X", "市","总体","B")`％、`r gio.R$VarTierSamKey(query.data, "S8AS48211_X", "市","总体","C")`％、`r gio.R$VarTierSamKey(query.data, "S8AS48211_X", "市","总体","D")`％。
 \end{itshape}
 
 - 学生作答分析：本题学生的正确率为`r gio.R$KeyValue(query2.data, "2")`％，低于预期。错误主要集中于知识的遗忘缺失或者表述上出现偏差，其中表述上出现偏差导致失分比重大于知识遗忘的原因（典型错误有：对D地的纬度位置解读错误，认为D地8月份冷是因为该地本来就冷；科学表述偏差，将D地8月离太阳直射点远，说成离太阳远或太阳照射不到等）。
@@ -277,18 +214,19 @@ query2.plot.bar.city.sc.question.s8as48211
 - 教学建议：加强日常课堂的读图训练以及对地理现象的科学表述。
 
 
-\questiontitle{典型题目3：S8AO23111}
+\questiontitle{典型题目}3：S8AO23111
 
 \begin{itshape}
- 23．下列不能作为地球是球体的证据是\uline{\qquad\qquad\qquad\qquad\qquad\qquad}（\qquad）
+23．下列能作为地球是球体的最直观的证据是\uline{\qquad\qquad\qquad\qquad\qquad\qquad}（\qquad）
 
-A．观察月食时发现月球上地球的影子是圆形的
+A．观察月食时发现月球上地球的影子是圆的
 
-B．太空拍摄的地球的照片
+B．麦哲伦船队完成了环球航行
 
-C．地球仪的形状是球形的
+C．从太空拍摄的地球照片
 
 D．远去的帆船船身比桅杆先消失
+
 \end{itshape}
 
 - 试题考查点：科学探究——证据的使用
@@ -301,13 +239,13 @@ D．远去的帆船船身比桅杆先消失
 
 - 正确答案：C
 
-- 平均得分率：`r gio.R$VarScoSamKey(query.data, "S8AO23111_X", "上海市","总体","总体")`％
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "S8AO23111_X", "市","总体","总体")`％
 
 plot.bar.city.sc.question.s8ao23111
 query2.plot.bar.city.sc.question.s8ao23111
 
 \begin{itshape}
-在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarScoSamKey(query.data, "S8AO23111_X", "上海市","总体","A")`％、`r gio.R$VarScoSamKey(query.data, "S8AO23111_X", "上海市","总体","B")`％、`r gio.R$VarScoSamKey(query.data, "S8AO23111_X", "上海市","总体","C")`％、`r gio.R$VarScoSamKey(query.data, "S8AO23111_X", "上海市","总体","D")`％。
+在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarTierSamKey(query.data, "S8AO23111_X", "市","总体","A")`％、`r gio.R$VarTierSamKey(query.data, "S8AO23111_X", "市","总体","B")`％、`r gio.R$VarTierSamKey(query.data, "S8AO23111_X", "市","总体","C")`％、`r gio.R$VarTierSamKey(query.data, "S8AO23111_X", "市","总体","D")`％。
 \end{itshape}
 
 - 学生作答分析：学生正确率为`r gio.R$KeyValue(query2.data, "C")`％，略低于预测情况。错误选项主要集中在B、D选项上。选择B和D的原因在于这两个选项在教学中也是作为探究过程中的证据出现过，A也是出现过的证据，但是月食学生相对陌生一些。虽然都可作为证据，但是证据的使用上效力是不一样的，题中要求找出的是最直观证据，随着科技的发展，C才是最直观的证据。
@@ -315,7 +253,7 @@ query2.plot.bar.city.sc.question.s8ao23111
 - 教学建议：科学探索过程中不同阶段的证据具有的效力不同。教学中可适当渗透结合科技发展，将证据进行效力方面的区分。
 
 
-\questiontitle{典型题目4：S8AO50131、S8AO50132}
+\questiontitle{典型题目}4：S8AO50131、S8AO50132
 
 \begin{center}
 50．人口问题
@@ -329,7 +267,7 @@ query2.plot.bar.city.sc.question.s8ao23111
 \includegraphics[width=\textwidth]{sc_S8AO50131.png}
 \end{figure}
 
-\questiontitle{问题1:}
+\questiontitle{问题}1:
 
 \begin{itshape}
 图16是我国的人口自然增长率（虚线）和劳动人口增长率（实线）变化折线图。请回答下列问题。
@@ -347,7 +285,7 @@ query2.plot.bar.city.sc.question.s8ao23111
 
 - 正确答案：上升、下降
 
-- 平均得分率：`r gio.R$VarScoSamKey(query.data, "S8AO50131_X", "上海市","总体","总体")`％
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "S8AO50131_X", "市","总体","总体")`％
 
 plot.bar.city.sc.question.s8ao50131
 
@@ -356,7 +294,7 @@ plot.bar.city.sc.question.s8ao50131
 query2.plot.bar.city.sc.question.s8ao50131
 
 \begin{itshape}
-在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarScoSamKey(query.data, "S8AO50131_X", "上海市","总体","A")`％、`r gio.R$VarScoSamKey(query.data, "S8AO50131_X", "上海市","总体","B")`％、`r gio.R$VarScoSamKey(query.data, "S8AO50131_X", "上海市","总体","C")`％、`r gio.R$VarScoSamKey(query.data, "S8AO50131_X", "上海市","总体","D")`％。
+在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarTierSamKey(query.data, "S8AO50131_X", "市","总体","A")`％、`r gio.R$VarTierSamKey(query.data, "S8AO50131_X", "市","总体","B")`％、`r gio.R$VarTierSamKey(query.data, "S8AO50131_X", "市","总体","C")`％、`r gio.R$VarTierSamKey(query.data, "S8AO50131_X", "市","总体","D")`％。
 \end{itshape}
 
 - 学生作答分析：
@@ -370,9 +308,9 @@ query2.plot.bar.city.sc.question.s8ao50132
 
 - 教学建议：折线图解读是科学数据分析的重要能力。在教学中，可以从图线的纵横坐标、起点、拐点、走势等角度进行分段解读，然后整体分析，让学生感受折线图表述的信息，从而得出正确判断。
 
-\questiontitle{典型题目5：S8AO50221}
+\questiontitle{典型题目}5：S8AO50221
 
-\questiontitle{问题2:}
+\questiontitle{问题}2:
 
 \begin{itshape}
 图17是对实施不同人口政策后，我国总人口变化的预测。请回答下列问题。
@@ -398,13 +336,13 @@ D．“全面二胎”，人口增长速度将持续增加
 
 - 正确答案：C
 
-- 平均得分率：`r gio.R$VarScoSamKey(query.data, "S8AO50221_X", "上海市","总体","总体")`％
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "S8AO50221_X", "市","总体","总体")`％
 
 plot.bar.city.sc.question.s8ao50221
 query2.plot.bar.city.sc.question.s8ao50221
 
 \begin{itshape}
-在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarScoSamKey(query.data, "S8AO50221_X", "上海市","总体","A")`％、`r gio.R$VarScoSamKey(query.data, "S8AO50221_X", "上海市","总体","B")`％、`r gio.R$VarScoSamKey(query.data, "S8AO50221_X", "上海市","总体","C")`％、`r gio.R$VarScoSamKey(query.data, "S8AO50221_X", "上海市","总体","D")`％。
+在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarTierSamKey(query.data, "S8AO50221_X", "市","总体","A")`％、`r gio.R$VarTierSamKey(query.data, "S8AO50221_X", "市","总体","B")`％、`r gio.R$VarTierSamKey(query.data, "S8AO50221_X", "市","总体","C")`％、`r gio.R$VarTierSamKey(query.data, "S8AO50221_X", "市","总体","D")`％。
 \end{itshape}
 
 - 学生作答分析：学生正确率为`r gio.R$KeyValue(query2.data, "C")`％，略高于预测情况。错误选项主要集中在D选项上。学生对“增长速度”和“增长数量”之间的认识有所偏差，另外根据图像折线趋势可以看到，先扬后抑，总体趋势在不同时间段中有变化，对学生而言难度较大。
@@ -425,346 +363,107 @@ query2.plot.bar.city.sc.question.s8ao50221
 
 \begin{itshape}
 \mytable
-\begin{longtable}{|c|c|c|p{5cm}|c|c|c|c|c|c|c|c|c|c|c|c|}
+\begin{longtable}{|c|c|c|p{4.2cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\ \hline
 
-\multicolumn{2}{|c|}{考查维度} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
+\multicolumn{2}{|c|}{考查维度} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{本\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{其\\他} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
 
-\multirow{16}{*}{科学知识} & \multirow{11}{*}{基本知识} & S8AO25111 & 生物体的构成层次及功能 &
-`r gio.R$VarScoSamKey(query.data, "S8AO25111_X", "上海市","总体","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO25111_X", "上海市","公办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO25111_X", "上海市","民办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO25111_X", "上海市","初中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO25111_X", "上海市","九年一贯","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO25111_X", "上海市","完中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO25111_X", "上海市","新优质","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO25111_X", "上海市","强校工程","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO25111_X", "上海市","男","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO25111_X", "上海市","女","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO25111_X", "上海市","沪籍","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO25111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+\multirow{16}{*}{科学知识} & \multirow{11}{*}{基本知识} & S8AO25111 & 生物体的构成层次及功能 
+table.city.sc.S8AO25111
+\\ \cline{3-17}
 
- & & S8AO27111 & 植物的光合作用 &
- `r gio.R$VarScoSamKey(query.data, "S8AO27111_X", "上海市","总体","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO27111_X", "上海市","公办","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO27111_X", "上海市","民办","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO27111_X", "上海市","初中","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO27111_X", "上海市","九年一贯","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO27111_X", "上海市","完中","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO27111_X", "上海市","新优质","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO27111_X", "上海市","强校工程","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO27111_X", "上海市","男","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO27111_X", "上海市","女","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO27111_X", "上海市","沪籍","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO27111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AO27111 & 植物的光合作用 
+table.city.sc.S8AO27111
+\\ \cline{3-17}
 
- & & S8AO28111 & 人体性状的遗传和变异 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO28111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO28111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO28111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO28111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO28111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO28111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO28111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO28111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO28111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO28111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO28111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO28111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AO28111 & 人体性状的遗传和变异 
+table.city.sc.S8AO28111
+\\ \cline{3-17}
 
- & & S8AO29111 & 激素分泌异常的疾病 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO29111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO29111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO29111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO29111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO29111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO29111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO29111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO29111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO29111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO29111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO29111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO29111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AO29111 & 激素分泌异常的疾病 
+table.city.sc.S8AO29111
+\\ \cline{3-17}
 
- & & S8AO32111 & 人体的代谢与平衡 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO32111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO32111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO32111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO32111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO32111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO32111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO32111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO32111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO32111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO32111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO32111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO32111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AO32111 & 人体的代谢与平衡 
+table.city.sc.S8AO32111
+\\ \cline{3-17}
 
-  & & S8AO37111 & 生命的基本单位细胞 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO37111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO37111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO37111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO37111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO37111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO37111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO37111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO37111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO37111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO37111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO37111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO37111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AO37111 & 生命的基本单位细胞 
+table.city.sc.S8AO37111
+\\ \cline{3-17}
 
-  & & S8AO38111 & 健康与疾病 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO38111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO38111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO38111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO38111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO38111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO38111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO38111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO38111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO38111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO38111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO38111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO38111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AO38111 & 健康与疾病 
+table.city.sc.S8AO38111
+\\ \cline{3-17}
 
-  & & S8AO40111 & 食物中的营养成分 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO40111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO40111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO40111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO40111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO40111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO40111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO40111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO40111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO40111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO40111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO40111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO40111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AO40111 & 食物中的营养成分 
+table.city.sc.S8AO40111
+\\ \cline{3-17}
 
-  & & S8AO47111 & 反射弧 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AO47111 & 反射弧 
+table.city.sc.S8AO47111
+\\ \cline{3-17}
 
-  & & S8AO47211 & 反射弧 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47211_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47211_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47211_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47211_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47211_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47211_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47211_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47211_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47211_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47211_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47211_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47211_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AO47211 & 反射弧 
+table.city.sc.S8AO47211
+\\ \cline{3-17}
 
-  & & S8AO47511 & 神经系统的反射类型 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47511_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47511_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47511_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47511_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47511_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47511_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47511_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47511_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47511_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47511_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47511_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47511_X", "上海市","非沪籍","总体")` \\ \cline{2-16}
+& & S8AO47511 & 神经系统的反射类型
+table.city.sc.S8AO47511
+\\ \cline{2-17}
 
-  & \multirow{2}{*}{基本方法} & S8AO26111 & 显微镜的使用 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO26111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO26111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO26111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO26111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO26111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO26111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO26111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO26111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO26111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO26111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO26111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO26111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& \multirow{2}{*}{基本方法} & S8AO26111 & 显微镜的使用 
+table.city.sc.S8AO26111
+\\ \cline{3-17}
 
-  & & S8AO47311 & 膝跳反射实验 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47311_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47311_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47311_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47311_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47311_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47311_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47311_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47311_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47311_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47311_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47311_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47311_X", "上海市","非沪籍","总体")` \\ \cline{2-16}
+& & S8AO47311 & 膝跳反射实验 
+table.city.sc.S8AO47311
+\\ \cline{2-17}
 
-  & \multirow{3}{*}{简单运用} & S8AO46211 & 微生物的培养 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46211_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46211_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46211_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46211_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46211_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46211_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46211_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46211_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46211_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46211_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46211_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46211_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& \multirow{3}{*}{简单运用} & S8AO46211 & 微生物的培养 
+table.city.sc.S8AO46211
+\\ \cline{3-17}
 
-  & & S8AO47321 & 膝跳反射实验 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47321_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47321_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47321_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47321_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47321_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47321_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47321_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47321_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47321_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47321_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47321_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47321_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AO47321 & 膝跳反射实验
+table.city.sc.S8AO47321
+\\ \cline{3-17}
 
-  & & S8AO30111 & 染色体与性别决定 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO30111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO30111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO30111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO30111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO30111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO30111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO30111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO30111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO30111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO30111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO30111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO30111_X", "上海市","非沪籍","总体")` \\ \cline{1-16}
+& & S8AO30111 & 染色体与性别决定
+table.city.sc.S8AO30111
+\\ \cline{1-17}
 
-\multirow{5}{*}{科学能力} & \multirow{2}{*}{\makecell[c]{获取和\\描述证据}} & S8AO46121 & 微生物的开发与应用 &
-`r gio.R$VarScoSamKey(query.data, "S8AO46121_X", "上海市","总体","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO46121_X", "上海市","公办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO46121_X", "上海市","民办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO46121_X", "上海市","初中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO46121_X", "上海市","九年一贯","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO46121_X", "上海市","完中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO46121_X", "上海市","新优质","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO46121_X", "上海市","强校工程","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO46121_X", "上海市","男","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO46121_X", "上海市","女","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO46121_X", "上海市","沪籍","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO46121_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+\multirow{5}{*}{科学能力} & \multirow{2}{*}{\makecell[c]{获取和\\描述证据}} & S8AO46121 & 微生物的开发与应用 
+table.city.sc.S8AO46121
+\\ \cline{3-17}
 
- & & S8AS46111 & 微生物的开发与应用 &
- `r gio.R$VarScoSamKey(query.data, "S8AS46111_X", "上海市","总体","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AS46111_X", "上海市","公办","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AS46111_X", "上海市","民办","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AS46111_X", "上海市","初中","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AS46111_X", "上海市","九年一贯","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AS46111_X", "上海市","完中","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AS46111_X", "上海市","新优质","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AS46111_X", "上海市","强校工程","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AS46111_X", "上海市","男","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AS46111_X", "上海市","女","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AS46111_X", "上海市","沪籍","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AS46111_X", "上海市","非沪籍","总体")` \\ \cline{2-16}
+& & S8AS46111 & 微生物的开发与应用 
+table.city.sc.S8AS46111
+\\ \cline{2-17}
 
- & \multirow{1}{*}{使用证据} & S8AO31111 & 人体的代谢与平衡 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO31111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO31111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO31111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO31111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO31111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO31111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO31111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO31111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO31111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO31111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO31111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO31111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& \multirow{1}{*}{使用证据} & S8AO31111 & 人体的代谢与平衡 
+table.city.sc.S8AO31111
+\\ \cline{3-17}
 
- & & S8AO36111 & 生物的分类和主要类群 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO36111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO36111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO36111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO36111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO36111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO36111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO36111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO36111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO36111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO36111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO36111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO36111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AO36111 & 生物的分类和主要类群
+table.city.sc.S8AO36111
+\\ \cline{3-17}
 
- & & S8AO44111 & 环境与可持续发展 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO44111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO44111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO44111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO44111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO44111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO44111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO44111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO44111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO44111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO44111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO44111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO44111_X", "上海市","非沪籍","总体")` \\ \cline{1-16}
+& & S8AO44111 & 环境与可持续发展 
+table.city.sc.S8AO44111
+\\ \cline{1-17}
 
-\multirow{3}{*}{科学态度} & \multirow{3}{*}{赞同} & S8AO34111 & 湿地的作用 &
-`r gio.R$VarScoSamKey(query.data, "S8AO34111_X", "上海市","总体","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO34111_X", "上海市","公办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO34111_X", "上海市","民办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO34111_X", "上海市","初中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO34111_X", "上海市","九年一贯","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO34111_X", "上海市","完中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO34111_X", "上海市","新优质","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO34111_X", "上海市","强校工程","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO34111_X", "上海市","男","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO34111_X", "上海市","女","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO34111_X", "上海市","沪籍","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO34111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+\multirow{3}{*}{科学态度} & \multirow{3}{*}{赞同} & S8AO34111 & 湿地的作用 
+table.city.sc.S8AO34111
+\\ \cline{3-17}
 
- & & S8AO35111 & 绿色植物光合作用和蒸腾作用 &
- `r gio.R$VarScoSamKey(query.data, "S8AO35111_X", "上海市","总体","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO35111_X", "上海市","公办","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO35111_X", "上海市","民办","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO35111_X", "上海市","初中","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO35111_X", "上海市","九年一贯","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO35111_X", "上海市","完中","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO35111_X", "上海市","新优质","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO35111_X", "上海市","强校工程","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO35111_X", "上海市","男","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO35111_X", "上海市","女","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO35111_X", "上海市","沪籍","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO35111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AO35111 & 绿色植物光合作用和蒸腾作用 
+table.city.sc.S8AO35111
+\\ \cline{3-17}
 
- & & S8AO39111 & 健康与疾病 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO39111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO39111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO39111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO39111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO39111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO39111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO39111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO39111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO39111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO39111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO39111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO39111_X", "上海市","非沪籍","总体")` \\ \cline{1-16}
+& & S8AO39111 & 健康与疾病 
+table.city.sc.S8AO39111
+\\ \cline{1-17}
+
 
 \end{longtable}
 \end{itshape}
@@ -774,7 +473,7 @@ query2.plot.bar.city.sc.question.s8ao50221
 
 \end{landscape}
 
-\questiontitle{典型题目1：S8AO26111}
+\questiontitle{典型题目}6：S8AO26111
 
 \begin{itshape}
 
@@ -786,13 +485,13 @@ query2.plot.bar.city.sc.question.s8ao50221
 
 26．用显微镜观察植物细胞时，若想把模糊的物像调节得更清晰，则应调节的结构是（\qquad）
 
-A．1
+A．\textcircled{\scriptsize{1}}
 
-B．2
+B．\textcircled{\scriptsize{2}}
 
-C．3
+C．\textcircled{\scriptsize{3}}
 
-D．4
+D．\textcircled{\scriptsize{4}}
 \end{itshape}
 
 \questiontitle{命题框架视角}
@@ -807,20 +506,20 @@ D．4
 
 - 正确答案：D
 
-- 平均得分率：`r gio.R$VarScoSamKey(query.data, "S8AO26111_X", "上海市","总体","总体")`％
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "S8AO26111_X", "市","总体","总体")`％
 
 plot.bar.city.sc.question.s8ao26111
 query2.plot.bar.city.sc.question.s8ao26111
 
 \begin{itshape}
-在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarScoSamKey(query.data, "S8AO26111_X", "上海市","总体","A")`％、`r gio.R$VarScoSamKey(query.data, "S8AO26111_X", "上海市","总体","B")`％、`r gio.R$VarScoSamKey(query.data, "S8AO26111_X", "上海市","总体","C")`％、`r gio.R$VarScoSamKey(query.data, "S8AO26111_X", "上海市","总体","D")`％。
+在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarTierSamKey(query.data, "S8AO26111_X", "市","总体","A")`％、`r gio.R$VarTierSamKey(query.data, "S8AO26111_X", "市","总体","B")`％、`r gio.R$VarTierSamKey(query.data, "S8AO26111_X", "市","总体","C")`％、`r gio.R$VarTierSamKey(query.data, "S8AO26111_X", "市","总体","D")`％。
 \end{itshape}
 
-- 学生作答分析：得分率仅为`r gio.R$VarScoSamKey(query.data, "S8AO26111_X", "上海市","总体","总体")`％。与预估的差距较大，说明理应熟练掌握的基本的实验技能上还存在不足。
+- 学生作答分析：得分率仅为`r gio.R$VarTierSamKey(query.data, "S8AO26111_X", "市","总体","总体")`％。与预估的差距较大，说明理应熟练掌握的基本的实验技能上还存在不足。
 
 - 教学建议：保证学生实验的正常开设，同时也要关注各结构名称和对应功能的认识，不仅仅停留在观察到细胞结构，而要清楚地认识几个常用结构的具体作用。
 
-\questiontitle{典型题目2：S8AO27111}
+\questiontitle{典型题目}7：S8AO27111
 
 \begin{itshape}
  27．通过光合作用，来自太阳的能量会储存在下列何种物质中\uline{\qquad\qquad}（ \qquad ）
@@ -838,20 +537,20 @@ A．水		\qquad\qquad	B．氧气 \qquad\qquad  C．淀粉	\qquad\qquad	D．二�
 
 - 正确答案：C
 
-- 平均得分率：`r gio.R$VarScoSamKey(query.data, "S8AO27111_X", "上海市","总体","总体")`％
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "S8AO27111_X", "市","总体","总体")`％
 
 plot.bar.city.sc.question.s8ao27111
 query2.plot.bar.city.sc.question.s8ao27111
 
 \begin{itshape}
-在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarScoSamKey(query.data, "S8AO27111_X", "上海市","总体","A")`％、`r gio.R$VarScoSamKey(query.data, "S8AO27111_X", "上海市","总体","B")`％、`r gio.R$VarScoSamKey(query.data, "S8AO27111_X", "上海市","总体","C")`％、 `r gio.R$VarScoSamKey(query.data, "S8AO27111_X", "上海市","总体","D")`％。
+在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarTierSamKey(query.data, "S8AO27111_X", "市","总体","A")`％、`r gio.R$VarTierSamKey(query.data, "S8AO27111_X", "市","总体","B")`％、`r gio.R$VarTierSamKey(query.data, "S8AO27111_X", "市","总体","C")`％、 `r gio.R$VarTierSamKey(query.data, "S8AO27111_X", "市","总体","D")`％。
 \end{itshape}
 
-- 学生作答分析：本题得分率仅为`r gio.R$VarScoSamKey(query.data, "S8AO27111_X", "上海市","总体","总体")`％。《科学》和《生命科学》学科的学习中虽然通过多个探究活动系统地认识了光合作用相关内容，但是还没有理解自然界的最基本的化学反应光合作用的实质，即物质变化和能量转换情况。
+- 学生作答分析：本题得分率仅为`r gio.R$VarTierSamKey(query.data, "S8AO27111_X", "市","总体","总体")`％。《科学》和《生命科学》学科的学习中虽然通过多个探究活动系统地认识了光合作用相关内容，但是还没有理解自然界的最基本的化学反应光合作用的实质，即物质变化和能量转换情况。
 
 - 教学建议：教学中不仅要关注科学探究，也要加强以物质和能量等基本的概念认识光合作用实质，这有助于发展学生的科学观念。
 
-\questiontitle{典型题目3：S8AO28111}
+\questiontitle{典型题目}8：S8AO28111
 
 \begin{itshape}
 28．将洋葱细胞中的基因、染色体与细胞核作比较，这三者的大小关系是\uline{\qquad\qquad}（ \qquad ）
@@ -873,21 +572,21 @@ C．细胞核 > 基因 > 染色体	\qquad\qquad			D．染色体 > 细胞核 > �
 
 - 正确答案：B
 
-- 平均得分率：`r gio.R$VarScoSamKey(query.data, "S8AO28111_X", "上海市","总体","总体")`％
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "S8AO28111_X", "市","总体","总体")`％
 
 plot.bar.city.sc.question.s8ao28111
 query2.plot.bar.city.sc.question.s8ao28111
 
 \begin{itshape}
-在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarScoSamKey(query.data, "S8AO28111_X", "上海市","总体","A")`％、`r gio.R$VarScoSamKey(query.data, "S8AO28111_X", "上海市","总体","B")`％、`r gio.R$VarScoSamKey(query.data, "S8AO28111_X", "上海市","总体","C")`％、 `r gio.R$VarScoSamKey(query.data, "S8AO28111_X", "上海市","总体","D")`％。
+在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarTierSamKey(query.data, "S8AO28111_X", "市","总体","A")`％、`r gio.R$VarTierSamKey(query.data, "S8AO28111_X", "市","总体","B")`％、`r gio.R$VarTierSamKey(query.data, "S8AO28111_X", "市","总体","C")`％、 `r gio.R$VarTierSamKey(query.data, "S8AO28111_X", "市","总体","D")`％。
 \end{itshape}
 
-- 学生作答分析：正确率为`r gio.R$VarScoSamKey(query.data, "S8AO28111_X", "上海市","总体","总体")`％。本知识点是对一个相对抽象的知识的宏观认识，如在初学阶段基于图像理解掌握，那么难度不算大，但是得分率较低，说明学生在初学阶段对这个知识的理解还没有到位，加之考前没有进行复习可能对部分概念已经遗忘。
+- 学生作答分析：正确率为`r gio.R$VarTierSamKey(query.data, "S8AO28111_X", "市","总体","总体")`％。本知识点是对一个相对抽象的知识的宏观认识，如在初学阶段基于图像理解掌握，那么难度不算大，但是得分率较低，说明学生在初学阶段对这个知识的理解还没有到位，加之考前没有进行复习可能对部分概念已经遗忘。
 
 - 教学建议：教学中用好书本中的插图，将相关插图和概念解释有效结合，是学生理解抽象概念的有效手段。
 
 
-\questiontitle{典型题目4：S8AO30111}
+\questiontitle{典型题目}9：S8AO30111}
 
 \begin{itshape}
 
@@ -921,24 +620,24 @@ D．子代的男女性别比例为1∶1
 
 - 正确答案：D
 
-- 平均得分率：`r gio.R$VarScoSamKey(query.data, "S8AO30111_X", "上海市","总体","总体")`％
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "S8AO30111_X", "市","总体","总体")`％
 
 plot.bar.city.sc.question.s8ao30111
 query2.plot.bar.city.sc.question.s8ao30111
 
 \begin{itshape}
-在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题第一空上的平均得分率分别为`r gio.R$VarScoSamKey(query.data, "S8AO30111_X", "上海市","总体","A")`％、`r gio.R$VarScoSamKey(query.data, "S8AO30111_X", "上海市","总体","B")`％、`r gio.R$VarScoSamKey(query.data, "S8AO30111_X", "上海市","总体","C")`％、 `r gio.R$VarScoSamKey(query.data, "S8AO30111_X", "上海市","总体","D")`％。在此题第二空上的平均得分率分别为
+在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题第一空上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "S8AO30111_X", "市","总体","A")`％、`r gio.R$VarTierSamKey(query.data, "S8AO30111_X", "市","总体","B")`％、`r gio.R$VarTierSamKey(query.data, "S8AO30111_X", "市","总体","C")`％、 `r gio.R$VarTierSamKey(query.data, "S8AO30111_X", "市","总体","D")`％。在此题第二空上的平均得分率分别为
 \end{itshape}
 
 - 学生作答分析：
 
-学生得分率为`r gio.R$VarScoSamKey(query.data, "S8AO30111_X", "上海市","总体","总体")`％低于预估。本题要求学生从图谱中获取有效信息，再结合所学内容进行科学分析。因此，对学生的能力要求较高，要合理应用所学知识和需要具备一定的分析能力。
+学生得分率为`r gio.R$VarTierSamKey(query.data, "S8AO30111_X", "市","总体","总体")`％低于预估。本题要求学生从图谱中获取有效信息，再结合所学内容进行科学分析。因此，对学生的能力要求较高，要合理应用所学知识和需要具备一定的分析能力。
 
 - 教学建议：
 
 虽然是考查能力的题目，但是需要基于基本概念才能回答，所以不能因为关注了能力就忽视对基本概念的认识。
 
-\questiontitle{典型题目5：S8AO35111}
+\questiontitle{典型题目}10：S8AO35111
 
 \begin{itshape}
 35．“生态绿墙”上栽种的众多绿色植物，不仅美化了环境，还能吸收二氧化碳、释放氧气，提高周边环境的湿度，并降低温度。与此相关的植物生理活动有\uline{\qquad\qquad}（\qquad）
@@ -960,16 +659,16 @@ C．光合作用和蒸腾作用	 \qquad\qquad  D．气体交换和吸收作用
 
 - 正确答案：C
 
-- 平均得分率：`r gio.R$VarScoSamKey(query.data, "S8AO35111_X", "上海市","总体","总体")`％
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "S8AO35111_X", "市","总体","总体")`％
 
 plot.bar.city.sc.question.s8ao35111
 query2.plot.bar.city.sc.question.s8ao35111
 
 \begin{itshape}
-在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarScoSamKey(query.data, "S8AO35111_X", "上海市","总体","A")`％、`r gio.R$VarScoSamKey(query.data, "S8AO35111_X", "上海市","总体","B")`％、`r gio.R$VarScoSamKey(query.data, "S8AO35111_X", "上海市","总体","C")`％、 `r gio.R$VarScoSamKey(query.data, "S8AO35111_X", "上海市","总体","D")`％。
+在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarTierSamKey(query.data, "S8AO35111_X", "市","总体","A")`％、`r gio.R$VarTierSamKey(query.data, "S8AO35111_X", "市","总体","B")`％、`r gio.R$VarTierSamKey(query.data, "S8AO35111_X", "市","总体","C")`％、 `r gio.R$VarTierSamKey(query.data, "S8AO35111_X", "市","总体","D")`％。
 \end{itshape}
 
-- 学生作答分析：得分率`r gio.R$VarScoSamKey(query.data, "S8AO35111_X", "上海市","总体","总体")`％。说明学生对植物的基本生理作用光合作用和蒸腾作用的认识还存在一定的不足，如果对这两个生理作用有基本的认识，解答本题没有任何困难。
+- 学生作答分析：得分率`r gio.R$VarTierSamKey(query.data, "S8AO35111_X", "市","总体","总体")`％。说明学生对植物的基本生理作用光合作用和蒸腾作用的认识还存在一定的不足，如果对这两个生理作用有基本的认识，解答本题没有任何困难。
 
 - 教学建议：说明基本概念的教学很重要，只有把基本概念落实到位才能在解答考查能力的题目时游刃有余。
 
@@ -986,346 +685,106 @@ query2.plot.bar.city.sc.question.s8ao35111
 
 \begin{itshape}
 \mytable
-\begin{longtable}{|c|c|c|p{5cm}|c|c|c|c|c|c|c|c|c|c|c|c|}
+\begin{longtable}{|c|c|c|p{4.2cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\ \hline
 
-\multicolumn{2}{|c|}{考查维度} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
+\multicolumn{2}{|c|}{考查维度} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{本\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{其\\他} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
 
-\multirow{18}{*}{科学知识} & \multirow{5}{*}{基本知识} & S8AO01111 & 知道正确的计量单位 &
-`r gio.R$VarScoSamKey(query.data, "S8AO01111_X", "上海市","总体","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO01111_X", "上海市","公办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO01111_X", "上海市","民办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO01111_X", "上海市","初中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO01111_X", "上海市","九年一贯","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO01111_X", "上海市","完中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO01111_X", "上海市","新优质","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO01111_X", "上海市","强校工程","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO01111_X", "上海市","男","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO01111_X", "上海市","女","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO01111_X", "上海市","沪籍","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO01111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+\multirow{18}{*}{科学知识} & \multirow{5}{*}{基本知识} & S8AO01111 & 知道正确的计量单位 
+table.city.sc.S8AO01111
+\\ \cline{3-17}
 
- & & S8AO07111 & 利用pH判断溶液酸碱性 &
- `r gio.R$VarScoSamKey(query.data, "S8AO07111_X", "上海市","总体","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO07111_X", "上海市","公办","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO07111_X", "上海市","民办","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO07111_X", "上海市","初中","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO07111_X", "上海市","九年一贯","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO07111_X", "上海市","完中","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO07111_X", "上海市","新优质","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO07111_X", "上海市","强校工程","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO07111_X", "上海市","男","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO07111_X", "上海市","女","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO07111_X", "上海市","沪籍","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO07111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AO07111 & 利用pH判断溶液酸碱性 
+table.city.sc.S8AO07111
+\\ \cline{3-17}
 
- & & S8AO12111 & 声音的传播需要介质 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO12111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO12111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO12111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO12111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO12111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO12111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO12111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO12111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO12111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO12111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO12111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO12111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AO12111 & 声音的传播需要介质 
+table.city.sc.S8AO12111
+\\ \cline{3-17}
 
- & & S8AO33111 & 能源的种类 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO33111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO33111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO33111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO33111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO33111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO33111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO33111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO33111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO33111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO33111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO33111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO33111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AO33111 & 能源的种类 
+table.city.sc.S8AO33111
+\\ \cline{3-17}
 
- & & S8AO41111 & 机械能的变化 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO41111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO41111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO41111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO41111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO41111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO41111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO41111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO41111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO41111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO41111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO41111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO41111_X", "上海市","非沪籍","总体")` \\ \cline{2-16}
+& & S8AO41111 & 机械能的变化 
+table.city.sc.S8AO41111
+\\ \cline{2-17}
 
-  & \multirow{3}{*}{基本方法} & S8AO06111 & 科学实验的基本操作 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO06111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO06111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO06111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO06111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO06111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO06111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO06111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO06111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO06111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO06111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO06111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO06111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& \multirow{3}{*}{基本方法} & S8AO06111 & 科学实验的基本操作 
+table.city.sc.S8AO06111
+\\ \cline{3-17}
 
-  & & S8AO14111 & 光的折射 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO14111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO14111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO14111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO14111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO14111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO14111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO14111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO14111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO14111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO14111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO14111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO14111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AO14111 & 光的折射 
+table.city.sc.S8AO14111
+\\ \cline{3-17}
 
-  & & S8AO15111 & 弹簧测力计的读数 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO15111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO15111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO15111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO15111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO15111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO15111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO15111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO15111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO15111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO15111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO15111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO15111_X", "上海市","非沪籍","总体")` \\ \cline{2-16}
+& & S8AO15111 & 弹簧测力计的读数
+table.city.sc.S8AO15111
+\\ \cline{2-17}
 
-  & \multirow{11}{*}{简单运用} & S8AO02111 & 金属特性的应用 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO02111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO02111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO02111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO02111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO02111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO02111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO02111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO02111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO02111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO02111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO02111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO02111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& \multirow{11}{*}{简单运用} & S8AO02111 & 金属特性的应用 
+table.city.sc.S8AO02111
+\\ \cline{3-17}
 
-  & & S8AO03111 & 三态变化过程及名称 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO03111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO03111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO03111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO03111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO03111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO03111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO03111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO03111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO03111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO03111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO03111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO03111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AO03111 & 三态变化过程及名称 
+table.city.sc.S8AO03111
+\\ \cline{3-17}
 
-  & & S8AO04111 & 增大摩擦力的方法 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO04111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO04111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO04111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO04111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO04111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO04111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO04111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO04111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO04111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO04111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO04111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO04111_X", "上海市","非沪籍","总体")` \\ \cline{2-16}
+& & S8AO04111 & 增大摩擦力的方法 
+table.city.sc.S8AO04111
+\\ \cline{3-17}
 
-  & & S8AO05111 & 电流热效应的应用 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO05111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO05111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO05111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO05111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO05111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO05111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO05111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO05111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO05111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO05111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO05111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO05111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AO05111 & 电流热效应的应用 
+table.city.sc.S8AO05111
+\\ \cline{3-17}
 
-  & & S8AO08111 & 用粒子模型解释宏观现象 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO08111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO08111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO08111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO08111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO08111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO08111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO08111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO08111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO08111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO08111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO08111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO08111_X", "上海市","非沪籍","总体")` \\ \cline{2-16}
+& & S8AO08111 & 用粒子模型解释宏观现象 
+table.city.sc.S8AO08111
+\\ \cline{3-17}
 
-  & & S8AO09111 & 物体的密度与沉浮 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO09111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO09111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO09111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO09111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO09111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO09111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO09111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO09111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO09111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO09111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO09111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO09111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AO09111 & 物体的密度与沉浮 
+table.city.sc.S8AO09111
+\\ \cline{3-17}
 
-  & & S8AO10111 & 力的作用效果 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO10111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO10111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO10111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO10111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO10111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO10111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO10111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO10111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO10111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO10111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO10111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO10111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AO10111 & 力的作用效果 
+table.city.sc.S8AO10111
+\\ \cline{3-17}
 
-  & & S8AO11111 & 匀速直线运动物体的受力分析 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO11111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO11111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO11111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO11111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO11111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO11111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO11111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO11111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO11111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO11111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO11111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO11111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AO11111 & 匀速直线运动物体的受力分析 
+table.city.sc.S8AO11111
+\\ \cline{3-17}
 
-& & S8AO13111 & 水的三态变化过程及名称 &
-`r gio.R$VarScoSamKey(query.data, "S8AO13111_X", "上海市","总体","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO13111_X", "上海市","公办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO13111_X", "上海市","民办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO13111_X", "上海市","初中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO13111_X", "上海市","九年一贯","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO13111_X", "上海市","完中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO13111_X", "上海市","新优质","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO13111_X", "上海市","强校工程","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO13111_X", "上海市","男","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO13111_X", "上海市","女","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO13111_X", "上海市","沪籍","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AO13111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AO13111 & 水的三态变化过程及名称 
+table.city.sc.S8AO13111
+\\ \cline{3-17}
 
- & & S8AO17111 & 功的计算 &
- `r gio.R$VarScoSamKey(query.data, "S8AO17111_X", "上海市","总体","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO17111_X", "上海市","公办","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO17111_X", "上海市","民办","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO17111_X", "上海市","初中","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO17111_X", "上海市","九年一贯","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO17111_X", "上海市","完中","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO17111_X", "上海市","新优质","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO17111_X", "上海市","强校工程","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO17111_X", "上海市","男","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO17111_X", "上海市","女","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO17111_X", "上海市","沪籍","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO17111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AO17111 & 功的计算
+table.city.sc.S8AO17111
+\\ \cline{3-17}
 
- & & S8AO18111 & 冰水混合物的温度 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO18111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO18111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO18111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO18111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO18111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO18111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO18111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO18111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO18111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO18111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO18111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO18111_X", "上海市","非沪籍","总体")` \\ \cline{1-16}
+& & S8AO18111 & 冰水混合物的温度 
+table.city.sc.S8AO18111
+\\ \cline{1-17}
 
- \multirow{4}{*}{科学能力} & 做计划 & S8AO16111 & 基于实验目的设计实验装置 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO16111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO16111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO16111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO16111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO16111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO16111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO16111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO16111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO16111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO16111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO16111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO16111_X", "上海市","非沪籍","总体")` \\ \cline{2-16}
+\multirow{4}{*}{科学能力} & 做计划 & S8AO16111 & 基于实验目的设计实验装置
+table.city.sc.S8AO16111
+\\ \cline{2-17}
 
- & \multirow{3}{*}{使用证据} & S8AO49141 & 根据现象分析力臂 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO49141_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO49141_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO49141_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO49141_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO49141_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO49141_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO49141_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO49141_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO49141_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO49141_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO49141_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO49141_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& \multirow{3}{*}{使用证据} & S8AO49141 & 根据现象分析力臂
+table.city.sc.S8AO49141
+\\ \cline{3-17}
 
-& & S8AS49121 & 根据实验数据得出杠杆平衡条件 &
-`r gio.R$VarScoSamKey(query.data, "S8AS49121_X", "上海市","总体","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AS49121_X", "上海市","公办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AS49121_X", "上海市","民办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AS49121_X", "上海市","初中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AS49121_X", "上海市","九年一贯","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AS49121_X", "上海市","完中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AS49121_X", "上海市","新优质","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AS49121_X", "上海市","强校工程","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AS49121_X", "上海市","男","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AS49121_X", "上海市","女","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AS49121_X", "上海市","沪籍","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AS49121_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AS49121 & 根据实验数据得出杠杆平衡条件 
+table.city.sc.S8AS49121
+\\ \cline{3-17}
 
- & & S8AS49211 & 杠杆平衡的应用 &
- `r gio.R$VarScoSamKey(query.data, "S8AS49211_X", "上海市","总体","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AS49211_X", "上海市","公办","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AS49211_X", "上海市","民办","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AS49211_X", "上海市","初中","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AS49211_X", "上海市","九年一贯","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AS49211_X", "上海市","完中","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AS49211_X", "上海市","新优质","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AS49211_X", "上海市","强校工程","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AS49211_X", "上海市","男","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AS49211_X", "上海市","女","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AS49211_X", "上海市","沪籍","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AS49211_X", "上海市","非沪籍","总体")` \\ \cline{1-16}
+& & S8AS49211 & 杠杆平衡的应用 
+table.city.sc.S8AS49211
+\\ \cline{1-17}
 
- 科学态度 & 赞同 & S8AO19111 & 灭火的原理及其应用 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO19111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO19111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO19111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO19111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO19111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO19111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO19111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO19111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO19111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO19111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO19111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO19111_X", "上海市","非沪籍","总体")` \\ \cline{1-16}
+科学态度 & 赞同 & S8AO19111 & 灭火的原理及其应用 
+table.city.sc.S8AO19111
+\\ \cline{1-17}
 
 \end{longtable}
 \end{itshape}
@@ -1335,7 +794,7 @@ query2.plot.bar.city.sc.question.s8ao35111
 
 \end{landscape}
 
-\questiontitle{典型题目1：S8AO03111}
+\questiontitle{典型题目}10：S8AO03111
 
 \begin{itshape}
 3．下列属于液化现象的是\uline{\qquad\qquad\qquad\qquad\qquad}（ \qquad ）
@@ -1357,13 +816,13 @@ C．冰块慢慢熔化成水	\qquad\qquad	D．樟脑丸放一段时间会慢慢�
 
 - 正确答案：B
 
-- 平均得分率：`r gio.R$VarScoSamKey(query.data, "S8AO03111_X", "上海市","总体","总体")`％
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "S8AO03111_X", "市","总体","总体")`％
 
 plot.bar.city.sc.question.s8ao03111
 query2.plot.bar.city.sc.question.s8ao03111
 
 \begin{itshape}
-在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarScoSamKey(query.data, "S8AO03111_X", "上海市","总体","A")`％、`r gio.R$VarScoSamKey(query.data, "S8AO03111_X", "上海市","总体","B")`％、`r gio.R$VarScoSamKey(query.data, "S8AO03111_X", "上海市","总体","C")`％、 `r gio.R$VarScoSamKey(query.data, "S8AO03111_X", "上海市","总体","D")`％。
+在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarTierSamKey(query.data, "S8AO03111_X", "市","总体","A")`％、`r gio.R$VarTierSamKey(query.data, "S8AO03111_X", "市","总体","B")`％、`r gio.R$VarTierSamKey(query.data, "S8AO03111_X", "市","总体","C")`％、 `r gio.R$VarTierSamKey(query.data, "S8AO03111_X", "市","总体","D")`％。
 \end{itshape}
 
 - 学生作答分析：学生正确率低于预计，主要错误集中在错误选项C。学生对“液化”和“熔化”分辨不清，对概念本身的理解不清楚，从现象角度认为“变成液态”就是“液化”，大部分错误是将“熔化”误当成了“液化”。
@@ -1371,7 +830,7 @@ query2.plot.bar.city.sc.question.s8ao03111
 - 教学建议：概念教学过程中，关注概念内涵，现象是帮助理解概念的重要组成部分，但概念本身涉及的科学内容是教学的重点。可以通过水在自然界三态变化的不同过程，分析比较其区别与联系，从而得到准确的概念，再用概念去解释自然现象，到达巩固概念的目的。
 
 
-\questiontitle{典型题目2：S8AO41111}
+\questiontitle{典型题目}11：S8AO41111
 
 \begin{itshape}
  4．下列做法中，属于增大摩擦的是\uline{\qquad\qquad\qquad}（ \qquad ）
@@ -1391,21 +850,21 @@ C．鞋底有凹凸不平的花纹	  \qquad\qquad				D．车身改用轻质材�
 
 - 正确答案：C
 
-- 平均得分率：`r gio.R$VarScoSamKey(query.data, "S8AO04111_X", "上海市","总体","总体")`％
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "S8AO04111_X", "市","总体","总体")`％
 
 plot.bar.city.sc.question.s8ao04111
 query2.plot.bar.city.sc.question.s8ao04111
 
 \begin{itshape}
-在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarScoSamKey(query.data, "S8AO04111_X", "上海市","总体","A")`％、`r gio.R$VarScoSamKey(query.data, "S8AO04111_X", "上海市","总体","B")`％、`r gio.R$VarScoSamKey(query.data, "S8AO04111_X", "上海市","总体","C")`％、 `r gio.R$VarScoSamKey(query.data, "S8AO04111_X", "上海市","总体","D")`％。
+在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarTierSamKey(query.data, "S8AO04111_X", "市","总体","A")`％、`r gio.R$VarTierSamKey(query.data, "S8AO04111_X", "市","总体","B")`％、`r gio.R$VarTierSamKey(query.data, "S8AO04111_X", "市","总体","C")`％、 `r gio.R$VarTierSamKey(query.data, "S8AO04111_X", "市","总体","D")`％。
 \end{itshape}
 
-- 学生作答分析：学生正确率为`r gio.R$VarScoSamKey(query.data, "S8AO04111_X", "上海市","总体","总体")`％，比预期情况略低。错误选项主要集中在A选项上。从学生答题情况看，学生或许知道人在上楼过程中机械能会发生变化，所以对于说法“动能不变，势能不变”能加以排除，但是具体分析人上楼梯时到底是动能变大还是势能变大却出现了困难，说明对于“动能”和“势能”的概念还区分得不是很清楚。
+- 学生作答分析：学生正确率为`r gio.R$VarTierSamKey(query.data, "S8AO04111_X", "市","总体","总体")`％，比预期情况略低。错误选项主要集中在A选项上。从学生答题情况看，学生或许知道人在上楼过程中机械能会发生变化，所以对于说法“动能不变，势能不变”能加以排除，但是具体分析人上楼梯时到底是动能变大还是势能变大却出现了困难，说明对于“动能”和“势能”的概念还区分得不是很清楚。
 
 - 教学建议：在教学实践中，应多结合生活实例，让学生从根本上理解“动能”与“势能”等既有联系又有区别的概念，避免发生概念上的混淆。
 
 
-\questiontitle{典型题目3：S8AS49211}
+\questiontitle{典型题目}12：S8AS49211
 
 \begin{center}
  49．杠杆
@@ -1417,7 +876,7 @@ query2.plot.bar.city.sc.question.s8ao04111
 \end{itshape}
 
 
-\questiontitle{问题2:}
+\questiontitle{问题}2:
 
 \begin{itshape}
 小红和她爸爸能一起玩跷跷板并保持跷跷板的平衡吗？请给出你的判断，并具体说明理由。
@@ -1438,16 +897,16 @@ query2.plot.bar.city.sc.question.s8ao04111
 
 - 正确答案：只要小红离支点远一些，小红爸爸离支点近一些，满足杠杆平衡的条件即可
 
-- 平均得分率：`r gio.R$VarScoSamKey(query.data, "S8AS49211_X", "上海市","总体","总体")`％
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "S8AS49211_X", "市","总体","总体")`％
 
 plot.bar.city.sc.question.s8as49211
 query2.plot.bar.city.sc.question.s8as49211
 
 \begin{itshape}
-在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarScoSamKey(query.data, "S8AS49211_X", "上海市","总体","A")`％、`r gio.R$VarScoSamKey(query.data, "S8AS49211_X", "上海市","总体","B")`％、`r gio.R$VarScoSamKey(query.data, "S8AS49211_X", "上海市","总体","C")`％、 `r gio.R$VarScoSamKey(query.data, "S8AS49211_X", "上海市","总体","D")`％。
+在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarTierSamKey(query.data, "S8AS49211_X", "市","总体","A")`％、`r gio.R$VarTierSamKey(query.data, "S8AS49211_X", "市","总体","B")`％、`r gio.R$VarTierSamKey(query.data, "S8AS49211_X", "市","总体","C")`％、 `r gio.R$VarTierSamKey(query.data, "S8AS49211_X", "市","总体","D")`％。
 \end{itshape}
 
-- 学生作答分析：学生正确率为`r gio.R$VarScoSamKey(query.data, "S8AS49211_X", "上海市","总体","总体")`％，略高于预期的情况。这是一道需要学生作出判断并说明理由的文字表达题，只有判断正确且理由充分才能得满分2分。从学生的答题情况看，有接近21%的学生没有答出或放弃（卷面空白）。有6%的学生判断正确但是没有给出合理的解释。总体来说，本题的答题情况比较好，大部分学生对杠杆的知识及其应用掌握得比较好，判断正确，理由充分。但是也有一部分学生文字表达能力偏弱，不能结合具体实例进行充分地说理论证。
+- 学生作答分析：学生正确率为`r gio.R$VarTierSamKey(query.data, "S8AS49211_X", "市","总体","总体")`％，略高于预期的情况。这是一道需要学生作出判断并说明理由的文字表达题，只有判断正确且理由充分才能得满分2分。从学生的答题情况看，有接近21%的学生没有答出或放弃（卷面空白）。有6%的学生判断正确但是没有给出合理的解释。总体来说，本题的答题情况比较好，大部分学生对杠杆的知识及其应用掌握得比较好，判断正确，理由充分。但是也有一部分学生文字表达能力偏弱，不能结合具体实例进行充分地说理论证。
 
 - 教学建议：在教学实践中，应注重理论联系实际，并让学生多一些表达的机会。将所学知识、规律应用到生活实际中。
 
@@ -1468,164 +927,55 @@ query2.plot.bar.city.sc.question.s8as49211
 
 \begin{itshape}
 \mytable
-\begin{longtable}{|c|c|c|p{5cm}|c|c|c|c|c|c|c|c|c|c|c|c|}
+\begin{longtable}{|c|c|c|p{4.3cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\ \hline
 
-\multicolumn{2}{|c|}{考查维度} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
+\multicolumn{2}{|c|}{考查维度} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{本\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{其\\他} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
 
-科学知识 & 基本方法 & S8AS47421 & 科学探究的基本要素——测量 &
-`r gio.R$VarScoSamKey(query.data, "S8AS47421_X", "上海市","总体","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AS47421_X", "上海市","公办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AS47421_X", "上海市","民办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AS47421_X", "上海市","初中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AS47421_X", "上海市","九年一贯","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AS47421_X", "上海市","完中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AS47421_X", "上海市","新优质","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AS47421_X", "上海市","强校工程","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AS47421_X", "上海市","男","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AS47421_X", "上海市","女","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AS47421_X", "上海市","沪籍","总体")` &
-`r gio.R$VarScoSamKey(query.data, "S8AS47421_X", "上海市","非沪籍","总体")` \\ \cline{1-16}
 
-\multirow{8}{*}{科学能力} & \multirow{2}{*}{做计划} & S8AO42111 & 合理安全使用天然气 &
- `r gio.R$VarScoSamKey(query.data, "S8AO42111_X", "上海市","总体","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO42111_X", "上海市","公办","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO42111_X", "上海市","民办","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO42111_X", "上海市","初中","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO42111_X", "上海市","九年一贯","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO42111_X", "上海市","完中","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO42111_X", "上海市","新优质","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO42111_X", "上海市","强校工程","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO42111_X", "上海市","男","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO42111_X", "上海市","女","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO42111_X", "上海市","沪籍","总体")` &
- `r gio.R$VarScoSamKey(query.data, "S8AO42111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+科学知识 & 基本方法 & S8AS47421 & 科学探究的基本要素——测量 
+table.city.sc.S8AS47421
+\\ \cline{1-17}
 
- & & S8AS49131 & 多次实验获取数据得出结论 &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49131_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49131_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49131_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49131_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49131_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49131_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49131_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49131_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49131_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49131_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49131_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49131_X", "上海市","非沪籍","总体")` \\ \cline{2-16}
+\multirow{8}{*}{科学能力} & \multirow{2}{*}{做计划} & S8AO42111 & 合理安全使用天然气 
+table.city.sc.S8AO42111
+\\ \cline{3-17}
 
- & \multirow{3}{*}{\makecell[c]{获取和\\描述证据}} & S8AS46311 & 获取和描述证据 &
-  `r gio.R$VarScoSamKey(query.data, "S8AS46311_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS46311_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS46311_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS46311_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS46311_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS46311_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS46311_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS46311_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS46311_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS46311_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS46311_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS46311_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AS49131 & 多次实验获取数据得出结论 
+table.city.sc.S8AS49131
+\\ \cline{2-17}
 
- & & S8AS49111 & 根据实验数据进行简单计算 &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& \multirow{3}{*}{\makecell[c]{获取和\\描述证据}} & S8AS46311 & 获取和描述证据 
+table.city.sc.S8AS46311
+\\ \cline{3-17}
 
-  & & S8AS49112 & 根据实验数据进行简单计算 &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49112_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49112_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49112_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49112_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49112_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49112_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49112_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49112_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49112_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49112_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49112_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS49112_X", "上海市","非沪籍","总体")` \\ \cline{2-16}
+& & S8AS49111 & 根据实验数据进行简单计算 
+table.city.sc.S8AS49111
+\\ \cline{3-17}
 
-  & \multirow{3}{*}{使用证据} & S8AO45111 & 根据实验数据获得实验结论 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO45111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO45111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO45111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO45111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO45111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO45111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO45111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO45111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO45111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO45111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO45111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO45111_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AS49112 & 根据实验数据进行简单计算 
+table.city.sc.S8AS49112
+\\ \cline{2-17}
 
-  & & S8AO47411 & 神经系统的协调作用 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47411_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47411_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47411_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47411_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47411_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47411_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47411_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47411_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47411_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47411_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47411_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO47411_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& \multirow{3}{*}{使用证据} & S8AO45111 & 根据实验数据获得实验结论 
+table.city.sc.S8AO45111
+\\ \cline{3-17}
 
-  & & S8AS46321 & 做计划、使用证据 &
-  `r gio.R$VarScoSamKey(query.data, "S8AS46321_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS46321_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS46321_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS46321_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS46321_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS46321_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS46321_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS46321_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS46321_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS46321_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS46321_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AS46321_X", "上海市","非沪籍","总体")` \\ \cline{1-16}
+& & S8AO47411 & 神经系统的协调作用 
+table.city.sc.S8AO47411
+\\ \cline{3-17}
 
-  \multirow{2}{*}{科学态度} & \multirow{2}{*}{关注} & S8AO46411 & 使用证据 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46411_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46411_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46411_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46411_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46411_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46411_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46411_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46411_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46411_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46411_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46411_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46411_X", "上海市","非沪籍","总体")` \\ \cline{3-16}
+& & S8AS46321 & 做计划、使用证据 
+table.city.sc.S8AS46321
+\\ \cline{1-17}
 
-  & & S8AO46421 & 使用证据 &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46421_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46421_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46421_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46421_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46421_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46421_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46421_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46421_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46421_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46421_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46421_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "S8AO46421_X", "上海市","非沪籍","总体")` \\ \cline{1-16}
+\multirow{2}{*}{科学态度} & \multirow{2}{*}{关注} & S8AO46411 & 使用证据 
+table.city.sc.S8AO46411
+\\ \cline{3-17}
+
+& & S8AO46421 & 使用证据 
+table.city.sc.S8AO46421
+\\ \cline{1-17}
 
 \end{longtable}
 \end{itshape}
@@ -1635,7 +985,7 @@ query2.plot.bar.city.sc.question.s8as49211
 
 \end{landscape}
 
-\questiontitle{典型题目1：S8AO45111}
+\questiontitle{典型题目}13：S8AO45111
 
 \begin{itshape}
 45．PM2.5是指大气中直径不大于2.5微米的颗粒物，其对人体的危害极大。为了探究空气中PM2.5的浓度与车流量是否相关，某同学在不同时段对某交通要道的空气进行采样的结果如表3所示：
@@ -1677,25 +1027,25 @@ A．<1><2>	\qquad\qquad	B．<3><4>	\qquad\qquad	C．<1><4>	\qquad\qquad	D．<2><
 
 - 正确答案：氧气或者空气
 
-- 平均得分率：`r gio.R$VarScoSamKey(query.data, "S8AO45111_X", "上海市","总体","总体")`％
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "S8AO45111_X", "市","总体","总体")`％
 
 plot.bar.city.sc.question.s8ao45111
 query2.plot.bar.city.sc.question.s8ao45111
 
 \begin{itshape}
-在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarScoSamKey(query.data, "S8AO45111_X", "上海市","总体","A")`％、`r gio.R$VarScoSamKey(query.data, "S8AO45111_X", "上海市","总体","B")`％、`r gio.R$VarScoSamKey(query.data, "S8AO45111_X", "上海市","总体","C")`％、 `r gio.R$VarScoSamKey(query.data, "S8AO45111_X", "上海市","总体","D")`％。
+在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarTierSamKey(query.data, "S8AO45111_X", "市","总体","A")`％、`r gio.R$VarTierSamKey(query.data, "S8AO45111_X", "市","总体","B")`％、`r gio.R$VarTierSamKey(query.data, "S8AO45111_X", "市","总体","C")`％、 `r gio.R$VarTierSamKey(query.data, "S8AO45111_X", "市","总体","D")`％。
 \end{itshape}
 
-- 学生作答分析：答题正确率为`r gio.R$VarScoSamKey(query.data, "S8AO45111_X", "上海市","总体","总体")`％，略低于预测情况。学生的错误最多的是结论<3>是否可以得出。根据题意，“时间段”的本质是“车流量”的大小，而非时间本身，本研究的关键“证据”是“车流量”而不是“时间段”，由此造成的错误判断占了大多数。学生对“探究因素”的要素分析不到位，从而影响了对结论的判断。
+- 学生作答分析：答题正确率为`r gio.R$VarTierSamKey(query.data, "S8AO45111_X", "市","总体","总体")`％，略低于预测情况。学生的错误最多的是结论<3>是否可以得出。根据题意，“时间段”的本质是“车流量”的大小，而非时间本身，本研究的关键“证据”是“车流量”而不是“时间段”，由此造成的错误判断占了大多数。学生对“探究因素”的要素分析不到位，从而影响了对结论的判断。
 
 - 教学建议：探究实验教学过程中，对探究要素，及体现探究要素的相关证据之间要形成有效联系。透过现象看本质的探究能力需要进一步培养，可以在探究过程中形成现象到本质的问题链，引导学生在探究活动中，既能观察现象记录数据，又能认识现象背后的本质要素，提升探究活动的有效性和准确性。
 
 \begin{itshape}
-在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarScoSamKey(query.data, "S8AO04111_X", "上海市","总体","A")`％、`r gio.R$VarScoSamKey(query.data, "S8AO04111_X", "上海市","总体","B")`％、`r gio.R$VarScoSamKey(query.data, "S8AO04111_X", "上海市","总体","C")`％、 `r gio.R$VarScoSamKey(query.data, "S8AO04111_X", "上海市","总体","D")`％。
+在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarTierSamKey(query.data, "S8AO04111_X", "市","总体","A")`％、`r gio.R$VarTierSamKey(query.data, "S8AO04111_X", "市","总体","B")`％、`r gio.R$VarTierSamKey(query.data, "S8AO04111_X", "市","总体","C")`％、 `r gio.R$VarTierSamKey(query.data, "S8AO04111_X", "市","总体","D")`％。
 \end{itshape}
 
 
-\questiontitle{典型题目2：S8AS46321}
+\questiontitle{典型题目}2：S8AS46321
 \begin{center}
 46．酸奶
 \end{center}
@@ -1706,7 +1056,7 @@ query2.plot.bar.city.sc.question.s8ao45111
 
 \end{itshape}
 
-\questiontitle{问题3:}
+\questiontitle{问题}3:
 
 \begin{itshape}
 
@@ -1747,16 +1097,16 @@ query2.plot.bar.city.sc.question.s8ao45111
 
 - 正确答案：氧气或者空气
 
-- 平均得分率：`r gio.R$VarScoSamKey(query.data, "S8AS46321_X", "上海市","总体","总体")`％
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "S8AS46321_X", "市","总体","总体")`％
 
 plot.bar.city.sc.question.s8as46321
 query2.plot.bar.city.sc.question.s8as46321
 
 \begin{itshape}
-在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarScoSamKey(query.data, "S8AS46321_X", "上海市","总体","A")`％、`r gio.R$VarScoSamKey(query.data, "S8AS46321_X", "上海市","总体","B")`％、`r gio.R$VarScoSamKey(query.data, "S8AS46321_X", "上海市","总体","C")`％、 `r gio.R$VarScoSamKey(query.data, "S8AS46321_X", "上海市","总体","D")`％。
+在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarTierSamKey(query.data, "S8AS46321_X", "市","总体","A")`％、`r gio.R$VarTierSamKey(query.data, "S8AS46321_X", "市","总体","B")`％、`r gio.R$VarTierSamKey(query.data, "S8AS46321_X", "市","总体","C")`％、 `r gio.R$VarTierSamKey(query.data, "S8AS46321_X", "市","总体","D")`％。
 \end{itshape}
 
-- 学生作答分析：得分率仅为`r gio.R$VarScoSamKey(query.data, "S8AS46321_X", "上海市","总体","总体")`％，远低于预期。从答题情况分析，有如下几种情况：
+- 学生作答分析：得分率仅为`r gio.R$VarTierSamKey(query.data, "S8AS46321_X", "市","总体","总体")`％，远低于预期。从答题情况分析，有如下几种情况：
 
 （1）学生无视题中信息和要求回答的问题，凭借自己的经验任意发挥如：不合理，乳酸菌在高温下会被杀灭；时间太长会导致活菌死掉，所以时间越长就会变得不好；不合理，乳酸菌的作用是转发化乳糖，与酸奶好坏无关等。
 
@@ -1769,7 +1119,7 @@ query2.plot.bar.city.sc.question.s8as46321
 - 教学建议：通过培养学生的质疑精神，培育批判性思维。要训练基于证据做出科学的评价习惯，要培养善于发现问题、积极解决问题习惯。
 
 
-\questiontitle{典型题目3：S8AS47421}
+\questiontitle{典型题目}14：S8AS47421
 
 \begin{center}
 47．神经调节
@@ -1785,7 +1135,7 @@ query2.plot.bar.city.sc.question.s8as46321
 
 \includegraphics[width=0.98\textwidth]{sc_S8AS47421.png}
 
-\questiontitle{问题4:}
+\questiontitle{问题}4:
 
 \begin{itshape}
 脑可以影响脊髓的活动，为感受脑的协调作用，老师请学生两两配合，按以下步骤测试反应速度。尺下落距离的长短可说明反应速度的快慢。请分析：
@@ -1820,13 +1170,13 @@ query2.plot.bar.city.sc.question.s8as46321
 
 - 正确答案：
 
-- 平均得分率：`r gio.R$VarScoSamKey(query.data, "S8AS47421_X", "上海市","总体","总体")`％
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "S8AS47421_X", "市","总体","总体")`％
 
 plot.bar.city.sc.question.s8as47421
 query2.plot.bar.city.sc.question.s8as47421
 
 \begin{itshape}
-在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarScoSamKey(query.data, "S8AS47421_X", "上海市","总体","A")`％、`r gio.R$VarScoSamKey(query.data, "S8AS47421_X", "上海市","总体","B")`％、`r gio.R$VarScoSamKey(query.data, "S8AS47421_X", "上海市","总体","C")`％、 `r gio.R$VarScoSamKey(query.data, "S8AS47421_X", "上海市","总体","D")`％。
+在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarTierSamKey(query.data, "S8AS47421_X", "市","总体","A")`％、`r gio.R$VarTierSamKey(query.data, "S8AS47421_X", "市","总体","B")`％、`r gio.R$VarTierSamKey(query.data, "S8AS47421_X", "市","总体","C")`％、 `r gio.R$VarTierSamKey(query.data, "S8AS47421_X", "市","总体","D")`％。
 \end{itshape}
 
 - 学生作答分析：此题难度为0.28，比预期低。本题为分级评分试题，满分2，给分为2分、1分、0分，其中0分学生占比`r gio.R$KeyValue(query2.data, "0")`％；1分学生占比`r gio.R$KeyValue(query2.data, "1")`％；2分学生占比`r gio.R$KeyValue(query2.data, "2")`％。

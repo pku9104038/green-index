@@ -66,6 +66,8 @@ kDefinition:
         属性表数据查询
       - &kTableAttrPlotParam
         属性表绘图参数
+      - &kTableAttrTableParam
+        属性表表格参数
 
     kTablePrefix:   # 表名称前缀
 
@@ -383,6 +385,9 @@ kSetting:
       dataframe:
         plot:
           table: *kTableAttrPlotParam
+          suffix: ""
+        table:
+          table: *kTableAttrTableParam
           suffix: ""
         dataset:
           table: *kTableAttrDataQuery

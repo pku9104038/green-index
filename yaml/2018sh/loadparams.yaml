@@ -18,3 +18,10 @@ loadparams:
       sheet: "绘图参数表"
       table: *kTableAttrPlotParam
       suffix: ""
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "表格行参数表"
+      table: *kTableAttrTableParam
+      suffix: ""

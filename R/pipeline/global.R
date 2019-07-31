@@ -115,6 +115,7 @@ kPrefixPlot <- "plot"
 kPrefixMultiPlot <- "multiplot"
 kPrefixQueryData <- "query"
 kPrefixQuery2Data <- "query2"
+kPrefixTableRow <- "table"
 kPrefixConnector <- "\\."
 
 # constants for algorithm
@@ -206,6 +207,15 @@ kColumnFacetStripSize <- "plot_facet_strip_size"
 kColumnFacetStripColour <- "plot_facet_strip_colour"
 kColumnFacetStripAngle <- "plot_facet_strip_angle"
 
+# table for table row prerender
+kColumnTableRowCode <- "table_row_code"
+kColumnTableDataQuery <- "table_data_query"
+kColumnTableDataFrame <- "table_data_frame"
+kColumnTableDataVariable <- "table_data_variable"
+kColumnTableDataKey <- "table_data_key"
+kColumnTableDataTier <- "table_data_tier"
+kColumnTableDataSample <- "table_data_sample"
+kColumnTableDataDigit <- "table_data_digit"
 
 
 # table for data query
