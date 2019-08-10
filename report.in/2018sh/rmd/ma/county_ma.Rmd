@@ -92,7 +92,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \caption{`r fig_name1`}
 \label{fig:`r fig_name1`}
 \end{figure}\mylist
-注：盒须图——5\%学生得分小于等于须下限分数；25\%学生得分小于等于盒底分数；50\%学生得分大于等于盒中横线分数；25\%学生得分大于等于盒顶分数；5\%学生得分大于等于须上限分数；盒高度一定程度上反映了得分分布的离散程度；红点为平均分。
+注：盒须图——5\%学生得分小于等于须下端线分数；25\%学生得分小于等于盒底分数；50\%学生得分大于等于盒中横线分数；25\%学生得分大于等于盒顶分数；5\%学生得分大于等于须上端线分数；盒高度一定程度上反映了得分分布的离散程度；红点为平均分。
 
 \mytext
 \begin{landscape}\section{不同学校学生的总体表现}
@@ -756,7 +756,7 @@ answer <- answer.all[answer.all[,var.scope]==report$county & answer.all[,var.dim
 
 
 \end{landscape}
-\questiontitle{典型题目3：M3AO071}把52根小棒平均分成2份，每份有几根？小芳通过竖式计算得到了答案．竖式中箭头所指的数相当于下图中的（    ）．
+\questiontitle{典型题目3：M3AO071}把52根小棒平均分成2份，每份有几根?小芳通过竖式计算得到了答案．竖式中箭头所指的数相当于下图中的（    ）．
 \begin{figure}[H]
   \begin{center}
     \includegraphics[width=0.16\textwidth]{ma_M3AO071_01}
@@ -1231,7 +1231,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 
 建议：
 
-加强概念教学，注重让学生经历观察、比较、猜想、验证等数学活动，自我探索一些运算法则和方法，丰富数感，发展计算的灵活性。\questiontitle{典型题目9：M3AS211}商场对某玩具熊进行促销活动，单买1个是150元，如果购买1包（每包装3个玩具熊），则需要400元．某幼儿园需要购买14个这样的玩具熊，最少要花多少元？ 
+加强概念教学，注重让学生经历观察、比较、猜想、验证等数学活动，自我探索一些运算法则和方法，丰富数感，发展计算的灵活性。\questiontitle{典型题目9：M3AS211}商场对某玩具熊进行促销活动，单买1个是150元，如果购买1包（每包装3个玩具熊），则需要400元．某幼儿园需要购买14个这样的玩具熊，最少要花多少元? 
 
 `r row <- point.rate[point.rate[,var.variable]=="M3AS211_X",]`
 - 内容维度：数与运算- 能力维度：问题解决- 正确答案：	- 解： 14÷3 = 4（包）……2（个）	- 400×4+150×2 = 1600+300 = 1900（元）	- 答：最少要花1900元。	- （解答方法不唯一）- 本题满分：6分- 平均得分率：`r row[row[,var.key]=="总体",var.param]`%`r fig_name <- "学生在题目M3AS211上的作答情况" `
@@ -1343,7 +1343,7 @@ fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_
 \end{figure}
 
 
-（2）你还能拼出一种不同形状的长方形吗？请先在下面方格图中画出拼成后的长方形，然后再计算出它的周长。
+（2）你还能拼出一种不同形状的长方形吗?请先在下面方格图中画出拼成后的长方形，然后再计算出它的周长。
 
 \begin{figure}[H]
   \begin{center}

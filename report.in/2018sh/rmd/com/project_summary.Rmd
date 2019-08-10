@@ -28,25 +28,22 @@
 
  & \multicolumn{2}{c|}{\mytablehead{内容}} &  \multicolumn{2}{c|}{\mytablehead{能力\footnote{本表格中的科学学科为考查的维度。}}} \\  \hline
 
-\multirow{5}{*}{\mytablehead{语文}}  & \multicolumn{2}{l|}{\makecell{积累与运用}} & \multicolumn{2}{l|}{\makecell[l]{读准字音\\认清字形\\理解词义\\积累和运用常见古诗文}}  \\  \cline{2-5}
- & \multirow{3}{*}{阅读} & 获取信息 & \multicolumn{2}{l|}{\multirow{2}{*}{\makecell[l]{整体感知\\提取信息\\形成解释\\合理使用信息并做出评价}}}  \\ \cline{3-3}
+\multirow{5}{*}{\mytablehead{语文}}  & \multicolumn{2}{l|}{\makecell{积累与运用}} & \multicolumn{2}{l|}{\makecell[l]{读准字音\\认清字形\\理解词义\\积累和运用常见古诗文\\阅读名著}}  \\  \cline{2-5}
+ & \multirow{3}{*}{阅读} & 获取信息 & \multicolumn{2}{l|}{\multirow{2}{*}{\makecell[l]{整体感知\\提取信息\\形成解释\\做出评价}}}  \\ \cline{3-3}
 & & 获得文学体验 & \multicolumn{2}{l|}{}  \\ \cline{3-3}
 & & 完成任务 & \multicolumn{2}{l|}{}   \\  \cline{2-5}
 & \multicolumn{2}{l|}{写作} & \multicolumn{2}{l|}{\makecell[l]{能根据表达的需要，选取恰当的作文材料\\能有条理地安排文章的结构\\能具体明确、文从字顺地表达自己的意思}} \\  \hline
 
-\multirow{2}{*}{\mytablehead{数学}} & \multicolumn{2}{l|}{\multirow{2}{*}{\makecell[l]{数与运算\\方程与代数\\图形与几何\\函数与分析\\数据整理与概率统计}}} & 过程分量 & \makecell[l]{辨识\\调用\\反思\\问题解决} \\  \cline{4-5}
-& \multicolumn{2}{l|}{} & 方法分量 & \makecell[l]{运算求解
-推理论证\\空间想象\\数学表达\\数据处理\\提出问题\\工具运用\\数学建模} \\ \hline
+\multirow{2}{*}{\mytablehead{数学}} & \multicolumn{2}{l|}{\multirow{2}{*}{\makecell[l]{数与代数\\图形与几何\\函数与概率统计初步}}} & 过程分量 & \makecell[l]{辨识\\调用\\反思\\聚合} \\  \cline{4-5}
+&  \multicolumn{2}{l|}{}  & 方法分量 & \makecell[l]{运算求解\\
+推理论证\\空间想象\\数学表达\\数据处理\\数学建模} \\ \hline
 
-英语 & \multicolumn{2}{l|}{\makecell[l]{语音\\词汇\\语法\\话题\\语言功能}} & \multicolumn{2}{l|}{\makecell[l]{听力\\阅读\\写作\\综合运用}} \\ \hline
+英语 & \multicolumn{2}{l|}{\makecell[l]{语音\\词汇\\语法\\话题\\语言功能}} & \multicolumn{2}{l|}{\makecell[l]{听力\\语法词汇\\阅读\\写作}} \\ \hline
 
 
 科学 & \multicolumn{2}{l|}{\makecell[l]{地球宇宙\\物质科学\\生命科学\\科学探究}} & \multicolumn{2}{l|}{\makecell[l]{科学知识\\科学能力\\科学态度}} \\ \hline
 
-\multirow{3}{*}{\mytablehead{艺术}} & \multicolumn{2}{l|}{\makecell[l]{感受与鉴赏}} & \multicolumn{2}{l|}{\makecell[l]{艺术形式\\艺术内容\\艺术风格}} \\ \cline{2-5}
- & \multicolumn{2}{l|}{\makecell[l]{合作与分享}} & \multicolumn{2}{l|}{\makecell[l]{鉴赏艺术作品\\联系艺术与其他领域\\分享艺术经验与感受}} \\  \cline{2-5}
- & \multicolumn{2}{l|}{\makecell[l]{表现与创作}} & \multicolumn{2}{l|}{\makecell[l]{艺术体验\\艺术创作}}  \\ \hline
-
+艺术 & \multicolumn{2}{l|}{\makecell[l]{艺术形式\\艺术内容\\艺术风格\\艺术感受\\艺术创作}} & \multicolumn{2}{l|}{\makecell[l]{感知与判断\\理解与分析\\运用于表现}} \\ \hline
 
 \end{longtable}
 \end{itshape}

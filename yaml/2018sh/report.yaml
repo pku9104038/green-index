@@ -3,6 +3,7 @@
 report:
   TODO: FALSE
   RUN: "PILOT"  # "AUTO", "PILOT",
+  PLOTFIG: FALSE
   output:
     format: "pdf_document"
     ext: ".pdf"
@@ -93,7 +94,7 @@ report:
         - "city_cn_topic.rmd"
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierCity
       subdir: "ma"
@@ -108,9 +109,9 @@ report:
         - "report_preface.rmd"
         - "table_of_contents.rmd"
         - "project_summary.rmd"
-        - "city_ma_description.rmd"
-        - "city_ma_total.rmd"
-        - "city_ma_dimention.rmd"
+        - "ma_description.rmd"
+        # - "city_ma_total.rmd"
+        # - "city_ma_dimention.rmd"
         - "city_ma_topic.rmd"
 
     -
@@ -129,13 +130,13 @@ report:
         - "report_preface.rmd"
         - "table_of_contents.rmd"
         - "project_summary.rmd"
-        - "city_en_description.rmd"
+        - "en_description.rmd"
         - "city_en_total.rmd"
         - "city_en_dimention.rmd"
         - "city_en_topic.rmd"
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierCity
       subdir: "sc"
@@ -150,9 +151,9 @@ report:
         - "report_preface.rmd"
         - "table_of_contents.rmd"
         - "project_summary.rmd"
-        - "city_sc_description.rmd"
-        # - "city_sc_total.rmd"
-        # - "city_sc_dimention.rmd"
+        - "sc_description.rmd"
+        - "city_sc_total.rmd"
+        - "city_sc_dimention.rmd"
         - "city_sc_topic.rmd"
 
     -
@@ -171,7 +172,7 @@ report:
         - "report_preface.rmd"
         - "table_of_contents.rmd"
         - "project_summary.rmd"
-        - "city_ar_description.rmd"
+        - "ar_description.rmd"
         - "city_ar_total.rmd"
         - "city_ar_dimention.rmd"
         - "city_ar_topic.rmd"
@@ -257,13 +258,17 @@ report:
         name: "数学"
         suffix: "学科"
       rmarkdown:
-        - "base.rmd"
+        - "subject.rmd"
         - "global_setting.rmd"
         - "cover_page.rmd"
         - "head_foot.rmd"
         - "report_preface.rmd"
         - "table_of_contents.rmd"
         - "project_summary.rmd"
+        - "ma_description.rmd"
+        - "district_ma_total.rmd"
+        - "district_ma_dimention.rmd"
+        - "district_ma_topic.rmd"
 
     -
       TODO: FALSE
@@ -309,7 +314,7 @@ report:
         name: ""
         suffix: ""
       rmarkdown:
-        - "base.rmd"
+        - "subject.rmd"
         - "global_setting.rmd"
         - "cover_page.rmd"
         - "head_foot.rmd"

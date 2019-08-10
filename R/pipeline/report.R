@@ -14,10 +14,12 @@ GreenIndexReport <- setRefClass(
   contains = "GreenIndexPlotFigure",
   
   fields = list(
+    
     table.df = "data.frame",
     district.df = "data.frame",
     school.df = "data.frame",
     
+    report.plotfig = "logical",
     report.tier = "character",
     report.scope = "character",
     report.unit = "list",
@@ -49,7 +51,6 @@ GreenIndexReport <- setRefClass(
       table.table <- paste0(dataframe$table$table, 
                              dataframe$table$suffix)
       table.df <<- database$ReadTable(table.table)
-      print(table.df)
       
       school.table <- paste0(dataframe$school$table, 
                            dataframe$school$suffix)
@@ -215,26 +216,31 @@ GreenIndexReport <- setRefClass(
             is.element(trimws(input.line), pretable.set) ){
           prefix <- unlist(strsplit(trimws(input.line), kPrefixConnector))[1]
           if (prefix == kPrefixPlot) {
+            if (report.plotfig == TRUE){
+              report.fig <- PlotFigure (GetReportOutFigDir(), trimws(input.line))
+              
+              # output.data <- OpenChunk(input.line, output.data)
+              # output.data[length(output.data) + 1] <- 
+              #  paste0("plot.fig <- gio.R$GetPlotFigure(gio.R$GetReportOutFigDir(), \"",
+              #        input.line, "\")")
+              # output.data <- CloseChunk(output.data)
+              
+              output.data[length(output.data) + 1] <-  " "
+              output.data[length(output.data) + 1] <- "\\begin{figure}[H]"
+              output.data[length(output.data) + 1] <-
+                paste0("\\includegraphics[width=\\textwidth]{", report.fig$path, "}") 
+              # paste0("\\includegraphics[width=\\textwidth]{","`r plot.fig$path`","}") 
+              output.data[length(output.data) + 1] <- 
+                paste0("\\caption{", report.fig$name, "}") 
+              output.data[length(output.data) + 1] <- 
+                paste0("\\label{fig: ", report.fig$name, "}") 
+              output.data[length(output.data) + 1] <- "\\end{figure}"
+              output.data[length(output.data) + 1] <-  " "
+              
+            } else {
+              output.data[length(output.data) + 1] <- input.line 
+            }
             
-            report.fig <- PlotFigure (GetReportOutFigDir(), trimws(input.line))
-            
-            # output.data <- OpenChunk(input.line, output.data)
-            # output.data[length(output.data) + 1] <- 
-            #  paste0("plot.fig <- gio.R$GetPlotFigure(gio.R$GetReportOutFigDir(), \"",
-            #        input.line, "\")")
-            # output.data <- CloseChunk(output.data)
-            
-            output.data[length(output.data) + 1] <-  " "
-            output.data[length(output.data) + 1] <- "\\begin{figure}[H]"
-            output.data[length(output.data) + 1] <-
-              paste0("\\includegraphics[width=\\textwidth]{", report.fig$path, "}") 
-            # paste0("\\includegraphics[width=\\textwidth]{","`r plot.fig$path`","}") 
-            output.data[length(output.data) + 1] <- 
-              paste0("\\caption{", report.fig$name, "}") 
-            output.data[length(output.data) + 1] <- 
-              paste0("\\label{fig: ", report.fig$name, "}") 
-            output.data[length(output.data) + 1] <- "\\end{figure}"
-            output.data[length(output.data) + 1] <-  " "
             
           } else if (prefix == kPrefixMultiPlot) {
             
@@ -347,9 +353,10 @@ GreenIndexReport <- setRefClass(
       reworkall <- config$IsReworkAll()
       reworkjobs <- jobs$TODO
       RUN <- jobs$RUN
+      report.plotfig <<- jobs$PLOTFIG
       report.pilot <<- jobs$pilot
       report.output <<- jobs$output
-    
+      
       
       PrepareDataframe()
       

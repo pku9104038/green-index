@@ -1,7 +1,7 @@
 
 # statistics of variables, coefficents, scores
 scorestat:
-  TODO: TRUE
+  TODO: FALSE
   RUN: "MILESTONE"  # "AUTO", "PILOT", "MILESTONE", "AGILE", "SCHOOL"
   <<: *kPilotRun
   <<: *kDDLStatisticsTable
@@ -100,7 +100,7 @@ scorestat:
           subject: *kSubject
 
     -
-      TODO: FALSE
+      TODO: TRUE
       input:
         table: *kSubjectSC
         suffix: *kSuffixTransform
@@ -126,7 +126,7 @@ scorestat:
           subject: *kSubject
 
     -
-      TODO: TRUE
+      TODO: FALSE
       input:
         table: *kSubjectAR
         suffix: *kSuffixTransform

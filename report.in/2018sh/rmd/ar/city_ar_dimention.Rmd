@@ -6,7 +6,7 @@
 
 ## 全体学生在各考查维度上的表现
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.ar.dimention.rank")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.city.ar.dimention.quantile")`}分别给出了上海市学生在艺术素养各考查维度各水平上的人数比例和得分分布。
+本次艺术素养的测试，是从“感知与判断”“理解与分析”“运用与表现”等能力维度进行具体考查。图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.ar.dimention.rank")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.city.ar.dimention.quantile")`}分别给出了上海市学生在艺术素养各考查维度各水平上的人数比例和得分分布。
 
 plot.bar.city.ar.dimention.rank
 plot.box.city.ar.dimention.quantile

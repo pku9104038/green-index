@@ -16,7 +16,7 @@
 \mytable
 \begin{longtable}{|c|c|c|}
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\ \hline
-测试内容 & 考查维度 & 具体描述 \\ \hline
+测试题型 & 考查维度 & 具体描述 \\ \hline
 \multirow{2}{*}{视听部分} &	感知与判断	& 在试听感受中，考察对艺术形式和内容的了解、辨认和理解等简单鉴赏能力 \\ \cline{2-3}
 	& 理解与分析	& 在视听感受中，考察对艺术表现形式内容的分析、判断、释读等复杂鉴赏能力 \\ \cline{1-3}
 \multirow{2}{*}{纸笔部分} & 感知与判断	& 在图文信息中，考察对艺术作品的辨别和理解  \\ \cline{2-3}
@@ -363,14 +363,14 @@ A. 欢庆场面  \qquad    B. 日常休闲  \qquad   C. 劳动助力  \qquad   D
 
 - 平均得分率：A8AO01111为`r gio.R$VarScoSamKey(query.data, "A8AO01111_X", "上海市","总体","总体")`％；A8AO01211为`r gio.R$VarScoSamKey(query.data, "A8AO01211_X", "上海市","总体","总体")`％
 
-plot.bar.city.ar.question.a8ao01111
-plot.bar.city.ar.question.a8ao01211
+plot.bar.city.ar.question.A8AO01111
+plot.bar.city.ar.question.A8AO01211
 
 - 学生的答题分析：
 
 由此可见，在题目A8AO01111中，这是学生比较熟悉的作品，大部分学生如果课堂认真可以完成。如有个别不知道的学生，仔细听，会发展片段中对该作品的特征性锣鼓有呈现，因此学生可以根据听觉分析得到答案。因此，该题的得分率非常高。
 
-query2.plot.bar.city.ar.question.a8ao01211
+query2.plot.bar.city.ar.question.A8AO01211
 
 在题目A8AO01211中，对音乐场景的运用就需要动用分析能力，就有学生会不确定，特别是因为九年级学生的生活经历不够丰富，因此出现不同选项的比例就比较高，正确率在`r gio.R$KeyValue(query2.data, "A")`％左右。
 
@@ -417,8 +417,8 @@ A．轻松 \qquad\qquad  B.愉悦 \qquad\qquad  C.幽默 \qquad\qquad  D.沉重
 
 - 平均得分率：A8AO12111为`r gio.R$VarScoSamKey(query.data, "A8AO12111_X", "上海市","总体","总体")`％；A8AO12211为`r gio.R$VarScoSamKey(query.data, "A8AO12211_X", "上海市","总体","总体")`％
 
-plot.bar.city.ar.question.a8ao12111
-plot.bar.city.ar.question.a8ao12211
+plot.bar.city.ar.question.A8AO12111
+plot.bar.city.ar.question.A8AO12211
 
 - 学生的答题分析：
 
@@ -438,7 +438,7 @@ plot.bar.city.ar.question.a8ao12211
 
 考查维度 & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
 
-\multirow{5}{*}{艺术形式} & A8AO05111 & 生物体的构成层次及功能 &
+\multirow{5}{*}{艺术形式} & A8AO05111 & 通过视觉，判断舞蹈形式 &
 `r gio.R$VarScoSamKey(query.data, "A8AO05111_X", "上海市","总体","总体")` &
 `r gio.R$VarScoSamKey(query.data, "A8AO05111_X", "上海市","公办","总体")` &
 `r gio.R$VarScoSamKey(query.data, "A8AO05111_X", "上海市","民办","总体")` &
@@ -536,7 +536,7 @@ plot.bar.city.ar.question.a8ao12211
   `r gio.R$VarScoSamKey(query.data, "A8AS07111_X", "上海市","沪籍","总体")` &
   `r gio.R$VarScoSamKey(query.data, "A8AS07111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
 
-  & A8AS07211 & 食物中的营养成分 &
+  & A8AS07211 & 在视觉欣赏与想象的基础上，通过文字表达艺术作品的情感，体现价值观导向 &
   `r gio.R$VarScoSamKey(query.data, "A8AS07211_X", "上海市","总体","总体")` &
   `r gio.R$VarScoSamKey(query.data, "A8AS07211_X", "上海市","公办","总体")` &
   `r gio.R$VarScoSamKey(query.data, "A8AS07211_X", "上海市","民办","总体")` &
@@ -645,7 +645,7 @@ plot.bar.city.ar.question.a8ao12211
 
 - 平均得分率：`r gio.R$VarScoSamKey(query.data, "A8AS14111_X", "上海市","总体","总体")`％
 
-plot.bar.city.ar.question.a8as14111
+plot.bar.city.ar.question.A8AS14111
 
 - 学生的答题分析：
 

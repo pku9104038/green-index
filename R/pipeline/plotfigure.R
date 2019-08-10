@@ -289,8 +289,9 @@ GreenIndexPlotFigure <- setRefClass(
         plot.label.y <- ""
       }
       
-      figure <- figure + labs(title = plot.param[1, kColumnPlotTitle],
-                              x = plot.label.x, y = plot.label.y)
+      # figure <- figure + labs(title = plot.param[1, kColumnPlotTitle])
+      figure <- figure + labs(x = plot.label.x, y = plot.label.y)
+      
       figure <- figure + 
        theme(axis.text.x = element_text(
          angle = as.numeric(plot.param[1, kColumnTextAngleX]),

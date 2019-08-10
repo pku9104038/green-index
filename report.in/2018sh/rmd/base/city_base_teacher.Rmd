@@ -124,7 +124,7 @@ plot.bar.city.base.teaching.evaluation.firststep
 
 plot.bar.city.base.teaching.evaluation.twowayspec
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.teaching.evaluation.solution")`}给出了九年级教师对“评价学生对她所教的解题策略的掌握情况。以下哪种评价方法最有效？”的反馈总体情况。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.teaching.evaluation.solution")`}给出了九年级教师对“评价学生对她所教的解题策略的掌握情况。以下哪种评价方法最有效?”的反馈总体情况。
 
 plot.bar.city.base.teaching.evaluation.solution
 
@@ -132,15 +132,15 @@ plot.bar.city.base.teaching.evaluation.solution
 
 plot.bar.city.base.teaching.evaluation.thinking
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.teaching.evaluation.exam")`}给出了九年级教师对“采用何种方式才是最有效地利用了考试的结果？”的反馈总体情况。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.teaching.evaluation.exam")`}给出了九年级教师对“采用何种方式才是最有效地利用了考试的结果?”的反馈总体情况。
 
 plot.bar.city.base.teaching.evaluation.exam
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.teaching.evaluation.unit")`}给出了九年级教师对“哪一项信息对设计一个单元的课堂教学最有帮助？”的反馈总体情况。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.teaching.evaluation.unit")`}给出了九年级教师对“哪一项信息对设计一个单元的课堂教学最有帮助?”的反馈总体情况。
 
 plot.bar.city.base.teaching.evaluation.unit
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.teaching.evaluation.principal")`}给出了九年级教师对“校长评估老师的教学表现，想了解老师在课堂中是否鼓励了学生进行高层次思维，哪个文本材料有助于校长做出最有效的决策？”的反馈总体情况。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.teaching.evaluation.principal")`}给出了九年级教师对“校长评估老师的教学表现，想了解老师在课堂中是否鼓励了学生进行高层次思维，哪个文本材料有助于校长做出最有效的决策?”的反馈总体情况。
 
 plot.bar.city.base.teaching.evaluation.principal
 

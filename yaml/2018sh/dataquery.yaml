@@ -4,4 +4,4 @@ dataquery:
   <<: *kPilotRun
   <<: *kPrepareDataframe
   test:
-    - plot.box.district.cn.dimention.quantile
+    - plot.bar.city.sc.question.s8ao16111

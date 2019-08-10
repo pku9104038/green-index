@@ -15,7 +15,7 @@ plot.bar.city.base.score.segment.ma.total
 
 ## 不同群体学生的总体表现
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.ma.rank.total.perspective")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.city.ma.quantile.perspective")`}分别给出了上海市不同群体\footnote{其他：指普通初中、九年一贯制学校、完全中学之外的其他学校。}学生在数学学科各水平上的人数比例和得分分布。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.ma.rank.total.perspective")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.city.ma.quantile.perspective")`}分别给出了上海市不同群体学生在数学学科各水平上的人数比例和得分分布。
 
 plot.bar.city.ma.rank.total.perspective
 
