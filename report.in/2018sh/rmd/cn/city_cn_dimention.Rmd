@@ -6,7 +6,7 @@
 
 ## 全体学生在各能力维度上的表现
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.cn.dimention.rank")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.city.cn.dimention.quantile")`}分别给出了上海市学生在语文学科各能力维度各水平上的人数比例和得分分布。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.cn.dimention.rank")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.city.cn.dimention.quantile")`}分别给出了本市学生在语文学科各能力维度各水平上的人数比例和得分分布。
 
 plot.bar.city.cn.dimention.rank
 plot.box.city.cn.dimention.quantile
@@ -51,5 +51,9 @@ plot.box.city.cn.writing.quantile.perspective
 
 plot.bar.city.cn.writing.rank.district
 plot.box.city.cn.writing.quantile.district
+
+\clearpage
+\qquad
+\clearpage
 
 <!-- end of chapter dimention -->

@@ -36,290 +36,90 @@ query.data.city.ar.pointrate.perspective
 
 \begin{itshape}
 \mytable
-\begin{longtable}{|c|c|p{7cm}|c|c|c|c|c|c|c|c|c|c|c|c|}
+\begin{longtable}{|c|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\ \hline
 
-内容领域 & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
+内容领域 & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{本\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{其\\他} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
 
-\multirow{10}{*}{艺术形式} & A8AO01111 & 能通过听辨，知道作品名称，或通过对作品细节的辨识知道作品名称 &
-`r gio.R$VarScoSamKey(query.data, "A8AO01111_X", "上海市","总体","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO01111_X", "上海市","公办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO01111_X", "上海市","民办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO01111_X", "上海市","初中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO01111_X", "上海市","九年一贯","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO01111_X", "上海市","完中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO01111_X", "上海市","新优质","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO01111_X", "上海市","强校工程","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO01111_X", "上海市","男","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO01111_X", "上海市","女","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO01111_X", "上海市","沪籍","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO01111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+\multirow{10}{*}{艺术形式} & A8AO01111 & 能通过听辨，知道作品名称，或通过对作品细节的辨识知道作品名称 
+table.city.ar.A8AO01111
+\\ \cline{2-16}
 
- & A8AO02111 & 能通过听辨，判断乐器音色 &
- `r gio.R$VarScoSamKey(query.data, "A8AO02111_X", "上海市","总体","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO02111_X", "上海市","公办","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO02111_X", "上海市","民办","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO02111_X", "上海市","初中","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO02111_X", "上海市","九年一贯","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO02111_X", "上海市","完中","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO02111_X", "上海市","新优质","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO02111_X", "上海市","强校工程","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO02111_X", "上海市","男","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO02111_X", "上海市","女","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO02111_X", "上海市","沪籍","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO02111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+ & A8AO02111 & 能通过听辨，判断乐器音色 
+ table.city.ar.A8AO02111
+ \\ \cline{2-16}
 
- & A8AO03111 & 能通过听辨判断器乐音色的民族属性 &
-  `r gio.R$VarScoSamKey(query.data, "A8AO03111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO03111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO03111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO03111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO03111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO03111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO03111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO03111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO03111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO03111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO03111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO03111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+& A8AO03111 & 能通过听辨判断器乐音色的民族属性 
+table.city.ar.A8AO03111
+\\ \cline{2-16}
 
- & A8AO08111 & 知道并判断中国画的基本分类 &
-  `r gio.R$VarScoSamKey(query.data, "A8AO08111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO08111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO08111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO08111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO08111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO08111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO08111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO08111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO08111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO08111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO08111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO08111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+& A8AO08111 & 知道并判断中国画的基本分类 
+table.city.ar.A8AO08111
+\\ \cline{2-16}
 
- & A8AO08211 & 知道并判读文人画的主要特点，但可以结合视觉作品感知，通过对答案的分析解题 &
-  `r gio.R$VarScoSamKey(query.data, "A8AO08211_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO08211_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO08211_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO08211_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO08211_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO08211_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO08211_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO08211_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO08211_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO08211_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO08211_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO08211_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+& A8AO08211 & 知道并判读文人画的主要特点，但可以结合视觉作品感知，通过对答案的分析解题 
+table.city.ar.A8AO08211
+\\ \cline{2-16}
 
-  & A8AO09111 & 知道作品所属的艺术门类 &
-  `r gio.R$VarScoSamKey(query.data, "A8AO09111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO09111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO09111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO09111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO09111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO09111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO09111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO09111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO09111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO09111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO09111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO09111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+& A8AO09111 & 知道作品所属的艺术门类 
+table.city.ar.A8AO09111
+\\ \cline{2-16}
 
-  & A8AO10111 & 判断作品表现形式，知道其主要特点 &
-  `r gio.R$VarScoSamKey(query.data, "A8AO10111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO10111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO10111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO10111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO10111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO10111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO10111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO10111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO10111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO10111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO10111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO10111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+& A8AO10111 & 判断作品表现形式，知道其主要特点 
+table.city.ar.A8AO10111
+\\ \cline{2-16}
 
-  & A8AO11111 & 能知道视觉标识的名称与主要范围 &
-  `r gio.R$VarScoSamKey(query.data, "A8AO11111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO11111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO11111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO11111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO11111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO11111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO11111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO11111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO11111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO11111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO11111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO11111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+& A8AO11111 & 能知道视觉标识的名称与主要范围 
+table.city.ar.A8AO11111
+\\ \cline{2-16}
 
-  & A8AO12111 & 通过观察作品细节与内容，关联相关艺术形式的表现 &
-  `r gio.R$VarScoSamKey(query.data, "A8AO12111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO12111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO12111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO12111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO12111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO12111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO12111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO12111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO12111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO12111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO12111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO12111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+& A8AO12111 & 通过观察作品细节与内容，关联相关艺术形式的表现 
+table.city.ar.A8AO12111
+\\ \cline{2-16}
 
-  & A8AO13111 & 知道戏曲内容最基础的知识 &
-  `r gio.R$VarScoSamKey(query.data, "A8AO13111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO13111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO13111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO13111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO13111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO13111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO13111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO13111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO13111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO13111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO13111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO13111_X", "上海市","非沪籍","总体")` \\ \cline{1-15}
+& A8AO13111 & 知道戏曲内容最基础的知识 
+table.city.ar.A8AO13111
+\\ \cline{1-16}
 
-艺术体验 & A8AO12211 & 能通过作品的观察，体验其情感特征 &
-`r gio.R$VarScoSamKey(query.data, "A8AO12211_X", "上海市","总体","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO12211_X", "上海市","公办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO12211_X", "上海市","民办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO12211_X", "上海市","初中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO12211_X", "上海市","九年一贯","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO12211_X", "上海市","完中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO12211_X", "上海市","新优质","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO12211_X", "上海市","强校工程","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO12211_X", "上海市","男","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO12211_X", "上海市","女","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO12211_X", "上海市","沪籍","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO12211_X", "上海市","非沪籍","总体")` \\ \cline{1-15}
+艺术体验 & A8AO12211 & 能通过作品的观察，体验其情感特征 
+table.city.ar.A8AO12211
+\\ \cline{1-16}
 
-\multirow{6}{*}{艺术内容} & A8AO10211 & 能结合作品形式，判断其风格和情感 &
- `r gio.R$VarScoSamKey(query.data, "A8AO10211_X", "上海市","总体","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO10211_X", "上海市","公办","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO10211_X", "上海市","民办","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO10211_X", "上海市","初中","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO10211_X", "上海市","九年一贯","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO10211_X", "上海市","完中","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO10211_X", "上海市","新优质","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO10211_X", "上海市","强校工程","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO10211_X", "上海市","男","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO10211_X", "上海市","女","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO10211_X", "上海市","沪籍","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO10211_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+\multirow{6}{*}{艺术内容} & A8AO10211 & 能结合作品形式，判断其风格和情感 
+table.city.ar.A8AO10211
+\\ \cline{2-16}
 
- & A8AO01211 & 能在音乐感知的基础上，判断其音乐情绪，并能运用在日常生活中 &
-  `r gio.R$VarScoSamKey(query.data, "A8AO01211_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO01211_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO01211_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO01211_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO01211_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO01211_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO01211_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO01211_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO01211_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO01211_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO01211_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO01211_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+& A8AO01211 & 能在音乐感知的基础上，判断其音乐情绪，并能运用在日常生活中 
+table.city.ar.A8AO01211
+\\ \cline{2-16}
 
- & A8AO02211 & 能通过听辨感知音乐的情绪 &
-  `r gio.R$VarScoSamKey(query.data, "A8AO02211_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO02211_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO02211_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO02211_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO02211_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO02211_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO02211_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO02211_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO02211_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO02211_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO02211_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO02211_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+& A8AO02211 & 能通过听辨感知音乐的情绪 
+table.city.ar.A8AO02211
+\\ \cline{2-16}
 
- & A8AO04111 & 能通过听觉和视觉的共同运用进行艺术门类的关联 &
-  `r gio.R$VarScoSamKey(query.data, "A8AO04111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO04111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO04111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO04111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO04111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO04111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO04111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO04111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO04111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO04111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO04111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO04111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+& A8AO04111 & 能通过听觉和视觉的共同运用进行艺术门类的关联 
+table.city.ar.A8AO04111
+\\ \cline{2-16}
 
-  & A8AO09211 & 通过对作品的感知，分析其造型特征，理解情感表现，并有一定跨学科知识呈现 &
-  `r gio.R$VarScoSamKey(query.data, "A8AO09211_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO09211_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO09211_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO09211_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO09211_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO09211_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO09211_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO09211_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO09211_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO09211_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO09211_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO09211_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+& A8AO09211 & 通过对作品的感知，分析其造型特征，理解情感表现，并有一定跨学科知识呈现 
+table.city.ar.A8AO09211
+\\ \cline{2-16}
 
-  & A8AO11211 & 能知道并理解视觉标识的内涵意义 &
-  `r gio.R$VarScoSamKey(query.data, "A8AO11211_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO11211_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO11211_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO11211_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO11211_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO11211_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO11211_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO11211_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO11211_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO11211_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO11211_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO11211_X", "上海市","非沪籍","总体")` \\ \cline{1-15}
+& A8AO11211 & 能知道并理解视觉标识的内涵意义 
+table.city.ar.A8AO11211
+\\ \cline{1-16}
 
-\multirow{3}{*}{艺术风格}  & A8AO03211 & 能通过听辨，理解旋律线条表现，并通过具象性的旋律进行想象 &
-  `r gio.R$VarScoSamKey(query.data, "A8AO03211_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO03211_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO03211_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO03211_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO03211_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO03211_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO03211_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO03211_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO03211_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO03211_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO03211_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO03211_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+\multirow{3}{*}{艺术风格}  & A8AO03211 & 能通过听辨，理解旋律线条表现，并通过具象性的旋律进行想象 
+table.city.ar.A8AO03211
+\\ \cline{2-16}
 
-  & A8AO04211 & 知道作曲家与作品，或通过排除法进行思考 &
-  `r gio.R$VarScoSamKey(query.data, "A8AO04211_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO04211_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO04211_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO04211_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO04211_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO04211_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO04211_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO04211_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO04211_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO04211_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO04211_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO04211_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+& A8AO04211 & 知道作曲家与作品，或通过排除法进行思考 
+table.city.ar.A8AO04211
+\\ \cline{2-16}
 
-  & A8AO13211 & 知道戏曲内容最基础的知识 &
-  `r gio.R$VarScoSamKey(query.data, "A8AO13211_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO13211_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO13211_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO13211_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO13211_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO13211_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO13211_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO13211_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO13211_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO13211_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO13211_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO13211_X", "上海市","非沪籍","总体")` \\ \cline{1-15}
+& A8AO13211 & 知道戏曲内容最基础的知识 
+table.city.ar.A8AO13211
+\\ \cline{1-16}
 
 \end{longtable}
 \end{itshape}
@@ -329,7 +129,7 @@ query.data.city.ar.pointrate.perspective
 
 \end{landscape}
 
-\questiontitle{典型题目1、2：A8AO01111、A8AO01211}
+\questiontitle{典型题目}1、2：A8AO01111、A8AO01211
 
 \begin{itshape}
 
@@ -361,7 +161,7 @@ A. 欢庆场面  \qquad    B. 日常休闲  \qquad   C. 劳动助力  \qquad   D
 
 - 本题满分：两题每题各2分
 
-- 平均得分率：A8AO01111为`r gio.R$VarScoSamKey(query.data, "A8AO01111_X", "上海市","总体","总体")`％；A8AO01211为`r gio.R$VarScoSamKey(query.data, "A8AO01211_X", "上海市","总体","总体")`％
+- 平均得分率：A8AO01111为`r gio.R$VarTierSamKey(query.data, "A8AO01111_X", "市","总体","总体")`％；A8AO01211为`r gio.R$VarTierSamKey(query.data, "A8AO01211_X", "市","总体","总体")`％
 
 plot.bar.city.ar.question.A8AO01111
 plot.bar.city.ar.question.A8AO01211
@@ -374,7 +174,7 @@ query2.plot.bar.city.ar.question.A8AO01211
 
 在题目A8AO01211中，对音乐场景的运用就需要动用分析能力，就有学生会不确定，特别是因为九年级学生的生活经历不够丰富，因此出现不同选项的比例就比较高，正确率在`r gio.R$KeyValue(query2.data, "A")`％左右。
 
-\questiontitle{典型题目3、4：A8AO12111、A8AO12211}
+\questiontitle{典型题目}3、4：A8AO12111、A8AO12211
 
 \begin{itshape}
 
@@ -415,7 +215,7 @@ A．轻松 \qquad\qquad  B.愉悦 \qquad\qquad  C.幽默 \qquad\qquad  D.沉重
 
 - 本题满分：两题每题各2分
 
-- 平均得分率：A8AO12111为`r gio.R$VarScoSamKey(query.data, "A8AO12111_X", "上海市","总体","总体")`％；A8AO12211为`r gio.R$VarScoSamKey(query.data, "A8AO12211_X", "上海市","总体","总体")`％
+- 平均得分率：A8AO12111为`r gio.R$VarTierSamKey(query.data, "A8AO12111_X", "市","总体","总体")`％；A8AO12211为`r gio.R$VarTierSamKey(query.data, "A8AO12211_X", "市","总体","总体")`％
 
 plot.bar.city.ar.question.A8AO12111
 plot.bar.city.ar.question.A8AO12211
@@ -433,122 +233,42 @@ plot.bar.city.ar.question.A8AO12211
 
 \begin{itshape}
 \mytable
-\begin{longtable}{|c|c|p{7cm}|c|c|c|c|c|c|c|c|c|c|c|c|}
+\begin{longtable}{|c|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\ \hline
 
-考查维度 & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
+考查维度 & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{本\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{其\\他} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
 
-\multirow{5}{*}{艺术形式} & A8AO05111 & 通过视觉，判断舞蹈形式 &
-`r gio.R$VarScoSamKey(query.data, "A8AO05111_X", "上海市","总体","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO05111_X", "上海市","公办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO05111_X", "上海市","民办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO05111_X", "上海市","初中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO05111_X", "上海市","九年一贯","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO05111_X", "上海市","完中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO05111_X", "上海市","新优质","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO05111_X", "上海市","强校工程","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO05111_X", "上海市","男","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO05111_X", "上海市","女","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO05111_X", "上海市","沪籍","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AO05111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+\multirow{5}{*}{艺术形式} & A8AO05111 & 通过视觉，判断舞蹈形式 
+table.city.ar.A8AO05111
+\\ \cline{2-16}
 
- & A8AO05211 & 知道并判断舞蹈的分类 &
- `r gio.R$VarScoSamKey(query.data, "A8AO05211_X", "上海市","总体","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO05211_X", "上海市","公办","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO05211_X", "上海市","民办","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO05211_X", "上海市","初中","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO05211_X", "上海市","九年一贯","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO05211_X", "上海市","完中","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO05211_X", "上海市","新优质","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO05211_X", "上海市","强校工程","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO05211_X", "上海市","男","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO05211_X", "上海市","女","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO05211_X", "上海市","沪籍","总体")` &
- `r gio.R$VarScoSamKey(query.data, "A8AO05211_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+& A8AO05211 & 知道并判断舞蹈的分类 
+table.city.ar.A8AO05211
+\\ \cline{2-16}
 
- & A8AO05311 & 了解冷暖色调的主要关联和运用 &
-  `r gio.R$VarScoSamKey(query.data, "A8AO05311_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO05311_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO05311_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO05311_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO05311_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO05311_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO05311_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO05311_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO05311_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO05311_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO05311_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO05311_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+& A8AO05311 & 了解冷暖色调的主要关联和运用 
+table.city.ar.A8AO05311
+\\ \cline{2-16}
 
- & A8AO05411 & 知道雕塑的主要特点，并在艺术形式表现上做出关联 &
-  `r gio.R$VarScoSamKey(query.data, "A8AO05411_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO05411_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO05411_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO05411_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO05411_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO05411_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO05411_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO05411_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO05411_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO05411_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO05411_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AO05411_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+& A8AO05411 & 知道雕塑的主要特点，并在艺术形式表现上做出关联 
+table.city.ar.A8AO05411
+\\ \cline{2-16}
 
- & A8AS06111 & 通过视觉感受，直观判断相关乐器，了解乐器名称 &
-  `r gio.R$VarScoSamKey(query.data, "A8AS06111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS06111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS06111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS06111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS06111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS06111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS06111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS06111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS06111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS06111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS06111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS06111_X", "上海市","非沪籍","总体")` \\ \cline{1-15}
+& A8AS06111 & 通过视觉感受，直观判断相关乐器，了解乐器名称 
+table.city.ar.A8AS06111
+\\ \cline{1-16}
 
-\multirow{3}{*}{\makecell[c]{艺术内容\\艺术感受}} & A8AS06211 & 通过视觉感受，结合想象，并运用已有经验和知识进行判断 &
-  `r gio.R$VarScoSamKey(query.data, "A8AS06211_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS06211_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS06211_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS06211_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS06211_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS06211_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS06211_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS06211_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS06211_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS06211_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS06211_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS06211_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+\multirow{3}{*}{\makecell[c]{艺术内容\\艺术感受}} & A8AS06211 & 通过视觉感受，结合想象，并运用已有经验和知识进行判断 
+table.city.ar.A8AS06211
+\\ \cline{2-16}
 
-  & A8AS07111 & 在视觉欣赏的基础上，综合艺术表现方式和作品主题进行想象，并用恰当生动的文字进行表述，有一定的跨学科概念 &
-  `r gio.R$VarScoSamKey(query.data, "A8AS07111_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS07111_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS07111_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS07111_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS07111_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS07111_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS07111_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS07111_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS07111_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS07111_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS07111_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS07111_X", "上海市","非沪籍","总体")` \\ \cline{2-15}
+& A8AS07111 & 在视觉欣赏的基础上，综合艺术表现方式和作品主题进行想象，并用恰当生动的文字进行表述，有一定的跨学科概念 
+table.city.ar.A8AS07111
+\\ \cline{2-16}
 
-  & A8AS07211 & 在视觉欣赏与想象的基础上，通过文字表达艺术作品的情感，体现价值观导向 &
-  `r gio.R$VarScoSamKey(query.data, "A8AS07211_X", "上海市","总体","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS07211_X", "上海市","公办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS07211_X", "上海市","民办","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS07211_X", "上海市","初中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS07211_X", "上海市","九年一贯","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS07211_X", "上海市","完中","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS07211_X", "上海市","新优质","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS07211_X", "上海市","强校工程","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS07211_X", "上海市","男","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS07211_X", "上海市","女","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS07211_X", "上海市","沪籍","总体")` &
-  `r gio.R$VarScoSamKey(query.data, "A8AS07211_X", "上海市","非沪籍","总体")` \\ \cline{1-15}
+& A8AS07211 & 在视觉欣赏与想象的基础上，通过文字表达艺术作品的情感，体现价值观导向 
+table.city.ar.A8AS07211
+\\ \cline{1-16}
 
 \end{longtable}
 \end{itshape}
@@ -558,7 +278,74 @@ plot.bar.city.ar.question.A8AO12211
 
 \end{landscape}
 
-\questiontitle{典型题目5:}
+\questiontitle{典型题目}5: A8AS06111、A8AS06211、A8AS07111、A8AS07211
+
+
+\begin{itshape}
+
+观赏视频，完成以下内容：
+
+A8AS06111、A8AS06211
+
+6．填空题
+
+（1）舞蹈音乐的主奏乐器是 \uline{\qquad\qquad\qquad} 。
+
+（2）舞蹈人物来源于\uline{\qquad\qquad\qquad} 形象。
+
+\end{itshape}
+
+- 思维层次：内涵把握
+
+- 能力维度：理解与分析
+
+- 试题描述：A8AS06111通过视觉感受，直观判断相关乐器，了解乐器名称；A8AS06211通过视觉感受，结合想象，并运用已有经验和知识进行判断
+
+- 正确答案：A8AS06111答案为鼓（或打击乐器），A8AS06211答案为秦俑（或古代士兵、战士、古代将领等）
+
+- 本题满分：两题每题各2分
+
+\mylist
+注：阅卷时，如果学生答案有模棱两可的时候，只要他们写到人，如杨六郎、岳飞等建议可给1分，写时期，如春秋、战国等，不给分。
+\mytext
+
+- 平均得分率：A8AS06111为`r gio.R$VarTierSamKey(query.data, "A8AS06111_X", "市","总体","总体")`％；A8AS06211为`r gio.R$VarTierSamKey(query.data, "A8AS06211_X", "市","总体","总体")`％
+
+plot.bar.city.ar.question.A8AS06111
+plot.bar.city.ar.question.A8AS06211
+
+- 学生的答题分析：
+
+\begin{itshape}
+
+A8AS07111、A8AS07211
+
+7．简答题：
+
+（1）请简要描述该作品表现的场景。
+
+（2）作品表现了怎样的情感和精神。
+
+\end{itshape}
+
+- 思维层次：A8AS07111内涵把握，A8AS07211问题解决
+
+- 能力维度：理解与分析
+
+- 试题描述：A8AS07111在视觉欣赏的基础上，综合艺术表现方式和作品主题进行想象，并用恰当生动的文字进行表述，有一定的跨学科概念；A8AS07211在视觉欣赏与想象的基础上，通过文字表达艺术作品的情感，体现价值观导向
+
+- 正确答案：略
+
+- 本题满分：A8AS07111——8分；A8AS07211——10分
+
+- 平均得分率：A8AS07111为`r gio.R$VarTierSamKey(query.data, "A8AS07111_X", "市","总体","总体")`％；A8AS07211为`r gio.R$VarTierSamKey(query.data, "A8AS07211_X", "市","总体","总体")`％
+
+plot.bar.city.ar.question.A8AS07111
+plot.bar.city.ar.question.A8AS07211
+
+- 学生的答题分析：
+
+
 
 \begin{landscape}
 
@@ -570,24 +357,14 @@ plot.bar.city.ar.question.A8AO12211
 
 \begin{itshape}
 \mytable
-\begin{longtable}{|c|c|p{7cm}|c|c|c|c|c|c|c|c|c|c|c|c|}
+\begin{longtable}{|c|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\ \hline
 
-考查维度 & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{上\\海\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
+考查维度 & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{本\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{其\\他}  & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
 
-艺术创作 & A8AS14111 & 能读懂题目要求，并提取素材内容，进行主题创作。在此过程中，关注形式与内容的结合，体现创意表达的基本要求。 &
-`r gio.R$VarScoSamKey(query.data, "A8AS14111_X", "上海市","总体","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AS14111_X", "上海市","公办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AS14111_X", "上海市","民办","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AS14111_X", "上海市","初中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AS14111_X", "上海市","九年一贯","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AS14111_X", "上海市","完中","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AS14111_X", "上海市","新优质","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AS14111_X", "上海市","强校工程","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AS14111_X", "上海市","男","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AS14111_X", "上海市","女","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AS14111_X", "上海市","沪籍","总体")` &
-`r gio.R$VarScoSamKey(query.data, "A8AS14111_X", "上海市","非沪籍","总体")` \\ \cline{1-15}
+艺术创作 & A8AS14111 & 能读懂题目要求，并提取素材内容，进行主题创作。在此过程中，关注形式与内容的结合，体现创意表达的基本要求。 
+table.city.ar.A8AS14111
+\\ \cline{1-16}
 
 \end{longtable}
 \end{itshape}
@@ -597,7 +374,7 @@ plot.bar.city.ar.question.A8AO12211
 
 \end{landscape}
 
-\questiontitle{典型题目6：A8AS14111}
+\questiontitle{典型题目}6：A8AS14111
 
 \begin{itshape}
 春节是中国传统节日，每当这个时候，人们会穿新装、贴对联、挂年画，精心装饰居家环境，举办各种庆祝活动，辞旧迎新。
@@ -643,14 +420,13 @@ plot.bar.city.ar.question.A8AO12211
 
 - 本题满分：30分
 
-- 平均得分率：`r gio.R$VarScoSamKey(query.data, "A8AS14111_X", "上海市","总体","总体")`％
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "A8AS14111_X", "市","总体","总体")`％
 
 plot.bar.city.ar.question.A8AS14111
 
 - 学生的答题分析：
 
 此题为学生的创作表现题，也是主观题，根据评分标准，学生总体得分情况还是比较好的。27分以上学生不多，主要是因为真正有绘画基础的学生在整体学生中不占多数。但在18分以下的学生也存在，分析原因主要是因为没有看清题目，对贺卡的形式要素不了解而造成。这也是命题过程中的尝试，今后的教学中会进一步有目的性的调整。
-
 
 
 <!-- end of chapter topic -->

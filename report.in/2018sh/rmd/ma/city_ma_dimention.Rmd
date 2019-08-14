@@ -8,7 +8,7 @@
 
 ### 全体学生在各内容维度上的表现
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.ma.content.dimention.rank")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.city.ma.content.dimention.quantile")`}分别给出了上海市学生在数学学科各内容维度各水平上的人数比例和得分分布。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.ma.content.dimention.rank")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.city.ma.content.dimention.quantile")`}分别给出了本市学生在数学学科各内容维度各水平上的人数比例和得分分布。
 
 plot.bar.city.ma.content.dimention.rank
 plot.box.city.ma.content.dimention.quantile
@@ -16,7 +16,7 @@ plot.box.city.ma.content.dimention.quantile
 
 ### 全体学生在各能力维度上的表现
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.ma.skill.dimention.rank")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.city.ma.skill.dimention.quantile")`}分别给出了上海市学生在数学学科各能力维度各水平上的人数比例和得分分布。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.ma.skill.dimention.rank")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.city.ma.skill.dimention.quantile")`}分别给出了本市学生在数学学科各能力维度各水平上的人数比例和得分分布。
 
 plot.bar.city.ma.skill.dimention.rank
 plot.box.city.ma.skill.dimention.quantile

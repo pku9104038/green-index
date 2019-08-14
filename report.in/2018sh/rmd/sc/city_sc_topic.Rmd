@@ -122,7 +122,7 @@ table.city.sc.S8AO50221
 
 \begin{itshape}
 
-\begin{wrapfigure}{r}{0.4\textwidth}
+\begin{wrapfigure}[5]{r}{0.4\textwidth}
   \begin{center}
     \includegraphics[width=0.35\textwidth]{sc_S8AO48111.png}
   \end{center}
@@ -542,6 +542,7 @@ query2.plot.bar.city.sc.question.S8AO35111
 
 - 教学建议：说明基本概念的教学很重要，只有把基本概念落实到位才能在解答考查能力的题目时游刃有余。
 
+\clearpage
 
 ## 物质科学
 
@@ -753,7 +754,7 @@ query2.plot.bar.city.sc.question.S8AO04111
 
 \begin{itshape}
 小红和她爸爸能一起玩跷跷板并保持跷跷板的平衡吗?请给出你的判断，并具体说明理由。
-\uline{\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad}。
+\uline{\qquad\qquad\qquad\qquad\qquad\qquad\qquad}。
 \end{itshape}
 
 \begin{figure}[H]
@@ -785,6 +786,7 @@ query2.plot.bar.city.sc.question.S8AS49211
 
 
 
+\clearpage
 
 ## 科学探究
 
@@ -866,7 +868,7 @@ table.city.sc.S8AO46421
 表3
 \begin{longtable}{|c|c|c|c|c|}
 \hline
-\multirow{3}{*}{组别}	& \multicolumn{4}{|c|}{$PM_{2.5}$的浓度（微克 / 立方米）} \\ \cline{2-5}
+\multirow{3}{*}{组别}	& \multicolumn{4}{c|}{$PM_{2.5}$的浓度（微克 / 立方米）} \\ \cline{2-5}
  & 清晨	& 上班时段	& 中午	& 下班时段 \\ \cline{2-5}
  &（车流量最小） & （车流量大） &（车流量小） &（车流量最大）\\ \hline
 第1组	& 19	& 89	& 43	& 97 \\ \hline
@@ -913,10 +915,6 @@ query2.plot.bar.city.sc.question.S8AO45111
 
 - 教学建议：探究实验教学过程中，对探究要素，及体现探究要素的相关证据之间要形成有效联系。透过现象看本质的探究能力需要进一步培养，可以在探究过程中形成现象到本质的问题链，引导学生在探究活动中，既能观察现象记录数据，又能认识现象背后的本质要素，提升探究活动的有效性和准确性。
 
-\begin{itshape}
-在本次测试中，科学总体能力处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarTierSamKey(query.data, "S8AO04111_X", "市","总体","A")`％、`r gio.R$VarTierSamKey(query.data, "S8AO04111_X", "市","总体","B")`％、`r gio.R$VarTierSamKey(query.data, "S8AO04111_X", "市","总体","C")`％、 `r gio.R$VarTierSamKey(query.data, "S8AO04111_X", "市","总体","D")`％。
-\end{itshape}
-
 
 \questiontitle{典型题目}2：S8AS46321
 \begin{center}
@@ -954,7 +952,7 @@ query2.plot.bar.city.sc.question.S8AO45111
 
 （2）酸奶中相关活菌数越多，酸奶的品质越好。同学们根据实验结果，得出制作酸奶的最佳温度为40℃。请分析他们的结论是否合理，并给出你的理由。
 
-\uline{\qquad\qquad\qquad\qquad\qquad\qquad}。
+\uline{\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad}。
 
 \end{itshape}
 
@@ -1029,7 +1027,7 @@ query2.plot.bar.city.sc.question.S8AS46321
 
 （2）在提尺时，老师要求“零刻度线位置刚好停在接尺同学的手指之间”。假如对准的是2厘米刻度线，你认为这样测量刻度尺下落的距离是否可以?请讲出你的理由。
 
-\uline{\qquad\qquad\qquad\qquad\qquad\qquad}。
+\uline{\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad}。
 \end{itshape}
 
 - 试题考查点：科学知识维度——实验操作方法与实验数据的获取
@@ -1061,7 +1059,7 @@ query2.plot.bar.city.sc.question.S8AS47421
 \begin{longtable}{|p{3cm}|p{8cm}|p{3cm}|}
 \hline
 评分标准	& 学生描述	& 原因分析 \\ \hline
-\multirow{3}{*}{\makecell[l]{2分 \quad 可行，\\计算下落距离时以\\2厘米为起点即可。}} & 可行，测量手握的地方到2厘米处即可。 & \multirow{3}{*}{含义相同} \\ \cline{2-2}
+\multirow{2}{*}{\makecell[l]{2分 \quad 可行，\\计算下落距离时以\\2厘米为起点即可。}} & 可行，测量手握的地方到2厘米处即可。 & \multirow{3}{*}{含义相同} \\ \cline{2-2}
  & 只要接尺处减去对准的刻度就可以 & \\ \cline{2-2}
  & 可行，用刻度尺为测量下落距离，原点为刻度几不重要。& \\ \hline
 \multirow{3}{*}{\makecell[l]{1分 \quad 不可行，\\读出的数据\\比实际情况偏大。}}	& 可行，测试依据是吃下落的距离，与刻度无头。& 	\multirow{3}{*}{\makecell[l]{理解含义，但表达不\\够精确，或不完整。}} \\ \cline{2-2}
@@ -1184,7 +1182,7 @@ query2.plot.bar.city.sc.question.S8AO50221
 \end{figure}
 
 
-A．甲和乙     B．乙和丙     C．丙和丁     D．甲和丁
+A．甲和乙     \qquad\qquad B．乙和丙  \qquad\qquad   C．丙和丁  \qquad\qquad   D．甲和丁
 \end{itshape}
 
 

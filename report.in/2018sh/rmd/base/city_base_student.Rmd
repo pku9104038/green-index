@@ -36,7 +36,6 @@ query.data.city.base.student.survey
 
 plot.bar.city.base.onechild.perspective
 
-\clearpage
 
 #### 学生家庭的藏书量
 
@@ -85,7 +84,6 @@ plot.bar.city.base.sleep.feel.perspective
 
 plot.bar.city.base.sleep.lack.reason
 
-\clearpage
 
 #### 学生作业时间
 
@@ -107,19 +105,25 @@ plot.bar.city.base.homework.difficulty.perspective
 
 plot.bar.city.base.buke.perspective
 
+
+
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.buke.hours.perspective")`}给出了九年级学生每周参加与考试科目相关的家教补习、课外辅导的时间分布及各群体之间的比较。
 
 plot.bar.city.base.buke.hours.perspective
+
+\clearpage
 
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.buke.subject.perspective")`}给出了九年级学生每周参加与考试科目相关的家教补习、课外辅导时间的学科分布及各群体之间的比较。
 
 plot.bar.city.base.buke.subject.perspective
 
+\clearpage
+
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.buke.reason")`}给出了九年级学生每周参加与考试科目相关的家教补习、课外辅导的主要原因。
 
 plot.bar.city.base.buke.reason
 
-\clearpage
+
 
 #### 参加校外兴趣班的情况
 
@@ -127,27 +131,36 @@ plot.bar.city.base.buke.reason
 
 plot.bar.city.base.xingquban.perspective
 
+
+\clearpage
+
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.xingquban.hours.perspective")`}给出了九年级学生每周参加校外兴趣班的时间分布情况及各群体之间的比较。
 
 plot.bar.city.base.xingquban.hours.perspective
 
-\clearpage
 
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.xingquban.subject.perspective")`}给出了九年级学生每周校外兴趣班的种类情况及各群体之间的比较。
 
 plot.bar.city.base.xingquban.subject.perspective
 
+
+\clearpage
+
+
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.xingquban.reason")`}给出了九年级学生每周参加校外兴趣班的主要原因。
 
 plot.bar.city.base.xingquban.reason
 
-\clearpage
+
 
 #### 考试和测验的频率
 
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.examination.perspective")`}给出了九年级学生每月考试和测验次数的总体情况及各群体之间的比较。
 
 plot.bar.city.base.examination.perspective
+
+
+\clearpage
 
 
 #### 课外阅读数量
@@ -164,6 +177,8 @@ plot.bar.city.base.reading.perspective
 plot.bar.city.base.sports.perspective
 
 
+\clearpage
+
 ## 学业压力相关问题调查结果
 
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.study.pressure")`}给出了九年级学生对学业压力相关问题的看法。
@@ -177,6 +192,8 @@ plot.bar.city.base.study.pressure
 
 plot.bar.city.base.study.motivation
 
+
+\clearpage
 
 ## 学习自信心相关问题调查结果
 
@@ -192,6 +209,8 @@ plot.bar.city.base.study.confidence
 plot.bar.city.base.teacher.relationship
 
 
+\clearpage
+
 ## 同伴关系相关问题调查结果
 
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.classmate.relationship")`}给出了九年级学生对同伴关系评价的总体情况。
@@ -204,6 +223,9 @@ plot.bar.city.base.classmate.relationship
 
 plot.bar.city.base.school.identity
 
+
+
+\clearpage
 
 ## 教师教学方式有关问题的调查结果
 
@@ -267,6 +289,8 @@ plot.bar.city.base.country.identity
 
 plot.bar.city.base.globalization.knowlage
 
+\clearpage
+
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.globalization.concern")`}给出了九年级学生对全球意识相关问题的看法。
 
 plot.bar.city.base.globalization.concern
@@ -276,6 +300,7 @@ plot.bar.city.base.globalization.concern
 plot.bar.city.base.globalization.action
 
 
+\clearpage
 
 ## 心理健康有关问题的调查结果
 
@@ -357,5 +382,5 @@ plot.point.city.base.score.confidence.allsubject.district
 
 plot.point.city.base.score.school.allsubject.district
 
-\clearpage
+
 <!-- end of chapter  -->

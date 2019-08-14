@@ -64,7 +64,7 @@ jobs:
 
 
 # auto reworkall switch
-schoolonly: FALSE
+schoolonly: TRUE
 reworkall: FALSE
 dropdata: FALSE
 # TRUE, igonre TODO: FALSE flags, rework all jobs

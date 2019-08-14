@@ -531,10 +531,10 @@ GreenIndexStatisticsData <- setRefClass(
       
       schoolonly <- config$IsSchoolOnly()
       
-      if (process[1, kColumnTODO] == "FALSE" && RUN == kPilotRun ){
+      if (process[1, kColumnTODO] == "FALSE"){
         return(NA)
         
-      } else if (process[1, kColumnTODO] == "TRUE"){
+      } else if (process[1, kColumnTODO] == "TRUE" | RUN == kAutoRun){
         
         LogInfo(paste("Process",
                       process[1, kColumnSubject], 

@@ -4,4 +4,4 @@ plotfigure:
   <<: *kPilotRun
   <<: *kPrepareDataframe
   test:
-    - plot.bar.city.sc.question.s8ao16111
+    - plot.bar.city.cn.jilei.rank.district

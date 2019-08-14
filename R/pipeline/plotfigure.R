@@ -487,7 +487,7 @@ GreenIndexPlotFigure <- setRefClass(
               arrange(sort.df, desc(sort.df[, plot.param[1, kColumnSortXValue]]))
             
             if (order.first){
-              order.x <<- unlist(sort.df[, kColumnAxisX])
+              order.x <- unlist(sort.df[, kColumnAxisX])
               order.first <- FALSE
             } else {
               plot.order.x <<- c(order.x ,unlist(sort.df[, kColumnAxisX]))
@@ -520,7 +520,7 @@ GreenIndexPlotFigure <- setRefClass(
               arrange(sort.df, desc(sort.df[, plot.param[1, kColumnSortXValue]]))
             
             if (order.first){
-              order.x <<- unlist(sort.df[, kColumnAxisX])
+              order.x <- unlist(sort.df[, kColumnAxisX])
               order.first <- FALSE
             } else {
               plot.order.x <<- c(order.x ,unlist(sort.df[, kColumnAxisX]))
@@ -573,9 +573,16 @@ GreenIndexPlotFigure <- setRefClass(
                                    keyheight = 
                                      plot.param[1, kColumnLegendHeight]))
       
+      if (plot.param[1, kColumnLegendPosition] == "top"){
+        direction <- "horizontal"
+      } else if (plot.param[1, kColumnLegendPosition] == "right"){
+        direction <- "vertical"
+      } else if (plot.param[1, kColumnLegendPosition] == kStringNone){
+        direction <- "vertical"
+      }
       figure <- figure +  
         theme(legend.position = plot.param[1, kColumnLegendPosition],
-              legend.direction =  plot.param[1, kColumnLegendDirection],
+              legend.direction =  direction,
               legend.text = 
                 element_text(size = plot.param[1, kColumnLegendFontSize]),
               legend.title=element_blank())
@@ -1215,6 +1222,8 @@ GreenIndexPlotFigure <- setRefClass(
     },
     
     PlotFigure = function(plot.dir, plot.code) {
+      LogInfo(paste(plot.param[1, kColumnPlotGeom], plot.code))
+      
       PreparePlotData(plot.code)
       # PlotSortX()
       
@@ -1243,7 +1252,7 @@ GreenIndexPlotFigure <- setRefClass(
                           plot.fig$path)
         system(command = command)
       } else {
-        LogInfo(paste(plot.param[1, kColumnPlotGeom], plot.code))
+        
         plot.fig$name <- plot.param[1, kColumnPlotTitle]
         pdf(plot.file, width = as.numeric(plot.param[1, kColumnPlotWidth]) , 
             height = as.numeric(plot.param[1, kColumnPlotHeight]) ) 

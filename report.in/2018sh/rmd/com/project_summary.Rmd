@@ -43,7 +43,7 @@
 
 科学 & \multicolumn{2}{l|}{\makecell[l]{地球宇宙\\物质科学\\生命科学\\科学探究}} & \multicolumn{2}{l|}{\makecell[l]{科学知识\\科学能力\\科学态度}} \\ \hline
 
-艺术 & \multicolumn{2}{l|}{\makecell[l]{艺术形式\\艺术内容\\艺术风格\\艺术感受\\艺术创作}} & \multicolumn{2}{l|}{\makecell[l]{感知与判断\\理解与分析\\运用于表现}} \\ \hline
+艺术 & \multicolumn{2}{l|}{\makecell[l]{艺术形式\\艺术内容\\艺术风格\\艺术感受\\艺术创作}} & \multicolumn{2}{l|}{\makecell[l]{感知与判断\\理解与分析\\运用与表现}} \\ \hline
 
 \end{longtable}
 \end{itshape}

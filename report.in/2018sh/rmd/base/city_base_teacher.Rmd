@@ -132,6 +132,8 @@ plot.bar.city.base.teaching.evaluation.solution
 
 plot.bar.city.base.teaching.evaluation.thinking
 
+\clearpage 
+
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.teaching.evaluation.exam")`}给出了九年级教师对“采用何种方式才是最有效地利用了考试的结果?”的反馈总体情况。
 
 plot.bar.city.base.teaching.evaluation.exam
@@ -139,6 +141,8 @@ plot.bar.city.base.teaching.evaluation.exam
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.teaching.evaluation.unit")`}给出了九年级教师对“哪一项信息对设计一个单元的课堂教学最有帮助?”的反馈总体情况。
 
 plot.bar.city.base.teaching.evaluation.unit
+
+\clearpage
 
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.teaching.evaluation.principal")`}给出了九年级教师对“校长评估老师的教学表现，想了解老师在课堂中是否鼓励了学生进行高层次思维，哪个文本材料有助于校长做出最有效的决策?”的反馈总体情况。
 
@@ -152,6 +156,7 @@ plot.bar.city.base.teaching.evaluation.principal
 
 plot.bar.city.base.teacher.develop.action
 
+\clearpage
 
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.teacher.develop.requirement")`}给出了九年级教师专业发展需求的总体情况。
 
@@ -174,6 +179,7 @@ plot.bar.city.base.teacher.course.plan
 
 plot.bar.city.base.teacher.course.excute
 
+\clearpage
 
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.teacher.course.evaluation")`}给出了九年级教师对学校课程评价的感知的总体情况。
 

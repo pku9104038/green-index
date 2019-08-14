@@ -13,6 +13,7 @@ query.data.city.base.parent.survey
 
 plot.bar.city.base.family.type
 
+\clearpage 
 
 ## 亲子关系
 
@@ -23,6 +24,8 @@ plot.bar.city.base.family.communication
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.family.discuss")`}给出了学生参与家庭事务讨论的总体情况及各群体之间的比较。
 
 plot.bar.city.base.family.discuss
+
+\clearpage
 
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.family.accompany")`}给出了亲子陪伴的总体情况及各群体之间的比较。
 

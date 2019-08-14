@@ -22,6 +22,8 @@ query.data.city.base.principal.survey
 
 校长基本情况包括校长的性别、年龄、担任校长年限、学历、职称和职级。
 
+\clearpage
+
 ### 校长性别
 
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.principal.gender.perspective")`}给出了校长性别的总体情况及不同群体之间的比较。
@@ -104,6 +106,9 @@ plot.bar.city.base.principal.communicating.perspective
 
 plot.bar.city.base.principal.challenge
 
+
+\clearpage
+
 ## 与学校办学成效有关问题的调查结果
 
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.school.publishing.perspective")`}描述了学校近三年正式出版专门的学科交流与经验分享的成果集的数量及与各 群体之间的比较。
@@ -113,6 +118,8 @@ plot.bar.city.base.school.publishing.perspective
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.school.course.perspective")`}描述了学校根据学生学习需要，开设校本课程的数量及与各群体之间的比较。
 
 plot.bar.city.base.school.course.perspective
+
+\clearpage
 
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.school.community.perspective")`}描述了学校建设学生社团、兴趣小组和俱乐部的数量及与各群体之间的比较。
 

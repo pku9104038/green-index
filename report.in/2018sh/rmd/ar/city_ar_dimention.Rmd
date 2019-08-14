@@ -30,6 +30,8 @@ plot.box.city.ar.ganzhi.quantile.perspective
 plot.bar.city.ar.ganzhi.rank.district
 plot.box.city.ar.ganzhi.quantile.district
 
+\clearpage
+
 ### 理解与分析
 
 在综合信息背景中，比较作品的中的艺术元素、艺术方法，分析艺术形式的关联因素、艺术表现的内容，理解作者的思想感情，分析艺术形式与内容之间的关系，领会创作意义，评价创作形式。
@@ -43,6 +45,8 @@ plot.box.city.ar.lijie.quantile.perspective
 
 plot.bar.city.ar.lijie.rank.district
 plot.box.city.ar.lijie.quantile.district
+
+\clearpage
 
 ### 运用与表现
 
