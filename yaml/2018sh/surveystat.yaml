@@ -2,7 +2,7 @@
 # statistics of variables, coefficents, scores
 surveystat:
   TODO: TRUE
-  RUN: "MILESTONE"  # "AUTO", "PILOT", "MILESTONE", "AGILE", "SCHOOL"
+  RUN: "DISTRICT"  # "AUTO", "PILOT", "MILESTONE", "AGILE", "SCHOOL","DISTRICT"
   <<: *kPilotRun
   <<: *kDDLStatisticsTable
   info:

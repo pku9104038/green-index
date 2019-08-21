@@ -1,0 +1,68 @@
+<!-- chapter dimention -->
+
+\mytext
+
+# 学生在各考查维度上的表现情况
+
+## 全体学生在各考查维度上的表现
+
+本次艺术素养的测试，是从“感知与判断”“理解与分析”“运用与表现”等能力维度进行具体考查。图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.ar.dimention.rank")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.district.ar.dimention.quantile")`}分别给出了本区学生在艺术素养各考查维度各水平上的人数比例和得分分布。
+
+plot.bar.district.ar.dimention.rank
+plot.box.district.ar.dimention.quantile
+
+
+## 学生在各考查维度的表现
+
+### 感知与判断
+
+视听部分：以视听的方式呈现艺术作品的欣赏，调动学生多感官体验，探索其中的主题、艺术要素、艺术门类等。
+
+纸笔部分：主要以文字表达或视觉表达为主要途径。呈现艺术的相关信息，让学生在作品鉴赏中调动多种关联信息，进行艺术的识别、比较、判断和理解。
+
+#### 不同群体学生的表现
+
+plot.bar.district.ar.ganzhi.rank.perspective
+plot.box.district.ar.ganzhi.quantile.perspective
+
+#### 不同学校学生的表现
+
+multiplot.bar.district.ar.ganzhi.rank.school
+multiplot.box.district.ar.ganzhi.quantile.school
+
+\clearpage
+
+### 理解与分析
+
+在综合信息背景中，比较作品的中的艺术元素、艺术方法，分析艺术形式的关联因素、艺术表现的内容，理解作者的思想感情，分析艺术形式与内容之间的关系，领会创作意义，评价创作形式。
+
+#### 不同群体学生的表现
+
+plot.bar.district.ar.lijie.rank.perspective
+plot.box.district.ar.lijie.quantile.perspective
+
+#### 不同学校学生的表现
+
+multiplot.bar.district.ar.lijie.rank.school
+multiplot.box.district.ar.lijie.quantile.school
+
+\clearpage
+
+### 运用与表现
+
+在综合主题情境中，能够在多种关联因素中，理解主题的含义，运用提供的素材，进行设计构思，能运用相应的艺术表现方法进行艺术的创编和表现。
+
+结合相关性内容，本报告将选取若干试题，分别对此进行分析。
+
+#### 不同群体学生的表现
+
+plot.bar.district.ar.yunyong.rank.perspective
+plot.box.district.ar.yunyong.quantile.perspective
+
+
+#### 不同学校学生的表现
+
+multiplot.bar.district.ar.yunyong.rank.school
+multiplot.box.district.ar.yunyong.quantile.school
+
+<!-- end of chapter dimention -->

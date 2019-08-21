@@ -534,7 +534,9 @@ GreenIndexStatisticsData <- setRefClass(
       if (process[1, kColumnTODO] == "FALSE"){
         return(NA)
         
-      } else if (process[1, kColumnTODO] == "TRUE" | RUN == kAutoRun){
+      } else if (process[1, kColumnTODO] == "TRUE"
+                 # | RUN == kAutoRun
+                 ){
         
         LogInfo(paste("Process",
                       process[1, kColumnSubject], 
@@ -650,6 +652,16 @@ GreenIndexStatisticsData <- setRefClass(
               if (schoolonly && tier.name != kTierSchool) {
                 break
               }
+              
+              # limit tier and perspective for district run
+              if (RUN == kDistrictRun && 
+                  ( tier.name == kTierCity
+                    # || (tier.name == kTierDistrict && 
+                    #     perspective.name == kPerspectiveTotal) 
+                    # ||  tier.name == kTierSchool
+                    || tier.name == kTierRegion ) ){
+                break
+              } 
 
               perspective.df <- filter.df
               
@@ -659,7 +671,12 @@ GreenIndexStatisticsData <- setRefClass(
                 perspective.df <- 
                   perspective.df[perspective.df[, kTierDistrict] == 
                                                    pilot$scope$district, ]
+              } else if (RUN == kDistrictRun) {
+                perspective.df <- 
+                  perspective.df[perspective.df[, kTierDistrict] == 
+                                   pilot$scope$district, ]
               }
+              
               scopes <- unique(perspective.df[!is.na(perspective.df[, tier.name]), 
                                               tier.name])
              

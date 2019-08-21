@@ -1,0 +1,9 @@
+<!-- chapter radar  -->
+
+# 市、区绿色指标对比
+
+
+plot.radar.district.index.city.district
+
+
+<!-- end of chapter radar  -->

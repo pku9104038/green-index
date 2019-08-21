@@ -92,7 +92,7 @@ GreenIndexScheduler <- setRefClass(
       if (reload)
         gio.loaddata$LoadAttribute()
       gio.indexation$IndexationData()
-      gio.loadindex$LoadIndex()
+      # gio.loadindex$LoadIndex()
       gio.converge$ConvergeTable()
     },
     

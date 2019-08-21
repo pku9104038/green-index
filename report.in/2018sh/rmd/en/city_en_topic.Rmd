@@ -1196,7 +1196,7 @@ query2.plot.bar.city.en.question.E8AO74111
 \begin{longtable}{|c|c|p{6.5cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\ \hline
 
-\makecell[c]{内容\\维度} & 题目编码 & \makecell[c]{能力描述} & \makecell[c]{本\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{完全\\中学}  & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
+\makecell[c]{内容\\维度} & 题目编码 & \makecell[c]{能力描述} & \makecell[c]{本\\市} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{其\\他}  & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
 
 \multirow{4}{*}{\makecell[c]{话题}} & E8AS75111 & 完成简单的叙事写作任务，内容充实，覆盖要点 
 table.city.en.E8AS75111

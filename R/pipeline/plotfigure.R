@@ -397,7 +397,22 @@ GreenIndexPlotFigure <- setRefClass(
         if (plot.param[1, kColumnOrderX] == kStringNone) {
           return(figure)
         } else {
-          plot.order.x <<- unlist(strsplit(plot.param[1, kColumnOrderX], kSeparator))
+          
+          if (plot.param[1, kColumnOrderXOption] == kStringNone) {
+            plot.order.x <<- unlist(strsplit(plot.param[1, kColumnOrderX], kSeparator))
+          } else {
+            plot.order.x.option <- unlist(strsplit(plot.param[1, kColumnOrderXOption], kSeparator))
+            x.unique <- unlist(unique(plot.data[, plot.param[1, kColumnAxisX]]))
+            plot.order.x <<- unlist(strsplit(plot.param[1, kColumnOrderX], kSeparator))
+            for (i in 1:length(plot.order.x.option)) {
+              option.value <- plot.order.x.option[i]
+              if (! option.value %in% x.unique) {
+                plot.order.x <<- plot.order.x[plot.order.x != option.value]
+              }
+            }
+          }
+          
+          # plot.order.x <<- unlist(strsplit(plot.param[1, kColumnOrderX], kSeparator))
         }
       } else {
         sort.df <- plot.data
@@ -1078,7 +1093,7 @@ GreenIndexPlotFigure <- setRefClass(
               panel.border=element_blank(),
               legend.key=element_rect(linetype="blank"))
       
-      figure <- figure + labs(title = plot.param[1, kColumnPlotTitle])
+      # figure <- figure + labs(title = plot.param[1, kColumnPlotTitle])
       
       figure <- figure +  
         theme(legend.position = plot.param[1, kColumnLegendPosition],

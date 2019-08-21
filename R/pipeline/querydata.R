@@ -220,7 +220,7 @@ GreenIndexQueryData <- setRefClass(
       database$Connect()
       df <- database$GetQuery(SQL)
       database$Disconnect()
-      
+      # print(df)
       if (nrow(df) > 0) {
        
         df[, kColumnName] <- df[, process[1, kColumnName]]
@@ -252,6 +252,7 @@ GreenIndexQueryData <- setRefClass(
         
         df[, c(kAliasTypeTotal, kAliasTypeAnonymous)] <- NULL
         
+        # print(df)
         
         if (df[1, kColumnValueType] == kValueTypeInteger) {
           df[, kColumnLabel] <- as.character(round(df[, kColumnValue], 0))

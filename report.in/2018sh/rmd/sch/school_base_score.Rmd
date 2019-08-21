@@ -1,0 +1,26 @@
+<!--  chapter -->
+
+\mytext
+
+\clearpage
+
+## 学生学业水平总体情况　
+
+本校学生总体在语文、数学、英语、科学与艺术学科上的得分分布情况见图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.score.segment.cn")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.score.segment.ma")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.score.segment.en")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.score.segment.sc")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.score.segment.ar")`}。
+
+plot.bar.school.score.segment.cn
+
+plot.bar.school.score.segment.ma
+
+plot.bar.school.score.segment.en
+
+plot.bar.school.score.segment.sc
+
+plot.bar.school.score.segment.ar
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.score.rank.allsubject")`}给出了本校学生在各学科各水平上的人数比例。
+
+plot.bar.school.score.rank.allsubject
+
+
+<!--  end of chapter  -->

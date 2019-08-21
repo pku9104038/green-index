@@ -1,0 +1,1247 @@
+<!-- chapter topic -->
+
+\mytext
+
+## 典型题目分析
+
+数学学业质量的内涵不仅包括学生在基础知识、基本技能、基本思想方法、基本活动经验等方面所达到的水平，而且还包括学生适应社会发展和自身未来发展需要的核心素养。基于《上海市中小学数学课程标准》的要求，中学数学学科测试的命题框架主要由“内容维度”和“能力维度（及其水平层次）”共同组成。
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=7cm]{ma_001.png}
+  \end{center}
+\end{figure}
+
+中学数学测试的内容维度按照《课程标准》分为“数与代数”“图形与几何”和“函数与概率统计初步”三个知识领域。能力维度依据《课程标准》中的“过程与方法”目标维度，结合初中数学课程实施的现状，并参考国际相关类型数学测试的框架构建，以体现“过程”与“方法”的矩阵结构呈现，它对学生数学能力的测评也将以“过程”与“方法”的共同作用下学生的表现来评估。其中，“过程”是能力维度评价的“主分量”，共分“辨识”“调用”“反思”和“聚合”四类（在试题属性表中依次用F、E、R、P标识）；“方法”（亦可称为“方法群”）主要将各种数学基本方法分成“运算求解”“推理论证”“空间想象”“数学表达”“数据处理”“数学建模”等六种类型。一般来说，在解决数学问题不同阶段的“过程”中，需要综合运用若干不同类型的“方法”。能力维度主要评估学生在解决数学问题的不同局部或整体的“过程”中对不同类型“方法”的合理、灵活的运用。
+
+典型例题评析将以不同的“过程”分量归类详细分析说明。
+
+query.data.school.ma.pointrate.perspective
+
+
+### 辨识（Formulating）
+
+`r tab_name <- "学生在数学学科“辨识”过程分量上的平均得分率（％）" `
+
+\begin{itshape}
+\mytable
+\begin{longtable}{|c|c|p{9cm}|c|c|c|}
+\caption{`r tab_name`} \label{tab: `r tab_name`} \\ \hline
+
+\makecell[c]{内容\\维度} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{本\\市} & \makecell[c]{本\\区}  & \makecell[c]{本\\校} \\ \hline
+
+\multirow{4}{*}{\makecell[c]{数\\与\\代数}} & M8AO01111 & 懂得倒数的概念，在求一个数倒数的过程中检测运算求解能力的表现 
+table.school.ma.M8AO01111 
+\\ \cline{2-6}
+
+& M8AO02111 & 掌握有关整数指数幂乘方运算法则，在求一个代数式乘方的过程中，检测运算求解能力的表现 
+table.school.ma.M8AO02111 
+\\ \cline{2-6}
+
+& M8AO03111 & 懂得将文字语言与作为符号语言的代数式相互转化，在列代数式的过程中检测运算求解、数学表达能力的表现 
+table.school.ma.M8AO03111
+\\ \cline{2-6}
+
+& M8AO06111 & 掌握简单无理方程的解法，在对一个无理方程求解的过程中检测运算求解能力的表现 
+table.school.ma.M8AO06111
+\\ \cline{1-6}
+
+\multirow{2}{*}{\makecell[c]{图形\\与\\几何}} & M8AO07111 & 说明两个关于原点对称的点的坐标的关系，在求一个点关于原点的对称点的过程中检测空间想象和数学表达能力的表现 
+table.school.ma.M8AO07111
+\\ \cline{2-6}
+
+& M8AO13111 & 懂得多边形外角和定理，在利用外角判断正多边形边数的求解过程中检测运算求解、推理论证、空间想象能力的表现 
+table.school.ma.M8AO13111
+\\ \cline{1-6}
+
+\multirow{2}{*}{\makecell[c]{函数与\\概率统\\计初步}} & M8AO08111 & 懂得函数的定义域的求法，在求一个函数定义域的过程中检测运算求解与数学表达能力的表现 
+table.school.ma.M8AO08111
+\\ \cline{2-6}
+
+& M8AO11111 & 懂得随机事件的概念，在判断一个事件是否是随机事件的过程中检测推理论证、空间想象和数学表达能力的表现 
+table.school.ma.M8AO11111
+\\ \hline
+
+\end{longtable}
+\end{itshape}
+
+\mytext
+下面将结合“辨识”部分的典型题目做具体分析。
+
+
+\questiontitle{典型题目}1：M8AO02111
+
+\begin{itshape}
+
+计算 $(m^3)^2$ 的结果是：
+
+\begin{longtable}{p{3.5cm}p{3.5cm}p{3.5cm}p{3.5cm}}             
+A．$m^5$ & B．$m^6$ &  C．$m^8$ & D．$m^9$ \\
+\end{longtable}
+\setcounter{table}{\value{table}-1}
+\end{itshape}
+
+- 考查内容：数与代数
+
+- 思维层次：知识建构
+
+- 能力维度：本题考查的过程为“辨识”，该过程中运用的主要方法为“运算求解”．
+
+- 试题描述：掌握有关整数指数幂乘方运算法则，在求一个代数式乘方的过程中，检测运算求解能力的表现
+
+- 正确答案：B
+
+- 本题满分：3分
+
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "M8AO02111_X", "学校","总体","总体")`%
+
+plot.bar.school.ma.question.M8AO02111
+
+\begin{itshape}
+在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO02111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO02111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO02111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO02111_X", "学校","总体","D")`\%。
+\end{itshape}
+
+- 错因分析与教学建议：
+
+本题是关于幂的乘方的选择题，学生需要掌握幂的乘方的运算性质，幂的乘方的运算性质是单项式乘除运算的基础。从学生作答情况来看，正确率比较高，有少部分作答错误的学生选了D，是把指数相乘和指数乘方搞混淆了，说明这部分学生没有真正理解乘方的运算性质，甚至也没有掌握其它关于幂的一些运算性质。
+在幂的乘方的教学中，要让学生经历探索幂的乘方这一性质的过程，帮助学生正确识别幂的“底数”、幂的“指数”、乘方的“指数”，从本质上理解乘方的意义和幂的乘方的运算性质。在练习中需要适当增加与其它幂的运算性质的比较，要鼓励学生不仅会套用公式，还要能正确说明每一步计算的理由。
+
+
+\questiontitle{典型题目}2：M8AO06111
+
+\begin{itshape}
+
+方程 $\sqrt{x-2}=2$的解是：
+
+\begin{longtable}{p{3.5cm}p{3.5cm}p{3.5cm}p{3.5cm}}   
+A．${x=-2}$； & B．$x=2$； & C．$x=4$；& D．$x=6$ \\
+\end{longtable}
+\setcounter{table}{\value{table}-1}
+
+\end{itshape}
+
+- 考查内容：数与代数
+
+- 思维层次：知识建构
+
+- 能力维度：本题考查的过程为“辨识”，该过程中运用的主要方法为“运算求解”．
+
+- 试题描述：掌握简单无理方程的解法，在对一个无理方程求解的过程中检测运算求解能力的表现
+
+- 正确答案：D
+
+- 本题满分：3分
+
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "M8AO06111_X", "学校","总体","总体")`%
+
+plot.bar.school.ma.question.M8AO06111
+
+\begin{itshape}
+在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO06111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO06111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO06111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO06111_X", "学校","总体","D")`\%。
+\end{itshape}
+
+- 错因分析与教学建议：
+
+本题一部分同学错选了C的原因主要有两个，一是解无理方程过程中将方程两边平方时，仅仅将带有根号的一边平方，另一边数字未平方；二是解无理方程过程中，一个必不可少的步骤——验根没有进行。本题的错误反映出部分学生没有掌握基本运算技能。
+
+在无理方程解法的教学中，应让学生体会解简单的无理方程，基本思想是通过“方程两边平方”将它转化为解有理方程（整式方程）来实施。解无理方程的基本思路体现了化归的数学思想，教学中要让学生认真体会化归思想，特别地要重点关注学困生基本运算技能的学习状况，以免对其后继学习产生阻碍。
+
+\questiontitle{典型题目}3：M8AO11111
+
+\begin{itshape}
+
+下列事件中，随机事件是
+
+\begin{longtable}{p{8cm}p{7cm}}   
+A．\textit{两个正实数的和大于零} & B．\textit{当$m$取任意正整数时，$2m$是奇数；}\\
+C．\textit{任何一个三角形的三个内角和都是180$\degree$} &  D．\textit{同一平面内任意两条直线都相交}\\
+\end{longtable}
+\setcounter{table}{\value{table}-1}
+
+\end{itshape}
+
+- 考查内容：函数与概率统计初步
+
+- 思维层次：知识建构
+
+- 能力维度：本题考查的过程为“辨识”，该过程中运用的主要方法为“推理
+论证”“数学表达”“空间想象”和“数据处理”．
+
+- 试题描述：懂得随机事件的概念，在判断一个事件是否是随机事件的过程
+中检测推理论证、数学表达和空间想象能力的表现．
+
+- 本题满分：满分3分
+
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "M8AO11111_X", "学校","总体","总体")`%
+
+plot.bar.school.ma.question.M8AO11111
+
+\begin{itshape}
+在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO11111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO11111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO11111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO11111_X", "学校","总体","D")`\%。
+\end{itshape}
+
+- 错因分析与教学建议：
+
+本题主要考查的是判断一个事件是否是随机事件，先要懂得随机事件的概念，再根据具体的事件判断是否是随机事件。随机事件的可能性大小有大有小，可以用概率来度量随机事件可能性的大小。本题要求学生用学过的数学知识来判断随机事件，选项A、B为代数背景下随机事件的判定，选项C、D为几何背景下的随机事件的判定，学生需要真正懂得随机事件概念为在一定条件下可能出现也可能不出现的现象，它发生的概率在$0-1$之间。
+
+在概率统计的教学中，对于抽象的概念学习过程中，让学生可以结合概率与现实生活的密切联系，获得事件发生概率的感性认识，以此懂得随机事件的概念；同时学生对于学习概率知识，面临着认知对象、数学观念、思考方法等改变，要有一个逐步适应与了解的过程，必须适当降低认知起点，严格控制内容难度。
+
+
+### 调用（Employing）
+
+`r tab_name <- "学生在数学学科“调用”过程分量上的平均得分率（％）" `
+
+\begin{itshape}
+\mytable
+\begin{longtable}{|c|c|p{9cm}|c|c|c|}
+\caption{`r tab_name`} \label{tab: `r tab_name`} \\ \hline
+
+\makecell[c]{内容\\维度} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{本\\市} & \makecell[c]{本\\区} & \makecell[c]{本\\校} \\ \hline
+
+\multirow{2}{*}{\makecell[c]{数\\与\\代数}} & M8AO05111 & 懂得用科学记数法表示一个数，在实际问题中将一个数表示为科学记数法形式的过程中检测运算求解和数学表达能力的表现 
+table.school.ma.M8AO05111
+\\ \cline{2-6}
+
+& M8AS19211 & 掌握简单分式方程的解法分式方程，在一个分式方程的求解过程中检测运算求解和数学表达能力的表现 
+table.school.ma.M8AS19211
+\\ \cline{1-6}
+
+\multirow{5}{*}{\makecell[c]{图形\\与\\几何}} & M8AO14111 & 掌握平行四边形性质，在平行四边形内角度数的求解过程中检测运算求解、推理论证、空间想象能力的表现 
+table.school.ma.M8AO14111
+\\ \cline{2-6}
+
+& M8AO15111 & 掌握等腰三角形的判定，在判断一个三角形是否是等腰三角形的过程中检测推理论证、空间想象和数学表达能力的表现 
+table.school.ma.M8AO15111
+\\ \cline{2-6}
+
+
+& M8AO16111 & 掌握平行线的性质，在实际问题中求平行线形成角的度数的过程中检测推理论证和空间想象能力的表现 
+table.school.ma.M8AO16111
+\\ \cline{2-6}
+
+& M8AO17111 & 懂得向量的加减法的三角形法则，在三角形中用两个向量表示第三个向量的过程中检测运算求解、推理论证、空间想象和数学表达能力的表现 
+table.school.ma.M8AO17111
+\\ \cline{2-6}
+
+& M8AS22111 & 掌握角平分线的作法，在用尺规作一个角的角平分线的过程中检测推理论证和空间想象能力的表现 
+table.school.ma.M8AS22111
+\\ \cline{1-6}
+
+\multirow{6}{*}{\makecell[c]{函数\\与\\概率\\统计\\初步}}  & M8AO09111 & 掌握正比例函数中求点的坐标，在求正比例函数图像上点的过程中检测运算求解和数学表达能力的表现 
+table.school.ma.M8AO09111
+\\ \cline{2-6}
+
+& M8AO10111 & 掌握反比例函数图像的性质（增减性），在求反比例函数图像的位置的过程中检测运算求解和数学表达能力的表现 
+table.school.ma.M8AO10111
+\\ \cline{2-6}
+
+& M8AO12111 & 懂得简单的等可能事件的概率的求法，在摸球事件“摸到白球”概率的求解过程中检测推理论、空间想象、数学表达、数据处理能力的表现 
+table.school.ma.M8AO12111
+\\ \cline{2-6}
+
+& M8AO18111 & 分析统计图表（扇形图）中数据分布或变化趋势的信息，在与社会热点相联系的实际问题中获取信息的过程中检测运算求解、推理论证和数据处理能力的表现 
+table.school.ma.M8AO18111
+\\ \cline{2-6}
+
+& M8AS20111 & 会用待定系数法确定求一次函数、反比例函数解析式，在一次函数与反比例函数相结合的简单综合题求解的过程中检测运算求解、空间想象和数学表达能力的表现 
+table.school.ma.M8AS20111
+\\ \cline{2-6}
+
+& M8AS20211 & 掌握坐标平面内一次函数${y=kx+b}$中的截距$b$之间的关系，在求一次函数图像与$x$、$y$轴组成的面积的过程中检测运算求解和数学表达能力的检测 
+table.school.ma.M8AS20211
+\\ \cline{1-6}
+
+\end{longtable}
+\end{itshape}
+
+\mytext
+下面将结合“调用”部分的典型题目做具体分析。
+
+
+\questiontitle{典型题目}4：M8AO10111
+
+\begin{itshape}
+
+已知反比例函数 ${\displaystyle y=\frac{m}{x}}$（$m$是常数），如果$m>0$，那么它的图像位于
+
+\begin{longtable}{p{3.5cm}p{3.5cm}p{3.5cm}p{3.5cm}} 
+A．\textit{第一、二象限；} & B．\textit{第一、三象限；} & C．\textit{第二、三象限；}& D．\textit{第二、四象限。} \\
+\end{longtable}
+\setcounter{table}{\value{table}-1}
+
+\end{itshape}
+
+- 考查内容：函数与概率统计初步
+- 思维层次：知识建构
+- 能力维度：本题考查的过程为“调用”；该过程中运用到的主要方法为 “运算求解”和“数学表达”
+- 试题描述：掌握反比例函数图像的性质（增减性），在求反比例函数图像的位置的过程中检测运算求解和数学表达能力的表现
+- 正确答案：B
+- 本题满分：3分
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "M8AO10111_X", "学校","总体","总体")`%
+
+plot.bar.school.ma.question.M8AO10111
+
+\begin{itshape}
+在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO10111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO10111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO10111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO10111_X", "学校","总体","D")`\%。
+\end{itshape}
+
+- 错因分析及教学建议：
+
+本题主要考查的是反比例函数的基本性质，即知道当反比例函数的比例系数大于0时，反比例函数图像的两支分支在第一、三象限内 。本题的错误反映出部分学生（尤其是选择选项A与选项C的学生）对反比例函数图像特征缺乏的基本认识。建议在教学中可通过让学生自己动手用“描点法”画函数图像与用计算机进行动画演示相结合的方法，让学生体会反比例函数的比例系数的取值对反比例函数图像的影响，加深学生对反比例函数图像性质的理解。
+
+\questiontitle{典型题目}5：M8AO15111
+
+\begin{itshape}
+
+\begin{wrapfigure}{r}{0.28\textwidth}
+  \begin{center}
+    \includegraphics[width=0.25\textwidth]{ma_M8AO15111.png}
+  \end{center}
+\end{wrapfigure}
+
+如图，已知$AH$是$\triangle{ABC}$的边$BC$上的高，增加一个条件能判断$\triangle{ABC}$是等腰三角形。增加的这个条件是
+
+\begin{longtable}{p{6cm}p{6cm}}   
+A．$\angle{BAH}=\angle{CAH}$ & B．$\angle{ABC}=\angle{CAH}$ \\
+C．$\angle{BAC}=90\degree$   & D．$\angle{ABC}=45\degree$ \\
+\end{longtable}
+\setcounter{table}{\value{table}-1}
+
+\end{itshape}
+
+- 考查内容：图形与几何
+- 思维层次：知识建构
+- 能力维度：本题考查的过程为“调用”；该过程中运用到的主要方法为 “推理论证”和“空间想象”
+- 试题描述：掌握平行线的性质，在实际问题中求平行线形成角的度数的过程中检测推理论证和空间想象能力的表现
+- 正确答案：A
+- 本题满分：3分
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "M8AO15111_X", "学校","总体","总体")`%
+
+plot.bar.school.ma.question.M8AO15111
+
+\begin{itshape}
+在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO15111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO15111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO15111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO15111_X", "学校","总体","D")`\%。
+\end{itshape}
+
+- 错因分析及教学建议：
+
+本题主要考查等腰三角形的判定。学生首先应该明确判定一个三角形是等腰三角形的方法，其次判断选项中哪个条件可以获得判定的条件，切忌因为是选择题就想当然，不经过逻辑分析和推理。平面几何的知识内容，逻辑联系紧密，演绎成一个严整的体系，三角形的基本内容具有奠定性意义，其中全等三角形的性质和判定，等腰三角形的性质和判定，是建立平面几何定理系统的基础性定理，占有重要地位。建议在教学中，应关注学生对基础定理的理解和运用，以及对逻辑推理方法的实践和体会。
+
+\questiontitle{典型题目}6：M8AO16111
+
+\begin{itshape}
+
+\begin{wrapfigure}{r}{0.38\textwidth}
+  \begin{center}
+    \includegraphics[width=0.35\textwidth]{ma_M8AO16111.png}
+  \end{center}
+\end{wrapfigure}
+
+如图，直线${a \varparallel b}$，如果把一块三角板的直角顶点放在直线$a$上，且${\angle{1}=40\degree}$，那么$\angle{2}$等于
+
+\begin{longtable}{p{6cm}p{6cm}}     
+ A．$40\degree$  & B．$45\degree$ \\
+ C．$50\degree$ & D．$60\degree$ \\
+\end{longtable}
+\setcounter{table}{\value{table}-1}
+
+\end{itshape}
+
+- 考查内容：图形与几何
+- 思维层次：知识建构
+- 能力维度：本题考查的过程为“调用”；该过程中运用到的主要方法为 “运算求解”、“推理论证”和“空间想象”
+- 试题描述：掌握平行线的性质，在实际问题中求平行线形成角的度数的过程中检测推理论证和空间想象能力的表现
+- 正确答案：C
+- 本题满分：3分
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "M8AO16111_X", "学校","总体","总体")`%
+
+plot.bar.school.ma.question.M8AO16111
+
+\begin{itshape}
+在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO16111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO16111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO16111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO16111_X", "学校","总体","D")`\%。
+\end{itshape}
+
+- 错因分析及教学建议：
+
+本题主要考查平行线的性质。学生首先应该明确未知角$\angle{2}$与已知角$\angle{1}$之间的位置关系，其次将位置关系转化为数量关系求出角的度数。部分学生错选“A”的原因是直观地从所给的示意图中错误地认为这两个角是内错角关系，建议在教学中努力摒除“直观”造成的“错觉”，基于逻辑推理开展几何计算。在教学中对于一些比较常见的基本图形也需要进行准确辨析与合理应用。
+
+\questiontitle{典型题目}7：M8AO18111
+
+\begin{itshape}
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{ma_M8AO18111.png}
+  \end{center}
+\end{wrapfigure}
+
+2018年，某机构对50个国家的信息化发展潜力进行测评，并将测评结果分为“高水平”“较高水平”“中等水平”“较低水平”和“低水平”五种层次. 这50个国家的信息化发展潜力层次分布如图所示，其中有3个国家处于“高水平”层次. 
+
+根据这个扇形统计图可知，信息化发展潜力为“中等水平”层次的国家个数为
+
+\qquad A．8个 \qquad B．18个 \qquad C．20个 \qquad D．24个
+
+\end{itshape}
+
+- 考查内容：函数与概率统计初步
+
+- 思维层次：知识建构
+
+- 能力维度：本题考查的过程为“调用”，该过程中运用的主要方法为“运算求解”“推理论证”和“数据处理”．
+
+- 试题描述：分析统计图表（扇形图）中数据分布或变化趋势的信息，在与社会热点相联系的实际问题中获取信息的过程中检测运算求解、推理论证和数据处理能力的表现
+
+- 正确答案：C
+
+- 本题满分：3分
+
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "M8AO18111_X", "学校","总体","总体")`%
+
+plot.bar.school.ma.question.M8AO18111
+
+\begin{itshape}
+在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO18111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO18111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO18111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO18111_X", "学校","总体","D")`\%。
+\end{itshape}
+
+- 错因分析及教学建议：
+
+本题主要考查的是获取统计图表中数据分布或变化趋势等信息的过程中数据处理能力的表现，学生需要从扇形统计图获取数据进行计算过程中的数据处理、推理能力的表现。本题选D选项的同学比较多，学生求的国家个数为“高水平”和“中等水平”层次的国家个数，与题意混淆，说明学生对于图表与文字阅读相结合的能力还需要加强。
+
+在“统计”教学中应注意以下几点：
+
+1. 重视培养学生的统计意识和信息处理能力。要关注学生对信息的获取、整理、分析、判断，从简单的条形图、折线图、扇形图到同时反映几组数据的条形图、折线图，逐步提高识图能力和从图表中获取信息的能力；要关注学生整理和分析数据、构造表格和画出相应统计图的能力；要关注学生对各种统计量的计算、解释和应用的能力。
+
+2. 关注学生对统计的重要概念和基本方法的掌握。引导学生正确理解概念，学会统计的基本方法。在读取数据信息，挑选适当的数据分析工具，对统计结果的解释、交流的过程中，体会统计与现实生活的密切联系，增强学生统计分析意识。
+
+\questiontitle{典型题目}8：M8AS19211
+
+\begin{itshape}
+
+已知下列方程：\textcircled{\scriptsize{1}} ${\displaystyle \frac{2x-5}{4}=2}$；    \textcircled{\scriptsize{2}} ${\displaystyle \frac{4}{x-3}=\frac{1}{3-x}+1}$；
+
+（1）其中分式方程是\uline{\qquad}（填序号）；
+
+（2）请解（1）中你所选择的方程．
+
+\end{itshape}
+
+- 考查内容：数与代数
+
+- 思维层次：知识建构
+
+- 能力维度：本题考查的过程为“调用”，该过程中运用到的主要方法为“运算求解”和“数学表达”
+
+- 试题描述：掌握简单分式方程的解法，在一个分式方程的求解过程中检测运算求解和数学表达能力的表现
+
+- 正确答案：
+
+\begin{itshape}
+
+解：去分母，得${4=x-3-1}$；
+
+\qquad 解得 ${x=8}$ ；
+
+\qquad 经检验，${x=8}$ 是原方程的解；
+
+\qquad $\therefore$ 原方程的解是 ${x=8}$ .
+
+\end{itshape}
+
+- 本题满分： 4分
+
+【说明】如果解方程\textcircled{\scriptsize{1}}，解答正确得2分。
+
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "M8AS19211_X", "学校","总体","总体")`%
+
+plot.bar.school.ma.question.M8AS19211
+
+\begin{itshape}
+在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS19211_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS19211_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS19211_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS19211_X", "学校","总体","D")`\%。
+\end{itshape}
+
+- 错因分析与教学建议：
+
+本题主要考查分式方程的解法，需要学生掌握解分式方程的基本方法，理解分式方程增根产生的原因，会检验根的合理性。得2分的学生中部分学生是因为错选了整式方程，但是正确求解了错选的方程，部分学生选对了分式方程，但是求解出错，但能正确去分母化简到整式方程，部分得3分的学生是没有进行检验或检验错误。
+
+建议在分式方程的解法的教学中，要让学生体会为什么要将分式方程转化为整式方程?如何将分式方程转化为整式方程?其每一步的依据是什么?解后为什么要检验?如何检验?有几种检验的方法?对于分式方程解法的教学需要有两个层次，第一层次是学会分式方程的解法步骤，第二层次是理解各运算步骤的依据。让学生达到第二层次是教学成功的关键。在探究分式方程解法时要强调分式方程与分式加减运算之间的区别与联系、分式方程与整式方程之间的区别与联系，这样可以降低学生学习的难度。学生在解分式方程时，最容易犯的错误之一是去分母时发生漏乘，这种现象的本质是学生没有正确理解运算原理——等式性质，所以强调运算依据就显得尤为重要。
+
+
+\questiontitle{典型题目}9：M8AS20111、M8AS20211
+
+\begin{itshape}
+
+\begin{wrapfigure}{r}{0.35\textwidth}
+  \begin{center}
+    \includegraphics[width=0.3\textwidth]{ma_M8AS20111.png}
+  \end{center}
+\end{wrapfigure}
+
+在平面直角坐标系$xOy$中（如图），一次函数$y=ax+1$的图像与$x$轴、$y$轴分别相交于点$A(2,0)$、点$B$，这个一次函数图像与反比例函数$\displaystyle y=\frac{k}{x}$图像在第二象限内的交点为$C(-2,m)$.
+
+（1）求这个一次函数与反比例函数的解析式；
+
+（2）求$\triangle{BOC}$的面积。
+
+\end{itshape}
+
+- 考查内容：函数与概率统计初步
+
+- 思维层次：知识建构
+
+- 能力维度：本题考查的过程为“调用”，该过程中运用的主要方法为“运算求解”、“空间想象”和“数学表达”
+
+- 试题描述：会用待定系数法确定求一次函数、反比例函数解析式，在一次函数与反比例函数相结合的简单综合题求解的过程中检测运算求解、空间想象和数学表达能力的表现
+
+- 正确答案：
+
+\begin{itshape}
+
+解：把$A(2,0)$代入$y=ax+1$，
+
+\qquad 得${\displaystyle {a=-\frac{1}{2}}}$
+
+\qquad $\therefore$ 一次函数的解析式为${\displaystyle {y=-\frac{1}{2}x+1}}$
+
+\qquad 把点$C(-2,m)$代入${y=ax+1}$，
+
+\qquad 得$m=2$
+
+\qquad $\therefore$ 点$C(-2,2)$
+
+\qquad 把点$C(-2,2)$代入${\displaystyle y=\frac{k}{x}}$，
+
+\qquad 得${k=-4}$
+
+\qquad $\therefore$ 反比例函数的解析式${\displaystyle y=-\frac{4}{x}}$
+
+\end{itshape}
+
+- 本题满分：5分
+
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "M8AS20111_X", "学校","总体","总体")`%
+
+plot.bar.school.ma.question.M8AS20111
+
+\begin{itshape}
+在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS20111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS20111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS20111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS20111_X", "学校","总体","D")`\%。
+\end{itshape}
+
+- 错因分析及教学建议：
+
+本题主要考查用待定系数法确定求一次函数、反比例函数解析式，理解图像上的点与图像所表示的解析式之间的关系。学生主要存在问题是对待定系数法确定函数解析式还有一定困难，解决函数问题还缺少数形结合的意识。待定系数法是初中阶段求函数解析式中常用的一种方法，它在本质上是方程思想。在教学中要求学生明确确定一个一次函数需要两个条件，确定一个反比例函数需要一个条件，同时理解由点确定函数解析式是一个由形到数的过程。函数的三种表示方法：解析法、列表法、图像法本身就体现着函数的“数形结合”。数形结合的思想方法在初中函数教学中非常重要，它可以通过数与形之间的对应和转化来解决数学问题。
+
+部分学生把一次函数和反比例的函数的解析式写错，导致有代入意识也不能正确解答，部分学生能正确写出两个函数的解析式，且能代入计算，但代入计算有误，部分学生不理解题意，不知道点$C$既是一次函数图像上的点又是反比例函数图像上的点，导致求不出点$C$坐标，还有部分学生对于函数的综合题没有习惯画图，自主画图的意识不强。在今后的函数学习中，要养成画图的习惯，教师平时的教学中更需要强化学生自主画图的意识，真正意义上理解数形结合。
+
+\begin{itshape}
+（2）求$\triangle{BOC}$的面积。
+\end{itshape}
+
+- 考查内容：函数与概率统计初步
+
+- 思维层次：知识建构
+
+- 能力维度：本题考查的过程为“调用”，该过程中运用的主要方法为“运算求解”和“数学表达”
+
+- 试题描述：掌握坐标平面内一次函数 中的截距 的意义，在求一次函数图像与坐标轴组成的面积的过程中检测运算求解和数学表达能力的表现
+
+- 正确答案：
+
+\begin{itshape}
+
+解：把$x=0$代入${\displaystyle {y=-\frac{1}{2}x+1}}$，
+
+\qquad 得$y=1$，
+
+\qquad $\therefore$ 点$B(0,1)$
+
+\qquad $\therefore {\displaystyle {S_{\triangle{BOC}}=\frac{1}{2}\times{1}\times{2}=1}}$
+
+\end{itshape}
+
+- 本题满分： 2分
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "M8AS20211_X", "学校","总体","总体")`%
+
+plot.bar.school.ma.question.M8AS20211
+
+\begin{itshape}
+在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS20211_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS20211_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS20211_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS20211_X", "学校","总体","D")`\%。
+\end{itshape}
+
+- 错因分析及教学建议：  
+
+本题主要考查在平面直角坐标系中三角形面积的计算。零分率明显偏高，部分学生得0分是因为第一小题解析式计算错误导致第二小题不得分，部分学生是不理解点$B$在一次函数图像上；得1分的学生是计算错误三角形的面积或者对面积计算中三角形的底和高计算有误。
+
+本题是第（2）小题，零分率高是因为与第（1）小题之间有关联，由此反思命题时需要考虑两个问题之间的关联性，尽可能减少因为前面的错误导致后面学生掌握的知识也不得分。本题还属于函数与几何图形相结合的问题，函数与几何是初中阶段数学学习的重点，虽然本题只涉及三角形面积的计算，但教学中依然需要帮助学生理解点的坐标与垂线段的长度之间的关系，让学生经历从点到线到图形的过程。
+
+\begin{itshape}
+
+\begin{wrapfigure}[4]{r}{0.35\textwidth}
+  \begin{center}
+    \includegraphics[width=0.3\textwidth]{ma_M8AS22111.png}
+  \end{center}
+\end{wrapfigure}
+
+\questiontitle{典型题目}10：M8AS22111
+
+如图，在$\triangle{ABC}$中，$\angle{C}=90\degree$，$AC=BC$
+
+（1）作$\angle{ABC}$的平分线$BD$交边$AC$于点$D$；（用尺规作图，保留作图痕迹，不要求写作法）；
+
+（2）在（1）的条件下，已知$CD=1$，求边$AD$的长.
+
+\end{itshape}
+
+\qquad
+
+- 考查内容：图形与几何
+
+- 能力维度：本题考查的过程为“调用”，该过程中运用的主要方法为“推理论证”和“空间想象”．
+
+- 试题描述：掌握角平分线的作法，在用尺规作一个角的角平分线的过程中检测推理论证和空间想象能力的表现
+
+- 本题满分：满分3分
+
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "M8AS22111_X", "学校","总体","总体")`%
+
+在本次阅卷中，对学生的作答类型进行了归类分析，具体代码含义如下：
+
+\begin{itshape}
+\mytable
+\begin{longtable}{|c|p{14cm}|}
+\hline
+代码 &  含义 \\ \hline
+0.00 & 作图有明显错误 \\ \hline
+0.90 & 空白，无作答痕迹 \\ \hline
+1.10 & 只作出角平分线（射线），无作图痕迹，未标注$D$点 \\ \hline
+1.20 & 将角平分线作成直线，无作图痕迹，标注$D$点或作$\angle{C}$、$\angle{A}$的角平分线，标注点$D$ \\ \hline
+2.10 & 只作出角平分线（射线）。无作图痕迹，标注$D$点或有作图痕迹，未标注$D$点 \\ \hline
+2.20 & 将角平分线作成直线，有作图痕迹，标注$D$点 \\ \hline
+3.00 & 正确作出角平分线（射线），有作图痕迹，标注$D$点 \\ \hline
+\multicolumn{2}{|c|}{说明：能正确用语言表示结论等价于标注了点$D$} \\ \hline
+
+\end{longtable}
+\end{itshape}
+
+plot.bar.school.ma.question.M8AS22111
+
+\begin{itshape}
+在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS22111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS22111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS22111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS22111_X", "学校","总体","D")`\%。
+\end{itshape}
+
+- 错因分析及教学建议：
+
+本题主要考查的是要求学生用直尺和圆规准确作出角平分线，保留作图过程中的痕迹，然后根据题意找到角平分线和边$AC$的交点$D$。在作图上学生主要存在以下问题：
+
+1. 审题不清，将$\angle{ABC}$看作$\angle{BAC}$或$\angle{BCA}$；
+
+2. 没有使用圆规作图，无作图痕迹，凭借对角分线定义的理解，以直觉估计角的大小画出角平线；
+
+3. 尺规作图的能力较差，不能正确地使用圆规作图，所作图形偏差较大；
+
+4. 使用圆规作图，但是没有在图上准确标识点$D$的位置；
+
+5. 使用圆规作图，将角平分线化成了直线，且没有在结论中说明角平分线是射线。
+
+从学生的错误情况可以看出，学生的几何作图能力相当薄弱，要在今后的教学中引起足够的重视。针对上述问题，提出以下建议：
+
+1. 要正确认识作图的意义，会规范使用直尺和圆规等常用作图工具，知道作图基本原理，注重作图的严谨性。比如图中的线条要注意主辅有别，主线条用清晰的实线，辅线条要画轻淡些或用虚线；
+
+2. 重视学生作图能力的培养，夯实尺规作图。几何作图是学生读懂题意后把几何语句变换成直观图形的操作过程。在教学中，对教材中涉及的每项基本作图，可以先启发学生分析，探讨作图方案，然后从几何证明的角度验证尺规作图的正确性，从而进一步加深学生对作图过程的理解。
+
+\begin{landscape}
+
+### 反思（Reflecting）
+
+`r tab_name <- "学生在数学学科“反思”过程分量上的平均得分率（％）" `
+
+\begin{itshape}
+\mytable
+\begin{longtable}{|c|c|p{9cm}|c|c|c|}
+\caption{`r tab_name`} \label{tab: `r tab_name`} \\ \hline
+
+\makecell[c]{内容\\维度} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{本\\市} & \makecell[c]{本\\区}  & \makecell[c]{本\\校} \\ \hline
+
+\multirow{2}{*}{\makecell[c]{数\\与\\代数}} & M8AO04111 & 掌握用估算方法对实数的运算结果进行，在对一个二次根式估算的过程中检测运算求解和推理论证能力的表现 
+table.school.ma.M8AO04111
+\\ \cline{2-6}
+
+& M8AS19111 & 懂得分式方程的概念，在判断两个方程哪个是分式方程的过程中检测运算求解和数学表达能力的表现 
+table.school.ma.M8AS19111
+\\ \cline{1-6}
+
+\multirow{2}{*}{\makecell[c]{图形\\与\\几何}} & M8AS22211 & 会用勾股定理及其逆定理进行推理或计算、会用三角形全等的判定或性质解决简单的几何问题，在综合应用简单几何问题的过程中检测运算求解、推理论证、空间想象和数学表达能力的表现 
+table.school.ma.M8AS22211
+\\ \cline{2-6}
+
+& M8AS23111 & 会用菱形的判定定理以及三角形中位线定理解决简单的几何问题，在几何证明的过程中检测推理论证、空间想象和数学表达能力的表现 
+table.school.ma.M8AS23111
+\\ \cline{1-6}
+
+\end{longtable}
+\end{itshape}
+
+\mytext
+下面将结合“反思”部分的典型题目做具体分析。
+
+\questiontitle{典型题目}11：M8AO04111
+
+\begin{itshape}
+
+下列各数中，比$\sqrt{2}$小的正整数是
+
+\begin{longtable}{p{3.5cm}p{3.5cm}p{3.5cm}p{3.5cm}}   
+ A．0 & B．1 & C．2 & D．3 \\
+\end{longtable}
+\setcounter{table}{\value{table}-1}
+
+\end{itshape}
+
+- 考查内容：数与代数
+
+- 思维层次：知识建构
+
+- 能力维度：本题考查的过程为“反思”；该过程中运用到的主要方法为“运算求解”和“推理论证”
+
+- 试题描述：懂得用估算方法对运算结果进行检验，在对一个二次根式估算的过程中检测运算求解和推理论证能力的表现
+
+- 正确答案：B
+
+- 本题满分：3分
+
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "M8AO04111_X", "学校","总体","总体")`%
+
+plot.bar.school.ma.question.M8AO04111
+
+\begin{itshape}
+在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO04111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO04111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO04111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO04111_X", "学校","总体","D")`\%。
+\end{itshape}
+
+- 错因分析与教学建议：
+
+本题主要考查的是用有理数来估计一个无理数的大致范围，先要理解 的意义是求2的算术平方根，再根据算术平方根的意义用逼近的方法来估算它的范围作出正确的选择。从学生作答情况来看，正确率比较高，有少部分错误的学生选了A，是没有正确估计 的大小，或者是不理解0不是正整数。估算是现实生活中常用的方法，它体现了数学与生活的联系，所以在教学中要结合具体的情境体现估算的意义，帮助学生理解实数的分类、无理数、平方根等概念，懂得估算的方法，形成估算的意识。
+
+\begin{itshape}
+
+\questiontitle{典型题目}12：M8AS19111
+
+
+已知下列方程：\textcircled{\scriptsize{1}} ${\displaystyle \frac{2x-5}{4}=2}$；    \textcircled{\scriptsize{2}} ${\displaystyle \frac{4}{x-3}=\frac{1}{3-x}+1}$；
+
+（1）其中分式方程是\uline{\qquad}（填序号）；
+
+\end{itshape}
+
+- 考查内容：数与代数
+
+- 思维层次：知识建构
+
+- 能力维度：本题考查的过程为“反思”，该过程中运用到的主要方法为“运算求解”、和“数学表达”
+
+- 试题描述：懂得分式方程的概念，在判断两个方程哪个是分式方程的过程中检测运算求解和数学表达能力的表现
+
+- 正确答案：\textcircled{\scriptsize{2}}
+
+- 本题满分：3分
+
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "M8AS19111_X", "学校","总体","总体")`%
+
+plot.bar.school.ma.question.M8AS19111
+
+\begin{itshape}
+在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS19111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS19111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS19111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS19111_X", "学校","总体","D")`\%。
+\end{itshape}
+
+- 错因分析与教学建议：
+
+本题主要考查的是分式方程的概念，需要学生了解分式方程和其它方程的区别。从学生作答情况来看，正确率比较高，但仍有部分学生没有理解分式方程概念的本质，仅看到第一个方程含有分母，就误认为该方程是分式方程。
+
+建议教师在分式方程的概念教学中，提供足够数量的可供归纳概念的素材，帮助学生发现概念的本质属性，真正经历概念形成的过程，同时对学生容易混淆的概念的本质属性，适当增加一些辨析的问题，帮助学生理解。
+
+\begin{itshape}
+
+\begin{wrapfigure}[4]{r}{0.35\textwidth}
+  \begin{center}
+    \includegraphics[width=0.3\textwidth]{ma_M8AS22111.png}
+  \end{center}
+\end{wrapfigure}
+
+\questiontitle{典型题目}13：M8AS22211
+
+
+如图，在$\triangle{ABC}$中，$\angle{C}=90\degree$，$AC=BC$
+
+（1）作$\angle{ABC}$的平分线$BD$交边$AC$于点$D$；（用尺规作图，保留作图痕迹，不要求写作法）
+
+（2）在（1）的条件下，已知$CD=1$，求边$AD$的长。
+
+\end{itshape}
+
+- 考查内容：图形与几何
+
+- 能力维度：本题考查的过程为“反思”，该过程中运用的主要方法为“运算求解”“推理论证”“空间想象”和“数学表达”。
+
+- 试题描述：会用勾股定理及其逆定理进行推理或计算、会用三角形全等的判定或性质解决简单的几何问题，在分析解决简单几何问题的过程中检测运算求解与推理论证能力的表现。
+
+- 本题满分：满分5分
+
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "M8AS22211_X", "学校","总体","总体")`%
+
+plot.bar.school.ma.question.M8AS22211
+
+\begin{itshape}
+在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS22211_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS22211_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS22211_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS22211_X", "学校","总体","D")`\%。
+\end{itshape}
+
+- 错因分析与教学建议：
+
+本题主要考查的是要求学生在第（1）小题所画的图形的基础上，添加辅助线计算线段$AD$的长度。学生主要存在以下问题：
+
+1. 对角分线定理的理解不够，从而未能根据图形和已知条件添加辅助线；
+
+2. 能正确添加辅助线，但是解题过程中，未能找到未知量与已知量之间的关系式；
+
+3. 计算能力存在欠缺，特别在使用勾股定理列方程计算的过程中，因运算量较大，而未能计算得出正确答案；
+
+4. 由于第（1）题审题错误，作错角平分线，导致第（2）题线段长求错。
+
+从学生的错误情况可以看出，大部分学生对于角平分线的概念是清晰的，但对于角平分线定理是生疏的，理解不深刻，应用不熟练，要在今后的教学中引起足够的重视。学生对于需要添加辅助线加以解决的几何问题比较困难，较多学生无法正确地添出辅助线，得0分学生多以空白为主。在以后的教学中应关注以下几点：
+
+1. 养成仔细审题的习惯。要明确题目的已知条件和结论，根据题目进行答题；
+
+2. 重视几何基本图形和基本定理的教学。在教学中要让学生熟悉每一个几何定理的三种语言的表述，能在较复杂的图形中找到基本图形，提高学生对于几何基本定理的应用能力；
+
+3. 重视推理能力的培养。添加辅助线是几何教学的难点，在教学中，循序渐进地引导学生，通过通性通法总结归纳添加辅助线的方法，激励学生勤思考，培养学生用说理的方式来论证直观判断的习惯。
+
+
+
+\begin{itshape}
+
+\begin{wrapfigure}[4]{r}{0.35\textwidth}
+  \centering
+  \includegraphics[width=0.3\textwidth]{ma_M8AS23111.png}
+\end{wrapfigure}
+
+\questiontitle{典型题目}14：M8AS23111
+
+
+已知，如图，在等腰梯形$ABCD$中，${AD \varparallel BC}$， 点$E$、$H$分别是$AD$、$BC$的中点，联结$EB$、$EC$，点$F$、$G$分别是$EB$、$EC$的中点，联结$FH$、$GH$。根据以上条件，小明同学判断四边形$EFHG$为菱形，小红同学判断四边形$EFHG$为正方形。你认为哪位同学的判断是准确的?请把推理的过程写下来。
+
+\end{itshape}
+
+
+- 考查内容：图形与几何
+- 能力维度：本题考查的过程为“反思”；该过程中运用到的主要方法为“推理论证”“空间想象”和“数学表达”
+- 正确答案：该四边形应为菱形，判断准确的是小明同学．
+
+\begin{itshape}
+
+
+证明：联结$EH$
+
+\qquad $\because$点$F$、$G$、$H$分别为$EB$、$EC$和$BC$的中点，
+
+\qquad $\therefore$ ${GH \varparallel BE}$，${FH \varparallel CE}$
+
+\qquad $\therefore$四边形$EFHG$为平行四边形
+
+\qquad $\because$等腰梯形$ABCD$，${AD \varparallel BC}$，
+
+\qquad $\therefore$ $AB=CD$，$\angle{A} = \angle{D}$
+
+\qquad $\because$点$E$为$AD$的中点，
+
+\qquad $\therefore AE=DE$
+
+\qquad $\therefore \triangle{AEB} \cong \triangle{DEC}$
+
+\qquad $\therefore EB=EC$
+
+\qquad $\because$ 点$F$、$G$为$EB$、$EC$的中点，
+
+\qquad $\therefore \displaystyle EF=\frac{1}{2}EB$, $\displaystyle EG=\frac{1}{2}EC$
+
+\qquad $\therefore EF=EG$
+
+\qquad $\therefore$ 四边形$EFHG$为菱形.
+
+\end{itshape}
+
+- 本题满分：8分
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "M8AS23111_X", "学校","总体","总体")`%
+
+plot.bar.school.ma.question.M8AS23111
+
+\begin{itshape}
+在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS23111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS23111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS23111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS23111_X", "学校","总体","D")`\%。
+\end{itshape}
+
+- 错因分析及教学建议：
+
+本题主要考查菱形的判定。首先，有一部分学生受所给图形影响，主观判断为正方形，之后硬拼凑条件去证明正方形，而不是理智地从逻辑上进行分析。其次，在证明一个四边形是菱形的过程中，主要的错误表现有：
+
+1. 判断方法错误，如只证明两组邻边相等，就认为是菱形；
+
+2. 说理过程混乱，如说理步骤跳跃，循环论证或者错误地证明部分条件等；
+
+3. 证明思路不简洁，如可用三角形中位线定理证明平行关系，而学生选用了表达较复杂的三角形一边的平行线判定定理去证明平行关系，还有很多学生添置多条辅助线，固然最后得到了结果，但表达相当繁琐。
+
+教学中应关注以下几点：
+
+1. 养成“言必有据”的思维习惯
+
+在教学中要注意培养学生用说理的方式来论证自己的直观判断的习惯，同时也要养成在说理过程中不能随意使用未经证明的数学结论作为论证的依据。
+
+2. 养成“读题析题”的解题习惯
+
+在教学中要注意培养学生认真读题、仔细分析已知条件的解题习惯，要引导学生学会如何探索证明思路，领会基本分析方法，同时通过反思、总结、评价，激励学生从思维的角度感受所用到的数学思想方法。
+
+3. 养成“条理清晰”的说理习惯
+
+几何论证讲求逻辑严密，条理清晰，同时也要关注到文字、图形、符号统一的数学阅读方法和习惯。
+
+
+### 聚合（Polymerizing）
+
+`r tab_name <- "学生在数学学科“聚合”过程分量上的平均得分率（％）" `
+
+\begin{itshape}
+\mytable
+\begin{longtable}{|c|c|p{9cm}|c|c|c|}
+\caption{`r tab_name`} \label{tab: `r tab_name`} \\ \hline
+
+\makecell[c]{内容\\维度} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{本\\市} & \makecell[c]{本\\区}  & \makecell[c]{本\\校}  \\ \hline
+
+\multirow{3}{*}{\makecell[c]{数与\\代数}} & M8AS24111 & \multirow{3}{*}{\makecell[l]{了解图形平移的意义和掌握等腰三角形的\\性质和判定，在学习新概念解决阅读理解\\题的过程中检测并进行简单运用运算求解、\\推理论证、空间想象、数学表达和数学建\\模能力的表现}} 
+table.school.ma.M8AS24111
+\\ \cline{2-2} \cline{4-6}
+
+& M8AS24121 &  
+table.school.ma.M8AS24121
+\\ \cline{2-2} \cline{4-6}
+
+& M8AS24211 &  
+table.school.ma.M8AS24211
+\\ 
+& & & & & & & & & & & & & & &  \\
+\cline{1-6}
+
+\multirow{3}{*}{\makecell[c]{函数与\\概率统\\计初步}} & M8AS21111 & \multirow{3}{*}{\makecell[l]{会用一次函数的模型解决简单实际问题，\\在实际问题（无人机的上升高度）求上升\\时间的过程中检测运算求解、推理论证、\\空间想象、数学表达和数学建模能力的表\\现}} 
+table.school.ma.M8AS21111
+\\ \cline{2-2} \cline{4-6}
+
+& M8AS21211 & 
+table.school.ma.M8AS21211
+\\ \cline{2-2} \cline{4-6}
+
+& M8AS21311 & 
+table.school.ma.M8AS21311
+\\ 
+& & & & & & & & & & & & & & &  \\
+\cline{1-6}
+
+
+\end{longtable}
+\end{itshape}
+
+\mytext
+下面将结合“聚合”部分的典型题目做具体分析。
+
+
+\questiontitle{典型题目}15：M8AS21111、M8AS21211和M8AS21311
+
+\begin{itshape}
+
+一个广告气球从地面起飞，以每秒8米的速度竖直上升。同时，附近有一小型无人机从高为50米的大楼楼顶起飞，以每秒3米的速度竖直上升。
+
+（1）设广告气球竖直上升$x$秒后所在位置离地面的高度为$y_{1}$米，那么$y_{1}$关于$x$的函数关系式为\uline{\qquad}；
+
+（2）设小型无人机竖直上升$x$秒后所在位置离地面的高度为$y_{2}$米，那么$y_{2}$关于$x$的函数关系式为\uline{\qquad}；
+
+\end{itshape}
+
+- 考查内容：函数与概率统计初步
+
+- 思维层次：知识建构
+
+- 能力维度：这两个小题考查的过程为“聚合”，该过程中运用的主要方法为 “推理论证”“数学表达”和“数学建模”
+
+- 试题描述：会用一次函数的模型解决简单实际问题，在根据实际问题（无人机的上升高度）求函数解析式的过程中检测推理论证、空间想象、数学表达和数学建模能力的表现
+
+- 正确答案：（1）$y_{1}=8x$  \qquad （2） $y_{2}=3x+50$
+
+- 本题满分：（1）2分   \qquad  （2）2分
+
+- 平均得分率：（1）`r gio.R$VarTierSamKey(query.data, "M8AS21111_X", "学校","总体","总体")`\%  \qquad  （2）`r gio.R$VarTierSamKey(query.data, "M8AS21211_X", "学校","总体","总体")`\%
+
+- 学生作答情况：
+
+plot.bar.school.ma.question.M8AS21111
+
+\begin{itshape}
+在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS21111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21111_X", "学校","总体","D")`\%。
+\end{itshape}
+
+query2.plot.bar.school.ma.question.M8AS21111
+
+
+第（1）题的平均得分率为`r gio.R$VarTierSamKey(query.data, "M8AS21111_X", "学校","总体","总体")`\%，平均得分是`r round(gio.R$VarTierSamKey(query.data, "M8AS21111_X", "学校","总体","总体")*2/100.0, 2)`分，其中有`r gio.R$VarTierSamKey(query2.data, "M8AS21111_X", "学校","总体","2")`\%的学生得满分2分，其它`r gio.R$VarTierSamKey(query2.data, "M8AS21111_X", "学校","总体","0")`\%得0分。有得1分的几位学生是在书写上出现了笔误，其他的0分出现的错误答案有$\displaystyle x=\frac{y}{8}$、$8x$、$\displaystyle y=\frac{x}{8}$。
+
+
+plot.bar.school.ma.question.M8AS21211
+
+\begin{itshape}
+在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS21211_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21211_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21211_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21211_X", "学校","总体","D")`\%。
+\end{itshape}
+
+query2.plot.bar.school.ma.question.M8AS21211
+
+\begin{itshape}
+第（2）题的平均得分率为`r gio.R$VarTierSamKey(query.data, "M8AS21211_X", "学校","总体","总体")`\%，平均得分是`r round(gio.R$VarTierSamKey(query.data, "M8AS21211_X", "学校","总体","总体")*2/100.0, 2)`分，其中有`r gio.R$VarTierSamKey(query2.data, "M8AS21211_X", "学校","总体","2")`\%的学生得满分2分，其它`r gio.R$VarTierSamKey(query2.data, "M8AS21211_X", "学校","总体","0")`\%得0分。学生出现的典型错误有: $y=3x$、$\displaystyle x=\frac{y_{2}-50}{3}$、$y_{2}=50-x$、$\displaystyle x=\frac{y_{2}+50}{3}$。
+\end{itshape}
+
+- 错因分析与教学建议：
+
+本题两小题主要考查用正比例函数、一次函数模型解决解决简单实际问题，学生需要在实际问题（无人机的上升高度）中正确求出函数解析式。它对于学生的阅读能力有一定的要求，要求学生通过阅读题意，正确找到等量关系，并能将文字语言表述的等量关系转化为数学符号语言。
+
+第（1）题的错误原因主要是学生不理解广告气球的速度、飞行的时间以及上升的高度之间的等量关系。
+
+第（2）题的错误原因主要一是不理解无人机是从高度为50米的大楼楼顶起飞，所以表达成$y=3x$，二是不理解无人机的速度、飞行的时间以及上升的高度之间的等量关系。
+
+一次函数在现实生活中有广泛的应用，因此，在具体的教学过程中可以利用生活中的素材，加深学生对函数现实意义的理解，促进其数学建模能力的形成。另外列一次函数解应用题与列整式方程解应用题的思路和方法是一致的，不同的是一次函数表示量与量的关系的是含有两个变量的等式。对于这类问题教学中首先需要帮助学生审清题意，弄清题中涉及哪些量、已知量与变量之间的基本关系是什么，找出等量关系(即函数关系)，然后要分清自变量和函数值，同时还要注意所变量的单位，在列函数表达式时要抓住题中含有等量关系的语句，将此语句抽象为含变量的等式。
+
+\begin{itshape}
+（3）根据国家规定：小型无人机只能在离地面120米高度以下飞行．假设广告气球和无人机同时起飞，那么广告气球与无人机能否在某时刻位于同一高度?如果能，此时无人机上升了多少时间?如果不能，请说明理由（不考虑气象等其它因素）．
+\end{itshape}
+
+- 考查内容：函数与概率统计初步
+
+- 思维层次：问题解决
+
+- 能力水平：聚合，过程中运用到的主要方法为“运算求解”“推理论证”“数学表达”和“数学建模”
+
+- 试题描述：会用一次函数的模型解决简单实际问题，在根据实际问题（无人机的上升高度）求上升时间的过程中检测运算求解、推理论证、空间想象、数学表达和数学建模能力的表现
+
+- 正确答案：
+
+\begin{itshape}
+
+解：由题意得$8x=50+3x$，
+
+\qquad 解得$x=10$
+
+\qquad 当$x=10$时，$50+3x=80$
+
+\qquad 因为$80<120$，
+
+\qquad 所以广告气球与无人机能在某时刻位于同一高度，此时无人机上升了10秒.
+
+\qquad 【说明】：没有作比较不扣分.
+
+\end{itshape}
+
+- 本题满分：3分
+
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "M8AS21311_X", "学校","总体","总体")`\%
+
+- 学生作答情况：
+
+plot.bar.school.ma.question.M8AS21311
+
+\begin{itshape}
+在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS21311_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21311_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21311_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21311_X", "学校","总体","D")`\%。
+\end{itshape}
+
+query2.plot.bar.school.ma.question.M8AS21311
+
+本题的平均得分率为`r gio.R$VarTierSamKey(query.data, "M8AS21311_X", "学校","总体","总体")`\%，平均得分是`r round(gio.R$VarTierSamKey(query.data, "M8AS21311_X", "学校","总体","总体")*3/100.0, 2)`分，其中有`r gio.R$VarTierSamKey(query2.data, "M8AS21311_X", "学校","总体","3")`\%的学生得满分3分，其它得分分别是：`r gio.R$VarTierSamKey(query2.data, "M8AS21311_X", "学校","总体","2")`\%得2分、`r gio.R$VarTierSamKey(query2.data, "M8AS21311_X", "学校","总体","1")`\%得1分、`r gio.R$VarTierSamKey(query2.data, "M8AS21311_X", "学校","总体","0")`\%得0分。
+
+- 错因分析与教学建议：
+
+本题主要考查用正比例函数、一次函数模型解决解决简单实际问题，学生需要利用前两问求出函数解析式来解决一些简单的实际问题。
+
+本题错误的原因一是部分学生是因为前面两个小题解析式的错误导致不能得分，二是部分学生不理解题意，出现了  或 这样的计算，然后判断不能。
+
+初中函数思想在实际问题中具有广泛的应用，所以教师平时的教学要帮助学生增强用函数描述问题的意识，重视课堂教学中蕴含的函数思想，教师在教学中适时利用现有函数模型解决一些与函数应用有关的实际问题，学生熟悉的函数模型有:正比例函数、反比例函数、一次函数、二次函数。
+
+在函数应用问题的教学中还需要关注建模的思想。数学建模是对现实问题进行数学抽象，构建数学模型，并用数学语言表达问题，用数学知识和方法解决问题的思维过程。要注重“建”的过程，甚至这个过程比“用”更加重要，要教会学生从具体的背景中抽象出最为本质的关系。
+
+此类问题也涉及“数学运算”，对学生的运算能力也有一定的要求，但“算”不是唯一，更需要教会学生尊重实际问题的情景，明晰运算的对象、明确运算的方向、选择运算方法，在得到运算的结果后还需要回溯“问题结果的合理性”。
+
+\questiontitle{典型题目}16：M8AS24111、M8AS24121和M8AS24211
+
+\begin{itshape}
+
+\begin{wrapfigure}{r}{0.45\textwidth}
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{ma_M8AS24111.png}
+  \end{center}
+\end{wrapfigure}
+
+在直角坐标平面内，如果一个点作如下平移：沿$x$轴方向平移的“数量”为$a$（规定向右为正，向左为负，平移$|a|$个单位），沿$y$轴方向平移的“数量”为$b$（规定向上为正，向下为负，平移$|b|$个单位），那么就把有序数对$<a, b>$叫做这一平移运动的“平移量”.
+
+现定义：“平移量”$<a, b>$与“平移量”$<c, d>$之间可以进行加法运算，记作$<a, b> + <c, d>$，运算法则为$<a, b> + <c, d> = <a+b, c+d>$. 例如点$A$按照“平移量”$<2, 3>$平移到点$B$，再将点$B$按照“平移量”$<-1, 1>$平移到点$C$，那么点$A$到点$C$的平移过程可以表示为$<2, 3> + <-1, 1> = <1, 4>$.
+
+（1）如果一动点从原点$O(0,0)$出发，先按照“平移量”$<3, 1>$平移到点$P$，再将点$P$按照“平移量”$<-2, 2>$平移到点$Q$。
+
+\qquad \textcircled{\scriptsize{1}} 分别写出点$P$、$Q$的坐标，判断$\triangle{OPQ}$的形状并说明理由；
+
+\qquad \textcircled{\scriptsize{2}} 请用“平移量”的加法表示这个动点的平移过程。
+
+（2）现有四个“平移量”：$<1, 2>, <1, 3>, <-3, -1>, <2, -2>$，能否选择其中若干“平移量”（每个“平移量”不能重复选择），使平面内任意一点按照你所选的“平移量”进行若干次平移后能回到原来的位置?请给出你的结论，并用“平移量”的加法说明。
+
+\end{itshape}
+
+- 考查内容：数与代数
+
+- 思维层次：问题解决
+
+- 能力维度：本题考查的过程为“聚合”，该过程中运用的主要方法为“运算求解”“推理论证”“空间想象”“数学表达”和“数学建模”．
+
+- 试题描述：了解图形平移的意义和掌握等腰三角形的性质和判定，在运用新概念解决问题的过程中检测运算求解、推理论证、空间想象、数学表达和数学建模能力的表现．
+
+- 正确答案：
+
+\begin{itshape}
+
+解：（1）\textcircled{\scriptsize{1}} \quad $P(3,1), Q(1,3)$.
+
+\qquad $\triangle{OPQ}$是等腰三角形．
+
+\qquad $\because OP=\sqrt{10}, OQ=\sqrt{10}$
+
+\qquad $\therefore OP=OQ $
+
+\qquad $\therefore \triangle{OPQ}$是等腰三角形.
+
+\quad  \textcircled{\scriptsize{2}} \quad $<3, 1> + <-2, 2> = <1, 3>$
+
+\end{itshape}
+
+- 本题满分：第\textcircled{\scriptsize{1}}题4分，第\textcircled{\scriptsize{2}}题2分，共6分
+
+- 平均得分率：第\textcircled{\scriptsize{1}}题`r gio.R$VarTierSamKey(query.data, "M8AS24111_X", "学校","总体","总体")`\%，第\textcircled{\scriptsize{2}}题`r gio.R$VarTierSamKey(query.data, "M8AS24121_X", "学校","总体","总体")`\%
+
+- 学生答题情况：
+
+plot.bar.school.ma.question.M8AS24111
+
+\begin{itshape}
+在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS24111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24111_X", "学校","总体","D")`\%。
+\end{itshape}
+
+query2.plot.bar.school.ma.question.M8AS24111
+
+plot.bar.school.ma.question.M8AS24121
+
+\begin{itshape}
+在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS24121_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24121_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24121_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24121_X", "学校","总体","D")`\%。
+\end{itshape}
+
+query2.plot.bar.school.ma.question.M8AS24121
+
+- 错因分析与教学建议：
+
+本题对学生的学习能力有一定要求，要求学生通过阅读试题，理解“新概念”，即“平移量”与“平移量”加法运算的含义。并从一个具体的点出发，考查学生对“新概念”的理解是否正确。
+
+本题第\textcircled{\scriptsize{1}}题的错误原因主要有以下三个：
+
+1. 未理解平移量的含义，直接将平移量代替$Q$点坐标，得到错误答案“$Q(-2,2)$” ；
+
+2. 平移方向错误，导致$Q$点坐标错误；
+
+3. 两点间距离公式计算错误，无法判断$\triangle{OPQ}$的形状。
+
+本题第\textcircled{\scriptsize{2}}题的错误主要有以下两个：
+
+1. 是未理解平移量的含义，将平移量等同于坐标，直接将$P$、$Q$两点坐标直接相加，得错误答案“$<3, 1> + <1, 3> = <4, 4>$”；
+
+2. 是无法用加法的运算法则解释平移过程，仅复述了题中给出的平移方法。还有个别学生加法运算错误。
+
+数学阅读的过程是认知再加工的过程，也是数学推理的过程。学生的学习能力与数学阅读理解能力有着密不可分的关系。因此在教学中应当重视学生数学阅读习惯与能力的培养。如可提供一些趣味性、可读性较强的数学文本让学生阅读，提升学生的阅读兴趣与习惯，也可选择课本中的部分内容让学生独立阅读，然后通过提问、讨论等方式了解学生对所读内容的理解程度，并作适当指导。
+
+
+\begin{itshape}
+（2）现有四个“平移量”：$<1, 2>, <1, 3>, <-3, -1>, <2, -2>$，能否选择其中若干“平移量”（每个“平移量”不能重复选择），使平面内任意一点按照你所选的“平移量”进行若干次平移后能回到原来的位置?请给出你的结论，并用“平移量”的加法说明。
+\end{itshape}
+
+- 考查内容：数与代数
+
+- 思维层次：问题解决
+
+- 能力维度：本题考查的过程为“聚合”，该过程中运用的主要方法为“推理论证”“空间想象”“数学表达”和”数学建模”．
+
+- 试题描述：了解图形平移的意义，在运用新概念解决问题的过程中检测推理论证、空间想象、数学表达和数学建模能力的表现．
+
+- 正确答案：
+
+\begin{itshape}
+
+答： 能.
+
+\qquad 选取的“平移量”为：$<1, 3>, <-3, -1>, <2, -2>$.
+
+\qquad $<1, 3> + <-3, -1> + <2, -2> = <0, 0>$
+
+\qquad 即动点从任意位置出发可以回到原来的位置。
+
+\qquad $\therefore$ 任意一点按照“平移量”$<1, 3>, <-3, -1>, <2, -2>$
+
+\qquad 进行三次平移后能回到原来的位置.
+
+\end{itshape}
+
+- 本题满分：3分
+
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "M8AS24211_X", "学校","总体","总体")`\%
+
+- 学生答题情况：
+
+在本次阅卷中，对学生的作答类型进行了归类分析，具体代码含义如下：
+
+\begin{itshape}
+\mytable
+\begin{longtable}{|c|p{14cm}|}
+\hline
+代码 &  含义 \\ \hline
+0.00 & 给出否定的结论 \\ \hline
+0.90 & 空白，无任何作答痕迹 \\ \hline
+1.00 & 仅给出肯定的结论，无任何理由，或理由错误 \\ \hline
+2.10 & 给出肯定的结论，能正确选择三个平移量，但没有说明理由，或不能正确用“平移量”的加法运算结果$<0, 0>$来说明理由 \\ \hline
+2.20 & 给出肯定的结论，能正确选择三个平移量，但只能用一个具体的点来说明平移的过程 \\ \hline
+3.10 & 给出肯定的结论，能正确选择三个平移量，并能用“平移量”的加法运算结果$<0, 0>$来说明理由 \\ \hline
+3.20 & 给出肯定的结论，能正确选择三个平移量，并能用字母表示任意点的坐标，且能通过运算说明平移的过程 \\ \hline
+
+\end{longtable}
+\end{itshape}
+
+plot.bar.school.ma.question.M8AS24211
+
+\begin{itshape}
+在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS24211_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24211_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24211_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24211_X", "学校","总体","D")`\%。
+\end{itshape}
+
+query2.plot.bar.school.ma.question.M8AS24211
+
+- 错因分析与教学建议：
+
+本题对学生的高层次思维能力提出要求，需要学生阅读学习“新概念”，并运用这一“概念”去解决问题。在这一过程中，需要学生有较强的数学理解与表达能力。
+
+本题的错误主要有以下三个：
+
+1. 仅用一个特殊的点来说明平移过程；
+
+2. 未理解平移量$<0, 0>$的含义，将0替代$<0, 0>$，如“$<1, 3> + <-3, 1> + <2, -2> = 0$”；
+
+3. 审题错误，选取题中四个平移量之外的平移量进行运算。如“$<0, 0> + <1, 3> + <-1, -3> = <0, 0>$”。
+
+教师不仅仅是要教会学生数学知识，还要关注学生阅读理解与数学表达能力的培养，从而提升学生的思维品质与自主学习能力。建议在教学中应关注以下几点：
+
+1. 鼓励学生阅读数学文本，培养学生数学阅读的兴趣与习惯；
+
+2. 创设良好的教学氛围，鼓励学生将自己的思维过程与思维结果用数学语言表达出来，并逐步做到能准确、简洁、有条理地表达；
+
+3. 多设计一些非常规的数学问题或组织一些数学活动，为学生提供在新情境下解决问题的机会。
+
+
+<!-- end of chapter topic -->
+

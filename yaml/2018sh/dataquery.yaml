@@ -4,4 +4,4 @@ dataquery:
   <<: *kPilotRun
   <<: *kPrepareDataframe
   test:
-    - plot.bar.city.cn.jilei.rank.district
+    - plot.box.district.ma.algebra.quantile.perspective

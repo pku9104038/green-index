@@ -1,0 +1,15 @@
+<!-- chapter dimention -->
+
+\mytext
+
+# 本校学生在语文学科上的表现
+
+## 本校学生在语文各能力维度上的表现
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.cn.dimention.rank")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.school.cn.dimention.quantile")`}分别给出了学生在语文学科各能力维度各水平上的人数比例和得分分布\footnote{盒须图——5\%学生得分小于等于须下端线分数；25\%学生得分小于等于盒底分数；50\%学生得分大于等于盒中横线分数；25\%学生得分大于等于盒顶分数；5\%学生得分大于等于须上端线分数；盒高度一定程度上反映了得分分布的离散程度；红点为平均分。}。
+
+plot.bar.school.cn.dimention.rank
+plot.box.school.cn.dimention.quantile
+
+
+<!-- end of chapter dimention -->

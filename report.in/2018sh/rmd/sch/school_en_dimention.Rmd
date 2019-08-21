@@ -1,0 +1,15 @@
+<!-- chapter dimention -->
+
+\mytext
+
+# 本校学生在英语学科上的表现情况
+
+## 学生在各考查维度上的表现
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.en.dimention.rank")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.school.en.dimention.quantile")`}分别给出了本校学生在英语学科各考查维度各水平上的人数比例和得分分布。
+
+plot.bar.school.en.dimention.rank
+plot.box.school.en.dimention.quantile
+
+
+<!-- end of chapter dimention -->

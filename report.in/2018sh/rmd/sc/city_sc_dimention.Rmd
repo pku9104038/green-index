@@ -8,7 +8,7 @@
 
 ### 全体学生在各内容领域上的表现
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.sc.content.rank")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.city.sc.content.quantile")`}分别给出了上海市学生在科学学科各内容领域各水平上的人数比例和得分分布。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.sc.content.rank")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.city.sc.content.quantile")`}分别给出了本市学生在科学学科各内容领域各水平上的人数比例和得分分布。
 
 plot.bar.city.sc.content.rank
 plot.box.city.sc.content.quantile
@@ -16,7 +16,7 @@ plot.box.city.sc.content.quantile
 
 ### 全体学生在各考查维度上的表现
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.sc.dimention.rank")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.city.sc.dimention.quantile")`}分别给出了上海市学生在科学学科各考查维度各水平上的人数比例和得分分布。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.sc.dimention.rank")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.city.sc.dimention.quantile")`}分别给出了本市学生在科学学科各考查维度各水平上的人数比例和得分分布。
 
 plot.bar.city.sc.dimention.rank
 plot.box.city.sc.dimention.quantile

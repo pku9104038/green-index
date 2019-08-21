@@ -1,0 +1,73 @@
+<!-- chapter dimention -->
+
+\mytext
+
+# 学生在各考查维度上的表现情况
+
+## 全体学生在各考查维度上的表现
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.en.dimention.rank")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.district.en.dimention.quantile")`}分别给出了本区学生在英语学科各考查维度各水平上的人数比例和得分分布。
+
+plot.bar.district.en.dimention.rank
+plot.box.district.en.dimention.quantile
+
+
+## 不同群体学生在各考查维度的表现
+
+### 听力
+
+#### 不同群体学生的表现
+
+plot.bar.district.en.listening.rank.perspective
+plot.box.district.en.listening.quantile.perspective
+
+
+#### 不同学校学生的表现
+
+multiplot.bar.district.en.listening.rank.school
+multiplot.box.district.en.listening.quantile.school
+
+### 语法词汇
+
+#### 不同群体学生的表现
+
+plot.bar.district.en.grammar.rank.perspective
+plot.box.district.en.grammar.quantile.perspective
+
+
+
+#### 不同学校学生的表现
+
+multiplot.bar.district.en.grammar.rank.school
+multiplot.box.district.en.grammar.quantile.school
+### 阅读
+
+#### 不同群体学生的表现
+
+plot.bar.district.en.reading.rank.perspective
+plot.box.district.en.reading.quantile.perspective
+
+
+#### 不同学校学生的表现
+
+multiplot.bar.district.en.reading.rank.school
+multiplot.box.district.en.reading.quantile.school
+
+
+
+### 写作
+
+#### 不同群体学生的表现
+
+plot.bar.district.en.writing.rank.perspective
+plot.box.district.en.writing.quantile.perspective
+
+
+
+#### 不同学校学生的表现
+
+multiplot.bar.district.en.writing.rank.school
+multiplot.box.district.en.writing.quantile.school
+
+
+<!-- end of chapter dimention -->

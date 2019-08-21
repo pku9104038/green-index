@@ -1,0 +1,735 @@
+<!-- chapter topic -->
+
+
+
+\mytext
+
+## 典型题目分析
+
+query.data.school.cn.pointrate
+
+### 积累
+
+`r tab_name <- "学生在语文学科“积累”上的平均得分率（％）" `
+\begin{itshape}
+\mytable
+\begin{longtable}{|c|c|p{9cm}|c|c|c|}
+\caption{`r tab_name`} \label{tab: `r tab_name`} \\
+
+\hline
+测试能力 & 题目编码 & \makecell[c]{能力描述} & \makecell[c]{本\\市} & \makecell[c]{本\\区}  & \makecell[c]{本\\校}  \\
+\hline
+
+\multirow{3}{*}{\makecell[c]{识记常用\\字的字音}} & C8AO01111 & 辨析形近字的字音 
+table.school.cn.C8AO01111 
+\\ \cline{2-6}
+
+
+& C8AO02111 & 读准常用字的字音 
+table.school.cn.C8AO02111 
+\\ \cline{2-6}
+
+
+& C8AO03111 & 辨析多音字的字音 
+table.school.cn.C8AO03111  
+\\ \cline{1-6}
+
+\multirow{2}{*}{\makecell[c]{识记常用\\字的字形}} & C8AO04111 & 辨析形近字的字形 
+table.school.cn.C8AO04111  
+\\ \cline{2-6}
+
+& C8AO05111 & 辨析同音字的字形 
+table.school.cn.C8AO05111  
+\\ \cline{1-6}
+
+
+\multirow{6}{*}{\makecell[c]{理解常用\\字词\\的意思}} & C8AO06111 & 在具体语境中恰当运用常见词语 
+table.school.cn.C8AO06111  
+\\ \cline{2-6}
+
+& C8AO07111 & 在具体语境中恰当运用常见词语 
+table.school.cn.C8AO07111  
+\\ \cline{2-6}
+
+& C8AO08111 & 在具体语境中恰当运用常见词语 
+table.school.cn.C8AO08111  
+\\ \cline{2-6}
+
+& C8AO09111 & 在具体语境中恰当运用常见成语 
+table.school.cn.C8AO09111  
+\\ \cline{2-6}
+
+& C8AO10111 & 在具体语境中恰当运用常见成语 
+table.school.cn.C8AO10111  
+\\ \cline{2-6}
+
+& C8AO11111 & 在具体语境中恰当运用关联词 
+table.school.cn.C8AO11111  
+\\ \cline{1-6}
+
+\multirow{2}{*}{\makecell[c]{积累教材\\中的\\文言诗文}} & C8AO12111 & 默写教材中要求背诵的文言诗文 
+table.school.cn.C8AO12111  
+\\ \cline{2-6}
+
+
+& C8AO13111 & 理解教材中文言诗文的意思 
+table.school.cn.C8AO13111  
+\\ \cline{1-6}
+
+
+\multirow{2}{*}{\makecell[c]{积累常见\\的文学、\\文化常识}} & C8AO14111 & 了解课程标准规定阅读的经典名著的文学、文化常识及基本信息 
+table.school.cn.C8AO14111  
+\\ \cline{2-6}
+
+
+& C8AO15111 & 理解教材中文言诗文的意思 
+table.school.cn.C8AO15111  
+\\  \hline
+
+\end{longtable}
+
+\end{itshape}
+
+\mytext
+“积累”部分着重考查学生“读准字音”“认清字形”“理解词义、句义”“积累和运用常见古诗文”和“阅读名著”五方面的能力。
+下面将结合“积累”部分的典型题目做具体分析。
+
+
+\questiontitle{典型题目}1： C8AO01111
+
+\begin{itshape}
+下列词语中加点字读音完全相同的一项是（ \qquad ）。
+
+\begin{longtable}{p{7cm}p{7cm}}
+A. \quad \CJKunderdot{掺}杂 \qquad \CJKunderdot{渗}透 \qquad 悲\CJKunderdot{惨} & B. \quad \CJKunderdot{检}查 \qquad 节\CJKunderdot{俭} \qquad \CJKunderdot{捡}拾 \\
+
+C. \quad \CJKunderdot{增}加 \qquad \CJKunderdot{僧}人 \qquad \CJKunderdot{憎}恶 &  D. \quad 翻\CJKunderdot{译} \qquad 沼\CJKunderdot{泽} \qquad 选\CJKunderdot{择} \\
+\end{longtable}
+\setcounter{table}{\value{table}-1}
+\end{itshape}
+
+
+- 考查能力：积累•语文识记•在无语境条件下读准字音•能读准形近字的字音
+- 正确答案：B
+- 本题满分：1分
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "学校","总体","总体")`\%
+
+plot.bar.school.cn.question.C8AO01111
+
+\begin{itshape}
+在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "学校","总体","D")`\%。
+\end{itshape}
+
+- 答错原因分析及教学建议：
+
+这道题目考查的是学生读准形近字的字音的能力，正确选项为“B”。A和D选项属于声母和韵母都不相同的形近字，C选项属于声母不同的形近字。选择错误选项的主要原因在于未能充分分辨形近字，与不明“字理”有关。
+
+\questiontitle{典型题目}2：C8AO09111
+
+\begin{itshape}
+
+选择成语填空，恰当的一项是（ \qquad ）
+
+这两个故事，一个精彩，一个乏味，真是 \uline{\qquad\qquad} 。
+
+\begin{longtable}{p{3cm}p{3cm}p{3cm}p{3cm}}
+  A. 天壤之别 & B．异曲同工 & C. 各有千秋 & D．别具匠心 \\								
+\end{longtable}
+\setcounter{table}{\value{table}-1}
+\end{itshape}
+
+- 考查能力：积累•理解应用•在有语境条件下理解词语的意思•能理解常用成语的基本意思，并在具体的语境中恰当运用
+- 正确答案：A
+- 本题满分：2分
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "学校","总体","总体")`\%
+
+plot.bar.school.cn.question.C8AO09111
+
+\begin{itshape}
+在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "学校","总体","D")`\%。
+\end{itshape}
+
+- 答错原因分析及教学建议：
+
+这道题目考查的是学生理解常用成语的基本意思，并在具体的语境中恰当运用的能力，正确选项为“A”。选择错误选项的原因主要是不能理解常用成语的基本意思，也不能在具体的语境中正确把握上下句之间的语义关联。
+
+
+\questiontitle{典型题目}3：C8AO11111
+
+\begin{itshape}
+
+选择关联词填空，恰当的一项是（ \qquad  ）
+
+“博观而约取，厚积而薄发”，苏轼在这十个字中，对朋友提出了四点告诫。他提出的这四点，构成了完整的学术精神，\uline{\qquad\qquad}在这些方面加强修炼，\uline{\qquad\qquad}有望成为大学问家。
+
+\begin{longtable}{p{4cm}p{4cm}p{4cm}p{4cm}}
+  A. 因为 \qquad 所以 & B．既然 \qquad 就 & C. 不是 \qquad 而是 & D．只有 \qquad 才 \\								
+\end{longtable}
+\setcounter{table}{\value{table}-1}
+\end{itshape}
+
+- 考查能力：积累•理解应用•在有语境条件下理解词语的意思•能根据具体语境恰当地使用关联词
+- 正确答案：D
+- 本题满分：2分
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "学校","总体","总体")`\%
+
+plot.bar.school.cn.question.C8AO11111
+
+\begin{itshape}
+在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "学校","总体","D")`\%。
+\end{itshape}
+
+- 答错原因分析及教学建议：
+
+这道题目考查是学生根据具体语境恰当地使用关联词的能力，正确选项为“D”。选择错误项的主要原因是未能在具体语境中准确理解上下句的语义联系。
+
+
+### 阅读
+
+`r tab_name <- "学生在语文学科“阅读”上的平均得分率（％）" `
+
+\begin{itshape}
+\mytable
+\begin{longtable}{|c|c|p{9cm}|c|c|c|}
+\caption{`r tab_name`} \label{tab: `r tab_name`} \\
+
+\hline
+测试能力 & 题目编码 & \makecell[c]{能力描述} & \makecell[c]{本\\市} & \makecell[c]{本\\区} & \makecell[c]{本\\校} \\
+\hline
+
+
+ \multirow{5}{*}{\makecell[c]{理解文言\\词语和篇章\\的基本意思}}
+ & C8AO16111 & 理解常用文言实词的意思 
+ table.school.cn.C8AO16111 
+ \\ \cline{2-6}
+
+
+& C8AO17111 & 理解常用文言虚词的意思或用法 
+table.school.cn.C8AO17111 
+\\ \cline{2-6}
+
+
+& C8AO17211 & 理解常用文言虚词的意思或用法 
+table.school.cn.C8AO17211 
+\\ \cline{2-6}
+
+& C8AO18111 & 用现代汉语翻译文言语句 
+table.school.cn.C8AO18111 
+\\ \cline{2-6}
+
+& C8AO19111 & 理解文言诗文的主要内容 
+table.school.cn.C8AO19111 
+\\  \hline
+
+
+\multirow{9}{*}{\makecell[c]{现代文阅读}}
+& C8AO20111 & 提取文本信息·提取文本中的显性信息 
+table.school.cn.C8AO20111 
+\\ \cline{2-6}
+
+& C8AO21111 & 提取文本信息·提取文本中的显性信息 
+table.school.cn.C8AO21111 
+\\ \cline{2-6}
+
+& C8AO22111 & 分析与解释文本内容与形式·梳理段落之间的关系，分析文章的思路 
+table.school.cn.C8AO22111 
+\\ \cline{2-6}
+
+& C8AO23111 & 分析与解释文本内容与形式·对文本中的形象、情感、观点、态度等作出解释，运用文本中的信息支持自己的观点 
+table.school.cn.C8AO23111 
+\\ \cline{2-6}
+
+& C8AO24111 & 提取文本信息·推断文本中的隐含信息 
+table.school.cn.C8AO24111 
+\\ \cline{2-6}
+
+& C8AO25111 & 分析与解释文本内容与形式·分析词语的作用 
+table.school.cn.C8AO25111 
+\\ \cline{2-6}
+
+& C8AO26111 & 分析与解释文本内容与形式·分析段落的作用 
+table.school.cn.C8AO26111 
+\\ \cline{2-6}
+
+& C8AO27111 & 分析与解释文本内容与形式·梳理段落之间的关系，分析文章的思路 
+table.school.cn.C8AO27111 
+\\ \cline{2-6}
+
+& C8AO28111 & 感知文本内容·概括文章的中心 
+table.school.cn.C8AO28111 
+\\ \hline
+
+\multirow{2}{*}{\makecell[c]{利用语文\\知识和技能\\完成任务}}
+& C8AO29111 & 整合相关信息，完成简单任务 
+table.school.cn.C8AO29111 
+\\ \cline{2-6}
+
+& C8AO30111 & 整合相关信息，完成简单任务 
+table.school.cn.C8AO30111
+\\ \hline
+\end{longtable}
+
+\end{itshape}
+
+\mytext
+“文言文阅读”部分主要考查学生理解文言词语、文言句子和文言文基本意思的能力。 “现代文阅读”部分着重考查在“为了获得文学体验”“为了获取信息”和“为了完成任务”三种阅读情境中，学生“提取信息”“形成解释”“整体感知”和“作出评价”的能力。
+
+下面将结合“阅读”部分的典型题目来做具体分析。
+
+
+\begin{itshape}
+
+【测试材料一】
+
+\begin{center}
+狼
+\end{center}
+
+
+\textcircled{\scriptsize{1}}一屠晚归，担中肉尽，止有剩骨。途中两狼，缀行甚远。屠惧，投以骨。一狼得骨止，一狼仍从。复投之，后狼止而前狼又至。骨已尽矣，而两狼之并驱如故。屠大窘，恐前后受其敌。顾野有麦场，场主积薪其中，苫蔽成丘。屠乃奔倚其下，弛担持刀。狼不敢前，眈眈相向。少时，一狼径去，其一犬坐于前。久之，目似瞑，意甚暇。屠暴起，以刀劈狼首，又数刀毙之。方欲行，转视积薪后，一狼洞其中，意将隧入以攻其后也。身已半入，止露尻尾。屠自后断其股，亦毙之。乃悟前狼假寐，盖以诱敌。
+
+\textcircled{\scriptsize{2}}狼亦黠矣，而顷刻两毙，禽兽之变诈几何哉?止增笑耳。
+
+\end{itshape}
+
+\questiontitle{典型题目}4：C8AO16111
+
+\begin{itshape}
+下列加点字解释有误的一项是（ \qquad ）。
+
+
+\begin{longtable}{p{4cm}p{3cm}p{4cm}p{3cm}}							
+A.\CJKunderdot{苫}蔽成丘 & 苫：盖上 & B.目似\CJKunderdot{瞑} & 瞑：闭眼 \\
+C.屠\CJKunderdot{暴}起 & 暴：突然 & D.一狼\CJKunderdot{洞}其中 & 洞：洞口 \\
+\end{longtable}
+\setcounter{table}{\value{table}-1}
+\end{itshape}
+
+- 考查能力：文言文阅读•理解常用文言实词的意思
+- 正确答案：D
+- 本题满分：2分
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "学校","总体","总体")`\%
+
+plot.bar.school.cn.question.C8AO16111
+
+\begin{itshape}
+在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "学校","总体","D")`\%。
+\end{itshape}
+
+- 答错原因分析及教学建议：
+
+这道题目考查的是学生在具体语境中理解文言词语的能力， 正确选项为“D”。选择错误项的主要原因在于未能根据语境中前后文的语义理解文言实词的真正含义和用法；或机械记忆；或胡乱解释。
+
+\questiontitle{典型题目}5：C8AO18111
+
+\begin{itshape}
+对“一狼径去，其一犬坐于前”翻译正确的一项是（ \qquad ）。
+
+A. 一只狼沿着小路离开了，另一只像狗似的蹲坐在他的前面              
+
+B. 一只狼径直离开了，另一只像狗似的蹲坐在他的前面
+
+C. 一只狼沿着小路离开了，他的前面有一只狗蹲坐着 　          
+
+D. 一只狼径直离开了，他的前面有一只狗蹲坐着
+\end{itshape}
+
+- 考查能力：文言文阅读•用现代汉语翻译文言语句
+- 正确答案：B
+- 本题满分：2分
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "学校","总体","总体")`\%
+
+plot.bar.school.cn.question.C8AO18111
+
+\begin{itshape}
+在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "学校","总体","D")`\%。
+\end{itshape}
+
+\mytext
+- 答错原因分析及教学建议：
+
+这道题目考查的是学生在具体语境中理解文言句子的能力， 满分2分。正确选项为“B”。需要正确理解句中主要实词（如“径”“犬”）并要符合现代汉语的语法规范。选错的原因主要有二：对文言词语表意的细微之处理解不准确；能理解词语的本义，但是不能在语境中准确翻译使句子的语义准确、通顺。
+
+
+\begin{itshape}
+
+【测试材料2】
+
+\begin{center}
+“养不家”
+\end{center}
+
+
+\textcircled{\scriptsize{1}}北方土话中有个词儿，叫作：养不家。
+
+\textcircled{\scriptsize{2}}“养不家”——乍一听时，觉得挺新鲜，还有些不大好懂。就打听，什么叫作养不家?人家回答说，养不家都不明白么，树上那些个老家贼，就是养不家。
+
+\textcircled{\scriptsize{3}}越发傻乎乎地问，老家贼是谁?
+
+\textcircled{\scriptsize{4}}麻雀呀，就喜欢趁着家里没人，冷不丁蹿到你家院子里啄食，人一来，它就飞走了。那麻雀，你养活个试试?有谁家能把麻雀养在笼子里?你要关它，它非撞死在笼子里不可。
+
+\textcircled{\scriptsize{5}}稍稍明白了养不家的含义。留心仔细想想，七零八碎地，我就想起许多关于动物的事情。\CJKunderline{甲}
+
+\textcircled{\scriptsize{6}}一天傍晚，爸爸下工回来，手里小心翼翼地托着一个破麻袋包。疲倦的爸爸那会儿精神焕发，连声说:“快来看，轻一点，猜猜是什么?”我听到从麻袋片里发出小鸟的啾啾叫声。那些布片被揭去时，我看到一只用细软的树枝编织成的精巧的鸟窝，鸟窝里还静静地卧着几个浅褐色带麻点的小鸟蛋。爸爸的手里按着两只灰黑的小鸟，它们的脑袋上有一撮白毛。
+
+\textcircled{\scriptsize{7}}爸爸说这种鸟叫白头翁，将成为我们的新朋友。明天就给它们做一只竹笼子，挂在屋檐下，说不定还会孵出小鸟来。
+
+\textcircled{\scriptsize{8}}那天晚上，我和我的白头翁都兴高采烈。它们被绳子拴住，系在桌子腿上。它们总是试图飞起来，然而没等展开翅膀便扑落在地上。它们喳喳地叫嚷，拼命挣扎，不多时，就把细细的小腿勒出了一道血印。我对爸爸说，还是放开它们吧。可是放开了它们，它们却绕着天花板满屋子乱蹿，撞得玻璃窗“嘭嘭”直响。我开始怀疑它们是不是因兴高采烈而叫，它们的叫声中充满悲哀和绝望。那哀鸣声与扑腾声持续了整整一夜。天亮时，曾经是那么活蹦乱跳的小鸟奄奄一息地躺在地上，旁边的水和碎米一动没动……
+
+\textcircled{\scriptsize{9}}爸爸低着头说，看来它们不愿意待在这儿，它们有自己的天空。
+
+\textcircled{\tiny{10}}我把它们抱到门外，放在一堆草丛中。它们耷拉着脑袋不理我，软绵绵的身子显得筋疲力尽。到中午我去看它们，草丛空荡荡，它们不见了。
+
+\textcircled{\tiny{11}}它们回到自己的天空里去了，它们不要笼子。\CJKunderline{乙}
+
+\textcircled{\tiny{12}}许多年以后，我重温了“类似的体验”。婆婆家是极爱养猫的。一到开饭时间，地上一溜搪瓷小碗摆开，不知就从哪里跑出来那么多只猫，却常常有一只毛色杂乱蓬头垢面的癫猫，一看便不像是自己家养的，就好奇地问起这猫的来历。
+
+\textcircled{\tiny{13}}每次的回答总是一样，谁知道它是从哪里来的。来了就吃，吃完了就走。
+
+\textcircled{\tiny{14}}每次我都说，我们干脆就让它住下算了，给它洗洗澡，养着呗。
+
+\textcircled{\tiny{15}}嗨，哪儿养得住它呀，那是一只野猫，没家没窝，在外头疯惯了的。
+
+\textcircled{\tiny{16}}果然，它吃饱之后，舔舔嘴唇，伸伸懒腰，连个招呼也不打，自己开了门，悠悠地踱着方步，消失在黑暗中。过一会儿，远远传来猫儿们打架的尖叫声……
+
+\textcircled{\tiny{17}}公公说，有的猫天生喜欢流浪。\CJKunderline{\qquad 丙 \qquad }
+
+\textcircled{\tiny{18}}有一次我和丈夫闲聊，不知怎的，话题转到下乡时候他们知青养小狼的那件事上。
+
+\textcircled{\tiny{19}}他们几个知青掏了一个狼窝，逮住一只小狼崽，于是产生了一个“宏伟的计划”，打算把它养大了，同本地狗配出一窝狼狗用来打猎。那小狼幼时真就如同一条小狗，毛茸茸的很是可爱。用奶嘴给它喂牛奶，它眨着眼睛咕嘟咕嘟地喝，眼珠子是淡绿色的，如翡翠一般。吃饱了睡足了，还在草地上打滚儿，同人亲热，一派顽童的天真活泼，很是温和善良。可等它断了奶稍长大些，它就开始在地上打洞，用爪子挖出一个比身子大些的土洞，整天钻在里面，并且有了吃肉的强烈愿望。等长到半大的个子，便蠢蠢欲动地对着羊圈龇牙咧嘴了，使养狼者明显感到不安。于是将它用铁链铐起来，拴在树上，它就发出令人毛骨悚然的真正狼嚎。它一天天长大，一天天原形毕露——那种属于狼的强悍暴烈的原形。它开始向周围的人挑衅，几次挣脱了铁链骚扰牲畜。半夜，它发出的悲凉哀号在草原上空久久盘旋，搅得人无法入眠……终于，在一个暴风雪刚刚平息的夜晚，它拔出了木栓，拖着镣铐，一瘸一拐地走了。人们早晨起来，只看到雪地上黑色的血印……
+
+\textcircled{\tiny{20}}结束话题时，丈夫平淡地说，其实，我也是后来很晚才明白，小狼为什么不能像狗一样，舒舒服服地待在这安乐窝里。世界上有些动物，恐怕是永远难以驯养的。即便是一个已经被驯服的种类，其中也总是会有到死也调教不了的。\CJKunderline{丁}
+
+\textcircled{\tiny{21}}看来，养不家是大多数野生动物的一种天性和本能。我不知道动物园里那些已随遇而安的宠物们，是否会有被驯养的痛苦?如果让它们选择，它们是否仍然会选择充满激烈竞争同时也充满自由欢乐的大自然?
+
+\textcircled{\tiny{22}}养不家的那些家伙们，活得虽然很艰难，却自有一番与天地搏击的乐趣。
+
+\end{itshape}
+
+\questiontitle{典型题目}6： C8AO24111
+
+\begin{itshape}
+以下不属于“养不家”行为的一项是（ \qquad ）。
+
+A. 麻雀被人圈养，就会撞死在笼中
+
+B. 白头翁的哀鸣与扑腾持续整整一夜
+
+C. 猫来了就吃，吃饱后舔嘴唇、伸懒腰
+
+D. 狼拔出木栓，拖着镣铐，回到草原
+\end{itshape}
+
+- 考查能力：现代文阅读•为了获得文学体验的阅读·提取文本信息•推断文本中的隐含信息
+- 正确答案：C
+- 本题满分：3分
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "学校","总体","总体")`\%
+
+plot.bar.school.cn.question.C8AO24111
+
+\begin{itshape}
+在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "学校","总体","D")`\%。
+\end{itshape}
+
+- 答错原因分析及教学建议 ：
+
+这道题目考查学生“推断文本中的隐含信息”的能力。本题为选择题，满分3分。需在整体把握文章内容的基础上，推断几个材料中叙述与描写的作用，并根据题干要求加以准确筛选。
+
+\questiontitle{典型题目}7： C8AO25111
+
+\begin{itshape}
+对第\textcircled{\scriptsize{8}}段“那天晚上，我和我的白头翁都兴高采烈”中加点词的分析，恰当的一项是（ \qquad ）。
+
+A. “兴高采烈”反映出白头翁因拥有新朋友而高兴
+
+B. “兴高采烈”表现了“我”和白头翁彼此喜爱
+
+C. “兴高采烈”体现了白头翁对新环境的喜爱之情
+
+D. “兴高采烈”是“我”对白头翁情绪的主观推测
+\end{itshape}
+
+- 考查能力：现代文阅读•为了获得文学体验的阅读•分析与解释文本内容与形式•分析词语的作用
+- 正确答案：D
+- 本题满分：3分
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "学校","总体","总体")`\%
+
+plot.bar.school.cn.question.C8AO25111
+
+\begin{itshape}
+在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "学校","总体","D")`\%。
+\end{itshape}
+
+- 答错原因分析及教学建议 ：
+
+这道题目考查学生“分析词语的作用”的能力。本题为选择题，满分3分。需在语境中分析、思考词语的含义与表达作用，要将特定词语出现前后的材料加以整合思考，理解不同对象在同一事件中表现出的不同态度。
+
+
+\questiontitle{典型题目}8： C8AO26111
+
+\begin{itshape}
+与“白头翁”“狼”的故事相比，“猫”这个故事侧重表现的是（ \qquad ）。
+
+A. 世界上有些动物，恐怕是永远难以驯养的
+
+B. 即便是一个已经被驯服的种类，其中也总是会有到死也调教不了的
+
+C. 养不家是大多数野生动物的一种天性和本能
+
+D. 养不家的那些家伙们，活得虽然很艰难，却自有一番与天地搏击的乐趣
+\end{itshape}
+
+- 考查能力：现代文阅读•为了获得文学体验的阅读•分析与解释文本内容与形式•分析段落的作用
+- 正确答案：B
+- 本题满分：3分
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "学校","总体","总体")`\%
+
+plot.bar.school.cn.question.C8AO26111
+
+\begin{itshape}
+在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "学校","总体","D")`\%。
+\end{itshape}
+
+- 答错原因分析及教学建议
+
+这道题目考查学生“分析段落的作用”的能力。本题为选择题，满分3分。需在整体把握文章主旨的前提下，通过细读描写、议论的关键句，辨析不同材料在文章中表达侧重的差异。
+
+\questiontitle{典型题目}9：C8AO27111
+
+\begin{itshape}
+将以下句子填入文中画线处，正确的一项是（ \qquad ）。
+
+再嚼几个来回，便觉得养不家这个词真有点意思。
+
+\begin{longtable}{p{3.5cm}p{3.5cm}p{3.5cm}p{3.5cm}}							
+A.甲处 & B.乙处 & C.丙处 & D.丁处 \\
+\end{longtable}
+\setcounter{table}{\value{table}-1}
+\end{itshape}
+
+- 考查能力：现代文阅读•为了获得文学体验的阅读•分析与解释文本内容与形式•梳理段落之间的关系，分析文章的思路
+- 正确答案：A
+- 本题满分：4分
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "学校","总体","总体")`\%
+
+plot.bar.school.cn.question.C8AO27111
+
+\begin{itshape}
+在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "学校","总体","D")`\%。
+\end{itshape}
+
+- 答错原因分析及教学建议 ：
+
+这道题目考查学生“梳理段落之间的关系，分析文章的思路”的能力。本题为选择题，满分4分。需完整阅读文章，梳理作者行文思路。细读甲乙丙丁四处，判断其所在段落与前后段落之间的关系。根据内容连贯、富有逻辑性的原则将该句填至恰当处。
+
+
+\questiontitle{典型题目}10：C8AO28111
+
+\begin{itshape}
+下列名言与本文主旨最接近的一项是（ \qquad ）。
+
+A. 生于忧患，死于安乐（孟子）  
+
+B. 贪安稳就没有自由，要自由就要历些危险（鲁迅）
+
+C. 忧劳可以兴国，逸豫可以亡身，自然之理也（欧阳修）
+
+D. 天下无纯粹之自由，亦无纯粹之不自由（章太炎）
+\end{itshape}
+
+- 考查能力：现代文阅读•为了获得文学体验的阅读•感知文本内容•概括文章的中心
+- 正确答案：B
+- 本题满分：4分
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "学校","总体","总体")`\%
+
+plot.bar.school.cn.question.C8AO28111
+
+\begin{itshape}
+在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "学校","总体","D")`\%。
+\end{itshape}
+
+- 答错原因分析及教学建议 ：
+
+这道题目考查学生“概括文章的中心”的能力。本题为选择题，满分4分。需通过阅读文中几个材料、提取议论句中所包含的显性信息等路径，准确概括文章的主旨，再与选项中的名言逐一加以比较、辨析，选择其中最为接近的一项。
+
+
+### 写作
+
+`r tab_name <- "学生在语文学科“写作”上的平均得分率（％）" `
+
+\begin{itshape}
+\mytable
+\begin{longtable}{|c|c|p{9cm}|c|c|c|}
+\caption{`r tab_name`} \label{tab: `r tab_name`} \\
+
+\hline
+测试能力 & 题目编码 & \makecell[c]{能力描述} & \makecell[c]{本\\市} & \makecell[c]{本\\区} & \makecell[c]{本\\校}  \\
+\hline
+
+
+\multirow{4}{*}{\makecell[c]{写作}} & C8AS31111 & 切合题意、中心突出、感情真实、内容具体 
+table.school.cn.C8AS31111 
+\\ \cline{2-6}
+
+
+& C8AS31211 & 语言通顺、简洁得体 
+table.school.cn.C8AS31211 
+\\ \cline{2-6}
+
+
+& C8AS31311 & 结构合理、层次清晰、详略得体 
+table.school.cn.C8AS31311 
+\\ \cline{2-6}
+
+& C8AS31411 & 书写清晰，标点符号使用正确，错别字较少 
+table.school.cn.C8AS31411 
+\\   \hline
+
+\end{longtable}
+\end{itshape}
+
+\mytext
+下面将结合“写作”部分的典型题目来做具体分析。
+
+
+\questiontitle{典型题目}11：C8AS31111～C8AS31411
+
+\begin{itshape}
+以“味道”为题写一篇600字左右的文章。
+
+`r tab_name <- "评分标准：" `
+
+\mytable
+\begin{longtable}{|c|c|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
+\caption{`r tab_name`} \label{tab: `r tab_name`} \\
+
+\hline
+等第 & 得分区间 & 内容选择（35\%）&	语言表达（35\%）& 结构安排（20\%）&	书写和标点（10\%） \\
+\hline
+A	&（40—35分）& 题意理解正确，中心鲜明；选材恰当，有新意；对生活的认识正确，且有自己的见解；感情真挚，想象力丰富。 & 能正确表达自己的思想；语言流畅，有一定的表现力。&	思路通畅；条理清晰；结构安排有特色。 & 书写清晰且美观；错别字少于或等于3个；可以运用标点符号使感情表达更丰富；\\ \hline
+\multicolumn{2}{|c|}{分项得分} & 14—13分	& 14—13分 & 8—6分	& 4-3分 \\ \hline
+B	&（34—28分）&	题意理解正确，中心明确；选材恰当；对生活的认识正确；感情真实，有一定的想象力。	& 能较清楚地表达自己的思想；语句通顺，用语得当。 & 思路连贯；条理清楚；结构合理。&	书写清晰；错别字在3个到6个之间；标点符号使用符合规范 \\ \hline
+\multicolumn{2}{|c|}{分项得分} &	12—11分 & 12—11分	& 5—4分 & 3-2分 \\ \hline
+C	&（27—20分） &	题意理解基本正确；选材基本能为中心服务；对生活的认识基本正确。 &	思想表达基本清楚；语句基本通顺，用语基本正确。 &	思路基本清楚；结构基本合理。 & 书写比较潦草，但基本可以阅读；错别字在6个到9个之间；标点符号使用中有一些不符规范的现象，但是不影响意思表达 \\ \hline
+\multicolumn{2}{|c|}{分项得分} & 10—8分 & 10—9分 & 3—2分 & 2-1分 \\ \hline
+D	&（20分以下）&	题意理解偏颇，中心不明确；内容空洞；选材不合理；缺乏真情实感。（四项中符合一项，皆为D）&	思想表达不够清楚；语句不够通顺；用语不够恰当。（三项中符合一项，皆为D） &	思路不清楚；结构不完整。（两项中符合一项，皆为D） &	书写潦草，影响阅读；错别字多于9个；标点使用不符规范现象较严重，影响到意思表达 \\ \hline
+\multicolumn{2}{|c|}{分项得分} & 7分以下	& 8分以下 & 2分以下 & 1分以下 \\
+
+\hline
+
+\end{longtable}
+\end{itshape}
+
+\questiontitle{总体水平描述:}
+
+A水平：能表达自己的真情实感，选材新颖，立意鲜明；语言流畅，简洁得体，富有表现力；构思巧妙，能根据表达的需要恰当地安排详略。
+
+B水平：能根据题目要求恰当选择材料，内容具体，中心明确；语句通顺；文章结构完整，能注意详略安排。
+
+C水平：能根据题目的要求选择材料，内容不够充实，中心基本明确；语句基本通顺；结构基本完整，但缺少详略安排；。
+
+D水平：不能根据题目的要求选择材料；或内容过于简单；或中心不够明确语句不通顺，错别字较多，标点符号使用不规范；文章结构不完整；或结构混乱，没有条理。
+
+plot.bar.school.cn.question.writing
+
+query.data.school.cn.question.writing
+
+“写作”部分考查：学生根据题目给出的情境合理选择材料，表达自己真情实感的能力。从上图可以看出，处于A、B、C、D四个水平的学生占总人数的百分比分别为`r gio.R$KeyValue(query.data, "A")`%、`r gio.R$KeyValue(query.data, "B")`%、`r gio.R$KeyValue(query.data, "C")`%、`r gio.R$KeyValue(query.data, "D")`%，其中有`r 100-gio.R$KeyValue(query.data, "D")`%的学生处于C水平之上，这说明绝大多数学生在写作时都能围绕题目，比较清楚地叙述故事或者介绍事物，标点符号的使用基本正确。
+
+值得注意的是，有`r gio.R$KeyValue(query.data, "D")`%的学生处于D水平，这部分学生主要存在以下五种问题：不能围绕给定题目选材材料，跑题，内容匮乏，甚至没有作答；不能通顺连贯地表达文章的基本内容，语言表达混乱，词不达意，病句较多；不能围绕给定的题目组织材料，结构混乱，没有条理；错别字较多，书写潦草，不能正确使用标点符号；对考试不重视，写作态度随意。
+
+
+ “写作”从“内容选择”“语言表达”“结构安排”和“书写和标点”四个分项考查学生在叙述事情上的表现。在本报告中视为四个题目，编号分别为C8AS31111、C8AS31211、C8AS31311、C8AS31411。
+
+下面分别呈现学生在写作分项上的作答情况。
+
+plot.bar.school.cn.question.C8AS31111
+query.data.school.cn.question.C8AS31111
+
+从上图可以看出，上海市学生在“内容选择”上处于0-7.5、8-9.5、10-11.5、12-14四个分值区间的学生占总人数的百分比分别为`r gio.R$KeyValue(query.data, "0-7.5")`%、`r gio.R$KeyValue(query.data, "8-9.5")`%、`r gio.R$KeyValue(query.data, "10-11.5")`%、`r gio.R$KeyValue(query.data, "12-14")`%，其中有`r 100 - gio.R$KeyValue(query.data, "0-7.5")`%的学生得分高于7.5分，这表明绝大多数学生在内容选择上能够做到符合题意，表达自己的真情实感，内容比较具体，中心明确；在内容的选择上有新意的学生较多。但也有`r gio.R$KeyValue(query.data, "0-7.5")`%的学生得分低于8分，表明这部分学生在内容选择上不符题意，中心模糊，内容很匮乏。
+
+
+plot.bar.school.cn.question.C8AS31211
+query.data.school.cn.question.C8AS31211
+
+
+从上图可以看出，上海市学生在“语言表达”上处于0-7.5、8-9.5、10-11.5、12-14四个分值区间的学生占总人数的百分比分别为`r gio.R$KeyValue(query.data, "0-7.5")`%、`r gio.R$KeyValue(query.data, "8-9.5")`%、`r gio.R$KeyValue(query.data, "10-11.5")`%、`r gio.R$KeyValue(query.data, "12-14")`%，其中有`r 100 - gio.R$KeyValue(query.data, "0-7.5")`%的学生得分高于7.5分，这表明大多数学生在语言表达上能够做到通顺连贯，词语准确，病句较少；也有`r gio.R$KeyValue(query.data, "12-14")`%的学生语言流畅，有较高的语言表达能力。但有`r gio.R$KeyValue(query.data, "0-7.5")`%的学生得分低于8分，表明这部分学生在语言表达上语病较多，词义不准确，影响内容的表达和读者的阅读。
+
+plot.bar.school.cn.question.C8AS31311
+query.data.school.cn.question.C8AS31311
+
+
+从上图可以看出，上海市学生在“结构安排”上处于0-4、4.5-5.5、6-6.5、7-8四个分值区间的学生占总人数的百分比分别为`r gio.R$KeyValue(query.data, "0-4")`%、`r gio.R$KeyValue(query.data, "4.5-5.5")`%、`r gio.R$KeyValue(query.data, "6-6.5")`%、`r gio.R$KeyValue(query.data, "7-8")`%，其中有`r 100 - gio.R$KeyValue(query.data, "0-4")`%的学生得分高于4分，这表明大多数学生在组织文章结构时能够做到合理安排文章内容，条理比较清晰，层次清楚，并能注意详略安排。这一部分整体得分率较低，表现在得分在6-6.5、7-8分值区间的学生较少，尤其是7-8分值区间的学生偏少，4.5-5.5分值区间的学生较多，说明在“结构安排”方面，中等偏下水平学生所占比例较大。有`r gio.R$KeyValue(query.data, "0-4")`%的学生得分低于4分，表明这部分学生在结构安排上比较混乱，层次模糊，没有条理。
+
+plot.bar.school.cn.question.C8AS31411
+query.data.school.cn.question.C8AS31411
+
+从上图可以看出，上海市学生在“书写和标点”上处于0-2、2.5、3、3.5-4四个分值区间的学生占总人数的百分比分别为`r gio.R$KeyValue(query.data, "0-2")`%、`r gio.R$KeyValue(query.data, "2.5")`%、`r gio.R$KeyValue(query.data, "3")`%、`r gio.R$KeyValue(query.data, "3.5-4")`%，其中有`r 100 - gio.R$KeyValue(query.data, "0-2")`%的学生得分高于2分，这表明大多数学生在写作时字迹比较清晰，错别字不是很多，标点符号使用比较符合规范；但有`r gio.R$KeyValue(query.data, "0-2")`%的学生处于0-2分之间，表明学生在书写时错别字较多，字迹潦草，标点符号的运用存在很多不符规范的现象，影响到读者阅读。
+
+下面将结合不同水平的学生样例文做具体分析。
+
+D\questiontitle{水平}(不高于20分)
+
+1.不能围绕题目选择材料，中心不明确或没有积极意义；
+
+2.所记叙的内容空洞单薄，又似在记流水账；
+
+3.语言不通顺；思路混乱，没有逻辑与条理；
+
+4.错别字较多，字迹潦草，标点符号使用不规范。
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{cn_C8AS31111_D_0.png}
+\end{figure}
+
+
+C\questiontitle{水平}(27—20分， 24分上下)
+
+1.能围绕题目选择材料，基本切题，中心基本明确；
+
+2.内容显单薄，稍偏题意，选材缺少新意；
+
+3.结构基本完整，详略安排上稍欠妥当；
+
+4.有个别病句，但不影响阅读。有一些错别字，但不影响对内容的理解。标点符号使用中有一些不符规范的现象，但是不影响意思的表达。
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{cn_C8AS31111_C_0.png}
+\end{figure}
+
+B\questiontitle{水平}(34—28分，31分上下)
+
+1.所选材料符合题意，中心明确；
+
+2.内容具体；能通过材料表达自己的真情实感；能做到切题；
+
+3.结构安排较恰当合理；
+
+4.语言通顺，表达流畅清晰；书写工整，能正确使用标点符号。
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.88\textwidth]{cn_C8AS31111_B_0.png}
+\end{center}
+\end{figure}
+
+A\questiontitle{水平}(40—35分，38分上下)
+
+1.选材新颖，能从日常事例中写出新意；“味道”一语双关，意蕴丰富；
+
+2.立意鲜明，能表达自己的真情实感；
+
+3.构思巧妙有匠心，能根据表达的需要恰当地安排详略；
+
+4.语言流畅，简洁得体，富有表现力。
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.85\textwidth]{cn_C8AS31111_A_0.png}
+\end{center}
+\end{figure}
+
+\clearpage
+
+
+<!-- end of chapter topic -->

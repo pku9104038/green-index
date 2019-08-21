@@ -79,6 +79,7 @@ kAgileRun <- "AGILE"        # city all, district total
 kMileStone <- "MILESTONE"   # city, district all  and one district school total
 kAutoRun <- "AUTO"          # all tier, all perspective 
 kSchoolRun <- "SCHOOL"      # school tier only
+kDistrictRun <- "DISTRICT"  # district perspective without total and school total
 kCurrentCity <- "本市"
 kCurrentDistrict <- "本区"
 kCurrentSchool <- "本校"
@@ -174,6 +175,7 @@ kColumnSortXValue <- "plot_sort_x_value"
 kColumnSortXBy <- "plot_sort_x_by"
 kColumnSortXSubset <- "plot_sort_x_subset"
 kColumnOrderX <- "plot_order_x"
+kColumnOrderXOption <- "plot_order_x_option"
 kColumnLabelX <- "plot_label_x"
 kColumnTextAngleX <- "plot_text_angle_x"
 kColumnTextSizeX <- "plot_text_size_x"

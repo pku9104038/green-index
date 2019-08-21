@@ -4,4 +4,4 @@ plotfigure:
   <<: *kPilotRun
   <<: *kPrepareDataframe
   test:
-    - plot.bar.city.cn.jilei.rank.district
+    - plot.bar.school.score.rank.allsubject

@@ -20,6 +20,9 @@ query.data.district.base.principal.survey
 - 近三年学校印刷学科交流与经验分享的成果集的数量在2本及以上的学校的比例分 别为`r gio.R$AttSamKey(query.data, "成果出版", "总体", c("2本", "3本", "4本及以上"), 1)`%。;近三年学校根据学生学习需要，开设校本课程的数量11门以上占`r gio.R$AttSamKey(query.data, "校本课程", "总体", c("11-20门", "20门以上"), 1)`%; `r 100 - gio.R$AttSamKey(query.data, "学生社团", "总体", c("没有"), 1)`%的学校建设了学生社团、兴趣小组和俱乐部。
 - 初中校长对学校教育各方面感受的评价普遍较高。
 
+
+\clearpage
+
 ## 校长基本情况
 
 校长基本情况包括校长的性别、年龄、担任校长年限、学历、职称和职级。
@@ -36,6 +39,8 @@ plot.bar.district.base.principal.gender.perspective
 
 plot.bar.district.base.principal.age.perspective
 
+\clearpage
+
 ### 校长任职年限
 
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.principal.years.perspective")`}给出了校长任职年限的总体情况及不同群体之间的比较。
@@ -49,6 +54,7 @@ plot.bar.district.base.principal.years.perspective
 
 plot.bar.district.base.principal.edu.perspective
 
+\clearpage
 
 ### 校长职级
 
@@ -61,6 +67,9 @@ plot.bar.district.base.principal.rank.perspective
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.school.history.perspective")`}给出了学校校龄的分布情况。
 
 plot.bar.district.base.school.history.perspective
+
+
+\clearpage
 
 ## 校长日常工作
 
@@ -76,6 +85,9 @@ plot.bar.district.base.principal.meeting.perspective
 
 plot.bar.district.base.principal.teaching.perspective
 
+
+\clearpage
+
 ### 校长参加听课、评课及教研活动
 
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.principal.researching.perspective")`}给出了校长参加听课、评课及教研活动时间占比总体情况及各群体之间的比较。
@@ -87,6 +99,8 @@ plot.bar.district.base.principal.researching.perspective
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.principal.audited.perspective")`}给出了校长应对上级行政部门的检查、评估时间占比总体情况及各群体之间的比较。
 
 plot.bar.district.base.principal.audited.perspective
+
+\clearpage
 
 ### 校长科研、教学、资金使用等方面的规划与审批
 
@@ -100,11 +114,16 @@ plot.bar.district.base.principal.planning.perspective
 
 plot.bar.district.base.principal.communicating.perspective
 
+
+\clearpage
+
 ## 与学校发展有关问题的调查结果
 
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.principal.communicating.perspective")`}描述了校长对学校发展遇到的困难情况的反馈。
 
 plot.bar.district.base.principal.challenge
+
+\clearpage
 
 ## 与学校办学成效有关问题的调查结果
 
@@ -116,16 +135,22 @@ plot.bar.district.base.school.publishing.perspective
 
 plot.bar.district.base.school.course.perspective
 
+\clearpage
+
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.school.community.perspective")`}描述了学校建设学生社团、兴趣小组和俱乐部的数量及与各群体之间的比较。
 
 plot.bar.district.base.school.community.perspective
 
+\clearpage
 
 ## 与校长对学校感受有关情况的调查结果
 
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.principal.feeling")`}给出了校长对学校感受的情况。
 
 plot.bar.district.base.principal.feeling
+
+\clearpage
+
 
 ## 与校长的教学理念相关问题的调查结果
 

@@ -1,0 +1,24 @@
+<!-- chapter dimention -->
+
+\mytext
+
+# 本校学生在科学学科上的表现情况
+
+## 学生在各内容领域上的表现
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.sc.content.rank")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.school.sc.content.quantile")`}分别给出了本校学生在科学学科各内容领域各水平上的人数比例和得分分布。
+
+plot.bar.school.sc.content.rank
+plot.box.school.sc.content.quantile
+
+
+## 学生在各考查维度上的表现
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.sc.dimention.rank")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.school.sc.dimention.quantile")`}分别给出了本校学生在科学学科各考查维度各水平上的人数比例和得分分布。
+
+plot.bar.school.sc.dimention.rank
+plot.box.school.sc.dimention.quantile
+
+
+
+<!-- end of chapter dimention -->

@@ -118,11 +118,12 @@ plot.bar.district.base.buke.hours.perspective
 
 plot.bar.district.base.buke.subject.perspective
 
+
+\clearpage 
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.buke.reason")`}给出了九年级学生每周参加与考试科目相关的家教补习、课外辅导的主要原因。
 
 plot.bar.district.base.buke.reason
 
-\clearpage
 
 #### 参加校外兴趣班的情况
 
@@ -130,21 +131,25 @@ plot.bar.district.base.buke.reason
 
 plot.bar.district.base.xingquban.perspective
 
+\clearpage 
+
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.xingquban.hours.perspective")`}给出了九年级学生每周参加校外兴趣班的时间分布情况及各群体之间的比较。
 
 plot.bar.district.base.xingquban.hours.perspective
 
-\clearpage
 
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.xingquban.subject.perspective")`}给出了九年级学生每周校外兴趣班的种类情况及各群体之间的比较。
 
 plot.bar.district.base.xingquban.subject.perspective
 
+
+\clearpage 
+
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.xingquban.reason")`}给出了九年级学生每周参加校外兴趣班的主要原因。
 
 plot.bar.district.base.xingquban.reason
 
-\clearpage
+
 
 #### 考试和测验的频率
 
@@ -152,6 +157,9 @@ plot.bar.district.base.xingquban.reason
 
 plot.bar.district.base.examination.perspective
 
+
+
+\clearpage 
 
 #### 课外阅读数量
 
@@ -167,12 +175,17 @@ plot.bar.district.base.reading.perspective
 plot.bar.district.base.sports.perspective
 
 
+
+\clearpage 
+
 ## 学业压力相关问题调查结果
 
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.study.pressure")`}给出了九年级学生对学业压力相关问题的看法。
 
 plot.bar.district.base.study.pressure
 
+
+\clearpage 
 
 ## 学习动机相关问题调查结果
 
@@ -181,12 +194,15 @@ plot.bar.district.base.study.pressure
 plot.bar.district.base.study.motivation
 
 
+\clearpage 
+
 ## 学习自信心相关问题调查结果
 
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.study.confidence")`}给出了九年级学生对学习自信心相关问题的看法。
 
 plot.bar.district.base.study.confidence
 
+\clearpage 
 
 ## 师生关系相关问题调查结果
 
@@ -194,6 +210,7 @@ plot.bar.district.base.study.confidence
 
 plot.bar.district.base.teacher.relationship
 
+\clearpage 
 
 ## 同伴关系相关问题调查结果
 
@@ -219,6 +236,7 @@ plot.bar.district.base.school.identity
 
 plot.bar.district.base.teaching.ycsj
 
+\clearpage
 
 ### 互动教学
 
@@ -245,6 +263,7 @@ plot.bar.district.base.study.method
 
 本问卷对学生品德和社会化行为的国家认同、国际视野、行为规范、亲社会行为几个方面进行了调查，现将调查到的学生品德和社会化行为相关问题进行如下分析。
 
+\clearpage
 
 ### 国家认同
 
@@ -266,6 +285,8 @@ plot.bar.district.base.globalization.concern
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.globalization.action")`}给出了九年级学生对国际行为能力相关问题的看法。
 
 plot.bar.district.base.globalization.action
+
+\clearpage
 
 ### 行为规范
 
@@ -290,6 +311,7 @@ plot.bar.district.base.behavior.prosocial
 
 plot.bar.district.base.emotion.status
 
+\clearpage
 
 ### 情绪稳定性
 

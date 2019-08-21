@@ -104,6 +104,7 @@ plot.bar.district.base.teacher.career.jump.perspective
 
 plot.bar.district.base.teacher.career.satisfaction
 
+\clearpage
 
 ## 教师的课程领导力
 
@@ -113,6 +114,7 @@ plot.bar.district.base.teacher.career.satisfaction
 
 plot.bar.district.base.teaching.opinion
 
+\clearpage
 
 ### 教师学业评价能力
 
@@ -132,6 +134,9 @@ plot.bar.district.base.teaching.evaluation.solution
 
 plot.bar.district.base.teaching.evaluation.thinking
 
+
+\clearpage
+
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.teaching.evaluation.exam")`}给出了九年级教师对“采用何种方式才是最有效地利用了考试的结果?”的反馈总体情况。
 
 plot.bar.district.base.teaching.evaluation.exam
@@ -140,10 +145,13 @@ plot.bar.district.base.teaching.evaluation.exam
 
 plot.bar.district.base.teaching.evaluation.unit
 
+\clearpage
+
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.teaching.evaluation.principal")`}给出了九年级教师对“校长评估老师的教学表现，想了解老师在课堂中是否鼓励了学生进行高层次思维，哪个文本材料有助于校长做出最有效的决策?”的反馈总体情况。
 
 plot.bar.district.base.teaching.evaluation.principal
 
+\clearpage
 
 ## 教师专业发展
 
@@ -152,11 +160,13 @@ plot.bar.district.base.teaching.evaluation.principal
 
 plot.bar.district.base.teacher.develop.action
 
+\clearpage
 
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.teacher.develop.requirement")`}给出了九年级教师专业发展需求的总体情况。
 
 plot.bar.district.base.teacher.develop.requirement
 
+\clearpage
 
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.teacher.develop.difficulty")`}给出了九年级教师专业发展困难的总体情况。
 
@@ -169,11 +179,14 @@ plot.bar.district.base.teacher.develop.difficulty
 
 plot.bar.district.base.teacher.course.plan
 
+\clearpage
 
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.teacher.course.excute")`}给出了九年级教师对学校课程实施的感知的总体情况。
 
 plot.bar.district.base.teacher.course.excute
 
+
+\clearpage
 
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.teacher.course.evaluation")`}给出了九年级教师对学校课程评价的感知的总体情况。
 
