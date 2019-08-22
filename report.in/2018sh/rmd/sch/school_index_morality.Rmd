@@ -2,7 +2,7 @@
 
 \mytext
 
-# 学生品德行为指数
+## 学生品德行为指数
 
 良好的品德是个人成长、终生发展的基础，更是其成为社会有用之才的重要条件。良好的品德行为包括热爱祖国、自尊自爱、尊重他人、有诚信和责任心、遵守公德以及拥有关怀之心和公正之心。品德行为指数是通过采集学生问卷数据，进行数据分析得到的结果。
 
@@ -24,14 +24,14 @@
 
 \mytext
 
-plot.bar.district.index.morality.perspective
-multiplot.bar.district.index.morality.school
+plot.bar.school.index.morality
+
 
 
 良好的品德是个人成长、终身发展的基础，更是学生成为社会有用之才的重要条件。社会化则反映了学生对社会规则和价值的内化程度，具体表现为学生按照社会规范妥善行事。学生品德和社会化行为指标主要包括行为规范、亲社会行为、国家认同、国际视野这四个二级指标。
 
 
-## 行为规范
+### 行为规范
 
 著名教育家苏霍姆林斯基曾经说过：“请别忽视——学生良好行为习惯的养成与否，这关系到教育者的教育目的的成败。”学生的完整品德是在学校中遵守明确的道德要求、准则和行为规范而形成的，道德习惯的养成在个性形成与品德发展中具有极其深远的意义。
 
@@ -55,11 +55,10 @@ multiplot.bar.district.index.morality.school
 - 1 级：表示 20% 以下的学生行为规范素养较高
 \mytext
 
-plot.bar.district.index.conduct.perspective
-multiplot.bar.district.index.conduct.school
+plot.bar.school.index.conduct
 
 
-## 亲社会行为
+### 亲社会行为
 
 亲社会行为指学生在社会交往的情境中有意识地做出帮助他人的行为或做有益于他人的事的倾向，主要体现在友爱宽容、乐于助人、善于合作、尊重他人等行为上。
 
@@ -83,11 +82,9 @@ multiplot.bar.district.index.conduct.school
 - 1 级：表示 20% 以下的学生亲社会行为素养较高
 \mytext
 
-plot.bar.district.index.prosocial.perspective
-multiplot.bar.district.index.prosocial.school
+plot.bar.school.index.prosocial
 
-
-## 国家认同
+### 国家认同
 
 随着全球化、信息化的发展，跨文化交流日益增加，公民吸收外来文化变得方便快捷，国家间边界变得相对模糊，公民的国家认同感削弱，各国不同程度地面临国家认同的挑战。
 
@@ -111,11 +108,9 @@ multiplot.bar.district.index.prosocial.school
 - 1 级：表示 20% 以下的学生国家认同较高
 \mytext
 
-plot.bar.district.index.country.identity.perspective
-multiplot.bar.district.index.country.identity.school
+plot.bar.school.index.country.identity
 
-
-## 国际视野
+### 国际视野
 
 全球化带来了创新，同时带来了经济不平等和社会分裂。面对前所未有的挑战和机遇，新生代需要有识别与理解不同文化和偏见，与不同背景文化人合作解决问题的能力。学校教育需要让学生为之做好准备，培养学生的国际视野，理解本国及他国文化，欣赏不同价值观，建立信任和跨越差异的合作关系。
 
@@ -139,7 +134,6 @@ multiplot.bar.district.index.country.identity.school
 - 1 级：表示 20% 以下的学生国际视野较高
 \mytext
 
-plot.bar.district.index.global.view.perspective
-multiplot.bar.district.index.global.view.school
+plot.bar.school.index.global.view
 
 <!-- end of chapter morality  -->

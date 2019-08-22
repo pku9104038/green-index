@@ -854,7 +854,7 @@ table.school.sc.S8AO46421
 表3
 \begin{longtable}{|c|c|c|c|c|}
 \hline
-\multirow{3}{*}{组别}	& \multicolumn{4}{c|}{$PM_{2.5}$的浓度（微克 / 立方米）} \\ \cline{2-5}
+\multirow{1}{*}{组别}	& \multicolumn{4}{c|}{$PM_{2.5}$的浓度（微克 / 立方米）} \\ \cline{2-5}
  & 清晨	& 上班时段	& 中午	& 下班时段 \\ \cline{2-5}
  &（车流量最小） & （车流量大） &（车流量小） &（车流量最大）\\ \hline
 第1组	& 19	& 89	& 43	& 97 \\ \hline

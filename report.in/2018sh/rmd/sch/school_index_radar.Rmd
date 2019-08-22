@@ -1,9 +1,86 @@
 <!-- chapter radar  -->
 
-# 市、区绿色指标对比
+## 市、区、校绿色指标对比
+
+### 指标雷达图
+
+plot.radar.school.index.compare
+
+### 指标数据表
+
+query.plot.radar.school.index.compare
+
+`r tab_name <- "本校九年级绿色指标数据" `
+
+\begin{itshape}
+\mytable
+\begin{longtable}{|p{6cm}|p{2cm}|p{2cm}|p{2cm}|}
+\caption{`r tab_name`} \label{tab: `r tab_name`} \\ \hline
 
 
-plot.radar.district.index.city.district
+ & 本市 & 本区 & 本校 \\ \hline
 
+学业标准达成度
+table.school.index.1
+\\ \hline
+
+高层次思维能力
+table.school.index.2
+\\ \hline
+
+个体间均衡度
+table.school.index.3
+\\ \hline
+
+学生学习动力
+table.school.index.4
+\\ \hline
+
+学生学业负担与压力
+table.school.index.5
+\\ \hline
+
+心理健康
+table.school.index.6
+\\ \hline
+
+学生品德与社会化行为
+table.school.index.7
+\\ \hline
+
+学生对学校认同度
+table.school.index.8
+\\ \hline
+
+教师课程领导力
+table.school.index.9
+\\ \hline
+
+校长课程领导力
+table.school.index.10
+\\ \hline
+
+
+\end{longtable}
+\end{itshape}
+
+
+\begin{table}[H]
+\centering
+
+\itshape
+\mytable
+
+\begin{tabularx}{\textwidth}{X}
+\hline
+
+\makecell[c]{希望此份报告有助于您的教学和管理!}  \\ 
+
+\makecell[c]{同时祝愿您和贵校的教师工作顺利、身体健康!祝愿贵校的孩子们学习进步、健康成长!} \\
+
+\hline 
+
+\end{tabularx}
+\end{table}
 
 <!-- end of chapter radar  -->

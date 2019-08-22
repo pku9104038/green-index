@@ -4,4 +4,4 @@ dataquery:
   <<: *kPilotRun
   <<: *kPrepareDataframe
   test:
-    - plot.box.district.ma.algebra.quantile.perspective
+    - plot.radar.school.index.compare

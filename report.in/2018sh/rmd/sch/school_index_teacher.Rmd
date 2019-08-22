@@ -2,15 +2,14 @@
 
 \mytext
 
-# 教师课程领导力指数
+## 教师课程领导力指数
 
 教师课程领导力指教师将课程意识与教学实践相融合，有效开展课堂教学活动的素质，主要包括教师教学理念、教师教学方式和教师学业评价能力三个二级指数。
 
-plot.bar.district.index.teacher.leadership.perspective
-multiplot.bar.district.index.teacher.leadership.school
+plot.bar.school.index.teacher.leadership
 
 
-## 教师教学理念指数
+### 教师教学理念指数
 
 教学理念是一种关于教学实践的基本认识，一种主观信念，一种教学行为的驱动力量，是教学观念与教学理想的一种融合 。教师教学理念代表着教师对教学的观点和看法，以及在此基础上形成的相对稳定的思想和观念体系，反映了教师对教学实践的价值追求，是影响教师从事课程相关行为的直接因素。教师教学理念主要包括知识观、教学观、学生观等方面 。
 
@@ -38,12 +37,9 @@ multiplot.bar.district.index.teacher.leadership.school
 \mytext
 
 
-plot.bar.district.index.teaching.opinion.perspective
-multiplot.bar.district.index.teaching.opinion.school
+plot.bar.school.index.teaching.opinion
 
-
-
-## 教师教学方式指数
+### 教师教学方式指数
 
 教学方式指教师在教学过程中，为了达成教育目的采用的行为方式，既包括外显的行为，也包括内隐的思维方式。教学方式是教与学的方法和形式，包括观念性的方式和观念性与物质性结合的方式，是教学方法、形式、手段等的综合 。
     
@@ -70,11 +66,10 @@ multiplot.bar.district.index.teaching.opinion.school
 
 \mytext
 
-plot.bar.district.index.teaching.method.perspective
-multiplot.bar.district.index.teaching.method.school
+plot.bar.school.index.teaching.method
 
 
-## 教师学业评价能力指数
+### 教师学业评价能力指数
 
 教师的学业评价能力是指教师运用测评知识和技能对学生施测，并能够分析测评结果，制定教学计划，作出行之有效的反馈，引导学生学习。教师的测评素养作为教师发展重要的组成部分而备受关注。
 
@@ -101,7 +96,6 @@ multiplot.bar.district.index.teaching.method.school
 
 \mytext
 
-plot.bar.district.index.teaching.evaluation.perspective
-multiplot.bar.district.index.teaching.evaluation.school
+plot.bar.school.index.teaching.evaluation
 
 <!-- end of chapter teacher  -->

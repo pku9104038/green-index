@@ -1,11 +1,11 @@
 <!-- chapter pressure  -->
 \mytext
 
-# 学生学业负担与压力指数
+##  学生学业负担与压力指数
 
 学业负担和压力指数从主观和客观两个方面对学生学业压力进行评估，包括学业负担和学业压力两个二级指数。
 
-## 学业负担指数
+### 学业负担指数
 
 学业负担是指学生为完成课内和课外学习任务所付出的代价。该指数主要通过调查学生睡眠时间、做作业时和补课时间等方面来反映学生所承受的学业负担的状况和程度。
 
@@ -26,13 +26,12 @@
 
 \mytext
 
-plot.bar.district.index.burden.perspective
-multiplot.bar.district.index.burden.school
+plot.bar.school.index.burden
 
 
-## 学业负担分项指标
+### 学业负担分项指标
 
-### 睡眠指数
+#### 睡眠指数
 
 通过对大规模测试数据的分析，结果显示与睡眠时间较多的学生相比，睡眠时间较少的学生，其学业成绩并没有随着睡眠时间的减少而提高。
 
@@ -53,11 +52,10 @@ multiplot.bar.district.index.burden.school
 
 \mytext
 
-plot.bar.district.index.sleep.perspective
-multiplot.bar.district.index.sleep.school
+plot.bar.school.index.sleep
 
 
-### 作业指数
+#### 作业指数
 
 
 参照有关文件和相关研究成果，九年级学生每天做作业时间2小时以下为宜。以此为参照，将作业时间指数划分为9级，指数越高，表示作业量适宜的学生比例越高。
@@ -76,11 +74,10 @@ multiplot.bar.district.index.sleep.school
 
 \mytext
 
-plot.bar.district.index.homework.perspective
-multiplot.bar.district.index.homework.school
+plot.bar.school.index.homework
 
 
-### 补课指数（校外）
+#### 补课指数（校外）
 
 \mylist
 
@@ -96,11 +93,10 @@ multiplot.bar.district.index.homework.school
 
 \mytext
 
-plot.bar.district.index.buke.perspective
-multiplot.bar.district.index.buke.school
+plot.bar.school.index.buke
 
 
-## 学习压力指数
+### 学习压力指数
 
 学业压力是当环境要求超出学生自身应对能力时学生的主观感受。主要调查学生在学习过程中产生的心理负担、焦虑等消极的体验，通过询问学生在做作业、考试、课堂提问、成果反馈等情境中的心理状态进行考察。
 
@@ -121,7 +117,7 @@ multiplot.bar.district.index.buke.school
 
 \mytext
 
-plot.bar.district.index.pressure.perspective
-multiplot.bar.district.index.pressure.school
+plot.bar.school.index.pressure
+
 
 <!-- end of chapter pressure  -->

@@ -5,7 +5,7 @@
 
 # 学生背景问卷调查结果分析
 
-query.data.district.base.student.survey
+query.data.school.student.survey
 
 学生问卷包括学生基本情况、师生关系、学习压力、学校认同度、学习动机、自信心和学习方法等。本章对学生问卷调查结果进行分析，以下是分析得到的主要结果：
 
@@ -35,194 +35,184 @@ query.data.district.base.student.survey
 
 #### 学生为独生子女的情况
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.onechild.perspective")`}给出了本校学生为独生子女的总体情况及各群体之间的比较。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.onechild")`}给出了本校学生为独生子女的总体情况及各群体之间的比较。
 
-plot.bar.district.base.onechild.perspective
+plot.bar.school.student.onechild
 
-\clearpage
+
 
 #### 学生家庭的藏书量
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.book.perspective")`}给出了本校学生家庭藏书量的总体情况及各群体之间的比较。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.book")`}给出了本校学生家庭藏书量的总体情况及各群体之间的比较。
 
-plot.bar.district.base.book.perspective
+plot.bar.school.student.book
 
 #### 学生家庭汽车拥有量
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.car.perspective")`}给出了本校学生家庭拥有汽车的总体情况及各群体之间的比较。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.car")`}给出了本校学生家庭拥有汽车的总体情况及各群体之间的比较。
 
-plot.bar.district.base.car.perspective
+plot.bar.school.student.car
 
 #### 学生家庭出境旅游情况
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.trip.perspective")`}给出了本校学生家庭出境旅游的总体情况及各群体之间的比较。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.trip")`}给出了本校学生家庭出境旅游的总体情况及各群体之间的比较。
 
-plot.bar.district.base.trip.perspective
+plot.bar.school.student.trip
 
 #### 学生父亲受教育情况
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.father.perspective")`}给出了本校学生父亲受教育的总体情况及各群体之间的比较。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.father")`}给出了本校学生父亲受教育的总体情况及各群体之间的比较。
 
-plot.bar.district.base.father.perspective
+plot.bar.school.student.father
 
 #### 学生母亲受教育情况
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.mother.perspective")`}给出了本校学生母亲受教育的总体情况及各群体之间的比较。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.mother")`}给出了本校学生母亲受教育的总体情况及各群体之间的比较。
 
-plot.bar.district.base.mother.perspective
+plot.bar.school.student.mother
 
 
 ### 学生日常生活与学习
 
 #### 学生睡眠时间
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.sleep.hours.perspective")`}给出了本校学生每天睡眠时间的总体情况及各群体之间的比较。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.sleep.hours")`}给出了本校学生每天睡眠时间的总体情况及各群体之间的比较。
 
-plot.bar.district.base.sleep.hours.perspective
+plot.bar.school.student.sleep.hours
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.sleep.feel.perspective")`}给出了本校学生对自己每天睡眠时间是否充足的看法。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.sleep.feel")`}给出了本校学生对自己每天睡眠时间是否充足的看法。
 
-plot.bar.district.base.sleep.feel.perspective
+plot.bar.school.student.sleep.feel
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.sleep.lack.reason")`}给出了本校学生睡眠不足的原因。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.sleep.lack.reason")`}给出了本校学生睡眠不足的原因。
 
-plot.bar.district.base.sleep.lack.reason
+plot.bar.school.student.sleep.lack.reason
 
-\clearpage
 
 #### 学生作业时间
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.homework.hours.perspective")`}给出了本校学生每天做学校老师布置的作业时间的总体情况及各群体之间的比较。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.homework.hours")`}给出了本校学生每天做学校老师布置的作业时间的总体情况及各群体之间的比较。
 
-plot.bar.district.base.homework.hours.perspective
+plot.bar.school.student.homework.hours
 
 
 #### 学校作业难易程度
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.homework.difficulty.perspective")`}给出了本校学生学校作业的难易程度的总体情况及各群体之间的比较。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.homework.difficulty")`}给出了本校学生学校作业的难易程度的总体情况及各群体之间的比较。
 
-plot.bar.district.base.homework.difficulty.perspective
+plot.bar.school.student.homework.difficulty
 
 
 #### 参加与考试科目相关的家教补习、课外辅导的情况
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.buke.perspective")`}给出了本校学生每周参加与考试科目相关的家教补习、课外辅导的百分比及各群体之间的比较。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.buke")`}给出了本校学生每周参加与考试科目相关的家教补习、课外辅导的百分比及各群体之间的比较。
 
-plot.bar.district.base.buke.perspective
+plot.bar.school.student.buke
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.buke.hours.perspective")`}给出了本校学生每周参加与考试科目相关的家教补习、课外辅导的时间分布及各群体之间的比较。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.buke.hours")`}给出了本校学生每周参加与考试科目相关的家教补习、课外辅导的时间分布及各群体之间的比较。
 
-plot.bar.district.base.buke.hours.perspective
+plot.bar.school.student.buke.hours
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.buke.subject.perspective")`}给出了本校学生每周参加与考试科目相关的家教补习、课外辅导时间的学科分布及各群体之间的比较。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.buke.subject")`}给出了本校学生每周参加与考试科目相关的家教补习、课外辅导时间的学科分布及各群体之间的比较。
 
-plot.bar.district.base.buke.subject.perspective
+plot.bar.school.student.buke.subject
 
 
-\clearpage 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.buke.reason")`}给出了本校学生每周参加与考试科目相关的家教补习、课外辅导的主要原因。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.buke.reason")`}给出了本校学生每周参加与考试科目相关的家教补习、课外辅导的主要原因。
 
-plot.bar.district.base.buke.reason
+plot.bar.school.student.buke.reason
 
 
 #### 参加校外兴趣班的情况
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.xingquban.perspective")`}给出了本校学生每周参加校外兴趣班的百分比及各群体之间的比较。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.xingquban")`}给出了本校学生每周参加校外兴趣班的百分比及各群体之间的比较。
 
-plot.bar.district.base.xingquban.perspective
-
-\clearpage 
-
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.xingquban.hours.perspective")`}给出了本校学生每周参加校外兴趣班的时间分布情况及各群体之间的比较。
-
-plot.bar.district.base.xingquban.hours.perspective
+plot.bar.school.student.xingquban
 
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.xingquban.subject.perspective")`}给出了本校学生每周校外兴趣班的种类情况及各群体之间的比较。
 
-plot.bar.district.base.xingquban.subject.perspective
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.xingquban.hours")`}给出了本校学生每周参加校外兴趣班的时间分布情况及各群体之间的比较。
+
+plot.bar.school.student.xingquban.hours
 
 
-\clearpage 
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.xingquban.subject")`}给出了本校学生每周校外兴趣班的种类情况及各群体之间的比较。
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.xingquban.reason")`}给出了本校学生每周参加校外兴趣班的主要原因。
+plot.bar.school.student.xingquban.subject
 
-plot.bar.district.base.xingquban.reason
+
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.xingquban.reason")`}给出了本校学生每周参加校外兴趣班的主要原因。
+
+plot.bar.school.student.xingquban.reason
 
 
 
 #### 考试和测验的频率
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.examination.perspective")`}给出了本校学生每月考试和测验次数的总体情况及各群体之间的比较。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.examination")`}给出了本校学生每月考试和测验次数的总体情况及各群体之间的比较。
 
-plot.bar.district.base.examination.perspective
+plot.bar.school.student.examination
 
 
 
-\clearpage 
 
 #### 课外阅读数量
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.reading.perspective")`}给出了本校学生一年内阅读课外读物数量的总体情况及各群体之间的比较。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.reading")`}给出了本校学生一年内阅读课外读物数量的总体情况及各群体之间的比较。
 
-plot.bar.district.base.reading.perspective
+plot.bar.school.student.reading
 
 
 #### 校外运动时间
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.sports.perspective")`}给出了本校学生每周校外运动时间的总体情况及各群体之间的比较。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.sports")`}给出了本校学生每周校外运动时间的总体情况及各群体之间的比较。
 
-plot.bar.district.base.sports.perspective
+plot.bar.school.student.sports
 
-
-
-\clearpage 
 
 ## 学业压力相关问题调查结果
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.study.pressure")`}给出了本校学生对学业压力相关问题的看法。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.study.pressure")`}给出了本校学生对学业压力相关问题的看法。
 
-plot.bar.district.base.study.pressure
+plot.bar.school.student.study.pressure
 
 
-\clearpage 
 
 ## 学习动机相关问题调查结果
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.study.motivation")`}给出了本校学生对学习动机相关问题的看法。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.study.motivation")`}给出了本校学生对学习动机相关问题的看法。
 
-plot.bar.district.base.study.motivation
+plot.bar.school.student.study.motivation
 
 
-\clearpage 
 
 ## 学习自信心相关问题调查结果
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.study.confidence")`}给出了本校学生对学习自信心相关问题的看法。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.study.confidence")`}给出了本校学生对学习自信心相关问题的看法。
 
-plot.bar.district.base.study.confidence
+plot.bar.school.student.study.confidence
 
-\clearpage 
+
 
 ## 师生关系相关问题调查结果
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.teacher.relationship")`}给出了本校学生对师生关系评价的总体情况。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.teacher.relationship")`}给出了本校学生对师生关系评价的总体情况。
 
-plot.bar.district.base.teacher.relationship
+plot.bar.school.student.teacher.relationship
 
-\clearpage 
 
 ## 同伴关系相关问题调查结果
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.classmate.relationship")`}给出了本校学生对同伴关系评价的总体情况。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.classmate.relationship")`}给出了本校学生对同伴关系评价的总体情况。
 
-plot.bar.district.base.classmate.relationship
+plot.bar.school.student.classmate.relationship
 
 ## 学校归属感相关问题调查结果
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.school.identity")`}给出了本校学生对学校归属感相关问题的看法。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.school.identity")`}给出了本校学生对学校归属感相关问题的看法。
 
-plot.bar.district.base.school.identity
+plot.bar.school.student.school.identity
 
 
 ## 教师教学方式有关问题的调查结果
@@ -232,73 +222,71 @@ plot.bar.district.base.school.identity
 
 ### 因材施教
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.teaching.ycsj")`}给出了本校学生对教师因材施教的评价。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.teaching.ycsj")`}给出了本校学生对教师因材施教的评价。
 
-plot.bar.district.base.teaching.ycsj
+plot.bar.school.student.teaching.ycsj
 
-\clearpage
 
 ### 互动教学
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.teaching.hdjx")`}给出了本校学生对教师互动教学的评价。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.teaching.hdjx")`}给出了本校学生对教师互动教学的评价。
 
-plot.bar.district.base.teaching.hdjx
+plot.bar.school.student.teaching.hdjx
 
 
 ### 鼓励学生探究与发展
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.teaching.gltj")`}给出了本校学生对教师鼓励学生探究与发展的评价。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.teaching.gltj")`}给出了本校学生对教师鼓励学生探究与发展的评价。
 
-plot.bar.district.base.teaching.gltj
+plot.bar.school.student.teaching.gltj
 
 
 ## 学习策略相关问题调查结果
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.study.method")`}给出了本校学生对学习策略相关问题的看法。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.study.method")`}给出了本校学生对学习策略相关问题的看法。
 
-plot.bar.district.base.study.method
+plot.bar.school.student.study.method
 
 
 ## 品德和社会化行为有关问题的调查结果
 
 本问卷对学生品德和社会化行为的国家认同、国际视野、行为规范、亲社会行为几个方面进行了调查，现将调查到的学生品德和社会化行为相关问题进行如下分析。
 
-\clearpage
 
 ### 国家认同
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.country.identity")`}给出了本校学生对国家认同相关问题的看法。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.country.identity")`}给出了本校学生对国家认同相关问题的看法。
 
-plot.bar.district.base.country.identity
+plot.bar.school.student.country.identity
 
 
 ### 国际视野
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.globalization.knowlage")`}给出了本校学生对国际知识相关问题的看法。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.globalization.knowlage")`}给出了本校学生对国际知识相关问题的看法。
 
-plot.bar.district.base.globalization.knowlage
+plot.bar.school.student.globalization.knowlage
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.globalization.concern")`}给出了本校学生对全球意识相关问题的看法。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.globalization.concern")`}给出了本校学生对全球意识相关问题的看法。
 
-plot.bar.district.base.globalization.concern
+plot.bar.school.student.globalization.concern
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.globalization.action")`}给出了本校学生对国际行为能力相关问题的看法。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.globalization.action")`}给出了本校学生对国际行为能力相关问题的看法。
 
-plot.bar.district.base.globalization.action
+plot.bar.school.student.globalization.action
 
-\clearpage
+
 
 ### 行为规范
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.behavior.morality")`}给出了本校学生对行为规范相关问题的看法。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.behavior.morality")`}给出了本校学生对行为规范相关问题的看法。
 
-plot.bar.district.base.behavior.morality
+plot.bar.school.student.behavior.morality
 
 ### 亲社会行为
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.behavior.prosocial")`}给出了本校学生对亲社会行为相关问题的看法。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.behavior.prosocial")`}给出了本校学生对亲社会行为相关问题的看法。
 
-plot.bar.district.base.behavior.prosocial
+plot.bar.school.student.behavior.prosocial
 
 
 ## 心理健康有关问题的调查结果
@@ -307,23 +295,22 @@ plot.bar.district.base.behavior.prosocial
 
 ### 情绪状态
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.emotion.status")`}给出了本校学生对情绪状态相关问题的反馈。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.emotion.status")`}给出了本校学生对情绪状态相关问题的反馈。
 
-plot.bar.district.base.emotion.status
+plot.bar.school.student.emotion.status
 
-\clearpage
 
 ### 情绪稳定性
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.emotion.stability")`}给出了本校学生对情绪稳定性相关问题的反馈。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.emotion.stability")`}给出了本校学生对情绪稳定性相关问题的反馈。
 
-plot.bar.district.base.emotion.stability
+plot.bar.school.student.emotion.stability
 
 ### 情绪管理能力
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.emotion.management")`}给出了本校学生对情绪管理能力相关问题的反馈。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.emotion.management")`}给出了本校学生对情绪管理能力相关问题的反馈。
 
-plot.bar.district.base.emotion.management
+plot.bar.school.student.emotion.management
 
 
 \clearpage

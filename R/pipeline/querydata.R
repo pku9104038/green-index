@@ -444,6 +444,15 @@ GreenIndexQueryData <- setRefClass(
       return(round(value, digits = digits))
     },
     
+    AliasTierSamKey = function(df, alias, tier, sample, key, digits = 1){
+      value <- df[df[, kColumnKey] == key & 
+                    df[, kColumnAlias] == alias &
+                    df[, kColumnStatisticsTier] == tier &
+                    df[, kColumnStatisticsSample] == sample, 
+                  kColumnValue]
+      return(round(value, digits = digits))
+    },
+    
     KeyValue = function(df, key, digits = 1){
       value <- df[df[, kColumnKey] == key , 
                   kColumnValue]

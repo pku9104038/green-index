@@ -4,4 +4,4 @@ plotfigure:
   <<: *kPilotRun
   <<: *kPrepareDataframe
   test:
-    - plot.bar.school.score.rank.allsubject
+    - plot.radar.school.index.compare

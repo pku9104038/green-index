@@ -4,67 +4,65 @@
 
 # 家长背景问卷调查结果分析
 
-query.data.district.base.parent.survey
-
 
 ## 家庭结构
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.family.type")`}给出了学生的家庭结构\footnote{其中核心家庭指的是孩子平时和父亲、母亲或父母双方以及兄弟姐妹生活在一起的家庭。主干家庭指的是孩子平时和除了父亲、母亲、兄弟姐妹以外还有（外）祖父母一起生活的家庭。扩大家庭指的是孩子平时除父母、兄弟姐妹、（外）祖父母以外还有其他人一起生活的家庭。}的总体情况及各群体之间的比较。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.parent.family.type")`}给出了学生的家庭结构\footnote{其中核心家庭指的是孩子平时和父亲、母亲或父母双方以及兄弟姐妹生活在一起的家庭。主干家庭指的是孩子平时和除了父亲、母亲、兄弟姐妹以外还有（外）祖父母一起生活的家庭。扩大家庭指的是孩子平时除父母、兄弟姐妹、（外）祖父母以外还有其他人一起生活的家庭。}的总体情况及各群体之间的比较。
 
-plot.bar.district.base.family.type
+plot.bar.school.parent.family.type
 
 \clearpage
 
 ## 亲子关系
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.family.communication")`}给出了亲子交流的总体情况及各群体之间的比较。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.parent.family.communication")`}给出了亲子交流的总体情况及各群体之间的比较。
 
-plot.bar.district.base.family.communication
+plot.bar.school.parent.family.communication
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.family.discuss")`}给出了学生参与家庭事务讨论的总体情况及各群体之间的比较。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.parent.family.discuss")`}给出了学生参与家庭事务讨论的总体情况及各群体之间的比较。
 
-plot.bar.district.base.family.discuss
+plot.bar.school.parent.family.discuss
 
 \clearpage
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.family.accompany")`}给出了亲子陪伴的总体情况及各群体之间的比较。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.parent.family.accompany")`}给出了亲子陪伴的总体情况及各群体之间的比较。
 
-plot.bar.district.base.family.accompany
+plot.bar.school.parent.family.accompany
 
 
 ## 家长对子女教育期望
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.family.expection")`}给出了家长对子女教育期望的总体情况及各群体之间的比较。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.parent.family.expection")`}给出了家长对子女教育期望的总体情况及各群体之间的比较。
 
-plot.bar.district.base.family.expection
+plot.bar.school.parent.family.expection
 
 \clearpage
 
 ## 家长辅导子女学习
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.family.incharge")`}给出了家长辅导子女学习的责任分工的总体情况及各群体之间的比较。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.parent.family.incharge")`}给出了家长辅导子女学习的责任分工的总体情况及各群体之间的比较。
 
-plot.bar.district.base.family.incharge
+plot.bar.school.parent.family.incharge
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.family.tutor")`}给出了家长辅导子女学习的总体情况及各群体之间的比较。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.parent.family.tutor")`}给出了家长辅导子女学习的总体情况及各群体之间的比较。
 
-plot.bar.district.base.family.tutor
+plot.bar.school.parent.family.tutor
 
 \clearpage
 
 ## 家长教育观念
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.family.incharge")`}给出了家长教育观念的总体情况。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.parent.family.incharge")`}给出了家长教育观念的总体情况。
 
-plot.bar.district.base.family.opinion
+plot.bar.school.parent.family.opinion
 
 \clearpage
 
 ## 家长对学校教育的满意度
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.family.satisfaction")`}给出了家长对学校教育的满意度的总体情况。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.parent.family.satisfaction")`}给出了家长对学校教育的满意度的总体情况。
 
-plot.bar.district.base.family.satisfaction
+plot.bar.school.parent.family.satisfaction
 
 \clearpage
 

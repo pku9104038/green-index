@@ -2,36 +2,6 @@
 
 \mytext
 
-# 学生身心健康指数
-
-
-## 学生体质健康指数
-
-青少年是社会发展的基础和动力，青少年身体素质健康与否，不仅关系到学生的终身健康与幸福，同时也关系到国家的社会建设。研究表明，体质健康与心理健康、学业成就存在正向相关性，中国青少年存在不健康的行为习惯及理念，但未引起社会、学校、家长及青少年自身的高度重视。建立健康体育意识和生活方式是应对学生体质健康持续下降的需要，也是发展青少年终身体育行为和终身健康的需要。
-
-学生体质健康指学生的人体形态结构、生理功能、身体素质等方面处于良好的状态。这种良好的状态主要通过身体形态（如身高、体重）、身体机能（如肺活量）和身体素质（如力量、耐力、爆发力、柔韧性）等方面进行判断。
-
-《国家学生体质健康标准》测试项目包括身体形态、生理机能、身体素质等3方面21项指标。在各区县教育行政部门的统一安排下，各校采用自测自报的方式，在 2018年9月1日至 2019 年 1 月 31 日之间自行组织测试。本报告中的数据来源于上海市学生体质健康监测中心。
-
-学生体质健康指数分为 9 级，指数越高，表示该区域学生体质健康情况越好。
-
-\mylist
-
-- 9级：表示体质健康系数\footnote{将体质健康综合评价及格率经过标准化等一系列转化后得到的数值，转化后的数据具有可加性和可比性，用于划分体质健康指数的等级。}在0.9及以上（含0.9）
-- 8级：表示体质健康系数在0.8-0.9之间（含0.8）
-- 7级：表示体质健康系数在0.7-0.8之间（含0.7）
-- 6级：表示体质健康系数在0.6-0.7之间（含0.6）
-- 5级：表示体质健康系数在0.5-0.6之间（含0.5）
-- 4级：表示体质健康系数在0.4-0.5之间（含0.4）
-- 3级：表示体质健康系数在0.3-0.4之间（含0.3）
-- 2级：表示体质健康系数在0.2-0.3之间（含0.2）
-- 1级：表示体质健康系数在0.2以下
-
-\mytext
-
-plot.bar.district.index.physical.health.perspective
-
-
 
 ## 学生心理健康指数
 
@@ -57,17 +27,13 @@ plot.bar.district.index.physical.health.perspective
 
 \mytext
 
-plot.bar.district.index.mental.health.perspective
-multiplot.bar.district.index.mental.health.school
+plot.bar.school.index.mental.health
 
-plot.bar.district.index.emotion.status.perspective
-multiplot.bar.district.index.emotion.status.school
+plot.bar.school.index.emotion.status
 
-plot.bar.district.index.emotion.stability.perspective
-multiplot.bar.district.index.emotion.stability.school
+plot.bar.school.index.emotion.stability
 
-plot.bar.district.index.emotion.management.perspective
-multiplot.bar.district.index.emotion.management.school
+plot.bar.school.index.emotion.management
 
 
 <!--  end of chapter health  -->

@@ -2,12 +2,14 @@
 
 \mytext
 
-# 学生学业水平指数
+# 本校学生学业质量绿色指标指数
+
+## 学生学业水平指数
 
 学生学业水平指学生对各学科课程标准所要求内容的掌握情况，是学生终身学习和发展的基础，包含学生学业水平的标准达成度、学生高层次思维能力、学生艺术素养三个二级指数。
 
 
-## 学生学业成绩标准达成度指数
+### 学生学业成绩标准达成度指数
 
 按照考试性质与解释的差异，学业水平测试一般可以分成“常模参照测验”与“标准参照测验”。“标准参照测验”是基于界定良好的行为领域标准，参照这个标准对测验分数加以解释，它通过将考生实际能力与所要求达到的能力标准比较，对考生的水平作出评价，关注的是学生是否达到标准。“常模参照测验”是通过某个学生与全体学生比较，决定该学生在团体中的相对位置，着眼于对学生的相对水平进行区分，关注的是排队和择优。由于常模参照测验关注排名，可造成可能现实影响是鼓励了竞争、测验与教学联系不紧密，而且测验分数的解释某些团体并不公平。
 
@@ -30,25 +32,19 @@
 
 \mytext
 
-plot.bar.district.index.score.pass.perspective
-multiplot.bar.district.index.score.pass.school
+plot.bar.school.index.score.pass
 
+plot.bar.school.index.cn.pass
 
-plot.bar.district.index.cn.pass.perspective
-multiplot.bar.district.index.cn.pass.school
+plot.bar.school.index.ma.pass
 
-plot.bar.district.index.ma.pass.perspective
-multiplot.bar.district.index.ma.pass.school
+plot.bar.school.index.en.pass
 
-plot.bar.district.index.en.pass.perspective
-multiplot.bar.district.index.en.pass.school
-
-plot.bar.district.index.sc.pass.perspective
-multiplot.bar.district.index.sc.pass.school
+plot.bar.school.index.sc.pass
 
 
 
-## 学生高层次思维能力指数
+###  学生高层次思维能力指数
 
 随着全球化和信息化进程的加快，科技变革正深刻改变人类的思维方式和行为方式，要在竞争日益激烈的社会取得成功，合作沟通、深度思考和理性判断是面向未来的必备技能。因此，世界各国的教育改革，虽然重点不尽相同，但发展学生的高层次思维能力是教育改革的共同目标。
 
@@ -74,20 +70,15 @@ multiplot.bar.district.index.sc.pass.school
 
 \mytext
 
-plot.bar.district.index.score.thinking.perspective
-multiplot.bar.district.index.score.thinking.school
+plot.bar.school.index.score.thinking
 
-plot.bar.district.index.cn.thinking.perspective
-multiplot.bar.district.index.cn.thinking.school
+plot.bar.school.index.cn.thinking
 
-plot.bar.district.index.ma.thinking.perspective
-multiplot.bar.district.index.ma.thinking.school
+plot.bar.school.index.ma.thinking
 
-plot.bar.district.index.en.thinking.perspective
-multiplot.bar.district.index.en.thinking.school
+plot.bar.school.index.en.thinking
 
-plot.bar.district.index.sc.thinking.perspective
-multiplot.bar.district.index.sc.thinking.school
+plot.bar.school.index.sc.thinking
 
 
 ## 学生艺术素养指数
@@ -116,5 +107,4 @@ multiplot.bar.district.index.sc.thinking.school
 
 \mytext
 
-plot.bar.district.index.ar.pass.perspective
-multiplot.bar.district.index.ar.pass.school
+plot.bar.school.index.ar.pass

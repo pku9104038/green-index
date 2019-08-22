@@ -58,7 +58,7 @@ table.school.en.E8AO09111
 table.school.en.E8AO10111 
 \\ \cline{1-6}
 
-\multirow{2}{*}{\makecell[c]{话题}} & E8AO11111 & 听懂对话中有关天气的内容，选择相应答案 
+\multirow{10}{*}{\makecell[c]{话题}} & E8AO11111 & 听懂对话中有关天气的内容，选择相应答案 
 table.school.en.E8AO11111 
 \\ \cline{2-6}
 

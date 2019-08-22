@@ -2,11 +2,11 @@
 
 \mytext
 
-# 学生学习动力指数
+## 学生学习动力指数
 
 学习动力是学生对学习行为价值判断基础上的心理驱动总和，是引导、推动和维持学生参与学习活动的力量，主要包括学习自信心和学习动机两个二级指数。
 
-## 学习自信心指数
+### 学习自信心指数
 
 学习自信心指学生对自己能否完成学习任务或达到学习目标的信念。主要体现在学生对个人学习能力的评估、对取得优异学习成绩和完成学习目标的预期等方面。
 
@@ -33,10 +33,10 @@
 - 1 级：表示自信心较强的学生所占比例在 20% 以下
 \mytext
 
-plot.bar.district.index.confidence.perspective
-multiplot.bar.district.index.confidence.school
+plot.bar.school.index.confidence
 
-## 学习动机指数
+
+### 学习动机指数
 
 学习动机指引发与维持学生学习行为，并使之指向一定学业目标的一种动力倾向。学习动机主要体现在学生对学习任务的倾向，采取的学习行为，对学习结果的期待和解释等方面。
 
@@ -60,7 +60,7 @@ multiplot.bar.district.index.confidence.school
 - 1 级：表示学习动机较强的学生所占比例在 20% 以下
 \mytext
 
-plot.bar.district.index.motivation.perspective
-multiplot.bar.district.index.motivation.school
+plot.bar.school.index.motivation
+
 
 <!-- end of chapter motivation  -->

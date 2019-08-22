@@ -1,6 +1,6 @@
 <!-- chapter identity  -->
 
-# 学生对学校的认同度指数
+## 学生对学校的认同度指数
 
 学生对学校认同指的是学生对学校的认可与接纳，是学生对所在学校的价值观、学校精神及文化传统的承认和接受，主要包括师生关系、同伴关系、学校归属感三个二级指数。
 
@@ -21,11 +21,9 @@
 
 \mytext
 
-plot.bar.district.index.school.identity.perspective
-multiplot.bar.district.index.school.identity.school
+plot.bar.school.index.school.identity
 
-
-## 师生关系指数
+### 师生关系指数
 
 师生关系是教师和学生在教育教学过程中结成的相互关系，包括彼此所处的地位、作用和相互对待的态度。师生关系主要体现在教师对于学生的尊重，能公正、平等地对待学生，信任学生等方面。
 
@@ -46,11 +44,10 @@ multiplot.bar.district.index.school.identity.school
 
 \mytext
 
-plot.bar.district.index.teacher.relation.perspective
-multiplot.bar.district.index.teacher.relation.school
+plot.bar.school.index.teacher.relation
 
 
-## 同伴关系指数
+### 同伴关系指数
 
 同伴关系是指年龄相同或相近的儿童或青少年之间的一种共同活动并相互协作的关系。学校中的同伴关系主要体现在一个班集体中的学生之间是否彼此接纳与包容，是否协作与交流，是否相互理解与尊重。
 
@@ -71,11 +68,10 @@ multiplot.bar.district.index.teacher.relation.school
 
 \mytext
 
-plot.bar.district.index.classmate.relation.perspective
-multiplot.bar.district.index.classmate.relation.school
+plot.bar.school.index.classmate.relation
 
 
-## 学校归属感指数
+### 学校归属感指数
 
 学校归属感是指学生对自己所就读的学校在思想上、感情上和心理上的认可和投入、愿意承担作为学校一员的各项责任和义务以及乐于参与学校集体活动。主要体现在学生是否认同学校的理念、是否积极参加学校集体活动等方面。
 
@@ -95,7 +91,6 @@ multiplot.bar.district.index.classmate.relation.school
 
 \mytext
 
-plot.bar.district.index.school.sense.perspective
-multiplot.bar.district.index.school.sense.school
+plot.bar.school.index.school.sense
 
 <!-- end of chapter identity  -->
