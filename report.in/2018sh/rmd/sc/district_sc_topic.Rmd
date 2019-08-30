@@ -12,7 +12,7 @@ query.data.district.sc.pointrate.perspective
 
 ## 地球宇宙
 
-“地球宇宙”主要涉及两大主题：宇宙中的地球与人类生存的地球。本测试主要考查学生从地图获中取信息的地图技能，以及运用获取的信息解释背后相对应的地理原理或地理现象，具体涵盖了地球运动、气温与降水、地形与地势、河流与海洋、资源与环境等方面内容。
+“地球宇宙”主要涉及两大主题：宇宙中的地球与人类生存的地球。本测试主要考查学生从地图中获取信息的地图技能，以及运用获取的信息解释背后相对应的地理原理或地理现象，具体涵盖了地球运动、气温与降水、地形与地势、河流与海洋、资源与环境等方面内容。
 
 `r tab_name <- "学生在“地球宇宙”领域各考查维度上的平均得分率（％）" `
 
@@ -128,7 +128,7 @@ table.district.sc.S8AO50221
   \end{center}
 \end{wrapfigure}
 
-某旅行者喜欢全球各地到处旅游，回来后和人们描述他的旅行经历。他画了张简图，如图12并在上面标了A、B、C、D四个地点，讲起了在这四个地方的旅行经历，但他描述的事情过于奇怪，许多人都认为他在说谎。
+某旅行者喜欢和人们描述他的旅行经历。图11是他画的一张简图，上面标注着A、B、C、D四个地点。以下是他描述的在这四个地方的旅行经历。许多人认为他的话真假难辨。
 
 \end{itshape}
 
@@ -149,7 +149,7 @@ A地	& \textcircled{\scriptsize{1}} 太阳有时候24小时挂在天上。\qquad
 B地	& 某天正午，在太阳底下，前后左右都看不到自己的影子。	& 这句话可能是真的。	& 看不到自己影子的瞬间，其实影子正位于\uline{\qquad\qquad}（头顶的正上方 / 脚的正下方），这天是\uline{\qquad\qquad}（春分/秋分 / 夏至 / 冬至）日。 \\ \hline
 
 C地	& \textcircled{\scriptsize{1}} 几天之内在该地经历了“从夏天到冬天”的变化。 \qquad\qquad\qquad\qquad\qquad \textcircled{\scriptsize{2}} 可以用雪煮茶喝。 &	两句均可能是真话。 &
-	以下地点中符合描述的最有可能的是\uline{\qquad\qquad}（新加坡 / 乞力马扎罗 / 上海/ 北京），旅行者当时进行的运动是\uline{\qquad\qquad}（登山 / 游泳 / 划船）。 \\ \hline
+	以下符合描述的最有可能的地点是\uline{\qquad\qquad}（新加坡 / 乞力马扎罗 / 上海/ 北京），旅行者当时进行的运动是\uline{\qquad\qquad}（登山 / 游泳 / 划船）。 \\ \hline
 
 \end{longtable}
 \end{itshape}
@@ -177,7 +177,7 @@ query2.plot.bar.district.sc.question.S8AO48111
 
 - 学生作答分析：学生正确率为`r gio.R$KeyValue(query2.data, "2")`％，略低于预期。典型错误一是地理位置信息读取错误或描述信息过于笼统（如：A地位于两极地区，比较寒冷；离赤道越远，温度越低），二是用经验做判断，没有根据题目具体信息（如：极昼极夜出现的地方不可能全年热，有冰川的地方不可能很热）；三是科学表述错误（如：北极圈离太阳近，全年很热；北极照不到阳光，所以冷等）。
 
-- 教学建议：加强日常学生的识图能力和加强科学表述规范。
+- 教学建议：加强学生日常的识图能力和科学表述规范。
 
 
 \questiontitle{典型题目}2：S8AS48211
@@ -670,7 +670,7 @@ table.district.sc.S8AO19111
 \begin{itshape}
 3．下列属于液化现象的是\uline{\qquad\qquad\qquad\qquad\qquad}（ \qquad ）
 
-A．洒在地面上的水很快变干	 \qquad 	B．洗澡时镜子上形成水雾
+A．洒在地面上的水很快消失了	 \qquad 	B．洗澡时镜子上形成水雾
 
 C．冰块慢慢熔化成水	\qquad\qquad	D．樟脑丸放一段时间会慢慢变小
 \end{itshape}
@@ -746,7 +746,10 @@ query2.plot.bar.district.sc.question.S8AO04111
 
 \begin{itshape}
 
-小红和小明在玩跷跷板时发现，当两人都坐在位子上不动时，跷跷板正好能保持水平平衡，但是当小明沿水平方向移动一个位置后，小明被跷跷板抬得更高了。小明和小红对此产生了兴趣，并在老师帮助下利用杠杆模拟跷跷板进行了研究。如图14所示，用不同数量的钩码，在杠杆不同位置实验，当杠杆平衡时，记录其与中点的距离。
+小红和小明在玩跷跷板时发现，当两人都坐在位子上不动时，跷跷板正好能保持水平平衡，但是当小明沿水平方向移动一个位置后（如图12所示），小明被跷跷板抬高了。
+
+他们对此产生了兴趣，在老师帮助下利用杠杆模拟跷跷板进行了研究。如图13所示，用不同数量的钩码，在杠杆不同位置实验，当杠杆平衡时，记录左右两边钩码与中点的距离。
+
 \end{itshape}
 
 
@@ -883,11 +886,9 @@ table.district.sc.S8AO46421
 
 \textcircled{\scriptsize{2}} 控制汽车数量可以在一定程度上控制$PM_{2.5}$的浓度
 
-\textcircled{\scriptsize{3}} 戴加厚口罩能够有效减少$PM_{2.5}$的吸入
+\textcircled{\scriptsize{3}} 时间段是导致$PM_{2.5}$浓度不同的主要因素
 
-\textcircled{\scriptsize{4}} 时间段是导致$PM_{2.5}$浓度不同的主要因素
-
-A．\textcircled{\scriptsize{1}}\textcircled{\scriptsize{2}}	\qquad\qquad	B．\textcircled{\scriptsize{3}}\textcircled{\scriptsize{4}}	\qquad\qquad	C．\textcircled{\scriptsize{1}}\textcircled{\scriptsize{4}}	\qquad\qquad	D．\textcircled{\scriptsize{2}}\textcircled{\scriptsize{3}}
+A．\textcircled{\scriptsize{1}}\textcircled{\scriptsize{2}}	\qquad\qquad	B．\textcircled{\scriptsize{2}}\textcircled{\scriptsize{3}}	\qquad\qquad	C．\textcircled{\scriptsize{1}}\textcircled{\scriptsize{3}}	\qquad\qquad	D．\textcircled{\scriptsize{1}}\textcircled{\scriptsize{2}}\textcircled{\scriptsize{3}}
 \end{itshape}
 
 \questiontitle{命题框架视角}
@@ -923,7 +924,7 @@ query2.plot.bar.district.sc.question.S8AO45111
 
 \begin{itshape}
 
-酸奶是以牛奶为原料，添加有益菌经发酵后的一种牛奶制品。发酵时牛奶中原有的成分被有益菌转化为人体容易吸收的营养成分外，还产生了人体所必须的多种维生素。因此，酸奶被称作健康的发酵食品。由于牛奶中的大部分乳糖会转化成乳酸和其它有机酸，从而有效减缓了“乳糖不耐受”症（由于人体不能完全消化分解牛奶中的乳糖所引起的非感染性腹泻）。那么制作酸奶需要多长时间?制作的最适温度是多少?生物兴趣小组打算一探究竟。
+酸奶是以牛奶为原料添加乳酸菌，经发酵后制成的一种牛奶制品。制作酸奶前，应对器皿进行消毒，并保持器皿处于密封状态。发酵时牛奶中的大部分乳糖会被乳酸菌转化成乳酸和其它有机酸，从而有效减缓“乳糖不耐受”症状（由于人体不能完全消化分解牛奶中的乳糖所引起的非感染性腹泻症状）。
 
 \end{itshape}
 
@@ -931,7 +932,7 @@ query2.plot.bar.district.sc.question.S8AO45111
 
 \begin{itshape}
 
-生物兴趣小组经过一系列探究后，经过多次实验，得到如表4和图10的实验现象和实验结果。
+生物兴趣小组对酸奶的制作过程进行探究，经过多次实验，得到如表4所示的实验现象和图9所示的实验结果。
 
 \qquad\qquad\qquad 表4
 
@@ -950,7 +951,7 @@ query2.plot.bar.district.sc.question.S8AO45111
 \begin{itshape}
 （1）酸奶呈凝固状说明酸奶发酵完成，分析上表结果可知制作酸奶以\uline{\qquad\qquad}小时为宜。
 
-（2）酸奶中相关活菌数越多，酸奶的品质越好。同学们根据实验结果，得出制作酸奶的最佳温度为40℃。请分析他们的结论是否合理，并给出你的理由。
+（2）酸奶中活的乳酸菌（活菌）数越多，酸奶的品质越好。同学们根据实验结果得出制作酸奶的最佳温度为40℃。请分析他们的结论是否合理，并给出理由。
 
 \uline{\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad}。
 
