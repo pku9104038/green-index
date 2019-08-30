@@ -157,7 +157,7 @@ report:
         - "city_sc_topic.rmd"
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierCity
       subdir: "ar"
@@ -314,7 +314,7 @@ report:
         - "district_sc_topic.rmd"
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierDistrict
       subdir: "ar"
@@ -335,7 +335,7 @@ report:
         - "district_ar_topic.rmd"
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标综合评价"
       tier: *kStatTierSchool
       subdir: "sch"
