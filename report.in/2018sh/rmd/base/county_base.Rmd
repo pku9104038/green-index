@@ -1,1536 +1,0 @@
----
-documentclass: book
-fontsize: 12pt
-geometry: margin=1in
-output:
-  pdf_document:
-    fig_caption: yes
-    template: pdf_template.tex
-    includes:
-      in_header: header_base.tex
-    latex_engine: xelatex
-    number_sections: yes
-    keep_tex: no
-params:
-  report: 2015
-  dummy.fig: "dummy.jpg"
-  conf: "conf"
-
----
-<!-- global setting -->
-
-pre.render.global.setting
-
-<!-- cover page -->
-
-pre.render.cover.page
-
-<!-- header footer -->
-
-pre.render.head.foot
-
-<!-- preface -->
-
-pre.render.report.preface
-
-<!-- table of cntents -->
-
-pre.render.table.of.contents
-
-<!-- document body -->
-
-\mytext
-
-<!-- chapter 1 project summary -->
-
-pre.render.project.summary
-
-<!--  chapter 2 score  -->
-
-`r var.dimention <- "维度"
-var.variable <- "变量"
-var.key <- "键"
-var.param <- "标注值"
-var.sample <- "统计样本"
-var.scope <- "统计范围" `
-
-# 四年级学生学业水平总体情况
-
-## 四年级学生学业水平总体情况　
-
-`r fig_name <- "四年级学生总体语文分数分布" `
-`r fig_name1 <- "四年级学生总体数学分数分布" `
-
-四年级学生总体在语文和数学学科上的得分分布见图\ref{fig: `r fig_name`}、图\ref{fig: `r fig_name1`}。
-
-
-```{r score.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-
-plot.entry <- "score.segment.bar.cn"
-report$plot$score.segment.bar.cn$data$keep <- list(list(var = var.scope, value=list(report$county)))
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig: `r fig_name`}
-\end{figure}
-
-```{r score.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "score.segment.bar.ma"
-report$plot$score.segment.bar.ma$data$keep <- list(list(var = var.scope, value=list(report$county)))
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name1)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name1`}
-\label{fig: `r fig_name1`}
-\end{figure}
-
-
-`r fig_name <- "不同区域学生在各学科各水平上的人数比例" `
-图\ref{fig:`r fig_name`}给出了上海市及不同区域在各学科各水平上的人数比例。
-```{r level.bar.urban.subject, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "level.bar.urban.subject"
-report$plot$level.bar.urban.subject$data$keep <- list(list(var = var.scope, value=list(report$scope,report$province)))
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-
-
-## 不同群体学生学业水平### 各学校学生学业水平#### 各学校学生语文学业水平
-
-\begin{landscape}
-
-level.bar.province.county.school.cn
-
-score.box.province.county.school.cn
-
-\mylist注：盒须图——5\%学生得分小于等于须下端线分数；25\%学生得分小于等于盒底分数；50\%学生得分大于等于盒中横线分数；25\%学生得分大于等于盒顶分数；5\%学生得分大于等于须上端线分数；盒高度一定程度上反映了得分分布的离散程度；红点为平均分。
-\mytext
-
-\subsubsection{各学校学生数学学业水平}level.bar.province.county.school.ma
-score.box.province.county.school.ma\end{landscape}
-### 不同类型学校学生学业水平
-
-`r fig_name <- "不同类型学校学生在各学科各水平上的人数比例" `
-```{r level.bar.academy.subject, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$level.bar.academy.subject
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-### 不同性别学生学业水平
-
-`r fig_name <- "不同性别学生在各学科各水平上的人数比例" `
-```{r level.bar.gender.subject, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$level.bar.gender.subject
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-
-### 不同户籍类型学生学业水平
-
-`r fig_name <- "不同户籍类型学生在各学科各水平上的人数比例" `
-```{r level.bar.huji.subject, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$level.bar.huji.subject
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-
-\clearpage
-
-# 学生背景问卷调查结果分析
-
-
-学生问卷包括学生基本情况、师生关系、学习压力、学校认同度、学习动机、自信心和学习方法等。本章对学生问卷调查结果进行分析，以下是分析得到的主要结果：
-
-## 学生基本情况### 家庭背景#### 学生为独生子女情况`r fig_name <- "四年级学生为独生子女情况" `
-图\ref{fig:`r fig_name`}给出了四年级学生为独生子女的总体情况及各群体之间的比较。
-```{r onechild.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$onechild.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-#### 学生家庭的藏书量
-
-`r fig_name <- "四年级学生家里的图书量" `
-图\ref{fig:`r fig_name`}给出了四年级学生家里图书量的总体情况及各群体之间的比较。
-```{r book.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$book.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-#### 学生家庭汽车拥有量
-
-`r fig_name <- "四年级学生家庭汽车拥有量" `
-图\ref{fig:`r fig_name`}给出了四年级学生家庭拥有汽车的总体情况及各群体之间的比较。
-```{r car.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$car.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-#### 学生出境旅游情况
-
-`r fig_name <- "四年级学生出境旅游的总体情况" `
-图\ref{fig:`r fig_name`}给出了四年级学生家庭出境旅游的总体情况及各群体之间的比较。
-```{r trip.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$trip.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-#### 学生父亲受教育情况
-
-`r fig_name <- "四年级学生父亲的受教育情况" `
-图\ref{fig:`r fig_name`}给出了四年级学生的父亲受教育的总体情况及各群体之间的比较。
-```{r father_edu.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$father_edu.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-#### 学生母亲的受教育情况
-
-`r fig_name <- "四年级学生母亲的受教育情况" `
-图\ref{fig:`r fig_name`}给出了四年级学生的母亲受教育的总体情况及各群体之间的比较。
-```{r mother_edu.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$mother_edu.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-### 学生日常生活与学习
-#### 学生休息情况
-
-`r fig_name <- "四年级学生平时上学时每天的睡眠时间" `
-图\ref{fig:`r fig_name`}给出了四年级学生平时上学时每天睡眠时间的总体情况。
-```{r sleep.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$sleep.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-`r fig_name <- "四年级学生放假时每天的睡眠时间" `
-图\ref{fig:`r fig_name`}给出了四年级学生放假时（包括双休日）每天睡眠时间的总体情况。
-```{r sleep_weekend.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$sleep_weekend.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}`r fig_name <- "四年级学生对自己睡眠时间是否充足的看法" `
-图\ref{fig:`r fig_name`}给出了四年级学生对自己睡眠时间是否充足的看法情况。
-```{r sleep_enough.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$sleep_enough.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-\clearpage
-`r fig_name <- "四年级学生睡眠不充足的原因" `
-图\ref{fig:`r fig_name`}给出了四年级学生睡眠不充足的原因：
-```{r sleep_not_enough.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$sleep_not_enough.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}#### 每天做学校老师布置的书面作业所需要的时间
-
-`r fig_name <- "四年级学生每天书面作业的时间" `
-图\ref{fig:`r fig_name`}给出了四年级学生每天做学校老师布置的书面作业时间的总体情况及各群体之间的比较。
-```{r writing_homework_hours.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$writing_homework_hours.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}\clearpage#### 学校作业难易程度
-
-`r fig_name <- "四年级学生作业的难易程度" `
-图\ref{fig:`r fig_name`}给出了四年级学生学校作业的难易程度的总体情况及各群体之间的比较。
-```{r writing_homework_difficulty.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$writing_homework_difficulty.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-#### 参加与考试科目相关的家教补习、课外辅导的情况
-
-`r fig_name <- "四年级学生参加与考试科目相关的家教补习或课外辅导的百分比" `
-图\ref{fig:`r fig_name`}给出了四年级学生每周参加与考试科目相关的家教补习、课外辅导的百分比及各群体之间的比较。
-```{r extra_homework_yes.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$extra_homework_yes.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-\clearpage
-
-\mynote{以下为对参加家教补习、课外辅导的学生情况的进一步分析}
-
-`r fig_name <- "四年级学生参加与考试科目相关的家教补习或课外辅导情况" `
-图\ref{fig:`r fig_name`}给出了四年级学生每周参加与考试科目相关的家教补习、课外辅导的总体情况及各群体之间的比较。
-```{r extra_homework_subject.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$extra_homework_subject.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-`r fig_name <- "四年级学生参加与考试科目相关的家教补习、课外辅导时间" `
-图\ref{fig:`r fig_name`}给出了四年级学生每周参加与考试科目相关的家教补习、课外辅导时间的总体情况及各群体之间的比较。
-```{r extra_homework_hour.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$extra_homework_hour.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-`r fig_name <- "四年级学生参加与考试科目相关的家教补习、课外辅导的主要原因" `
-图\ref{fig:`r fig_name`}给出了四年级学生每周参加与考试科目相关的家教补习、课外辅导的主要原因
-```{r extra_homework_reason.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$extra_homework_reason.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-#### 参加校外兴趣班的情况
-
-
-`r fig_name <- "四年级学生参加校外兴趣班的百分比" `
-图\ref{fig:`r fig_name`}给出了四年级学生参加校外兴趣班的百分比情况。
-```{r extra_interesting_yes.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$extra_interesting_yes.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-
-\clearpage
-
-\mynote{以下为对参加校外兴趣班的学生情况的进一步分析}
-
-`r fig_name <- "四年级学生参加校外兴趣班的种类" `
-图\ref{fig:`r fig_name`}给出了四年级学生参加校外兴趣班种类的比例情况。
-```{r extra_interesting_subject.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$extra_interesting_subject.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-`r fig_name <- "四年级学生参加校外兴趣班的时间" `
-图\ref{fig:`r fig_name`}给出了四年级学生参加校外兴趣班的时间的总体情况以及各群体之间的比较。
-```{r extra_interesting_hour.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$extra_interesting_hour.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-`r fig_name <- "四年级学生参加校外兴趣班的主要原因" `
-图\ref{fig:`r fig_name`}给出了四年级学生参加校外兴趣班的主要原因
-```{r extra_interesting_reason.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$extra_interesting_reason.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-#### 每个月参加考试和测验的频率
-
-`r fig_name <- "四年级学生每个月参加考试和测验频率" `
-图\ref{fig:`r fig_name`}给出了四年级学生每个月参加考试和测验的总体情况及各群体之间的比较。
-```{r month_test.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$month_test.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-#### 学生课外阅读量调查结果
-
-`r fig_name <- "四年级学生过去一年内阅读课外读物的数量" `
-图\ref{fig:`r fig_name`}给出了四年级学生过去一年内阅读课外读物数量的总体情况及各群体之间的比较。
-```{r year_reading.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$year_reading.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-#### 学生每天放学回家后的运动时间
-
-`r fig_name <- "四年级学生每天放学回家后的运动时间" `
-图\ref{fig:`r fig_name`}给出了四年级学生每天放学回家后的运动时间情况及各群体之间的比较。
-```{r daily_sport_hour.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$daily_sport_hour.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-## 与师生关系有关问题的调查结果
-
-本问卷对教师是否公平、平等的对待学生，是否尊重学生，是否信任学生这三个方面进行了调查，现将调查到的师生关系进行如下分析。
-
-`r fig_name <- "四年级学生对教师是否公平、平等的对待学生的评价" `
-图\ref{fig:`r fig_name`}给出了四年级学生对教师是否公平、平等对待学生的评价的总体情况。
-```{r teacher_fair.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$teacher_fair.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-`r fig_name <- "四年级学生对教师是否尊重学生的评价" `
-图\ref{fig:`r fig_name`}给出了四年级学生对教师是否尊重学生的评价的总体情况。
-```{r teacher_respect.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$teacher_respect.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-`r fig_name <- "四年级学生对教师是否信任学生的评价" `
-图\ref{fig:`r fig_name`}给出了四年级学生对教师是否信任学生的评价的总体情况。
-```{r teacher_trust.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$teacher_trust.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-## 与学习压力有关问题的调查结果
-
-`r fig_name <- "四年级学生对学习压力相关问题的看法" `
-图\ref{fig:`r fig_name`}给出了四年级学生对学习压力相关问题看法的情况。
-```{r learning_pressure.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$learning_pressure.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage## 与学习动机有关问题的调查结果
-
-`r fig_name <- "四年级学生对学习动机相关问题的看法" `
-图\ref{fig:`r fig_name`}给出了四年级学生对学习动机相关问题看法的情况。
-```{r learning_motivation.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$learning_motivation.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-## 与学校认同度有关问题的调查结果
-
-`r fig_name <- "四年级学生对学校认同度相关问题的看法" `
-图\ref{fig:`r fig_name`}给出了四年级学生对学校认同度相关问题看法的情况。
-```{r school_identity.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$school_identity.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-## 与学习自信心有关问题的调查结果
-
-`r fig_name <- "四年级学生对学习自信心相关问题的看法" `
-图\ref{fig:`r fig_name`}给出了四年级学生对学习自信心相关问题看法的情况。
-```{r learning_confidence.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$learning_confidence.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-## 与学习方法有关问题的调查结果
-
-`r fig_name <- "四年级学生对自己某些学习方法的评价" `
-图\ref{fig:`r fig_name`}给出了四年级学生对自己某些学习方法的评价的情况。
-```{r learning_method.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$learning_method.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-
-\clearpage## 与教师教学方式有关问题的调查结果
-
-本问卷对教师教学方式中的因材施教、互动教学、鼓励学生探究与发展这三个方面进行了调查，现将调查到的教师教学方式进行如下分析。
-
-`r fig_name <- "四年级学生对教师教学方式的评价——因材施教" `
-图\ref{fig:`r fig_name`}给出了四年级学生对教师因材施教的评价。
-```{r teaching_yincaishijiao.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$teaching_yincaishijiao.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-`r fig_name <- "四年级学生对教师教学方式的评价——互动教学" `
-图\ref{fig:`r fig_name`}给出了四年级学生对教师互动教学的评价。
-```{r teaching_hudongjiaoxue.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$teaching_hudongjiaoxue.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-
-`r fig_name <- "四年级学生对教师教学方式的评价——鼓励学生探究与发展" `
-图\ref{fig:`r fig_name`}给出了四年级学生对教师鼓励学生探究与发展的评价。
-```{r teaching_gulitanjiu.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$teaching_gulitanjiu.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-## 与品德行为有关问题的调查结果
-
-本问卷对学生行为规范中的尊重他人、诚信、社会责任几个方面进行了调查，现将调查到的学生行为规范相关问题进行如下分析。### 尊重他人
-
-`r fig_name <- "四年级学生尊重他人行为的总体情况" `
-图\ref{fig:`r fig_name`}给出了四年级学生尊重他人行为的总体情况。
-```{r morality_respect_others.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$morality_respect_others.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-### 诚信
-
-`r fig_name <- "四年级学生遇到各种诚信问题时的行为表现情况" `
-图\ref{fig:`r fig_name`}给出了四年级学生认为班里同学遇到各种诚信问题时的行为表现情况。
-```{r morality_integrity.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$morality_integrity.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-### 社会责任
-
-
-`r fig_name <- "四年级学生关于社会责任感方面问题的表现情况" `
-图\ref{fig:`r fig_name`}给出了四年级学生在关于社会责任感方面问题的表现情况。
-```{r morality_responsibility.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$morality_responsibility.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-## 与社交敏感性有关问题的调查结果
-
-`r fig_name <- "四年级学生对社交敏感性相关问题的看法" `
-图\ref{fig:`r fig_name`}给出了四年级学生对社交敏感相关问题看法的情况。
-```{r psychological_shejiaomingan.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$psychological_shejiaomingan.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-## 与人际关系有关问题的调查结果
-
-`r fig_name <- "四年级学生对人际关系相关问题的看法" `
-图\ref{fig:`r fig_name`}给出了四年级学生对人际关系相关问题看法的情况。
-```{r psychological_renjiguanxi.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$psychological_renjiguanxi.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-## 与自尊有关问题的调查结果
-
-
-`r fig_name <- "四年级学生对自尊相关问题的看法" `
-图\ref{fig:`r fig_name`}给出了四年级学生对自尊相关问题看法的情况。
-```{r psychological_self_respect.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$psychological_self_respect.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-## 学业成绩与背景变量的关系
-
-### 学生睡眠时间与学业成绩的关系`r fig_name <- "四年级学生睡眠时间与学业成绩的关系" `
-图\ref{fig:`r fig_name`}给出了四年级学生的睡眠时间与学业成绩的关系。
-```{r score_sleep.point, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-var.county <- "区县"
-plot.entry <- report$plot$score_sleep.point
-plot.entry$data$keep <- list(list(var = var.county, value=list(report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-### 学生做学校布置的作业或课外练习时间与学业成绩的关系
-
-`r fig_name <- "四年级学生作业或课外练习时间与学业成绩的关系" `
-图\ref{fig:`r fig_name`}给出了四年级学生做学校布置的作业或课外练习时间与学业成绩的关系。
-```{r score_homework.point, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$score_homework.point
-plot.entry$data$keep <- list(list(var = var.county, value=list(report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-### 学生课外补课或辅导班时间与学业成绩的关系
-
-`r fig_name <- "四年级学生每周课外补课或辅导班时间与学业成绩的关系" `
-图\ref{fig:`r fig_name`}给出了四年级学生每周课外补课或辅导班时间与学业成绩的关系。
-```{r score_extra_homework.point, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$score_extra_homework.point
-plot.entry$data$keep <- list(list(var = var.county, value=list(report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-\clearpage### 学生对师生关系的评价与学业成绩的关系
-
-`r fig_name <- "四年级师生关系与学业成绩的关系" `
-图\ref{fig:`r fig_name`}给出了四年级学生对师生关系的评价与学业成绩的关系。
-```{r score_teacher.point, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$score_teacher.point
-plot.entry$data$keep <- list(list(var = var.county, value=list(report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-### 学生学习压力与学业成绩的关系
-
-`r fig_name <- "四年级学生学习压力与学业成绩的关系" `
-图\ref{fig:`r fig_name`}给出了四年级学生所报告的学习压力与学业成绩的关系。
-```{r score_pressure.point, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$score_pressure.point
-plot.entry$data$keep <- list(list(var = var.county, value=list(report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage### 学校认同度与学业成绩的关系
-
-
-`r fig_name <- "四年级学生学校认同度与学业成绩的关系" `
-图\ref{fig:`r fig_name`}给出了四年级学生所报告的学校认同度与学业成绩的关系。
-```{r score_identity.point, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$score_identity.point
-plot.entry$data$keep <- list(list(var = var.county, value=list(report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-
-
-### 学习动机与学业成绩的关系
-
-`r fig_name <- "四年级学生学习动机与学业成绩的关系" `
-图\ref{fig:`r fig_name`}给出了四年级学生所报告的学习动机与学业成绩的关系。
-```{r score_motivation.point, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$score_motivation.point
-plot.entry$data$keep <- list(list(var = var.county, value=list(report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-### 学生自信心与学业成绩的关系
-
-`r fig_name <- "四年级学生自信心与学业成绩的关系" `
-图\ref{fig:`r fig_name`}给出了四年级学生所报告的学生自信心与学业成绩的关系。
-```{r score_confidence.point, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$score_confidence.point
-plot.entry$data$keep <- list(list(var = var.county, value=list(report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-# 教师背景问卷调查结果分析
-
-教师背景问卷包含教师的基本情况、教师的教学方法、教师对学校教学管理的评价、教师的教学观念和教师的专业发展五个方面。本章对四年级教师在这五个方面的回答进行了分析，得到如下主要结论：## 教师基本情况### 教师性别
-
-`r fig_name <- "四年级教师性别情况" `
-图\ref{fig:`r fig_name`}给出了四年级教师性别的总体情况及不同群体之间的比较。
-```{r teacher_gender.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$teacher_gender.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-### 教师教龄
-
-`r fig_name <- "四年级教师教龄情况" `
-图\ref{fig:`r fig_name`}给出了四年级教师教龄的总体情况及不同群体之间的比较。
-```{r teacher_years.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$teacher_years.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-### 教师专业职称
-
-`r fig_name <- "四年级教师专业职称情况" `
-图\ref{fig:`r fig_name`}给出了四年级教师职务（职称）的总体情况及不同群体之间的比较。
-```{r teacher_title.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$teacher_title.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-`r fig_name <- "小学教师专业职称情况" `
-图\ref{fig:`r fig_name`}给出了小学教师职称的总体情况。
-```{r teacher_all_title.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$teacher_all_title.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}### 教师学历
-
-`r fig_name <- "四年级教师学历情况（含在读）" `
-图\ref{fig:`r fig_name`}给出了四年级教师学历的总体情况及不同群体之间的比较。
-```{r teacher_edu.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$teacher_edu.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}\clearpage
-`r fig_name <- "小学教师学历情况（含在读）" `
-图\ref{fig:`r fig_name`}给出了小学教师学历的总体情况。
-```{r teacher_all_edu.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$teacher_all_edu.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}### 教师就职前是否接受过师范教育`r fig_name <- "四年级教师就职前是否接受过师范教育的情况" `
-图\ref{fig:`r fig_name`}给出了四年级教师在就职前是否接受过师范教育的总体情况及不同群体的比较。
-```{r teacher_normal_edu.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$teacher_normal_edu.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
- \clearpage
-
-### 教师所教学科是否专业对口`r fig_name <- "四年级教师所教学科是否专业对口的情况" `
-图\ref{fig:`r fig_name`}给出了四年级教师所教学科是否专业对口的总体情况及不同群体的比较。
-```{r teacher_major_match.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$teacher_major_match.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-### 教师每周的上课节数`r fig_name <- "四年级教师每周的上课节数情况" `
-图\ref{fig:`r fig_name`}给出了四年级教师每周上课节数的总体情况及不同群体的比较。
-```{r teacher_weekly_hours.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$teacher_weekly_hours.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-### 教师每天的工作时间`r fig_name <- "四年级教师每天的工作时间情况" `
-图\ref{fig:`r fig_name`}给出了四年级教师每天工作时间的总体情况及不同群体的比较。
-```{r teacher_daily_hours.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$teacher_daily_hours.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-## 教师的职业感受### 教师职业喜爱程度`r fig_name <- "四年级教师对教师职业喜爱程度的情况" `
-图\ref{fig:`r fig_name`}给出了四年级教师对教师职业喜爱程度的总体情况及不同群体的比较。
-```{r teacher_job_favorite.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$teacher_job_favorite.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage`r fig_name <- "四年级教师的离职倾向情况" `
-图\ref{fig:`r fig_name`}给出了四年级教师离职倾向的总体情况及不同群体的比较。
-```{r teacher_job_quit.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$teacher_job_quit.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-### 教师工作感受`r fig_name <- "四年级教师对现有工作的感受情况" `
-图\ref{fig:`r fig_name`}给出了四年级教师对现有工作感受方面的总体情况。
-```{r teacher_feelings.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$teacher_feelings.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-## 与教师教学观念有关问题的调查结果
-
-`r fig_name <- "四年级教师教学观的情况" `
-图\ref{fig:`r fig_name`}描述了四年级教师教学观念的总体情况。
-```{r teacher_philosophy.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$teacher_philosophy.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-## 与教师教学方式有关问题的调查结果`r fig_name <- "四年级教师教学方式的情况" `
-图\ref{fig:`r fig_name`}描述了四年级教师教学方式的总体情况。
-```{r teacher_method.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$teacher_method.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage## 与教师专业发展有关问题的调查结果`r fig_name <- "四年级教师提高自身素养和教学水平参与专业活动的情况" `
-图\ref{fig:`r fig_name`}描述了四年级教师提高自身素养和教学水平参与专业活动的总体情况。
-```{r teacher_activity.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$teacher_activity.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-`r fig_name <- "四年级教师专业发展需求方面的情况" `
-图\ref{fig:`r fig_name`}描述了四年级教师专业发展需求方面的总体情况。
-```{r teacher_requirement.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$teacher_requirement.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-`r fig_name <- "四年级教师专业发展遇到的困难情况" `
-图\ref{fig:`r fig_name`}描述了四年级教师认为专业发展遇到的困难情况。
-```{r teacher_difficulty.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$teacher_difficulty.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-## 与课程领导力有关问题的调查结果`r fig_name <- "四年级教师对学校课程建设的感知情况" `
-图\ref{fig:`r fig_name`}描述了四年级教师对学校课程建设感知的总体情况。
-```{r teacher_course_development.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$teacher_course_development.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-\clearpage`r fig_name <- "四年级教师对学校课程实施的感知情况" `
-图\ref{fig:`r fig_name`}描述了四年级教师对学校课程实施感知的总体情况。
-```{r teacher_course_implement.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$teacher_course_implement.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-`r fig_name <- "四年级教师对学校课程管理的感知情况" `
-图\ref{fig:`r fig_name`}描述了四年级教师对学校课程管理感知的总体情况。
-```{r teacher_course_management.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$teacher_course_management.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-`r fig_name <- "四年级教师对学校课程评价的感知情况" `
-图\ref{fig:`r fig_name`}描述了四年级教师对学校课程评价感知的总体情况。
-```{r teacher_course_evaluation.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$teacher_course_evaluation.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-
-# 校长背景问卷调查结果分析校长问卷包括校长基本情况、校长日常工作、学校发展、学校办学成效、校长对学校满意度等方面。本章对校长问卷上的回答进行分析。以下是分析得到的主要结果：## 校长基本情况校长基本情况包括校长的性别、年龄、担任校长年限、学历、职称和职级。### 校长性别`r fig_name <- "小学校长性别" `
-图\ref{fig:`r fig_name`}给出了小学校长性别的总体情况及不同群体之间的比较。
-```{r principal_gender.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$principal_gender.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-### 校长年龄`r fig_name <- "小学校长年龄" `
-图\ref{fig:`r fig_name`}给出了小学校长年龄的总体情况及不同群体之间的比较。
-```{r principal_age.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$principal_age.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-### 校长任职年限`r fig_name <- "小学校长担任校长年限" `
-图\ref{fig:`r fig_name`}给出了小学校长任职年限的总体情况及不同群体之间的比较。
-```{r principal_years.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$principal_years.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-### 校长学历`r fig_name <- "小学校长学历" `
-图\ref{fig:`r fig_name`}给出了小学校长学历的总体情况及不同群体之间的比较。
-```{r principal_edu.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$principal_edu.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-### 校长的职级`r fig_name <- "小学校长的职级" `
-图\ref{fig:`r fig_name`}给出了小学校长职级的总体情况及不同群体之间的比较。
-```{r principal_title.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$principal_title.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-\clearpage### 学校的校龄`r fig_name <- "小学学校的校龄" `
-图\ref{fig:`r fig_name`}给出了小学学校校龄的总体情况及不同群体之间的比较。
-```{r principal_school_history.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$principal_school_history.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-## 校长日常工作###校长参加会议的频率`r fig_name <- "小学校长参加各种会议的频率" `
-图\ref{fig:`r fig_name`}给出了小学校长参加各种会议频率的总体情况及各群体之间的比较。
-```{r principal_meeting.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$principal_meeting.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-
-### 校长给学生上课的频率`r fig_name <- "小学校长给学生上课的频率" `
-图\ref{fig:`r fig_name`}给出了小学校长给学生上课频率的总体情况及各群体之间的比较。
-```{r principal_instructing.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$principal_instructing.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-### 校长参加听课、评课及教研活动的频率`r fig_name <- "小学校长参加听课、评课及教研活动的频率" `
-图\ref{fig:`r fig_name`}给出了小学校长参加听课、评课及教研活动频率的总体情况及各群体之间的比较。
-```{r principal_researching.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$principal_instructing.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-\clearpage### 校长与教师交流，听取教师意见的频率`r fig_name <- "小学校长与教师交流，听取教师意见的频率" `图\ref{fig:`r fig_name`}给出了小学校长与教师交流，听取教师意见频率的总体情况及各群体之间的比较。
-```{r principal_communication.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$principal_communication.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-### 校长应对上级行政部门的检查和评估的频率`r fig_name <- "小学校长应对上级行政部门的检查、评估的频率" `
-图\ref{fig:`r fig_name`}给出了小学校长应对上级行政部门的检查、评估频率的总体情况及各群体之间的比较。
-```{r principal_evaluation.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$principal_evaluation.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage### 校长在科研、教学、资金使用方面的规划与审批的频率`r fig_name <- "小学校长在科研、教学、资金使用的方面的规划与审批的频率" `
-图\ref{fig:`r fig_name`}给出了小学校长在科研、教学、资金使用方面的规划与审批频率的总体情况及各群体之间的比较。
-```{r principal_financing.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$principal_financing.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-## 与学校发展有关问题的调查结果`r fig_name <- "小学校长对学校发展遇到的困难情况" `
-图\ref{fig:`r fig_name`}描述了小学校长对学校发展遇到的困难情况。
-```{r principal_challenge.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$principal_challenge.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-
-## 与学校办学成效有关问题的调查结果`r fig_name <- "小学学校近三年正式出版专门的学科交流与经验分享的成果集的数量" `
-图\ref{fig:`r fig_name`}描述了小学近三年正式出版专门的学科交流与经验分享的成果集的数量及与各群体之间的比较。
-```{r principal_publishing.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$principal_publishing.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-`r fig_name <- "小学学校近三年开设校本课程的数量的情况" `
-图\ref{fig:`r fig_name`}描述了小学根据学生学习需要，开设校本课程的数量及与各群体之间的比较。
-```{r principal_course.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$principal_course.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage`r fig_name <- "小学建设学生社团、兴趣小组和俱乐部数量的情况" `
-图\ref{fig:`r fig_name`}描述了小学建设学生社团、兴趣小组和俱乐部的数量及与各群体之间的比较。
-```{r principal_community.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$principal_community.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-## 与校长对学校感受有关情况的调查结果`r fig_name <- "小学校长对学校感受的情况" `
-图\ref{fig:`r fig_name`}给出了小学校长对学校感受的情况。
-```{r principal_feelings.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$principal_feelings.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-## 与校长的教学观相关问题的调查结果
-
-`r fig_name <- "小学校长教学观的情况" `
-图\ref{fig:`r fig_name`}给出了小学校长教学观的总体情况。
-```{r principal_philosophy.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$principal_philosophy.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-# 家长背景问卷调查结果分析
-
-家长问卷包括从家长的角度了解孩子的相关情况，如孩子睡眠时间、上床时间等，对孩子学业的预期，亲子关系以及对学校的满意度。本章对家长问卷的结果进行分析。以下是主要的分析结果：## 家庭结构`r fig_name <- "学生的家庭结构情况" `
-图\ref{fig:`r fig_name`}给出了学生的家庭结构\footnote{其中核心家庭指的是孩子平时和父亲、母亲或父母双方以及兄弟姐妹生活在一起的家庭。主干家庭指的是孩子平时和除了父亲、母亲、兄弟姐妹以外还有（外）祖父母一起生活的家庭。扩大家庭指的是孩子平时除父母、兄弟姐妹、（外）祖父母以外还有其他人一起生活的家庭。}的总体情况及各群体之间的比较。
-```{r family_structure.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$family_structure.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-## 与亲子关系有关问题的调查`r fig_name <- "家长主动询问孩子在校发生情况" `
-图\ref{fig:`r fig_name`}给出了家长主动询问孩子在校情况及各群体之间的比较。
-```{r query_about_school.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$query_about_school.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-`r fig_name <- "给出了家长认为孩子参与家庭事务讨论的情况" `
-图\ref{fig:`r fig_name`}给出了家长报告孩子参与家庭事务讨论的总体情况及各群体之间的比较。
-```{r family_discuss.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$family_discuss.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-`r fig_name <- "家长认为孩子平均每天在家做家务情况" `
-图\ref{fig:`r fig_name`}给出了孩子平均每天在家做家务的总体情况及各群体之间的比较。
-```{r family_work.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$family_work.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-`r fig_name <- "家长每周陪孩子共同活动的情况" `
-图\ref{fig:`r fig_name`}给出了家长每周陪孩子共同活动（不含做书面作业）的情况
-```{r parent_accompany.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$parent_accompany.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-`r fig_name <- "家长与孩子吵架频率的总体情况" `
-图\ref{fig:`r fig_name`}给出了家长与孩子吵架频率的总体情况
-```{r quarrel_frequency.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$quarrel_frequency.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-`r fig_name <- "家长与孩子吵架程度的总体情况" `
-图\ref{fig:`r fig_name`}给出了家长与孩子吵架程度的总体情况
-```{r quarrel_level.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$quarrel_level.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}\clearpage## 与家长辅导有关问题的调查结果`r fig_name <- "家长辅导有关问题的总体情况" `
-图\ref{fig:`r fig_name`}给出了与家长辅导有关问题的总体情况
-```{r family_coach.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$family_coach.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}`r fig_name <- "家里负责孩子学习的人的总体情况" `
-图\ref{fig:`r fig_name`}给出了学生家里负责孩子学习的人的总体情况
-```{r family_coach_person.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$family_coach_person.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-## 与家长对学校教育感受问题的调查结果`r fig_name <- "家长对学校教育感受的情况" `
-图\ref{fig:`r fig_name`}给出了家长对学校教育感受的情况。
-```{r parent_feeling.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$parent_feeling.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-## 与家长教育期望有关问题的调查结果`r fig_name <- "家长在教育期望方面的总体情况" `
-图\ref{fig:`r fig_name`}给出了家长在教育期望方面的总体情况
-```{r parent_expection.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$parent_expection.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-## 与家长教育观有关问题的调查结果`r fig_name <- "家长教育观的总体情况" `
-图\ref{fig:`r fig_name`}给出了家长教育观的总体情况
-```{r parent_philosophy.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$parent_philosophy.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-`r fig_name <- "家长心目中理想的小学，最重要的前三项特征" `
-图\ref{fig:`r fig_name`}给出了家长心目中理想的小学，最重要的前三项特征的总体情况
-```{r school_reasonable.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$school_reasonable.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$province,report$county)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}

@@ -1255,7 +1255,8 @@ GreenIndexPlotFigure <- setRefClass(
         plot.fig$name <- paste("绘图参数缺失", plot.code)
         command <- paste0("cp ", config$GetDirReportOut(),
                           config$GetDirFigure(),
-                          "plot_point_dummy.pdf ", 
+                          "dummy-plot.pdf", 
+                          " ",
                           plot.fig$path)
         system(command = command)
       } else if (nrow(plot.data) == 0) {
@@ -1263,7 +1264,8 @@ GreenIndexPlotFigure <- setRefClass(
         plot.fig$name <- plot.param[1, kColumnPlotTitle]
         command <- paste0("cp ", config$GetDirReportOut(),
                           config$GetDirFigure(),
-                          "plot_point_dummy.pdf ", 
+                          "dummy-plot.pdf", 
+                          " ",
                           plot.fig$path)
         system(command = command)
       } else {

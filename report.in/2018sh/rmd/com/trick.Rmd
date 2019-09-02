@@ -1,3 +1,0 @@
-\textcircled{\scriptsize{3}}
-
-\textbf{\large{?}}

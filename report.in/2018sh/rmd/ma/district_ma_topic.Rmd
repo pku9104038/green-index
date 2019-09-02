@@ -100,7 +100,7 @@ A．$m^5$ & B．$m^6$ &  C．$m^8$ & D．$m^9$ \\
 plot.bar.district.ma.question.M8AO02111
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO02111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO02111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO02111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO02111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO02111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO02111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO02111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO02111_X", "区","总体","D")`\%。
 \end{itshape}
 
 - 错因分析与教学建议：
@@ -139,7 +139,7 @@ A．${x=-2}$； & B．$x=2$； & C．$x=4$；& D．$x=6$ \\
 plot.bar.district.ma.question.M8AO06111
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO06111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO06111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO06111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO06111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO06111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO06111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO06111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO06111_X", "区","总体","D")`\%。
 \end{itshape}
 
 - 错因分析与教学建议：
@@ -179,7 +179,7 @@ C．\textit{任何一个三角形的三个内角和都是180$\degree$} &  D．\t
 plot.bar.district.ma.question.M8AO11111
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO11111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO11111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO11111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO11111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO11111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO11111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO11111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO11111_X", "区","总体","D")`\%。
 \end{itshape}
 
 - 错因分析与教学建议：
@@ -288,7 +288,7 @@ A．\textit{第一、二象限；} & B．\textit{第一、三象限；} & C．\t
 plot.bar.district.ma.question.M8AO10111
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO10111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO10111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO10111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO10111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO10111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO10111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO10111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO10111_X", "区","总体","D")`\%。
 \end{itshape}
 
 - 错因分析及教学建议：
@@ -326,7 +326,7 @@ C．$\angle{BAC}=90\degree$   & D．$\angle{ABC}=45\degree$ \\
 plot.bar.district.ma.question.M8AO15111
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO15111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO15111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO15111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO15111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO15111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO15111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO15111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO15111_X", "区","总体","D")`\%。
 \end{itshape}
 
 - 错因分析及教学建议：
@@ -364,7 +364,7 @@ plot.bar.district.ma.question.M8AO15111
 plot.bar.district.ma.question.M8AO16111
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO16111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO16111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO16111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO16111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO16111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO16111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO16111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO16111_X", "区","总体","D")`\%。
 \end{itshape}
 
 - 错因分析及教学建议：
@@ -406,7 +406,7 @@ plot.bar.district.ma.question.M8AO16111
 plot.bar.district.ma.question.M8AO18111
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO18111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO18111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO18111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO18111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO18111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO18111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO18111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO18111_X", "区","总体","D")`\%。
 \end{itshape}
 
 - 错因分析及教学建议：
@@ -462,7 +462,7 @@ plot.bar.district.ma.question.M8AO18111
 plot.bar.district.ma.question.M8AS19211
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS19211_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS19211_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS19211_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS19211_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS19211_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS19211_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS19211_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS19211_X", "区","总体","D")`\%。
 \end{itshape}
 
 - 错因分析与教学建议：
@@ -529,7 +529,7 @@ plot.bar.district.ma.question.M8AS19211
 plot.bar.district.ma.question.M8AS20111
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS20111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS20111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS20111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS20111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS20111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS20111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS20111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS20111_X", "区","总体","D")`\%。
 \end{itshape}
 
 - 错因分析及教学建议：
@@ -570,7 +570,7 @@ plot.bar.district.ma.question.M8AS20111
 plot.bar.district.ma.question.M8AS20211
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS20211_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS20211_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS20211_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS20211_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS20211_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS20211_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS20211_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS20211_X", "区","总体","D")`\%。
 \end{itshape}
 
 - 错因分析及教学建议：  
@@ -631,7 +631,7 @@ plot.bar.district.ma.question.M8AS20211
 plot.bar.district.ma.question.M8AS22111
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS22111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS22111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS22111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS22111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS22111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS22111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS22111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS22111_X", "区","总体","D")`\%。
 \end{itshape}
 
 - 错因分析及教学建议：
@@ -721,7 +721,7 @@ table.district.ma.M8AS23111
 plot.bar.district.ma.question.M8AO04111
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO04111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO04111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO04111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO04111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO04111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO04111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO04111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO04111_X", "区","总体","D")`\%。
 \end{itshape}
 
 - 错因分析与教学建议：
@@ -756,7 +756,7 @@ plot.bar.district.ma.question.M8AO04111
 plot.bar.district.ma.question.M8AS19111
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS19111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS19111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS19111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS19111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS19111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS19111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS19111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS19111_X", "区","总体","D")`\%。
 \end{itshape}
 
 - 错因分析与教学建议：
@@ -797,7 +797,7 @@ plot.bar.district.ma.question.M8AS19111
 plot.bar.district.ma.question.M8AS22211
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS22211_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS22211_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS22211_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS22211_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS22211_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS22211_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS22211_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS22211_X", "区","总体","D")`\%。
 \end{itshape}
 
 - 错因分析与教学建议：
@@ -880,7 +880,7 @@ plot.bar.district.ma.question.M8AS22211
 plot.bar.district.ma.question.M8AS23111
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS23111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS23111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS23111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS23111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS23111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS23111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS23111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS23111_X", "区","总体","D")`\%。
 \end{itshape}
 
 - 错因分析及教学建议：
@@ -990,7 +990,7 @@ table.district.ma.M8AS21311
 plot.bar.district.ma.question.M8AS21111
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS21111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS21111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21111_X", "区","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.district.ma.question.M8AS21111
@@ -1002,7 +1002,7 @@ query2.plot.bar.district.ma.question.M8AS21111
 plot.bar.district.ma.question.M8AS21211
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS21211_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21211_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21211_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21211_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS21211_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21211_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21211_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21211_X", "区","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.district.ma.question.M8AS21211
@@ -1060,7 +1060,7 @@ query2.plot.bar.district.ma.question.M8AS21211
 plot.bar.district.ma.question.M8AS21311
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS21311_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21311_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21311_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21311_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS21311_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21311_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21311_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21311_X", "区","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.district.ma.question.M8AS21311
@@ -1138,7 +1138,7 @@ query2.plot.bar.district.ma.question.M8AS21311
 plot.bar.district.ma.question.M8AS24111
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS24111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS24111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24111_X", "区","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.district.ma.question.M8AS24111
@@ -1146,7 +1146,7 @@ query2.plot.bar.district.ma.question.M8AS24111
 plot.bar.district.ma.question.M8AS24121
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS24121_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24121_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24121_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24121_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS24121_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24121_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24121_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24121_X", "区","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.district.ma.question.M8AS24121
@@ -1229,7 +1229,7 @@ query2.plot.bar.district.ma.question.M8AS24121
 plot.bar.district.ma.question.M8AS24211
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS24211_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24211_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24211_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24211_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS24211_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24211_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24211_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24211_X", "区","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.district.ma.question.M8AS24211

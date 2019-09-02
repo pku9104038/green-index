@@ -1,1517 +1,0 @@
----
-documentclass: book
-fontsize: 12pt
-geometry: margin=1in
-output:
-  pdf_document:
-    fig_caption: yes
-    template: pdf_template.tex
-    includes:
-      in_header: header_base.tex
-    latex_engine: xelatex
-    number_sections: yes
-    keep_tex: no
-params:
-  report: 2015
-  dummy.fig: "dummy.jpg"
-  conf: "conf"
-  
----
-<!-- global setting -->
-
-pre.render.global.setting
-
-<!-- cover page -->
-
-pre.render.cover.page
-
-<!-- header footer -->
-
-pre.render.head.foot
-
-<!-- preface -->
-
-pre.render.report.preface
-
-<!-- table of cntents -->
-
-pre.render.table.of.contents
-
-<!-- document body -->
-
-\mytext
-
-<!-- chapter 1 project summary -->
-
-pre.render.project.summary
-
-<!--  chapter 2 score  -->
-
-# 上海市四年级学生学业水平总体情况
-
-```{r passed.rate.table.cn, echo=TRUE, message=TRUE, include = FALSE, result="hide"}
-param.entry <- "passed.rate.table.cn"
-pass.rate.cn  <- dataframe.table( report = report, param = report$param[[param.entry]])
-var.variable <- "变量" 
-var.key <- "键"
-var.param <- "标注值"
-var.sample <- "统计样本"
-```
-```{r passed.rate.table.ma, echo=TRUE, message=TRUE, include = FALSE, result="hide"}
-param.entry <- "passed.rate.table.ma"
-pass.rate.ma  <- dataframe.table( report = report, param = report$param[[param.entry]])
-```
-
-本章分析了上海市四年级学生学业水平的总体情况及不同群体学生学业质量，主要结果如下：
-
-- 总体看来，上海市四年级学生总体达到语文课程标准的基本要求的比例为`r pass.rate.cn[pass.rate.cn[,var.sample]=="总体",var.param]`%；达到数学课程标准的基本要求的人数比例为`r pass.rate.ma[pass.rate.ma[,var.sample]=="总体",var.param]`%；
-
-- 中心城区\footnote{中心城区：包括黄浦区、徐汇区、长宁区、普陀区、虹口区、杨浦区、静安区。}、郊区\footnote{郊区：包括闵行区、宝山区、嘉定区、浦东新区、金山区、松江区、青浦区、奉贤区、崇明区。}四年级学生达到语文课程标准基本要求的比例分别为`r pass.rate.cn[pass.rate.cn[,var.sample]=="中心城区",var.param]`%和`r pass.rate.cn[pass.rate.cn[,var.sample]=="郊区",var.param]`%；达到数学课程标准的基本要求的人数比例分别为`r pass.rate.ma[pass.rate.ma[,var.sample]=="中心城区",var.param]`%和`r pass.rate.ma[pass.rate.ma[,var.sample]=="郊区",var.param]`%；
-
-- 市级新优质学校\footnote{新优质学校为新优质建设学校项目简称。}学生达到语文课程标准的基本要求的比例为`r pass.rate.cn[pass.rate.cn[,var.sample]=="市新优",var.param]`%；达到数学课程标准的基本要求的人数比例为`r pass.rate.ma[pass.rate.ma[,var.sample]=="市新优",var.param]`%；区级新优质学校学生达到语文课程标准的基本要求的比例为`r pass.rate.cn[pass.rate.cn[,var.sample]=="区新优",var.param]`%；达到数学课程标准的基本要求的人数比例为`r pass.rate.ma[pass.rate.ma[,var.sample]=="区新优",var.param]`%；
-
-- 在语文学科上，除区82、区83和区88外，其他各区达到课程标准的人数比例在98.5%（含）以上；在数学学科上，除区75、81、82、83、89外其他各区达到课程标准的人数比例在99.5%（含）以上；
-
-- 一贯制学校与非一贯制小学的学生达到语文课程标准基本要求的人数比例分别为`r pass.rate.cn[pass.rate.cn[,var.sample]=="一贯制",var.param]`%和`r pass.rate.cn[pass.rate.cn[,var.sample]=="小学",var.param]`%；达到数学课程标准基本要求的人数比例分别为`r pass.rate.ma[pass.rate.ma[,var.sample]=="一贯制",var.param]`%和`r pass.rate.ma[pass.rate.ma[,var.sample]=="小学",var.param]`%；
-
-- 四年级男生和女生达到语文课程标准基本要求的人数比例分别为`r pass.rate.cn[pass.rate.cn[,var.sample]=="男",var.param]`%和`r pass.rate.cn[pass.rate.cn[,var.sample]=="女",var.param]`%；达到数学课程标准基本要求的人数比例分别为`r pass.rate.ma[pass.rate.ma[,var.sample]=="男",var.param]`%和`r pass.rate.ma[pass.rate.ma[,var.sample]=="女",var.param]`%；
-
-- 本市和非本市户籍四年级学生达到语文课程标准基本要求的人数比例分别为`r pass.rate.cn[pass.rate.cn[,var.sample]=="沪籍",var.param]`%和`r pass.rate.cn[pass.rate.cn[,var.sample]=="非沪籍",var.param]`%；达到数学课程标准基本要求的人数比例分别为`r pass.rate.ma[pass.rate.ma[,var.sample]=="沪籍",var.param]`%和`r pass.rate.ma[pass.rate.ma[,var.sample]=="非沪籍",var.param]`%；
-
-
-## 四年级学生学业水平总体情况　
-
-`r fig_name <- "四年级学生总体语文分数分布" `
-`r fig_name1 <- "四年级学生总体数学分数分布" `
-
-上海市四年级学生总体在语文和数学学科上的得分分布见图\ref{fig: `r fig_name`}、图\ref{fig: `r fig_name1`}。
-
-
-```{r score.segment.bar.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "score.segment.bar.cn"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig: `r fig_name`}
-\end{figure}
-
-```{r score.segment.bar.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "score.segment.bar.ma"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name1)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name1`}
-\label{fig: `r fig_name1`}
-\end{figure}
-
-\clearpage
-
-`r fig_name <- "不同区域学生在各学科各水平上的人数比例" `
-图\ref{fig:`r fig_name`}给出了上海市及不同区域在各学科各水平上的人数比例。
-```{r level.bar.urban.subject, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "level.bar.urban.subject"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-
-
-## 不同群体学生学业水平### 各区学生学业水平#### 各区学生语文学业水平
-`r fig_name <- "各区学生在语文学科各水平上的人数比例" `
-```{r level.bar.county.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "level.bar.county.cn"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-`r fig_name <- "各区学生在语文学科上的得分分布" `
-```{r score.box.county.cn, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "score.box.county.cn"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}\mylist注：盒须图——5\%学生得分小于等于须下端线分数；25\%学生得分小于等于盒底分数；50\%学生得分大于等于盒中横线分数；25\%学生得分大于等于盒顶分数；5\%学生得分大于等于须上端线分数；盒高度一定程度上反映了得分分布的离散程度；红点为平均分。
-\mytext
-#### 各区学生数学学业水平`r fig_name <- "各区学生在数学学科各水平上的人数比例" `
-```{r level.bar.county.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "level.bar.county.ma"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-`r fig_name <- "各区学生在数学学科上的得分分布" `
-```{r score.box.county.ma, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "score.box.county.ma"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}### 不同类型学校学生学业水平
-
-`r fig_name <- "不同类型学校学生在各学科各水平上的人数比例" `
-```{r level.bar.academy.subject, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "level.bar.academy.subject"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-### 不同性别学生学业水平
-
-`r fig_name <- "不同性别学生在各学科各水平上的人数比例" `
-```{r level.bar.gender.subject, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "level.bar.gender.subject"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-
-### 新优质学校学生学业水平
-
-`r fig_name <- "新优质学校学生在语文和数学学科各水平上的人数比例" `
-```{r level.bar.xinyouzhi.subject, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "level.bar.xinyouzhi.subject"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-\clearpage
-
-### 不同户籍类型学生学业水平
-
-`r fig_name <- "不同户籍类型学生在各学科各水平上的人数比例" `
-```{r level.bar.huji.subject, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "level.bar.huji.subject"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-
-# 学生背景问卷调查结果分析
-
-
-```{r survey.summary.table.st, echo=TRUE, message=TRUE, include = FALSE, result="hide"}
-param.entry <- "survey.summary.table.st"
-summary.st  <- dataframe.table( report = report, param = report$param[[param.entry]])
-var.topic <- "主题" 
-var.key <- "键"
-var.param <- "标注值"
-var.sample <- "统计样本"
-```
-
-```{r survey.summary.table.pa, echo=TRUE, message=TRUE, include = FALSE, result="hide"}
-param.entry <- "survey.summary.table.pa"
-summary.pa  <- dataframe.table( report = report, param = report$param[[param.entry]])
-```
-
-学生问卷包括学生基本情况、师生关系、学习压力、学校认同度、学习动机、自信心和学习方法等。本章对学生问卷调查结果进行分析，以下是分析得到的主要结果：
-- 四年级学生是独生子女的占`r summary.st[summary.st[,var.topic]=="独生子女" & summary.st[,var.key]=="是",var.param]`%。- 四年级学生家庭图书量超过100本的占`r summary.pa[summary.pa[,var.topic]=="家庭藏书" & summary.pa[,var.key]=="101-200本之间",var.param] + summary.pa[summary.pa[,var.topic]=="家庭藏书" & summary.pa[,var.key]=="200本以上",var.param]`%，不超过50本的占`r summary.pa[summary.pa[,var.topic]=="家庭藏书" & summary.pa[,var.key]=="20本以下",var.param] + summary.pa[summary.pa[,var.topic]=="家庭藏书" & summary.pa[,var.key]=="21-50本之间",var.param]`%。- 四年级学生家庭汽车拥有量为零的占`r summary.pa[summary.pa[,var.topic]=="家庭汽车" & summary.pa[,var.key]=="没有",var.param]`%，两辆及以上的占`r summary.pa[summary.pa[,var.topic]=="家庭汽车" & summary.pa[,var.key]=="有，2辆",var.param] + summary.pa[summary.pa[,var.topic]=="家庭汽车" & summary.pa[,var.key]=="有，2辆以上",var.param]`%。- 四年级学生没有出境旅游的比例为`r summary.pa[summary.pa[,var.topic]=="出境旅游" & summary.pa[,var.key]=="目前还没有去过",var.param]`%，出境旅游过两次及以上的占`r summary.pa[summary.pa[,var.topic]=="出境旅游" & summary.pa[,var.key]=="2次",var.param] + summary.pa[summary.pa[,var.topic]=="出境旅游" & summary.pa[,var.key]=="3次",var.param] + summary.pa[summary.pa[,var.topic]=="出境旅游" & summary.pa[,var.key]=="4次及以上",var.param]`%。- 四年级学生的父亲受教育程度为大学及以上的占`r summary.pa[summary.pa[,var.topic]=="父亲学历" & summary.pa[,var.key]=="大专",var.param] + summary.pa[summary.pa[,var.topic]=="父亲学历" & summary.pa[,var.key]=="本科",var.param] + summary.pa[summary.pa[,var.topic]=="父亲学历" & summary.pa[,var.key]=="研究生",var.param]`%，初中及以下的占`r summary.pa[summary.pa[,var.topic]=="父亲学历" & summary.pa[,var.key]=="初中及以下",var.param]`%。四年级学生的母亲受教育程度为大学及以上的占`r summary.pa[summary.pa[,var.topic]=="母亲学历" & summary.pa[,var.key]=="大专",var.param] + summary.pa[summary.pa[,var.topic]=="母亲学历" & summary.pa[,var.key]=="本科",var.param] + summary.pa[summary.pa[,var.topic]=="母亲学历" & summary.pa[,var.key]=="研究生",var.param]`%，初中及以下的占`r summary.pa[summary.pa[,var.topic]=="母亲学历" & summary.pa[,var.key]=="初中及以下",var.param]`%。
-- 四年级学生每天做学校老师布置的书面作业时间超过2小时的占`r summary.st[summary.st[,var.topic]=="作业时间" & summary.st[,var.key]=="2-3小时（含2小时）",var.param] + summary.st[summary.st[,var.topic]=="作业时间" & summary.st[,var.key]=="3-4小时（含3小时）",var.param] + summary.st[summary.st[,var.topic]=="作业时间" & summary.st[,var.key]=="4小时及以上",var.param]`%，其中3小时以上的占`r summary.st[summary.st[,var.topic]=="作业时间" & summary.st[,var.key]=="3-4小时（含3小时）",var.param] + summary.st[summary.st[,var.topic]=="作业时间" & summary.st[,var.key]=="4小时及以上",var.param]`%，1小时以下的占`r summary.st[summary.st[,var.topic]=="作业时间" & summary.st[,var.key]=="1小时以内",var.param]`%。
-- 四年级学生认为学校作业难易适中的占`r summary.st[summary.st[,var.topic]=="作业难度" & summary.st[,var.key]=="难易适中",var.param]`%，认为非常难和非常容易的共占`r summary.st[summary.st[,var.topic]=="作业难度" & summary.st[,var.key]=="非常难",var.param] + summary.st[summary.st[,var.topic]=="作业难度" & summary.st[,var.key]=="非常容易",var.param]`%。- 四年级学生每周参加与考试科目相关的家教补习或课外辅导的时间在6小时以上的占`r summary.pa[summary.pa[,var.topic]=="家教补课时间全体" & summary.pa[,var.key]=="6-8小时（含6小时）",var.param] + summary.pa[summary.pa[,var.topic]=="家教补课时间全体" & summary.pa[,var.key]=="8小时及以上",var.param]`％。- 四年级学生每周参加校外兴趣班的时间在2小时及以上的占`r summary.pa[summary.pa[,var.topic]=="兴趣班时间全体" & summary.pa[,var.key]=="2-3小时（含2小时）",var.param] + summary.pa[summary.pa[,var.topic]=="兴趣班时间全体" & summary.pa[,var.key]=="3-4小时（含3小时）",var.param] + summary.pa[summary.pa[,var.topic]=="兴趣班时间全体" & summary.pa[,var.key]=="4-5小时（含4小时）",var.param] + summary.pa[summary.pa[,var.topic]=="兴趣班时间全体" & summary.pa[,var.key]=="5小时及以上",var.param]`%，没有参加校外兴趣班的学生占`r summary.pa[summary.pa[,var.topic]=="兴趣班时间全体" & summary.pa[,var.key]=="(空)",var.param] + summary.pa[summary.pa[,var.topic]=="兴趣班时间全体" & summary.pa[,var.key]=="(跳过)",var.param]`%。- 四年级学生每个月参加考试和测验的频率在4次及以上的占`r summary.st[summary.st[,var.topic]=="月考次数" & summary.st[,var.key]=="4次及以上",var.param]`%，频率在1次至3次的占`r summary.st[summary.st[,var.topic]=="月考次数" & summary.st[,var.key]=="1次",var.param] + summary.st[summary.st[,var.topic]=="月考次数" & summary.st[,var.key]=="2次",var.param] + summary.st[summary.st[,var.topic]=="月考次数" & summary.st[,var.key]=="3次",var.param]`%，0次的占`r summary.st[summary.st[,var.topic]=="月考次数" & summary.st[,var.key]=="0次",var.param]`%。- 四年级学生一年阅读课外读物量达到9本及以上的比例为`r summary.st[summary.st[,var.topic]=="年度阅读" & summary.st[,var.key]=="9-12本",var.param] + summary.st[summary.st[,var.topic]=="年度阅读" & summary.st[,var.key]=="13本及以上",var.param]`%，有`r summary.st[summary.st[,var.topic]=="年度阅读" & summary.st[,var.key]=="1-4本",var.param] `%的学生年阅读量不足5本，有`r summary.st[summary.st[,var.topic]=="年度阅读" & summary.st[,var.key]=="没有",var.param]`%的学生几乎不进行课外阅读。- 四年级学生每天放学回家后运动时间在40分钟以内的占`r summary.pa[summary.pa[,var.topic]=="运动时间" & summary.pa[,var.key]=="21-40分钟",var.param] + summary.pa[summary.pa[,var.topic]=="运动时间" & summary.pa[,var.key]=="20分钟及以内",var.param]`%，在60分钟及以上的占`r summary.pa[summary.pa[,var.topic]=="运动时间" & summary.pa[,var.key]=="61-80分钟",var.param] + summary.pa[summary.pa[,var.topic]=="运动时间" & summary.pa[,var.key]=="81分钟及以上",var.param]`%。
-- 四年级学生，`r summary.st[summary.st[,var.topic]=="师生关系较好",var.param] `%对师生关系评价较高，具体表现在教师是否公平、平等的对待学生、是否信任学生这三个方面。- 四年级大部分学生感到学习压力较小，同时对学习的焦虑依旧存在。- 四年级学生中有`r summary.st[summary.st[,var.topic]=="学习动机较强",var.param] `%的学生有比较强的学习动机。- `r summary.st[summary.st[,var.topic]=="学校认同度较高",var.param] `%学生对学校认同度高，具体表现为喜欢自己的学校、老师，同学关系和睦。- 四年级学生中学习自信心较强的学生所占比例为`r summary.st[summary.st[,var.topic]=="学习自信心较强",var.param] `%，自信心水平比较高，对自己的能力有比较恰当的评估。- 四年级学生对教师教学方式中的因材施教、互动教学、鼓励学生探究与发展这三个方面评价比较高。- 四年级学生总体心理健康水平比较高，但还有进一步培养的空间。
-
-## 学生基本情况### 家庭背景#### 学生为独生子女情况`r fig_name <- "四年级学生为独生子女情况" `
-图\ref{fig:`r fig_name`}给出了四年级学生为独生子女的总体情况及各群体之间的比较。
-```{r onechild.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "onechild.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-#### 学生家庭的藏书量
-
-`r fig_name <- "四年级学生家里的图书量" `
-图\ref{fig:`r fig_name`}给出了四年级学生家里图书量的总体情况及各群体之间的比较。
-```{r book.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "book.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-#### 学生家庭汽车拥有量
-
-`r fig_name <- "四年级学生家庭汽车拥有量" `
-图\ref{fig:`r fig_name`}给出了四年级学生家庭拥有汽车的总体情况及各群体之间的比较。
-```{r car.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "car.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage 
-#### 学生出境旅游情况
-
-`r fig_name <- "四年级学生出境旅游的总体情况" `
-图\ref{fig:`r fig_name`}给出了四年级学生家庭出境旅游的总体情况及各群体之间的比较。
-```{r trip.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "trip.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-#### 学生父亲受教育情况
-
-`r fig_name <- "四年级学生父亲的受教育情况" `
-图\ref{fig:`r fig_name`}给出了四年级学生的父亲受教育的总体情况及各群体之间的比较。
-```{r father_edu.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "father_edu.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-#### 学生母亲的受教育情况
-
-`r fig_name <- "四年级学生母亲的受教育情况" `
-图\ref{fig:`r fig_name`}给出了四年级学生的母亲受教育的总体情况及各群体之间的比较。
-```{r mother_edu.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "mother_edu.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-### 学生日常生活与学习
-#### 学生休息情况
-
-`r fig_name <- "四年级学生平时上学时每天的睡眠时间" `
-图\ref{fig:`r fig_name`}给出了四年级学生平时上学时每天睡眠时间的总体情况。
-```{r sleep.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "sleep.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-`r fig_name <- "四年级学生放假时每天的睡眠时间" `
-图\ref{fig:`r fig_name`}给出了四年级学生放假时（包括双休日）每天睡眠时间的总体情况。
-```{r sleep_weekend.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "sleep_weekend.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}`r fig_name <- "四年级学生对自己睡眠时间是否充足的看法" `
-图\ref{fig:`r fig_name`}给出了四年级学生对自己睡眠时间是否充足的看法情况。
-```{r sleep_enough.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "sleep_enough.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-\clearpage`r fig_name <- "四年级学生睡眠不充足的原因" `
-图\ref{fig:`r fig_name`}给出了四年级学生睡眠不充足的原因：
-```{r sleep_not_enough.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "sleep_not_enough.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure} #### 每天做学校老师布置的书面作业所需要的时间
-
-`r fig_name <- "四年级学生每天书面作业的时间" `
-图\ref{fig:`r fig_name`}给出了四年级学生每天做学校老师布置的书面作业时间的总体情况及各群体之间的比较。
-```{r writing_homework_hours.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "writing_homework_hours.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}\clearpage
-#### 学校作业难易程度
-
-`r fig_name <- "四年级学生作业的难易程度" `
-图\ref{fig:`r fig_name`}给出了四年级学生学校作业的难易程度的总体情况及各群体之间的比较。
-```{r writing_homework_difficulty.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "writing_homework_difficulty.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-#### 参加与考试科目相关的家教补习、课外辅导的情况
-
-`r fig_name <- "四年级学生参加与考试科目相关的家教补习或课外辅导的百分比" `
-图\ref{fig:`r fig_name`}给出了四年级学生每周参加与考试科目相关的家教补习、课外辅导的百分比及各群体之间的比较。
-```{r extra_homework_yes.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "extra_homework_yes.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-\clearpage
-
-\mynote{以下为对参加家教补习、课外辅导的学生情况的进一步分析}
-
-`r fig_name <- "四年级学生参加与考试科目相关的家教补习或课外辅导情况" `
-图\ref{fig:`r fig_name`}给出了四年级学生每周参加与考试科目相关的家教补习、课外辅导的总体情况及各群体之间的比较。
-```{r extra_homework_subject.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "extra_homework_subject.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-`r fig_name <- "四年级学生参加与考试科目相关的家教补习、课外辅导时间" `
-图\ref{fig:`r fig_name`}给出了四年级学生每周参加与考试科目相关的家教补习、课外辅导时间的总体情况及各群体之间的比较。
-```{r extra_homework_hour.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "extra_homework_hour.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-`r fig_name <- "四年级学生参加与考试科目相关的家教补习、课外辅导的主要原因" `
-图\ref{fig:`r fig_name`}给出了四年级学生每周参加与考试科目相关的家教补习、课外辅导的主要原因
-```{r extra_homework_reason.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "extra_homework_reason.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-#### 参加校外兴趣班的情况
-
-
-`r fig_name <- "四年级学生参加校外兴趣班的百分比" `
-图\ref{fig:`r fig_name`}给出了四年级学生参加校外兴趣班的百分比情况。
-```{r extra_interesting_yes.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "extra_interesting_yes.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-\clearpage
-
-\mynote{以下为对参加校外兴趣班的学生情况的进一步分析}
-
-`r fig_name <- "四年级学生参加校外兴趣班的种类" `
-图\ref{fig:`r fig_name`}给出了四年级学生参加校外兴趣班种类的比例情况。
-```{r extra_interesting_subject.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "extra_interesting_subject.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-`r fig_name <- "四年级学生参加校外兴趣班的时间" `
-图\ref{fig:`r fig_name`}给出了四年级学生参加校外兴趣班的时间的总体情况以及各群体之间的比较。
-```{r extra_interesting_hour.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "extra_interesting_hour.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-`r fig_name <- "四年级学生参加校外兴趣班的主要原因" `
-图\ref{fig:`r fig_name`}给出了四年级学生参加校外兴趣班的主要原因
-```{r extra_interesting_reason.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "extra_interesting_reason.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-#### 每个月参加考试和测验的频率
-
-`r fig_name <- "四年级学生每个月参加考试和测验频率" `
-图\ref{fig:`r fig_name`}给出了四年级学生每个月参加考试和测验的总体情况及各群体之间的比较。
-```{r month_test.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "month_test.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage#### 学生课外阅读量调查结果
-
-`r fig_name <- "四年级学生过去一年内阅读课外读物的数量" `
-图\ref{fig:`r fig_name`}给出了四年级学生过去一年内阅读课外读物数量的总体情况及各群体之间的比较。
-```{r year_reading.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "year_reading.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-#### 学生每天放学回家后的运动时间
-
-`r fig_name <- "四年级学生每天放学回家后的运动时间" `
-图\ref{fig:`r fig_name`}给出了四年级学生每天放学回家后的运动时间情况及各群体之间的比较。
-```{r daily_sport_hour.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "daily_sport_hour.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-
-## 与师生关系有关问题的调查结果
-
-本问卷对教师是否公平、平等的对待学生，是否尊重学生，是否信任学生这三个方面进行了调查，现将调查到的师生关系进行如下分析。
-
-`r fig_name <- "四年级学生对教师是否公平、平等的对待学生的评价" `
-图\ref{fig:`r fig_name`}给出了四年级学生对教师是否公平、平等对待学生的评价的总体情况。
-```{r teacher_fair.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "teacher_fair.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-`r fig_name <- "四年级学生对教师是否尊重学生的评价" `
-图\ref{fig:`r fig_name`}给出了四年级学生对教师是否尊重学生的评价的总体情况。
-```{r teacher_respect.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "teacher_respect.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-`r fig_name <- "四年级学生对教师是否信任学生的评价" `
-图\ref{fig:`r fig_name`}给出了四年级学生对教师是否信任学生的评价的总体情况。
-```{r teacher_trust.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "teacher_trust.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-## 与学习压力有关问题的调查结果
-
-`r fig_name <- "四年级学生对学习压力相关问题的看法" `
-图\ref{fig:`r fig_name`}给出了四年级学生对学习压力相关问题看法的情况。
-```{r learning_pressure.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "learning_pressure.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage## 与学习动机有关问题的调查结果
-
-`r fig_name <- "四年级学生对学习动机相关问题的看法" `
-图\ref{fig:`r fig_name`}给出了四年级学生对学习动机相关问题看法的情况。
-```{r learning_motivation.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "learning_motivation.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-## 与学校认同度有关问题的调查结果
-
-`r fig_name <- "四年级学生对学校认同度相关问题的看法" `
-图\ref{fig:`r fig_name`}给出了四年级学生对学校认同度相关问题看法的情况。
-```{r school_identity.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "school_identity.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-## 与学习自信心有关问题的调查结果
-
-`r fig_name <- "四年级学生对学习自信心相关问题的看法" `
-图\ref{fig:`r fig_name`}给出了四年级学生对学习自信心相关问题看法的情况。
-```{r learning_confidence.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "learning_confidence.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-## 与学习方法有关问题的调查结果
-
-`r fig_name <- "四年级学生对自己某些学习方法的评价" `
-图\ref{fig:`r fig_name`}给出了四年级学生对自己某些学习方法的评价的情况。
-```{r learning_method.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "learning_method.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-## 与教师教学方式有关问题的调查结果
-
-本问卷对教师教学方式中的因材施教、互动教学、鼓励学生探究与发展这三个方面进行了调查，现将调查到的教师教学方式进行如下分析。
-
-`r fig_name <- "四年级学生对教师教学方式的评价——因材施教" `
-图\ref{fig:`r fig_name`}给出了四年级学生对教师因材施教的评价。
-```{r teaching_yincaishijiao.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "teaching_yincaishijiao.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-`r fig_name <- "四年级学生对教师教学方式的评价——互动教学" `
-图\ref{fig:`r fig_name`}给出了四年级学生对教师互动教学的评价。
-```{r teaching_hudongjiaoxue.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "teaching_hudongjiaoxue.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-`r fig_name <- "四年级学生对教师教学方式的评价——鼓励学生探究与发展" `
-图\ref{fig:`r fig_name`}给出了四年级学生对教师鼓励学生探究与发展的评价。
-```{r teaching_gulitanjiu.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "teaching_gulitanjiu.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-## 与品德行为有关问题的调查结果
-
-本问卷对学生行为规范中的尊重他人、诚信、社会责任几个方面进行了调查，现将调查到的学生行为规范相关问题进行如下分析。### 尊重他人
-
-`r fig_name <- "四年级学生尊重他人行为的总体情况" `
-图\ref{fig:`r fig_name`}给出了四年级学生尊重他人行为的总体情况。
-```{r morality_respect_others.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "morality_respect_others.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-### 诚信
-
-`r fig_name <- "四年级学生遇到各种诚信问题时的行为表现情况" `
-图\ref{fig:`r fig_name`}给出了四年级学生认为班里同学遇到各种诚信问题时的行为表现情况。
-```{r morality_integrity.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "morality_integrity.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-### 社会责任
-
-
-`r fig_name <- "四年级学生关于社会责任感方面问题的表现情况" `
-图\ref{fig:`r fig_name`}给出了四年级学生在关于社会责任感方面问题的表现情况。
-```{r morality_responsibility.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "morality_responsibility.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-## 与社交敏感性有关问题的调查结果
-
-`r fig_name <- "四年级学生对社交敏感性相关问题的看法" `
-图\ref{fig:`r fig_name`}给出了四年级学生对社交敏感相关问题看法的情况。
-```{r psychological_shejiaomingan.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "psychological_shejiaomingan.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-## 与人际关系有关问题的调查结果
-
-`r fig_name <- "四年级学生对人际关系相关问题的看法" `
-图\ref{fig:`r fig_name`}给出了四年级学生对人际关系相关问题看法的情况。
-```{r psychological_renjiguanxi.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "psychological_renjiguanxi.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-## 与自尊有关问题的调查结果
-
-
-`r fig_name <- "四年级学生对自尊相关问题的看法" `
-图\ref{fig:`r fig_name`}给出了四年级学生对自尊相关问题看法的情况。
-```{r psychological_self_respect.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "psychological_self_respect.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-## 背景变量与学业成绩的关系
-
-### 学生睡眠时间与学业成绩的关系`r fig_name <- "四年级学生睡眠时间与学业成绩的关系" `
-图\ref{fig:`r fig_name`}给出了四年级学生的睡眠时间与学业成绩的关系。
-```{r score_sleep.point, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "score_sleep.point"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-### 学生做学校布置的作业或课外练习时间与学业成绩的关系
-
-`r fig_name <- "四年级学生作业或课外练习时间与学业成绩的关系" `
-图\ref{fig:`r fig_name`}给出了四年级学生做学校布置的作业或课外练习时间与学业成绩的关系。
-```{r score_homework.point, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "score_homework.point"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-### 学生课外补课或辅导班时间与学业成绩的关系
-
-`r fig_name <- "四年级学生每周课外补课或辅导班时间与学业成绩的关系" `
-图\ref{fig:`r fig_name`}给出了四年级学生每周课外补课或辅导班时间与学业成绩的关系。
-```{r score_extra_homework.point, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "score_extra_homework.point"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-\clearpage### 学生对师生关系的评价与学业成绩的关系
-
-`r fig_name <- "四年级师生关系与学业成绩的关系" `
-图\ref{fig:`r fig_name`}给出了四年级学生对师生关系的评价与学业成绩的关系。
-```{r score_teacher.point, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "score_teacher.point"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-### 学生学习压力与学业成绩的关系
-
-`r fig_name <- "四年级学生学习压力与学业成绩的关系" `
-图\ref{fig:`r fig_name`}给出了四年级学生所报告的学习压力与学业成绩的关系。
-```{r score_pressure.point, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "score_pressure.point"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage### 学校认同度与学业成绩的关系
-
-
-`r fig_name <- "四年级学生学校认同度与学业成绩的关系" `
-图\ref{fig:`r fig_name`}给出了四年级学生所报告的学校认同度与学业成绩的关系。
-```{r score_identity.point, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "score_identity.point"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-
-
-### 学习动机与学业成绩的关系
-
-`r fig_name <- "四年级学生学习动机与学业成绩的关系" `
-图\ref{fig:`r fig_name`}给出了四年级学生所报告的学习动机与学业成绩的关系。
-```{r score_motivation.point, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "score_motivation.point"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage### 学生自信心与学业成绩的关系
-
-`r fig_name <- "四年级学生自信心与学业成绩的关系" `
-图\ref{fig:`r fig_name`}给出了四年级学生所报告的学生自信心与学业成绩的关系。
-```{r score_confidence.point, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "score_confidence.point"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-# 教师背景问卷调查结果分析
-
-```{r survey.summary.table.te, echo=TRUE, message=TRUE, include = FALSE, result="hide"}
-param.entry <- "survey.summary.table.te"
-summary.te  <- dataframe.table( report = report, param = report$param[[param.entry]])
-```
-教师背景问卷包含教师的基本情况、教师的教学方法、教师对学校教学管理的评价、教师的教学观念和教师的专业发展五个方面。本章对四年级教师在这五个方面的回答进行了分析，得到如下主要结论：
-- 四年级教师中男老师占`r summary.te[summary.te[,var.topic]=="教师性别" & summary.te[,var.key]=="男",var.param]`%，女老师占`r summary.te[summary.te[,var.topic]=="教师性别" & summary.te[,var.key]=="女",var.param]`%。- 四年级教师教龄在5年及以下的占`r summary.te[summary.te[,var.topic]=="教师教龄" & summary.te[,var.key]=="5年及以下",var.param]`%，在20年以上的占`r summary.te[summary.te[,var.topic]=="教师教龄" & summary.te[,var.key]=="20年以上",var.param]`%，在6-20年的占`r summary.te[summary.te[,var.topic]=="教师教龄" & summary.te[,var.key]=="6-10年",var.param] + summary.te[summary.te[,var.topic]=="教师教龄" & summary.te[,var.key]=="11-15年",var.param] + summary.te[summary.te[,var.topic]=="教师教龄" & summary.te[,var.key]=="16-20年",var.param]`%。- 四年级教师中，有`r summary.te[summary.te[,var.topic]=="教师职称" & summary.te[,var.key]=="中学高级",var.param] + summary.te[summary.te[,var.topic]=="教师职称" & summary.te[,var.key]=="小学高级",var.param]`%的教师具有小学高级及以上的职称。- 四年级`r summary.te[summary.te[,var.topic]=="教师学历" & summary.te[,var.key]=="本科",var.param] + summary.te[summary.te[,var.topic]=="教师学历" & summary.te[,var.key]=="研究生",var.param]`%的教师是本科及以上学历，`r summary.te[summary.te[,var.topic]=="教师学历" & summary.te[,var.key]=="中师或中专、高中",var.param] + summary.te[summary.te[,var.topic]=="教师学历" & summary.te[,var.key]=="初中或以下",var.param] + summary.te[summary.te[,var.topic]=="教师学历" & summary.te[,var.key]=="大专",var.param]`%的教师是大专及以下学历。- 四年级教师就职前接受过师范教育的比例为`r summary.te[summary.te[,var.topic]=="师范教育" & summary.te[,var.key]=="是",var.param] `%，所教学科与所学专业一致的比例为`r summary.te[summary.te[,var.topic]=="专业对口" & summary.te[,var.key]=="是",var.param] `%。- 四年级教师每周上课节数在11-15节的占`r summary.te[summary.te[,var.topic]=="每周课时" & summary.te[,var.key]=="11-15节",var.param] `%，在6节以下的占`r summary.te[summary.te[,var.topic]=="每周课时" & summary.te[,var.key]=="6节以下",var.param] `%，在20节以上的占`r summary.te[summary.te[,var.topic]=="每周课时" & summary.te[,var.key]=="20节以上",var.param] `%。- 四年级教师每天的工作时间在8-11小时的占`r summary.te[summary.te[,var.topic]=="每日工时" & summary.te[,var.key]=="8-9小时(含9小时)",var.param] + summary.te[summary.te[,var.topic]=="每日工时" & summary.te[,var.key]=="9-11小时(含11小时)",var.param] `％，8小时及以下的占`r summary.te[summary.te[,var.topic]=="每日工时" & summary.te[,var.key]=="8小时及以下",var.param] `%，11小时以上的占`r summary.te[summary.te[,var.topic]=="每日工时" & summary.te[,var.key]=="11-13小时(含13小时)",var.param] + summary.te[summary.te[,var.topic]=="每日工时" & summary.te[,var.key]=="13小时以上",var.param]`%。- 四年级教师有`r summary.te[summary.te[,var.topic]=="职业喜爱" & summary.te[,var.key]=="非常喜欢",var.param] + summary.te[summary.te[,var.topic]=="职业喜爱" & summary.te[,var.key]=="比较喜欢",var.param]`％喜欢教师职业。- 四年级教师中有`r summary.te[summary.te[,var.topic]=="作为教师，我的角色就是引导学生自行探究" & summary.te[,var.key]=="非常同意",var.param] + summary.te[summary.te[,var.topic]=="作为教师，我的角色就是引导学生自行探究" & summary.te[,var.key]=="比较同意",var.param]`%认同教师的角色是引导学生自行探究；有`r summary.te[summary.te[,var.topic]=="在课堂上应尽可能多创造机会让学生向教师" & summary.te[,var.key]=="非常同意",var.param] + summary.te[summary.te[,var.topic]=="在课堂上应尽可能多创造机会让学生向教师" & summary.te[,var.key]=="比较同意",var.param]`%认同在课堂上应尽可能多创造机会让学生向教师提问；有`r summary.te[summary.te[,var.topic]=="对学生最大的期望在于通过教学使他们变得" & summary.te[,var.key]=="非常同意",var.param] + summary.te[summary.te[,var.topic]=="对学生最大的期望在于通过教学使他们变得" & summary.te[,var.key]=="比较同意",var.param]`%对学生最大的期望是通过教学使他们变得更爱学习。
-- 四年级教师的教学方式得到了学生比较高的评价，且教师的自我评估与学生的真切感受一致性程度相当高，教师群体已经形成比较明确的育人观和能力观。- 四年级教师专业发展的途径主要是与同事分享经验、讨论问题，观摩他人的课并在课后进行研讨以及参加学校或教研部门组织的教研活动；教师专业发展的需求主要集中在对个性化教学的方法，教学技能，所教学科领域知识及学生评价和测量方法；教师专业发展遇到的困难主要是缺乏专业活动的资金，时间的冲突及缺乏参加相关活动的机会。- 四年级教师有`r summary.te[summary.te[,var.topic]=="学校的课程建设思路与方案具有本校特色" & summary.te[,var.key]=="非常符合",var.param] + summary.te[summary.te[,var.topic]=="学校的课程建设思路与方案具有本校特色" & summary.te[,var.key]=="比较符合",var.param]`％认为学校的课程建设思路与方案具有本校特色。## 教师基本情况### 教师性别
-
-`r fig_name <- "四年级教师性别情况" `
-图\ref{fig:`r fig_name`}给出了四年级教师性别的总体情况及不同群体之间的比较。
-```{r teacher_gender.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "teacher_gender.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-### 教师教龄
-
-`r fig_name <- "四年级教师教龄情况" `
-图\ref{fig:`r fig_name`}给出了四年级教师教龄的总体情况及不同群体之间的比较。
-```{r teacher_years.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "teacher_years.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-### 教师专业职称
-
-`r fig_name <- "四年级教师专业职称情况" `
-图\ref{fig:`r fig_name`}给出了四年级教师职务（职称）的总体情况及不同群体之间的比较。
-```{r teacher_title.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "teacher_title.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-`r fig_name <- "小学教师专业职称情况" `
-图\ref{fig:`r fig_name`}给出了小学教师职称的总体情况。
-```{r teacher_all_title.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "teacher_all_title.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}### 教师学历
-
-`r fig_name <- "四年级教师学历情况（含在读）" `
-图\ref{fig:`r fig_name`}给出了四年级教师学历的总体情况及不同群体之间的比较。
-```{r teacher_edu.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "teacher_edu.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}\clearpage
-`r fig_name <- "小学教师学历情况（含在读）" `
-图\ref{fig:`r fig_name`}给出了小学教师学历的总体情况。
-```{r teacher_all_edu.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "teacher_all_edu.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}### 教师就职前是否接受过师范教育`r fig_name <- "四年级教师就职前是否接受过师范教育的情况" `
-图\ref{fig:`r fig_name`}给出了四年级教师在就职前是否接受过师范教育的总体情况及不同群体的比较。
-```{r teacher_normal_edu.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "teacher_normal_edu.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage ### 教师所教学科是否专业对口`r fig_name <- "四年级教师所教学科是否专业对口的情况" `
-图\ref{fig:`r fig_name`}给出了四年级教师所教学科是否专业对口的总体情况及不同群体的比较。
-```{r teacher_major_match.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "teacher_major_match.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-### 教师每周的上课节数`r fig_name <- "四年级教师每周的上课节数情况" `
-图\ref{fig:`r fig_name`}给出了四年级教师每周上课节数的总体情况及不同群体的比较。
-```{r teacher_weekly_hours.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "teacher_weekly_hours.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage### 教师每天的工作时间`r fig_name <- "四年级教师每天的工作时间情况" `
-图\ref{fig:`r fig_name`}给出了四年级教师每天工作时间的总体情况及不同群体的比较。
-```{r teacher_daily_hours.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "teacher_daily_hours.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-## 教师的职业感受 ### 教师职业喜爱程度`r fig_name <- "四年级教师对教师职业喜爱程度的情况" `
-图\ref{fig:`r fig_name`}给出了四年级教师对教师职业喜爱程度的总体情况及不同群体的比较。
-```{r teacher_job_favorite.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "teacher_job_favorite.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-`r fig_name <- "四年级教师的离职倾向情况" `
-图\ref{fig:`r fig_name`}给出了四年级教师离职倾向的总体情况及不同群体的比较。
-```{r teacher_job_quit.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "teacher_job_quit.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-### 教师工作感受`r fig_name <- "四年级教师对现有工作的感受情况" `
-图\ref{fig:`r fig_name`}给出了四年级教师对现有工作感受方面的总体情况。
-```{r teacher_feelings.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "teacher_feelings.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-## 与教师教学观念有关问题的调查结果
-
-`r fig_name <- "四年级教师教学观的情况" `
-图\ref{fig:`r fig_name`}描述了四年级教师教学观念的总体情况。
-```{r teacher_philosophy.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "teacher_philosophy.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-## 与教师教学方式有关问题的调查结果`r fig_name <- "四年级教师教学方式的情况" `
-图\ref{fig:`r fig_name`}描述了四年级教师教学方式的总体情况。
-```{r teacher_method.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "teacher_method.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage## 与教师专业发展有关问题的调查结果`r fig_name <- "四年级教师提高自身素养和教学水平参与专业活动的情况" `
-图\ref{fig:`r fig_name`}描述了四年级教师提高自身素养和教学水平参与专业活动的总体情况。
-```{r teacher_activity.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "teacher_activity.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-`r fig_name <- "四年级教师专业发展需求方面的情况" `
-图\ref{fig:`r fig_name`}描述了四年级教师专业发展需求方面的总体情况。
-```{r teacher_requirement.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "teacher_requirement.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-`r fig_name <- "四年级教师专业发展遇到的困难情况" `
-图\ref{fig:`r fig_name`}描述了四年级教师认为专业发展遇到的困难情况。
-```{r teacher_difficulty.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "teacher_difficulty.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-## 与课程领导力有关问题的调查结果`r fig_name <- "四年级教师对学校课程建设的感知情况" `
-图\ref{fig:`r fig_name`}描述了四年级教师对学校课程建设感知的总体情况。
-```{r teacher_course_development.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "teacher_course_development.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-
-`r fig_name <- "四年级教师对学校课程实施的感知情况" `
-图\ref{fig:`r fig_name`}描述了四年级教师对学校课程实施感知的总体情况。
-```{r teacher_course_implement.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "teacher_course_implement.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-`r fig_name <- "四年级教师对学校课程管理的感知情况" `
-图\ref{fig:`r fig_name`}描述了四年级教师对学校课程管理感知的总体情况。
-```{r teacher_course_management.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "teacher_course_management.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-`r fig_name <- "四年级教师对学校课程评价的感知情况" `
-图\ref{fig:`r fig_name`}描述了四年级教师对学校课程评价感知的总体情况。
-```{r teacher_course_evaluation.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "teacher_course_evaluation.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-
-# 校长背景问卷调查结果分析```{r survey.summary.table.pr, echo=TRUE, message=TRUE, include = FALSE, result="hide"}
-param.entry <- "survey.summary.table.pr"
-summary.pr  <- dataframe.table( report = report, param = report$param[[param.entry]])
-```
-校长问卷包括校长基本情况、校长日常工作、学校发展、学校办学成效、校长对学校满意度等方面。本章对校长问卷上的回答进行分析。以下是分析得到的主要结果：-  小学的女校长比例高于男校长。-  小学校长年龄主要分布在45-50，占`r summary.pr[summary.pr[,var.topic]=="校长年龄" & summary.pr[,var.key]=="45-50岁（含50岁）",var.param]`%。-  小学校长任职年限多为0-10年，占`r summary.pr[summary.pr[,var.topic]=="任职年限" & summary.pr[,var.key]=="5-10年（含5年）",var.param] + summary.pr[summary.pr[,var.topic]=="任职年限" & summary.pr[,var.key]=="5年以下",var.param]`%。-  小学校长的学历主要是本科，比例为`r summary.pr[summary.pr[,var.topic]=="校长学历" & summary.pr[,var.key]=="本科",var.param]`%，研究生学历的小学校长比例为`r summary.pr[summary.pr[,var.topic]=="校长学历" & summary.pr[,var.key]=="研究生",var.param]`%。-  小学校长的职级是二级及以上的比例为`r summary.pr[summary.pr[,var.topic]=="校长职级" & summary.pr[,var.key]=="二级",var.param] + summary.pr[summary.pr[,var.topic]=="校长职级" & summary.pr[,var.key]=="一级",var.param]`%。-  小学校龄在45年以上的占`r summary.pr[summary.pr[,var.topic]=="建校历史" & summary.pr[,var.key]=="46-60年",var.param] + summary.pr[summary.pr[,var.topic]=="建校历史" & summary.pr[,var.key]=="61年以上",var.param]`%，在15年以下的占`r summary.pr[summary.pr[,var.topic]=="建校历史" & summary.pr[,var.key]=="15年以下",var.param]`%。-  小学校长的日常工作中，参加会议的时间比例为`r summary.pr[summary.pr[,var.topic]=="会议" & summary.pr[,var.key]=="百分比",var.param]`%，给学生上课的时间比例为`r summary.pr[summary.pr[,var.topic]=="上课" & summary.pr[,var.key]=="百分比",var.param]`%，参加听课、评课及教研活动的时间比例为`r summary.pr[summary.pr[,var.topic]=="教研" & summary.pr[,var.key]=="百分比",var.param]`%，与教师交流、听取教师意见的时间比例为`r summary.pr[summary.pr[,var.topic]=="师生交流" & summary.pr[,var.key]=="百分比",var.param]`%，应对上级行政部门的检查和评估所占的时间比例为`r summary.pr[summary.pr[,var.topic]=="检查评估" & summary.pr[,var.key]=="百分比",var.param]`%，在科研、教学、资金使用方面的规划与审批所占的时间比例为`r summary.pr[summary.pr[,var.topic]=="资金审批" & summary.pr[,var.key]=="百分比",var.param]`%。-  近三年学校印刷学科交流与经验分享的成果集的数量在2本及以上的小学的比例分别为`r summary.pr[summary.pr[,var.topic]=="成果出版" & summary.pr[,var.key]=="4本及以上",var.param] + summary.pr[summary.pr[,var.topic]=="成果出版" & summary.pr[,var.key]=="3本",var.param] + summary.pr[summary.pr[,var.topic]=="成果出版" & summary.pr[,var.key]=="2本",var.param]`%；近三年学校根据学生学习需要，小学开设校本课程的数量11门以上占`r summary.pr[summary.pr[,var.topic]=="校本课程" & summary.pr[,var.key]=="11-20门",var.param] + summary.pr[summary.pr[,var.topic]=="校本课程" & summary.pr[,var.key]=="20门以上",var.param]`%；`r 100 - summary.pr[summary.pr[,var.topic]=="学生社团" & summary.pr[,var.key]=="没有",var.param] `%的小学建设了学生社团、兴趣小组和俱乐部。-  小学校长对学校教育各方面感受的评价普遍较高。\clearpage
-## 校长基本情况校长基本情况包括校长的性别、年龄、担任校长年限、学历、职称和职级。### 校长性别`r fig_name <- "小学校长性别" `
-图\ref{fig:`r fig_name`}给出了小学校长性别的总体情况及不同群体之间的比较。
-```{r principal_gender.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "principal_gender.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-### 校长年龄`r fig_name <- "小学校长年龄" `
-图\ref{fig:`r fig_name`}给出了小学校长年龄的总体情况及不同群体之间的比较。
-```{r principal_age.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "principal_age.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-### 校长任职年限`r fig_name <- "小学校长担任校长年限" `
-图\ref{fig:`r fig_name`}给出了小学校长任职年限的总体情况及不同群体之间的比较。
-```{r principal_years.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "principal_years.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-### 校长学历`r fig_name <- "小学校长学历" `
-图\ref{fig:`r fig_name`}给出了小学校长学历的总体情况及不同群体之间的比较。
-```{r principal_edu.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "principal_edu.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-### 校长的职级`r fig_name <- "小学校长的职级" `
-图\ref{fig:`r fig_name`}给出了小学校长职级的总体情况及不同群体之间的比较。
-```{r principal_title.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "principal_title.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-### 学校的校龄`r fig_name <- "小学学校的校龄" `
-图\ref{fig:`r fig_name`}给出了小学学校校龄的总体情况及不同群体之间的比较。
-```{r principal_school_history.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "principal_school_history.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-## 校长日常工作###校长参加会议的频率`r fig_name <- "小学校长参加各种会议的频率" `
-图\ref{fig:`r fig_name`}给出了小学校长参加各种会议频率的总体情况及各群体之间的比较。
-```{r principal_meeting.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "principal_meeting.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-### 校长给学生上课的频率`r fig_name <- "小学校长给学生上课的频率" `
-图\ref{fig:`r fig_name`}给出了小学校长给学生上课频率的总体情况及各群体之间的比较。
-```{r principal_instructing.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "principal_instructing.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage### 校长参加听课、评课及教研活动的频率`r fig_name <- "小学校长参加听课、评课及教研活动的频率" `
-图\ref{fig:`r fig_name`}给出了小学校长参加听课、评课及教研活动频率的总体情况及各群体之间的比较。
-```{r principal_researching.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "principal_researching.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-### 校长与教师交流，听取教师意见的频率`r fig_name <- "小学校长与教师交流，听取教师意见的频率" `图\ref{fig:`r fig_name`}给出了小学校长与教师交流，听取教师意见频率的总体情况及各群体之间的比较。
-```{r principal_communication.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "principal_communication.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-### 校长应对上级行政部门的检查和评估的频率`r fig_name <- "小学校长应对上级行政部门的检查、评估的频率" `
-图\ref{fig:`r fig_name`}给出了小学校长应对上级行政部门的检查、评估频率的总体情况及各群体之间的比较。
-```{r principal_evaluation.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "principal_evaluation.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-### 校长在科研、教学、资金使用方面的规划与审批的频率`r fig_name <- "小学校长在科研、教学、资金使用的方面的规划与审批的频率" `
-图\ref{fig:`r fig_name`}给出了小学校长在科研、教学、资金使用方面的规划与审批频率的总体情况及各群体之间的比较。
-```{r principal_financing.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "principal_financing.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage## 与学校发展有关问题的调查结果`r fig_name <- "小学校长对学校发展遇到的困难情况" `
-图\ref{fig:`r fig_name`}描述了小学校长对学校发展遇到的困难情况。
-```{r principal_challenge.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "principal_challenge.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-## 与学校办学成效有关问题的调查结果`r fig_name <- "小学学校近三年正式出版专门的学科交流与经验分享的成果集的数量" `
-图\ref{fig:`r fig_name`}描述了小学近三年正式出版专门的学科交流与经验分享的成果集的数量及与各群体之间的比较。
-```{r principal_publishing.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "principal_publishing.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage`r fig_name <- "小学学校近三年开设校本课程的数量的情况" `
-图\ref{fig:`r fig_name`}描述了小学根据学生学习需要，开设校本课程的数量及与各群体之间的比较。
-```{r principal_course.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "principal_course.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-`r fig_name <- "小学建设学生社团、兴趣小组和俱乐部数量的情况" `
-图\ref{fig:`r fig_name`}描述了小学建设学生社团、兴趣小组和俱乐部的数量及与各群体之间的比较。
-```{r principal_community.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "principal_community.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-## 与校长对学校感受有关情况的调查结果`r fig_name <- "小学校长对学校感受的情况" `
-图\ref{fig:`r fig_name`}给出了小学校长对学校感受的情况。
-```{r principal_feelings.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "principal_feelings.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-## 与校长的教学观相关问题的调查结果
-
-`r fig_name <- "小学校长教学观的情况" `
-图\ref{fig:`r fig_name`}给出了小学校长教学观的总体情况。
-```{r principal_philosophy.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "principal_philosophy.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-# 家长背景问卷调查结果分析
-
-家长问卷包括从家长的角度了解孩子的相关情况，如孩子睡眠时间、上床时间等，对孩子学业的预期，亲子关系以及对学校的满意度。本章对家长问卷的结果进行分析。以下是主要的分析结果：- 四年级学生家长中总是主动询问孩子在校情况的约`r summary.pa[summary.pa[,var.topic]=="主动询问" & summary.pa[,var.key]=="总是",var.param]`%，约`r summary.pa[summary.pa[,var.topic]=="主动询问" & summary.pa[,var.key]=="从不",var.param]`%的学生家长从不询问；
-- 四年级学生家长报告孩子总是参与家庭事务讨论的约`r summary.pa[summary.pa[,var.topic]=="家庭讨论" & summary.pa[,var.key]=="总是",var.param]`%，约`r summary.pa[summary.pa[,var.topic]=="家庭讨论" & summary.pa[,var.key]=="从不",var.param]`%的孩子从不参与讨论；
-- 家长反应四年级孩子平均每天在家做家务一小时以上的仅`r summary.pa[summary.pa[,var.topic]=="家务劳动" & summary.pa[,var.key]=="61分钟及以上",var.param]`%，劳动时间在30分钟到1小时间的约`r summary.pa[summary.pa[,var.topic]=="家务劳动" & summary.pa[,var.key]=="31-60分钟",var.param]`%，有`r summary.pa[summary.pa[,var.topic]=="家务劳动" & summary.pa[,var.key]=="几乎不用做",var.param]`%的孩子在家从来不做家务；
-- 调查表明四年级学生家长每周陪伴孩子共同活动（不含书面作业）时长在12小时以上的约`r summary.pa[summary.pa[,var.topic]=="家长陪伴" & summary.pa[,var.key]=="12小时及以上",var.param]`%，`r summary.pa[summary.pa[,var.topic]=="家长陪伴" & summary.pa[,var.key]=="3小时以内",var.param]`%的家长表示陪伴时间不超过三小时；
-- 四年级学生家庭中家长与孩子每天都要吵架的比例约占`r summary.pa[summary.pa[,var.topic]=="吵架频率" & summary.pa[,var.key]=="每天吵架",var.param]`%，有`r summary.pa[summary.pa[,var.topic]=="吵架频率" & summary.pa[,var.key]=="几乎不吵架或从不吵架",var.param]`%的家长反应与孩子几乎不吵架或从不吵架；
-- 四年级学生家长对孩子的教育期望普遍较高，`r summary.pa[summary.pa[,var.topic]=="您期待孩子将来上学上到什么程度" & summary.pa[,var.key]=="大学本科",var.param] + summary.pa[summary.pa[,var.topic]=="您期待孩子将来上学上到什么程度" & summary.pa[,var.key]=="硕士",var.param] + summary.pa[summary.pa[,var.topic]=="您期待孩子将来上学上到什么程度" & summary.pa[,var.key]=="博士",var.param]`%以上的家长希望孩子读到大学本科以上，`r summary.pa[summary.pa[,var.topic]=="您期待孩子将来上学上到什么程度" & summary.pa[,var.key]=="博士",var.param]`%的家长希望孩子能读完博士；
-- 学生家长心目中理想的小学最重要的特征中，`r summary.pa[summary.pa[,var.topic]=="理想学校" & summary.pa[,var.key]=="师资力量比较强",var.param]`%的家长希望师资力量比较强，`r summary.pa[summary.pa[,var.topic]=="理想学校" & summary.pa[,var.key]=="学校办理理念好",var.param]`%的家长希望办学理念比较好，`r summary.pa[summary.pa[,var.topic]=="理想学校" & summary.pa[,var.key]=="有较多的特色课程",var.param]`%的家长希望有较多的特色课程。
-
-\clearpage
-## 家庭结构`r fig_name <- "学生的家庭结构情况" `
-图\ref{fig:`r fig_name`}给出了学生的家庭结构\footnote{其中核心家庭指的是孩子平时和父亲、母亲或父母双方以及兄弟姐妹生活在一起的家庭。主干家庭指的是孩子平时和除了父亲、母亲、兄弟姐妹以外还有（外）祖父母一起生活的家庭。扩大家庭指的是孩子平时除父母、兄弟姐妹、（外）祖父母以外还有其他人一起生活的家庭。}的总体情况及各群体之间的比较。
-```{r family_structure.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "family_structure.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-## 与亲子关系有关问题的调查`r fig_name <- "家长主动询问孩子在校发生情况" `
-图\ref{fig:`r fig_name`}给出了家长主动询问孩子在校情况及各群体之间的比较。
-```{r query_about_school.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "query_about_school.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage`r fig_name <- "给出了家长认为孩子参与家庭事务讨论的情况" `
-图\ref{fig:`r fig_name`}给出了家长报告孩子参与家庭事务讨论的总体情况及各群体之间的比较。
-```{r family_discuss.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "family_discuss.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-`r fig_name <- "家长认为孩子平均每天在家做家务情况" `
-图\ref{fig:`r fig_name`}给出了孩子平均每天在家做家务的总体情况及各群体之间的比较。
-```{r family_work.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "family_work.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-`r fig_name <- "家长每周陪孩子共同活动的情况" `
-图\ref{fig:`r fig_name`}给出了家长每周陪孩子共同活动（不含做书面作业）的情况
-```{r parent_accompany.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "parent_accompany.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-`r fig_name <- "家长与孩子吵架频率的总体情况" `
-图\ref{fig:`r fig_name`}给出了家长与孩子吵架频率的总体情况
-```{r quarrel_frequency.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "quarrel_frequency.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-`r fig_name <- "家长与孩子吵架程度的总体情况" `
-图\ref{fig:`r fig_name`}给出了家长与孩子吵架程度的总体情况
-```{r quarrel_level.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "quarrel_level.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}## 与家长辅导有关问题的调查结果`r fig_name <- "家长辅导有关问题的总体情况" `
-图\ref{fig:`r fig_name`}给出了与家长辅导有关问题的总体情况
-```{r family_coach.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "family_coach.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}\clearpage
-`r fig_name <- "家里负责孩子学习的人的总体情况" `
-图\ref{fig:`r fig_name`}给出了学生家里负责孩子学习的人的总体情况
-```{r family_coach_person.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "family_coach_person.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-## 与家长对学校教育感受问题的调查结果`r fig_name <- "家长对学校教育感受的情况" `
-图\ref{fig:`r fig_name`}给出了家长对学校教育感受的情况。
-```{r parent_feeling.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "parent_feeling.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage
-## 与家长教育期望有关问题的调查结果`r fig_name <- "家长在教育期望方面的总体情况" `
-图\ref{fig:`r fig_name`}给出了家长在教育期望方面的总体情况
-```{r parent_expection.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "parent_expection.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-## 与家长教育观有关问题的调查结果`r fig_name <- "家长教育观的总体情况" `
-图\ref{fig:`r fig_name`}给出了家长教育观的总体情况
-```{r parent_philosophy.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "parent_philosophy.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\clearpage`r fig_name <- "家长心目中理想的小学，最重要的前三项特征" `
-图\ref{fig:`r fig_name`}给出了家长心目中理想的小学，最重要的前三项特征的总体情况
-```{r school_reasonable.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- "school_reasonable.bar"
-fig_file  <- plot.figure( report = report, plot.in = report$plot[[plot.entry]] ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}

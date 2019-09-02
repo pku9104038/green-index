@@ -140,7 +140,7 @@ table.district.en.E8AS20111
 plot.bar.district.en.question.E8AO07111
 
 \begin{itshape}
-在本次测试中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO07111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO07111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO07111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO07111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO07111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO07111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO07111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO07111_X", "区","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.district.en.question.E8AO07111
@@ -169,7 +169,7 @@ query2.plot.bar.district.en.question.E8AO07111
 plot.bar.district.en.question.E8AO08111
 
 \begin{itshape}
-在本次测试中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO08111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO08111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO08111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO08111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO08111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO08111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO08111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO08111_X", "区","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.district.en.question.E8AO08111
@@ -234,7 +234,7 @@ Travel agency:	& John Locke Travel Service \\
 plot.bar.district.en.question.E8AS18111
 
 \begin{itshape}
-在本次测试中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AS18111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS18111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS18111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS18111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AS18111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS18111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS18111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS18111_X", "区","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.district.en.question.E8AS18111
@@ -267,7 +267,7 @@ I have to be in Paris on the eleventh of March ...\\ \hline
 plot.bar.district.en.question.E8AS19111
 
 \begin{itshape}
-在本次测试中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AS19111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS19111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS19111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS19111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AS19111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS19111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS19111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS19111_X", "区","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.district.en.question.E8AS19111
@@ -450,7 +450,7 @@ The new park covers \uline{\qquad\qquad} area of 60 square kilometres.
 plot.bar.district.en.question.E8AO21111
 
 \begin{itshape}
-在本次测试中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO21111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO21111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO21111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO21111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO21111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO21111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO21111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO21111_X", "区","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.district.en.question.E8AO21111
@@ -477,7 +477,7 @@ Jon is fond \uline{\qquad\qquad} sports. He often skates and plays ball games.
 plot.bar.district.en.question.E8AO22111
 
 \begin{itshape}
-在本次测试中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO22111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO22111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO22111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO22111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO22111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO22111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO22111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO22111_X", "区","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.district.en.question.E8AO22111
@@ -505,7 +505,7 @@ The pictures in the menu look \uline{\qquad\qquad} and the taste must be great.
 plot.bar.district.en.question.E8AO23111
 
 \begin{itshape}
-在本次测试中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO23111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO23111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO23111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO23111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO23111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO23111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO23111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO23111_X", "区","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.district.en.question.E8AO23111
@@ -536,7 +536,7 @@ Is there much \uline{\qquad\qquad} about saving water in this article?
 plot.bar.district.en.question.E8AO24111
 
 \begin{itshape}
-在本次测试中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO24111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO24111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO24111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO24111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO24111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO24111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO24111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO24111_X", "区","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.district.en.question.E8AO24111
@@ -566,7 +566,7 @@ This pair of glasses can let you \uline{\qquad\qquad} both near and far things a
 plot.bar.district.en.question.E8AO29111
 
 \begin{itshape}
-在本次测试中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO29111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO29111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO29111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO29111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO29111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO29111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO29111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO29111_X", "区","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.district.en.question.E8AO29111
@@ -595,7 +595,7 @@ My brother practices \uline{\qquad\qquad} the violin for two hours every day.
 plot.bar.district.en.question.E8AO33111
 
 \begin{itshape}
-在本次测试中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO33111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO33111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO33111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO33111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO33111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO33111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO33111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO33111_X", "区","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.district.en.question.E8AO33111
@@ -619,7 +619,7 @@ Kitty took some \uline{\qquad\qquad} for the English Club on the Open Day. (phot
 plot.bar.district.en.question.E8AS46111
 
 \begin{itshape}
-在本次测试中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AS46111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS46111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS46111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS46111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AS46111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS46111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS46111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS46111_X", "区","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.district.en.question.E8AS46111
@@ -642,7 +642,7 @@ It is \uline{\qquad\qquad} to succeed without working hard. (possible)
 plot.bar.district.en.question.E8AS49111
 
 \begin{itshape}
-在本次测试中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AS49111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS49111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS49111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS49111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AS49111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS49111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS49111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS49111_X", "区","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.district.en.question.E8AS49111
@@ -840,7 +840,7 @@ E8AO63111
 plot.bar.district.en.question.E8AO56111
 
 \begin{itshape}
-在本次测试中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO56111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO56111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO56111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO56111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO56111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO56111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO56111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO56111_X", "区","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.district.en.question.E8AO56111
@@ -860,7 +860,7 @@ query2.plot.bar.district.en.question.E8AO56111
 plot.bar.district.en.question.E8AO59111
 
 \begin{itshape}
-在本次测试中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO59111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO59111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO59111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO59111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO59111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO59111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO59111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO59111_X", "区","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.district.en.question.E8AO59111
@@ -880,7 +880,7 @@ query2.plot.bar.district.en.question.E8AO59111
 plot.bar.district.en.question.E8AO60111
 
 \begin{itshape}
-在本次测试中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO60111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO60111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO60111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO60111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO60111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO60111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO60111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO60111_X", "区","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.district.en.question.E8AO60111
@@ -899,7 +899,7 @@ query2.plot.bar.district.en.question.E8AO60111
 plot.bar.district.en.question.E8AO62111
 
 \begin{itshape}
-在本次测试中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO62111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO62111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO62111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO62111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO62111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO62111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO62111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO62111_X", "区","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.district.en.question.E8AO62111
@@ -919,7 +919,7 @@ query2.plot.bar.district.en.question.E8AO62111
 plot.bar.district.en.question.E8AO63111
 
 \begin{itshape}
-在本次测试中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO63111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO63111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO63111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO63111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO63111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO63111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO63111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO63111_X", "区","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.district.en.question.E8AO63111
@@ -998,7 +998,7 @@ If you are going to play soccer, who will you invite to join you?
 plot.bar.district.en.question.E8AO65111
 
 \begin{itshape}
-在本次测试中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO65111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO65111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO65111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO65111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO65111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO65111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO65111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO65111_X", "区","总体","D")`\%。
 \end{itshape}
 
 
@@ -1018,7 +1018,7 @@ query2.plot.bar.district.en.question.E8AO65111
 plot.bar.district.en.question.E8AO66111
 
 \begin{itshape}
-在本次测试中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO66111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO66111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO66111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO66111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO66111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO66111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO66111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO66111_X", "区","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.district.en.question.E8AO66111
@@ -1061,7 +1061,7 @@ Which of the following statements is right?
 plot.bar.district.en.question.E8AO70111
 
 \begin{itshape}
-在本次测试中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO70111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO70111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO70111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO70111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO70111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO70111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO70111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO70111_X", "区","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.district.en.question.E8AO70111
@@ -1138,7 +1138,7 @@ According to the last paragraph, what will the writer probably say to her parent
 plot.bar.district.en.question.E8AO71111
 
 \begin{itshape}
-在本次测试中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO71111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO71111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO71111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO71111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO71111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO71111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO71111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO71111_X", "区","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.district.en.question.E8AO71111
@@ -1157,7 +1157,7 @@ query2.plot.bar.district.en.question.E8AO71111
 plot.bar.district.en.question.E8AO72111
 
 \begin{itshape}
-在本次测试中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO72111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO72111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO72111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO72111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO72111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO72111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO72111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO72111_X", "区","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.district.en.question.E8AO72111
@@ -1177,7 +1177,7 @@ query2.plot.bar.district.en.question.E8AO72111
 plot.bar.district.en.question.E8AO74111
 
 \begin{itshape}
-在本次测试中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO74111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO74111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO74111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO74111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO74111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO74111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO74111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO74111_X", "区","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.district.en.question.E8AO74111

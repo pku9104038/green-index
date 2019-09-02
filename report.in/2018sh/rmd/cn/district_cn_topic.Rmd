@@ -118,7 +118,7 @@ C. \quad \CJKunderdot{增}加 \qquad \CJKunderdot{僧}人 \qquad \CJKunderdot{�
 plot.bar.district.cn.question.C8AO01111
 
 \begin{itshape}
-在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，语文总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "区","总体","D")`\%。
 \end{itshape}
 
 - 答错原因分析及教学建议：
@@ -150,7 +150,7 @@ plot.bar.district.cn.question.C8AO01111
 plot.bar.district.cn.question.C8AO09111
 
 \begin{itshape}
-在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，语文总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "区","总体","D")`\%。
 \end{itshape}
 
 - 答错原因分析及教学建议：
@@ -181,7 +181,7 @@ plot.bar.district.cn.question.C8AO09111
 plot.bar.district.cn.question.C8AO11111
 
 \begin{itshape}
-在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，语文总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "区","总体","D")`\%。
 \end{itshape}
 
 - 答错原因分析及教学建议：
@@ -321,7 +321,7 @@ C.屠\CJKunderdot{暴}起 & 暴：突然 & D.一狼\CJKunderdot{洞}其中 & 洞
 plot.bar.district.cn.question.C8AO16111
 
 \begin{itshape}
-在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，语文总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "区","总体","D")`\%。
 \end{itshape}
 
 - 答错原因分析及教学建议：
@@ -350,7 +350,7 @@ D. 一只狼径直离开了，他的前面有一只狗蹲坐着
 plot.bar.district.cn.question.C8AO18111
 
 \begin{itshape}
-在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，语文总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "区","总体","D")`\%。
 \end{itshape}
 
 \mytext
@@ -436,7 +436,7 @@ D. 狼拔出木栓，拖着镣铐，回到草原
 plot.bar.district.cn.question.C8AO24111
 
 \begin{itshape}
-在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，语文总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "区","总体","D")`\%。
 \end{itshape}
 
 - 答错原因分析及教学建议 ：
@@ -465,7 +465,7 @@ D. “兴高采烈”是“我”对白头翁情绪的主观推测
 plot.bar.district.cn.question.C8AO25111
 
 \begin{itshape}
-在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，语文总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "区","总体","D")`\%。
 \end{itshape}
 
 - 答错原因分析及教学建议 ：
@@ -495,7 +495,7 @@ D. 养不家的那些家伙们，活得虽然很艰难，却自有一番与天�
 plot.bar.district.cn.question.C8AO26111
 
 \begin{itshape}
-在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，语文总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "区","总体","D")`\%。
 \end{itshape}
 
 - 答错原因分析及教学建议
@@ -523,7 +523,7 @@ A.甲处 & B.乙处 & C.丙处 & D.丁处 \\
 plot.bar.district.cn.question.C8AO27111
 
 \begin{itshape}
-在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，语文总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "区","总体","D")`\%。
 \end{itshape}
 
 - 答错原因分析及教学建议 ：
@@ -553,7 +553,7 @@ D. 天下无纯粹之自由，亦无纯粹之不自由（章太炎）
 plot.bar.district.cn.question.C8AO28111
 
 \begin{itshape}
-在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "区","总体","D")`\%。
+本市参加测试的全体学生中，语文总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "区","总体","D")`\%。
 \end{itshape}
 
 - 答错原因分析及教学建议 ：

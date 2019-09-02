@@ -955,7 +955,7 @@ global:
         idx_writing_homework: &idx_writing_homework
           - "作业指数"
         idx_morality: &idx_morality
-          - "品德行为指数"
+          - "品德与社会化行为指数"
         idx_psychological: &idx_psychological
           - "心理健康指数"
         idx_teacher: &idx_teacher

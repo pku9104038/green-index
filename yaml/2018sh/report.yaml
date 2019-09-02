@@ -335,7 +335,7 @@ report:
         - "district_ar_topic.rmd"
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标综合评价"
       tier: *kStatTierSchool
       subdir: "sch"
@@ -357,37 +357,39 @@ report:
         - "school_en_description.rmd"
         - "school_sc_description.rmd"
         - "school_ar_description.rmd"
-        - "school_base_score.rmd"
+
+        # - "school_base_score.rmd"
 
         - "school_cn_dimention.rmd"
         - "school_cn_topic.rmd"
 
-        - "school_ma_dimention.rmd"
-        - "school_ma_topic.rmd"
+        # - "school_ma_dimention.rmd"
+        # - "school_ma_topic.rmd"
 
-        - "school_en_dimention.rmd"
-        - "school_en_topic.rmd"
+        # - "school_en_dimention.rmd"
+        # - "school_en_topic.rmd"
 
-        - "school_sc_dimention.rmd"
-        - "school_sc_topic.rmd"
+        # - "school_sc_dimention.rmd"
+        # - "school_sc_topic.rmd"
 
-        - "school_ar_dimention.rmd"
-        - "school_ar_topic.rmd"
+        # - "school_ar_dimention.rmd"
+        # - "school_ar_topic.rmd"
 
-        - "school_survey_student.rmd"
-        - "school_survey_parent.rmd"
+        # - "school_survey_student.rmd"
+        # - "school_survey_parent.rmd"
 
-        - "school_index_score.rmd"
-        - "school_index_health.rmd"
-        - "school_index_morality.rmd"
-        - "school_index_motivation.rmd"
-        - "school_index_identity.rmd"
-        - "school_index_pressure.rmd"
-        - "school_index_teacher.rmd"
-        - "school_index_principal.rmd"
-        - "school_index_equity.rmd"
-        ##  - "school_index_timespan.rmd"
-        - "school_index_radar.rmd"
+        # - "school_index_score.rmd"
+        # - "school_index_health.rmd"
+        # - "school_index_morality.rmd"
+        # - "school_index_motivation.rmd"
+        # - "school_index_identity.rmd"
+        # - "school_index_pressure.rmd"
+        # - "school_index_teacher.rmd"
+        # - "school_index_principal.rmd"
+        ### - "school_index_equity.rmd"
+        ###  - "school_index_timespan.rmd"
+        # - "school_index_radar.rmd"
+
         - "school_index_citation.Rmd"
 
     -

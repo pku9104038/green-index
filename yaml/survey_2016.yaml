@@ -1211,7 +1211,7 @@ global:
             - "学业负担综合系数"
             
           idx_morality: &idx_morality
-            - "品德行为指数"
+            - "品德与社会化行为指数"
           coef_morality: &coef_morality
             - "品德行为系数"
 
@@ -20936,7 +20936,7 @@ report:
               ylim: *axisy_ylim
 
         student.morality.bar: 
-          fig.name: "四年级学生品德行为指数"
+          fig.name: "四年级学生品德与社会化行为指数"
           data:
             digits: *plot_data_digits
             filter:
@@ -21094,7 +21094,7 @@ report:
               width: *plot_bar_width
             label:
               xlab: ""
-              ylab: "品德行为指数"
+              ylab: "品德与社会化行为指数"
             axisx:
               text_angle: *plot_lab_angle
               text_size: *plot_lab_size
@@ -38973,7 +38973,7 @@ report:
               ylim: *axisy_ylim
         
         student.morality.bar.perspective: 
-          fig.name: "不同群体四年级品德行为指数"
+          fig.name: "不同群体四年级品德与社会化行为指数"
           data:
             digits: *plot_data_digits
             filter:
@@ -39083,7 +39083,7 @@ report:
               width: *plot_bar_width
             label:
               xlab: ""
-              ylab: "品德行为指数"
+              ylab: "品德与社会化行为指数"
             axisx:
               text_angle: *plot_lab_angle
               text_size: *plot_lab_size
@@ -39091,7 +39091,7 @@ report:
               ylim: *axisy_ylim
 
         student.morality.bar: 
-          fig.name: "四年级品德行为指数"
+          fig.name: "四年级品德与社会化行为指数"
           entry: "student.morality.bar"
           ext.tex: ".tex"
           ext.fig: ".pdf"
@@ -39147,7 +39147,7 @@ report:
               width: *plot_bar_width
             label:
               xlab: ""
-              ylab: "品德行为指数"
+              ylab: "品德与社会化行为指数"
             axisx:
               text_angle: *plot_multi_fig_lab_angle
               text_size: *plot_multi_fig_lab_size

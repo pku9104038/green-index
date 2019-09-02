@@ -86,10 +86,10 @@ A．$m^5$ & B．$m^6$ &  C．$m^8$ & D．$m^9$ \\
 plot.bar.school.ma.question.M8AO02111
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO02111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO02111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO02111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO02111_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO02111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO02111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO02111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO02111_X", "学校","总体","D")`\%。
 \end{itshape}
 
-- 错因分析与教学建议：
+- 错因分析与教学建议（全市）：
 
 本题是关于幂的乘方的选择题，学生需要掌握幂的乘方的运算性质，幂的乘方的运算性质是单项式乘除运算的基础。从学生作答情况来看，正确率比较高，有少部分作答错误的学生选了D，是把指数相乘和指数乘方搞混淆了，说明这部分学生没有真正理解乘方的运算性质，甚至也没有掌握其它关于幂的一些运算性质。
 在幂的乘方的教学中，要让学生经历探索幂的乘方这一性质的过程，帮助学生正确识别幂的“底数”、幂的“指数”、乘方的“指数”，从本质上理解乘方的意义和幂的乘方的运算性质。在练习中需要适当增加与其它幂的运算性质的比较，要鼓励学生不仅会套用公式，还要能正确说明每一步计算的理由。
@@ -125,10 +125,10 @@ A．${x=-2}$； & B．$x=2$； & C．$x=4$；& D．$x=6$ \\
 plot.bar.school.ma.question.M8AO06111
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO06111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO06111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO06111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO06111_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO06111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO06111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO06111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO06111_X", "学校","总体","D")`\%。
 \end{itshape}
 
-- 错因分析与教学建议：
+- 错因分析与教学建议（全市）：
 
 本题一部分同学错选了C的原因主要有两个，一是解无理方程过程中将方程两边平方时，仅仅将带有根号的一边平方，另一边数字未平方；二是解无理方程过程中，一个必不可少的步骤——验根没有进行。本题的错误反映出部分学生没有掌握基本运算技能。
 
@@ -165,10 +165,10 @@ C．\textit{任何一个三角形的三个内角和都是180$\degree$} &  D．\t
 plot.bar.school.ma.question.M8AO11111
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO11111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO11111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO11111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO11111_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO11111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO11111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO11111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO11111_X", "学校","总体","D")`\%。
 \end{itshape}
 
-- 错因分析与教学建议：
+- 错因分析与教学建议（全市）：
 
 本题主要考查的是判断一个事件是否是随机事件，先要懂得随机事件的概念，再根据具体的事件判断是否是随机事件。随机事件的可能性大小有大有小，可以用概率来度量随机事件可能性的大小。本题要求学生用学过的数学知识来判断随机事件，选项A、B为代数背景下随机事件的判定，选项C、D为几何背景下的随机事件的判定，学生需要真正懂得随机事件概念为在一定条件下可能出现也可能不出现的现象，它发生的概率在$0-1$之间。
 
@@ -272,7 +272,7 @@ A．\textit{第一、二象限；} & B．\textit{第一、三象限；} & C．\t
 plot.bar.school.ma.question.M8AO10111
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO10111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO10111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO10111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO10111_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO10111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO10111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO10111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO10111_X", "学校","总体","D")`\%。
 \end{itshape}
 
 - 错因分析及教学建议：
@@ -310,7 +310,7 @@ C．$\angle{BAC}=90\degree$   & D．$\angle{ABC}=45\degree$ \\
 plot.bar.school.ma.question.M8AO15111
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO15111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO15111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO15111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO15111_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO15111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO15111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO15111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO15111_X", "学校","总体","D")`\%。
 \end{itshape}
 
 - 错因分析及教学建议：
@@ -348,7 +348,7 @@ plot.bar.school.ma.question.M8AO15111
 plot.bar.school.ma.question.M8AO16111
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO16111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO16111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO16111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO16111_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO16111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO16111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO16111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO16111_X", "学校","总体","D")`\%。
 \end{itshape}
 
 - 错因分析及教学建议：
@@ -390,7 +390,7 @@ plot.bar.school.ma.question.M8AO16111
 plot.bar.school.ma.question.M8AO18111
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO18111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO18111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO18111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO18111_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO18111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO18111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO18111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO18111_X", "学校","总体","D")`\%。
 \end{itshape}
 
 - 错因分析及教学建议：
@@ -446,10 +446,10 @@ plot.bar.school.ma.question.M8AO18111
 plot.bar.school.ma.question.M8AS19211
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS19211_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS19211_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS19211_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS19211_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS19211_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS19211_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS19211_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS19211_X", "学校","总体","D")`\%。
 \end{itshape}
 
-- 错因分析与教学建议：
+- 错因分析与教学建议（全市）：
 
 本题主要考查分式方程的解法，需要学生掌握解分式方程的基本方法，理解分式方程增根产生的原因，会检验根的合理性。得2分的学生中部分学生是因为错选了整式方程，但是正确求解了错选的方程，部分学生选对了分式方程，但是求解出错，但能正确去分母化简到整式方程，部分得3分的学生是没有进行检验或检验错误。
 
@@ -513,7 +513,7 @@ plot.bar.school.ma.question.M8AS19211
 plot.bar.school.ma.question.M8AS20111
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS20111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS20111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS20111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS20111_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS20111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS20111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS20111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS20111_X", "学校","总体","D")`\%。
 \end{itshape}
 
 - 错因分析及教学建议：
@@ -554,7 +554,7 @@ plot.bar.school.ma.question.M8AS20111
 plot.bar.school.ma.question.M8AS20211
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS20211_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS20211_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS20211_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS20211_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS20211_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS20211_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS20211_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS20211_X", "学校","总体","D")`\%。
 \end{itshape}
 
 - 错因分析及教学建议：  
@@ -615,7 +615,7 @@ plot.bar.school.ma.question.M8AS20211
 plot.bar.school.ma.question.M8AS22111
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS22111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS22111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS22111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS22111_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS22111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS22111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS22111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS22111_X", "学校","总体","D")`\%。
 \end{itshape}
 
 - 错因分析及教学建议：
@@ -705,10 +705,10 @@ table.school.ma.M8AS23111
 plot.bar.school.ma.question.M8AO04111
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO04111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO04111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO04111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO04111_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AO04111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO04111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO04111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AO04111_X", "学校","总体","D")`\%。
 \end{itshape}
 
-- 错因分析与教学建议：
+- 错因分析与教学建议（全市）：
 
 本题主要考查的是用有理数来估计一个无理数的大致范围，先要理解 的意义是求2的算术平方根，再根据算术平方根的意义用逼近的方法来估算它的范围作出正确的选择。从学生作答情况来看，正确率比较高，有少部分错误的学生选了A，是没有正确估计 的大小，或者是不理解0不是正整数。估算是现实生活中常用的方法，它体现了数学与生活的联系，所以在教学中要结合具体的情境体现估算的意义，帮助学生理解实数的分类、无理数、平方根等概念，懂得估算的方法，形成估算的意识。
 
@@ -740,10 +740,10 @@ plot.bar.school.ma.question.M8AO04111
 plot.bar.school.ma.question.M8AS19111
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS19111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS19111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS19111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS19111_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS19111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS19111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS19111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS19111_X", "学校","总体","D")`\%。
 \end{itshape}
 
-- 错因分析与教学建议：
+- 错因分析与教学建议（全市）：
 
 本题主要考查的是分式方程的概念，需要学生了解分式方程和其它方程的区别。从学生作答情况来看，正确率比较高，但仍有部分学生没有理解分式方程概念的本质，仅看到第一个方程含有分母，就误认为该方程是分式方程。
 
@@ -781,10 +781,10 @@ plot.bar.school.ma.question.M8AS19111
 plot.bar.school.ma.question.M8AS22211
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS22211_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS22211_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS22211_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS22211_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS22211_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS22211_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS22211_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS22211_X", "学校","总体","D")`\%。
 \end{itshape}
 
-- 错因分析与教学建议：
+- 错因分析与教学建议（全市）：
 
 本题主要考查的是要求学生在第（1）小题所画的图形的基础上，添加辅助线计算线段$AD$的长度。学生主要存在以下问题：
 
@@ -864,7 +864,7 @@ plot.bar.school.ma.question.M8AS22211
 plot.bar.school.ma.question.M8AS23111
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS23111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS23111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS23111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS23111_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS23111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS23111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS23111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS23111_X", "学校","总体","D")`\%。
 \end{itshape}
 
 - 错因分析及教学建议：
@@ -970,7 +970,7 @@ table.school.ma.M8AS21311
 plot.bar.school.ma.question.M8AS21111
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS21111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21111_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS21111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21111_X", "学校","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.school.ma.question.M8AS21111
@@ -982,7 +982,7 @@ query2.plot.bar.school.ma.question.M8AS21111
 plot.bar.school.ma.question.M8AS21211
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS21211_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21211_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21211_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21211_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS21211_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21211_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21211_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21211_X", "学校","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.school.ma.question.M8AS21211
@@ -991,7 +991,7 @@ query2.plot.bar.school.ma.question.M8AS21211
 第（2）题的平均得分率为`r gio.R$VarTierSamKey(query.data, "M8AS21211_X", "学校","总体","总体")`\%，平均得分是`r round(gio.R$VarTierSamKey(query.data, "M8AS21211_X", "学校","总体","总体")*2/100.0, 2)`分，其中有`r gio.R$VarTierSamKey(query2.data, "M8AS21211_X", "学校","总体","2")`\%的学生得满分2分，其它`r gio.R$VarTierSamKey(query2.data, "M8AS21211_X", "学校","总体","0")`\%得0分。学生出现的典型错误有: $y=3x$、$\displaystyle x=\frac{y_{2}-50}{3}$、$y_{2}=50-x$、$\displaystyle x=\frac{y_{2}+50}{3}$。
 \end{itshape}
 
-- 错因分析与教学建议：
+- 错因分析与教学建议（全市）：
 
 本题两小题主要考查用正比例函数、一次函数模型解决解决简单实际问题，学生需要在实际问题（无人机的上升高度）中正确求出函数解析式。它对于学生的阅读能力有一定的要求，要求学生通过阅读题意，正确找到等量关系，并能将文字语言表述的等量关系转化为数学符号语言。
 
@@ -1040,14 +1040,14 @@ query2.plot.bar.school.ma.question.M8AS21211
 plot.bar.school.ma.question.M8AS21311
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS21311_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21311_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21311_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21311_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS21311_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21311_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21311_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21311_X", "学校","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.school.ma.question.M8AS21311
 
 本题的平均得分率为`r gio.R$VarTierSamKey(query.data, "M8AS21311_X", "学校","总体","总体")`\%，平均得分是`r round(gio.R$VarTierSamKey(query.data, "M8AS21311_X", "学校","总体","总体")*3/100.0, 2)`分，其中有`r gio.R$VarTierSamKey(query2.data, "M8AS21311_X", "学校","总体","3")`\%的学生得满分3分，其它得分分别是：`r gio.R$VarTierSamKey(query2.data, "M8AS21311_X", "学校","总体","2")`\%得2分、`r gio.R$VarTierSamKey(query2.data, "M8AS21311_X", "学校","总体","1")`\%得1分、`r gio.R$VarTierSamKey(query2.data, "M8AS21311_X", "学校","总体","0")`\%得0分。
 
-- 错因分析与教学建议：
+- 错因分析与教学建议（全市）：
 
 本题主要考查用正比例函数、一次函数模型解决解决简单实际问题，学生需要利用前两问求出函数解析式来解决一些简单的实际问题。
 
@@ -1118,7 +1118,7 @@ query2.plot.bar.school.ma.question.M8AS21311
 plot.bar.school.ma.question.M8AS24111
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS24111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24111_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS24111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24111_X", "学校","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.school.ma.question.M8AS24111
@@ -1126,12 +1126,12 @@ query2.plot.bar.school.ma.question.M8AS24111
 plot.bar.school.ma.question.M8AS24121
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS24121_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24121_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24121_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24121_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS24121_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24121_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24121_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24121_X", "学校","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.school.ma.question.M8AS24121
 
-- 错因分析与教学建议：
+- 错因分析与教学建议（全市）：
 
 本题对学生的学习能力有一定要求，要求学生通过阅读试题，理解“新概念”，即“平移量”与“平移量”加法运算的含义。并从一个具体的点出发，考查学生对“新概念”的理解是否正确。
 
@@ -1209,12 +1209,12 @@ query2.plot.bar.school.ma.question.M8AS24121
 plot.bar.school.ma.question.M8AS24211
 
 \begin{itshape}
-在本次测试中，数学总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS24211_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24211_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24211_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24211_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS24211_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24211_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24211_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24211_X", "学校","总体","D")`\%。
 \end{itshape}
 
 query2.plot.bar.school.ma.question.M8AS24211
 
-- 错因分析与教学建议：
+- 错因分析与教学建议（全市）：
 
 本题对学生的高层次思维能力提出要求，需要学生阅读学习“新概念”，并运用这一“概念”去解决问题。在这一过程中，需要学生有较强的数学理解与表达能力。
 

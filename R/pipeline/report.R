@@ -76,12 +76,15 @@ GreenIndexReport <- setRefClass(
                        config$GetDirReportOut(),
                        config$GetDirFigure())
       system(command = command)
-      command <- paste0("cp ", config$GetDirReportIn(),
-                        config$GetDirFigure(), subdir,
-                        "/* ", 
-                        config$GetDirReportOut(),
-                        config$GetDirFigure())
-      system(command = command)
+      # for (i in 1:length(subdir)) {
+        command <- paste0("cp ", config$GetDirReportIn(),
+                          config$GetDirFigure(), subdir,
+                          "/* ", 
+                          config$GetDirReportOut(),
+                          config$GetDirFigure())
+        system(command = command)
+      # }
+      
     },
     
     CopyRmarkdownDir = function(subdir) {
@@ -94,12 +97,17 @@ GreenIndexReport <- setRefClass(
                         config$GetDirReportOut(),
                         config$GetDirRmarkdown())
       system(command = command)
-      command <- paste0("cp ", config$GetDirReportIn(),
-                        config$GetDirRmarkdown(), subdir,
-                        "/* ", 
-                        config$GetDirReportOut(),
-                        config$GetDirRmarkdown())
-      system(command = command)
+      
+      # for (i in 1:length(subdir)) {
+        command <- paste0("cp ", config$GetDirReportIn(),
+                          config$GetDirRmarkdown(), subdir,
+                          "/* ", 
+                          config$GetDirReportOut(),
+                          config$GetDirRmarkdown())
+        system(command = command)
+        
+      # }
+      
       command <- paste0("mkdir ", GetReportOutRmdDir(), 
                         config$config$dir$log)
       system(command = command)
@@ -325,8 +333,10 @@ GreenIndexReport <- setRefClass(
     },
     
     ScopeReport = function(){
+      
       CopyFigureDir(report.subdir)
       CopyRmarkdownDir(report.subdir)
+      
       SpliceRmarkdown(report.rmarkdown)
       SetReportTitle()
       

@@ -1,633 +1,0 @@
----
-documentclass: book
-fontsize: 12pt
-geometry: margin=1in
-output:
-  pdf_document:
-    fig_caption: yes
-    template: pdf_template.tex
-    includes:
-      in_header: header_green.tex
-    latex_engine: xelatex
-    number_sections: yes
-    keep_tex: no
-params:
-  report: 2015
-  dummy.fig: "dummy.jpg"
-  conf: "conf"
-
----
-<!-- global setting -->
-
-pre.render.global.setting
-
-<!-- cover page -->
-
-pre.render.cover.page
-
-<!-- header footer -->
-
-pre.render.head.foot
-
-<!-- preface -->
-
-pre.render.report.preface
-
-<!-- table of cntents -->
-
-pre.render.table.of.contents
-
-<!-- document body -->
-
-\mytext
-
-<!-- chapter 1 score index -->
-
-
-`r var.dimention <- "维度"
-var.variable <- "变量" 
-var.key <- "键"
-var.param <- "标注值"
-var.sample <- "统计样本"
-var.scope <- "统计范围" `
-
-# 学生学业水平指数
-
-学生学业水平指数包含学生学业成绩标准达成指数、学生高层次思维能力发展指数以及学生学业成绩均衡指数。其中学生学业成绩均衡指数包括个体间均衡指数、学校间均衡指数和各区之间均衡指数三个方面。## 学生学业成绩标准达成度指数学生学业成绩的水平是依据课程标准，在大规模测试数据基础上，运用国际上通用的研究方法，对学生在某一学科、某一阶段应该掌握的基本内容与核心能力的发展水平进行的等级标定。学业成绩的标准达成度指数指的是学生在各学科达到合格水平的程度。学业成绩的标准达成度指数划分为9级，指数越高，表示该区域学生学业成绩达到课程标准基本要求的合格率越高。\mylist-  9级：表示学业成绩的标准达成系数\footnote{将学业成绩合格率经过标准化等一系列转化后得到的数值，转化后的数据具有可加性和可比性，用于划分学业成绩标准达成指数的等级。}在0.9及以上（含0.9）-  8级：表示学业成绩的标准达成系数在0.8-0.9之间（含0.8）-  7级：表示学业成绩的标准达成系数在0.7-0.8之间（含0.7）-  6级：表示学业成绩的标准达成系数在0.6-0.7之间（含0.6）-  5级：表示学业成绩的标准达成系数在0.5-0.6之间（含0.5）-  4级：表示学业成绩的标准达成系数在0.4-0.5之间（含0.4）-  3级：表示学业成绩的标准达成系数在0.3-0.4之间（含0.3）-  2级：表示学业成绩的标准达成系数在0.2-0.3之间（含0.2）-  1级：表示学业成绩的标准达成系数在0.2以下\mytext
-
-
-
-
-\begin{landscape}
-
-`r fig_name <- "不同群体四年级学生学业成绩标准达成度指数" `
-```{r passed.rate.all.bar.perspective, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$passed.rate.all.bar.perspective
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=14cm]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-
-passed.rate.all.bar
-
-
-
-`r fig_name <- "四年级语文学业成绩标准达成度指数" `
-```{r passed.rate.cn.bar.perspective, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$passed.rate.cn.bar.perspective
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\centering
-\includegraphics[width=14cm]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-
-
-passed.rate.cn.bar
-
-
-`r fig_name <- "四年级数学学业成绩标准达成度指数" `
-```{r passed.rate.ma.bar.perspective, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$passed.rate.ma.bar.perspective
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\centering
-\includegraphics[width=14cm]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-
-passed.rate.ma.bar
-\end{landscape}
-
-<!--  end of section 1. -->
-
-## 学生高层次思维能力指数
-
-在关注学生标准达成度的同时，也要关注学生的高层次思维能力发展。高层次思维能力主要包括知识迁移与综合运用能力，预测、观察和解释能力，推理能力，问题解决能力，批判性思维和创造性思维能力等。
-
-学生高层次思维能力指数分为9级，指数越高，表示该区域具备高层次思维能力的学生比例越高。
-
-\mylist
--  9级：表示具备高层次思维能力的学生所占比例在90%以上（含90%）-  8级：表示具备高层次思维能力的学生所占比例在80%-90%之间（含80%）-  7级：表示具备高层次思维能力的学生所占比例在70%-80%之间（含70%）-  6级：表示具备高层次思维能力的学生所占比例在60%-70%之间（含60%）-  5级：表示具备高层次思维能力的学生所占比例在50%-60%之间（含50%）-  4级：表示具备高层次思维能力的学生所占比例在40%-50%之间（含40%）-  3级：表示具备高层次思维能力的学生所占比例在30%-40%之间（含30%）-  2级：表示具备高层次思维能力的学生所占比例在20%-30%之间（含20%）-  1级：表示具备高层次思维能力的学生所占比例在20%以下
-\mytext
-
-
-
-
-`r fig_name <- "四年级学生高层次思维能力指数" `
-```{r high.level.thinking.all.bar.perspective, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$high.level.thinking.all.bar.perspective
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig: `r fig_name`}
-\end{figure}
-
-\begin{landscape}
-
-high.level.thinking.all.bar
-
-
-`r fig_name <- "四年级学生语文高层次思维能力指数" `
-```{r high.level.thinking.cn.bar.perspective, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$high.level.thinking.cn.bar.perspective
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-
-```
-\begin{figure}[H]
-\centering
-\includegraphics[width=14cm]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig: `r fig_name`}
-\end{figure}
-
-
-high.level.thinking.cn.bar
-
-`r fig_name <- "四年级学生数学高层次思维能力指数" `
-```{r high.level.thinking.ma.bar.perspective, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$high.level.thinking.ma.bar.perspective
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\centering
-\includegraphics[width=14cm]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig: `r fig_name`}
-\end{figure}
-
-
-high.level.thinking.ma.bar
-\end{landscape}
-
-
-## 学生学业成绩均衡指数
-
-学生学业成绩均衡指数包括个体间均衡指数和学校间均衡指数两个方面。### 学生学业成绩个体间均衡指数
-
-学生学业成绩个体间均衡指数采用差异系数来描述，是通过对所有参测学生学业成绩的标准差和平均分进行统计分析得到的结果。按照学生学业成绩的差异大小分为9级，指数越高，表示学生学业成绩差异越小，均衡度越高。
-
-\mylist
--  9级：表示学生学业成绩均衡系数在0.9及以上（含0.9）-  8级：表示学生学业成绩均衡系数在0.8-0.9之间（含0.8）-  7级：表示学生学业成绩均衡系数在0.7-0.8之间（含0.7）-  6级：表示学生学业成绩均衡系数在0.6-0.7之间（含0.6）-  5级：表示学生学业成绩均衡系数在0.5-0.6之间（含0.5）-  4级：表示学生学业成绩均衡系数在0.4-0.5之间（含0.4）-  3级：表示学生学业成绩均衡系数在0.3-0.4之间（含0.3）-  2级：表示学生学业成绩均衡系数在0.2-0.3之间（含0.2）-  1级：表示学生学业成绩均衡系数在0.2以下
-\mytext
-
-
-`r fig_name <- "四年级学生学业成绩个体间均衡指数" `
-```{r individual.balance.all.bar.perspective, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$individual.balance.all.bar.perspective
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-
-\begin{landscape}
-
-individual.balance.all.bar
-
-
-
-`r fig_name <- "四年级学生语文学业成绩个体间均衡指数" `
-```{r individual.balance.cn.bar.perspective, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$individual.balance.cn.bar.perspective
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\centering
-\includegraphics[width=14cm]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-
-
-individual.balance.cn.bar
-
-`r fig_name <- "四年级学生数学学业成绩个体间均衡指数" `
-```{r individual.balance.ma.bar.perspective, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$individual.balance.ma.bar.perspective
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\centering
-\includegraphics[width=14cm]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-
-individual.balance.ma.bar
-\end{landscape}
-
-
-### 学生学业成绩学校间均衡指数
-
-学生学业成绩学校间均衡是通过各学校之间学业成绩差异的大小来反映的，是采用多层线性模型统计分析得到的结果。学业成绩学校间均衡指数分为9级，指数越高，表示学校间学业成绩差异越小，均衡度越高。\mylist-  9级：表示学生学业成绩学校间的均衡系数\footnote{将学业成绩学校解释率经过标准化等一系列转化后得到的数值，转化后的数据具有可加性和可比性，用于划分学业成绩校间均衡指数的等级。}在0.9及以上（含0.9）-  8级：表示学生学业成绩学校间的均衡系数在0.8-0.9之间（含0.8）-  7级：表示学生学业成绩学校间的均衡系数在0.7-0.8之间（含0.7）-  6级：表示学生学业成绩学校间的均衡系数在0.6-0.7之间（含0.6）-  5级：表示学生学业成绩学校间的均衡系数在0.5-0.6之间（含0.5）-  4级：表示学生学业成绩学校间的均衡系数在0.4-0.5之间（含0.4）-  3级：表示学生学业成绩学校间的均衡系数在0.3-0.4之间（含0.3）-  2级：表示学生学业成绩学校间的均衡系数在0.2-0.3之间（含0.2）-  1级：表示学生学业成绩学校间的均衡系数在0.2以下\mytext
-`r fig_name <- "四年级学生学业成绩学校间均衡指数" `
-```{r school.balance.all.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$school.balance.all.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-`r fig_name <- "四年级学生语文学业成绩学校间均衡指数" `
-```{r school.balance.cn.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$school.balance.cn.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-
-`r fig_name <- "四年级学生数学学业成绩学校间均衡指数" `
-```{r school.balance.ma.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$school.balance.ma.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-# 学生学习动力指数学生学习动力指数主要有四个方面，分别为学生学习自信心指数、学习动机指数、学习压力指数和学生对学校的认同指数。## 学习自信心指数学习自信心主要通过调查学生对个人学习能力的评价、尝试解决困难问题的意愿以及对取得优异学习成绩和完成学习目标的预期等问题，采集学生问卷数据，并对数据进行统计分析得到的结果。学习自信心指数分为9级，指数越高，表示该区域学生学习自信心越强。\mylist
-- 9级：表示自信心较强\footnote{我们将得分超过维度总分60\%界定学生学习自信心较强。}的学生所占比例在90%以上（含90%）- 8级：表示自信心较强的学生所占比例在80%-90%之间（含80%）
-- 7级：表示自信心较强的学生所占比例在70%-80%之间（含70%）
-- 6级：表示自信心较强的学生所占比例在60%-70%之间（含60%）
-- 5级：表示自信心较强的学生所占比例在50%-60%之间（含50%）- 4级：表示自信心较强的学生所占比例在40%-50%之间（含40%）- 3级：表示自信心较强的学生所占比例在30%-40%之间（含30%）- 2级：表示自信心较强的学生所占比例在20%-30%之间（含20%）- 1级：表示自信心较强的学生所占比例在20%以下\mytext
-
-
-\begin{landscape}
-
-
-`r fig_name <- "四年级学生学习自信心指数" `
-```{r learning.confidence.bar.perspective, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$learning.confidence.bar.perspective
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\centering
-\includegraphics[width=14cm]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-
-
-learning.confidence.bar
-\end{landscape}
-
-## 学习动机指数历年来大规模测试的数据显示，学生学习动机与学生学业水平呈现明显的相关，学习动机能够很好的预测学业成绩。学习动机是通过采集学生问卷数据，进行数据分析得到的结果。学习动机指数分为9级，指数越高，表示该区域学生学习动机越强。\mylist
-- 9级：表示学习动机较强\footnote{我们将得分超过本维度总分60\%界定为学生学习动机较强。}的学生所占比例在90%以上（含90%）- 8级：表示学习动机较强的学生所占比例在80%-90%之间（含80%）- 7级：表示学习动机较强的学生所占比例在70%-80%之间（含70%）- 6级：表示学习动机较强的学生所占比例在60%-70%之间（含60%）- 5级：表示学习动机较强的学生所占比例在50%-60%之间（含50%）- 4级：表示学习动机较强的学生所占比例在40%-50%之间（含40%）- 3级：表示学习动机较强的学生所占比例在30%-40%之间（含30%）- 2级：表示学习动机较强的学生所占比例在20%-30%之间（含20%）- 1级：表示学习动机较强的学生所占比例在20%以下\mytext
-
-`r fig_name <- "四年级学生学习动机指数" `
-```{r learning.motivation.bar.perspective, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$learning.motivation.bar.perspective
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-
-\begin{landscape}
-
-
-learning.motivation.bar
-\end{landscape}
-
-
-## 学习压力指数学习压力主要调查学生在学习过程中产生的心理负担和焦虑，通过询问学生作业量的多少及难易、考试次数的数量以及学校公布成绩、考试之前的感受来了解学生的学习压力情况。学习压力指数是通过采集学生问卷数据，进行数据分析得到的结果。学习压力指数分为9级，指数越高，表示该区域学生学习压力越小。
-
-\mylist
-- 9级：表示学习压力较小\footnote{我们将得分超过本维度总分60\%界定为学习压力较小。}的学生所占比例在90%以上（含90%）- 8级：表示学习压力较小的学生所占比例在80%-90%之间（含80%）- 7级：表示学习压力较小的学生所占比例在70%-80%之间（含70%）- 6级：表示学习压力较小的学生所占比例在60%-70%之间（含60%）- 5级：表示学习压力较小的学生所占比例在50%-60%之间（含50%）- 4级：表示学习压力较小的学生所占比例在40%-50%之间（含40%）- 3级：表示学习压力较小的学生所占比例在30%-40%之间（含30%）- 2级：表示学习压力较小的学生所占比例在20%-30%之间（含20%）- 1级：表示学习压力较小的学生所占比例在20%以下
-
-\mytext
-
-
-
-`r fig_name <- "四年级学生学习压力指数" `
-```{r learning.pressure.bar.perspective, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$learning.pressure.bar.perspective
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-\begin{landscape}
-
-learning.pressure.bar
-\end{landscape}
-
-## 学生对学校的认同度指数学生对学校的认同度主要指学生对学校的归属感和认可程度，包括同学关系、是否愿意参加学校集体活动、是否喜欢学校、在学校是否会感到孤独等。学生对学校的认同度是通过采集学生问卷数据，进行数据分析得到的结果。学生对学校的认同度指数分为9级，指数越高，表示学生对学校的认同度越高。\mylist
-- 9级：表示对学校的认同度较高\footnote{我们将得分超过本维度总分60\%界定为对学校的认同度较高。}的学生所占比例在90%以上（含90%）- 8级：表示对学校的认同度较高的学生所占比例在80%-90%之间（含80%）- 7级：表示对学校的认同度较高的学生所占比例在70%-80%之间（含70%）- 6级：表示对学校的认同度较高的学生所占比例在60%-70%之间（含60%）- 5级：表示对学校的认同度较高的学生所占比例在50%-60%之间（含50%）- 4级：表示对学校的认同度较高的学生所占比例在40%-50%之间（含40%）- 3级：表示对学校的认同度较高的学生所占比例在30%-40%之间（含30%）- 2级：表示对学校的认同度较高的学生所占比例在20%-30%之间（含20%）- 1级：表示对学校的认同度较高的学生所占比例在20%以下\mytext
-
-
-`r fig_name <- "四年级学生对学校认同度指数" `
-```{r school.identity.bar.perspective, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$school.identity.bar.perspective
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-
-\begin{landscape}
-
-school.identity.bar
-\end{landscape}
-# 学生学业负担指数
-
-## 学业负担综合指数我们通过调查学生的睡眠时间、做作业时间和补课时间来反映当前学生的学业负担。学业负担指数是通过采集学生问卷数据，进行数据分析得到的结果。学生学业负担指数分为9级，指数越高，表示该区域学生学业负担越轻。\mylist
-- 9级：表示学业负担适中与较轻\footnote{我们将以下三个条件满足两个的小学生界定为学业负担适中与较轻的学生：1、睡眠时间在9小时以上；2、做作业时间在1小时以下；3、每周参加与考试学科的补课在2小时以下。}的学生所占比例在90%以上（含90%）- 8级：表示学业负担适中与较轻的学生所占比例在80%-90%之间（含80%）- 7级：表示学业负担适中与较轻的学生所占比例在70%-80%之间（含70%）- 6级：表示学业负担适中与较轻的学生所占比例在60%-70%之间（含60%）- 5级：表示学业负担适中与较轻的学生所占比例在50%-60%之间（含50%）- 4级：表示学业负担适中与较轻的学生所占比例在40%-50%之间（含40%）- 3级：表示学业负担适中与较轻的学生所占比例在30%-40%之间（含30%）- 2级：表示学业负担适中与较轻的学生所占比例在20%-30%之间（含20%）- 1级：表示学业负担适中与较轻的学生所占比例在20%以下
-\mytext
-
-
-`r fig_name <- "四年级学生学业负担综合指数" `
-```{r burden.bar.perspective, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$burden.bar.perspective
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\centering
-\includegraphics[width=11cm]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-
-\begin{landscape}
-
-burden.bar
-\end{landscape}
-
-## 学业负担分项指标### 睡眠指数通过对大规模测试数据的分析，结果显示与睡眠时间较多的学生相比，睡眠时间较少的学生，其学业成绩并没有随着睡眠时间的减少而提高。参照相关政策文件，以小学生每天睡眠时间保证9小时以上为参照，将睡眠指数划分为9级，指数越高，表示睡眠时间得到保障的学生比例越高。\mylist
-- 9级：表示90%以上的学生睡眠时间得到基本保障（含90%）
-- 8级：表示80%-90%的学生睡眠时间得到基本保障（含80%）
-- 7级：表示70%-80%的学生睡眠时间得到基本保障（含70%）
-- 6级：表示60%-70%的学生睡眠时间得到基本保障（含60%）
-- 5级：表示50%-60%的学生睡眠时间得到基本保障（含50%）
-- 4级：表示40%-50%的学生睡眠时间得到基本保障（含40%）
-- 3级：表示30%-40%的学生睡眠时间得到基本保障（含30%）
-- 2级：表示20%-30%的学生睡眠时间得到基本保障（含20%）
-- 1级：表示20%以下的学生睡眠时间得到基本保障
-
-\mytext
-
-
-
-`r fig_name <- "四年级学生睡眠指数" `
-```{r sleep.bar.perspective, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$sleep.bar.perspective
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-\begin{landscape}
-
-
-sleep.bar
-\end{landscape}
-
-### 作业指数参照有关文件和相关研究成果，小学生每天做作业时间1小时以下为宜。以此为参照，将作业时间指数划分为9级，指数越高，表示作业量适宜的学生比例越高。\mylist
-- 9级：表示90%以上的学生作业量适宜（含90%）- 8级：表示80%-90%的学生作业量适宜（含80%）- 7级：表示70%-80%的学生作业量适宜（含70%）- 6级：表示60%-70%的学生作业量适宜（含60%）- 5级：表示50%-60%的学生作业量适宜（含50%）- 4级：表示40%-50%的学生作业量适宜（含40%）- 3级：表示30%-40%的学生作业量适宜（含30%）- 2级：表示20%-30%的学生作业量适宜（含20%）- 1级：表示20%以下的学生作业量适宜\mytext
-
-
-`r fig_name <- "四年级学生作业指数" `
-```{r writing.homework.bar.perspective, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$writing.homework.bar.perspective
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-\begin{landscape}
-
-writing.homework.bar
-\end{landscape}
-### 校外补课指数（考试学科）\mylist
-- 9级：表示90%以上的学生每周参加与考试学科相关的校外补课2小时以下（含90%）- 8级：表示80%-90%的学生每周参加与考试学科相关的校外补课2小时以下（含80%）- 7级：表示70%-80%的学生每周参加与考试学科相关的校外补课2小时以下（含70%）- 6级：表示60%-70%的学生每周参加与考试学科相关的校外补课2小时以下（含60%）- 5级：表示50%-60%的学生每周参加与考试学科相关的校外补课2小时以下（含50%）- 4级：表示40%-50%的学生每周参加与考试学科相关的校外补课2小时以下（含40%）- 3级：表示30%-40%的学生每周参加与考试学科相关的校外补课2小时以下（含30%）- 2级：表示20%-30%的学生每周参加与考试学科相关的校外补课2小时以下（含20%）- 1级：表示20%以下的学生每周参加与考试学科相关的校外补课2小时以下\mytext
-
-
-
-`r fig_name <- "四年级学生校外补课指数（考试学科）" `
-```{r extra.homework.bar.perspective, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$extra.homework.bar.perspective
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-\begin{landscape}
-
-extra.homework.bar
-\end{landscape}
-# 师生关系指数历年大规模测试数据结果显示，师生关系与学生学业水平呈明显的正相关，师生关系对学生学业成绩有明显的正向预测作用。师生关系的调查主要包含了教师是否尊重学生，是否公正、平等的对待学生，是否信任学生等。师生关系指数是通过采集学生问卷数据，进行数据分析得到的结果。师生关系指数分为9级，指数越高，表示该区域师生关系越好。\mylist
-- 9级：表示90%以上的学生对师生关系评价较好\footnote{我们将得分超过本维度总分60\%的界定为对师生关系评价较好。}（含90%）- 8级：表示80%-90%的学生对师生关系评价较好（含80%）- 7级：表示70%-80%的学生对师生关系评价较好（含70%）- 6级：表示60%-70%的学生对师生关系评价较好（含60%）- 5级：表示50%-60%的学生对师生关系评价较好（含50%）- 4级：表示40%-50%的学生对师生关系评价较好（含40%）- 3级：表示30%-40%的学生对师生关系评价较好（含30%）- 2级：表示20%-30%的学生对师生关系评价较好（含20%）- 1级：表示20%以下的学生对师生关系评价较好\mytext
-`r fig_name <- "四年级师生关系指数" `
-```{r teacher.relationship.bar.perspective, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$teacher.relationship.bar.perspective
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\centering
-\includegraphics[width=12cm]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-\begin{landscape}
-
-teacher.relationship.bar
-\end{landscape}
-# 学生品德行为指数良好的品德是个人成长、终生发展的基础，更是其成为社会有用之才的重要条件。良好的品德行为包括热爱祖国、自尊自爱、尊重他人、有诚信和责任心、遵守公德以及拥有关怀之心和公正之心。品德行为指数是通过采集学生问卷数据，进行数据分析得到的结果。学生品德行为指数分为9级，指数越高，表示学生具有较好的品德行为素养。\mylist
-- 9级：表示90%以上的学生品德行为素养较高\footnote{我们将得分超过本维度总分50\%界定为品德行为素养较高。}（含90%）- 8级：表示80%-90%的学生品德行为素养较高（含80%）- 7级：表示70%-80%的学生品德行为素养较高（含70%）- 6级：表示60%-70%的学生品德行为素养较高（含60%）- 5级：表示50%-60%的学生品德行为素养较高（含50%）- 4级：表示40%-50%的学生品德行为素养较高（含40%）- 3级：表示30%-40%的学生品德行为素养较高（含30%）- 2级：表示20%-30%的学生品德行为素养较高（含20%）- 1级：表示20%以下的学生品德行为素养较高\mytext
-
-
-`r fig_name <- "四年级学生品德行为指数" `
-```{r student.morality.bar.perspective, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$student.morality.bar.perspective
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\centering
-\includegraphics[width=12cm]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-\begin{landscape}
-
-student.morality.bar
-\end{landscape}
-# 学生身心健康指数## 学生体质健康指数《国家学生体质健康标准》测试项目包括身体形态、生理机能、身体素质等3方面21项指标。在各区县教育行政部门的统一安排下，各校采用自测自报的方式，在2016年9月1日至2017年1月31日之间自行组织测试。本报告中的数据来源于上海市学生体质健康监测中心。学生体质健康指数分为9级，指数越高，表示该区域学生体质健康情况越好。\mylist
-- 9级：表示体质健康系数\footnote{将体质健康综合评价及格率经过标准化等一系列转化后得到的数值，转化后的数据具有可加性和可比性，用于划分体质健康指数的等级。}在0.9及以上（含0.9） - 8级：表示体质健康系数在0.8-0.9之间（含0.8）- 7级：表示体质健康系数在0.7-0.8之间（含0.7）- 6级：表示体质健康系数在0.6-0.7之间（含0.6）- 5级：表示体质健康系数在0.5-0.6之间（含0.5）- 4级：表示体质健康系数在0.4-0.5之间（含0.4）- 3级：表示体质健康系数在0.3-0.4之间（含0.3）- 2级：表示体质健康系数在0.2-0.3之间（含0.2）- 1级：表示体质健康系数在0.2以下\mytext`r fig_name <- "四年级学生体质健康指数" `
-```{r student.physique.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$student.physique.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}## 学生心理健康指数心理发展的阶段性理论认为，人的心理具有阶段性的特点，不同阶段会产生不同的矛盾。这些特殊矛盾的产生和解决，一方面推动着个体心理的发展，另一方面形成了个体不同发展时期本质的心理特征。儿童和青少年时期（7岁-18岁）是个体心理发展的关键时期，关系到个体思维、情感、自我意识、道德判断等诸多心理内容的发展。心理关键期的健康发展与否直接关系到个体自身的学业发展、人际关系处理、社会地位以及亲密关系建立等。本研究从教育部《中小学心理健康教育指导纲要（2012年修订）》中重点突出的内容入手，从“认识自我、学会学习、人际交往、情绪调适、升学择业以及生活和社会适应等方面的内容”出发，结合中小学生心理发展特点和中小学教育现状，通过中小学一线教师和专家研讨，认为中小学生心理健康评价指标具体体现在“自尊”、“人际交往”与“情绪调试”等方面。学生心理健康指数分为9级，指数越高，表示该区域学生心理健康情况越好。\mylist
-- 9级：表示90%以上的学生心理健康较高\footnote{我们将得分超过本维度总分60\%界定为心理健康较好。}（含90%） - 8级：表示80%-90%的学生心理健康较好（含80%）- 7级：表示70%-80%的学生心理健康较好（含70%）- 6级：表示60%-70%的学生心理健康较好（含60%）- 5级：表示50%-60%的学生心理健康较好（含50%）- 4级：表示40%-50%的学生心理健康较好（含40%）- 3级：表示30%-40%的学生心理健康较好（含30%）- 2级：表示20%-30%的学生心理健康较好（含20%）- 1级：表示20%以下的学生心理健康较好\mytext
-
-
-`r fig_name <- "四年级学生心理健康指数" `
-```{r student.psychological.bar.perspective, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$student.psychological.bar.perspective
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-
-```
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-\begin{landscape}
-
-student.psychological.bar
-\end{landscape}
-
-# 教师教学方式指数通过对大规模测试数据的分析，结果显示教师教学方式与学生学业成绩有着明显的正相关关系，良好的教学方式能够对学生的学业成绩起到积极的影响。教师教学方式是通过采集学生对教师教学方式评价的问卷数据、运用统计方法得到的结果。问卷内容主要包括教师是否因材施教、采用互动教学的方式和鼓励学生探究与发展。教师教学方式指数分为9级，指数越高，表示该区域学生对教师教学方式的评价越高。\mylist
-- 9级：表示90%以上的学生对教师教学方式评价较高\footnote{我们将得分超过本维度总分60\%界定为学生对教师教学方式评价较高。}（含90%）- 8级：表示80%-90%的学生对教师教学方式评价较高（含80%）- 7级：表示70%-80%的学生对教师教学方式评价较高（含70%）- 6级：表示60%-70%的学生对教师教学方式评价较高（含60%）- 5级：表示50%-60%的学生对教师教学方式评价较高（含50%）- 4级：表示40%-50%的学生对教师教学方式评价较高（含40%）- 3级：表示30%-40%的学生对教师教学方式评价较高（含30%）- 2级：表示20%-30%的学生对教师教学方式评价较高（含20%）- 1级：表示20%以下的学生对教师教学方式评价较高\mytext
-
-
-`r fig_name <- "四年级教师教学方式指数" `
-```{r teaching.method.bar.perspective, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$teaching.method.bar.perspective
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-
-```
-
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=12cm]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-\begin{landscape}
-
-teaching.method.bar
-\end{landscape}
-
-
-# 校长课程领导力指数历年大规模测试数据结果显示，校长课程领导力对教师教学和学生学习有着重要的影响。校长课程领导力是通过对教师的问卷调查并进行数据分析得到的。调查问卷包含四个方面，分别为课程规划、课程实施、课程管理和课程评价。校长课程领导力指数分为9级，指数越高，表示教师对校长课程领导力的评价越好。\mylist
-- 9级：表示90%以上的教师对校长课程领导力的评价较高\footnote{我们将得分超过本维度总分60\%界定为教师对校长课程领导力评价较高。}（含90%）- 8级：表示80%-90%的教师对校长课程领导力的评价较高（含80%）- 7级：表示70%-80%的教师对校长课程领导力的评价较高（含70%）- 6级：表示60%-70%的教师对校长课程领导力的评价较高（含60%）- 5级：表示50%-60%的教师对校长课程领导力的评价较高（含50%）- 4级：表示40%-50%的教师对校长课程领导力的评价较高（含40%）- 3级：表示30%-40%的教师对校长课程领导力的评价较高（含30%）- 2级：表示20%-30%的教师对校长课程领导力的评价较高（含20%）- 1级：表示20%以下的教师对校长课程领导力的评价较高\mytext
-\begin{landscape}
-
-course.leadership.bar
-\end{landscape}
-
-# 学生社会经济背景对学业成绩的影响指数父母受教育程度、职业、家庭文化资源等因素合成为学生社会经济背景。将学生社会经济背景与学生学业成绩进行相关分析，描述家庭背景对学生学业成绩的影响。学生社会经济背景对学业成绩的影响指数分为9级，指数越高，表示学业成绩受家庭背景因素的影响越小，同时意味着学校在很大程度上弥补了家庭环境不利对学生学业的负面影响。\mylist
-- 9级：表示家庭背景影响系数\footnote{将学生社会经济背景解释率经过标准化等一系列转化后得到的数值，转化后的数据具有可加性和可比性，用于划分学生社会经济背景对学业成绩的影响指数的等级。}为0- 8级：表示家庭背景影响系数在0-0.1之间（含0.1）- 7级：表示家庭背景影响系数在0.1-0.2之间（含0.2）- 6级：表示家庭背景影响系数在0.2-0.3之间（含0.3）- 5级：表示家庭背景影响系数在0.3-0.4之间（含0.4）- 4级：表示家庭背景影响系数在0.4-0.5之间（含0.5）- 3级：表示家庭背景影响系数在0.5-0.6之间（含0.6）- 2级：表示家庭背景影响系数在0.6-0.7之间（含0.7）- 1级：表示家庭背景影响系数在0.7以上\mytext
-`r fig_name <- "四年级学生社会经济背景影响指数" `
-```{r economic.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$economic.bar
-plot.entry$data$keep <- list(list(var = var.scope, value=list(report$county,report$province)))
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-\begin{figure}[H]
-\centering
-\includegraphics[width=12cm]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-\clearpage
-&nbsp;
-\clearpage
-
-\begin{landscape}
-\chapter{各指标历年测试结果比较}
-`r fig_name <- "本区四年级各指标历年测试结果比较" `
-```{r history.bar, echo=FALSE, message=FALSE, include = FALSE, result="hide"}
-plot.entry <- report$plot$history.bar
-fig_file  <- plot.figure( report = report, plot.in = plot.entry ,fig_name = fig_name)
-```
-
-\begin{figure}[H]
-\includegraphics[width=25cm]{`r fig_file`}
-\caption{`r fig_name`}
-\label{fig:`r fig_name`}
-\end{figure}
-
-
-\end{landscape}

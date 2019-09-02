@@ -20,69 +20,69 @@ query.data.school.cn.pointrate
 测试能力 & 题目编码 & \makecell[c]{能力描述} & \makecell[c]{本\\市} & \makecell[c]{本\\区}  & \makecell[c]{本\\校}  \\
 \hline
 
-\multirow{3}{*}{\makecell[c]{识记常用\\字的字音}} & C8AO01111 & 辨析形近字的字音 
-table.school.cn.C8AO01111 
+\multirow{3}{*}{\makecell[c]{识记常用\\字的字音}} & C8AO01111 & 辨析形近字的字音
+table.school.cn.C8AO01111
 \\ \cline{2-6}
 
 
-& C8AO02111 & 读准常用字的字音 
-table.school.cn.C8AO02111 
+& C8AO02111 & 读准常用字的字音
+table.school.cn.C8AO02111
 \\ \cline{2-6}
 
 
-& C8AO03111 & 辨析多音字的字音 
+& C8AO03111 & 辨析多音字的字音
 table.school.cn.C8AO03111  
 \\ \cline{1-6}
 
-\multirow{2}{*}{\makecell[c]{识记常用\\字的字形}} & C8AO04111 & 辨析形近字的字形 
+\multirow{2}{*}{\makecell[c]{识记常用\\字的字形}} & C8AO04111 & 辨析形近字的字形
 table.school.cn.C8AO04111  
 \\ \cline{2-6}
 
-& C8AO05111 & 辨析同音字的字形 
+& C8AO05111 & 辨析同音字的字形
 table.school.cn.C8AO05111  
 \\ \cline{1-6}
 
 
-\multirow{6}{*}{\makecell[c]{理解常用\\字词\\的意思}} & C8AO06111 & 在具体语境中恰当运用常见词语 
+\multirow{6}{*}{\makecell[c]{理解常用\\字词\\的意思}} & C8AO06111 & 在具体语境中恰当运用常见词语
 table.school.cn.C8AO06111  
 \\ \cline{2-6}
 
-& C8AO07111 & 在具体语境中恰当运用常见词语 
+& C8AO07111 & 在具体语境中恰当运用常见词语
 table.school.cn.C8AO07111  
 \\ \cline{2-6}
 
-& C8AO08111 & 在具体语境中恰当运用常见词语 
+& C8AO08111 & 在具体语境中恰当运用常见词语
 table.school.cn.C8AO08111  
 \\ \cline{2-6}
 
-& C8AO09111 & 在具体语境中恰当运用常见成语 
+& C8AO09111 & 在具体语境中恰当运用常见成语
 table.school.cn.C8AO09111  
 \\ \cline{2-6}
 
-& C8AO10111 & 在具体语境中恰当运用常见成语 
+& C8AO10111 & 在具体语境中恰当运用常见成语
 table.school.cn.C8AO10111  
 \\ \cline{2-6}
 
-& C8AO11111 & 在具体语境中恰当运用关联词 
+& C8AO11111 & 在具体语境中恰当运用关联词
 table.school.cn.C8AO11111  
 \\ \cline{1-6}
 
-\multirow{2}{*}{\makecell[c]{积累教材\\中的\\文言诗文}} & C8AO12111 & 默写教材中要求背诵的文言诗文 
+\multirow{2}{*}{\makecell[c]{积累教材\\中的\\文言诗文}} & C8AO12111 & 默写教材中要求背诵的文言诗文
 table.school.cn.C8AO12111  
 \\ \cline{2-6}
 
 
-& C8AO13111 & 理解教材中文言诗文的意思 
+& C8AO13111 & 理解教材中文言诗文的意思
 table.school.cn.C8AO13111  
 \\ \cline{1-6}
 
 
-\multirow{2}{*}{\makecell[c]{积累常见\\的文学、\\文化常识}} & C8AO14111 & 了解课程标准规定阅读的经典名著的文学、文化常识及基本信息 
+\multirow{2}{*}{\makecell[c]{积累常见\\的文学、\\文化常识}} & C8AO14111 & 了解课程标准规定阅读的经典名著的文学、文化常识及基本信息
 table.school.cn.C8AO14111  
 \\ \cline{2-6}
 
 
-& C8AO15111 & 理解教材中文言诗文的意思 
+& C8AO15111 & 理解教材中文言诗文的意思
 table.school.cn.C8AO15111  
 \\  \hline
 
@@ -117,10 +117,10 @@ C. \quad \CJKunderdot{增}加 \qquad \CJKunderdot{僧}人 \qquad \CJKunderdot{�
 plot.bar.school.cn.question.C8AO01111
 
 \begin{itshape}
-在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，语文总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO01111_X", "学校","总体","D")`\%。
 \end{itshape}
 
-- 答错原因分析及教学建议：
+- 答错原因分析及教学建议（全市）：
 
 这道题目考查的是学生读准形近字的字音的能力，正确选项为“B”。A和D选项属于声母和韵母都不相同的形近字，C选项属于声母不同的形近字。选择错误选项的主要原因在于未能充分分辨形近字，与不明“字理”有关。
 
@@ -146,10 +146,10 @@ plot.bar.school.cn.question.C8AO01111
 plot.bar.school.cn.question.C8AO09111
 
 \begin{itshape}
-在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，语文总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO09111_X", "学校","总体","D")`\%。
 \end{itshape}
 
-- 答错原因分析及教学建议：
+- 答错原因分析及教学建议（全市）：
 
 这道题目考查的是学生理解常用成语的基本意思，并在具体的语境中恰当运用的能力，正确选项为“A”。选择错误选项的原因主要是不能理解常用成语的基本意思，也不能在具体的语境中正确把握上下句之间的语义关联。
 
@@ -176,10 +176,10 @@ plot.bar.school.cn.question.C8AO09111
 plot.bar.school.cn.question.C8AO11111
 
 \begin{itshape}
-在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，语文总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO11111_X", "学校","总体","D")`\%。
 \end{itshape}
 
-- 答错原因分析及教学建议：
+- 答错原因分析及教学建议（全市）：
 
 这道题目考查是学生根据具体语境恰当地使用关联词的能力，正确选项为“D”。选择错误项的主要原因是未能在具体语境中准确理解上下句的语义联系。
 
@@ -199,72 +199,72 @@ plot.bar.school.cn.question.C8AO11111
 
 
  \multirow{5}{*}{\makecell[c]{理解文言\\词语和篇章\\的基本意思}}
- & C8AO16111 & 理解常用文言实词的意思 
- table.school.cn.C8AO16111 
+ & C8AO16111 & 理解常用文言实词的意思
+ table.school.cn.C8AO16111
  \\ \cline{2-6}
 
 
-& C8AO17111 & 理解常用文言虚词的意思或用法 
-table.school.cn.C8AO17111 
+& C8AO17111 & 理解常用文言虚词的意思或用法
+table.school.cn.C8AO17111
 \\ \cline{2-6}
 
 
-& C8AO17211 & 理解常用文言虚词的意思或用法 
-table.school.cn.C8AO17211 
+& C8AO17211 & 理解常用文言虚词的意思或用法
+table.school.cn.C8AO17211
 \\ \cline{2-6}
 
-& C8AO18111 & 用现代汉语翻译文言语句 
-table.school.cn.C8AO18111 
+& C8AO18111 & 用现代汉语翻译文言语句
+table.school.cn.C8AO18111
 \\ \cline{2-6}
 
-& C8AO19111 & 理解文言诗文的主要内容 
-table.school.cn.C8AO19111 
+& C8AO19111 & 理解文言诗文的主要内容
+table.school.cn.C8AO19111
 \\  \hline
 
 
 \multirow{9}{*}{\makecell[c]{现代文阅读}}
-& C8AO20111 & 提取文本信息·提取文本中的显性信息 
-table.school.cn.C8AO20111 
+& C8AO20111 & 提取文本信息·提取文本中的显性信息
+table.school.cn.C8AO20111
 \\ \cline{2-6}
 
-& C8AO21111 & 提取文本信息·提取文本中的显性信息 
-table.school.cn.C8AO21111 
+& C8AO21111 & 提取文本信息·提取文本中的显性信息
+table.school.cn.C8AO21111
 \\ \cline{2-6}
 
-& C8AO22111 & 分析与解释文本内容与形式·梳理段落之间的关系，分析文章的思路 
-table.school.cn.C8AO22111 
+& C8AO22111 & 分析与解释文本内容与形式·梳理段落之间的关系，分析文章的思路
+table.school.cn.C8AO22111
 \\ \cline{2-6}
 
-& C8AO23111 & 分析与解释文本内容与形式·对文本中的形象、情感、观点、态度等作出解释，运用文本中的信息支持自己的观点 
-table.school.cn.C8AO23111 
+& C8AO23111 & 分析与解释文本内容与形式·对文本中的形象、情感、观点、态度等作出解释，运用文本中的信息支持自己的观点
+table.school.cn.C8AO23111
 \\ \cline{2-6}
 
-& C8AO24111 & 提取文本信息·推断文本中的隐含信息 
-table.school.cn.C8AO24111 
+& C8AO24111 & 提取文本信息·推断文本中的隐含信息
+table.school.cn.C8AO24111
 \\ \cline{2-6}
 
-& C8AO25111 & 分析与解释文本内容与形式·分析词语的作用 
-table.school.cn.C8AO25111 
+& C8AO25111 & 分析与解释文本内容与形式·分析词语的作用
+table.school.cn.C8AO25111
 \\ \cline{2-6}
 
-& C8AO26111 & 分析与解释文本内容与形式·分析段落的作用 
-table.school.cn.C8AO26111 
+& C8AO26111 & 分析与解释文本内容与形式·分析段落的作用
+table.school.cn.C8AO26111
 \\ \cline{2-6}
 
-& C8AO27111 & 分析与解释文本内容与形式·梳理段落之间的关系，分析文章的思路 
-table.school.cn.C8AO27111 
+& C8AO27111 & 分析与解释文本内容与形式·梳理段落之间的关系，分析文章的思路
+table.school.cn.C8AO27111
 \\ \cline{2-6}
 
-& C8AO28111 & 感知文本内容·概括文章的中心 
-table.school.cn.C8AO28111 
+& C8AO28111 & 感知文本内容·概括文章的中心
+table.school.cn.C8AO28111
 \\ \hline
 
 \multirow{2}{*}{\makecell[c]{利用语文\\知识和技能\\完成任务}}
-& C8AO29111 & 整合相关信息，完成简单任务 
-table.school.cn.C8AO29111 
+& C8AO29111 & 整合相关信息，完成简单任务
+table.school.cn.C8AO29111
 \\ \cline{2-6}
 
-& C8AO30111 & 整合相关信息，完成简单任务 
+& C8AO30111 & 整合相关信息，完成简单任务
 table.school.cn.C8AO30111
 \\ \hline
 \end{longtable}
@@ -313,10 +313,10 @@ C.屠\CJKunderdot{暴}起 & 暴：突然 & D.一狼\CJKunderdot{洞}其中 & 洞
 plot.bar.school.cn.question.C8AO16111
 
 \begin{itshape}
-在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，语文总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO16111_X", "学校","总体","D")`\%。
 \end{itshape}
 
-- 答错原因分析及教学建议：
+- 答错原因分析及教学建议（全市）：
 
 这道题目考查的是学生在具体语境中理解文言词语的能力， 正确选项为“D”。选择错误项的主要原因在于未能根据语境中前后文的语义理解文言实词的真正含义和用法；或机械记忆；或胡乱解释。
 
@@ -342,11 +342,11 @@ D. 一只狼径直离开了，他的前面有一只狗蹲坐着
 plot.bar.school.cn.question.C8AO18111
 
 \begin{itshape}
-在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，语文总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO18111_X", "学校","总体","D")`\%。
 \end{itshape}
 
 \mytext
-- 答错原因分析及教学建议：
+- 答错原因分析及教学建议（全市）：
 
 这道题目考查的是学生在具体语境中理解文言句子的能力， 满分2分。正确选项为“B”。需要正确理解句中主要实词（如“径”“犬”）并要符合现代汉语的语法规范。选错的原因主要有二：对文言词语表意的细微之处理解不准确；能理解词语的本义，但是不能在语境中准确翻译使句子的语义准确、通顺。
 
@@ -428,10 +428,10 @@ D. 狼拔出木栓，拖着镣铐，回到草原
 plot.bar.school.cn.question.C8AO24111
 
 \begin{itshape}
-在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，语文总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO24111_X", "学校","总体","D")`\%。
 \end{itshape}
 
-- 答错原因分析及教学建议 ：
+- 答错原因分析及教学建议（全市）：
 
 这道题目考查学生“推断文本中的隐含信息”的能力。本题为选择题，满分3分。需在整体把握文章内容的基础上，推断几个材料中叙述与描写的作用，并根据题干要求加以准确筛选。
 
@@ -457,10 +457,10 @@ D. “兴高采烈”是“我”对白头翁情绪的主观推测
 plot.bar.school.cn.question.C8AO25111
 
 \begin{itshape}
-在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，语文总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO25111_X", "学校","总体","D")`\%。
 \end{itshape}
 
-- 答错原因分析及教学建议 ：
+- 答错原因分析及教学建议（全市）：
 
 这道题目考查学生“分析词语的作用”的能力。本题为选择题，满分3分。需在语境中分析、思考词语的含义与表达作用，要将特定词语出现前后的材料加以整合思考，理解不同对象在同一事件中表现出的不同态度。
 
@@ -487,10 +487,10 @@ D. 养不家的那些家伙们，活得虽然很艰难，却自有一番与天�
 plot.bar.school.cn.question.C8AO26111
 
 \begin{itshape}
-在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，语文总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO26111_X", "学校","总体","D")`\%。
 \end{itshape}
 
-- 答错原因分析及教学建议
+- 答错原因分析及教学建议（全市）：
 
 这道题目考查学生“分析段落的作用”的能力。本题为选择题，满分3分。需在整体把握文章主旨的前提下，通过细读描写、议论的关键句，辨析不同材料在文章中表达侧重的差异。
 
@@ -515,10 +515,10 @@ A.甲处 & B.乙处 & C.丙处 & D.丁处 \\
 plot.bar.school.cn.question.C8AO27111
 
 \begin{itshape}
-在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，语文总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO27111_X", "学校","总体","D")`\%。
 \end{itshape}
 
-- 答错原因分析及教学建议 ：
+- 答错原因分析及教学建议（全市）：
 
 这道题目考查学生“梳理段落之间的关系，分析文章的思路”的能力。本题为选择题，满分4分。需完整阅读文章，梳理作者行文思路。细读甲乙丙丁四处，判断其所在段落与前后段落之间的关系。根据内容连贯、富有逻辑性的原则将该句填至恰当处。
 
@@ -545,10 +545,10 @@ D. 天下无纯粹之自由，亦无纯粹之不自由（章太炎）
 plot.bar.school.cn.question.C8AO28111
 
 \begin{itshape}
-在本次测试中，语文总体能力处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "学校","总体","D")`\%。
+本市参加测试的全体学生中，语文总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "学校","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "学校","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "学校","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "C8AO28111_X", "学校","总体","D")`\%。
 \end{itshape}
 
-- 答错原因分析及教学建议 ：
+- 答错原因分析及教学建议（全市）：
 
 这道题目考查学生“概括文章的中心”的能力。本题为选择题，满分4分。需通过阅读文中几个材料、提取议论句中所包含的显性信息等路径，准确概括文章的主旨，再与选项中的名言逐一加以比较、辨析，选择其中最为接近的一项。
 
@@ -567,22 +567,22 @@ plot.bar.school.cn.question.C8AO28111
 \hline
 
 
-\multirow{4}{*}{\makecell[c]{写作}} & C8AS31111 & 切合题意、中心突出、感情真实、内容具体 
-table.school.cn.C8AS31111 
+\multirow{4}{*}{\makecell[c]{写作}} & C8AS31111 & 切合题意、中心突出、感情真实、内容具体
+table.school.cn.C8AS31111
 \\ \cline{2-6}
 
 
-& C8AS31211 & 语言通顺、简洁得体 
-table.school.cn.C8AS31211 
+& C8AS31211 & 语言通顺、简洁得体
+table.school.cn.C8AS31211
 \\ \cline{2-6}
 
 
-& C8AS31311 & 结构合理、层次清晰、详略得体 
-table.school.cn.C8AS31311 
+& C8AS31311 & 结构合理、层次清晰、详略得体
+table.school.cn.C8AS31311
 \\ \cline{2-6}
 
-& C8AS31411 & 书写清晰，标点符号使用正确，错别字较少 
-table.school.cn.C8AS31411 
+& C8AS31411 & 书写清晰，标点符号使用正确，错别字较少
+table.school.cn.C8AS31411
 \\   \hline
 
 \end{longtable}
