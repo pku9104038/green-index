@@ -13,7 +13,7 @@
 
 \begin{itshape}
 \mytable
-\begin{longtable}{|l|l|p{8cm}|}
+\begin{longtable}{|l|l|p{9cm}|}
 \caption{`r tab_name`} \label{tab: `r tab_name`} \\  \hline
 \makecell[c]{内容领域} & \makecell[c]{内容板块} & \makecell[c]{内容要求} \\  \hline
 

@@ -22,79 +22,79 @@ query.data.school.sc.pointrate.perspective
 
 \multicolumn{2}{|c|}{考查维度} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{本\\市} & \makecell[c]{本\\区}  & \makecell[c]{本\\校} \\ \hline
 
-\multirow{10}{*}{科学知识} & \multirow{5}{*}{基本知识} & S8AO20111 & 不同土地资源利用类型 
+\multirow{10}{*}{科学知识} & \multirow{5}{*}{基本知识} & S8AO20111 & 不同土地资源利用类型
 table.school.sc.S8AO20111
 \\ \cline{3-7}
 
-& & S8AO21111 & 识记著名河流 
-table.school.sc.S8AO21111 
+& & S8AO21111 & 识记著名河流
+table.school.sc.S8AO21111
 \\ \cline{3-7}
 
-& & S8AO22111 & 知道海洋在地球表面所占比例 
-table.school.sc.S8AO22111 
+& & S8AO22111 & 知道海洋在地球表面所占比例
+table.school.sc.S8AO22111
 \\ \cline{3-7}
 
-& & S8AO48122 & 知道太阳直射点影子特点，知道太阳二分二至太阳直射位置 
+& & S8AO48122 & 知道太阳直射点影子特点，知道太阳二分二至太阳直射位置
 table.school.sc.S8AO48122
 \\ \cline{3-7}
 
-& & S8AO48121 & 知道太阳直射点影子特点，知道太阳二分二至太阳直射位置 
+& & S8AO48121 & 知道太阳直射点影子特点，知道太阳二分二至太阳直射位置
 table.school.sc.S8AO48121
 \\ \cline{2-7}
 
-& \multirow{2}{*}{基本方法} & S8AO48132 & 读取地理特征做匹配 
+& \multirow{2}{*}{基本方法} & S8AO48132 & 读取地理特征做匹配
 table.school.sc.S8AO48132
 \\ \cline{3-7}
 
-& & S8AO48131 & 读取地理特征做匹配 
+& & S8AO48131 & 读取地理特征做匹配
 table.school.sc.S8AO48131
 \\ \cline{2-7}
 
-& \multirow{3}{*}{简单应用} & S8AO48111 & 极昼和寒带 
+& \multirow{3}{*}{简单应用} & S8AO48111 & 极昼和寒带
 table.school.sc.S8AO48111
 \\ \cline{3-7}
 
-& & S8AS48112 & 判断气候的依据 
+& & S8AS48112 & 判断气候的依据
 table.school.sc.S8AS48112
 \\ \cline{3-7}
 
-& & S8AS48211 & 运用地球南北季节相反解释 
+& & S8AS48211 & 运用地球南北季节相反解释
 table.school.sc.S8AS48211
 \\ \cline{1-7}
 
-\multirow{8}{*}{科学能力} & \multirow{6}{*}{\makecell[c]{获取和\\描述证据}} & S8AO24111 & 读取气温曲线图和降水量柱状图信息 
+\multirow{8}{*}{科学能力} & \multirow{6}{*}{\makecell[c]{获取和\\描述证据}} & S8AO24111 & 读取气温曲线图和降水量柱状图信息
 table.school.sc.S8AO24111
 \\ \cline{3-7}
 
-& & S8AO50111 & 获取和描述证据 
+& & S8AO50111 & 获取和描述证据
 table.school.sc.S8AO50111
 \\ \cline{3-7}
 
-& & S8AO50121 & 获取和描述证据 
+& & S8AO50121 & 获取和描述证据
 table.school.sc.S8AO50121
 \\ \cline{3-7}
 
-& & S8AO50131 & 获取和描述证据 
+& & S8AO50131 & 获取和描述证据
 table.school.sc.S8AO50131
 \\ \cline{3-7}
 
-& & S8AO50132 & 获取和描述证据 
-table.school.sc.S8AO50132 
+& & S8AO50132 & 获取和描述证据
+table.school.sc.S8AO50132
 \\ \cline{3-7}
 
-& & S8AO50211 & 获取和描述证据 
+& & S8AO50211 & 获取和描述证据
 table.school.sc.S8AO50211
 \\ \cline{2-7}
 
-& \multirow{2}{*}{使用证据} & S8AO48311 & 综合运用地理知识来解决具体问题 
+& \multirow{2}{*}{使用证据} & S8AO48311 & 综合运用地理知识来解决具体问题
 table.school.sc.S8AO48311
 \\ \cline{3-7}
 
-&  & S8AS48321 & 南北半球太阳光照特点 
+&  & S8AS48321 & 南北半球太阳光照特点
 table.school.sc.S8AS48321
 \\ \cline{1-7}
 
-科学态度 & 关注 & S8AO50221 & 使用证据 
+科学态度 & 关注 & S8AO50221 & 使用证据
 table.school.sc.S8AO50221
 \\  \cline{1-7}
 
@@ -114,13 +114,13 @@ table.school.sc.S8AO50221
 
 \begin{itshape}
 
-\begin{wrapfigure}[5]{r}{0.4\textwidth}
+\begin{wrapfigure}[5]{r}{0.46\textwidth}
   \begin{center}
     \includegraphics[width=0.35\textwidth]{sc_S8AO48111.png}
   \end{center}
 \end{wrapfigure}
 
-某旅行者喜欢全球各地到处旅游，回来后和人们描述他的旅行经历。他画了张简图，如图12并在上面标了A、B、C、D四个地点，讲起了在这四个地方的旅行经历，但他描述的事情过于奇怪，许多人都认为他在说谎。
+某旅行者喜欢和人们描述他的旅行经历。图11是他画的一张简图，上面标注着A、B、C、D四个地点。以下是他描述的在这四个地方的旅行经历。许多人认为他的话真假难辨。
 
 \end{itshape}
 
@@ -141,7 +141,7 @@ A地	& \textcircled{\scriptsize{1}} 太阳有时候24小时挂在天上。\qquad
 B地	& 某天正午，在太阳底下，前后左右都看不到自己的影子。	& 这句话可能是真的。	& 看不到自己影子的瞬间，其实影子正位于\uline{\qquad\qquad}（头顶的正上方 / 脚的正下方），这天是\uline{\qquad\qquad}（春分/秋分 / 夏至 / 冬至）日。 \\ \hline
 
 C地	& \textcircled{\scriptsize{1}} 几天之内在该地经历了“从夏天到冬天”的变化。 \qquad\qquad\qquad\qquad\qquad \textcircled{\scriptsize{2}} 可以用雪煮茶喝。 &	两句均可能是真话。 &
-	以下地点中符合描述的最有可能的是\uline{\qquad\qquad}（新加坡 / 乞力马扎罗 / 上海/ 北京），旅行者当时进行的运动是\uline{\qquad\qquad}（登山 / 游泳 / 划船）。 \\ \hline
+	以下符合描述的最有可能的地点是\uline{\qquad\qquad}（新加坡 / 乞力马扎罗 / 上海/ 北京），旅行者当时进行的运动是\uline{\qquad\qquad}（登山 / 游泳 / 划船）。 \\ \hline
 
 \end{longtable}
 \end{itshape}
@@ -264,43 +264,43 @@ query2.plot.bar.school.sc.question.S8AO23111
 
 \multicolumn{2}{|c|}{考查维度} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{本\\市} & \makecell[c]{本\\区} & \makecell[c]{本\\校}\\ \hline
 
-\multirow{16}{*}{科学知识} & \multirow{11}{*}{基本知识} & S8AO25111 & 生物体的构成层次及功能 
+\multirow{16}{*}{科学知识} & \multirow{11}{*}{基本知识} & S8AO25111 & 生物体的构成层次及功能
 table.school.sc.S8AO25111
 \\ \cline{3-7}
 
-& & S8AO27111 & 植物的光合作用 
+& & S8AO27111 & 植物的光合作用
 table.school.sc.S8AO27111
 \\ \cline{3-7}
 
-& & S8AO28111 & 人体性状的遗传和变异 
+& & S8AO28111 & 人体性状的遗传和变异
 table.school.sc.S8AO28111
 \\ \cline{3-7}
 
-& & S8AO29111 & 激素分泌异常的疾病 
+& & S8AO29111 & 激素分泌异常的疾病
 table.school.sc.S8AO29111
 \\ \cline{3-7}
 
-& & S8AO32111 & 人体的代谢与平衡 
+& & S8AO32111 & 人体的代谢与平衡
 table.school.sc.S8AO32111
 \\ \cline{3-7}
 
-& & S8AO37111 & 生命的基本单位细胞 
+& & S8AO37111 & 生命的基本单位细胞
 table.school.sc.S8AO37111
 \\ \cline{3-7}
 
-& & S8AO38111 & 健康与疾病 
+& & S8AO38111 & 健康与疾病
 table.school.sc.S8AO38111
 \\ \cline{3-7}
 
-& & S8AO40111 & 食物中的营养成分 
+& & S8AO40111 & 食物中的营养成分
 table.school.sc.S8AO40111
 \\ \cline{3-7}
 
-& & S8AO47111 & 反射弧 
+& & S8AO47111 & 反射弧
 table.school.sc.S8AO47111
 \\ \cline{3-7}
 
-& & S8AO47211 & 反射弧 
+& & S8AO47211 & 反射弧
 table.school.sc.S8AO47211
 \\ \cline{3-7}
 
@@ -308,15 +308,15 @@ table.school.sc.S8AO47211
 table.school.sc.S8AO47511
 \\ \cline{2-7}
 
-& \multirow{2}{*}{基本方法} & S8AO26111 & 显微镜的使用 
+& \multirow{2}{*}{基本方法} & S8AO26111 & 显微镜的使用
 table.school.sc.S8AO26111
 \\ \cline{3-7}
 
-& & S8AO47311 & 膝跳反射实验 
+& & S8AO47311 & 膝跳反射实验
 table.school.sc.S8AO47311
 \\ \cline{2-7}
 
-& \multirow{3}{*}{简单运用} & S8AO46211 & 微生物的培养 
+& \multirow{3}{*}{简单运用} & S8AO46211 & 微生物的培养
 table.school.sc.S8AO46211
 \\ \cline{3-7}
 
@@ -328,15 +328,15 @@ table.school.sc.S8AO47321
 table.school.sc.S8AO30111
 \\ \cline{1-7}
 
-\multirow{5}{*}{科学能力} & \multirow{2}{*}{\makecell[c]{获取和\\描述证据}} & S8AO46121 & 微生物的开发与应用 
+\multirow{5}{*}{科学能力} & \multirow{2}{*}{\makecell[c]{获取和\\描述证据}} & S8AO46121 & 微生物的开发与应用
 table.school.sc.S8AO46121
 \\ \cline{3-7}
 
-& & S8AS46111 & 微生物的开发与应用 
+& & S8AS46111 & 微生物的开发与应用
 table.school.sc.S8AS46111
 \\ \cline{2-7}
 
-& \multirow{1}{*}{使用证据} & S8AO31111 & 人体的代谢与平衡 
+& \multirow{1}{*}{使用证据} & S8AO31111 & 人体的代谢与平衡
 table.school.sc.S8AO31111
 \\ \cline{3-7}
 
@@ -344,19 +344,19 @@ table.school.sc.S8AO31111
 table.school.sc.S8AO36111
 \\ \cline{3-7}
 
-& & S8AO44111 & 环境与可持续发展 
+& & S8AO44111 & 环境与可持续发展
 table.school.sc.S8AO44111
 \\ \cline{1-7}
 
-\multirow{3}{*}{科学态度} & \multirow{3}{*}{赞同} & S8AO34111 & 湿地的作用 
+\multirow{3}{*}{科学态度} & \multirow{3}{*}{赞同} & S8AO34111 & 湿地的作用
 table.school.sc.S8AO34111
 \\ \cline{3-7}
 
-& & S8AO35111 & 绿色植物光合作用和蒸腾作用 
+& & S8AO35111 & 绿色植物光合作用和蒸腾作用
 table.school.sc.S8AO35111
 \\ \cline{3-7}
 
-& & S8AO39111 & 健康与疾病 
+& & S8AO39111 & 健康与疾病
 table.school.sc.S8AO39111
 \\ \cline{1-7}
 
@@ -369,13 +369,13 @@ table.school.sc.S8AO39111
 
 
 
-\questiontitle{典型题目}1：S8AO26111
+\questiontitle{典型题目}4：S8AO26111
 
 \begin{itshape}
 
-\begin{wrapfigure}{r}{0.5\textwidth}
+\begin{wrapfigure}{r}{0.4\textwidth}
   \begin{center}
-    \includegraphics[width=0.45\textwidth]{sc_S8AO26111.png}
+    \includegraphics[width=0.35\textwidth]{sc_S8AO26111.png}
   \end{center}
 \end{wrapfigure}
 
@@ -415,10 +415,10 @@ query2.plot.bar.school.sc.question.S8AO26111
 
 - 教学建议：保证学生实验的正常开设，同时也要关注各结构名称和对应功能的认识，不仅仅停留在观察到细胞结构，而要清楚地认识几个常用结构的具体作用。
 
-\questiontitle{典型题目}2：S8AO27111
+\questiontitle{典型题目}5：S8AO27111
 
 \begin{itshape}
- 27．通过光合作用，来自太阳的能量会储存在下列何种物质中\uline{\qquad\qquad}（ \qquad ）
+ 27．通过光合作用，来自太阳的能量会储存在下列何种物质中……………（ \qquad ）
 
 A．水		\qquad\qquad	B．氧气 \qquad\qquad  C．淀粉	\qquad\qquad	D．二氧化碳
 \end{itshape}
@@ -447,17 +447,17 @@ query2.plot.bar.school.sc.question.S8AO27111
 - 教学建议：教学中不仅要关注科学探究，也要加强以物质和能量等基本的概念认识光合作用实质，这有助于发展学生的科学观念。
 
 
-\questiontitle{典型题目}3：S8AO30111
+\questiontitle{典型题目}6：S8AO30111
 
 \begin{itshape}
 
-\begin{wrapfigure}{r}{0.5\textwidth}
+\begin{wrapfigure}{r}{0.4\textwidth}
   \begin{center}
-    \includegraphics[width=0.45\textwidth]{sc_S8AO30111.png}
+    \includegraphics[width=0.35\textwidth]{sc_S8AO30111.png}
   \end{center}
 \end{wrapfigure}
 
-30．图6是人类一对染色体的遗传图解，对于图解的描述正确的是\uline{\qquad\qquad}（ \qquad ）
+30．图6是人类一对染色体的遗传图解，对于图解的描述正确的是……………………（ \qquad ）
 
 A．子代1是男性
 
@@ -498,10 +498,10 @@ query2.plot.bar.school.sc.question.S8AO30111
 
 虽然是考查能力的题目，但是需要基于基本概念才能回答，所以不能因为关注了能力就忽视对基本概念的认识。
 
-\questiontitle{典型题目}4：S8AO35111
+\questiontitle{典型题目}7：S8AO35111
 
 \begin{itshape}
-35．“生态绿墙”上栽种的众多绿色植物，不仅美化了环境，还能吸收二氧化碳、释放氧气，提高周边环境的湿度，并降低温度。与此相关的植物生理活动有\uline{\qquad\qquad}（\qquad）
+35．“生态绿墙”上栽种的众多绿色植物，不仅美化了环境，还能吸收二氧化碳、释放氧气，提高周边环境的湿度，并降低温度。与此相关的植物生理活动有……………………（\qquad）
 
 A．光合作用和呼吸作用	 \qquad\qquad	 B．呼吸作用和蒸腾作用
 
@@ -551,31 +551,31 @@ query2.plot.bar.school.sc.question.S8AO35111
 
 \multicolumn{2}{|c|}{考查维度} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{本\\市} & \makecell[c]{本\\区} & \makecell[c]{本\\校} \\ \hline
 
-\multirow{18}{*}{科学知识} & \multirow{5}{*}{基本知识} & S8AO01111 & 知道正确的计量单位 
+\multirow{18}{*}{科学知识} & \multirow{5}{*}{基本知识} & S8AO01111 & 知道正确的计量单位
 table.school.sc.S8AO01111
 \\ \cline{3-7}
 
-& & S8AO07111 & 利用pH判断溶液酸碱性 
+& & S8AO07111 & 利用pH判断溶液酸碱性
 table.school.sc.S8AO07111
 \\ \cline{3-7}
 
-& & S8AO12111 & 声音的传播需要介质 
+& & S8AO12111 & 声音的传播需要介质
 table.school.sc.S8AO12111
 \\ \cline{3-7}
 
-& & S8AO33111 & 能源的种类 
+& & S8AO33111 & 能源的种类
 table.school.sc.S8AO33111
 \\ \cline{3-7}
 
-& & S8AO41111 & 机械能的变化 
+& & S8AO41111 & 机械能的变化
 table.school.sc.S8AO41111
 \\ \cline{2-7}
 
-& \multirow{3}{*}{基本方法} & S8AO06111 & 科学实验的基本操作 
+& \multirow{3}{*}{基本方法} & S8AO06111 & 科学实验的基本操作
 table.school.sc.S8AO06111
 \\ \cline{3-7}
 
-& & S8AO14111 & 光的折射 
+& & S8AO14111 & 光的折射
 table.school.sc.S8AO14111
 \\ \cline{3-7}
 
@@ -583,39 +583,39 @@ table.school.sc.S8AO14111
 table.school.sc.S8AO15111
 \\ \cline{2-7}
 
-& \multirow{11}{*}{简单运用} & S8AO02111 & 金属特性的应用 
+& \multirow{11}{*}{简单运用} & S8AO02111 & 金属特性的应用
 table.school.sc.S8AO02111
 \\ \cline{3-7}
 
-& & S8AO03111 & 三态变化过程及名称 
+& & S8AO03111 & 三态变化过程及名称
 table.school.sc.S8AO03111
 \\ \cline{3-7}
 
-& & S8AO04111 & 增大摩擦力的方法 
+& & S8AO04111 & 增大摩擦力的方法
 table.school.sc.S8AO04111
 \\ \cline{3-7}
 
-& & S8AO05111 & 电流热效应的应用 
+& & S8AO05111 & 电流热效应的应用
 table.school.sc.S8AO05111
 \\ \cline{3-7}
 
-& & S8AO08111 & 用粒子模型解释宏观现象 
+& & S8AO08111 & 用粒子模型解释宏观现象
 table.school.sc.S8AO08111
 \\ \cline{3-7}
 
-& & S8AO09111 & 物体的密度与沉浮 
+& & S8AO09111 & 物体的密度与沉浮
 table.school.sc.S8AO09111
 \\ \cline{3-7}
 
-& & S8AO10111 & 力的作用效果 
+& & S8AO10111 & 力的作用效果
 table.school.sc.S8AO10111
 \\ \cline{3-7}
 
-& & S8AO11111 & 匀速直线运动物体的受力分析 
+& & S8AO11111 & 匀速直线运动物体的受力分析
 table.school.sc.S8AO11111
 \\ \cline{3-7}
 
-& & S8AO13111 & 水的三态变化过程及名称 
+& & S8AO13111 & 水的三态变化过程及名称
 table.school.sc.S8AO13111
 \\ \cline{3-7}
 
@@ -623,7 +623,7 @@ table.school.sc.S8AO13111
 table.school.sc.S8AO17111
 \\ \cline{3-7}
 
-& & S8AO18111 & 冰水混合物的温度 
+& & S8AO18111 & 冰水混合物的温度
 table.school.sc.S8AO18111
 \\ \cline{1-7}
 
@@ -635,15 +635,15 @@ table.school.sc.S8AO16111
 table.school.sc.S8AO49141
 \\ \cline{3-7}
 
-& & S8AS49121 & 根据实验数据得出杠杆平衡条件 
+& & S8AS49121 & 根据实验数据得出杠杆平衡条件
 table.school.sc.S8AS49121
 \\ \cline{3-7}
 
-& & S8AS49211 & 杠杆平衡的应用 
+& & S8AS49211 & 杠杆平衡的应用
 table.school.sc.S8AS49211
 \\ \cline{1-7}
 
-科学态度 & 赞同 & S8AO19111 & 灭火的原理及其应用 
+科学态度 & 赞同 & S8AO19111 & 灭火的原理及其应用
 table.school.sc.S8AO19111
 \\ \cline{1-7}
 
@@ -654,10 +654,10 @@ table.school.sc.S8AO19111
 下面将结合“物质科学”部分的典型题目做具体分析。
 
 
-\questiontitle{典型题目}1：S8AO03111
+\questiontitle{典型题目}8：S8AO03111
 
 \begin{itshape}
-3．下列属于液化现象的是\uline{\qquad\qquad\qquad\qquad\qquad}（ \qquad ）
+3．下列属于液化现象的是……………………（ \qquad ）
 
 A．洒在地面上的水很快变干	 \qquad 	B．洗澡时镜子上形成水雾
 
@@ -690,7 +690,7 @@ query2.plot.bar.school.sc.question.S8AO03111
 - 教学建议：概念教学过程中，关注概念内涵，现象是帮助理解概念的重要组成部分，但概念本身涉及的科学内容是教学的重点。可以通过水在自然界三态变化的不同过程，分析比较其区别与联系，从而得到准确的概念，再用概念去解释自然现象，达到巩固概念的目的。
 
 
-\questiontitle{典型题目}2：S8AO41111
+\questiontitle{典型题目}9：S8AO41111
 
 \begin{itshape}
 41．我们上楼梯时，下列有关机械能变化的情况，有可能的是……………（  \qquad    ）
@@ -699,8 +699,8 @@ query2.plot.bar.school.sc.question.S8AO03111
 
 \textcircled{\scriptsize{3}}动能不变，势能不变    \qquad \qquad       \textcircled{\scriptsize{4}}动能变大，势能变大
 
-A．\textcircled{\scriptsize{1}}\textcircled{\scriptsize{2}}    \qquad \qquad B．\textcircled{\scriptsize{3}}\textcircled{\scriptsize{4}}    \qquad \qquad 
-C．\textcircled{\scriptsize{2}}\textcircled{\scriptsize{3}}    \qquad \qquad D．\textcircled{\scriptsize{1}}\textcircled{\scriptsize{4}}    \qquad \qquad 
+A．\textcircled{\scriptsize{1}}\textcircled{\scriptsize{2}}    \qquad \qquad B．\textcircled{\scriptsize{3}}\textcircled{\scriptsize{4}}    \qquad \qquad
+C．\textcircled{\scriptsize{2}}\textcircled{\scriptsize{3}}    \qquad \qquad D．\textcircled{\scriptsize{1}}\textcircled{\scriptsize{4}}    \qquad \qquad
 \end{itshape}
 
 - 试题考查点：科学知识（动能、势能、机械能）及其应用——知识与技能维度
@@ -727,7 +727,7 @@ query2.plot.bar.school.sc.question.S8AO04111
 - 教学建议：在教学实践中，应多结合生活实例，让学生从根本上理解“动能”与“势能”等既有联系又有区别的概念，避免发生概念上的混淆。
 
 
-\questiontitle{典型题目}3：S8AS49211
+\questiontitle{典型题目}10：S8AS49211
 
 \begin{center}
  49．杠杆
@@ -795,47 +795,47 @@ query2.plot.bar.school.sc.question.S8AS49211
 
 \multicolumn{2}{|c|}{考查维度} & 题目编码 & \makecell[c]{具体描述} & \makecell[c]{本\\市} & \makecell[c]{本\\区} & \makecell[c]{本\\校}   \\ \hline
 
-科学知识 & 基本方法 & S8AS47421 & 科学探究的基本要素——测量 
+科学知识 & 基本方法 & S8AS47421 & 科学探究的基本要素——测量
 table.school.sc.S8AS47421
 \\ \cline{1-7}
 
-\multirow{8}{*}{科学能力} & \multirow{2}{*}{做计划} & S8AO42111 & 合理安全使用天然气 
+\multirow{8}{*}{科学能力} & \multirow{2}{*}{做计划} & S8AO42111 & 合理安全使用天然气
 table.school.sc.S8AO42111
 \\ \cline{3-7}
 
-& & S8AS49131 & 多次实验获取数据得出结论 
+& & S8AS49131 & 多次实验获取数据得出结论
 table.school.sc.S8AS49131
 \\ \cline{2-7}
 
-& \multirow{3}{*}{\makecell[c]{获取和\\描述证据}} & S8AS46311 & 获取和描述证据 
+& \multirow{3}{*}{\makecell[c]{获取和\\描述证据}} & S8AS46311 & 获取和描述证据
 table.school.sc.S8AS46311
 \\ \cline{3-7}
 
-& & S8AS49111 & 根据实验数据进行简单计算 
+& & S8AS49111 & 根据实验数据进行简单计算
 table.school.sc.S8AS49111
 \\ \cline{3-7}
 
-& & S8AS49112 & 根据实验数据进行简单计算 
+& & S8AS49112 & 根据实验数据进行简单计算
 table.school.sc.S8AS49112
 \\ \cline{2-7}
 
-& \multirow{3}{*}{使用证据} & S8AO45111 & 根据实验数据获得实验结论 
+& \multirow{3}{*}{使用证据} & S8AO45111 & 根据实验数据获得实验结论
 table.school.sc.S8AO45111
 \\ \cline{3-7}
 
-& & S8AO47411 & 神经系统的协调作用 
+& & S8AO47411 & 神经系统的协调作用
 table.school.sc.S8AO47411
 \\ \cline{3-7}
 
-& & S8AS46321 & 做计划、使用证据 
+& & S8AS46321 & 做计划、使用证据
 table.school.sc.S8AS46321
 \\ \cline{1-7}
 
-\multirow{2}{*}{科学态度} & \multirow{2}{*}{关注} & S8AO46411 & 使用证据 
+\multirow{2}{*}{科学态度} & \multirow{2}{*}{关注} & S8AO46411 & 使用证据
 table.school.sc.S8AO46411
 \\ \cline{3-7}
 
-& & S8AO46421 & 使用证据 
+& & S8AO46421 & 使用证据
 table.school.sc.S8AO46421
 \\ \cline{1-7}
 
@@ -846,7 +846,7 @@ table.school.sc.S8AO46421
 关于“科学探究”部分典型题目的具体分析。
 
 
-\questiontitle{典型题目}1：S8AO45111
+\questiontitle{典型题目}11：S8AO45111
 
 \begin{itshape}
 45．$PM_{2.5}$是指大气中直径不大于2.5微米的颗粒物，其对人体的危害极大。为了探究空气中$PM_{2.5}$的浓度与车流量是否相关，某同学在不同时段对某交通要道的空气进行采样的结果如表3所示：
@@ -863,7 +863,7 @@ table.school.sc.S8AO46421
 \end{longtable}
 \end{center}
 
-由表3数据可以得出的结论有\uline{\qquad\qquad\qquad\qquad}（ \qquad ）
+由表3数据可以得出的结论有……………………（ \qquad ）
 
 \textcircled{\scriptsize{1}} 汽车尾气是导致$PM_{2.5}$浓度升高的主要因素
 
@@ -902,7 +902,7 @@ query2.plot.bar.school.sc.question.S8AO45111
 - 教学建议：探究实验教学过程中，对探究要素，及体现探究要素的相关证据之间要形成有效联系。透过现象看本质的探究能力需要进一步培养，可以在探究过程中形成现象到本质的问题链，引导学生在探究活动中，既能观察现象记录数据，又能认识现象背后的本质要素，提升探究活动的有效性和准确性。
 
 
-\questiontitle{典型题目}2：S8AS46321
+\questiontitle{典型题目}12：S8AS46321
 \begin{center}
 46．酸奶
 \end{center}
@@ -938,7 +938,7 @@ query2.plot.bar.school.sc.question.S8AO45111
 
 （2）酸奶中相关活菌数越多，酸奶的品质越好。同学们根据实验结果，得出制作酸奶的最佳温度为40℃。请分析他们的结论是否合理，并给出你的理由。
 
-\uline{\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad}。
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_。
 
 \end{itshape}
 
@@ -975,45 +975,51 @@ query2.plot.bar.school.sc.question.S8AS46321
 
 - 教学建议：通过培养学生的质疑精神，培育批判性思维。要训练基于证据做出科学的评价习惯，要培养善于发现问题、积极解决问题习惯。
 
+\clearpage
 
-\questiontitle{典型题目}3：S8AS47421
+\questiontitle{典型题目}13：S8AS47421
 
 \begin{center}
 47．神经调节
 \end{center}
-
 \begin{itshape}
 
-医生常用膝跳反射诊断被检测者神经系统是否受损，在课堂上我们也通过膝跳反射研究了神经调节。实验时受试者腿部需放松，最好蒙上眼睛，以防止脑对脊髓活动的影响。
 
-图11为膝跳反射示意图，请分析回答问题：
+\begin{wrapfigure}[3]{r}{0.45\textwidth}
+  \begin{center}
+    \includegraphics[width=0.3\textwidth]{sc_S8AS47421.png}
+  \end{center}
+\end{wrapfigure}
+
+医生常用膝跳反射诊断被检测者神经系统是否受损，在课堂上我们也通过膝跳反射研究了神经调节。实验时受试者腿部需放松，最好蒙上眼睛，以防止脑影响脊髓的活动。
+
+图10为膝跳反射示意图，请分析回答问题：
 
 \end{itshape}
-
-\includegraphics[width=0.98\textwidth]{sc_S8AS47421.png}
 
 \questiontitle{问题}4:
 
 \begin{itshape}
 脑可以影响脊髓的活动，为感受脑的协调作用，老师请学生两两配合，按以下步骤测试反应速度。尺下落距离的长短可说明反应速度的快慢。请分析：
 
+
 \begin{center}
 表5
 \end{center}
 
-\begin{longtable}{|p{7cm}|c|c|c|}
+\begin{longtable}{|l p{5cm}|c|c|c|}
 \hline
-实验步骤： & \multirow{2}{*}{实验次序} & \multicolumn{2}{|c|}{下落距离} \\ \cline{3-4}
-1.提尺； &  & 训练前（cm） & 训练后（cm） \\ \cline{2-4}
-2.放尺； & 1 & 10.8 & 8.8 \\ \cline{2-4}
-3.接尺； & 2 & 10.6  & 8.9  \\ \cline{2-4}
-4.记录数据； & 3 & 10.5 & 8.7 \\ \cline{2-4}
-5.重复1-3步骤3次，计算平均值。 & 平均值 & 10.6 & 8.8 \\ \hline
+实验步骤：& \multirow{5}{*}{\makecell[c]{\includegraphics[width=0.35\textwidth]{sc_S8AS47421_q4.png}} } & \multirow{2}{*}{实验次序} & \multicolumn{2}{c|}{下落距离} \\ \cline{4-5}
+1.提尺；& &  & 训练前（cm） & 训练后（cm） \\ \cline{3-5}
+2.放尺；& & 1 & 10.8 & 8.8 \\ \cline{3-5}
+3.接尺；& & 2 & 10.6  & 8.9  \\ \cline{3-5}
+4.记录数据；& & 3 & 10.5 & 8.7 \\ \cline{3-5}
+\multicolumn{2}{|l|}{5.重复1-3步骤3次，计算平均值。}  & 平均值 & 10.6 & 8.8 \\ \hline
 \end{longtable}
 
 （2）在提尺时，老师要求“零刻度线位置刚好停在接尺同学的手指之间”。假如对准的是2厘米刻度线，你认为这样测量刻度尺下落的距离是否可以?请讲出你的理由。
 
-\uline{\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad}。
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_。
 \end{itshape}
 
 - 试题考查点：科学知识维度——实验操作方法与实验数据的获取
@@ -1037,6 +1043,8 @@ query2.plot.bar.school.sc.question.S8AS47421
 \end{itshape}
 
 - 学生作答分析：此题难度为0.28，比预期低。本题为分级评分试题，满分2，给分为2分、1分、0分，其中0分学生占比`r gio.R$KeyValue(query2.data, "0")`％；1分学生占比`r gio.R$KeyValue(query2.data, "1")`％；2分学生占比`r gio.R$KeyValue(query2.data, "2")`％。
+
+\clearpage
 
 下面罗列的是学生在答题中的描述及出错原因分析：
 
@@ -1062,14 +1070,14 @@ query2.plot.bar.school.sc.question.S8AS47421
 - 教学建议：首先是老师自己在课堂教学中提高语言表达能力及准确、规范的描述科学事实的能力，做到正确引导并潜移默化。其次在教学过程中，可以通过板书的形式建立合理的知识结构呈现给学生，并注意引导学生通过用合理的知识结构来回答问题。第三，加强专业术语记忆，并在课堂教学中提供学生积极参与讨论的机会，以加强系统地表达思维过程的训练。
 
 
-\questiontitle{典型题目}4：S8AO50131、S8AO50132
+\questiontitle{典型题目}14：S8AO50131、S8AO50132
 
 \begin{center}
 50．人口问题
 \end{center}
 
 \begin{itshape}
-建国后，我国的人口政策从“鼓励生育”、“独生子女”、“单独二孩”到“全面二胎”，这些变化有利于促进我国人口长期、均衡的发展。
+建国后，我国的人口政策从“鼓励生育”、“独生子女”、“单独二孩”到“全面二孩”，这些变化有利于促进我国人口长期、均衡的发展。
 \end{itshape}
 
 \begin{figure}[H]
@@ -1079,7 +1087,7 @@ query2.plot.bar.school.sc.question.S8AS47421
 \questiontitle{问题}1:
 
 \begin{itshape}
-图16是我国的人口自然增长率（虚线）和劳动人口增长率（实线）变化折线图。请回答下列问题。
+图15是我国的人口自然增长率（虚线）和劳动人口增长率（实线）变化折线图。请回答下列问题。
 
 （3）目前我国人口总数处于 \_\_\_\_（上升/不变/下降）趋势，劳动人口总数处于 \_\_\_\_ （上升/不变/下降）趋势，说明人口结构正在发生变化。
 \end{itshape}
@@ -1114,22 +1122,24 @@ query2.plot.bar.school.sc.question.S8AO50132
 
 - 教学建议：折线图解读是科学数据分析的重要能力。在教学中，可以从图线的纵横坐标、起点、拐点、走势等角度进行分段解读，然后整体分析，让学生感受折线图表述的信息，从而得出正确判断。
 
-\questiontitle{典型题目}5：S8AO50221
+\questiontitle{典型题目}15：S8AO50221
 
 \questiontitle{问题}2:
 
 \begin{itshape}
-图17是对实施不同人口政策后，我国总人口变化的预测。请回答下列问题。
 
-（2）不同的生育政策可能对我国未来人口产生的影响是\uline{\qquad\qquad\qquad\qquad}（\qquad）
+图16是对实施不同人口政策后，我国总人口变化的预测。请回答下列问题。
+
+（2）不同的生育政策可能对我国未来人口产生的影响是……………………（\qquad）
 
 A．“独生子女”，人口规模在未来30年不会有明显下降
 
 B．“单独二孩”，人口出生率在未来30年持续上升
 
-C．“全面二胎”，人口年龄结构将得到一定程度的改善
+C．“全面二孩”，人口年龄结构将得到一定程度的改善
 
-D．“全面二胎”，人口增长速度将持续增加
+D．“全面二孩”，人口增长速度将持续增加
+
 \end{itshape}
 
 - 试题考查点：科学探究——情感、态度与价值观维度
@@ -1155,12 +1165,12 @@ query2.plot.bar.school.sc.question.S8AO50221
 
 - 教学建议：折线图解读是科学数据分析的重要能力。在教学中，可以从图线的纵横坐标、起点、拐点、走势等角度进行分段解读，然后整体分析，让学生感受折线图表述的信息，从而得出正确判断。
 
-\questiontitle{典型题目}6：S8AO16111
+\questiontitle{典型题目}16：S8AO16111
 
 
 \begin{itshape}
 
-16．若要研究搅拌对砂糖溶解快慢的影响，进行对照实验应选用的装置组合是……（      ）
+16．若要研究搅拌对砂糖溶解快慢的影响，进行对照实验应选用的装置组合是…（ \qquad）
 
 
 \begin{figure}[H]
@@ -1176,7 +1186,7 @@ A．甲和乙     \qquad\qquad B．乙和丙  \qquad\qquad   C．丙和丁  \qqu
 
 - 具体考察内容：运用“控制变量”的思想选择实验装置，探究某单一因素对溶解快慢的影响
 
-- 能力要求：做计划 
+- 能力要求：做计划
 
 - 题型：选择
 

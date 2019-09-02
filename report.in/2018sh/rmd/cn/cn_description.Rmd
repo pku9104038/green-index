@@ -51,6 +51,7 @@
 `r tab_name <- "语文学科学业水平描述" `
 表\ref{tab: `r tab_name`}对九年级学生在语文学科不同考查能力上的表现分水平进行了学业水平描述。
 
+\clearpage
 
 \begin{itshape}
 \mytable
