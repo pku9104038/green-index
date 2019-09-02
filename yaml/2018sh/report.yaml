@@ -335,7 +335,7 @@ report:
         - "district_ar_topic.rmd"
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标综合评价"
       tier: *kStatTierSchool
       subdir: "sch"

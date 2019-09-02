@@ -1,22 +1,11 @@
 # 排版校对
 
-\questiontitle{典型题目}6：S8AO30111
+\questiontitle{典型题目}8：S8AO03111
 
 \begin{itshape}
+3．下列属于液化现象的是……………………（ \qquad ）
 
-\begin{wrapfigure}{r}{0.4\textwidth}
-  \begin{center}
-    \includegraphics[width=0.35\textwidth]{sc_S8AO30111.png}
-  \end{center}
-\end{wrapfigure}
+A．洒在地面上的水很快消失了	 \qquad 	B．洗澡时镜子上形成水雾
 
-30．图6是人类一对染色体的遗传图解，对于图解的描述正确的是……………………（ \qquad ）
-
-A．子代1是男性
-
-B．卵细胞中含有两条X染色体
-
-C．精子中同时含有X和Y染色体
-
-D．子代的男女性别比例为 \textbf{\small{1:1}}
+C．冰块慢慢熔化成水	\qquad\qquad\qquad	D．樟脑丸放一段时间会慢慢变小
 \end{itshape}

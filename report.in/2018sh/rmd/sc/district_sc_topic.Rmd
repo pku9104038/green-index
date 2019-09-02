@@ -672,7 +672,7 @@ table.district.sc.S8AO19111
 
 A．洒在地面上的水很快消失了	 \qquad 	B．洗澡时镜子上形成水雾
 
-C．冰块慢慢熔化成水	\qquad\qquad	D．樟脑丸放一段时间会慢慢变小
+C．冰块慢慢熔化成水	\qquad\qquad\qquad	D．樟脑丸放一段时间会慢慢变小
 \end{itshape}
 
 \questiontitle{命题框架视角}
