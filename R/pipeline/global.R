@@ -117,6 +117,7 @@ kPrefixMultiPlot <- "multiplot"
 kPrefixQueryData <- "query"
 kPrefixQuery2Data <- "query2"
 kPrefixTableRow <- "table"
+kPrefixComment <- "comment"
 kPrefixConnector <- "\\."
 
 # constants for algorithm
@@ -219,6 +220,16 @@ kColumnTableDataTier <- "table_data_tier"
 kColumnTableDataSample <- "table_data_sample"
 kColumnTableDataDigit <- "table_data_digit"
 
+
+# table for comment prerender
+kColumnCommentCode <- "comment_code"
+kColumnCommentDataQuery <- "comment_data_query"
+kColumnCommentDataFrame <- "comment_data_frame"
+kColumnCommentDataVariable <- "comment_data_variable"
+kColumnCommentDataKey <- "comment_data_key"
+kColumnCommentTier <- "comment_tier"
+kColumnCommentDataSample <- "comment_data_sample"
+kColumnCommentDataDigit <- "comment_data_digit"
 
 # table for data query
 kTableDataQuery <- "属性表数据查询"

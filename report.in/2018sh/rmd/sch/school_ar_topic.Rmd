@@ -161,7 +161,7 @@ A. 欢庆场面  \qquad    B. 日常休闲  \qquad   C. 劳动助力  \qquad   D
 plot.bar.school.ar.question.A8AO01111
 plot.bar.school.ar.question.A8AO01211
 
-- 学生的答题分析：
+- 全市学生作答分析：
 
 由此可见，在题目A8AO01111中，这是学生比较熟悉的作品，大部分学生如果课堂认真可以完成。如有个别不知道的学生，仔细听，会发展片段中对该作品的特征性锣鼓有呈现，因此学生可以根据听觉分析得到答案。因此，该题的得分率非常高。
 
@@ -215,7 +215,7 @@ A．轻松 \qquad\qquad  B.愉悦 \qquad\qquad  C.幽默 \qquad\qquad  D.沉重
 plot.bar.school.ar.question.A8AO12111
 plot.bar.school.ar.question.A8AO12211
 
-- 学生的答题分析：
+- 全市学生作答分析：
 
 题目A8AO12111侧重于学生的理解力与艺术感知力，题目A8AO12211侧重于对艺术表现的理解。总体学生的答题情况尚可，但是在第一题中，学生们对于作品还是会有不明确的地方，有个别学生从绘画作品中会感受到是俄罗斯作品，但是在感知力上仍有差异。相对来说，第二题的总体表现要高于预期，可见学生的艺术理解能力尚可。
 
@@ -308,7 +308,7 @@ A8AS06111、A8AS06211
 plot.bar.school.ar.question.A8AS06111
 plot.bar.school.ar.question.A8AS06211
 
-- 学生的答题分析：
+- 全市学生作答分析：
 
 \begin{itshape}
 
@@ -337,7 +337,7 @@ A8AS07111、A8AS07211
 plot.bar.school.ar.question.A8AS07111
 plot.bar.school.ar.question.A8AS07211
 
-- 学生的答题分析：
+- 全市学生作答分析：
 
 ### 运用与表现
 
@@ -414,7 +414,7 @@ table.school.ar.A8AS14111
 
 plot.bar.school.ar.question.A8AS14111
 
-- 学生的答题分析：
+- 全市学生作答分析：
 
 此题为学生的创作表现题，也是主观题，根据评分标准，学生总体得分情况还是比较好的。27分以上学生不多，主要是因为真正有绘画基础的学生在整体学生中不占多数。但在18分以下的学生也存在，分析原因主要是因为没有看清题目，对贺卡的形式要素不了解而造成。这也是命题过程中的尝试，今后的教学中会进一步有目的性的调整。
 

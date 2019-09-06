@@ -1,0 +1,489 @@
+\mylist
+
+\begin{thebibliography}{999}
+
+\bibitem{cite_001}
+崔允漷.
+\textit{亟须培育教师的评价素养[N]}.
+中国教师报,2018-09-12(002).
+
+\bibitem{cite_002}
+崔允漷.
+\textit{学校课程规划的内涵与实践[J]}.
+上海教育科研,2005(08):4-6+20.
+
+\bibitem{cite_003}
+段作章.
+\textit{教学理念向教学行为转化的内隐机制[J]}.
+教育研究,2013,34(08):103-111.
+
+\bibitem{cite_004}
+郝文武.
+\textit{教学方式对能力发展作用的价值取向和实践整合[J]}.
+北京师范大学学报(社会科学版),2007(03):15-21.
+
+\bibitem{cite_005}
+刘月霞.
+\textit{如何扎实推进修订后的普通高中课程实施[J]}.
+人民教育, 2018(5).
+
+\bibitem{cite_006}
+刘志军.
+\textit{发展性课程评价研究[D]}.
+华东师范大学,2002.
+
+\bibitem{cite_007}
+马云鹏,唐丽芳.
+\textit{课程实施策略的选择——课程改革中一个不可忽视的问题[J]}.
+比较教育研究,2002(01):16-20.
+
+\bibitem{cite_008}
+马云鹏.
+\textit{课程与教学论（第二版）[M]}.
+北京：中央广播电视大学出版社, 2005.
+
+\bibitem{cite_009}
+倪娟.
+\textit{江苏省义务教育学业质量均衡化推进报告[J]}.
+江苏教育研究,2012(06):37-42.
+
+\bibitem{cite_010}
+庞维国, 徐晓波, 林立甲, et al.
+\textit{家庭社会经济地位与中学生学业成绩的关系研究[J]}.
+全球教育展望, 2013, 42(2):12-21.
+
+\bibitem{cite_011}
+彭钢.
+\textit{支配与控制:教学理念与教学行为[J]}.
+上海教育科研,2002(11):20-25.
+
+\bibitem{cite_012}
+万爱莲.
+\textit{我国教师教育课程评价存在的问题与对策[J]}.
+湖北第二师范学院学报,2018,35(04):121-124.
+
+\bibitem{cite_013}
+温恒福.
+\textit{论教学方式的改变[J]}.
+中国教育学刊,2002(06):45-48.
+
+\bibitem{cite_014}
+武丽丽,张大均,程刚,王鑫强.
+\textit{家庭社会经济地位对小学生学业成绩的影响:心理素质全局因子的中介作用[J]}.
+西南大学学报(自然科学版),2018,40(06):56-62.
+
+\bibitem{cite_015}
+徐淀芳,纪明泽,汪茂华,詹艺,赵雪晶,邵骁,何穗,张晓宇.
+\textit{《上海市中小学生学业质量绿色指标》修订研究[J]}.
+上海课程教学研究,2019(01):59-64+80.
+
+\bibitem{cite_016}
+杨帆,许庆豫.
+\textit{“教师中心”与“学生中心”教学理念辨析——基于中小学教师的问卷调查[J]}.
+高等教育研究,2015,36(12):78-86.
+
+\bibitem{cite_017}
+姚永强.
+\textit{我国义务教育均衡发展方式转变研究[D]}.
+华中师范大学,2014.
+
+\bibitem{cite_018}
+张露露.
+\textit{我国教师测评素养研究述评[J]}.
+中国考试, 2018, No.316(08):72-76.
+
+\bibitem{cite_019}
+张云丽,段兆兵.
+\textit{基于核心素养培育的教学方式变革:挑战、指向与路径[J]}.
+教育评论,2017(10):144-147.
+
+\bibitem{cite_020}
+赵茜,王佳.
+\textit{论教师教学方式的转变[J]}.
+教育科学研究,2012(02):24-27.
+
+\bibitem{cite_021}
+Bradley R H , Corwyn R F.
+\textit{Socioeconomic status and child development.[J]}.
+Annual Review of Psychology, 2002, 21(3):371-399.
+
+\bibitem{cite_022}
+Coleman J S.
+\textit{Social Capital in the Creation of Human Capital[J]}.
+American Journal of Sociology, 1988, 94(Volume 94Number):95-120.
+
+\bibitem{cite_023}
+Hartas D.
+\textit{Families' social backgrounds matter : socio-economic factors, home learning and young children's language, literacy and social outcomes[J]}.
+British Educational Research Journal, 2013, 37(6):893-914.
+
+\bibitem{cite_024}
+Melby J N , Conger R D , Fang S A , et al.
+\textit{Adolescent family experiences and educational attainment during early adulthood.[J]}.
+Developmental Psychology, 2008, 44(6):1519-1536.
+
+\bibitem{cite_025}
+Popham, James W.
+\textit{Assessment Literacy for Teachers: Faddish or Fundamental?[J]}.
+Theory Into Practice, 2009, 48(1):4-11.
+
+\bibitem{cite_026}
+梁哲, 张羽.
+\textit{中小学生身体形态、心肺功能与学业成绩的关系——基于新旧国家体质健康标准的分析[J]}.
+体育与科学, 2016(5).
+
+\bibitem{cite_027}
+Currie J, Goodman J.
+\textit{Parental Socioeconomic Status, Child Health, and Human Capital[J]}.
+International Encyclopedia of Education, 2010, 2:253-259.
+
+\bibitem{cite_028}
+Lopes L, Santos R, Pereira B, et al.
+\textit{Associations between gross motor coordination and academic achievement in elementary school children[J]}.
+Human Movement Science, 2013, 32(1):9-20.
+
+\bibitem{cite_029}
+樊启学, 阳家鹏.
+\textit{学生体质水平与学业成绩关系的实证研究[J]}.
+广州体育学院学报, 2018, v.38；No.159(03):126-130+134.
+
+\bibitem{cite_030}
+温煦, 张莹, 周鲁, et al.
+\textit{体质健康对青少年学业成绩影响及其作用机制——来自纵向研究的证据[J]}.
+北京体育大学学报, 2018, v.41(07):75-81.
+
+
+\bibitem{cite_031}
+Wittberg, Richard A,Northrup, Karen L,Cottrell, Lesley A.
+\textit{Children's Aerobic Fitness and Academic Achievement: A Longitudinal Examination of Students During Their Fifth and Seventh Grade Years[J]}.
+American Journal of Public Health,2012,102(12).
+
+
+\bibitem{cite_033}
+李艳平.
+\textit{中学生考试焦虑与心理健康、学业成绩的相关研究[D]}.
+上海师范大学, 2003.
+
+\bibitem{cite_034}
+潘秀丹, 管楠楠.
+\textit{医学生心理健康状况与学习成绩之间关系的分析[J]}.
+医学教育研究与实践, 2019, 27(01):74-78.
+
+\bibitem{cite_035}
+Budsankom P, Sawangboon T, Damrongpanit S, et al.
+\textit{Factors Affecting Higher Order Thinking Skills of Students: AMeta-Analytic Structural Equation Modeling Study [J]}.
+Educational Research and Reviews, 2015, 10(19): 39-52.
+
+
+\bibitem{cite_037}
+Weiss R E.
+\textit{Designing Problems to Promote Higher-Order Thinking [J]}.
+New Directions for Teaching \& Learning, 2003,(95): 25-31.
+
+\bibitem{cite_038}
+常磊.
+\textit{国内外高层次（数学）思维研究述评[J]}.
+数学教育学报, 2016(5).
+
+\bibitem{cite_039}
+郑家鲲.
+\textit{健康城市背景下的学生健康体育行为培养研究[D]}.
+上海体育学院,2013.
+
+\bibitem{cite_040}
+徐冰清.
+\textit{小学生行为规范教育研究[D]}.
+华东师范大学,2019.
+
+\bibitem{cite_041}
+沈旭晖、陈伟信、冯智政、曾家洛.
+\textit{香港高中学生国际观问题调查.[E]}.
+香港中文大学香港亚太研究所国际事务研究中心. https://www.cpr.cuhk.edu.hk/resources/press/pdf/57f74c7d1bb8b.pdf.
+
+\bibitem{cite_042}
+张庆鹏, 寇彧.
+\textit{青少年亲社会行为测评维度的建立与验证[J]}.
+社会学研究, 2011(4):105-121.
+
+\bibitem{cite_043}
+张梦圆, 杨莹, 寇彧.
+\textit{新视角论青少年亲社会行为的发展[C]}.
+中国心理学会发展心理专业委员会第十三届学术年会.
+
+\bibitem{cite_044}
+Sonnentag S, Grant A M.
+\textit{Doing good at work feels good at home, but not right away: When and why perceived prosocial impact predicts positive affect.[J]}.
+Personnel Psychology, 2012, 65(3):495-530.
+
+\bibitem{cite_045}
+Subrahmanyam K, Šmahel D.
+\textit{Internet Use and Well-Being: Physical and Psychological Effects[J]}.
+Digital Youth, 2011:123-142.
+
+\bibitem{cite_046}
+Dunn E W, Gilbert D T, Wilson T D.
+\textit{If money doesn't make you happy, then you probably aren't spending it right[J]}.
+Journal of Consumer Psychology, 2011, 21(2):115-125.
+
+\bibitem{cite_047}
+张莹瑞.
+\textit{青少年的中华民族认同与国家自豪感和国民刻板印象的关系[D]}.
+华中师范大学, 2007.
+
+\bibitem{cite_048}
+陈晶.
+\textit{11至20岁青少年的国家认同及其发展[D]}.
+华中师范大学, 2004.
+
+\bibitem{cite_049}
+刘向东.
+\textit{文化多元语境下的国家认同建构[D]}.
+吉林大学,2015.
+
+\bibitem{cite_050}
+杜宵丰, 刘坚.
+\textit{八年级学生"数学兴趣""数学自我效能感""学习坚持性"与"数学成就"的关系研究[J]}.
+数学教育学报, 2017(2).
+
+\bibitem{cite_051}
+李维,白颖颖.
+\textit{初二学生感知的教师支持如何影响学业成绩?——基于学业自我效能感与学习投入的多重中介效应分析[J]}.
+教育与经济, 2018.
+
+\bibitem{cite_052}
+何声清, 綦春霞.
+\textit{师生关系和数学学习兴趣对数学学业成绩的影响——自我效能感及数学焦虑的链式中介作用[J]}.
+教育科学研究, 2018(12).
+
+\bibitem{cite_053}
+高欢, 陈克胜.
+\textit{数学自我效能感的研究现状与展望[J]}.
+数学教育学报, 2017, 26(1).
+
+\bibitem{cite_054}
+Usher E L , Pajares F.
+\textit{Sources of Self-Efficacy in School: Critical Review of the Literature and Future Directions[J]}.
+Review of Educational Research, 2008, 78(4):751-796.
+
+\bibitem{cite_055}
+Oney E , Oksuzoglu-Guven G.
+\textit{Confidence：A critical review of the literature and an alternative perspective for general and specific self-confidence[J]}.
+Psychological reports, 2015, 116(1): 149-163.
+
+\bibitem{cite_056}
+石绍华 等人.
+\textit{中学生学习动机及其影响因素研究[J]}.
+教育研究, 2002(1):65-70.
+
+\bibitem{cite_057}
+范春林, 张大均.
+\textit{学习动机研究的特点、问题及走向[J]}.
+教育研究, 2007(7):71-77.
+
+\bibitem{cite_058}
+Graham S., Weiner B.
+\textit{Motivation: Past, present, and future[M]}.
+APA Educational Psychology Handbook: Vol. 1. Theories, Constructs, and Critical Issues, American Psychological Association, 2012).
+
+\bibitem{cite_059}
+张雪莲, 高玲.
+\textit{学习动机及其相关研究[J]}.
+教育理论与实践, 2009(18):32-34.
+
+\bibitem{cite_060}
+郭衎，曹一鸣.
+\textit{学习动机对学习效果影响的深度解析——基于大规模学生调查的实证研究[J]}.
+教育科学研究, 2019,3:62 – 67.
+
+\bibitem{cite_061}
+贾小娟, 胡卫平, 武宝军.
+\textit{小学生学习动机的培养:五年追踪研究[C]}.
+中国心理学会成立90周年纪念大会暨全国心理学学术会议. 2011.
+
+\bibitem{cite_062}
+Potvin P , Hasni A.
+\textit{Interest, motivation and attitude towards science and technology at K-12 levels: a systematic review of 12?years of educational research[J]}.
+Studies in Science Education, 2014, 50(1):85-129.
+
+\bibitem{cite_063}
+Lazowski R.A.
+\textit{Hulleman C.S. Motivation Interventions in Education: A Meta-Analytic Review.[J]}.
+Review of Educational Research, 2016, 86.
+
+\bibitem{cite_064}
+邹泓, 屈智勇, 叶苑.
+\textit{中小学生的师生关系与其学校适应[J]}.
+心理发展与教育, 2007, 23(4):77-82.
+
+\bibitem{cite_065}
+Valle, Jessica Elena, et al.
+\textit{Influence of bullying and teacher-student relationship on school engagement: Analysis of an explanatory model[J]}.
+Estudos de Psicologia (Campinas) 35.4 (2018): 411-420.
+
+\bibitem{cite_066}
+Uslu, Fatma, and Sidika Gizir.
+\textit{School Belonging of Adolescents: The Role of Teacher-Student Relationships, Peer Relationships and Family Involvement[J]}.
+Educational Sciences: Theory and Practice 17.1 (2017): 63-82.
+
+\bibitem{cite_067}
+Uslu, Fatma, and Sidika Gizir.
+\textit{School Belonging of Adolescents: The Role of Teacher-Student Relationships, Peer Relationships and Family Involvement[J]}.
+Educational Sciences: Theory and Practice 17.1 (2017): 63-82.
+
+\bibitem{cite_068}
+汪茂华.
+\textit{师生关系与学业成绩的关系:学习自信心的中介作用[J]}.
+上海教育科研, 2015(7):15-18.
+
+\bibitem{cite_069}
+王默, 董洋.
+\textit{师生关系模式对学生学业成就影响的元分析[J]}.
+全球教育展望, 2017(07):59-70.
+
+\bibitem{cite_070}
+王默, 董洋.
+\textit{师生关系模式对学生学业成就影响的元分析[J]}.
+全球教育展望, 2017(07):59-70.
+
+\bibitem{cite_071}
+李佳丽, 胡咏梅.
+\textit{不同文化背景下师生关系对中学生学业成绩的影响差异——基于PISA2012中国上海和美国学生数据的经验研究[J]}.
+河南社会科学, 2017, v.25;No.184(8):113-119.
+
+\bibitem{cite_072}
+师保国, 王黎静, 徐丽, et al.
+\textit{师生关系对小学生创造性的作用：一个有调节的中介模型[J]}.
+心理发展与教育, 2016(2):175-182.
+
+\bibitem{cite_073}
+王晓华, 王耘.
+\textit{3～6年级学生及其教师对师生关系知觉的比较研究[J]}.
+心理发展与教育, 2006, V22(3):23-29.
+
+\bibitem{cite_074}
+王耘, 王晓华.
+\textit{小学生的师生关系特点与学生因素的关系研究[J]}.
+心理发展与教育, 2002(3):18-23.
+
+\bibitem{cite_075}
+李婧怡.
+\textit{国内外青少年同伴关系对社会化影响的研究综述[J]}.
+现代教育科学, 2010(10):48-49.
+
+\bibitem{cite_076}
+周宗奎, 孙晓军, 赵冬梅, et al.
+\textit{同伴关系的发展研究[J]}.
+心理发展与教育, 2015, V31(1):62-70.
+
+\bibitem{cite_077}
+邹泓.
+\textit{同伴关系的发展功能及影响因素[J]}.
+心理发展与教育, 1998, V14(2):39-44.
+
+\bibitem{cite_078}
+刘广增, 张大均, 潘彦谷,等.
+\textit{中学生心理素质与同伴关系的研究:自尊的中介作用[J]}.
+心理科学, 2016(6):1290-1295,共6页.
+
+\bibitem{cite_079}
+杨钋, 朱琼.
+\textit{初中生同伴关系的影响因素分析[J]}.
+北京大学教育评论, 2013, 11(3):99-117.
+
+\bibitem{cite_080}
+Eric M. Anderman.
+\textit{School Effects on Psychological Outcomes During Adolescence[J]}.
+Journal of Educational Psychology, 2002,94:795-809..
+
+\bibitem{cite_081}
+Roeser R W, Midgley C, Urdan T.
+\textit{Perceptions of the School Psychological Environment and Early Adolescents’ Psychological and Behavioral Functioning in School :The Mediating Role of Goals and Belonging[J]}.
+Journal of Educational Psychology,1996,88:408-422.
+
+\bibitem{cite_082}
+庞海波.
+\textit{初中生学校归属感与心理健康的相关研究[J]}.
+心理科学, 2009(5):1238-1241.
+
+\bibitem{cite_083}
+Mcneely C, Falci C.
+\textit{School connectedness and the transition into and out of health-risk behavior among adolescents: a comparison of social belonging and teacher support.[J]}.
+Journal of School Health, 2010, 74(7):284-292.
+
+\bibitem{cite_084}
+Mcneely C, Falci C.
+\textit{School connectedness and the transition into and out of health-risk behavior among adolescents: a comparison of social belonging and teacher support.[J]}.
+Journal of School Health, 2010, 74(7):284-292.
+
+\bibitem{cite_085}
+包克冰, 徐琴美.
+\textit{学校归属感与学生发展的探索研究[J]}.
+心理学探新, 2006, 26(2):51-54.
+
+\bibitem{cite_086}
+Brown，R.\& Evans，W.P.
+\textit{Extracurricular Activity and Ethnicity: Creating Greater School Connection among Diverse Student Populations [J]}.
+Urban Education, 2002, 37(1):41-58.
+
+\bibitem{cite_087}
+Slaten C D , Ferguson J K , Allen K A , et al.
+\textit{School Belonging: A Review of the History, Current Trends, and Future Directions[J]}.
+The Educational and Developmental Psychologist, 2016, 33(01):1-15.
+
+\bibitem{cite_088}
+王绯烨, 刘方.
+\textit{从课外时间分配看学生学业负担——我国初中学生学业负担的实证研究[J]}.
+教育发展研究, 2018, v.38；No.459(10):38-44.
+
+\bibitem{cite_089}
+赵阳，薛海平.
+\textit{参与课外补习对我国初中生睡眠时间的影响研究——基于北京市十六所初级中学的实证分析[J]}.
+基础教育, 2018.
+
+\bibitem{cite_090}
+薛海平, 宋海生.
+\textit{课外补习时间对中学生成绩影响的实证研究——基于PISA2012上海的数据[J]}.
+教育科学研究, 2018(4).
+
+\bibitem{cite_091}
+胡咏梅，范文凤，丁维莉.
+\textit{影子教育是否扩大教育结果的不均等——基于PISA 2012上海数据的经验研究[J]}.
+北京大学教育评论, 2015, Vol.13(3):29-46.
+
+\bibitem{cite_092}
+王晓磊.
+\textit{初中阶段教育质量与影子教育机会的不平等——以CEPS 2013-2014数据为例[J]}.
+北京社会科学, 2017(9):50-60.
+
+
+\bibitem{cite_094}
+野晓航.
+\textit{论初中学生学习压力与学业成绩的关系}.
+中国教育学刊, 8,43-45.
+
+\bibitem{cite_095}
+杨亚威, 张敏强, 漆成明.
+\textit{小学生学业负担与数学成绩的关系研究:基于潜在剖面分析[J]}.
+心理科学, 2017(06):94-98.
+
+\bibitem{cite_096}
+郑林科, 万力萍, 李志强.
+\textit{学习压力对学生心身健康影响的线性回归分析[J]}.
+中国学校卫生, 2001(3):224-225.
+
+\bibitem{cite_097}
+龙安邦, 范蔚, 金心红.
+\textit{中小学生学习压力的测度及归因模型构建[J]}.
+教育学报, 2013, 9(1):121-128.
+
+\bibitem{cite_098}
+路海东.
+\textit{聚焦中国儿童学习压力:困境与出路[J]}.
+东北师大学报(哲学社会科学版), 2008(6):24-28.
+
+\bibitem{cite_099}
+刘姣, 朱娅梅.
+\textit{教学效能对学业负担影响的元分析[J]}.
+教育发展研究, 2018, v.38；No.459(10):33-37+65.
+
+\end{thebibliography}

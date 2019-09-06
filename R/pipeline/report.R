@@ -16,6 +16,7 @@ GreenIndexReport <- setRefClass(
   fields = list(
     
     table.df = "data.frame",
+    comment.df = "data.frame",
     district.df = "data.frame",
     school.df = "data.frame",
     
@@ -51,6 +52,10 @@ GreenIndexReport <- setRefClass(
       table.table <- paste0(dataframe$table$table, 
                              dataframe$table$suffix)
       table.df <<- database$ReadTable(table.table)
+      
+      comment.table <- paste0(dataframe$comment$table, 
+                              dataframe$table$suffix)
+      comment.df <<- database$ReadTable(comment.table)
       
       school.table <- paste0(dataframe$school$table, 
                            dataframe$school$suffix)
@@ -216,13 +221,18 @@ GreenIndexReport <- setRefClass(
       preplot.set <- unlist(unique(plot.df[, kColumnPlotCode]))
       prequery.set <- unlist(unique(dataset.df[, kColumnDataset]))
       pretable.set <- unlist(unique(table.df[, kColumnTableRowCode]))
+      precomment.set <- unlist(unique(comment.df[, kColumnCommentCode]))
+      
       for (i in 1:length(input.data)) {
         
         input.line <- input.data[i]
         if (is.element(trimws(input.line), preplot.set) || 
             is.element(trimws(input.line), prequery.set) || 
-            is.element(trimws(input.line), pretable.set) ){
+            is.element(trimws(input.line), pretable.set) || 
+            is.element(trimws(input.line), precomment.set) ){
+          
           prefix <- unlist(strsplit(trimws(input.line), kPrefixConnector))[1]
+          
           if (prefix == kPrefixPlot) {
             if (report.plotfig == TRUE){
               report.fig <- PlotFigure (GetReportOutFigDir(), trimws(input.line))
@@ -304,8 +314,96 @@ GreenIndexReport <- setRefClass(
                   )
                 output.data[length(output.data) + 1] <- row.line
               }
-            }
+            } 
             
+          } else if (prefix == kPrefixComment) {
+            
+            comment.param <- comment.df[comment.df[, kColumnCommentCode] == trimws(input.line), ]
+            if (nrow(comment.param) > 0) {
+              
+              comment.variable <- comment.param[1, kColumnCommentDataVariable]
+              comment.sample <- comment.param[1, kColumnCommentDataSample]
+              comment.key <- comment.param[1, kColumnCommentDataKey]
+              comment.query <- comment.param[1, kColumnCommentDataQuery]
+              comment.dataframe <- comment.param[1, kColumnCommentDataFrame]
+              comment.digit <- comment.param[1, kColumnCommentDataDigit]
+              
+              output.data <- OpenChunk(input.line, output.data)
+              
+              output.data[length(output.data) + 1] <- " comment.school <- \"\" "
+              output.data[length(output.data) + 1] <- " comment.city <- \"\" "
+              output.data[length(output.data) + 1] <- " comment.district <- \"\" "
+              
+              output.data[length(output.data) + 1] <- 
+                paste0( "city.value <- ",
+                        comment.query, "(",
+                        comment.dataframe, ", ",
+                        "\"", comment.variable, "\", ",
+                        "\"", kTierCity, "\", ",
+                        "\"", comment.sample, "\", ",
+                        "\"", comment.key, "\", ",
+                        comment.digit, ")"
+                )
+              
+              output.data[length(output.data) + 1] <- 
+                paste0( "district.value <- ",
+                        comment.query, "(",
+                        comment.dataframe, ", ",
+                        "\"", comment.variable, "\", ",
+                        "\"", kTierDistrict, "\", ",
+                        "\"", comment.sample, "\", ",
+                        "\"", comment.key, "\", ",
+                        comment.digit, ")"
+                )
+              
+              if (report.tier == kTierDistrict) {
+                
+                output.data[length(output.data) + 1] <- "if (district.value >= city.value) {"
+                output.data[length(output.data) + 1] <- 
+                  " comment.city <- paste0(\"本区学生得分率比全市平均得分率高\", round(district.value - city.value, 1), \"%，\")"
+                output.data[length(output.data) + 1] <- " } else {"     
+                output.data[length(output.data) + 1] <-
+                  " comment.city <- paste0(\"本区学生得分率比全市平均得分率低\", round(city.value - district.value, 1), \"%，\")"
+                output.data[length(output.data) + 1] <- "}"     
+                
+              } else if (report.tier == kTierSchool){
+                
+                output.data[length(output.data) + 1] <- 
+                  paste0( "school.value <- ",
+                          comment.query, "(",
+                          comment.dataframe, ", ",
+                          "\"", comment.variable, "\", ",
+                          "\"", kTierSchool, "\", ",
+                          "\"", comment.sample, "\", ",
+                          "\"", comment.key, "\", ",
+                          comment.digit, ")"
+                  )
+                
+                output.data[length(output.data) + 1] <- "if (length(school.value) == 0){"
+                output.data[length(output.data) + 1] <- "  comment.school <- \"本校未参加该项测试。\""
+                output.data[length(output.data) + 1] <- "} else {"
+                output.data[length(output.data) + 1] <- "  if (school.value >= city.value) {"
+                output.data[length(output.data) + 1] <- 
+                  "    comment.city <- paste0(\"本校学生得分率比全市平均得分率高\", round(school.value - city.value, 1), \"%，\")"
+                output.data[length(output.data) + 1] <- "  } else {"
+                output.data[length(output.data) + 1] <- 
+                  "    comment.city <- paste0(\"本校学生得分率比全市平均得分率低\", round(city.value - school.value, 1), \"%，\")"
+                output.data[length(output.data) + 1] <- "  }"
+                output.data[length(output.data) + 1] <- "  if (school.value >= district.value) {"
+                output.data[length(output.data) + 1] <- 
+                  "    comment.district <- paste0(\"比全区平均得分率高\", round(school.value - district.value, 1), \"%，\")"
+                output.data[length(output.data) + 1] <- "  } else {"
+                output.data[length(output.data) + 1] <- 
+                  "    comment.district <- paste0(\"比全区平均得分率低\", round(district.value - school.value, 1), \"%，\")"
+                output.data[length(output.data) + 1] <- "  }"
+                output.data[length(output.data) + 1] <- "}"
+                
+              }
+              
+              output.data <- CloseChunk(output.data)
+              output.data[length(output.data) + 1] <- 
+                " `r comment.school``r comment.city``r comment.district` "
+            }
           } else {
             output.data[length(output.data) + 1] <- input.line 
           }

@@ -31,84 +31,84 @@ query.data.district.en.pointrate.perspective
 
 \makecell[c]{内容\\维度} & 题目编码 & \makecell[c]{能力描述} & \makecell[c]{本\\市} & \makecell[c]{本\\区} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
 
-\multirow{5}{*}{\makecell[c]{话题\\语汇}} & E8AO01111 & 能听懂与话题相关的词汇 
-table.district.en.E8AO01111 
+\multirow{5}{*}{\makecell[c]{话题\\语汇}} & E8AO01111 & 能听懂与话题相关的词汇
+table.district.en.E8AO01111
 \\ \cline{2-16}
 
-& E8AO02111 & 能听懂与话题相关的词汇 
-table.district.en.E8AO02111 
+& E8AO02111 & 能听懂与话题相关的词汇
+table.district.en.E8AO02111
 \\ \cline{2-16}
 
-& E8AO03111 & 能听懂与话题相关的词汇 
-table.district.en.E8AO03111 
+& E8AO03111 & 能听懂与话题相关的词汇
+table.district.en.E8AO03111
 \\ \cline{2-16}
 
-& E8AO04111 & 能听懂与话题相关的词汇 
-table.district.en.E8AO04111 
+& E8AO04111 & 能听懂与话题相关的词汇
+table.district.en.E8AO04111
 \\ \cline{2-16}
 
-& E8AO05111 & 能听懂与话题相关的词汇 
-table.district.en.E8AO05111 
+& E8AO05111 & 能听懂与话题相关的词汇
+table.district.en.E8AO05111
 \\ \cline{1-16}
 
-\multirow{5}{*}{\makecell[c]{功能\\意念}} & E8AO06111 & 听懂表示祝愿功能的语言表达形式，并作出判断和选择 
-table.district.en.E8AO06111 
+\multirow{5}{*}{\makecell[c]{功能\\意念}} & E8AO06111 & 听懂表示祝愿功能的语言表达形式，并作出判断和选择
+table.district.en.E8AO06111
 \\ \cline{2-16}
 
-& E8AO07111 & 听懂表示提议（offers）功能的语言表达形式，并作出判断和选择 
-table.district.en.E8AO07111 
+& E8AO07111 & 听懂表示提议（offers）功能的语言表达形式，并作出判断和选择
+table.district.en.E8AO07111
 \\ \cline{2-16}
 
-& E8AO08111 & 听懂表示道歉功能的语言表达形式，并作出判断和选择 
-table.district.en.E8AO08111 
+& E8AO08111 & 听懂表示道歉功能的语言表达形式，并作出判断和选择
+table.district.en.E8AO08111
 \\ \cline{2-16}
 
-& E8AO09111 & 听懂表示建议（suggestion）功能的语言表达形式，并作出判断和选择 
-table.district.en.E8AO09111 
+& E8AO09111 & 听懂表示建议（suggestion）功能的语言表达形式，并作出判断和选择
+table.district.en.E8AO09111
 \\ \cline{2-16}
 
-& E8AO10111 & 听懂表示询问（价格）功能的语言表达形式，并作出判断和选择 
-table.district.en.E8AO10111 
+& E8AO10111 & 听懂表示询问（价格）功能的语言表达形式，并作出判断和选择
+table.district.en.E8AO10111
 \\ \cline{1-16}
 
-\multirow{2}{*}{\makecell[c]{话题}} & E8AO11111 & 听懂对话中有关天气的内容，选择相应答案 
-table.district.en.E8AO11111 
+\multirow{2}{*}{\makecell[c]{话题}} & E8AO11111 & 听懂对话中有关天气的内容，选择相应答案
+table.district.en.E8AO11111
 \\ \cline{2-16}
 
-& E8AO12111 & 听懂对话内容，推断人物关系并选择相应答案 
-table.district.en.E8AO12111 
+& E8AO12111 & 听懂对话内容，推断人物关系并选择相应答案
+table.district.en.E8AO12111
 \\ \cline{2-16}
 
-& E8AO13111 & 听懂对话中有关求职成功的内容，选择相应答案 
+& E8AO13111 & 听懂对话中有关求职成功的内容，选择相应答案
 table.district.en.E8AO13111
 \\ \cline{2-16}
 
-& E8AO14111 & 听懂对话中有关表演节目的内容，选择相应答案 
-table.district.en.E8AO14111 
+& E8AO14111 & 听懂对话中有关表演节目的内容，选择相应答案
+table.district.en.E8AO14111
 \\ \cline{2-16}
 
-& E8AO15111 & 听懂对话内容，推断对话发生的地点并选择相应答案 
-table.district.en.E8AO15111 
+& E8AO15111 & 听懂对话内容，推断对话发生的地点并选择相应答案
+table.district.en.E8AO15111
 \\ \cline{2-16}
 
-& E8AS16111 & 听懂听力材料，获取并记录相关信息以完成任务 
-table.district.en.E8AS16111 
+& E8AS16111 & 听懂听力材料，获取并记录相关信息以完成任务
+table.district.en.E8AS16111
 \\ \cline{2-16}
 
-& E8AS17111 & 听懂听力材料，获取并记录相关信息以完成任务 
-table.district.en.E8AS17111 
+& E8AS17111 & 听懂听力材料，获取并记录相关信息以完成任务
+table.district.en.E8AS17111
 \\ \cline{2-16}
 
-& E8AS18111 & 听懂听力材料，获取并记录相关信息以完成任务 
-table.district.en.E8AS18111 
+& E8AS18111 & 听懂听力材料，获取并记录相关信息以完成任务
+table.district.en.E8AS18111
 \\ \cline{2-16}
 
-& E8AS19111 & 听懂听力材料，获取并记录相关信息以完成任务，并作出判断和选择 
-table.district.en.E8AS19111 
+& E8AS19111 & 听懂听力材料，获取并记录相关信息以完成任务，并作出判断和选择
+table.district.en.E8AS19111
 \\ \cline{2-16}
 
-& E8AS20111 & 听懂听力材料，获取并记录相关信息以完成任务 
-table.district.en.E8AS20111 
+& E8AS20111 & 听懂听力材料，获取并记录相关信息以完成任务
+table.district.en.E8AS20111
 \\ \cline{1-16}
 
 \end{longtable}
@@ -140,8 +140,11 @@ table.district.en.E8AS20111
 plot.bar.district.en.question.E8AO07111
 
 \begin{itshape}
-本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO07111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO07111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO07111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO07111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO07111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO07111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO07111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO07111_X", "区","总体","D")`\%。
 \end{itshape}
+
+
+- 全市学生作答分析及教学建议：
 
 query2.plot.bar.district.en.question.E8AO07111
 
@@ -169,8 +172,10 @@ query2.plot.bar.district.en.question.E8AO07111
 plot.bar.district.en.question.E8AO08111
 
 \begin{itshape}
-本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO08111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO08111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO08111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO08111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO08111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO08111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO08111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO08111_X", "区","总体","D")`\%。
 \end{itshape}
+
+- 全市学生作答分析及教学建议：
 
 query2.plot.bar.district.en.question.E8AO08111
 
@@ -234,8 +239,10 @@ Travel agency:	& John Locke Travel Service \\
 plot.bar.district.en.question.E8AS18111
 
 \begin{itshape}
-本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AS18111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS18111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS18111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS18111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AS18111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS18111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS18111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS18111_X", "区","总体","D")`\%。
 \end{itshape}
+
+- 全市学生作答分析及教学建议：
 
 query2.plot.bar.district.en.question.E8AS18111
 
@@ -267,8 +274,10 @@ I have to be in Paris on the eleventh of March ...\\ \hline
 plot.bar.district.en.question.E8AS19111
 
 \begin{itshape}
-本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AS19111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS19111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS19111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS19111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AS19111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS19111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS19111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS19111_X", "区","总体","D")`\%。
 \end{itshape}
+
+- 全市学生作答分析及教学建议：
 
 query2.plot.bar.district.en.question.E8AS19111
 
@@ -298,123 +307,123 @@ query2.plot.bar.district.en.question.E8AS19111
 
 题目编码 & \makecell[c]{能力描述} & \makecell[c]{本\\市} & \makecell[c]{本\\区} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
 
-E8AO21111 & 读懂单句，根据语境选择恰当的冠词 
+E8AO21111 & 读懂单句，根据语境选择恰当的冠词
 table.district.en.E8AO21111
 \\ \cline{1-15}
 
-E8AO22111 & 根据语境，选择与核心词汇搭配的介词 
+E8AO22111 & 根据语境，选择与核心词汇搭配的介词
 table.district.en.E8AO22111
 \\ \cline{1-15}
 
-E8AO23111 & 读懂单句，识别系表结构，并根据语境选择恰当的形容词 
+E8AO23111 & 读懂单句，识别系表结构，并根据语境选择恰当的形容词
 table.district.en.E8AO23111
 \\ \cline{1-15}
 
-E8AO24111 & 识别可数与不可数名词，根据语境选择恰当的答案 
+E8AO24111 & 识别可数与不可数名词，根据语境选择恰当的答案
 table.district.en.E8AO24111
 \\ \cline{1-15}
 
-E8AO25111 & 读懂单句，根据语境选择恰当的表示方式的介词 
+E8AO25111 & 读懂单句，根据语境选择恰当的表示方式的介词
 table.district.en.E8AO25111
 \\ \cline{1-15}
 
-E8AO26111 & 读懂单句，知道形容词比较等级的意思及用法，根据语境选择恰当的答案 
+E8AO26111 & 读懂单句，知道形容词比较等级的意思及用法，根据语境选择恰当的答案
 table.district.en.E8AO26111
 \\ \cline{1-15}
 
-E8AO27111 & 读懂单句，根据语境选择恰当的不定代词 
+E8AO27111 & 读懂单句，根据语境选择恰当的不定代词
 table.district.en.E8AO27111
 \\ \cline{1-15}
 
-E8AO28111 & 读懂单句，（知道enjoy这一核心词汇的搭配和用法，）并根据语境选择恰当的代词 
+E8AO28111 & 读懂单句，（知道enjoy这一核心词汇的搭配和用法，）并根据语境选择恰当的代词
 table.district.en.E8AO28111
 \\ \cline{1-15}
 
-E8AO29111 & 读懂单句，知道不定式作宾补的用法，根据语境选择恰当的答案 
+E8AO29111 & 读懂单句，知道不定式作宾补的用法，根据语境选择恰当的答案
 table.district.en.E8AO29111
 \\ \cline{1-15}
 
-E8AO30111 & 读懂单句，根据语境选择恰当的动词时态 
+E8AO30111 & 读懂单句，根据语境选择恰当的动词时态
 table.district.en.E8AO30111
 \\ \cline{1-15}
 
-E8AO31111 & 读懂单句，根据语境选择恰当的从属连词 
+E8AO31111 & 读懂单句，根据语境选择恰当的从属连词
 table.district.en.E8AO31111
 \\ \cline{1-15}
 
-E8AO32111 & 读懂单句，根据语境选择恰当的动词时态 
+E8AO32111 & 读懂单句，根据语境选择恰当的动词时态
 table.district.en.E8AO32111
 \\ \cline{1-15}
 
-E8AO33111 & 读懂单句，知道动名词作宾语的用法，根据语境选择恰当的答案 
+E8AO33111 & 读懂单句，知道动名词作宾语的用法，根据语境选择恰当的答案
 table.district.en.E8AO33111
 \\ \cline{1-15}
 
-E8AO34111 & 读懂单句，根据语境选择恰当的特殊疑问词 
+E8AO34111 & 读懂单句，根据语境选择恰当的特殊疑问词
 table.district.en.E8AO34111
 \\ \cline{1-15}
 
-E8AO35111 & 读懂单句，知道反意疑问句的结构，并根据语境选择恰当的答案 
+E8AO35111 & 读懂单句，知道反意疑问句的结构，并根据语境选择恰当的答案
 table.district.en.E8AO35111
 \\ \cline{1-15}
 
-E8AO36111 & 读懂单句，知道祈使句的结构，并根据语境选择恰当的答案 
+E8AO36111 & 读懂单句，知道祈使句的结构，并根据语境选择恰当的答案
 table.district.en.E8AO36111
 \\ \cline{1-15}
 
-E8AO37111 & 读懂单句，根据语境选择恰当的情态动词 
+E8AO37111 & 读懂单句，根据语境选择恰当的情态动词
 table.district.en.E8AO37111
 \\ \cline{1-15}
 
-E8AO38111 & 读懂单句，根据语境选择恰当的并列连词 
+E8AO38111 & 读懂单句，根据语境选择恰当的并列连词
 table.district.en.E8AO38111
 \\ \cline{1-15}
 
-E8AO39111 & 读懂单句，根据语境选择恰当的单词释义 
+E8AO39111 & 读懂单句，根据语境选择恰当的单词释义
 table.district.en.E8AO39111
 \\ \cline{1-15}
 
-E8AO40111 & 读懂单句，根据语境选择恰当的单词释义 
+E8AO40111 & 读懂单句，根据语境选择恰当的单词释义
 table.district.en.E8AO40111
 \\ \cline{1-15}
 
-E8AO41111 & 读懂单句，根据词性、词义、词形变化选择恰当的单词 
+E8AO41111 & 读懂单句，根据词性、词义、词形变化选择恰当的单词
 table.district.en.E8AO41111
 \\ \cline{1-15}
 
-E8AO42111 & 读懂单句，根据词性、词义、词形变化选择恰当的单词 
+E8AO42111 & 读懂单句，根据词性、词义、词形变化选择恰当的单词
 table.district.en.E8AO42111
 \\ \cline{1-15}
 
-E8AO43111 & 读懂单句，根据词性、词义、词形变化选择恰当的单词 
+E8AO43111 & 读懂单句，根据词性、词义、词形变化选择恰当的单词
 table.district.en.E8AO43111
 \\ \cline{1-15}
 
-E8AO44111 & 读懂单句，根据词性、词义、词形变化选择恰当的单词 
+E8AO44111 & 读懂单句，根据词性、词义、词形变化选择恰当的单词
 table.district.en.E8AO44111
 \\ \cline{1-15}
 
-E8AO45111 & 读懂单句，根据词性、词义、词形变化选择恰当的单词 
+E8AO45111 & 读懂单句，根据词性、词义、词形变化选择恰当的单词
 table.district.en.E8AO45111
 \\ \cline{1-15}
 
-E8AS46111 & 读懂单句，根据词形变化构成新词完成句子 
+E8AS46111 & 读懂单句，根据词形变化构成新词完成句子
 table.district.en.E8AS46111
 \\ \cline{1-15}
 
-E8AS47111 & 读懂单句，用常用后缀构成新词完成句子 
+E8AS47111 & 读懂单句，用常用后缀构成新词完成句子
 table.district.en.E8AS47111
 \\ \cline{1-15}
 
-E8AS48111 & 读懂单句，用常用后缀构成新词完成句子 
+E8AS48111 & 读懂单句，用常用后缀构成新词完成句子
 table.district.en.E8AS48111
 \\ \cline{1-15}
 
-E8AS49111 & 读懂单句，用常用前缀构成新词完成句子 
+E8AS49111 & 读懂单句，用常用前缀构成新词完成句子
 table.district.en.E8AS49111
 \\ \cline{1-15}
 
-E8AS50111 & 读懂单句，用常用后缀构成新词完成句子 
+E8AS50111 & 读懂单句，用常用后缀构成新词完成句子
 table.district.en.E8AS50111
 \\ \cline{1-15}
 
@@ -450,8 +459,10 @@ The new park covers \uline{\qquad\qquad} area of 60 square kilometres.
 plot.bar.district.en.question.E8AO21111
 
 \begin{itshape}
-本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO21111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO21111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO21111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO21111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO21111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO21111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO21111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO21111_X", "区","总体","D")`\%。
 \end{itshape}
+
+- 全市学生作答分析及教学建议：
 
 query2.plot.bar.district.en.question.E8AO21111
 
@@ -477,8 +488,10 @@ Jon is fond \uline{\qquad\qquad} sports. He often skates and plays ball games.
 plot.bar.district.en.question.E8AO22111
 
 \begin{itshape}
-本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO22111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO22111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO22111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO22111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO22111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO22111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO22111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO22111_X", "区","总体","D")`\%。
 \end{itshape}
+
+- 全市学生作答分析及教学建议：
 
 query2.plot.bar.district.en.question.E8AO22111
 
@@ -505,8 +518,10 @@ The pictures in the menu look \uline{\qquad\qquad} and the taste must be great.
 plot.bar.district.en.question.E8AO23111
 
 \begin{itshape}
-本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO23111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO23111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO23111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO23111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO23111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO23111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO23111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO23111_X", "区","总体","D")`\%。
 \end{itshape}
+
+- 全市学生作答分析及教学建议：
 
 query2.plot.bar.district.en.question.E8AO23111
 
@@ -536,8 +551,10 @@ Is there much \uline{\qquad\qquad} about saving water in this article?
 plot.bar.district.en.question.E8AO24111
 
 \begin{itshape}
-本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO24111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO24111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO24111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO24111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO24111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO24111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO24111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO24111_X", "区","总体","D")`\%。
 \end{itshape}
+
+- 全市学生作答分析及教学建议：
 
 query2.plot.bar.district.en.question.E8AO24111
 
@@ -566,8 +583,10 @@ This pair of glasses can let you \uline{\qquad\qquad} both near and far things a
 plot.bar.district.en.question.E8AO29111
 
 \begin{itshape}
-本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO29111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO29111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO29111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO29111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO29111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO29111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO29111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO29111_X", "区","总体","D")`\%。
 \end{itshape}
+
+- 全市学生作答分析及教学建议：
 
 query2.plot.bar.district.en.question.E8AO29111
 
@@ -595,8 +614,10 @@ My brother practices \uline{\qquad\qquad} the violin for two hours every day.
 plot.bar.district.en.question.E8AO33111
 
 \begin{itshape}
-本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO33111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO33111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO33111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO33111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO33111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO33111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO33111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO33111_X", "区","总体","D")`\%。
 \end{itshape}
+
+- 全市学生作答分析及教学建议：
 
 query2.plot.bar.district.en.question.E8AO33111
 
@@ -619,8 +640,10 @@ Kitty took some \uline{\qquad\qquad} for the English Club on the Open Day. (phot
 plot.bar.district.en.question.E8AS46111
 
 \begin{itshape}
-本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AS46111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS46111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS46111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS46111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AS46111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS46111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS46111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS46111_X", "区","总体","D")`\%。
 \end{itshape}
+
+- 全市学生作答分析及教学建议：
 
 query2.plot.bar.district.en.question.E8AS46111
 
@@ -642,8 +665,10 @@ It is \uline{\qquad\qquad} to succeed without working hard. (possible)
 plot.bar.district.en.question.E8AS49111
 
 \begin{itshape}
-本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AS49111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS49111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS49111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS49111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AS49111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS49111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS49111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS49111_X", "区","总体","D")`\%。
 \end{itshape}
+
+- 全市学生作答分析及教学建议：
 
 query2.plot.bar.district.en.question.E8AS49111
 
@@ -664,100 +689,100 @@ query2.plot.bar.district.en.question.E8AS49111
 
 \makecell[c]{内容\\维度} & 题目编码 & \makecell[c]{能力描述} & \makecell[c]{本\\市} & \makecell[c]{本\\区} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学} & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
 
-\multirow{5}{*}{\makecell[c]{话题\\语汇}} & E8AO51111 & 根据释义读懂话题语汇，并选择相匹配的图片 
+\multirow{5}{*}{\makecell[c]{话题\\语汇}} & E8AO51111 & 根据释义读懂话题语汇，并选择相匹配的图片
 table.district.en.E8AO51111
 \\ \cline{2-16}
 
-& E8AO52111 & 根据释义读懂话题语汇，并选择相匹配的图片 
+& E8AO52111 & 根据释义读懂话题语汇，并选择相匹配的图片
 table.district.en.E8AO52111
 \\ \cline{2-16}
 
-& E8AO53111 & 根据释义读懂话题语汇，并选择相匹配的图片 
+& E8AO53111 & 根据释义读懂话题语汇，并选择相匹配的图片
 table.district.en.E8AO53111
 \\ \cline{2-16}
 
-& E8AO54111 & 根据释义读懂话题语汇，并选择相匹配的图片 
+& E8AO54111 & 根据释义读懂话题语汇，并选择相匹配的图片
 table.district.en.E8AO54111
 \\ \cline{2-16}
 
-& E8AO55111 & 根据释义读懂话题语汇，并选择相匹配的图片 
+& E8AO55111 & 根据释义读懂话题语汇，并选择相匹配的图片
 table.district.en.E8AO55111
 \\ \cline{1-16}
 
-\multirow{5}{*}{\makecell[c]{语篇}} & E8AO56111 & 读懂故事语篇，根据语境，选择恰当的副词，补全所缺内容 
+\multirow{5}{*}{\makecell[c]{语篇}} & E8AO56111 & 读懂故事语篇，根据语境，选择恰当的副词，补全所缺内容
 table.district.en.E8AO56111
 \\ \cline{2-16}
 
-& E8AO57111 & 读懂故事语篇，根据语境，选择恰当的动词短语，补全所缺内容 
+& E8AO57111 & 读懂故事语篇，根据语境，选择恰当的动词短语，补全所缺内容
 table.district.en.E8AO57111
 \\ \cline{2-16}
 
-& E8AO58111 & 读懂故事语篇，根据语境，选择恰当的名词，补全所缺内容 
+& E8AO58111 & 读懂故事语篇，根据语境，选择恰当的名词，补全所缺内容
 table.district.en.E8AO58111
 \\ \cline{2-16}
 
-& E8AO59111 & 读懂故事语篇，根据语境，选择恰当的动词，补全所缺内容 
+& E8AO59111 & 读懂故事语篇，根据语境，选择恰当的动词，补全所缺内容
 table.district.en.E8AO59111
 \\ \cline{2-16}
 
-& E8AO60111 & 读懂故事语篇，根据语境，选择恰当的形容词，补全所缺内容 
+& E8AO60111 & 读懂故事语篇，根据语境，选择恰当的形容词，补全所缺内容
 table.district.en.E8AO60111
 \\ \cline{1-16}
 
-& E8AO61111 & 读懂故事语篇，根据语境，选择恰当的名词，补全所缺内容 
+& E8AO61111 & 读懂故事语篇，根据语境，选择恰当的名词，补全所缺内容
 table.district.en.E8AO61111
 \\ \cline{2-16}
 
-& E8AO62111 & 读懂故事语篇，根据语境，选择恰当的形容词短语，补全所缺内容 
+& E8AO62111 & 读懂故事语篇，根据语境，选择恰当的形容词短语，补全所缺内容
 table.district.en.E8AO62111
 \\ \cline{2-16}
 
-& E8AO63111 & 读懂故事语篇，根据语境，选择恰当的动词，补全所缺内容 
+& E8AO63111 & 读懂故事语篇，根据语境，选择恰当的动词，补全所缺内容
 table.district.en.E8AO63111
 \\ \cline{2-16}
 
-& E8AO64111 & 读懂非连续性文本，根据短文内容，选择文章主旨大意 
+& E8AO64111 & 读懂非连续性文本，根据短文内容，选择文章主旨大意
 table.district.en.E8AO64111
 \\ \cline{2-16}
 
-& E8AO65111 & 读懂非连续性文本，根据短文内容，获取事实信息 
+& E8AO65111 & 读懂非连续性文本，根据短文内容，获取事实信息
 table.district.en.E8AO65111
 \\ \cline{2-16}
 
-& E8AO66111 & 读懂非连续性文本，根据短文内容进行简单推断 
+& E8AO66111 & 读懂非连续性文本，根据短文内容进行简单推断
 table.district.en.E8AO66111
 \\ \cline{2-16}
 
-& E8AO67111 & 读懂记叙文语篇，根据短文内容获取事实信息 
+& E8AO67111 & 读懂记叙文语篇，根据短文内容获取事实信息
 table.district.en.E8AO67111
 \\ \cline{2-16}
 
 
-& E8AO68111 & 读懂记叙文语篇，根据短文内容获取事实信息 
+& E8AO68111 & 读懂记叙文语篇，根据短文内容获取事实信息
 table.district.en.E8AO68111
 \\ \cline{2-16}
 
-& E8AO69111 & 读懂记叙文语篇，根据短文内容获取事实信息 
+& E8AO69111 & 读懂记叙文语篇，根据短文内容获取事实信息
 table.district.en.E8AO69111
 \\ \cline{2-16}
 
-& E8AO70111 & 读懂记叙文语篇，根据短文内容进行简单判断 
+& E8AO70111 & 读懂记叙文语篇，根据短文内容进行简单判断
 table.district.en.E8AO70111
 \\ \cline{2-16}
 
-& E8AO71111 & 读懂记叙文语篇，根据短文内容进行简单推断 
+& E8AO71111 & 读懂记叙文语篇，根据短文内容进行简单推断
 table.district.en.E8AO71111
 \\ \cline{2-16}
 
-& E8AO72111 & 读懂记叙文语篇，根据短文内容进行简单推断 
+& E8AO72111 & 读懂记叙文语篇，根据短文内容进行简单推断
 table.district.en.E8AO72111
 \\ \cline{2-16}
 
-& E8AO73111 & 读懂记叙文语篇，根据短文内容获取事实信息 
+& E8AO73111 & 读懂记叙文语篇，根据短文内容获取事实信息
 table.district.en.E8AO73111
 \\ \cline{2-16}
 
-& E8AO74111 & 读懂记叙文语篇，根据短文内容进行简单推断 
+& E8AO74111 & 读懂记叙文语篇，根据短文内容进行简单推断
 table.district.en.E8AO74111
 \\ \cline{1-16}
 
@@ -840,8 +865,10 @@ E8AO63111
 plot.bar.district.en.question.E8AO56111
 
 \begin{itshape}
-本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO56111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO56111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO56111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO56111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO56111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO56111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO56111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO56111_X", "区","总体","D")`\%。
 \end{itshape}
+
+- 全市学生作答分析及教学建议：
 
 query2.plot.bar.district.en.question.E8AO56111
 
@@ -860,8 +887,10 @@ query2.plot.bar.district.en.question.E8AO56111
 plot.bar.district.en.question.E8AO59111
 
 \begin{itshape}
-本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO59111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO59111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO59111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO59111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO59111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO59111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO59111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO59111_X", "区","总体","D")`\%。
 \end{itshape}
+
+- 全市学生作答分析及教学建议：
 
 query2.plot.bar.district.en.question.E8AO59111
 
@@ -880,8 +909,10 @@ query2.plot.bar.district.en.question.E8AO59111
 plot.bar.district.en.question.E8AO60111
 
 \begin{itshape}
-本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO60111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO60111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO60111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO60111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO60111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO60111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO60111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO60111_X", "区","总体","D")`\%。
 \end{itshape}
+
+- 全市学生作答分析及教学建议：
 
 query2.plot.bar.district.en.question.E8AO60111
 
@@ -899,8 +930,10 @@ query2.plot.bar.district.en.question.E8AO60111
 plot.bar.district.en.question.E8AO62111
 
 \begin{itshape}
-本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO62111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO62111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO62111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO62111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO62111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO62111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO62111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO62111_X", "区","总体","D")`\%。
 \end{itshape}
+
+- 全市学生作答分析及教学建议：
 
 query2.plot.bar.district.en.question.E8AO62111
 
@@ -919,8 +952,10 @@ query2.plot.bar.district.en.question.E8AO62111
 plot.bar.district.en.question.E8AO63111
 
 \begin{itshape}
-本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO63111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO63111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO63111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO63111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO63111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO63111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO63111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO63111_X", "区","总体","D")`\%。
 \end{itshape}
+
+- 全市学生作答分析及教学建议：
 
 query2.plot.bar.district.en.question.E8AO63111
 
@@ -998,9 +1033,11 @@ If you are going to play soccer, who will you invite to join you?
 plot.bar.district.en.question.E8AO65111
 
 \begin{itshape}
-本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO65111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO65111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO65111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO65111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO65111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO65111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO65111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO65111_X", "区","总体","D")`\%。
 \end{itshape}
 
+
+- 全市学生作答分析及教学建议：
 
 query2.plot.bar.district.en.question.E8AO65111
 
@@ -1018,8 +1055,10 @@ query2.plot.bar.district.en.question.E8AO65111
 plot.bar.district.en.question.E8AO66111
 
 \begin{itshape}
-本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO66111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO66111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO66111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO66111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO66111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO66111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO66111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO66111_X", "区","总体","D")`\%。
 \end{itshape}
+
+- 全市学生作答分析及教学建议：
 
 query2.plot.bar.district.en.question.E8AO66111
 
@@ -1061,8 +1100,10 @@ Which of the following statements is right?
 plot.bar.district.en.question.E8AO70111
 
 \begin{itshape}
-本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO70111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO70111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO70111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO70111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO70111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO70111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO70111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO70111_X", "区","总体","D")`\%。
 \end{itshape}
+
+- 全市学生作答分析及教学建议：
 
 query2.plot.bar.district.en.question.E8AO70111
 
@@ -1138,8 +1179,10 @@ According to the last paragraph, what will the writer probably say to her parent
 plot.bar.district.en.question.E8AO71111
 
 \begin{itshape}
-本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO71111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO71111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO71111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO71111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO71111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO71111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO71111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO71111_X", "区","总体","D")`\%。
 \end{itshape}
+
+- 全市学生作答分析及教学建议：
 
 query2.plot.bar.district.en.question.E8AO71111
 
@@ -1157,8 +1200,10 @@ query2.plot.bar.district.en.question.E8AO71111
 plot.bar.district.en.question.E8AO72111
 
 \begin{itshape}
-本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO72111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO72111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO72111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO72111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO72111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO72111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO72111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO72111_X", "区","总体","D")`\%。
 \end{itshape}
+
+- 全市学生作答分析及教学建议：
 
 query2.plot.bar.district.en.question.E8AO72111
 
@@ -1177,8 +1222,10 @@ query2.plot.bar.district.en.question.E8AO72111
 plot.bar.district.en.question.E8AO74111
 
 \begin{itshape}
-本市参加测试的全体学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO74111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO74111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO74111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO74111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO74111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO74111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO74111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO74111_X", "区","总体","D")`\%。
 \end{itshape}
+
+- 全市学生作答分析及教学建议：
 
 query2.plot.bar.district.en.question.E8AO74111
 
@@ -1199,19 +1246,19 @@ query2.plot.bar.district.en.question.E8AO74111
 
 \makecell[c]{内容\\维度} & 题目编码 & \makecell[c]{能力描述} & \makecell[c]{本\\市} & \makecell[c]{本\\区} & \makecell[c]{公\\办} & \makecell[c]{民\\办} & \makecell[c]{普通\\初中} & \makecell[c]{九年\\一贯} & \makecell[c]{完全\\中学}  & \makecell[c]{新优\\质\\学校} & \makecell[c]{强校\\工程\\学校} & 男 & 女 & \makecell[c]{沪\\籍} & \makecell[c]{非\\沪\\籍} \\ \hline
 
-\multirow{4}{*}{\makecell[c]{话题}} & E8AS75111 & 完成简单的叙事写作任务，内容充实，覆盖要点 
+\multirow{4}{*}{\makecell[c]{话题}} & E8AS75111 & 完成简单的叙事写作任务，内容充实，覆盖要点
 table.district.en.E8AS75111
 \\ \cline{2-16}
 
-& E8AS75211 & 完成简单的叙事写作任务，用词适切，语法正确，语言地道 
+& E8AS75211 & 完成简单的叙事写作任务，用词适切，语法正确，语言地道
 table.district.en.E8AS75211
 \\ \cline{2-16}
 
-& E8AS75311 & 完成简单的叙事写作任务，结构紧凑，意思连贯 
+& E8AS75311 & 完成简单的叙事写作任务，结构紧凑，意思连贯
 table.district.en.E8AS75311
 \\ \cline{2-16}
 
-& E8AS75411 & 完成简单的叙事写作任务，书写规范，字数适宜 
+& E8AS75411 & 完成简单的叙事写作任务，书写规范，字数适宜
 table.district.en.E8AS75411
 \\ \cline{1-16}
 
