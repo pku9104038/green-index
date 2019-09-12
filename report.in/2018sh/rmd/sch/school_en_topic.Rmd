@@ -671,7 +671,6 @@ query2.plot.bar.city.en.question.E8AS49111
 
 `r gio.R$KeyValue(query2.data, "1")`％的学生能够完成根据句意和结构，正确填写出所给形容词impossible的反义词impossible。`r gio.R$KeyValue(query2.data, "0")`％的学生没有得分。主要原因是没有理解句意和It is + adj. + to do sth.结构，填写了副词possibly，还有部分学生加了错误的前缀。
 
-
 comment.school.en.question.E8AS49111
 
 ### 阅读

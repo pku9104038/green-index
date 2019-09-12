@@ -12,16 +12,16 @@ plot.bar.district.ar.rank.total.region
 plot.bar.district.ar.score.segment
 
 
-## 不同群体学生的总体表现
+## 本区不同群体学生的总体表现
 
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.ar.rank.total.perspective")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.district.ar.quantile.perspective")`}分别给出了本区不同群体\footnote{其他：指普通初中、九年一贯制学校、完全中学之外的其他学校。}学生在艺术素养各水平上的人数比例和得分分布\footnote{盒须图——5\%学生得分小于等于须下端线分数；25\%学生得分小于等于盒底分数；50\%学生得分大于等于盒中横线分数；25\%学生得分大于等于盒顶分数；5\%学生得分大于等于须上端线分数；盒高度一定程度上反映了得分分布的离散程度；红点为平均分。}。
 
 plot.bar.district.ar.rank.total.perspective
 plot.box.district.ar.quantile.perspective
 
-## 不同学校学生的总体表现
+## 本区各学校学生的总体表现
 
-图\ref{fig: `r gio.R$GetPlotTitle("multiplot.bar.district.ar.score.rank.school")`}和图\ref{fig: `r gio.R$GetPlotTitle("multiplot.box.district.ar.score.quantile.school")`}分别给出了本区不同学校学生在艺术素养各水平上的人数比例和得分分布。
+图\ref{fig: `r gio.R$GetPlotTitle("multiplot.bar.district.ar.score.rank.school")`}和图\ref{fig: `r gio.R$GetPlotTitle("multiplot.box.district.ar.score.quantile.school")`}分别给出了本区各学校学生在艺术素养各水平上的人数比例和得分分布。
 
 multiplot.bar.district.ar.score.rank.school
 multiplot.box.district.ar.score.quantile.school

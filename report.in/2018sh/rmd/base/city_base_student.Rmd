@@ -24,6 +24,11 @@ query.data.city.base.student.survey
 - 九年级学生一年阅读课外读物量达到9本及以上的比例为`r gio.R$SubAttSamKey(query.data, "学生", "课外阅读", "总体", c("9-12本", "13本及以上"), 1)`%，有`r gio.R$SubAttSamKey(query.data, "学生", "课外阅读", "总体", c("1-4本", "没有"), 1)`%的学生年阅读量不足5本，有`r gio.R$SubAttSamKey(query.data, "学生", "课外阅读", "总体", c("没有"), 1)`%的学生几乎不进行课外阅读。
 - 九年级学生每周校外运动时间在1小时以内的占`r gio.R$SubAttSamKey(query.data, "家长", "校外运动时间", "总体", c("1小时以内"), 1)`%，在2小时及以上的占`r gio.R$SubAttSamKey(query.data, "家长", "校外运动时间", "总体", c("2-3小时（含2小时）", "3-4小时（含3小时）", "4-5小时（含4小时）", "5小时及以上"), 1)`%。
 
+- 九年级学生，`r gio.R$CoefSamDimTop(query.data, "总体", "师生关系", "二级指标", 1)`%对师生关系评价较高，具体表现在教师是否公平、平等的对待学生、是否信任学生这三个方面。
+- 九年级学生`r gio.R$CoefSamDimTop(query.data, "总体", "学业压力", "二级指标", 1)`%感到学习压力较轻。
+- 九年级学生中有`r gio.R$CoefSamDimTop(query.data, "总体", "学习动机", "二级指标", 1)`%的学生有比较强的学习动机。
+- `r gio.R$CoefSamDomTop(query.data, "总体", "学生对学校认同度", "一级指标", 1)`%学生对学校认同度高，具体表现为喜欢自己的学校、老师，同学关系和睦。
+- 九年级学生中学习自信心较强的学生所占比例为`r gio.R$CoefSamDimTop(query.data, "总体", "学习自信心", "二级指标", 1)`%，自信心水平比较高，对自己的能力有比较恰当的评估。
 
 
 ## 学生基本情况
@@ -36,6 +41,7 @@ query.data.city.base.student.survey
 
 plot.bar.city.base.onechild.perspective
 
+\clearpage
 
 #### 学生家庭的藏书量
 
@@ -49,6 +55,9 @@ plot.bar.city.base.book.perspective
 
 plot.bar.city.base.car.perspective
 
+
+\clearpage
+
 #### 学生家庭出境旅游情况
 
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.trip.perspective")`}给出了九年级学生家庭出境旅游的总体情况及各群体之间的比较。
@@ -60,6 +69,9 @@ plot.bar.city.base.trip.perspective
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.father.perspective")`}给出了九年级学生父亲受教育的总体情况及各群体之间的比较。
 
 plot.bar.city.base.father.perspective
+
+
+\clearpage
 
 #### 学生母亲受教育情况
 
@@ -76,6 +88,9 @@ plot.bar.city.base.mother.perspective
 
 plot.bar.city.base.sleep.hours.perspective
 
+
+\clearpage
+
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.sleep.feel.perspective")`}给出了九年级学生对自己每天睡眠时间是否充足的看法。
 
 plot.bar.city.base.sleep.feel.perspective
@@ -84,6 +99,7 @@ plot.bar.city.base.sleep.feel.perspective
 
 plot.bar.city.base.sleep.lack.reason
 
+\clearpage
 
 #### 学生作业时间
 
@@ -308,10 +324,14 @@ plot.bar.city.base.globalization.action
 
 ### 情绪状态
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.emotion.status")`}给出了九年级学生对情绪状态相关问题的反馈。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.emotion.status.happy")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.emotion.status.like")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.emotion.status.vex")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.city.base.emotion.status.cry")`}给出了九年级学生对情绪状态相关问题的反馈。
 
-plot.bar.city.base.emotion.status
+plot.bar.city.base.emotion.status.happy
+plot.bar.city.base.emotion.status.like
+plot.bar.city.base.emotion.status.vex
+plot.bar.city.base.emotion.status.cry
 
+\clearpage
 
 ### 情绪稳定性
 
@@ -325,6 +345,8 @@ plot.bar.city.base.emotion.stability
 
 plot.bar.city.base.emotion.management
 
+
+\clearpage
 
 ## 背景变量与学业成绩的关系
 
@@ -340,6 +362,9 @@ plot.point.city.base.score.sleep.allsubject.district
 图\ref{fig: `r gio.R$GetPlotTitle("plot.point.city.base.score.homework.allsubject.district")`}给出了九年级学生的作业时间与学业成绩的关系。
 
 plot.point.city.base.score.homework.allsubject.district
+
+
+\clearpage
 
 ### 校外补课时间与学业成绩的关系
 

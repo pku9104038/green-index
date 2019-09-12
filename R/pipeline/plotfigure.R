@@ -446,7 +446,6 @@ GreenIndexPlotFigure <- setRefClass(
               plot.order.x <<- c(plot.order.x ,unlist(sort.df[, kColumnAxisX]))
             }
             
-            
             if (length(plot.order.x) == length(xlist)) {
               break
             } else {
@@ -482,6 +481,7 @@ GreenIndexPlotFigure <- setRefClass(
               sort.df <- sort.df[!(sort.df[, kColumnAxisX] %in% plot.order.x), ]
             }
           }
+          print(plot.order.x)
           
         } else if(plot.param[1, kColumnSortX] == kSortAsc) {
           
@@ -505,17 +505,18 @@ GreenIndexPlotFigure <- setRefClass(
               order.x <- unlist(sort.df[, kColumnAxisX])
               order.first <- FALSE
             } else {
-              plot.order.x <<- c(order.x ,unlist(sort.df[, kColumnAxisX]))
+              order.x <- c(order.x ,unlist(sort.df[, kColumnAxisX]))
             }
             
-            if (length(plot.order.x) == length(xlist)) {
+            if (length(order.x) == length(xlist)) {
               break
             } else {
-              sort.df <- sort.df[!(sort.df[, kColumnAxisX] %in% plot.order.x), ]
+              sort.df <- sort.df[!(sort.df[, kColumnAxisX] %in% order.x), ]
             }
           }
           order.x <- rev(order.x)
           plot.order.x <<- unlist(append(order, order.x))
+          
         } else if(plot.param[1, kColumnSortX] == kSortDesc) {
           
           order <- unlist(strsplit(plot.param[1, kColumnOrderX], kSeparator))
@@ -524,7 +525,7 @@ GreenIndexPlotFigure <- setRefClass(
           
           subsets <- unlist(strsplit(plot.param[1, kColumnSortXSubset], kSeparator))
           xlist <- unlist(unique(sort.df[, kColumnAxisX]))
-          order.first <- TRUE
+          order.first  <- TRUE
           for (i in 1:length(subsets)) {
             sort.df <- 
               sort.df[sort.df[, plot.param[1, kColumnSortXBy]] == 
@@ -538,17 +539,15 @@ GreenIndexPlotFigure <- setRefClass(
               order.x <- unlist(sort.df[, kColumnAxisX])
               order.first <- FALSE
             } else {
-              plot.order.x <<- c(order.x ,unlist(sort.df[, kColumnAxisX]))
+              order.x <- c(order.x ,unlist(sort.df[, kColumnAxisX]))
             }
             
-            if (length(plot.order.x) == length(xlist)) {
+            if (length(order.x) == length(xlist)) {
               break
             } else {
-              sort.df <- sort.df[!(sort.df[, kColumnAxisX] %in% plot.order.x), ]
+              sort.df <- sort.df[!(sort.df[, kColumnAxisX] %in% order.x), ]
             }
           }
-          
-          
           plot.order.x <<- unlist(append(order, order.x))
         } 
       } 
@@ -1127,6 +1126,8 @@ GreenIndexPlotFigure <- setRefClass(
       
       # figure <- figure + geom_text_repel()
       
+      figure <- figure + scale_color_economist()
+      
       return(figure)
       
     },
@@ -1160,87 +1161,10 @@ GreenIndexPlotFigure <- setRefClass(
       
     },
     
-    PlotSortX = function() {
-      
-      if (plot.param[1, kColumnSortX] == kStringNone) {
-        if (plot.param[1, kColumnOrderX] == kStringNone) {
-          plot.order.x <<- unlist(unique(plot.data[, kColumnAxisX]))
-        } else {
-          plot.order.x <<- unlist(strsplit(plot.param[1, kColumnOrderX], kSeparator))
-        }
-        
-      } else if(plot.param[1, kColumnSortX] == kSortAscAll) {
-        sort.df <- 
-          plot.data[plot.data[, plot.param[1, kColumnSortXBy]] == 
-                      plot.param[1, kColumnSortXSubset], 
-                    c(kColumnAxisX, plot.param[1, kColumnSortXValue])]
-        sort.df <- 
-          arrange(sort.df, desc(sort.df[, plot.param[1, kColumnSortXValue]]))
-        plot.order.x <<- unlist(sort.df[, kColumnAxisX])
-        
-        # df <- arrange(plot.data, desc(plot.data[, kColumnValue]))
-        # plot.order.x <<- unlist(df[, kColumnAxisX])
-        plot.order.x <<- rev(plot.order.x)
-      } else if(plot.param[1, kColumnSortX] == kSortDescAll) {
-        print(plot.param[1, kColumnSortXBy])
-        print(plot.param[1, kColumnSortXSubset])
-        print(plot.param[1, kColumnSortXValue])
-        print(kColumnAxisX)
-        print(colnames(plot.data))
-        sort.df <- 
-          plot.data[plot.data[, plot.param[1, kColumnSortXBy]] == 
-                      plot.param[1, kColumnSortXSubset], 
-                    c(kColumnAxisX, plot.param[1, kColumnSortXValue])]
-        sort.df <- 
-          arrange(sort.df, desc(sort.df[, plot.param[1, kColumnSortXValue]]))
-        plot.order.x <<- unlist(sort.df[, kColumnAxisX])
-        
-        # df <- arrange(plot.data, desc(plot.data[, kColumnValue]))
-        # plot.order.x <<- unlist(df[, kColumnAxisX])
-      } else if(plot.param[1, kColumnSortX] == kSortAsc) {
-        
-        order <- unlist(strsplit(plot.param[1, kColumnOrderX], kSeparator))
-        order <- order[1:length(order)-1]
-        df <- plot.data[!(plot.data[, kColumnAxisX] %in% order), ]
-        
-        sort.df <- 
-          df[df[, plot.param[1, kColumnSortXBy]] == 
-               plot.param[1, kColumnSortXSubset], 
-             c(kColumnAxisX, plot.param[1, kColumnSortXValue])]
-        sort.df <- 
-          arrange(sort.df, desc(sort.df[, plot.param[1, kColumnSortXValue]]))
-        order.x <- unlist(sort.df[, kColumnAxisX])
-        
-        # df <- arrange(df, desc(df[, kColumnValue]))
-        # order.x <- df[, kColumnAxisX]
-        order.x <- rev(order.x)
-        plot.order.x <<- unlist(append(order, order.x))
-      } else if(plot.param[1, kColumnSortX] == kSortDesc) {
-        
-        order <- unlist(strsplit(plot.param[1, kColumnOrderX], kSeparator))
-        order <- order[1:length(order)-1]
-        df <- plot.data[!(plot.data[, kColumnAxisX] %in% order), ]
-        sort.df <- 
-          df[df[, plot.param[1, kColumnSortXBy]] == 
-               plot.param[1, kColumnSortXSubset], 
-             c(kColumnAxisX, plot.param[1, kColumnSortXValue])]
-        sort.df <- 
-          arrange(sort.df, desc(sort.df[, plot.param[1, kColumnSortXValue]]))
-        order.x <- unlist(sort.df[, kColumnAxisX])
-        
-        # df <- arrange(df, desc(df[, kColumnValue]))
-        # order.x <- df[, kColumnAxisX]
-        plot.order.x <<- unlist(append(order, order.x))
-      } 
-      
-      return(plot.order.x)
-    },
-    
     PlotFigure = function(plot.dir, plot.code) {
       LogInfo(paste(plot.param[1, kColumnPlotGeom], plot.code))
       
       PreparePlotData(plot.code)
-      # PlotSortX()
       
       plot.code.name <- gsub("\\.+", "_", plot.code)
       # plot.code.name <- gsub("\\.+", "_", plot.param[1, kColumnPlotCode])
@@ -1346,24 +1270,26 @@ GreenIndexPlotFigure <- setRefClass(
       } else if(plot.param[1, kColumnSortX] == kSortAscAll) {
         
         sort.x.subset <- unlist(strsplit(plot.param[1, kColumnSortXSubset], 
-                                          kSeparator))
-        
+                                         kSeparator))
+        df <- plot.data
         for (i in 1:length(sort.x.subset)) {
           subset <- sort.x.subset[i]
           sort.df <- 
-            plot.data[plot.data[, plot.param[1, kColumnSortXBy]] == subset, 
-                      c(kColumnAxisX, plot.param[1, kColumnSortXValue])]
+            df[df[, plot.param[1, kColumnSortXBy]] == subset, 
+               c(kColumnAxisX, plot.param[1, kColumnSortXValue])]
           sort.df <- 
             arrange(sort.df, desc(sort.df[, plot.param[1, kColumnSortXValue]]))
           sorted.x <- unlist(sort.df[, kColumnAxisX])
           if (i == 1) {
             plot.order.x <<- sorted.x
           } else {
-            plot.order.x <<- AppendLostX(plot.order.x, sorted.x)
+            plot.order.x <<- c(plot.order.x, sorted.x)
           }
           
           if (length(plot.order.x ) == length(axisx.names)) {
             break
+          } else {
+            df <- df[!(df[, kColumnAxisX] %in% plot.order.x), ]
           }
         }
 
@@ -1373,34 +1299,7 @@ GreenIndexPlotFigure <- setRefClass(
         
         sort.x.subset <- unlist(strsplit(plot.param[1, kColumnSortXSubset], 
                                           kSeparator))
-        
-        for (i in 1:length(sort.x.subset)) {
-          subset <- sort.x.subset[i]
-          sort.df <- 
-            plot.data[plot.data[, plot.param[1, kColumnSortXBy]] == subset, 
-                      c(kColumnAxisX, plot.param[1, kColumnSortXValue])]
-          sort.df <- 
-            arrange(sort.df, desc(sort.df[, plot.param[1, kColumnSortXValue]]))
-          sorted.x <- unlist(sort.df[, kColumnAxisX])
-          if (i == 1) {
-            plot.order.x <<- sorted.x
-          } else {
-            plot.order.x <<- AppendLostX(plot.order.x, sorted.x)
-          }
-          
-          if (length(plot.order.x ) == length(axisx.names)) {
-            break
-          }
-        }
-
-      } else if(plot.param[1, kColumnSortX] == kSortAsc) {
-        
-        order <- unlist(strsplit(plot.param[1, kColumnOrderX], kSeparator))
-        order <- order[1:length(order)-1]
-        df <- plot.data[!(plot.data[, kColumnAxisX] %in% order), ]
-        
-        sort.x.subset <- unlist(strsplit(plot.param[1, kColumnSortXSubset], 
-                                          kSeparator))
+        df <- plot.data
         for (i in 1:length(sort.x.subset)) {
           subset <- sort.x.subset[i]
           sort.df <- 
@@ -1412,11 +1311,45 @@ GreenIndexPlotFigure <- setRefClass(
           if (i == 1) {
             plot.order.x <<- sorted.x
           } else {
-            plot.order.x <<- AppendLostX(plot.order.x, sorted.x)
+            plot.order.x <<- c(plot.order.x, sorted.x)
           }
           
           if (length(plot.order.x ) == length(axisx.names)) {
             break
+          } else {
+            df <- df[!(df[, kColumnAxisX] %in% plot.order.x), ]
+          }
+        }
+
+      } else if(plot.param[1, kColumnSortX] == kSortAsc) {
+        
+        order <- unlist(strsplit(plot.param[1, kColumnOrderX], kSeparator))
+        order <- order[1:length(order)-1]
+        df <- plot.data[!(plot.data[, kColumnAxisX] %in% order), ]
+        
+        xlist <- unlist(unique(df[, kColumnAxisX]))
+        
+        sort.x.subset <- unlist(strsplit(plot.param[1, kColumnSortXSubset], 
+                                         kSeparator))
+        for (i in 1:length(sort.x.subset)) {
+          subset <- sort.x.subset[i]
+          sort.df <- 
+            df[df[, plot.param[1, kColumnSortXBy]] == subset, 
+               c(kColumnAxisX, plot.param[1, kColumnSortXValue])]
+          sort.df <- 
+            arrange(sort.df, desc(sort.df[, plot.param[1, kColumnSortXValue]]))
+          sorted.x <- unlist(sort.df[, kColumnAxisX])
+          print(sorted.x)
+          if (i == 1) {
+            plot.order.x <<- sorted.x
+          } else {
+            plot.order.x <<- c(plot.order.x, sorted.x)
+          }
+          
+          if (length(plot.order.x ) == length(xlist)) {
+            break
+          } else {
+            df <- df[!(df[, kColumnAxisX] %in% plot.order.x), ]
           }
         }
         
@@ -1430,6 +1363,8 @@ GreenIndexPlotFigure <- setRefClass(
         order <- order[1:length(order)-1]
         df <- plot.data[!(plot.data[, kColumnAxisX] %in% order), ]
         
+        xlist <- unlist(unique(df[, kColumnAxisX]))
+        
         sort.x.subset <- unlist(strsplit(plot.param[1, kColumnSortXSubset], 
                                           kSeparator))
         for (i in 1:length(sort.x.subset)) {
@@ -1440,14 +1375,17 @@ GreenIndexPlotFigure <- setRefClass(
           sort.df <- 
             arrange(sort.df, desc(sort.df[, plot.param[1, kColumnSortXValue]]))
           sorted.x <- unlist(sort.df[, kColumnAxisX])
+          
           if (i == 1) {
             plot.order.x <<- sorted.x
           } else {
-            plot.order.x <<- AppendLostX(plot.order.x, sorted.x)
+            plot.order.x <<- c(plot.order.x, sorted.x)
           }
           
-          if (length(plot.order.x ) == length(axisx.names)) {
+          if (length(plot.order.x ) == length(xlist)) {
             break
+          } else {
+            df <- df[!(df[, kColumnAxisX] %in% plot.order.x), ]
           }
         }
         

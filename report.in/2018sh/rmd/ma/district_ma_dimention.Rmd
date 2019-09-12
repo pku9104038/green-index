@@ -26,37 +26,37 @@ plot.box.district.ma.skill.dimention.quantile
 
 ### 数与代数
 
-#### 不同群体学生的表现
+#### 本区不同群体学生的表现
 
 plot.bar.district.ma.algebra.rank.perspective
 plot.box.district.ma.algebra.quantile.perspective
 
-#### 不同学校学生的表现
+#### 本区各学校学生的表现
 
 multiplot.bar.district.ma.algebra.rank.school
 multiplot.box.district.ma.algebra.quantile.school
 
 ### 图形与几何
 
-#### 不同群体学生的表现
+#### 本区不同群体学生的表现
 
 plot.bar.district.ma.geometric.rank.perspective
 plot.box.district.ma.geometric.quantile.perspective
 
 
-#### 不同学校学生的表现
+#### 本区各学校学生的表现
 
 multiplot.bar.district.ma.geometric.rank.school
 multiplot.box.district.ma.geometric.quantile.school
 
 ### 函数与概率统计初步
 
-#### 不同群体学生的表现
+#### 本区不同群体学生的表现
 
 plot.bar.district.ma.statistics.rank.perspective
 plot.box.district.ma.statistics.quantile.perspective
 
-#### 不同学校学生的表现
+#### 本区各学校学生的表现
 
 multiplot.bar.district.ma.statistics.rank.school
 multiplot.box.district.ma.statistics.quantile.school
@@ -66,50 +66,50 @@ multiplot.box.district.ma.statistics.quantile.school
 
 ### 辨识
 
-#### 不同群体学生的表现
+#### 本区不同群体学生的表现
 
 plot.bar.district.ma.formulating.rank.perspective
 plot.box.district.ma.formulating.quantile.perspective
 
 
-#### 不同学校学生的表现
+#### 本区各学校学生的表现
 
 multiplot.bar.district.ma.formulating.rank.school
 multiplot.box.district.ma.formulating.quantile.school
 
 ### 调用
 
-#### 不同群体学生的表现
+#### 本区不同群体学生的表现
 
 plot.bar.district.ma.employing.rank.perspective
 plot.box.district.ma.employing.quantile.perspective
 
-#### 不同学校学生的表现
+#### 本区各学校学生的表现
 
 multiplot.bar.district.ma.employing.rank.school
 multiplot.box.district.ma.employing.quantile.school
 
 ### 反思
 
-#### 不同群体学生的表现
+#### 本区不同群体学生的表现
 
 plot.bar.district.ma.reflecting.rank.perspective
 plot.box.district.ma.reflecting.quantile.perspective
 
-#### 不同学校学生的表现
+#### 本区各学校学生的表现
 
 multiplot.bar.district.ma.reflecting.rank.school
 multiplot.box.district.ma.reflecting.quantile.school
 
 ### 聚合
 
-#### 不同群体学生的表现
+#### 本区不同群体学生的表现
 
 plot.bar.district.ma.polymerizing.rank.perspective
 plot.box.district.ma.polymerizing.quantile.perspective
 
 
-#### 不同学校学生的表现
+#### 本区各学校学生的表现
 
 multiplot.bar.district.ma.polymerizing.rank.school
 multiplot.box.district.ma.polymerizing.quantile.school

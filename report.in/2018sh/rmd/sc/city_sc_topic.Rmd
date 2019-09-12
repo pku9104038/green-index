@@ -1039,8 +1039,6 @@ query2.plot.bar.city.sc.question.S8AS46321
 - 教学建议：通过培养学生的质疑精神，培育批判性思维。要训练基于证据做出科学的评价习惯，要培养善于发现问题、积极解决问题习惯。
 
 
-\clearpage
-
 \questiontitle{典型题目}13：S8AS47421
 
 \begin{center}
@@ -1108,7 +1106,6 @@ query2.plot.bar.city.sc.question.S8AS47421
 
 - 全市学生作答分析：此题难度为0.28，比预期低。本题为分级评分试题，满分2，给分为2分、1分、0分，其中0分学生占比`r gio.R$KeyValue(query2.data, "0")`％；1分学生占比`r gio.R$KeyValue(query2.data, "1")`％；2分学生占比`r gio.R$KeyValue(query2.data, "2")`％。
 
-\clearpage
 
 下面罗列的是学生在答题中的描述及出错原因分析：
 

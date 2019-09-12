@@ -14,6 +14,9 @@ query.data.district.base.student.survey
 - 九年级学生家庭汽车拥有量为零的占`r gio.R$SubAttSamKey(query.data, "家长", "汽车", "总体", c("暂时没有购买汽车"), 1)`%，两辆及以上的占`r gio.R$SubAttSamKey(query.data, "家长", "汽车", "总体", c("有，2辆", "有，2辆以上"), 1)`%。
 - 九年级学生没有出境旅游的比例为`r gio.R$SubAttSamKey(query.data, "家长", "旅游", "总体", c("目前还没有去过"), 1)`%，出境旅游过两次及以上的占`r gio.R$SubAttSamKey(query.data, "家长", "旅游", "总体", c("2次", "3次", "4次及以上"), 1)`%。
 - 九年级学生的父亲受教育程度为大学及以上的占`r gio.R$SubAttSamKey(query.data, "家长", "父亲教育程度", "总体", c("本科", "硕士", "博士"), 1)`%，初中及以下的占`r gio.R$SubAttSamKey(query.data, "家长", "父亲教育程度", "总体", c("初中及以下"), 1)`%。九年级学生的母亲受教育程度为大学及以上的占`r gio.R$SamTopKey(query.data, "总体", "孩子母亲受教育程度大概是", c("本科", "硕士", "博士"), 1)`%，初中及以下的占`r gio.R$SamTopKey(query.data, "总体", "孩子母亲受教育程度大概是", c("初中及以下"), 1)`%。
+
+- 九年级学生每天睡眠时间达到8小时的比例为`r gio.R$SubAttSamKey(query.data, "学生", "睡眠时间", "总体", c("8-9小时（含8小时）", "9-10小时（含9小时）", "10小时以上"), 1)`%，不足7小时的比例为`r gio.R$SubAttSamKey(query.data, "学生", "睡眠时间", "总体", c("6-7小时(含6小时)", "少于6小时"), 1)`%，有`r gio.R$SubAttSamKey(query.data, "学生", "睡眠时间", "总体", c("少于6小时"), 1)`%的学生每天睡眠时间甚至不足6小时。
+
 - 九年级学生每天做学校老师布置的书面作业时间超过2小时的占`r gio.R$SubAttSamKey(query.data, "学生", "作业时间", "总体", c("2-3小时（含2小时）", "3-4小时（含3小时）", "4小时及以上"), 1)`%，其中3小时以上的占`r gio.R$SubAttSamKey(query.data, "学生", "作业时间", "总体", c("3-4小时（含3小时）", "4小时及以上"), 1)`%，1小时以下的占`r gio.R$SubAttSamKey(query.data, "学生", "作业时间", "总体", c("1小时以内"), 1)`%。
 - 九年级学生认为学校作业难易适中的占`r gio.R$SubAttSamKey(query.data, "学生", "作业难度", "总体", c("难易适中"), 1)`%，认为非常难和非常容易的共占`r gio.R$SubAttSamKey(query.data, "学生", "作业难度", "总体", c("非常容易", "非常难"), 1)`%。
 - 九年级学生每周参加与考试科目相关的家教补习或课外辅导的时间在6小时以上的占`r gio.R$SubAttSamKey(query.data, "家长", "校外补习时间", "总体", c("6-8小时（含6小时）", "8小时及以上"), 1)`％。
@@ -21,13 +24,13 @@ query.data.district.base.student.survey
 - 九年级学生每个月参加考试和测验的频率在4次及以上的占`r gio.R$SubAttSamKey(query.data, "学生", "考试次数", "总体", c("4次", "5次", "6次", "7次", "8次及以上"), 1)`%，频率在3次及以下的占`r gio.R$SubAttSamKey(query.data, "学生", "考试次数", "总体", c("3次及以下"), 1)`%。
 - 九年级学生一年阅读课外读物量达到9本及以上的比例为`r gio.R$SubAttSamKey(query.data, "学生", "课外阅读", "总体", c("9-12本", "13本及以上"), 1)`%，有`r gio.R$SubAttSamKey(query.data, "学生", "课外阅读", "总体", c("1-4本", "没有"), 1)`%的学生年阅读量不足5本，有`r gio.R$SubAttSamKey(query.data, "学生", "课外阅读", "总体", c("没有"), 1)`%的学生几乎不进行课外阅读。
 - 九年级学生每周校外运动时间在1小时以内的占`r gio.R$SubAttSamKey(query.data, "学生", "校外运动时间", "总体", c("1小时以内"), 1)`%，在2小时及以上的占`r gio.R$SubAttSamKey(query.data, "学生", "校外运动时间", "总体", c("2-3小时（含2小时）", "3-4小时（含3小时）", "4-5小时（含4小时）", "5小时及以上"), 1)`%。
+
 - 九年级学生，`r gio.R$CoefSamDimTop(query.data, "总体", "师生关系", "二级指标", 1)`%对师生关系评价较高，具体表现在教师是否公平、平等的对待学生、是否信任学生这三个方面。
 - 九年级学生`r gio.R$CoefSamDimTop(query.data, "总体", "学业压力", "二级指标", 1)`%感到学习压力较轻。
 - 九年级学生中有`r gio.R$CoefSamDimTop(query.data, "总体", "学习动机", "二级指标", 1)`%的学生有比较强的学习动机。
 - `r gio.R$CoefSamDomTop(query.data, "总体", "学生对学校认同度", "一级指标", 1)`%学生对学校认同度高，具体表现为喜欢自己的学校、老师，同学关系和睦。
 - 九年级学生中学习自信心较强的学生所占比例为`r gio.R$CoefSamDimTop(query.data, "总体", "学习自信心", "二级指标", 1)`%，自信心水平比较高，对自己的能力有比较恰当的评估。
-- 九年级学生对教师教学方式中的因材施教、互动教学、鼓励学生探究与发展这三个方面评价比较高。
-- 九年级学生总体心理健康水平比较高，但还有进一步培养的空间。
+
 
 ## 学生基本情况
 
@@ -307,9 +310,13 @@ plot.bar.district.base.behavior.prosocial
 
 ### 情绪状态
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.emotion.status")`}给出了九年级学生对情绪状态相关问题的反馈。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.emotion.status.happy")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.emotion.status.like")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.emotion.status.vex")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.base.emotion.status.cry")`}给出了九年级学生对情绪状态相关问题的反馈。
 
-plot.bar.district.base.emotion.status
+
+plot.bar.district.base.emotion.status.happy
+plot.bar.district.base.emotion.status.like
+plot.bar.district.base.emotion.status.vex
+plot.bar.district.base.emotion.status.cry
 
 \clearpage
 

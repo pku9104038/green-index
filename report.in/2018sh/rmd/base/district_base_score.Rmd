@@ -22,11 +22,11 @@ plot.bar.district.base.score.segment.ar.total
 
 plot.bar.district.base.facet.score.rank.allsubject.total.region
 
-\section{不同群体学生学业水平}
+\section{本区不同群体学生学业水平}
 
-\subsection{各学校学生学业水平}
+\subsection{本区各学校学生学业水平}
 
-\subsubsection{各学校学生语文学业水平}
+\subsubsection{本区各学校学生语文学业水平}
 
 multiplot.bar.district.base.score.rank.cn.total.school
 
@@ -38,7 +38,7 @@ multiplot.box.district.base.score.quantile.cn.total.school
 
 \clearpage
 
-\subsubsection{各学校学生数学学业水平}
+\subsubsection{本区各学校学生数学学业水平}
 
 multiplot.bar.district.base.score.rank.ma.total.school
 multiplot.box.district.base.score.quantile.ma.total.school
@@ -46,7 +46,7 @@ multiplot.box.district.base.score.quantile.ma.total.school
 
 \clearpage
 
-\subsubsection{各学校学生英语学业水平}
+\subsubsection{本区各学校学生英语学业水平}
 
 multiplot.bar.district.base.score.rank.en.total.school
 multiplot.box.district.base.score.quantile.en.total.school
@@ -54,7 +54,7 @@ multiplot.box.district.base.score.quantile.en.total.school
 
 \clearpage
 
-\subsubsection{各学校学生科学学业水平}
+\subsubsection{本区各学校学生科学学业水平}
 
 multiplot.bar.district.base.score.rank.sc.total.school
 multiplot.box.district.base.score.quantile.sc.total.school
@@ -62,7 +62,7 @@ multiplot.box.district.base.score.quantile.sc.total.school
 
 \clearpage
 
-\subsubsection{各学校学生艺术学业水平}
+\subsubsection{本区各学校学生艺术学业水平}
 
 multiplot.bar.district.base.score.rank.ar.total.school
 multiplot.box.district.base.score.quantile.ar.total.school
@@ -70,24 +70,24 @@ multiplot.box.district.base.score.quantile.ar.total.school
 
 \clearpage
 
-### 不同类型学校学生学业水平
+### 本区不同类型学校学生学业水平
 
 plot.bar.district.base.facet.score.rank.allsubject.xuezhi
 
 
-### 新优质学校和强校工程学校学生学业水平
+### 本区新优质学校和强校工程学校学生学业水平
 
 plot.bar.district.base.facet.score.rank.allsubject.youqiang
 
 
 \clearpage
 
-### 不同性别学生学业水平
+### 本区不同性别学生学业水平
 
 plot.bar.district.base.facet.score.rank.allsubject.gender
 
 
-### 不同户籍学生学业水平
+### 本区不同户籍学生学业水平
 
 plot.bar.district.base.facet.score.rank.allsubject.huji
 

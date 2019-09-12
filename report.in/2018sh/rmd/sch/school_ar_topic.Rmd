@@ -165,9 +165,13 @@ plot.bar.school.ar.question.A8AO01211
 
 由此可见，在题目A8AO01111中，这是学生比较熟悉的作品，大部分学生如果课堂认真可以完成。如有个别不知道的学生，仔细听，会发展片段中对该作品的特征性锣鼓有呈现，因此学生可以根据听觉分析得到答案。因此，该题的得分率非常高。
 
+comment.school.cn.question.A8AO01111
+
 query2.plot.bar.school.ar.question.A8AO01211
 
 在题目A8AO01211中，对音乐场景的运用就需要动用分析能力，就有学生会不确定，特别是因为九年级学生的生活经历不够丰富，因此出现不同选项的比例就比较高，正确率在`r gio.R$KeyValue(query2.data, "A")`％左右。
+
+comment.school.cn.question.A8AO01211
 
 \questiontitle{典型题目}3、4：A8AO12111、A8AO12211
 
@@ -213,7 +217,12 @@ A．轻松 \qquad\qquad  B.愉悦 \qquad\qquad  C.幽默 \qquad\qquad  D.沉重
 - 平均得分率：A8AO12111为`r gio.R$VarTierSamKey(query.data, "A8AO12111_X", "学校","总体","总体")`％；A8AO12211为`r gio.R$VarTierSamKey(query.data, "A8AO12211_X", "学校","总体","总体")`％
 
 plot.bar.school.ar.question.A8AO12111
+
+comment.school.cn.question.A8AO12111
+
 plot.bar.school.ar.question.A8AO12211
+
+comment.school.cn.question.A8AO12211
 
 - 全市学生作答分析：
 
@@ -306,9 +315,18 @@ A8AS06111、A8AS06211
 - 平均得分率：A8AS06111为`r gio.R$VarTierSamKey(query.data, "A8AS06111_X", "学校","总体","总体")`％；A8AS06211为`r gio.R$VarTierSamKey(query.data, "A8AS06211_X", "学校","总体","总体")`％
 
 plot.bar.school.ar.question.A8AS06111
+
 plot.bar.school.ar.question.A8AS06211
 
 - 全市学生作答分析：
+
+A8AS06111，从学生的答题情况看，基本能通过视觉感受直观判断伴奏的主要乐器，总结提炼出舞蹈作品最基本的艺术元素，得分率较高。
+
+comment.school.cn.question.A8AS06111
+
+A8AS06211，要求通过视觉感受，结合想象并运用已有经验和知识进行判断人物形象，得分率略低，主要表现为审题上对题目要求不够理解，或有个别同学未能看懂整个舞蹈作品的表现含义。
+
+comment.school.cn.question.A8AS06211
 
 \begin{itshape}
 
@@ -338,6 +356,14 @@ plot.bar.school.ar.question.A8AS07111
 plot.bar.school.ar.question.A8AS07211
 
 - 全市学生作答分析：
+
+A8AS07111，要求在视觉欣赏的基础上综合艺术表现方式和作品主题进行想象与思考，并用恰当生动的文字描述该作品表现的场景，有一定跨学科思维引导。在答题中可以看到学生们往往只能做出一些简单的场景描述，比如战争、武术表演等等，能用一些语言进行修饰，但是结合到艺术形式上的就非常少，有部分学生会写到灯光，但是对色彩的运用等描述与主题的关联性不够，因此得分率不高，如果能适当结合艺术表现方式，则可得到较高分数。在理解综合学科要求的基础上，该题仍有较大提升空间。
+
+comment.school.cn.question.A8AS07111
+
+A8AS07211，要求在视觉欣赏和想象的基础上，通过文字表达艺术作品的情感和精神，体现了正确的价值观导向。得分率亦不尽如人意。综合学生的答题分析，主要是很多学生审题不仔细，对场景描述和情感精神没有做出区别。不少学生仍然是进行了场景的重复描述，尤其是作品中的艺术形式怎样表现情感，几乎没有涉及，因此该题无人获得满分。建议教师在教学过程中，对主题、形式、情感之间的关联还要通过日常教学加以关注和引导。
+
+comment.school.cn.question.A8AS07211
 
 ### 运用与表现
 
@@ -418,5 +444,6 @@ plot.bar.school.ar.question.A8AS14111
 
 此题为学生的创作表现题，也是主观题，根据评分标准，学生总体得分情况还是比较好的。27分以上学生不多，主要是因为真正有绘画基础的学生在整体学生中不占多数。但在18分以下的学生也存在，分析原因主要是因为没有看清题目，对贺卡的形式要素不了解而造成。这也是命题过程中的尝试，今后的教学中会进一步有目的性的调整。
 
+comment.school.cn.question.A8AS14111
 
 <!-- end of chapter topic -->

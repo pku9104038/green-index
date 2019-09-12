@@ -40,7 +40,6 @@ query.data.school.student.survey
 plot.bar.school.student.onechild
 
 
-
 #### 学生家庭的藏书量
 
 图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.book")`}给出了本校学生家庭藏书量的总体情况及各群体之间的比较。
@@ -295,10 +294,12 @@ plot.bar.school.student.behavior.prosocial
 
 ### 情绪状态
 
-图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.emotion.status")`}给出了本校学生对情绪状态相关问题的反馈。
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.emotion.status.happy")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.emotion.status.like")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.emotion.status.vex")`}、图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.school.student.emotion.status.cry")`}给出了本校学生对情绪状态相关问题的反馈。
 
-plot.bar.school.student.emotion.status
-
+plot.bar.school.student.emotion.status.happy
+plot.bar.school.student.emotion.status.like
+plot.bar.school.student.emotion.status.vex
+plot.bar.school.student.emotion.status.cry
 
 ### 情绪稳定性
 

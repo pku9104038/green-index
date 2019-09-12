@@ -56,10 +56,6 @@ table.school.index.8
 table.school.index.9
 \\ \hline
 
-校长课程领导力
-table.school.index.10
-\\ \hline
-
 
 \end{longtable}
 \end{itshape}

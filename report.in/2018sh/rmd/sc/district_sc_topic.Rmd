@@ -153,7 +153,7 @@ query2.plot.bar.district.sc.question.S8AO23111
 
 - 教学建议：科学探索过程中不同阶段的证据具有的效力不同。教学中可适当渗透结合科技发展，将证据进行效力方面的区分。
 
-
+comment.school.en.question.S8AO23111
 
 \questiontitle{典型题目}2：S8AO48111
 
@@ -220,6 +220,7 @@ query2.plot.bar.district.sc.question.S8AO48111
 
 - 教学建议：加强学生日常的识图能力和科学表述规范。
 
+comment.school.en.question.S8AO48111
 
 \questiontitle{典型题目}3：S8AS48211
 
@@ -254,7 +255,7 @@ query2.plot.bar.district.sc.question.S8AS48211
 
 - 教学建议：加强日常课堂的读图训练以及对地理现象的科学表述。
 
-
+comment.school.en.question.S8AS48211
 
 \clearpage
 
@@ -426,6 +427,8 @@ query2.plot.bar.district.sc.question.S8AO26111
 
 - 教学建议：保证学生实验的正常开设，同时也要关注各结构名称和对应功能的认识，不仅仅停留在观察到细胞结构，而要清楚地认识几个常用结构的具体作用。
 
+comment.school.en.question.S8AO26111
+
 \questiontitle{典型题目}5：S8AO27111
 
 \begin{itshape}
@@ -457,6 +460,7 @@ query2.plot.bar.district.sc.question.S8AO27111
 
 - 教学建议：教学中不仅要关注科学探究，也要加强以物质和能量等基本的概念认识光合作用实质，这有助于发展学生的科学观念。
 
+comment.school.en.question.S8AO27111
 
 \questiontitle{典型题目}6：S8AO30111
 
@@ -509,6 +513,8 @@ query2.plot.bar.district.sc.question.S8AO30111
 
 虽然是考查能力的题目，但是需要基于基本概念才能回答，所以不能因为关注了能力就忽视对基本概念的认识。
 
+comment.school.en.question.S8AO30111
+
 \questiontitle{典型题目}7：S8AO35111
 
 \begin{itshape}
@@ -543,6 +549,8 @@ query2.plot.bar.district.sc.question.S8AO35111
 - 全市学生作答分析：得分率`r gio.R$VarTierSamKey(query.data, "S8AO35111_X", "区","总体","总体")`％。说明学生对植物的基本生理作用光合作用和蒸腾作用的认识还存在一定的不足，如果对这两个生理作用有基本的认识，解答本题没有任何困难。
 
 - 教学建议：说明基本概念的教学很重要，只有把基本概念落实到位才能在解答考查能力的题目时游刃有余。
+
+comment.school.en.question.S8AO35111
 
 \clearpage
 
@@ -702,6 +710,7 @@ query2.plot.bar.district.sc.question.S8AO03111
 
 - 教学建议：概念教学过程中，关注概念内涵，现象是帮助理解概念的重要组成部分，但概念本身涉及的科学内容是教学的重点。可以通过水在自然界三态变化的不同过程，分析比较其区别与联系，从而得到准确的概念，再用概念去解释自然现象，达到巩固概念的目的。
 
+comment.school.en.question.S8AO03111
 
 \questiontitle{典型题目}9：S8AO41111
 
@@ -739,6 +748,7 @@ query2.plot.bar.district.sc.question.S8AO04111
 
 - 教学建议：在教学实践中，应多结合生活实例，让学生从根本上理解“动能”与“势能”等既有联系又有区别的概念，避免发生概念上的混淆。
 
+comment.school.en.question.S8AO41111
 
 \questiontitle{典型题目}10：S8AS49211
 
@@ -789,7 +799,7 @@ query2.plot.bar.district.sc.question.S8AS49211
 
 - 教学建议：在教学实践中，应注重理论联系实际，并让学生多一些表达的机会。将所学知识、规律应用到生活实际中。
 
-
+comment.school.en.question.S8AS49211
 
 \clearpage
 
@@ -865,7 +875,54 @@ table.district.sc.S8AO46421
 
 \end{landscape}
 
-\questiontitle{典型题目}11：S8AO45111
+\questiontitle{典型题目}11：S8AO16111
+
+
+\begin{itshape}
+
+16．若要研究搅拌对砂糖溶解快慢的影响，进行对照实验应选用的装置组合是…（\qquad ）
+
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{sc_S8AO16111.png}
+\end{figure}
+
+
+A．甲和乙     \qquad\qquad B．乙和丙  \qquad\qquad   C．丙和丁  \qquad\qquad   D．甲和丁
+\end{itshape}
+
+
+- 试题考查点：物质科学——基于实验目的设计实验装置
+
+- 具体考察内容：运用“控制变量”的思想选择实验装置，探究某单一因素对溶解快慢的影响
+
+- 能力要求：做计划
+
+- 题型：选择
+
+- 正确答案：D
+
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "S8AO16111_X", "区","总体","总体")`％
+
+plot.bar.district.sc.question.S8AO16111
+
+\begin{itshape}
+全市参加测试的学生中，科学总体水平处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarTierSamKey(query.data, "S8AO16111_X", "区","总体","A")`％、`r gio.R$VarTierSamKey(query.data, "S8AO16111_X", "区","总体","B")`％、`r gio.R$VarTierSamKey(query.data, "S8AO16111_X", "区","总体","C")`％、`r gio.R$VarTierSamKey(query.data, "S8AO16111_X", "区","总体","D")`％。
+\end{itshape}
+
+- 全市学生作答分析：
+
+（1）本题学生得分情况与预计基本一致，说明近年来，教师对控制变量这一科学方法的落实较为扎实。
+
+（2）错选以A选项较多，说明该部分学生对图示信息的辨析能力有待提高。
+
+- 教学建议：
+
+在今后的教学实施过程中仍要加强实验教学，并进一步强化实验设计思想，提高学生的科学探究能力。
+
+comment.school.en.question.S8AO16111
+
+\questiontitle{典型题目}12：S8AO45111
 
 \begin{itshape}
 
@@ -920,8 +977,9 @@ query2.plot.bar.district.sc.question.S8AO45111
 
 - 教学建议：探究实验教学过程中，对探究要素，及体现探究要素的相关证据之间要形成有效联系。透过现象看本质的探究能力需要进一步培养，可以在探究过程中形成现象到本质的问题链，引导学生在探究活动中，既能观察现象记录数据，又能认识现象背后的本质要素，提升探究活动的有效性和准确性。
 
+comment.school.en.question.S8AO45111
 
-\questiontitle{典型题目}12：S8AS46321
+\questiontitle{典型题目}13：S8AS46321
 \begin{center}
 46．酸奶
 \end{center}
@@ -994,10 +1052,11 @@ query2.plot.bar.district.sc.question.S8AS46321
 
 - 教学建议：通过培养学生的质疑精神，培育批判性思维。要训练基于证据做出科学的评价习惯，要培养善于发现问题、积极解决问题习惯。
 
+comment.school.en.question.S8AS46321
 
 \clearpage
 
-\questiontitle{典型题目}13：S8AS47421
+\questiontitle{典型题目}14：S8AS47421
 
 \begin{center}
 47．神经调节
@@ -1089,8 +1148,9 @@ query2.plot.bar.district.sc.question.S8AS47421
 
 - 教学建议：首先是老师自己在课堂教学中提高语言表达能力及准确、规范的描述科学事实的能力，做到正确引导并潜移默化。其次在教学过程中，可以通过板书的形式建立合理的知识结构呈现给学生，并注意引导学生通过用合理的知识结构来回答问题。第三，加强专业术语记忆，并在课堂教学中提供学生积极参与讨论的机会，以加强系统地表达思维过程的训练。
 
+comment.school.en.question.S8AS47421
 
-\questiontitle{典型题目}14：S8AO50131、S8AO50132
+\questiontitle{典型题目}15：S8AO50131、S8AO50132
 
 \begin{center}
 50．人口问题
@@ -1135,6 +1195,8 @@ query2.plot.bar.district.sc.question.S8AO50131
 
 题S8AO50131对读图能力的要求较高。学生正确率只有`r gio.R$KeyValue(query2.data, "1")`％，远低于预期情况，而有55.3%的学生填写了相反的结果。反应了学生没有将图中信息与题中文字作很好地分析，只是看图中折线的变化趋势（下降）回答提问，而没有理解图的本质，尽管当前增长率正在下降，但是依然为“正”值，所以人口总数依然处于“上升”趋势；
 
+comment.school.en.question.S8AO50131
+
 plot.bar.district.sc.question.S8AO50132
 query2.plot.bar.district.sc.question.S8AO50132
 
@@ -1142,7 +1204,9 @@ query2.plot.bar.district.sc.question.S8AO50132
 
 - 教学建议：折线图解读是科学数据分析的重要能力。在教学中，可以从图线的纵横坐标、起点、拐点、走势等角度进行分段解读，然后整体分析，让学生感受折线图表述的信息，从而得出正确判断。
 
-\questiontitle{典型题目}15：S8AO50221
+comment.school.en.question.S8AO50132
+
+\questiontitle{典型题目}16：S8AO50221
 
 \questiontitle{问题}2:
 
@@ -1183,50 +1247,8 @@ query2.plot.bar.district.sc.question.S8AO50221
 
 - 教学建议：折线图解读是科学数据分析的重要能力。在教学中，可以从图线的纵横坐标、起点、拐点、走势等角度进行分段解读，然后整体分析，让学生感受折线图表述的信息，从而得出正确判断。
 
-\questiontitle{典型题目}16：S8AO16111
+comment.school.en.question.S8AO50221
 
-
-\begin{itshape}
-
-16．若要研究搅拌对砂糖溶解快慢的影响，进行对照实验应选用的装置组合是…（\qquad ）
-
-
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{sc_S8AO16111.png}
-\end{figure}
-
-
-A．甲和乙     \qquad\qquad B．乙和丙  \qquad\qquad   C．丙和丁  \qquad\qquad   D．甲和丁
-\end{itshape}
-
-
-- 试题考查点：物质科学——基于实验目的设计实验装置
-
-- 具体考察内容：运用“控制变量”的思想选择实验装置，探究某单一因素对溶解快慢的影响
-
-- 能力要求：做计划
-
-- 题型：选择
-
-- 正确答案：D
-
-- 平均得分率：`r gio.R$VarTierSamKey(query.data, "S8AO16111_X", "区","总体","总体")`％
-
-plot.bar.district.sc.question.S8AO16111
-
-\begin{itshape}
-全市参加测试的学生中，科学总体水平处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarTierSamKey(query.data, "S8AO16111_X", "区","总体","A")`％、`r gio.R$VarTierSamKey(query.data, "S8AO16111_X", "区","总体","B")`％、`r gio.R$VarTierSamKey(query.data, "S8AO16111_X", "区","总体","C")`％、`r gio.R$VarTierSamKey(query.data, "S8AO16111_X", "区","总体","D")`％。
-\end{itshape}
-
-- 全市学生作答分析：
-
-（1）本题学生得分情况与预计基本一致，说明近年来，教师对控制变量这一科学方法的落实较为扎实。
-
-（2）错选以A选项较多，说明该部分学生对图示信息的辨析能力有待提高。
-
-- 教学建议：
-
-在今后的教学实施过程中仍要加强实验教学，并进一步强化实验设计思想，提高学生的科学探究能力。
 
 
 <!-- end of chapter topic -->

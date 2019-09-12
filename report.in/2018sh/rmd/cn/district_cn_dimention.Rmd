@@ -16,25 +16,25 @@ plot.box.district.cn.dimention.quantile
 
 ### 积累
 
-#### 不同群体学生的表现
+#### 本区不同群体学生的表现
 
 plot.bar.district.cn.jilei.rank.perspective
 plot.box.district.cn.jilei.quantile.perspective
 
-#### 各学校学生的表现
+#### 本区各学校学生的表现
 
 multiplot.bar.district.cn.jilei.rank.school
 multiplot.box.district.cn.jilei.quantile.school
 
 ### 阅读
 
-#### 不同群体学生的表现
+#### 本区不同群体学生的表现
 
 plot.bar.district.cn.reading.rank.perspective
 plot.box.district.cn.reading.quantile.perspective
 
 
-#### 各学校学生的表现
+#### 本区各学校学生的表现
 
 
 multiplot.bar.district.cn.reading.rank.school
@@ -42,12 +42,12 @@ multiplot.box.district.cn.reading.quantile.school
 
 ###  写作
 
-#### 不同群体学生的表现
+#### 本区不同群体学生的表现
 
 plot.bar.district.cn.writing.rank.perspective
 plot.box.district.cn.writing.quantile.perspective
 
-#### 各学校学生的表现
+#### 本区各学校学生的表现
 
 multiplot.bar.district.cn.writing.rank.school
 multiplot.box.district.cn.writing.quantile.school

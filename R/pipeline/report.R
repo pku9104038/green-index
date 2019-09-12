@@ -360,10 +360,10 @@ GreenIndexReport <- setRefClass(
                 
                 output.data[length(output.data) + 1] <- "if (district.value >= city.value) {"
                 output.data[length(output.data) + 1] <- 
-                  " comment.city <- paste0(\"本区学生得分率比全市平均得分率高\", round(district.value - city.value, 1), \"%，\")"
+                  " comment.city <- paste0(\"本区学生得分率比全市平均得分率高\", round(district.value - city.value, 1), \"%。\")"
                 output.data[length(output.data) + 1] <- " } else {"     
                 output.data[length(output.data) + 1] <-
-                  " comment.city <- paste0(\"本区学生得分率比全市平均得分率低\", round(city.value - district.value, 1), \"%，\")"
+                  " comment.city <- paste0(\"本区学生得分率比全市平均得分率低\", round(city.value - district.value, 1), \"%。\")"
                 output.data[length(output.data) + 1] <- "}"     
                 
               } else if (report.tier == kTierSchool){
@@ -391,18 +391,22 @@ GreenIndexReport <- setRefClass(
                 output.data[length(output.data) + 1] <- "  }"
                 output.data[length(output.data) + 1] <- "  if (school.value >= district.value) {"
                 output.data[length(output.data) + 1] <- 
-                  "    comment.district <- paste0(\"比全区平均得分率高\", round(school.value - district.value, 1), \"%，\")"
+                  "    comment.district <- paste0(\"比全区平均得分率高\", round(school.value - district.value, 1), \"%。\")"
                 output.data[length(output.data) + 1] <- "  } else {"
                 output.data[length(output.data) + 1] <- 
-                  "    comment.district <- paste0(\"比全区平均得分率低\", round(district.value - school.value, 1), \"%，\")"
+                  "    comment.district <- paste0(\"比全区平均得分率低\", round(district.value - school.value, 1), \"%。\")"
                 output.data[length(output.data) + 1] <- "  }"
                 output.data[length(output.data) + 1] <- "}"
                 
               }
               
               output.data <- CloseChunk(output.data)
+              # output.data[length(output.data) + 1] <- 
+              #   " \\begin{itshape} "
               output.data[length(output.data) + 1] <- 
-                " `r comment.school``r comment.city``r comment.district` "
+                "- `r comment.school``r comment.city``r comment.district` "
+              # output.data[length(output.data) + 1] <- 
+              #   " \\end{itshape} "
             }
           } else {
             output.data[length(output.data) + 1] <- input.line 
@@ -462,6 +466,7 @@ GreenIndexReport <- setRefClass(
       reworkjobs <- jobs$TODO
       RUN <- jobs$RUN
       report.plotfig <<- jobs$PLOTFIG
+      report.districts <<- jobs$DISTRICTS
       report.pilot <<- jobs$pilot
       report.output <<- jobs$output
       
@@ -496,11 +501,12 @@ GreenIndexReport <- setRefClass(
               report.unit$scope <<- paste0("", #report.unit$city, 
                                            "", 
                                            "")
+              SetDataScope(report.unit)
               ScopeReport()
             }
           } else if (report.tier == kTierDistrict) {
             scopes <- unique(district.df[, kTierDistrict])
-            if (RUN == kPilotRun) {
+            if (RUN == kPilotRun || report.districts) {
               scopes <- list(report.pilot$scope$district)
             }
             for (i in 1:length(scopes)) {
@@ -518,28 +524,34 @@ GreenIndexReport <- setRefClass(
             }
           } else if (report.tier == kTierSchool) {
             districts <- unique(district.df[, kTierDistrict])
-            if (RUN == kPilotRun) {
-              districts <- list(report.pilot$scope$district)
+            if (RUN == kPilotRun || report.districts) {
+              districts <- report.pilot$scope$district
             }
             for (i in 1:length(districts)) {
               district <- districts[[i]]
+              print(district)
               scopes <- unique(school.df[school.df[, kTierDistrict] == 
                                          district, kTierSchool])
               if (RUN == kPilotRun) {
-                scopes <- list(report.pilot$scope$school)
+                scopes <- report.pilot$scope$school
               }
               for (j in 1:length(scopes)) {
                 report.scope <<- scopes[[j]]
-                report.unit$school <<- report.scope
-                report.unit$district <<- district
-                report.unit$city <<- district.df[
-                  district.df[, kTierDistrict] == district, kTierCity]
-                report.unit$scope <<- paste0("", 
-                                             "", 
-                                             report.unit$school)
-                SetDataScope(report.unit)
-                LogInfo(paste(report.scope, report.unit$school, report.unit$district, report.unit$city))
-                ScopeReport()
+                print(report.scope)
+                if (school.df[school.df[, kTierSchool] == 
+                              report.scope, kTierDistrict] == district){
+                  report.unit$school <<- report.scope
+                  report.unit$district <<- district
+                  report.unit$city <<- district.df[
+                    district.df[, kTierDistrict] == district, kTierCity]
+                  report.unit$scope <<- paste0("", 
+                                               "", 
+                                               report.unit$school)
+                  SetDataScope(report.unit)
+                  LogInfo(paste(report.scope, report.unit$school, report.unit$district, report.unit$city))
+                  ScopeReport()
+                }
+                
               }
             }
             

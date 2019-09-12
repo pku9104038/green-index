@@ -19,11 +19,10 @@ query.data.city.base.teacher.survey
 
 - 九年级教师中有`r gio.R$SamTopKey(query.data, "总体", "作为教师,我的角色就是引导学生自行探究", c("比较同意", "非常同意"), 1)`%认同教师的角色是引导学生自行探究；有`r gio.R$SamTopKey(query.data, "总体", "在课堂上应尽可能多创造机会让学生向教师提问", c("比较同意", "非常同意"), 1)`%认同在课堂上应尽可能多创造机会让学生向教师提问；`r gio.R$SamTopKey(query.data, "总体", "思考和推理过程比具体的课程内容更重要", c("比较同意", "非常同意"), 1)`%认为思考和推理过程比具体的课程内容更重要。
 
-- 九年级教师专业发展的途径主要是与同事分享经验、讨论问题，观摩他人的课并在课后进行研讨以及参加学校或教研部门组织的教研活动；教师专业发展的需求主要集中在对个性化教学的方法，教学技能，所教学科领域知识及学生评价和测量方法；教师专业发展遇到的困难主要是缺乏专业活动的资金，时间的冲突及缺乏参加相关活动的机会。
-
 
 - 九年级教师有`r gio.R$SamTopKey(query.data, "总体", "学校的课程建设思路与方案具有本校特色", c("比较符合", "非常符合"), 1)`％认为学校的课程建设思路与方案具有本校特色。
 
+\clearpage
 
 ## 教师基本情况
 
@@ -41,6 +40,7 @@ plot.bar.city.base.teacher.gender.perspective
 
 plot.bar.city.base.teacher.years.perspective
 
+\clearpage
 
 ### 教师职称
 
@@ -55,6 +55,7 @@ plot.bar.city.base.teacher.rank.perspective
 
 plot.bar.city.base.teacher.education.perspective
 
+\clearpage
 
 ### 教师师范教育情况
 
@@ -69,6 +70,7 @@ plot.bar.city.base.teacher.normaledu.perspective
 
 plot.bar.city.base.teacher.match.perspective
 
+\clearpage
 
 ### 教师每周上课节数
 
@@ -83,6 +85,8 @@ plot.bar.city.base.teacher.work.weekly.perspective
 
 plot.bar.city.base.teacher.work.daily.perspective
 
+
+\clearpage
 
 ## 教师的职业感受
 

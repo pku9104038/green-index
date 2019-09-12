@@ -26,49 +26,49 @@ plot.box.district.sc.dimention.quantile
 
 ### 地球宇宙
 
-#### 不同群体学生的表现
+#### 本区不同群体学生的表现
 
 plot.bar.district.sc.earth.rank.perspective
 plot.box.district.sc.earth.quantile.perspective
 
-#### 不同学校学生的表现
+#### 本区各学校学生的表现
 
 multiplot.bar.district.sc.earth.rank.school
 multiplot.box.district.sc.earth.quantile.school
 
 ### 生命科学
 
-#### 不同群体学生的表现
+#### 本区不同群体学生的表现
 
 plot.bar.district.sc.life.rank.perspective
 plot.box.district.sc.life.quantile.perspective
 
 
-#### 不同学校学生的表现
+#### 本区各学校学生的表现
 
 multiplot.bar.district.sc.life.rank.school
 multiplot.box.district.sc.life.quantile.school
 
 ### 物质科学
 
-#### 不同群体学生的表现
+#### 本区不同群体学生的表现
 
 plot.bar.district.sc.physics.rank.perspective
 plot.box.district.sc.physics.quantile.perspective
 
-#### 不同学校学生的表现
+#### 本区各学校学生的表现
 
 multiplot.bar.district.sc.physics.rank.school
 multiplot.box.district.sc.physics.quantile.school
 
 ### 科学探究
 
-#### 不同群体学生的表现
+#### 本区不同群体学生的表现
 
 plot.bar.district.sc.explore.rank.perspective
 plot.box.district.sc.explore.quantile.perspective
 
-#### 不同学校学生的表现
+#### 本区各学校学生的表现
 
 multiplot.bar.district.sc.explore.rank.school
 multiplot.box.district.sc.explore.quantile.school
@@ -77,37 +77,37 @@ multiplot.box.district.sc.explore.quantile.school
 
 ### 科学知识
 
-#### 不同群体学生的表现
+#### 本区不同群体学生的表现
 
 plot.bar.district.sc.knowledge.rank.perspective
 plot.box.district.sc.knowledge.quantile.perspective
 
-#### 不同学校学生的表现
+#### 本区各学校学生的表现
 
 multiplot.bar.district.sc.knowledge.rank.school
 multiplot.box.district.sc.knowledge.quantile.school
 
 ### 科学能力
 
-#### 不同群体学生的表现
+#### 本区不同群体学生的表现
 
 plot.bar.district.sc.skill.rank.perspective
 plot.box.district.sc.skill.quantile.perspective
 
-#### 不同学校学生的表现
+#### 本区各学校学生的表现
 
 multiplot.bar.district.sc.skill.rank.school
 multiplot.box.district.sc.skill.quantile.school
 
 ### 科学态度
 
-#### 不同群体学生的表现
+#### 本区不同群体学生的表现
 
 plot.bar.district.sc.attitude.rank.perspective
 plot.box.district.sc.attitude.quantile.perspective
 
 
-#### 不同学校学生的表现
+#### 本区各学校学生的表现
 
 multiplot.bar.district.sc.attitude.rank.school
 multiplot.box.district.sc.attitude.quantile.school
