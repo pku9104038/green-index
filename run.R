@@ -1,10 +1,15 @@
 ## Entry script for green index data analyse
 
+# pg_dump -h localhost -p 5432 -U xxxx -w -d dbname -f filename
+# psql -h localhost -p 5432 -U xxxx -w -f filename dbname
+
 # install.packages("~/github/ggthemes_4.2.0.tar.gz", repos = NULL, type = "Source")
+
+setwd("~/OneDrive/zuoyue/project/2018绿色指标分析/green-index")
 
 
 options(java.parameters = "-Xmx8g")  # set java heap size before run.R
-setwd("~/OneDrive/zuoyue/project/2018绿色指标分析/green-index")
+
 
 # options(tinytex.verbose = TRUE)
 
