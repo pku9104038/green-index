@@ -2,9 +2,9 @@
 # report setting
 report:
   TODO: FALSE
-  RUN: "PILOT"  # "AUTO", "PILOT",
+  RUN: "AUTO"  # "AUTO", "PILOT",
   PLOTFIG: TRUE
-  DISTRICTS: TRUE
+  DISTRICTS: FALSE
     # slecte districts from kPilotRun$pilot$scope$district
   output:
     format: "pdf_document"
@@ -180,7 +180,7 @@ report:
         - "city_ar_topic.rmd"
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标基础数据报告"
       tier: *kStatTierDistrict
       subdir: "base"
@@ -202,7 +202,7 @@ report:
         - "district_base_parent.rmd"
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标指数报告"
       tier: *kStatTierDistrict
       subdir: "index"
@@ -415,7 +415,7 @@ report:
       TODO: FALSE
       name: "绿色指标报告排版校对"
       tier: *kStatTierSchool
-      subdir: "base"
+      subdir: "sch"
       subject:
         name: ""
         suffix: ""
@@ -429,4 +429,4 @@ report:
         - "project_summary.rmd"
 
         - "collation.Rmd"
-        - "index_citation.Rmd"
+        # - "index_citation.Rmd"

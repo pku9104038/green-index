@@ -148,7 +148,7 @@ comment.school.en.question.S8AO23111
 
 
 
-\questiontitle{典型题目}2：S8AO48111
+\questiontitle{典型题目}2：S8AO48111、S8AO48112
 
 \begin{center}
 48．旅行者的话
@@ -723,18 +723,18 @@ C．\textcircled{\scriptsize{2}}\textcircled{\scriptsize{3}}    \qquad \qquad D�
 
 - 题型：选择
 
-- 正确答案：C
+- 正确答案：D
 
-- 平均得分率：`r gio.R$VarTierSamKey(query.data, "S8AO04111_X", "学校","总体","总体")`％
+- 平均得分率：`r gio.R$VarTierSamKey(query.data, "S8AO41111_X", "学校","总体","总体")`％
 
-plot.bar.school.sc.question.S8AO04111
-query2.plot.bar.school.sc.question.S8AO04111
+plot.bar.school.sc.question.S8AO41111
+query2.plot.bar.school.sc.question.S8AO41111
 
 \begin{itshape}
-全市参加测试的学生中，科学总体水平处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarTierSamKey(query.data, "S8AO04111_X", "市","总体","A")`％、`r gio.R$VarTierSamKey(query.data, "S8AO04111_X", "市","总体","B")`％、`r gio.R$VarTierSamKey(query.data, "S8AO04111_X", "市","总体","C")`％、 `r gio.R$VarTierSamKey(query.data, "S8AO04111_X", "市","总体","D")`％。
+全市参加测试的学生中，科学总体水平处于A、B、C、D四个水平的学生在此题上的平均得分率分别为：`r gio.R$VarTierSamKey(query.data, "S8AO41111_X", "市","总体","A")`％、`r gio.R$VarTierSamKey(query.data, "S8AO41111_X", "市","总体","B")`％、`r gio.R$VarTierSamKey(query.data, "S8AO41111_X", "市","总体","C")`％、 `r gio.R$VarTierSamKey(query.data, "S8AO41111_X", "市","总体","D")`％。
 \end{itshape}
 
-- 全市学生作答分析：学生正确率为`r gio.R$VarTierSamKey(query.data, "S8AO04111_X", "学校","总体","总体")`％，比预期情况略低。错误选项主要集中在A选项上。从学生答题情况看，学生或许知道人在上楼过程中机械能会发生变化，所以对于说法“动能不变，势能不变”能加以排除，但是具体分析人上楼梯时到底是动能变大还是势能变大却出现了困难，说明对于“动能”和“势能”的概念还区分得不是很清楚。
+- 全市学生作答分析：学生正确率为`r gio.R$VarTierSamKey(query.data, "S8AO41111_X", "学校","总体","总体")`％，比预期情况略低。错误选项主要集中在A选项上。从学生答题情况看，学生或许知道人在上楼过程中机械能会发生变化，所以对于说法“动能不变，势能不变”能加以排除，但是具体分析人上楼梯时到底是动能变大还是势能变大却出现了困难，说明对于“动能”和“势能”的概念还区分得不是很清楚。
 
 - 教学建议：在教学实践中，应多结合生活实例，让学生从根本上理解“动能”与“势能”等既有联系又有区别的概念，避免发生概念上的混淆。
 
@@ -940,7 +940,7 @@ A．\textcircled{\scriptsize{1}}\textcircled{\scriptsize{2}}	\qquad\qquad	B．\t
 
 - 试题考查点：科学探究领域——证据的使用
 
-- 具体考察内容：根据题目提供的关于$PM_{2.5}$浓度的相关数据信息，分析比较得出可推测的$PM_{2.5}$与环节因素之间的关系，能区分“证据”与“结论”的有效关系。
+- 具体考察内容：根据题目提供的关于$PM_{2.5}$浓度的相关数据信息，分析比较得出可推测的$PM_{2.5}$与环境因素之间的关系，能区分“证据”与“结论”的有效关系。
 
 - 能力要求：在新情境下，分析所给信息的内涵，能通过比较、分析甄别结论的正确性，认识与结论有关的有效“证据”。
 
@@ -1007,13 +1007,11 @@ comment.school.en.question.S8AO45111
 
 - 试题考查点：科学探究——做计划、获取与描述证据、使用证据
 
-- 具体考察内容：本题在考查学生思维的严谨性，如所得结论是否是基于证据的获得的?所获证据是否科学、全面的等?从中找出实验设计中存在的问题，即精度不够的问题。
+- 具体考察内容：本题在考查学生思维的严谨性，如所得结论是否是基于证据的获得?所获证据是否科学、全面等?从中找出实验设计中存在的问题，即精度不够的问题。
 
-- 能力要求：不仅根据图标获得有效证据，同时还要评价相关结论的合理与否。完成此类问题学生需要具备一定的批判性思维，体现“做计划”“获取与描述证据”“使用证据”等三个方面能力。
+- 能力要求：不仅根据图表获得有效证据，同时还要评价相关结论的合理与否。完成此类问题学生需要具备一定的批判性思维，体现“做计划”“获取与描述证据”“使用证据”等三个方面能力。
 
 - 题型：填空
-
-- 正确答案：氧气或者空气
 
 - 平均得分率：`r gio.R$VarTierSamKey(query.data, "S8AS46321_X", "学校","总体","总体")`％
 

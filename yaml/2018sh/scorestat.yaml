@@ -126,7 +126,7 @@ scorestat:
           subject: *kSubject
 
     -
-      TODO: TRUE
+      TODO: FALSE
       input:
         table: *kSubjectAR
         suffix: *kSuffixTransform

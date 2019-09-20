@@ -64,7 +64,7 @@ gio.scheduler$EchoInfo("Start!")
 # gio.statistics$StatisticsScore()  # 成绩统计
 # gio.scoreconverge$ScoreConverge() # 成绩综合（在统计的基础上再次合并统计）
 
-# gio.scheduler$Indexation(FALSE)
+# gio.scheduler$Indexation(TRUE)
 # gio.loadindex$LoadIndex()
 # gio.converge$ConvergeTable()
 

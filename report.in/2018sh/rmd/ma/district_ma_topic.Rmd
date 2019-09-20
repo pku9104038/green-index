@@ -175,6 +175,8 @@ C．\textit{任何一个三角形的三个内角和都是180$\degree$} &  D．\t
 - 试题描述：懂得随机事件的概念，在判断一个事件是否是随机事件的过程
 中检测推理论证、数学表达和空间想象能力的表现．
 
+- 正确答案：D
+
 - 本题满分：满分3分
 
 - 平均得分率：`r gio.R$VarTierSamKey(query.data, "M8AO11111_X", "区","总体","总体")`%
@@ -223,7 +225,7 @@ table.district.ma.M8AO15111
 \\ \cline{2-16}
 
 
-& M8AO16111 & 掌握平行线的性质，在实际问题中求平行线形成角的度数的过程中检测推理论证和空间想象能力的表现
+& M8AO16111 & 掌握平行线的性质，在含有情境的求平行线形成角的度数的过程中检测推理论证和空间想象能力的表现
 table.district.ma.M8AO16111
 \\ \cline{2-16}
 
@@ -323,7 +325,7 @@ C．$\angle{BAC}=90\degree$   & D．$\angle{ABC}=45\degree$ \\
 - 考查内容：图形与几何
 - 思维层次：知识建构
 - 能力维度：本题考查的过程为“调用”；该过程中运用到的主要方法为 “推理论证”和“空间想象”
-- 试题描述：掌握平行线的性质，在实际问题中求平行线形成角的度数的过程中检测推理论证和空间想象能力的表现
+- 试题描述：掌握平行线的性质，在含有情境的求平行线形成角的度数的过程中检测推理论证和空间想象能力的表现
 - 正确答案：A
 - 本题满分：3分
 - 平均得分率：`r gio.R$VarTierSamKey(query.data, "M8AO15111_X", "区","总体","总体")`%
@@ -363,7 +365,7 @@ comment.school.en.question.M8AO15111
 - 考查内容：图形与几何
 - 思维层次：知识建构
 - 能力维度：本题考查的过程为“调用”；该过程中运用到的主要方法为 “运算求解”、“推理论证”和“空间想象”
-- 试题描述：掌握平行线的性质，在实际问题中求平行线形成角的度数的过程中检测推理论证和空间想象能力的表现
+- 试题描述：掌握平行线的性质，在含有情境的求平行线形成角的度数的过程中检测推理论证和空间想象能力的表现
 - 正确答案：C
 - 本题满分：3分
 - 平均得分率：`r gio.R$VarTierSamKey(query.data, "M8AO16111_X", "区","总体","总体")`%
@@ -384,9 +386,9 @@ comment.school.en.question.M8AO16111
 
 \begin{itshape}
 
-\begin{wrapfigure}{r}{0.5\textwidth}
+\begin{wrapfigure}{r}{0.47\textwidth}
   \begin{center}
-    \includegraphics[width=0.45\textwidth]{ma_M8AO18111.png}
+    \includegraphics[width=0.38\textwidth]{ma_M8AO18111.png}
   \end{center}
 \end{wrapfigure}
 
@@ -448,7 +450,7 @@ comment.school.en.question.M8AO18111
 
 - 能力维度：本题考查的过程为“调用”，该过程中运用到的主要方法为“运算求解”和“数学表达”
 
-- 试题描述：掌握简单分式方程的解法，在一个分式方程的求解过程中检测运算求解和数学表达能力的表现
+- 试题描述：掌握简单分式方程的解法（方程\textcircled{\scriptsize{2}}），在一个分式方程的求解过程中检测运算求解和数学表达能力的表现
 
 - 正确答案：
 
@@ -488,9 +490,9 @@ comment.school.en.question.M8AS19211
 
 \begin{itshape}
 
-\begin{wrapfigure}{r}{0.35\textwidth}
+\begin{wrapfigure}{r}{0.43\textwidth}
   \begin{center}
-    \includegraphics[width=0.3\textwidth]{ma_M8AS20111.png}
+    \includegraphics[width=0.38\textwidth]{ma_M8AS20111.png}
   \end{center}
 \end{wrapfigure}
 
@@ -1102,7 +1104,7 @@ query2.plot.bar.district.ma.question.M8AS21311
 
 在函数应用问题的教学中还需要关注建模的思想。数学建模是对现实问题进行数学抽象，构建数学模型，并用数学语言表达问题，用数学知识和方法解决问题的思维过程。要注重“建”的过程，甚至这个过程比“用”更加重要，要教会学生从具体的背景中抽象出最为本质的关系。
 
-此类问题也涉及“数学运算”，对学生的运算能力也有一定的要求，但“算”不是唯一，更需要教会学生尊重实际问题的情景，明晰运算的对象、明确运算的方向、选择运算方法，在得到运算的结果后还需要回溯“问题结果的合理性”。
+此类问题也涉及“数学运算”，对学生的运算能力也有一定的要求，但“算”不是唯一，更需要教会学生尊重实际问题的情境，明晰运算的对象、明确运算的方向、选择运算方法，在得到运算的结果后还需要回溯“问题结果的合理性”。
 
 comment.school.en.question.M8AS21311
 
@@ -1110,15 +1112,15 @@ comment.school.en.question.M8AS21311
 
 \begin{itshape}
 
-\begin{wrapfigure}{r}{0.45\textwidth}
+\begin{wrapfigure}{r}{0.39\textwidth}
   \begin{center}
-    \includegraphics[width=0.4\textwidth]{ma_M8AS24111.png}
+    \includegraphics[width=0.32\textwidth]{ma_M8AS24111.png}
   \end{center}
 \end{wrapfigure}
 
 在直角坐标平面内，如果一个点作如下平移：沿$x$轴方向平移的“数量”为$a$（规定向右为正，向左为负，平移$|a|$个单位），沿$y$轴方向平移的“数量”为$b$（规定向上为正，向下为负，平移$|b|$个单位），那么就把有序数对$<a, b>$叫做这一平移运动的“平移量”.
 
-现定义：“平移量”$<a, b>$与“平移量”$<c, d>$之间可以进行加法运算，记作$<a, b> + <c, d>$，运算法则为$<a, b> + <c, d> = <a+b, c+d>$. 例如点$A$按照“平移量”$<2, 3>$平移到点$B$，再将点$B$按照“平移量”$<-1, 1>$平移到点$C$，那么点$A$到点$C$的平移过程可以表示为$<2, 3> + <-1, 1> = <1, 4>$.
+现定义：“平移量”$<a, b>$与“平移量”$<c, d>$之间可以进行加法运算，记作$<a, b> + <c, d>$，运算法则为$<a, b> + <c, d> = <a+c, b+d>$. 例如点$A$按照“平移量”$<2, 3>$平移到点$B$，再将点$B$按照“平移量”$<-1, 1>$平移到点$C$，那么点$A$到点$C$的平移过程可以表示为$<2, 3> + <-1, 1> = <1, 4>$.
 
 （1）如果一动点从原点$O(0,0)$出发，先按照“平移量”$<3, 1>$平移到点$P$，再将点$P$按照“平移量”$<-2, 2>$平移到点$Q$。
 
