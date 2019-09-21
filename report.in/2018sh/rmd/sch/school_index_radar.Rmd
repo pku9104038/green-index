@@ -2,9 +2,13 @@
 
 ## 市、区、校绿色指标对比
 
+<!--  remove radar because some school lack index will cause plot error
+
 ### 指标雷达图
 
 plot.radar.school.index.compare
+
+-->
 
 ### 指标数据表
 
@@ -70,11 +74,11 @@ table.school.index.9
 \begin{tabularx}{\textwidth}{X}
 \hline
 
-\makecell[c]{希望此份报告有助于您的教学和管理!}  \\ 
+\makecell[c]{希望此份报告有助于您的教学和管理!}  \\
 
 \makecell[c]{同时祝愿您和贵校的教师工作顺利、身体健康!祝愿贵校的孩子们学习进步、健康成长!} \\
 
-\hline 
+\hline
 
 \end{tabularx}
 \end{table}
