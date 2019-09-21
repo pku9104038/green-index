@@ -7,6 +7,8 @@
 
 setwd("~/OneDrive/zuoyue/project/2018绿色指标分析/green-index")
 
+# global setting rmd
+# \graphicspath{ {/Users/wangpeifeng/OneDrive/zuoyue/project/2018绿色指标分析/green-index/report.out/2018sh/fig/} }
 
 options(java.parameters = "-Xmx8g")  # set java heap size before run.R
 

@@ -170,7 +170,7 @@ plot.bar.district.ar.question.A8AO01211
 
 comment.school.cn.question.A8AO01111
 
-query2.plot.bar.district.ar.question.A8AO01211
+query2.plot.bar.city.ar.question.A8AO01211
 
 在题目A8AO01211中，对音乐场景的运用就需要有一定的分析能力，有学生会不确定选哪项是正确的，特别是因为九年级学生的生活经历不够丰富，因此出现不同选项的比例就比较高，正确率在`r gio.R$KeyValue(query2.data, "A")`％左右。
 

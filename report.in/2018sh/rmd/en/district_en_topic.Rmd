@@ -140,15 +140,15 @@ table.district.en.E8AS20111
 plot.bar.district.en.question.E8AO07111
 
 \begin{itshape}
-全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO07111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO07111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO07111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO07111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO07111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO07111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO07111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO07111_X", "市","总体","D")`\%。
 \end{itshape}
 
 
 - 全市学生作答分析及教学建议：
 
-query2.plot.bar.district.en.question.E8AO07111
+query2.plot.bar.city.en.question.E8AO07111
 
-学生作答这个题目需要听懂表示提议“你是否想要一杯茶?”，并做出应答。`r gio.R$VarTierSamKey(query2.data, "E8AO07111_单选项", "区","总体","B")`％的学生能够完成本题任务，作出应答。选择选项A和C的人数比例分别为`r gio.R$VarTierSamKey(query2.data, "E8AO07111_单选项", "区","总体","A")`％和`r gio.R$VarTierSamKey(query2.data, "E8AO07111_单选项", "区","总体","C")`％，主要原因可能是不熟悉如何恰当回应“提议”功能。
+学生作答这个题目需要听懂表示提议“你是否想要一杯茶?”，并做出应答。`r gio.R$VarTierSamKey(query2.data, "E8AO07111_单选项", "市","总体","B")`％的学生能够完成本题任务，作出应答。选择选项A和C的人数比例分别为`r gio.R$VarTierSamKey(query2.data, "E8AO07111_单选项", "市","总体","A")`％和`r gio.R$VarTierSamKey(query2.data, "E8AO07111_单选项", "市","总体","C")`％，主要原因可能是不熟悉如何恰当回应“提议”功能。
 
 comment.school.en.question.E8AO07111
 
@@ -173,14 +173,14 @@ comment.school.en.question.E8AO07111
 plot.bar.district.en.question.E8AO08111
 
 \begin{itshape}
-全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO08111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO08111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO08111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO08111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO08111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO08111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO08111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO08111_X", "市","总体","D")`\%。
 \end{itshape}
 
 - 全市学生作答分析及教学建议：
 
-query2.plot.bar.district.en.question.E8AO08111
+query2.plot.bar.city.en.question.E8AO08111
 
-学生作答这个题目需要对对方道歉而进行回复。`r gio.R$VarTierSamKey(query2.data, "E8AO08111_单选项", "区","总体","C")`％的学生能够完成本题任务，选择正确。选择选项A和B的人数比例分别为`r gio.R$VarTierSamKey(query2.data, "E8AO08111_单选项", "区","总体","A")`％和`r gio.R$VarTierSamKey(query2.data, "E8AO08111_单选项", "区","总体","B")`％，选择B项，可能是受到中文思维的干扰。选择A可能是学生混淆对“感激”功能的表达。
+学生作答这个题目需要对对方道歉而进行回复。`r gio.R$VarTierSamKey(query2.data, "E8AO08111_单选项", "市","总体","C")`％的学生能够完成本题任务，选择正确。选择选项A和B的人数比例分别为`r gio.R$VarTierSamKey(query2.data, "E8AO08111_单选项", "市","总体","A")`％和`r gio.R$VarTierSamKey(query2.data, "E8AO08111_单选项", "市","总体","B")`％，选择B项，可能是受到中文思维的干扰。选择A可能是学生混淆对“感激”功能的表达。
 
 comment.school.en.question.E8AO08111
 
@@ -241,12 +241,12 @@ Travel agency:	& John Locke Travel Service \\
 plot.bar.district.en.question.E8AS18111
 
 \begin{itshape}
-全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AS18111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS18111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS18111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS18111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AS18111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS18111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS18111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS18111_X", "市","总体","D")`\%。
 \end{itshape}
 
 - 全市学生作答分析及教学建议：
 
-query2.plot.bar.district.en.question.E8AS18111
+query2.plot.bar.city.en.question.E8AS18111
 
 学生作答这个题目需要根据文本
 
@@ -255,7 +255,7 @@ query2.plot.bar.district.en.question.E8AS18111
 \end{longtable}
 \setcounter{table}{\value{table}-1}
 
-直接获取信息，填入9/9th/ninth。只有`r gio.R$VarTierSamKey(query2.data, "E8AS18111_X", "区","总体","2")`％的学生能够完成本题任务，错误原因是ninth 拼写错误。更多的同学是提取了干扰信息：
+直接获取信息，填入9/9th/ninth。只有`r gio.R$VarTierSamKey(query2.data, "E8AS18111_X", "市","总体","2")`％的学生能够完成本题任务，错误原因是ninth 拼写错误。更多的同学是提取了干扰信息：
 
 \begin{longtable}{|p{14cm}|} \hline
 I have to be in Paris on the eleventh of March ...\\ \hline
@@ -277,12 +277,12 @@ comment.school.en.question.E8AS18111
 plot.bar.district.en.question.E8AS19111
 
 \begin{itshape}
-全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AS19111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS19111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS19111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS19111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AS19111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS19111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS19111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS19111_X", "市","总体","D")`\%。
 \end{itshape}
 
 - 全市学生作答分析及教学建议：
 
-query2.plot.bar.district.en.question.E8AS19111
+query2.plot.bar.city.en.question.E8AS19111
 
 
 学生作答这个题目需要根据文本
@@ -293,7 +293,7 @@ query2.plot.bar.district.en.question.E8AS19111
 \end{longtable}
 \setcounter{table}{\value{table}-1}
 
-直接获取信息，填写June。有`r gio.R$VarTierSamKey(query2.data, "E8AS19111_X", "区","总体","2")`％的学生能够完成本题任务。错误原因是June拼写错误，更多的同学是提取了干扰信息，填写了July/Jul。
+直接获取信息，填写June。有`r gio.R$VarTierSamKey(query2.data, "E8AS19111_X", "市","总体","2")`％的学生能够完成本题任务。错误原因是June拼写错误，更多的同学是提取了干扰信息，填写了July/Jul。
 
 comment.school.en.question.E8AS19111
 
@@ -463,12 +463,12 @@ The new park covers \uline{\qquad\qquad} area of 60 square kilometres.
 plot.bar.district.en.question.E8AO21111
 
 \begin{itshape}
-全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO21111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO21111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO21111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO21111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO21111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO21111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO21111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO21111_X", "市","总体","D")`\%。
 \end{itshape}
 
 - 全市学生作答分析及教学建议：
 
-query2.plot.bar.district.en.question.E8AO21111
+query2.plot.bar.city.en.question.E8AO21111
 
 `r gio.R$KeyValue(query2.data, "B")`％的学生能够完成本题任务，选出正确选项B。选择选项A、C、D的人数比例分别为`r gio.R$KeyValue(query2.data, "A")`％、`r gio.R$KeyValue(query2.data, "C")`％，`r gio.R$KeyValue(query2.data, "D")`％。主要原因是不熟悉冠词an在习惯用语“cover an area of”中的使用。
 
@@ -493,12 +493,12 @@ Jon is fond \uline{\qquad\qquad} sports. He often skates and plays ball games.
 plot.bar.district.en.question.E8AO22111
 
 \begin{itshape}
-全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO22111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO22111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO22111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO22111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO22111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO22111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO22111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO22111_X", "市","总体","D")`\%。
 \end{itshape}
 
 - 全市学生作答分析及教学建议：
 
-query2.plot.bar.district.en.question.E8AO22111
+query2.plot.bar.city.en.question.E8AO22111
 
 `r gio.R$KeyValue(query2.data, "B")`％的学生能够完成本题任务，选出正确选项B。选择选项A、C、D的人数比例分别为`r gio.R$KeyValue(query2.data, "A")`％、`r gio.R$KeyValue(query2.data, "C")`％，`r gio.R$KeyValue(query2.data, "D")`％%。主要原因是不熟悉介词在短语“be fond of”中的使用。
 
@@ -524,12 +524,12 @@ The pictures in the menu look \uline{\qquad\qquad} and the taste must be great.
 plot.bar.district.en.question.E8AO23111
 
 \begin{itshape}
-全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO23111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO23111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO23111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO23111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO23111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO23111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO23111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO23111_X", "市","总体","D")`\%。
 \end{itshape}
 
 - 全市学生作答分析及教学建议：
 
-query2.plot.bar.district.en.question.E8AO23111
+query2.plot.bar.city.en.question.E8AO23111
 
 
 `r gio.R$KeyValue(query2.data, "A")`％的学生能够完成本题任务，选出正确选项A。选择选项B、C、D的人数比例分别为`r gio.R$KeyValue(query2.data, "B")`％、`r gio.R$KeyValue(query2.data, "C")`％，`r gio.R$KeyValue(query2.data, "D")`％。主要原因是不熟悉look作为系动词，后接形容词的用法。其次是不熟悉lovely 是名词加ly而构成的形容词，而其他三个选项都是形容词加ly，构成副词。
@@ -558,12 +558,12 @@ Is there much \uline{\qquad\qquad} about saving water in this article?
 plot.bar.district.en.question.E8AO24111
 
 \begin{itshape}
-全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO24111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO24111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO24111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO24111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO24111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO24111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO24111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO24111_X", "市","总体","D")`\%。
 \end{itshape}
 
 - 全市学生作答分析及教学建议：
 
-query2.plot.bar.district.en.question.E8AO24111
+query2.plot.bar.city.en.question.E8AO24111
 
 `r gio.R$KeyValue(query2.data, "C")`％的学生能够完成本题任务，选出正确选项C。选择选项A、B、D的人数比例分别为`r gio.R$KeyValue(query2.data, "A")`％、`r gio.R$KeyValue(query2.data, "B")`％，`r gio.R$KeyValue(query2.data, "D")`％。主要原因是不熟悉much表示数量时，与不可数名词连用，其次误认为tip, fact 或suggestion是不可数名词。
 
@@ -591,12 +591,12 @@ This pair of glasses can let you \uline{\qquad\qquad} both near and far things a
 plot.bar.district.en.question.E8AO29111
 
 \begin{itshape}
-全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO29111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO29111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO29111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO29111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO29111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO29111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO29111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO29111_X", "市","总体","D")`\%。
 \end{itshape}
 
 - 全市学生作答分析及教学建议：
 
-query2.plot.bar.district.en.question.E8AO29111
+query2.plot.bar.city.en.question.E8AO29111
 
 `r gio.R$KeyValue(query2.data, "A")`％的学生能够完成本题任务，选出正确选项A。选择选项B、C、D的人数比例分别为`r gio.R$KeyValue(query2.data, "B")`％、`r gio.R$KeyValue(query2.data, "C")`％，`r gio.R$KeyValue(query2.data, "D")`％。主要原因可能不熟悉省略to的不定式做宾语补足语的情况。
 
@@ -623,12 +623,12 @@ My brother practices \uline{\qquad\qquad} the violin for two hours every day.
 plot.bar.district.en.question.E8AO33111
 
 \begin{itshape}
-全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO33111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO33111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO33111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO33111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO33111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO33111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO33111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO33111_X", "市","总体","D")`\%。
 \end{itshape}
 
 - 全市学生作答分析及教学建议：
 
-query2.plot.bar.district.en.question.E8AO33111
+query2.plot.bar.city.en.question.E8AO33111
 
 
 `r gio.R$KeyValue(query2.data, "A")`％的学生能够完成本题任务，选出正确选项A。选择选项B、C、D的人数比例分别为`r gio.R$KeyValue(query2.data, "B")`％、`r gio.R$KeyValue(query2.data, "C")`％，`r gio.R$KeyValue(query2.data, "D")`％。主要原因是可能不熟悉practise后加动名词的用法。
@@ -650,12 +650,12 @@ Kitty took some \uline{\qquad\qquad} for the English Club on the Open Day. (phot
 plot.bar.district.en.question.E8AS46111
 
 \begin{itshape}
-全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AS46111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS46111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS46111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS46111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AS46111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS46111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS46111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS46111_X", "市","总体","D")`\%。
 \end{itshape}
 
 - 全市学生作答分析及教学建议：
 
-query2.plot.bar.district.en.question.E8AS46111
+query2.plot.bar.city.en.question.E8AS46111
 
 `r gio.R$KeyValue(query2.data, "1")`％的学生能够根据句意，some后跟可数名词的复数形式，正确填写出photos。`r gio.R$KeyValue(query2.data, "0")`％的学生没有得分。主要原因是受到其他以-o结尾可数名词的复数加-es的影响，填写了photoes，还有部分学生过度思考，填写了photographs。
 
@@ -676,12 +676,12 @@ It is \uline{\qquad\qquad} to succeed without working hard. (possible)
 plot.bar.district.en.question.E8AS49111
 
 \begin{itshape}
-全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AS49111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS49111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS49111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS49111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AS49111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS49111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS49111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AS49111_X", "市","总体","D")`\%。
 \end{itshape}
 
 - 全市学生作答分析及教学建议：
 
-query2.plot.bar.district.en.question.E8AS49111
+query2.plot.bar.city.en.question.E8AS49111
 
 `r gio.R$KeyValue(query2.data, "1")`％的学生能够完成根据句意和结构，正确填写出所给形容词possible的反义词impossible。`r gio.R$KeyValue(query2.data, "0")`％的学生没有得分。主要原因是没有理解句意和It is + adj. + to do sth.结构，填写了副词possibly，还有部分学生加了错误的前缀。
 
@@ -877,13 +877,12 @@ E8AO63111
 plot.bar.district.en.question.E8AO56111
 
 \begin{itshape}
-全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO56111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO56111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO56111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO56111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO56111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO56111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO56111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO56111_X", "市","总体","D")`\%。
 \end{itshape}
 
 - 全市学生作答分析及教学建议：
 
-query2.plot.bar.district.en.question.E8AO56111
-
+query2.plot.bar.city.en.question.E8AO56111
 
 `r gio.R$KeyValue(query2.data, "C")`％的学生能够完成本题任务，能根据短文内容和句子结构，选择C项。`r gio.R$KeyValue(query2.data, "A")`％的学生选择了A项。`r gio.R$KeyValue(query2.data, "B")`％的学生选择了B项， `r gio.R$KeyValue(query2.data, "D")`％的学生选择了D项。主要原因是未能理解上下文，或没有读懂本句“突出强调”的句意。建议教师加强学生阅读时上下文理解能力的培养。
 
@@ -901,13 +900,12 @@ comment.school.en.question.E8AO56111
 plot.bar.district.en.question.E8AO59111
 
 \begin{itshape}
-全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO59111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO59111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO59111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO59111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO59111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO59111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO59111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO59111_X", "市","总体","D")`\%。
 \end{itshape}
 
 - 全市学生作答分析及教学建议：
 
-query2.plot.bar.district.en.question.E8AO59111
-
+query2.plot.bar.city.en.question.E8AO59111
 
 学生需要理解句意：“抵达K2的顶峰” 应选择及物动词reach直接加宾语the top of K2的结构。`r gio.R$KeyValue(query2.data, "B")`％的学生能够完成本题任务，选择B项。`r gio.R$KeyValue(query2.data, "A")`％的学生选择了A项，`r gio.R$KeyValue(query2.data, "D")`％的学生选择了D项，动宾搭配发生错误。`r gio.R$KeyValue(query2.data, "C")`％的学生选择了C项，混淆及物动词reach和不及物动词get（到达）的用法。建议教师要加强对及物动词和不及物动词的讲解，并引导学生对动词的辨析。
 
@@ -924,12 +922,12 @@ comment.school.en.question.E8AO59111
 plot.bar.district.en.question.E8AO60111
 
 \begin{itshape}
-全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO60111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO60111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO60111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO60111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO60111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO60111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO60111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO60111_X", "市","总体","D")`\%。
 \end{itshape}
 
 - 全市学生作答分析及教学建议：
 
-query2.plot.bar.district.en.question.E8AO60111
+query2.plot.bar.city.en.question.E8AO60111
 
 根据下文“虽然学生很渴望学习，但他们没有学校，没有教师，没有学习工具等”，`r gio.R$KeyValue(query2.data, "A")`％的学生能够完成本题任务，选择A项。`r gio.R$KeyValue(query2.data, "B")`％的学生选择了B项，`r gio.R$KeyValue(query2.data, "C")`％的学生选择了C项，`r gio.R$KeyValue(query2.data, "D")`％的学生选择了D项，这些学生可能没有理解上下文含义。建议教师要引导学生在语境中运用语法。
 
@@ -946,12 +944,12 @@ comment.school.en.question.E8AO60111
 plot.bar.district.en.question.E8AO62111
 
 \begin{itshape}
-全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO62111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO62111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO62111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO62111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO62111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO62111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO62111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO62111_X", "市","总体","D")`\%。
 \end{itshape}
 
 - 全市学生作答分析及教学建议：
 
-query2.plot.bar.district.en.question.E8AO62111
+query2.plot.bar.city.en.question.E8AO62111
 
 
 学生选择形容词短语需要读懂上下文，理解 “hungry for”的含义。`r gio.R$KeyValue(query2.data, "C")`％的学生能够完成本题任务，根据短文内容和形容词短语的辨析，选择C项。`r gio.R$KeyValue(query2.data, "A")`％的学生选择了A项，`r gio.R$KeyValue(query2.data, "B")`％的学生选择了B项，`r gio.R$KeyValue(query2.data, "D")`％的学生选择了D项，说明没有读懂句意。建议教师要帮助学生在阅读中克服障碍、理解文章，并解决阅读中的问题。
@@ -969,12 +967,12 @@ comment.school.en.question.E8AO62111
 plot.bar.district.en.question.E8AO63111
 
 \begin{itshape}
-全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO63111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO63111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO63111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO63111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO63111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO63111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO63111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO63111_X", "市","总体","D")`\%。
 \end{itshape}
 
 - 全市学生作答分析及教学建议：
 
-query2.plot.bar.district.en.question.E8AO63111
+query2.plot.bar.city.en.question.E8AO63111
 
 
 学生选择动词需要理解上下文，主人公遵循诺言（kept his promise），帮助山区女孩子建立了学校。`r gio.R$KeyValue(query2.data, "D")`％的学生能够完成本题任务，根据短文内容和动词的辨析，选择D项。`r gio.R$KeyValue(query2.data, "A")`％的学生选择了A项，`r gio.R$KeyValue(query2.data, "B")`％的学生选择了B项，`r gio.R$KeyValue(query2.data, "C")`％的学生选择了C项，说明没有读懂句意或未能辨析make、keep与promise搭配时的不同含义。建议教师要帮助学生在阅读中克服障碍、理解文章，并解决阅读中的问题。
@@ -1051,13 +1049,13 @@ If you are going to play soccer, who will you invite to join you?
 plot.bar.district.en.question.E8AO65111
 
 \begin{itshape}
-全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO65111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO65111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO65111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO65111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO65111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO65111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO65111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO65111_X", "市","总体","D")`\%。
 \end{itshape}
 
 
 - 全市学生作答分析及教学建议：
 
-query2.plot.bar.district.en.question.E8AO65111
+query2.plot.bar.city.en.question.E8AO65111
 
 此题考查学生理解非连续性文本，并直接提取信息的能力。`r gio.R$KeyValue(query2.data, "D")`％的学生能够完成本题任务：根据文本Jack：Sometimes we play computer games, Tina: … play computer games.推断出Jack 和Tina的共同喜好是打电子游戏。D是正确选项。选择A项的学生比例为`r gio.R$KeyValue(query2.data, "A")`％，选择B项的学生比例为`r gio.R$KeyValue(query2.data, "B")`％，选择C项的学生比例为`r gio.R$KeyValue(query2.data, "C")`％。主要原因是部分学生将“go out with friends”和“visit friends”混为一谈。建议教师在阅读教学中，要注意培养学生运用和对照（compare and contrast）的阅读策略。
 
@@ -1074,12 +1072,12 @@ comment.school.en.question.E8AO65111
 plot.bar.district.en.question.E8AO66111
 
 \begin{itshape}
-全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO66111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO66111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO66111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO66111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO66111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO66111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO66111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO66111_X", "市","总体","D")`\%。
 \end{itshape}
 
 - 全市学生作答分析及教学建议：
 
-query2.plot.bar.district.en.question.E8AO66111
+query2.plot.bar.city.en.question.E8AO66111
 
 
 此题目考查学生理解非连续性文本的能力，并通过上下文，推断出“如果你想要踢足球，你会邀请谁”。`r gio.R$KeyValue(query2.data, "A")`％的学生能够完成本题任务：读懂文本内容，根据信息“Joe: On weekends, my friends and I always have ball games together. I love ball games!”推断出Joe的喜好是球类活动。选择B项的学生比例为`r gio.R$KeyValue(query2.data, "B")`％，选择C项的学生比例为`r gio.R$KeyValue(query2.data, "C")`％,选择D项的学生比例为`r gio.R$KeyValue(query2.data, "D")`％。主要原因可能是部分学生因为英语语言能力有限，不能正确理解文本内容。建议教师在平时阅读教学中创设情境，提高学生根据上下文进行推断的能力。
@@ -1120,12 +1118,12 @@ Which of the following statements is right?
 plot.bar.district.en.question.E8AO70111
 
 \begin{itshape}
-全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO70111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO70111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO70111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO70111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO70111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO70111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO70111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO70111_X", "市","总体","D")`\%。
 \end{itshape}
 
 - 全市学生作答分析及教学建议：
 
-query2.plot.bar.district.en.question.E8AO70111
+query2.plot.bar.city.en.question.E8AO70111
 
 
 此题目考查学生获取事实信息，判断信息正误的能力。通过文本第二段After two years at home with their babies, she’s happy to be back at work.，`r gio.R$KeyValue(query2.data, "C")`％的学生能够读懂段落的内容，确定C项为正确项。选择A项的学生比例为`r gio.R$KeyValue(query2.data, "A")`％，通过第一段文本“Billy, aged two years, and Eve, aged two months.” 可以判断A项是错误项。选择B项的学生比例为`r gio.R$KeyValue(query2.data, "B")`％，通过第四段文本最后一句“Billy and Eve go to bed at eight, and then Carol and Tom can relax together and talk about their day. ”可以判断B项是错误项。选择D项的学生比例为`r gio.R$KeyValue(query2.data, "D")`％，通过第三段文本第三句“Then he goes back home with Eve and works for an hour or two while the baby sleeps.” 可以判断D项是错误项。建议教师在阅读教学中，要加强学生对文本信息整合判断的能力。
@@ -1200,12 +1198,12 @@ According to the last paragraph, what will the writer probably say to her parent
 plot.bar.district.en.question.E8AO71111
 
 \begin{itshape}
-全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO71111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO71111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO71111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO71111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO71111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO71111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO71111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO71111_X", "市","总体","D")`\%。
 \end{itshape}
 
 - 全市学生作答分析及教学建议：
 
-query2.plot.bar.district.en.question.E8AO71111
+query2.plot.bar.city.en.question.E8AO71111
 
 此题考查学生通过上下文，理解文段，推断“作者回家作业的内容“。`r gio.R$KeyValue(query2.data, "C")`％的学生能够完成本题任务：读懂文段的内容，根据文本材料第二段提供的信息：I went on the Internet to find out about how bears live in the winter. Then I typed up a report.确定C项为正确项。选择A项的学生比例为`r gio.R$KeyValue(query2.data, "A")`％；选择B项的学生比例为`r gio.R$KeyValue(query2.data, "B")`％。选择D项的学生比例为`r gio.R$KeyValue(query2.data, "D")`％。这些学生都错误地提取了文本的信息。建议教师在阅读教学中，要提高学生对文本材料信息提取的能力。
 
@@ -1222,12 +1220,12 @@ comment.school.en.question.E8AO71111
 plot.bar.district.en.question.E8AO72111
 
 \begin{itshape}
-全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO72111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO72111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO72111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO72111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO72111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO72111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO72111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO72111_X", "市","总体","D")`\%。
 \end{itshape}
 
 - 全市学生作答分析及教学建议：
 
-query2.plot.bar.district.en.question.E8AO72111
+query2.plot.bar.city.en.question.E8AO72111
 
 
 此题考查学生通过读懂上下文推断“外婆说的进步指的是什么”。`r gio.R$KeyValue(query2.data, "D")`％的学生能够完成本题任务。根据文本材料第二段提供的信息： She told me about how computers have changed everything. “Computers have even changed the way kids do homework,” she said. Grandma told me that when she was a girl, people did not have computers at home.确定D项为正确项。选择A项的学生比例为`r gio.R$KeyValue(query2.data, "A")`％；选择B项的学生比例为`r gio.R$KeyValue(query2.data, "B")`％。选择C项的学生比例为`r gio.R$KeyValue(query2.data, "C")`％。选择B项估计受到Computers have even changed the way kids do homework.的干扰，提取了文本的信息。建议教师在阅读教学中，要提高学生对文本材料信息提取并进行甄别的能力。
@@ -1245,12 +1243,12 @@ comment.school.en.question.E8AO72111
 plot.bar.district.en.question.E8AO74111
 
 \begin{itshape}
-全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO74111_X", "区","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO74111_X", "区","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO74111_X", "区","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO74111_X", "区","总体","D")`\%。
+全市参加测试的学生中，英语总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "E8AO74111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO74111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO74111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "E8AO74111_X", "市","总体","D")`\%。
 \end{itshape}
 
 - 全市学生作答分析及教学建议：
 
-query2.plot.bar.district.en.question.E8AO74111
+query2.plot.bar.city.en.question.E8AO74111
 
 
 此题考查学生通过读懂上下文，推断作者可能会对她父母所说的话。`r gio.R$KeyValue(query2.data, "C")`％的学生能够完成本题任务：根据信息“Grandma told me that when she was a girl, people did not have computers at home.”; “She told me that she went to the library and read books about the information she needed to learn. If she needed help with homework, she asked her mother.”推断出 C项为正确项。选择A项的学生比例为`r gio.R$KeyValue(query2.data, "A")`％，选择B项的学生比例为`r gio.R$KeyValue(query2.data, "B")`％。选择D项的学生比例为`r gio.R$KeyValue(query2.data, "D")`％。这些学生都片面理解了文本所传递的信息或提取了错误的信息。建议教师在阅读教学中，要提高学生对文本材料内涵推断的能力。

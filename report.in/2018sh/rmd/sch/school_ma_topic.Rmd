@@ -996,10 +996,10 @@ plot.bar.school.ma.question.M8AS21111
 全市参加测试的学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS21111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21111_X", "市","总体","D")`\%。
 \end{itshape}
 
-query2.plot.bar.school.ma.question.M8AS21111
+query2.plot.bar.city.ma.question.M8AS21111
 
 
-第（1）题的平均得分率为`r gio.R$VarTierSamKey(query.data, "M8AS21111_X", "学校","总体","总体")`\%，平均得分是`r round(gio.R$VarTierSamKey(query.data, "M8AS21111_X", "学校","总体","总体")*2/100.0, 2)`分，其中有`r gio.R$VarTierSamKey(query2.data, "M8AS21111_X", "学校","总体","2")`\%的学生得满分2分，其它`r gio.R$VarTierSamKey(query2.data, "M8AS21111_X", "学校","总体","0")`\%得0分。有得1分的几位学生是在书写上出现了笔误，其他的0分出现的错误答案有$\displaystyle x=\frac{y}{8}$、$8x$、$\displaystyle y=\frac{x}{8}$。
+第（1）题的平均得分率为`r gio.R$VarTierSamKey(query.data, "M8AS21111_X", "市","总体","总体")`\%，平均得分是`r round(gio.R$VarTierSamKey(query.data, "M8AS21111_X", "市","总体","总体")*2/100.0, 2)`分，其中有`r gio.R$VarTierSamKey(query2.data, "M8AS21111_X", "市","总体","2")`\%的学生得满分2分，其它`r gio.R$VarTierSamKey(query2.data, "M8AS21111_X", "市","总体","0")`\%得0分。有得1分的几位学生是在书写上出现了笔误，其他的0分出现的错误答案有$\displaystyle x=\frac{y}{8}$、$8x$、$\displaystyle y=\frac{x}{8}$。
 
 comment.school.en.question.M8AS21111
 
@@ -1009,10 +1009,10 @@ plot.bar.school.ma.question.M8AS21211
 全市参加测试的学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS21211_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21211_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21211_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21211_X", "市","总体","D")`\%。
 \end{itshape}
 
-query2.plot.bar.school.ma.question.M8AS21211
+query2.plot.bar.city.ma.question.M8AS21211
 
 \begin{itshape}
-第（2）题的平均得分率为`r gio.R$VarTierSamKey(query.data, "M8AS21211_X", "学校","总体","总体")`\%，平均得分是`r round(gio.R$VarTierSamKey(query.data, "M8AS21211_X", "学校","总体","总体")*2/100.0, 2)`分，其中有`r gio.R$VarTierSamKey(query2.data, "M8AS21211_X", "学校","总体","2")`\%的学生得满分2分，其它`r gio.R$VarTierSamKey(query2.data, "M8AS21211_X", "学校","总体","0")`\%得0分。学生出现的典型错误有: $y=3x$、$\displaystyle x=\frac{y_{2}-50}{3}$、$y_{2}=50-x$、$\displaystyle x=\frac{y_{2}+50}{3}$。
+第（2）题的平均得分率为`r gio.R$VarTierSamKey(query.data, "M8AS21211_X", "市","总体","总体")`\%，平均得分是`r round(gio.R$VarTierSamKey(query.data, "M8AS21211_X", "市","总体","总体")*2/100.0, 2)`分，其中有`r gio.R$VarTierSamKey(query2.data, "M8AS21211_X", "市","总体","2")`\%的学生得满分2分，其它`r gio.R$VarTierSamKey(query2.data, "M8AS21211_X", "市","总体","0")`\%得0分。学生出现的典型错误有: $y=3x$、$\displaystyle x=\frac{y_{2}-50}{3}$、$y_{2}=50-x$、$\displaystyle x=\frac{y_{2}+50}{3}$。
 \end{itshape}
 
 comment.school.en.question.M8AS21211
@@ -1069,9 +1069,9 @@ plot.bar.school.ma.question.M8AS21311
 全市参加测试的学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS21311_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21311_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21311_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS21311_X", "市","总体","D")`\%。
 \end{itshape}
 
-query2.plot.bar.school.ma.question.M8AS21311
+query2.plot.bar.city.ma.question.M8AS21311
 
-本题的平均得分率为`r gio.R$VarTierSamKey(query.data, "M8AS21311_X", "学校","总体","总体")`\%，平均得分是`r round(gio.R$VarTierSamKey(query.data, "M8AS21311_X", "学校","总体","总体")*3/100.0, 2)`分，其中有`r gio.R$VarTierSamKey(query2.data, "M8AS21311_X", "学校","总体","3")`\%的学生得满分3分，其它得分分别是：`r gio.R$VarTierSamKey(query2.data, "M8AS21311_X", "学校","总体","2")`\%得2分、`r gio.R$VarTierSamKey(query2.data, "M8AS21311_X", "学校","总体","1")`\%得1分、`r gio.R$VarTierSamKey(query2.data, "M8AS21311_X", "学校","总体","0")`\%得0分。
+本题的平均得分率为`r gio.R$VarTierSamKey(query.data, "M8AS21311_X", "市","总体","总体")`\%，平均得分是`r round(gio.R$VarTierSamKey(query.data, "M8AS21311_X", "市","总体","总体")*3/100.0, 2)`分，其中有`r gio.R$VarTierSamKey(query2.data, "M8AS21311_X", "市","总体","3")`\%的学生得满分3分，其它得分分别是：`r gio.R$VarTierSamKey(query2.data, "M8AS21311_X", "市","总体","2")`\%得2分、`r gio.R$VarTierSamKey(query2.data, "M8AS21311_X", "市","总体","1")`\%得1分、`r gio.R$VarTierSamKey(query2.data, "M8AS21311_X", "市","总体","0")`\%得0分。
 
 - 全市学生作答分析及教学建议：
 
@@ -1244,8 +1244,6 @@ plot.bar.school.ma.question.M8AS24211
 \begin{itshape}
 全市参加测试的学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS24211_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24211_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24211_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24211_X", "市","总体","D")`\%。
 \end{itshape}
-
-query2.plot.bar.school.ma.question.M8AS24211
 
 - 全市学生作答分析及教学建议：
 

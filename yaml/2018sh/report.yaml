@@ -2,9 +2,9 @@
 # report setting
 report:
   TODO: FALSE
-  RUN: "AUTO"  # "AUTO", "PILOT",
+  RUN: "PILOT"  # "AUTO", "PILOT",
   PLOTFIG: TRUE
-  DISTRICTS: FALSE
+  DISTRICTS: TRUE
     # slecte districts from kPilotRun$pilot$scope$district
   output:
     format: "pdf_document"
@@ -75,7 +75,7 @@ report:
 
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierCity
       subdir: "cn"
@@ -96,7 +96,7 @@ report:
         - "city_cn_topic.rmd"
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierCity
       subdir: "ma"
@@ -117,7 +117,7 @@ report:
         - "city_ma_topic.rmd"
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierCity
       subdir: "en"
@@ -138,7 +138,7 @@ report:
         - "city_en_topic.rmd"
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierCity
       subdir: "sc"
@@ -159,7 +159,7 @@ report:
         - "city_sc_topic.rmd"
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierCity
       subdir: "ar"
@@ -180,7 +180,7 @@ report:
         - "city_ar_topic.rmd"
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标基础数据报告"
       tier: *kStatTierDistrict
       subdir: "base"
@@ -202,7 +202,7 @@ report:
         - "district_base_parent.rmd"
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标指数报告"
       tier: *kStatTierDistrict
       subdir: "index"
@@ -337,7 +337,7 @@ report:
         - "district_ar_topic.rmd"
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标综合评价"
       tier: *kStatTierSchool
       subdir: "sch"
