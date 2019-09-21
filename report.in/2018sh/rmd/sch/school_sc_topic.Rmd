@@ -1111,8 +1111,6 @@ query2.plot.bar.city.sc.question.S8AS47421
 
 - 全市学生作答分析：此题难度为0.28，比预期低。本题为分级评分试题，满分2，给分为2分、1分、0分，其中0分学生占比`r gio.R$KeyValue(query2.data, "0")`％；1分学生占比`r gio.R$KeyValue(query2.data, "1")`％；2分学生占比`r gio.R$KeyValue(query2.data, "2")`％。
 
-comment.school.en.question.S8AS47421
-
 \clearpage
 
 下面罗列的是学生在答题中的描述及出错原因分析：
