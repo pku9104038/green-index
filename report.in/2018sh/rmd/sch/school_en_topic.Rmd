@@ -134,7 +134,7 @@ plot.bar.school.en.question.E8AO07111
 
 query2.plot.bar.city.en.question.E8AO07111
 
-学生作答这个题目需要听懂表示提议“你是否想要一杯茶?”，并做出应答。`r gio.R$VarTierSamKey(query2.data, "E8AO07111_单选项", "市","总体","B")`％的学生能够完成本题任务，作出应答。选择选项A和C的人数比例分别为`r gio.R$VarTierSamKey(query2.data, "E8AO07111_单选项", "市","总体","A")`％和`r gio.R$VarTierSamKey(query2.data, "E8AO07111_单选项", "市","总体","C")`％，主要原因可能是不熟悉如何恰当回应“提议”功能。
+学生作答这个题目需要听懂表示提议“你是否想要一杯茶?”，并做出应答。`r gio.R$VarTierSamKey(query2.data, "E8AO07111_单选项", "市","总体","B")`％的学生能够完成本题任务，作出应答。选择选项A和C的人数比例分别为`r gio.R$VarTierSamKey(query2.data, "E8AO07111_单选项", "市","总体","A")`％和`r gio.R$VarTierSamKey(query2.data, "E8AO07111_单选项", "市","总体","C")`％，主要原因可能是不熟悉如何恰当回应“提议”。
 
 comment.school.en.question.E8AO07111
 
@@ -959,7 +959,7 @@ plot.bar.school.en.question.E8AO63111
 
 query2.plot.bar.city.en.question.E8AO63111
 
-学生选择动词需要理解上下文，主人公遵循诺言（kept his promise），帮助山区女孩子建立了学校。`r gio.R$KeyValue(query2.data, "D")`％的学生能够完成本题任务，根据短文内容和动词的辨析，选择D项。`r gio.R$KeyValue(query2.data, "A")`％的学生选择了A项，`r gio.R$KeyValue(query2.data, "B")`％的学生选择了B项，`r gio.R$KeyValue(query2.data, "C")`％的学生选择了C项，说明没有读懂句意或未能辨析make、keep与promise搭配时的不同含义。建议教师要帮助学生在阅读中克服障碍、理解文章，并解决阅读中的问题。
+学生选择动词需要理解上下文，主人公遵循诺言（kept his promise），帮助山区孩子建立了学校。`r gio.R$KeyValue(query2.data, "D")`％的学生能够完成本题任务，根据短文内容和动词的辨析，选择D项。`r gio.R$KeyValue(query2.data, "A")`％的学生选择了A项，`r gio.R$KeyValue(query2.data, "B")`％的学生选择了B项，`r gio.R$KeyValue(query2.data, "C")`％的学生选择了C项，说明没有读懂句意或未能辨析make、keep与promise搭配时的不同含义。建议教师要帮助学生在阅读中克服障碍、理解文章，并解决阅读中的问题。
 
 comment.school.en.question.E8AO63111
 
@@ -1316,16 +1316,16 @@ Part Four Writing (10分)
 【评分标准】
 
 \mytable
-\begin{longtable}{|p{5.3cm}|p{0.8cm}|p{8.8cm}|} \hline
+\begin{longtable}{|p{5.3cm}|p{0.8cm}|c|p{7.8cm}|} \hline
 \makecell[c]{采分点} &	满分 &	\makecell[c]{可给分值条件} \\ \hline
-\makecell[l]{1. 内容充实，覆盖要点 \\（内容、信息全面）} & 4分	& \makecell[l]{ 4 \quad 描述3-4幅图片，且内容合理、丰富
- \\ 3 \quad 描述1-3幅图片，内容较合理 \\ 1-2 \quad 描述1幅图片，内容不合理 \\ 0 \quad  没有作答，或描述内容与主题无关} \\ \hline
+\makecell[l]{1. 内容充实，覆盖要点 \\（内容、信息全面）} & 4分	& \makecell[l]{ 4 \quad $\mspace{10mu}$ 描述3-4幅图片，且内容合理、丰富
+ \\ 3 \quad $\mspace{10mu}$ 描述1-3幅图片，内容较合理 \\ 1-2 \quad 描述1幅图片，内容不合理 \\ 0 \quad $\mspace{10mu}$  没有作答，或描述内容与主题无关} \\ \hline
 
-\makecell[l]{2. 用词适切，语法正确，语言地道 \\（词汇、语法、句型）} &	4分	& \makecell[l]{4 \quad 用词适切，基本或完全没有语言错误，语言地道 \\ 3 \quad 用词基本适切，有少量语言错误，但不影响理解，\\ 语言较为地道 \\ 1-2 \quad 有部分语言错误，一定程度上影响理解 \\ 0 \quad 有大量语言错误，影响了理解} \\ \hline
+\makecell[l]{2. 用词适切，语法正确，语言地道 \\（词汇、语法、句型）} &	4分	& \makecell[l]{4 \quad $\mspace{10mu}$ 用词适切，基本或完全没有语言错误，语言地道 \\ 3 \quad $\mspace{10mu}$ 用词基本适切，有少量语言错误，但不影响理解，\\ 语言较为地道 \\ 1-2 \quad 有部分语言错误，一定程度上影响理解 \\ 0 \quad $\mspace{10mu}$ 有大量语言错误，影响了理解} \\ \hline
 
-\makecell[l]{3. 结构紧凑，意思连贯 \\（语意、连词、指代）}	& 1分	& \makecell[l]{ 1 \quad  行文基本连贯，连接词使用恰当，指代清晰 \\ 0.5 \quad 行文部分连贯，看得出学生有使用连接词语的意 \\ 识，但不够恰当，指代不够清晰 \\ 0 \quad 没有连贯的意识} \\ \hline
+\makecell[l]{3. 结构紧凑，意思连贯 \\（语意、连词、指代）}	& 1分	& \makecell[l]{ 1 \quad $\mspace{10mu}$  行文基本连贯，连接词使用恰当，指代清晰 \\ 0.5 \quad 行文部分连贯，看得出学生有使用连接词语的意 \\ 识，但不够恰当，指代不够清晰 \\ 0 \quad $\mspace{10mu}$ 没有连贯的意识} \\ \hline
 
-\makecell[l]{4. 书写规范，字数适宜 \\ （标点符号、大小写、字数）}	 & 1分	 & \makecell[l]{ 1 \quad  大小写、标点基本正确，词数达标 \\ 0.5 \quad 大小写、标点有部分错误，词数达标 \\ 0 \quad  大小写、标点错误较多，语言应用不规范，词数不足} \\ \hline
+\makecell[l]{4. 书写规范，字数适宜 \\ （标点符号、大小写、字数）}	 & 1分	 & \makecell[l]{ 1 \quad $\mspace{10mu}$  大小写、标点基本正确，词数达标 \\ 0.5 \quad 大小写、标点有部分错误，词数达标 \\ 0 \quad $\mspace{10mu}$  大小写、标点错误较多，语言应用不规范，词数不足} \\ \hline
 \end{longtable}
 
 \end{itshape}
@@ -1448,7 +1448,7 @@ Part Four Writing (10分)
 \includegraphics[width=\textwidth]{en_E8AS75111_12.png}
 \end{figure}
 点评：
-这是一篇C类作文。学生能读懂图片信息，并努力描述四幅图片，内容基本和图片相关，但是不够完整。缺乏叙事类文本的特征，没有具体的人物、动词、时间和情景等要素，导致文章缺乏必要的逻辑顺序。学生能使用了一些关键词汇表达内容，如：busy, sing and dance, prepare for等。主要存在以下问题，1)人称代词指代不清，如it。2）缺乏必要的连接词。3）时态意识欠缺。文章逻辑关系不够清晰，内容不全。没有时态意识，缺乏基本的时态规范。字母大写、标点符号使用基本准确；短文字数达到要求。
+这是一篇C类作文。学生能读懂图片信息，并努力描述四幅图片，内容基本和图片相关，但是不够完整。缺乏叙事类文本的特征，没有具体的人物、动词、时间和情景等要素，导致文章缺乏必要的逻辑顺序。学生能使用了一些关键词汇表达内容，如：busy, sing and dance, prepare for等。主要存在以下问题：1)人称代词指代不清，如it；2）缺乏必要的连接词；3）时态意识欠缺。文章逻辑关系不够清晰，内容不全。没有时态意识，缺乏基本的时态规范。字母大写、标点符号使用基本准确；短文字数达到要求。
 
 \clearpage
 样文十三：

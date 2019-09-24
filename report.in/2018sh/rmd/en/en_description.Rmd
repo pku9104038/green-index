@@ -39,7 +39,7 @@
 
 \clearpage
 
-`r tab_name <- "九年级英语学科学业水平描述" `
+`r tab_name <- "英语学科学业水平描述" `
 \begin{itshape}
 \mytable
 \begin{longtable}{|c|c|p{12cm}|}

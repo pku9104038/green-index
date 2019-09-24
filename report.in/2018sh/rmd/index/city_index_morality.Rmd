@@ -3,6 +3,8 @@
 
 # 学生品德与社会化行为指数
 
+\mytext
+
 良好的品德是个人成长、终身发展的基础，更是学生成为社会有用之才的重要条件。社会化则反映了学生对社会规则和价值的内化程度，具体表现为学生按照社会规范妥善行事。学生品德和社会化行为指标主要包括行为规范、亲社会行为、国家认同、国际视野这四个二级指标。
 
 学生品德与社会化行为指数分为 9 级，指数越高，表示学生具有较好的品德行为素养。
@@ -27,6 +29,8 @@ plot.bar.city.index.morality.perspective.district
 
 
 ## 行为规范
+
+\mytext
 
 学生阶段是人的成长发展阶段，也是行为习惯养成的关键时期，良好的行为规范和习惯养成对学生个性形成与品德发展，具有极其深远的意义。
 
@@ -55,6 +59,8 @@ plot.bar.city.index.conduct.perspective.district
 
 ## 亲社会行为
 
+\mytext
+
 亲社会行为指在社会交往的情境中有意识地做出帮助他人的行为或做有益于他人的事的倾向，主要体现在友爱宽容、乐于助人、善于合作、尊重他人等行为上。
 
 研究发现，亲社会行为对行为实施者有自我提升的积极作用，实施亲社会行为能给个体带来意义感和效能感（Sonnentag ＆ Grant，2012），有利于个体应对焦虑、孤独等负性情绪（Storch，Brassard＆Masia-Warner，2003），还可以提高个体幸福感水平（Dunn，Gilbert，＆ Wilson，2011）。
@@ -81,6 +87,8 @@ plot.bar.city.index.conduct.perspective.district
 plot.bar.city.index.prosocial.perspective.district
 
 ## 国家认同
+
+\mytext
 
 随着全球化、信息化的发展，跨文化交流日益增加，青少年的国家认同感不仅关乎国家的统一与稳定，而且对社会的和谐与进步意义重大，也是建立富强民主国家之基础。
 
@@ -109,6 +117,8 @@ plot.bar.city.index.prosocial.perspective.district
 plot.bar.city.index.country.identity.perspective.district
 
 ## 国际视野
+
+\mytext
 
 全球化发展对新生代提出新的要求，需要有理解不同文化、与不同文化背景人合作的能力。培养学生的国际视野，理解本国及他国文化，欣赏不同价值观，建立信任和跨越差异的合作关系，是未来青年理解与建构人类命运共同体的基石。
 

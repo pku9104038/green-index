@@ -398,25 +398,7 @@ report:
         ### - "school_index_equity.rmd"
         ###  - "school_index_timespan.rmd"
         - "school_index_radar.rmd"
-
         - "index_citation.Rmd"
-
-    -
-      TODO: FALSE
-      name: "绿色指标报告模版测试"
-      tier: *kStatTierCity
-      subdir: "base"
-      subject:
-        name: ""
-        suffix: ""
-      rmarkdown:
-        - "base.rmd"
-        - "global_setting.rmd"
-        - "cover_page.rmd"
-        - "head_foot.rmd"
-        - "report_preface.rmd"
-        - "table_of_contents.rmd"
-        - "project_summary.rmd"
 
     -
       TODO: FALSE
@@ -431,9 +413,9 @@ report:
         - "global_setting.rmd"
         - "cover_page.rmd"
         - "head_foot.rmd"
-        - "report_preface.rmd"
-        - "table_of_contents.rmd"
-        - "project_summary.rmd"
+        # - "report_preface.rmd"
+        # - "table_of_contents.rmd"
+        # - "project_summary.rmd"
 
         - "collation.Rmd"
         # - "index_citation.Rmd"

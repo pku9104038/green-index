@@ -358,7 +358,10 @@ GreenIndexReport <- setRefClass(
               
               if (report.tier == kTierDistrict) {
                 
-                output.data[length(output.data) + 1] <- "if (district.value >= city.value) {"
+                output.data[length(output.data) + 1] <- "if (abs(district.value - city.value) < 1) {"
+                output.data[length(output.data) + 1] <- 
+                  " comment.city <- \"本区学生得分率与全市平均得分率无显著差异。\" "
+                output.data[length(output.data) + 1] <- " } else if (district.value - city.value >= 1) {"
                 output.data[length(output.data) + 1] <- 
                   " comment.city <- paste0(\"本区学生得分率比全市平均得分率高\", round(district.value - city.value, 1), \"%。\")"
                 output.data[length(output.data) + 1] <- " } else {"     
@@ -382,14 +385,21 @@ GreenIndexReport <- setRefClass(
                 output.data[length(output.data) + 1] <- "if (length(school.value) == 0){"
                 output.data[length(output.data) + 1] <- "  comment.school <- \"本校未参加该项测试。\""
                 output.data[length(output.data) + 1] <- "} else {"
-                output.data[length(output.data) + 1] <- "  if (school.value >= city.value) {"
+                output.data[length(output.data) + 1] <- "  if (abs(school.value - city.value) < 1) {"
+                output.data[length(output.data) + 1] <- 
+                  "    comment.city <- \"本校学生得分率与全市平均得分率无显著差异，\" "
+                output.data[length(output.data) + 1] <- "  } else if (school.value - city.value >= 1) {"
                 output.data[length(output.data) + 1] <- 
                   "    comment.city <- paste0(\"本校学生得分率比全市平均得分率高\", round(school.value - city.value, 1), \"%，\")"
                 output.data[length(output.data) + 1] <- "  } else {"
                 output.data[length(output.data) + 1] <- 
                   "    comment.city <- paste0(\"本校学生得分率比全市平均得分率低\", round(city.value - school.value, 1), \"%，\")"
                 output.data[length(output.data) + 1] <- "  }"
-                output.data[length(output.data) + 1] <- "  if (school.value >= district.value) {"
+                
+                output.data[length(output.data) + 1] <- "  if ( abs(school.value - district.value) < 1) {"
+                output.data[length(output.data) + 1] <- 
+                  "    comment.district <- \"与全区平均得分率无显著差异。\" "
+                output.data[length(output.data) + 1] <- "  } else if (school.value - district.value >= 1) {"
                 output.data[length(output.data) + 1] <- 
                   "    comment.district <- paste0(\"比全区平均得分率高\", round(school.value - district.value, 1), \"%。\")"
                 output.data[length(output.data) + 1] <- "  } else {"

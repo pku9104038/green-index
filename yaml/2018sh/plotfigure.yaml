@@ -4,4 +4,4 @@ plotfigure:
   <<: *kPilotRun
   <<: *kPrepareDataframe
   test:
-    - plot.point.dummy
+    - plot.bar.school.cn.question.C8AS31111

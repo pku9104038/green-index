@@ -6,7 +6,25 @@
 
 ## 全体学生在各考查维度上的表现
 
-本次艺术素养的测试，是从“感知与判断”“理解与分析”“运用与表现”等能力维度进行具体考查。图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.ar.dimention.rank")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.district.ar.dimention.quantile")`}分别给出了本区学生在艺术素养各考查维度各水平上的人数比例和得分分布。
+本次艺术素养的测试，是从“感知与判断”“理解与分析”“运用与表现”等能力维度进行具体考查。
+
+`r tab_name <- "艺术领域能力维度的具体分布与解释" `
+
+表\ref{tab: `r tab_name`}为艺术领域测试框架中能力维度的具体分布与解释。
+
+\begin{itshape}
+\mytable
+\begin{longtable}{|c|l|c|}
+\caption{`r tab_name`} \label{tab: `r tab_name`} \\ \hline
+考查维度 & \makecell[c]{具体描述} & 测试题型 \\ \hline
+\multirow{2}{*}{感知与判断}	 & 在视听感受中，考察对艺术形式和内容的了解、辨认和理解等简单鉴赏能力 & 视听部分 \\ \cline{2-3}
+  & 在图文信息中，考察对艺术作品的辨别和理解 & 纸笔部分 \\ \cline{1-3}
+	理解与分析	& 在视听感受中，考察对艺术表现形式内容的分析、判断、释读等复杂鉴赏能力  & 视听部分 \\ \cline{1-3}
+	运用与表现	& 在综合情境中考察艺术方法运用、设计构思、艺术创编的能力  & 纸笔部分 \\ \cline{1-3}
+\end{longtable}
+\end{itshape}
+
+图\ref{fig: `r gio.R$GetPlotTitle("plot.bar.district.ar.dimention.rank")`}和图\ref{fig: `r gio.R$GetPlotTitle("plot.box.district.ar.dimention.quantile")`}分别给出了本区学生在艺术素养各考查维度各水平上的人数比例和得分分布。
 
 plot.bar.district.ar.dimention.rank
 plot.box.district.ar.dimention.quantile
