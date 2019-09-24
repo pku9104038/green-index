@@ -6,6 +6,13 @@ report:
   PLOTFIG: TRUE
   DISTRICTS: TRUE
     # slecte districts from kPilotRun$pilot$scope$district
+    # run district/school report according district sequence
+    #   RUN: "AUTO"
+    #   DISTRICTS: "TRUE"
+    # run district/school report according dataframe sequence
+    #   RUN: "AUTO"
+    #   DISTRICTS: "FALSE"
+
   output:
     format: "pdf_document"
     ext: ".pdf"
@@ -75,7 +82,7 @@ report:
 
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierCity
       subdir: "cn"
@@ -96,7 +103,7 @@ report:
         - "city_cn_topic.rmd"
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierCity
       subdir: "ma"
@@ -117,7 +124,7 @@ report:
         - "city_ma_topic.rmd"
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierCity
       subdir: "en"
@@ -138,7 +145,7 @@ report:
         - "city_en_topic.rmd"
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierCity
       subdir: "sc"
@@ -159,7 +166,7 @@ report:
         - "city_sc_topic.rmd"
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierCity
       subdir: "ar"
@@ -231,7 +238,7 @@ report:
 
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierDistrict
       subdir: "cn"
@@ -252,7 +259,7 @@ report:
         - "district_cn_topic.rmd"
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierDistrict
       subdir: "ma"
@@ -274,7 +281,7 @@ report:
 
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierDistrict
       subdir: "en"
@@ -295,7 +302,7 @@ report:
         - "district_en_topic.rmd"
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierDistrict
       subdir: "sc"
@@ -316,7 +323,7 @@ report:
         - "district_sc_topic.rmd"
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierDistrict
       subdir: "ar"

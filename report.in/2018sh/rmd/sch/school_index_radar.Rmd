@@ -2,13 +2,9 @@
 
 ## 市、区、校绿色指标对比
 
-<!--  remove radar because some school lack index will cause plot error
-
-### 指标雷达图
+### 指标对比玫瑰图
 
 plot.radar.school.index.compare
-
--->
 
 ### 指标数据表
 

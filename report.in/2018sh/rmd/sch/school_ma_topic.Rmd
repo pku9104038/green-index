@@ -1149,16 +1149,11 @@ plot.bar.school.ma.question.M8AS24111
 全市参加测试的学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS24111_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24111_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24111_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24111_X", "市","总体","D")`\%。
 \end{itshape}
 
-query2.plot.bar.school.ma.question.M8AS24111
-
-
 plot.bar.school.ma.question.M8AS24121
 
 \begin{itshape}
 全市参加测试的学生中，数学总体水平处于A、B、C、D四个水平的学生在本题上的平均得分率分别为`r gio.R$VarTierSamKey(query.data, "M8AS24121_X", "市","总体","A")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24121_X", "市","总体","B")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24121_X", "市","总体","C")`\%、`r gio.R$VarTierSamKey(query.data, "M8AS24121_X", "市","总体","D")`\%。
 \end{itshape}
-
-query2.plot.bar.school.ma.question.M8AS24121
 
 
 - 全市学生作答分析及教学建议：

@@ -641,7 +641,7 @@ D水平：不能根据题目的要求选择材料；或内容过于简单；或�
 plot.bar.city.cn.question.writing
 query2.data.city.cn.question.writing
 
-“写作”部分考查：学生根据题目给出的情境合理选择材料，表达自己真情实感的能力。从上图可以看出，处于A、B、C、D四个水平的学生占总人数的百分比分别为`r gio.R$KeyValue(query2.data, "A")`%、`r gio.R$KeyValue(query2.data, "B")`%、`r gio.R$KeyValue(query2.data, "C")`%、`r gio.R$KeyValue(query2.data, "D")`%，其中有`r 100-gio.R$KeyValue(query2.data, "D")`%的学生处于C水平之上，这说明绝大多数学生在写作时都能围绕题目，比较清楚地叙述故事或者介绍事物，标点符号的使用基本正确。
+“写作”部分考查：学生根据题目给出的情境合理选择材料，表达自己真情实感的能力。本市全体学生中，处于A、B、C、D四个水平的学生占总人数的百分比分别为`r gio.R$KeyValue(query2.data, "A")`%、`r gio.R$KeyValue(query2.data, "B")`%、`r gio.R$KeyValue(query2.data, "C")`%、`r gio.R$KeyValue(query2.data, "D")`%，其中有`r 100-gio.R$KeyValue(query2.data, "D")`%的学生处于C水平之上，这说明绝大多数学生在写作时都能围绕题目，比较清楚地叙述故事或者介绍事物，标点符号的使用基本正确。
 
 值得注意的是，有`r gio.R$KeyValue(query2.data, "D")`%的学生处于D水平，这部分学生主要存在以下五种问题：不能围绕给定题目选材材料，跑题，内容匮乏，甚至没有作答；不能通顺连贯地表达文章的基本内容，语言表达混乱，词不达意，病句较多；不能围绕给定的题目组织材料，结构混乱，没有条理；错别字较多，书写潦草，不能正确使用标点符号；对考试不重视，写作态度随意。
 
@@ -653,25 +653,25 @@ query2.data.city.cn.question.writing
 plot.bar.city.cn.question.C8AS31111
 query2.data.city.cn.question.C8AS31111
 
-从上图可以看出，本市学生在“内容选择”上处于0-7.5、8-9.5、10-11.5、12-14四个分值区间的学生占总人数的百分比分别为`r gio.R$KeyValue(query2.data, "0-7.5")`%、`r gio.R$KeyValue(query2.data, "8-9.5")`%、`r gio.R$KeyValue(query2.data, "10-11.5")`%、`r gio.R$KeyValue(query2.data, "12-14")`%，其中有`r 100 - gio.R$KeyValue(query2.data, "0-7.5")`%的学生得分高于7.5分，这表明绝大多数学生在内容选择上能够做到符合题意，表达自己的真情实感，内容比较具体，中心明确；在内容的选择上有新意的学生较多。但也有`r gio.R$KeyValue(query2.data, "0-7.5")`%的学生得分低于8分，表明这部分学生在内容选择上不符题意，中心模糊，内容很匮乏。
+本市学生在“内容选择”上处于0-7.5、8-9.5、10-11.5、12-14四个分值区间的学生占总人数的百分比分别为`r gio.R$KeyValue(query2.data, "0-7.5")`%、`r gio.R$KeyValue(query2.data, "8-9.5")`%、`r gio.R$KeyValue(query2.data, "10-11.5")`%、`r gio.R$KeyValue(query2.data, "12-14")`%，其中有`r 100 - gio.R$KeyValue(query2.data, "0-7.5")`%的学生得分高于7.5分，这表明绝大多数学生在内容选择上能够做到符合题意，表达自己的真情实感，内容比较具体，中心明确；在内容的选择上有新意的学生较多。但也有`r gio.R$KeyValue(query2.data, "0-7.5")`%的学生得分低于8分，表明这部分学生在内容选择上不符题意，中心模糊，内容很匮乏。
 
 
 plot.bar.city.cn.question.C8AS31211
 query2.data.city.cn.question.C8AS31211
 
 
-从上图可以看出，本市学生在“语言表达”上处于0-7.5、8-9.5、10-11.5、12-14四个分值区间的学生占总人数的百分比分别为`r gio.R$KeyValue(query2.data, "0-7.5")`%、`r gio.R$KeyValue(query2.data, "8-9.5")`%、`r gio.R$KeyValue(query2.data, "10-11.5")`%、`r gio.R$KeyValue(query2.data, "12-14")`%，其中有`r 100 - gio.R$KeyValue(query2.data, "0-7.5")`%的学生得分高于7.5分，这表明大多数学生在语言表达上能够做到通顺连贯，词语准确，病句较少；也有`r gio.R$KeyValue(query2.data, "12-14")`%的学生语言流畅，有较高的语言表达能力。但有`r gio.R$KeyValue(query2.data, "0-7.5")`%的学生得分低于8分，表明这部分学生在语言表达上语病较多，词义不准确，影响内容的表达和读者的阅读。
+本市学生在“语言表达”上处于0-7.5、8-9.5、10-11.5、12-14四个分值区间的学生占总人数的百分比分别为`r gio.R$KeyValue(query2.data, "0-7.5")`%、`r gio.R$KeyValue(query2.data, "8-9.5")`%、`r gio.R$KeyValue(query2.data, "10-11.5")`%、`r gio.R$KeyValue(query2.data, "12-14")`%，其中有`r 100 - gio.R$KeyValue(query2.data, "0-7.5")`%的学生得分高于7.5分，这表明大多数学生在语言表达上能够做到通顺连贯，词语准确，病句较少；也有`r gio.R$KeyValue(query2.data, "12-14")`%的学生语言流畅，有较高的语言表达能力。但有`r gio.R$KeyValue(query2.data, "0-7.5")`%的学生得分低于8分，表明这部分学生在语言表达上语病较多，词义不准确，影响内容的表达和读者的阅读。
 
 plot.bar.city.cn.question.C8AS31311
 query2.data.city.cn.question.C8AS31311
 
 
-从上图可以看出，本市学生在“结构安排”上处于0-4、4.5-5.5、6-6.5、7-8四个分值区间的学生占总人数的百分比分别为`r gio.R$KeyValue(query2.data, "0-4")`%、`r gio.R$KeyValue(query2.data, "4.5-5.5")`%、`r gio.R$KeyValue(query2.data, "6-6.5")`%、`r gio.R$KeyValue(query2.data, "7-8")`%，其中有`r 100 - gio.R$KeyValue(query2.data, "0-4")`%的学生得分高于4分，这表明大多数学生在组织文章结构时能够做到合理安排文章内容，条理比较清晰，层次清楚，并能注意详略安排。这一部分整体得分率较低，表现在得分在6-6.5、7-8分值区间的学生较少，尤其是7-8分值区间的学生偏少，4.5-5.5分值区间的学生较多，说明在“结构安排”方面，中等偏下水平学生所占比例较大。有`r gio.R$KeyValue(query2.data, "0-4")`%的学生得分低于4分，表明这部分学生在结构安排上比较混乱，层次模糊，没有条理。
+本市学生在“结构安排”上处于0-4、4.5-5.5、6-6.5、7-8四个分值区间的学生占总人数的百分比分别为`r gio.R$KeyValue(query2.data, "0-4")`%、`r gio.R$KeyValue(query2.data, "4.5-5.5")`%、`r gio.R$KeyValue(query2.data, "6-6.5")`%、`r gio.R$KeyValue(query2.data, "7-8")`%，其中有`r 100 - gio.R$KeyValue(query2.data, "0-4")`%的学生得分高于4分，这表明大多数学生在组织文章结构时能够做到合理安排文章内容，条理比较清晰，层次清楚，并能注意详略安排。这一部分整体得分率较低，表现在得分在6-6.5、7-8分值区间的学生较少，尤其是7-8分值区间的学生偏少，4.5-5.5分值区间的学生较多，说明在“结构安排”方面，中等偏下水平学生所占比例较大。有`r gio.R$KeyValue(query2.data, "0-4")`%的学生得分低于4分，表明这部分学生在结构安排上比较混乱，层次模糊，没有条理。
 
 plot.bar.city.cn.question.C8AS31411
 query2.data.city.cn.question.C8AS31411
 
-从上图可以看出，本市学生在“书写和标点”上处于0-2、2.5、3、3.5-4四个分值区间的学生占总人数的百分比分别为`r gio.R$KeyValue(query2.data, "0-2")`%、`r gio.R$KeyValue(query2.data, "2.5")`%、`r gio.R$KeyValue(query2.data, "3")`%、`r gio.R$KeyValue(query2.data, "3.5-4")`%，其中有`r 100 - gio.R$KeyValue(query2.data, "0-2")`%的学生得分高于2分，这表明大多数学生在写作时字迹比较清晰，错别字不是很多，标点符号使用比较符合规范；但有`r gio.R$KeyValue(query2.data, "0-2")`%的学生处于0-2分之间，表明学生在书写时错别字较多，字迹潦草，标点符号的运用存在很多不符规范的现象，影响到读者阅读。
+本市学生在“书写和标点”上处于0-2、2.5、3、3.5-4四个分值区间的学生占总人数的百分比分别为`r gio.R$KeyValue(query2.data, "0-2")`%、`r gio.R$KeyValue(query2.data, "2.5")`%、`r gio.R$KeyValue(query2.data, "3")`%、`r gio.R$KeyValue(query2.data, "3.5-4")`%，其中有`r 100 - gio.R$KeyValue(query2.data, "0-2")`%的学生得分高于2分，这表明大多数学生在写作时字迹比较清晰，错别字不是很多，标点符号使用比较符合规范；但有`r gio.R$KeyValue(query2.data, "0-2")`%的学生处于0-2分之间，表明学生在书写时错别字较多，字迹潦草，标点符号的运用存在很多不符规范的现象，影响到读者阅读。
 
 下面将结合不同水平的学生样例文做具体分析。
 
