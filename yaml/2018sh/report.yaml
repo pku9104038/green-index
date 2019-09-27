@@ -58,7 +58,7 @@ report:
         - "back_cover.rmd"
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标指数报告"
       tier: *kStatTierCity
       subdir: "index"
@@ -89,7 +89,7 @@ report:
 
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierCity
       subdir: "cn"
@@ -112,7 +112,7 @@ report:
         - "back_cover.rmd"
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierCity
       subdir: "ma"
@@ -135,7 +135,7 @@ report:
         - "back_cover.rmd"
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierCity
       subdir: "en"
@@ -158,7 +158,7 @@ report:
         - "back_cover.rmd"
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierCity
       subdir: "sc"
@@ -181,7 +181,7 @@ report:
         - "back_cover.rmd"
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierCity
       subdir: "ar"
