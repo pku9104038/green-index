@@ -2,7 +2,7 @@
 # report setting
 report:
   TODO: FALSE
-  RUN: "PILOT"  # "AUTO", "PILOT",
+  RUN: "AUTO"  # "AUTO", "PILOT",
   PLOTFIG: TRUE
   DISTRICTS: FALSE
     # slecte districts from kPilotRun$pilot$scope$district
@@ -34,7 +34,7 @@ report:
   report:
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标基础数据报告"
       tier: *kStatTierCity
       subdir: "base"
@@ -58,7 +58,7 @@ report:
         - "back_cover.rmd"
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标指数报告"
       tier: *kStatTierCity
       subdir: "index"
@@ -89,7 +89,7 @@ report:
 
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierCity
       subdir: "cn"
@@ -112,7 +112,7 @@ report:
         - "back_cover.rmd"
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierCity
       subdir: "ma"
@@ -135,7 +135,7 @@ report:
         - "back_cover.rmd"
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierCity
       subdir: "en"
@@ -158,7 +158,7 @@ report:
         - "back_cover.rmd"
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierCity
       subdir: "sc"
@@ -181,7 +181,7 @@ report:
         - "back_cover.rmd"
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierCity
       subdir: "ar"
@@ -204,7 +204,7 @@ report:
         - "back_cover.rmd"
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标基础数据报告"
       tier: *kStatTierDistrict
       subdir: "base"
@@ -228,7 +228,7 @@ report:
         - "back_cover.rmd"
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标指数报告"
       tier: *kStatTierDistrict
       subdir: "index"
@@ -258,7 +258,7 @@ report:
         - "back_cover.Rmd"
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierDistrict
       subdir: "cn"
@@ -281,7 +281,7 @@ report:
         - "back_cover.rmd"
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierDistrict
       subdir: "ma"
@@ -305,7 +305,7 @@ report:
 
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierDistrict
       subdir: "en"
@@ -328,7 +328,7 @@ report:
         - "back_cover.rmd"
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierDistrict
       subdir: "sc"
@@ -351,7 +351,7 @@ report:
         - "back_cover.rmd"
 
     -
-      TODO: FALSE
+      TODO: TRUE
       name: "绿色指标学科测试分析报告"
       tier: *kStatTierDistrict
       subdir: "ar"
@@ -374,7 +374,7 @@ report:
         - "back_cover.rmd"
 
     -
-      TODO: TRUE
+      TODO: FALSE
       name: "绿色指标综合评价"
       tier: *kStatTierSchool
       subdir: "sch"

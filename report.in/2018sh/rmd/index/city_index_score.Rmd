@@ -32,6 +32,10 @@
 
 plot.bar.city.index.score.pass.perspective.district
 
+\mylist
+注：“其他”指普通初中、九年一贯制学校、完全中学之外的其他学制学校。
+\mytext
+
 plot.bar.city.index.cn.pass.perspective.district
 
 plot.bar.city.index.ma.pass.perspective.district

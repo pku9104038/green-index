@@ -83,10 +83,13 @@ plot.bar.city.base.score.rank.ar.total.district
 plot.box.city.base.score.quantile.ar.total.district
 
 
-### 不同类型学校\footnote{其他：指普通初中、九年一贯制学校、完全中学之外的其他学校。}学生学业水平
+### 不同类型学校学生学业水平
 
 plot.bar.city.base.facet.score.rank.allsubject.xuezhi
 
+\mylist
+注：“其他”指普通初中、九年一贯制学校、完全中学之外的其他学制学校。
+\mytext
 
 ### 新优质学校和强校工程学校学生学业水平
 
