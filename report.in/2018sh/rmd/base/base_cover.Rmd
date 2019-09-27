@@ -1,0 +1,10 @@
+
+cover.scope.pdf
+
+\newpage
+
+\qquad
+
+\thispagestyle{empty}
+
+\newpage

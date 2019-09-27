@@ -33,3 +33,10 @@ loadparams:
       sheet: "分析评价表"
       table: *kTableAttrCommentParam
       suffix: ""
+
+    -
+      TODO: FALSE
+      xlsx: "绿色指标属性表.xlsx"
+      sheet: "封面匹配表"
+      table: *kTableAttrCoverParam
+      suffix: ""

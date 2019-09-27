@@ -74,12 +74,14 @@ kHashDigestDefault <- "27f4468f070e6f28b58e39fda7293bf8c3fa6fb7"
 kStringAll <- "ALL"
 kStringNone <- "NONE"
 kStringNull<- "NULL"
+
 kPilotRun <- "PILOT"        # city total only
 kAgileRun <- "AGILE"        # city all, district total
 kMileStone <- "MILESTONE"   # city, district all  and one district school total
 kAutoRun <- "AUTO"          # all tier, all perspective 
 kSchoolRun <- "SCHOOL"      # school tier only
 kDistrictRun <- "DISTRICT"  # district perspective without total and school total
+
 kCurrentCity <- "本市"
 kCurrentDistrict <- "本区"
 kCurrentSchool <- "本校"
@@ -118,6 +120,7 @@ kPrefixQueryData <- "query"
 kPrefixQuery2Data <- "query2"
 kPrefixTableRow <- "table"
 kPrefixComment <- "comment"
+kPrefixCover <- "cover"
 kPrefixConnector <- "\\."
 
 # constants for algorithm
@@ -230,6 +233,9 @@ kColumnCommentDataKey <- "comment_data_key"
 kColumnCommentTier <- "comment_tier"
 kColumnCommentDataSample <- "comment_data_sample"
 kColumnCommentDataDigit <- "comment_data_digit"
+
+# table for cover prerender
+kColumnCoverCode <- "cover_code"
 
 # table for data query
 kTableDataQuery <- "属性表数据查询"

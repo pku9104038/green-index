@@ -70,6 +70,8 @@ kDefinition:
         属性表表格参数
       - &kTableAttrCommentParam
         属性表评论参数
+      - &kTableAttrCoverParam
+        属性表封面匹配
 
     kTablePrefix:   # 表名称前缀
 
@@ -244,6 +246,47 @@ kSetting:
 
   kControl:  # 控制项设置
     kStatisticsSwitch: # 统计控制开关
+      DitrictOrders:
+        DistrictOrder: &kDistrictOrder
+          district:
+            - "浦东新区"
+            - "宝山区"
+            - "普陀区"
+            - "嘉定区"
+            - "青浦区"
+            - "松江区"
+            - "崇明区"
+            - "金山区"
+            - "奉贤区"
+            - "杨浦区"
+            - "虹口区"
+            - "静安区"
+            - "长宁区"
+            - "徐汇区"
+            - "黄浦区"
+            - "闵行区"
+        DistrictOrderRev: &kDistrictOrderRev
+          district:
+            - "闵行区"
+            - "黄浦区"
+            - "徐汇区"
+            - "长宁区"
+            - "静安区"
+            - "虹口区"
+            - "杨浦区"
+            - "奉贤区"
+            - "金山区"
+            - "崇明区"
+            - "松江区"
+            - "青浦区"
+            - "嘉定区"
+            - "普陀区"
+            - "宝山区"
+            - "浦东新区"
+        DistrictOrderPilot: &kDistrictOrderPilot
+          district:
+            - "黄浦区"
+
       kPilotRun: &kPilotRun  # 先导统计
         pilot:
           tier:
@@ -253,46 +296,15 @@ kSetting:
           scope:
             city:
               - "上海市"
-            district:
-              # - "浦东新区"
-              # - "闵行区"
-              # - "宝山区"
-              # - "普陀区"
-              # - "嘉定区"
-              # - "青浦区"
-              # - "松江区"
-              # - "崇明区"
-              # - "金山区"
-              # - "奉贤区"
-              # - "杨浦区"
-              # - "虹口区"
-              # - "静安区"
-              - "长宁区"
-              # - "徐汇区"
-              # - "黄浦区"
 
-              # - "黄浦区"
-              # - "徐汇区"
-              # - "长宁区"
-              # - "静安区"
-              # - "虹口区"
-              # - "杨浦区"
-              # - "奉贤区"
-              # - "金山区"
-              # - "崇明区"
-              # - "松江区"
-              # - "青浦区"
-              # - "嘉定区"
-              # - "普陀区"
-              # - "宝山区"
-              # - "闵行区"
-              # - "浦东新区"
+            <<: *kDistrictOrderPilot # *kDistrictOrderRev, *kDistrictOrder, kDistrictOrderPilot
 
             school:
               # - "上海市南汇第五中学"
               # - "上海市静安区教育学院附属学校（中学部校区）"
-              # - "上海市启秀实验中学"
-              - "上海市第三女子初级中学"
+              - "上海市启秀实验中学"
+
+              # - "上海市第三女子初级中学"
 
     kTableReference: # 引用表设置
 
@@ -414,9 +426,10 @@ kSetting:
         year: "2018年度"
         project: "上海市初中学业质量"
         producer:
-          - "上海市教育委员会教学研究室"
+          # - "上海市教育委员会教学研究室"
+          - ""
           - "上海市教育委员会基础教育质量监测中心"
-        date: "二〇一九年七月"
+        date: "二零一九年九月"
         copyright: "版权声明：本报告版权属于上海市教育委员会，未得到上海市教育委员会同意，不得使用或公开报告的任何内容"
 
     kPrepareDataframe: &kPrepareDataframe  # 数据准备引用表
@@ -429,6 +442,9 @@ kSetting:
           suffix: ""
         comment:
           table: *kTableAttrCommentParam
+          suffix: ""
+        cover:
+          table: *kTableAttrCoverParam
           suffix: ""
         dataset:
           table: *kTableAttrDataQuery

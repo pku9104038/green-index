@@ -70,7 +70,7 @@ gio.scheduler$EchoInfo("Start!")
 # gio.loadindex$LoadIndex()
 # gio.converge$ConvergeTable()
 
-gio.scheduler$Report(TRUE)
+gio.scheduler$Report(FALSE)
 # gio.loaddata$LoadParams()
 
 # gio.scheduler$TestQueryData(TRUE)

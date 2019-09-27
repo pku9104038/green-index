@@ -26,7 +26,7 @@
 
 \mytext
 
-plot.bar.school.index.morality
+
 
 
 ### 行为规范
@@ -56,8 +56,6 @@ plot.bar.school.index.morality
 - 1 级：表示 20% 以下的学生行为规范素养较高
 \mytext
 
-plot.bar.school.index.conduct
-
 
 ### 亲社会行为
 
@@ -85,7 +83,6 @@ plot.bar.school.index.conduct
 - 1 级：表示 20% 以下的学生亲社会行为素养较高
 \mytext
 
-plot.bar.school.index.prosocial
 
 ### 国家认同
 
@@ -115,7 +112,7 @@ plot.bar.school.index.prosocial
 - 1 级：表示 20% 以下的学生国家认同较高
 \mytext
 
-plot.bar.school.index.country.identity
+
 
 ### 国际视野
 
@@ -146,6 +143,6 @@ plot.bar.school.index.country.identity
 - 1 级：表示 20% 以下的学生国际视野较高
 \mytext
 
-plot.bar.school.index.global.view
+
 
 <!-- end of chapter morality  -->

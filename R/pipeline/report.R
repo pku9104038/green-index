@@ -17,6 +17,7 @@ GreenIndexReport <- setRefClass(
     
     table.df = "data.frame",
     comment.df = "data.frame",
+    cover.df = "data.frame",
     district.df = "data.frame",
     school.df = "data.frame",
     
@@ -54,8 +55,12 @@ GreenIndexReport <- setRefClass(
       table.df <<- database$ReadTable(table.table)
       
       comment.table <- paste0(dataframe$comment$table, 
-                              dataframe$table$suffix)
+                              dataframe$comment$suffix)
       comment.df <<- database$ReadTable(comment.table)
+      
+      cover.table <- paste0(dataframe$cover$table, 
+                              dataframe$cover$suffix)
+      cover.df <<- database$ReadTable(cover.table)
       
       school.table <- paste0(dataframe$school$table, 
                            dataframe$school$suffix)
@@ -222,6 +227,7 @@ GreenIndexReport <- setRefClass(
       prequery.set <- unlist(unique(dataset.df[, kColumnDataset]))
       pretable.set <- unlist(unique(table.df[, kColumnTableRowCode]))
       precomment.set <- unlist(unique(comment.df[, kColumnCommentCode]))
+      precover.set <- unlist(unique(cover.df[, kColumnCoverCode]))
       
       for (i in 1:length(input.data)) {
         
@@ -229,7 +235,8 @@ GreenIndexReport <- setRefClass(
         if (is.element(trimws(input.line), preplot.set) || 
             is.element(trimws(input.line), prequery.set) || 
             is.element(trimws(input.line), pretable.set) || 
-            is.element(trimws(input.line), precomment.set) ){
+            is.element(trimws(input.line), precomment.set) || 
+            is.element(trimws(input.line), precover.set) ){
           
           prefix <- unlist(strsplit(trimws(input.line), kPrefixConnector))[1]
           
@@ -418,6 +425,10 @@ GreenIndexReport <- setRefClass(
               # output.data[length(output.data) + 1] <- 
               #   " \\end{itshape} "
             }
+          } else if (prefix == kPrefixCover) {
+            output.data[length(output.data) + 1] <-
+              paste0("\\includepdf{", report.scope, ".pdf}")
+            
           } else {
             output.data[length(output.data) + 1] <- input.line 
           }
@@ -476,7 +487,7 @@ GreenIndexReport <- setRefClass(
       reworkjobs <- jobs$TODO
       RUN <- jobs$RUN
       report.plotfig <<- jobs$PLOTFIG
-      report.districts <<- jobs$DISTRICTS
+      report.districts <- jobs$DISTRICTS
       report.pilot <<- jobs$pilot
       report.output <<- jobs$output
       
@@ -516,7 +527,10 @@ GreenIndexReport <- setRefClass(
             }
           } else if (report.tier == kTierDistrict) {
             scopes <- unique(district.df[, kTierDistrict])
-            if (RUN == kPilotRun || report.districts) {
+            if (RUN == kPilotRun) {
+              scopes <- list(report.pilot$scope$district)
+            }
+            if (RUN == kAutoRun && report.districts) {
               scopes <- list(report.pilot$scope$district)
             }
             for (i in 1:length(scopes)) {
@@ -534,12 +548,15 @@ GreenIndexReport <- setRefClass(
             }
           } else if (report.tier == kTierSchool) {
             districts <- unique(district.df[, kTierDistrict])
-            if (RUN == kPilotRun || report.districts) {
+            if (RUN == kPilotRun) {
+              districts <- report.pilot$scope$district
+            }
+            if (RUN == kAutoRun && report.districts) {
               districts <- report.pilot$scope$district
             }
             for (i in 1:length(districts)) {
               district <- districts[[i]]
-              print(district)
+              
               scopes <- unique(school.df[school.df[, kTierDistrict] == 
                                          district, kTierSchool])
               if (RUN == kPilotRun) {
@@ -547,7 +564,7 @@ GreenIndexReport <- setRefClass(
               }
               for (j in 1:length(scopes)) {
                 report.scope <<- scopes[[j]]
-                print(report.scope)
+                
                 if (school.df[school.df[, kTierSchool] == 
                               report.scope, kTierDistrict] == district){
                   report.unit$school <<- report.scope

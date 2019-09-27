@@ -1,0 +1,10 @@
+
+\includepdf{cover.pdf}
+
+\newpage
+
+\qquad
+
+\thispagestyle{empty}
+
+\newpage
